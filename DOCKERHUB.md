@@ -75,7 +75,7 @@ If you use **Docker Desktop** GUI:
 
 > ⚠️ **IMPORTANT:** Leaving **Host port** empty causes Docker Desktop to assign a random host port, making `http://localhost:5001` inaccessible.
 
-![Docker Desktop Host Port 5001 Setup](static/docker_desktop_port_setting.png)
+![Docker Desktop Host Port 5001 Setup](https://raw.githubusercontent.com/cylin2022/triad/main/static/docker_desktop_port_setting.png)
 
 ---
 

@@ -1,0 +1,47 @@
+NetMHCpan-4.2 在理論架構與計算方法上確實存在多個優化與演進空間：
+
+理論與生物物理機制的優化
+
+完整抗原處理流程（Antigen Processing）的整合：
+
+現狀限制：NetMHCpan 主要專注於胜肽與 MHC 分子的結合親和力（Binding Affinity / Elution Presentation）。
+
+優化方向：天然抗原呈現還涉及蛋白酶體切割（Proteasomal Cleavage，如 NetChop）及 TAP 轉運蛋白運輸效率。將「切割 + 運輸 + MHC 結合」建立為統一的端到端端多任務模型，能大幅降低偽陽性。
+
+複合體結構與立體動態學（Structural Modeling & Stability）：
+
+現狀限制：核心採用 1D 序列特徵與結合口袋假序列（Pseudo-sequence），缺乏三維空間幾何與側鏈構形動態資訊。
+
+優化方向：整合 3D 結構特徵（如 AlphaFold-Multimer 或 TCRpMHCmodels）與複合體解離半衰期（如 NetMHCstabpan），以真實物理穩定性取代單純親和力評估。
+
+抗原呈現量與表達豐度（Antigen Expression）校正：
+
+現狀限制：輸入僅考慮序列本身，忽略母蛋白在細胞內的轉錄與轉譯豐度。
+
+優化方向：結合 RNA-seq 表達量進行加權（如 NetMHCpanExp 模型），讓結合預測更貼近真實細胞表面的胜肽呈現量。
+
+下游 TCR 識別與免疫原性（Immunogenicity）：
+
+現狀限制：能結合 MHC 的胜肽不代表能被 TCR 辨識並激發免疫反應。
+
+優化方向：串聯 TCR 結合模型（如 NetTCR 或 ICERFIRE），從單純的「MHC Ligand」預測晉升為「真正具備活化能力的 Epitope」。
+
+計算架構與演算法的優化
+
+神經網絡架構升級（Transformer / PLM）：
+
+現狀限制：底層基於淺層前饋神經網絡（FFNN）與 NNAlign 演算法。
+
+優化方向：引入蛋白質語言模型（Protein Language Models, 如 ESM-2、ProtTrans）的預訓練嵌入向量，或使用具備 Self-Attention 機制的 Transformer，捕捉長距離殘基交互作用與非典型長度胜肽的構形變化。
+
+稀有等位基因（Rare Alleles）的少樣本學習（Few-Shot Learning）：
+
+現狀限制：泛等位基因預測高度依賴與已知資料集相近的序列（Distance to training data），對缺乏實驗數據的稀有 HLA 預測誤差仍較大。
+
+優化方向：利用元學習（Meta-Learning）、結構引導的遷移學習或物理圖神經網絡（GNN）來提升外推預測能力。
+
+多等位基因解卷積（Deconvolution）的雜訊過濾：
+
+現狀限制：訓練資料中的質譜免疫胜肽組多來自雜合細胞株（Multi-Allele MS），解卷積歸屬可能存在雜訊或同源 MHC 間的指派偏差。
+
+優化方向：改進機率圖模型或多標籤注意力機制，提高質譜標記的解析精確度。

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+uploads/
+results/
+logs/
+setup_screenshots/
+.git/
+.DS_Store
+netMHCpan-4.2/

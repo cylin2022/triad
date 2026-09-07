@@ -1,0 +1,23 @@
+# TRIAD Platform — port 5001, v1.1
+#
+# netMHCpan-4.2 is NOT bundled in the image (its DTU license forbids
+# redistribution). Point `netMHCpan-4.2` at the directory you extracted your
+# own downloaded netMHCpan-4.2.Linux.tar.gz into, e.g.:
+#
+#   tar -xzvf netMHCpan-4.2.Linux.tar.gz
+#   docker compose up -d
+#
+# If you'd rather not pre-extract it on the host, leave the volume pointed
+# at an empty directory and use the /setup upload wizard in the browser
+# instead once the container is running.
+
+services:
+  triad_app:
+    container_name: triad_app
+    build: .
+    image: triad-platform:v1.1
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./netMHCpan-4.2:/opt/netMHCpan-4.2
+    restart: unless-stopped

@@ -1,0 +1,25 @@
+# Binary packages & archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Large datasets & downloaded binaries
+netMHCpan-4.2/
+ng_tc1-0.1.5-beta/
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Dynamic runtime logs and results
+*.log
+netmhcpan_platform/results/
+netmhcpan_platform/uploads/
+nextgen_platform/results/
+nextgen_platform/uploads/
+.DS_Store

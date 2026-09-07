@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIAD — T-Cell Epitope Ranking, Immunogenicity, and Allele Distribution Framework</title>
+  <meta name="description" content="TRIAD: T-Cell Epitope Ranking, Immunogenicity, and Allele Distribution Framework.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+  <style>
+    /* ── Design Tokens ─────────────────────────────────────────────── */
+    :root {
+      --bg:          #0b1017;
+      --panel:       #161b22;
+      --panel2:      #1c2330;
+      --border:      #30363d;
+      --border2:     #21262d;
+      --text:        #e6edf3;
+      --subtext:     #8b949e;
+      --strong:      #00f5c4;
+      --weak:        #f5a623;
+      --primary:     #58a6ff;
+      --primary-dim: #1f3d5c;
+      --danger:      #f85149;
+      --success:     #3fb950;
+      --accent-purple:#a371f7;
+      --radius:      12px;
+      --radius-sm:   8px;
+      --shadow:      0 8px 32px rgba(0,0,0,.45);
+      --glow:        0 0 20px rgba(88,166,255,.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 15px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--panel); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .bg-canvas {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(88,166,255,.08) 0%, transparent 70%),
+                  radial-gradient(ellipse 60% 40% at 80% 100%, rgba(163,113,247,.05) 0%, transparent 55%),
+                  var(--bg);
+    }
+
+    .shell { position: relative; z-index: 1; max-width: 1380px; margin: 0 auto; padding: 0 28px; }
+
+    header {
+      padding: 24px 0 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      border-bottom: 1px solid rgba(48,54,61,.5);
+    }
+    .logo { display: flex; align-items: center; gap: 14px; }
+    .logo-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, #1a3a6b, #4a1a6b);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; box-shadow: var(--glow); flex-shrink: 0;
+    }
+    .logo-text h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; }
+    .logo-text span { font-size: .78rem; color: var(--subtext); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary-dim); color: var(--primary);
+      padding: 6px 14px; border-radius: 20px; font-size: .75rem; font-weight: 600;
+      border: 1px solid rgba(88,166,255,.2);
+    }
+    .badge::before { content: '●'; font-size: .55em; color: var(--strong); }
+
+    .hero { text-align: center; padding: 36px 0 28px; }
+    .hero-title {
+      font-size: clamp(2rem, 4.2vw, 3rem);
+      font-weight: 700; letter-spacing: -.03em; line-height: 1.15;
+      background: linear-gradient(135deg, var(--text) 0%, var(--primary) 45%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      margin-top: 12px; color: var(--subtext); font-size: 1rem; max-width: 820px; margin-inline: auto;
+      line-height: 1.5;
+    }
+    .hero-actions { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+
+    .stat-row { display: flex; justify-content: center; gap: 48px; margin-top: 24px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .stat-label { font-size: .72rem; color: var(--subtext); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
+
+    .tab-bar {
+      display: flex; gap: 6px;
+      background: var(--panel2); border: 1px solid var(--border2);
+      border-radius: var(--radius); padding: 5px; width: fit-content; margin: 0 auto 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    }
+    .tab-btn {
+      padding: 9px 24px; border-radius: 9px; border: none; cursor: pointer;
+      font-family: inherit; font-size: .88rem; font-weight: 500;
+      background: transparent; color: var(--subtext); transition: all .2s ease;
+    }
+    .tab-btn:hover { color: var(--text); background: rgba(255,255,255,.05); }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--primary-dim), rgba(163,113,247,.25));
+      color: var(--primary); box-shadow: var(--glow); border: 1px solid rgba(88,166,255,.2);
+    }
+
+    .card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);
+    }
+    .card-title {
+      font-size: .95rem; font-weight: 600; margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: space-between; color: var(--text);
+    }
+    .card-title-left { display: flex; align-items: center; gap: 8px; }
+    .card-title .icon { font-size: 1.1rem; }
+
+    .insights-banner {
+      background: linear-gradient(135deg, rgba(22,27,34,.95), rgba(28,35,48,.95));
+      border: 1px solid rgba(163,113,247,.3); border-radius: var(--radius);
+      padding: 20px 24px; margin-bottom: 20px; box-shadow: var(--shadow);
+    }
+    .insights-header {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border2);
+    }
+    .insights-title { font-size: 1rem; font-weight: 700; color: var(--strong); display: flex; align-items: center; gap: 8px; }
+    .insights-mode-tag {
+      background: rgba(163,113,247,.15); color: var(--accent-purple); border: 1px solid rgba(163,113,247,.35);
+      padding: 4px 12px; border-radius: 20px; font-size: .75rem; font-weight: 600;
+    }
+
+    .insights-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;
+    }
+    .insight-card {
+      background: var(--panel); border: 1px solid var(--border2); border-radius: var(--radius-sm);
+      padding: 12px 16px;
+    }
+    .insight-card-label { font-size: .74rem; color: var(--subtext); text-transform: uppercase; letter-spacing: .06em; }
+    .insight-card-val { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+    .insight-card-sub { font-size: .76rem; color: var(--primary); margin-top: 2px; }
+
+    label { display: block; font-size: .8rem; font-weight: 500; color: var(--subtext); margin-bottom: 6px; }
+    textarea, input[type=text], input[type=number], select {
+      width: 100%; background: var(--bg); border: 1px solid var(--border2);
+      border-radius: var(--radius-sm); color: var(--text);
+      font-family: inherit; font-size: .88rem; padding: 10px 14px;
+      transition: border-color .2s, box-shadow .2s; outline: none;
+    }
+    textarea:focus, input:focus, select:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(88,166,255,.12);
+    }
+    textarea { resize: vertical; min-height: 130px; font-family: 'JetBrains Mono', monospace; font-size: .82rem; }
+
+    .chip-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; margin-bottom: 12px; }
+    .sample-chip {
+      background: rgba(88,166,255,.08); color: var(--primary); border: 1px solid rgba(88,166,255,.2);
+      padding: 4px 10px; border-radius: 14px; font-size: .75rem; font-weight: 500; cursor: pointer;
+      transition: all .2s; display: inline-flex; align-items: center; gap: 4px;
+    }
+    .sample-chip:hover { background: var(--primary-dim); border-color: var(--primary); transform: translateY(-1px); }
+
+    .allele-wrap { position: relative; }
+    .allele-input-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .allele-input-row input { flex: 1; }
+    .allele-dropdown {
+      position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 200;
+      background: var(--panel2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      max-height: 200px; overflow-y: auto; box-shadow: var(--shadow); display: none;
+    }
+    .allele-dropdown.open { display: block; }
+    .allele-option {
+      padding: 8px 14px; cursor: pointer; font-size: .85rem; font-family: 'JetBrains Mono', monospace;
+      transition: background .15s;
+    }
+    .allele-option:hover { background: var(--primary-dim); color: var(--primary); }
+    .allele-tags { display: flex; flex-wrap: wrap; gap: 6px; min-height: 32px; }
+    .allele-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary-dim); color: var(--primary);
+      padding: 4px 10px; border-radius: 20px; font-size: .78rem;
+      font-family: 'JetBrains Mono', monospace; border: 1px solid rgba(88,166,255,.2);
+    }
+    .allele-tag button {
+      background: none; border: none; color: inherit; cursor: pointer;
+      font-size: .9em; line-height: 1; padding: 0; opacity: .7; transition: opacity .15s;
+    }
+    .allele-tag button:hover { opacity: 1; }
+
+    /* Preset Info Tooltip */
+    .preset-info-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+    }
+    .preset-info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: var(--primary-dim);
+      color: var(--primary);
+      border: 1px solid rgba(88,166,255,.35);
+      font-size: .72rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      font-style: italic;
+      cursor: help;
+      margin-left: 5px;
+      transition: all .2s ease;
+      line-height: 1;
+      user-select: none;
+    }
+    .preset-info-icon:hover, .preset-info-wrapper:hover .preset-info-icon {
+      background: var(--primary);
+      color: #0d1117;
+      box-shadow: 0 0 8px rgba(88,166,255,.5);
+      transform: scale(1.1);
+    }
+    .preset-info-popover {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 380px;
+      max-width: 88vw;
+      background: #161b22;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-size: .76rem;
+      line-height: 1.45;
+      box-shadow: 0 8px 24px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.05);
+      z-index: 1000;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+      transform: translateY(4px);
+    }
+    .preset-info-wrapper:hover .preset-info-popover,
+    .preset-info-wrapper:focus-within .preset-info-popover {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .popover-header {
+      border-bottom: 1px solid var(--border2);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+    .popover-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: .82rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .popover-item { margin-bottom: 6px; }
+    .popover-item-title { font-weight: 600; color: #f0f6fc; margin-bottom: 2px; }
+    .popover-item-desc { color: var(--subtext); font-size: .72rem; }
+    .popover-item-desc code { background: rgba(88,166,255,.1); color: var(--primary); padding: 1px 4px; border-radius: 3px; font-size: .7rem; }
+
+    .check-row {
+      display: flex; align-items: center; gap: 10px; cursor: pointer;
+      font-size: .85rem; color: var(--subtext); user-select: none;
+    }
+    .check-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
+    .check-row:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 22px; border-radius: var(--radius-sm); border: none;
+      font-family: inherit; font-size: .88rem; font-weight: 600; cursor: pointer;
+      transition: all .2s ease; text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #1a6bb5);
+      color: #fff; box-shadow: 0 4px 16px rgba(88,166,255,.3);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(88,166,255,.4); }
+    .btn-demo {
+      background: linear-gradient(135deg, #a371f7, #6c2bd9);
+      color: #fff; box-shadow: 0 4px 16px rgba(163,113,247,.25);
+    }
+    .btn-demo:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(163,113,247,.35); }
+    .btn-ghost {
+      background: transparent; border: 1px solid var(--border); color: var(--subtext);
+    }
+    .btn-ghost:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-dim); }
+    .btn-success {
+      background: linear-gradient(135deg, #1a6b3c, #006064);
+      color: var(--strong); font-size: .82rem; padding: 8px 16px; border: 1px solid rgba(0,245,196,.3);
+    }
+    .btn-success:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,245,196,.25); }
+    .btn:disabled { opacity: .4; cursor: not-allowed; transform: none !important; }
+
+    .mode-toggle {
+      display: flex; gap: 0; border: 1px solid var(--border2); border-radius: var(--radius-sm);
+      overflow: hidden; width: fit-content; margin-bottom: 12px;
+    }
+    .mode-btn {
+      padding: 7px 18px; border: none; background: transparent;
+      color: var(--subtext); font-family: inherit; font-size: .82rem; font-weight: 500;
+      cursor: pointer; transition: all .2s;
+    }
+    .mode-btn.active { background: var(--primary-dim); color: var(--primary); }
+    .mode-btn:hover:not(.active) { background: rgba(255,255,255,.04); color: var(--text); }
+
+    .main-grid {
+      display: grid; grid-template-columns: minmax(400px, 440px) 1fr; gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 980px) { .main-grid { grid-template-columns: 1fr; } }
+
+    .status-bar {
+      display: none; flex-direction: column; gap: 10px;
+      padding: 14px 18px; background: var(--panel2);
+      border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: .85rem;
+    }
+    .status-bar.visible { display: flex; }
+    .status-row-line { display: flex; align-items: center; gap: 12px; }
+    .spinner {
+      width: 18px; height: 18px; border: 2px solid var(--border);
+      border-top-color: var(--primary); border-radius: 50%;
+      animation: spin .8s linear infinite; flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .status-text { color: var(--subtext); flex: 1; }
+    .status-done { color: var(--success); }
+    .status-error { color: var(--danger); }
+
+    .progress-track { width: 100%; height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary), var(--accent-purple)); transition: width .3s ease; }
+
+    .summary-pills { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+    .pill {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 14px 18px; border-radius: var(--radius-sm);
+      border: 1px solid var(--border); flex: 1; min-width: 110px;
+    }
+    .pill-num { font-size: 1.5rem; font-weight: 700; }
+    .pill-label { font-size: .7rem; color: var(--subtext); text-transform: uppercase; letter-spacing: .07em; margin-top: 2px; }
+    .pill.total { background: var(--panel2); }
+    .pill.total .pill-num { color: var(--primary); }
+    .pill.tier1 { background: rgba(0,245,196,.08); border-color: rgba(0,245,196,.25); }
+    .pill.tier1 .pill-num { color: var(--strong); }
+    .pill.struct { background: rgba(163,113,247,.08); border-color: rgba(163,113,247,.25); }
+    .pill.struct .pill-num { color: var(--accent-purple); }
+    .pill.coverage { background: rgba(88,166,255,.08); border-color: rgba(88,166,255,.25); }
+    .pill.coverage .pill-num { color: var(--primary); }
+
+    .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    @media (max-width: 800px) { .chart-grid { grid-template-columns: 1fr; } }
+    .chart-full { grid-column: 1 / -1; }
+    .chart-card { background: var(--panel2); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 14px; overflow: hidden; min-height: 380px; }
+    .chart-header { padding-bottom: 10px; border-bottom: 1px solid var(--border2); margin-bottom: 8px; }
+    .chart-title { font-size: 0.95rem; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; }
+    .chart-subtitle { font-size: 0.78rem; color: var(--subtext); margin-top: 3px; line-height: 1.4; }
+
+    .filter-panel {
+      background: var(--panel2); border: 1px solid var(--border2); border-radius: var(--radius-sm);
+      padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .filter-row-top { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .filter-row-top input { flex: 2; min-width: 200px; }
+    .filter-row-top select { flex: 1; min-width: 140px; }
+
+    .table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--border2); }
+    table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    th {
+      background: var(--panel2); padding: 10px 14px; text-align: left;
+      font-weight: 600; font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .06em; color: var(--subtext); white-space: nowrap;
+      border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
+    }
+    th:hover { color: var(--primary); }
+    td { padding: 9px 14px; border-bottom: 1px solid var(--border2); font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+    tr:hover td { background: rgba(255,255,255,.025); }
+
+    .tier-Tier-1 { color: var(--strong); font-weight: 700; }
+    .tier-Tier-2 { color: var(--weak); font-weight: 600; }
+    .tier-Tier-3 { color: var(--subtext); }
+    .tag-struct-driven { color: var(--accent-purple); font-weight: 700; }
+    .tag-double-val { color: var(--strong); font-weight: 700; }
+
+    .rank-bar-wrap { display: flex; align-items: center; gap: 8px; }
+    .rank-bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--strong), var(--primary)); transition: width .3s ease; }
+
+    .download-bar { display: flex; gap: 10px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+
+    .demo-preview-card {
+      background: var(--panel); border: 1px dashed var(--border);
+      border-radius: var(--radius); padding: 36px 28px; text-align: center; box-shadow: var(--shadow);
+    }
+    .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0 24px; text-align: left; }
+    @media (max-width: 768px) { .demo-grid { grid-template-columns: 1fr; } }
+    .demo-item { background: var(--panel2); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 16px; }
+    .demo-item h4 { font-size: .88rem; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .demo-item p { font-size: .78rem; color: var(--subtext); line-height: 1.5; }
+
+    #toast { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+    .toast-msg {
+      padding: 12px 18px; border-radius: var(--radius-sm); font-size: .85rem; box-shadow: var(--shadow);
+      animation: slideIn .3s ease, fadeOut .3s ease 3s forwards; max-width: 340px;
+    }
+    .toast-msg.success { background: #1a3d25; border: 1px solid var(--success); color: var(--success); }
+    .toast-msg.error { background: #3d1a1a; border: 1px solid var(--danger); color: var(--danger); }
+    @keyframes slideIn { from { transform: translateX(40px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; pointer-events: none; } }
+
+    /* ── Live Hardware Dashboard ── */
+    .hw-dashboard {
+      background: linear-gradient(135deg, rgba(22, 27, 34, 0.95), rgba(28, 35, 48, 0.95));
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .hw-dashboard::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #58a6ff 0%, #00f5c4 50%, #bf5af2 100%);
+    }
+    .hw-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px; font-size: .85rem; font-weight: 600; color: var(--text);
+    }
+    .hw-header-title {
+      display: flex; align-items: center; gap: 8px; font-size: .9rem;
+    }
+    .hw-live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 10px; border-radius: 12px; font-size: .72rem; font-weight: 600;
+      background: rgba(0, 245, 196, 0.12); color: #00f5c4; border: 1px solid rgba(0, 245, 196, 0.3);
+    }
+    .hw-live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #00f5c4;
+      box-shadow: 0 0 8px #00f5c4; animation: pulseDot 1.6s infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.85); }
+    }
+    .hw-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .hw-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .hw-grid { grid-template-columns: 1fr; }
+    }
+    .hw-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      display: flex; flex-direction: column; gap: 4px;
+      transition: all 0.2s;
+    }
+    .hw-card:hover {
+      border-color: rgba(88, 166, 255, 0.4);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+    .hw-card-label {
+      font-size: .74rem; color: var(--subtext); font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .hw-card-val {
+      font-size: 1.05rem; font-weight: 700; color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hw-card-sub {
+      font-size: .7rem; color: var(--subtext);
+    }
+
+    footer { margin-top: 60px; padding: 24px 0; border-top: 1px solid var(--border2); text-align: center; color: var(--subtext); font-size: .78rem; }
+    footer a { color: var(--primary); text-decoration: none; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+  </style>
+</head>
+<body>
+
+<div class="bg-canvas"></div>
+
+<div class="shell">
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section class="hero" style="padding-top:28px;">
+    <div style="margin-bottom:12px; display:flex; justify-content:center; width:100%;">
+      <img src="/static/triad_logo.png" alt="TRIAD Logo" style="max-width:680px; width:92%; height:auto; display:block;">
+    </div>
+    <div style="width:100%; text-align:center; overflow-x:hidden;">
+      <p class="hero-sub" style="white-space:nowrap; font-size:clamp(0.72rem, 1.38vw, 1.15rem); color:var(--text); font-weight:600; margin:10px auto 24px; display:inline-block;">
+        TRIAD: T-Cell Epitope Ranking, Immunogenicity, and Allele Distribution Framework
+      </p>
+    </div>
+
+    <div class="hero-actions">
+      <button class="btn btn-demo" onclick="loadDemoResults()">
+        <span>⚡</span> View Dual Immunogenicity &amp; Reranking Map
+      </button>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num">Dual-Layer</div>
+        <div class="stat-label">Seq + 3D Immunogenicity</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6-Dimension</div>
+        <div class="stat-label">Composite Score</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Structure-Driven</div>
+        <div class="stat-label">3D Epitope Discovery</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Live Hardware Acceleration Dashboard ── -->
+  <div class="hw-dashboard" id="hw-dashboard">
+    <div class="hw-header">
+      <div class="hw-header-title">
+        <span>⚡</span>
+        <span>Host Hardware Acceleration &amp; Resource Profile</span>
+      </div>
+      <div class="hw-live-badge">
+        <span class="hw-live-dot"></span>
+        <span>Auto-Tuned Engine Active</span>
+      </div>
+    </div>
+    <div class="hw-grid">
+      <div class="hw-card">
+        <div class="hw-card-label"><span>🚀</span> CPU Compute Cluster</div>
+        <div class="hw-card-val" id="hw-cpu-cores">40 vCPUs</div>
+        <div class="hw-card-sub" id="hw-cpu-load">Load: 0.12 · 32 Workers Pool</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-card-label"><span>💾</span> High-Capacity Memory</div>
+        <div class="hw-card-val" id="hw-ram-val">461 GB Free</div>
+        <div class="hw-card-sub" id="hw-ram-sub">504 GB Physical RAM (91% Avail)</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-card-label"><span>⚡</span> RAM Disk I/O Accelerator</div>
+        <div class="hw-card-val" id="hw-shm-val">252 GB Active</div>
+        <div class="hw-card-sub" id="hw-shm-sub">Zero-latency /dev/shm tmpfs</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-card-label"><span>💽</span> Fast Storage Partition</div>
+        <div class="hw-card-val" id="hw-disk-val">2.1 TB Free</div>
+        <div class="hw-card-sub" id="hw-disk-sub">Root Partition Cache (/home)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Tabs ───────────────────────────────────────────── -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" onclick="switchTab('predict')" id="tab-predict">🔬 Multimodal Predictor</button>
+    <button class="tab-btn" onclick="switchTab('batch')" id="tab-batch">📦 Batch Engine</button>
+    <button class="tab-btn" onclick="switchTab('results')" id="tab-results">📊 Prioritization Results &amp; Tier Dashboard</button>
+    <button class="tab-btn" onclick="switchTab('about')" id="tab-about">ℹ️ Multimodal Architecture (immunStruct.md)</button>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- TAB: PREDICT                                        -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="tab-panel active" id="panel-predict">
+
+    <div class="main-grid">
+
+      <!-- Left Input Panel -->
+      <div style="display:flex;flex-direction:column;gap:18px;">
+
+        <div class="card">
+          <div class="card-title">
+            <div class="card-title-left">
+              <span class="icon">✏️</span> Sequence Input
+              <div class="preset-info-wrapper" style="margin-left:4px;">
+                <span class="preset-info-icon" title="Click or hover to view supported sequence formats and file types">i</span>
+                <div class="preset-info-popover" style="width:420px; left:0;">
+                  <div class="popover-header">
+                    <div class="popover-title">📋 Supported Sequence Formats &amp; File Types</div>
+                  </div>
+                  <div class="popover-body">
+                    <div class="popover-item">
+                      <div class="popover-item-title">1. Peptide List Mode</div>
+                      <div class="popover-item-desc">
+                        <strong>Supported Files:</strong> <code>.pep</code>, <code>.txt</code> or direct text paste.<br>
+                        <strong>Format:</strong> One peptide per line (e.g. <code>AAAWYLWEV</code>).<br>
+                        <strong>Length:</strong> 8–14 amino acids (canonical MHC-I length, 9-mer recommended). Single-letter IUPAC amino acid codes (A-Z).
+                      </div>
+                    </div>
+                    <div class="popover-item" style="margin-top:8px;">
+                      <div class="popover-item-title">2. FASTA Protein Sequence Mode</div>
+                      <div class="popover-item-desc">
+                        <strong>Supported Files:</strong> <code>.fasta</code>, <code>.fsa</code>, <code>.fa</code>, <code>.txt</code> or direct text paste.<br>
+                        <strong>Format:</strong> Header line starting with <code>&gt;</code> (e.g. <code>&gt;sp|P0DTC2|SPIKE_SARS2</code>), followed by sequence lines.<br>
+                        <strong>Sliding Window:</strong> Digested automatically based on <strong>Peptide lengths</strong> (e.g. <code>8,9,10</code>) for epitope inference.
+                      </div>
+                    </div>
+                    <div class="popover-item" style="margin-top:8px; border-top:1px dashed var(--border2); padding-top:6px;">
+                      <div class="popover-item-title" style="color:var(--primary);">⚡ High-Throughput Batch Processing</div>
+                      <div class="popover-item-desc">
+                        To upload multiple FASTA/peptide files simultaneously across all 40 CPU cores, use the <strong>BATCH ENGINE</strong> tab on the top navigation bar.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mode-toggle" role="group">
+            <button class="mode-btn active" id="mode-pep" onclick="setMode('peptide')">Peptide List</button>
+            <button class="mode-btn" id="mode-fasta" onclick="setMode('fasta')">FASTA Format</button>
+          </div>
+
+          <div class="chip-bar">
+            <span style="font-size:.75rem; color:var(--subtext); align-self:center;">Quick Examples:</span>
+            <span class="sample-chip" onclick="loadSamplePeptides()">💡 Benchmark Peptides</span>
+            <span class="sample-chip" onclick="loadSampleFasta()">💡 Spike Protein FASTA</span>
+          </div>
+
+          <div id="input-peptide">
+            <label>Paste peptide sequences (one per line, 8–14 aa)</label>
+            <textarea id="pep-input" placeholder="AAAWYLWEV&#10;AEFGPWQTV&#10;YLLPAIVHI&#10;FLPSDFFPSV&#10;GILGFVFTL"></textarea>
+          </div>
+
+          <div id="input-fasta" style="display:none;">
+            <label>Paste FASTA protein sequence</label>
+            <textarea id="fasta-input" style="min-height:160px;" placeholder=">sp|P0DTC2|SPIKE_SARS2 Spike protein fragment&#10;RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLY..."></textarea>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <div class="card-title-left"><span class="icon">🎯</span> HLA Alleles Selection &amp; Regional Presets</div>
+            <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearAllAlleles()">Clear All</button>
+          </div>
+          <div class="allele-wrap">
+            <div class="allele-input-row">
+              <input type="text" id="allele-search" placeholder="Search allele (e.g. HLA-A02:01, HLA-A11:01)..."
+                autocomplete="off" oninput="searchAlleles(this.value)" onfocus="searchAlleles(this.value)">
+            </div>
+
+            <!-- Regional Common HLA Presets & Custom File Upload -->
+            <div style="margin-bottom:10px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+                <div style="font-size:.75rem; color:var(--subtext); display:inline-flex; align-items:center;">
+                  ⚡ Quick Regional Presets &amp; File Upload:
+                  <div class="preset-info-wrapper">
+                    <span class="preset-info-icon" title="View details about HLA lists and data sources">i</span>
+                    <div class="preset-info-popover">
+                      <div class="popover-header">
+                        <div class="popover-title">🧬 HLA Regional Presets &amp; Data Sources</div>
+                      </div>
+                      <div class="popover-body">
+                        <div class="popover-item">
+                          <div class="popover-item-title">🇹🇼 Taiwan Common (High-Frequency Taiwanese HLA List)</div>
+                          <div class="popover-item-desc">
+                            <strong>Data Sources:</strong> AFND (Allele Frequency Net Database) Han Taiwanese datasets, Tzu Chi Marrow Repository, and local immunogenetics studies.<br>
+                            <strong>Included Alleles:</strong><br>
+                            • HLA-A: <code>HLA-A*11:01</code> (Top frequency ~45%), <code>A*24:02</code>, <code>A*02:07</code> (Han-specific subtype), <code>A*33:03</code><br>
+                            • HLA-B: <code>HLA-B*40:01</code>, <code>B*58:01</code> (High frequency / ADR biomarker), <code>B*13:01</code><br>
+                            • HLA-C: <code>HLA-C*07:02</code>, <code>C*01:02</code>
+                          </div>
+                        </div>
+                        <div class="popover-item" style="margin-top:8px;">
+                          <div class="popover-item-title">🌏 Asia Common (Common Asian HLA Alleles)</div>
+                          <div class="popover-item-desc">
+                            <strong>Data Sources:</strong> IEDB &amp; AFND East/Southeast Asian population reference sets.<br>
+                            <strong>Included Alleles:</strong><br>
+                            • HLA-A: <code>HLA-A*11:01</code>, <code>A*24:02</code>, <code>A*02:01</code>, <code>A*02:06</code> (East Asian high frequency)<br>
+                            • HLA-B: <code>HLA-B*40:01</code>, <code>B*15:02</code> (SE Asian / South Chinese high frequency), <code>B*51:01</code><br>
+                            • HLA-C: <code>HLA-C*07:02</code>, <code>C*03:04</code>
+                          </div>
+                        </div>
+                        <div class="popover-item" style="margin-top:8px;">
+                          <div class="popover-item-title">🌍 Europe &amp; 🌐 World Common</div>
+                          <div class="popover-item-desc">
+                            <strong>Data Sources:</strong> IEDB / AFND Global &amp; Caucasian highly representative reference allele panel.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label for="hla-file-input" class="sample-chip" style="cursor:pointer; background:var(--primary-dim); border-color:var(--primary); color:var(--primary);" title="Upload your own custom HLA list file (.txt, .csv, .tsv)">
+                  📁 Upload Custom HLA List (.txt/.csv)
+                  <input type="file" id="hla-file-input" accept=".txt,.csv,.tsv" style="display:none;" onchange="uploadCustomHlaFile(event)">
+                </label>
+              </div>
+              <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                <button class="sample-chip" onclick="loadHlaPreset('taiwan')"
+                  title="🇹🇼 Taiwan Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:07, HLA-A*33:03, HLA-B*40:01, HLA-B*58:01, HLA-B*13:01, HLA-C*07:02, HLA-C*01:02">
+                  🇹🇼 Taiwan Common
+                </button>
+                <button class="sample-chip" onclick="loadHlaPreset('asia')"
+                  title="🌏 Asia Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:01, HLA-A*02:06, HLA-B*40:01, HLA-B*15:02, HLA-B*51:01, HLA-C*07:02, HLA-C*03:04">
+                  🌏 Asia Common
+                </button>
+                <button class="sample-chip" onclick="loadHlaPreset('europe')"
+                  title="🌍 Europe Common: HLA-A*02:01, HLA-A*01:01, HLA-A*03:01, HLA-B*07:02, HLA-B*08:01, HLA-B*44:02, HLA-C*07:01, HLA-C*05:01">
+                  🌍 Europe Common
+                </button>
+                <button class="sample-chip" onclick="loadHlaPreset('world')"
+                  title="🌐 World Common: HLA-A*02:01, HLA-A*01:01, HLA-A*11:01, HLA-A*24:02, HLA-B*07:02, HLA-B*44:02, HLA-B*15:01, HLA-C*07:01, HLA-C*04:01">
+                  🌐 World Common
+                </button>
+              </div>
+            </div>
+
+            <div class="allele-dropdown" id="allele-dropdown"></div>
+            <div class="allele-tags" id="allele-tags"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <div class="card-title-left"><span class="icon">⚙️</span> Multimodal Options</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <label class="check-row">
+              <input type="checkbox" id="opt-ba" checked>
+              Include Binding Affinity (BA) prediction
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="opt-iedb-tc1" checked>
+              Physicochemical T-Cell Immunogenicity (Calis et al. Model)
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="opt-immunostruct" checked>
+              ImmunoStruct 3D Graph Multimodal Immunogenicity
+            </label>
+          </div>
+          <div style="margin-top:20px; display:flex; gap:10px;">
+            <button class="btn btn-primary" onclick="submitPrediction()" id="run-btn" style="flex:1;">
+              <span>▶</span> Execute Multimodal Pipeline
+            </button>
+          </div>
+        </div>
+
+        <div class="status-bar" id="status-bar">
+          <div class="status-row-line">
+            <div class="spinner" id="status-spinner"></div>
+            <div class="status-text" id="status-text">Submitting job...</div>
+          </div>
+          <div class="progress-track" id="progress-track-wrap" style="display:none;">
+            <div class="progress-fill" id="progress-fill-bar"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Quick Preview Card -->
+      <div>
+        <div id="predict-quick-card" class="demo-preview-card">
+          <div style="font-size:2.6rem; margin-bottom:12px;">🌟</div>
+          <h3 style="font-size:1.25rem; font-weight:700;">ImmunoStruct Multimodal Integration</h3>
+          <p style="color:var(--subtext); font-size:.88rem; max-width:540px; margin:8px auto 0; line-height:1.6;">
+            Ranks candidates via 6 dimensions: Presentation, Processing, IEDB Seq Score, ImmunoStruct 3D Graph Score, HLA Breadth, and Population Coverage.
+          </p>
+
+          <div class="demo-grid">
+            <div class="demo-item">
+              <h4><span>💡</span> Structure-Driven Epitopes</h4>
+              <p>Hidden epitopes identified exclusively through 3D structural protrusion features.</p>
+            </div>
+            <div class="demo-item">
+              <h4><span>🌟</span> Double Validated Candidates</h4>
+              <p>Epitopes supported by both sequence immunogenicity and 3D graph models.</p>
+            </div>
+            <div class="demo-item">
+              <h4><span>📊</span> 6D Composite Score</h4>
+              <p>Interpretable candidate prioritization for wet-lab experimental validation.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-demo" onclick="loadDemoResults()" style="padding:12px 28px; font-size:.95rem;">
+            <span>⚡</span> Load Demo Prioritization &amp; View Results Tab
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /panel-predict -->
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- TAB: BATCH ENGINE                                    -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="tab-panel" id="panel-batch">
+    <div class="card" style="max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
+      <div class="card-title">
+        <div class="card-title-left">
+          <span class="icon">📦</span> Batch Multi-File Parallel Engine
+          <div class="preset-info-wrapper" style="margin-left:4px;">
+            <span class="preset-info-icon" title="View supported batch sequence formats and file types">i</span>
+            <div class="preset-info-popover" style="width:420px; left:0;">
+              <div class="popover-header">
+                <div class="popover-title">📦 Batch File Formats &amp; Specifications</div>
+              </div>
+              <div class="popover-body">
+                <div class="popover-item">
+                  <div class="popover-item-title">Supported File Types</div>
+                  <div class="popover-item-desc">
+                    • <strong>Peptide Lists:</strong> <code>.pep</code>, <code>.txt</code> (One peptide 8–14 aa per line)<br>
+                    • <strong>FASTA Sequences:</strong> <code>.fasta</code>, <code>.fsa</code>, <code>.fa</code> (Protein sequences with <code>&gt;</code> headers)
+                  </div>
+                </div>
+                <div class="popover-item" style="margin-top:8px;">
+                  <div class="popover-item-title">Multi-File Processing</div>
+                  <div class="popover-item-desc">
+                    Upload multiple files simultaneously. The engine processes them in parallel across 40 CPU cores and consolidates candidate prioritization scores into a unified table and exportable reports.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearBatch()">✕ Clear Batch</button>
+      </div>
+      
+      <p style="color:var(--subtext); font-size:.86rem; line-height:1.6;">
+        Upload multiple peptide (.pep / .txt) or protein FASTA (.fasta / .fsa) files. The batch engine executes MHC-I Antigen Presentation &amp; Binding (Reynisson et al. Model), Physicochemical T-Cell Immunogenicity (Calis et al. Model), and ImmunoStruct 3D multimodal algorithms in parallel chunks across all 40 CPU cores and merges the candidate prioritization results.
+      </p>
+
+      <!-- Demo FASTA Quick Load Bar -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:rgba(88,166,255,0.06); padding:10px 14px; border-radius:8px; border:1px solid rgba(88,166,255,0.2);">
+        <span style="color:var(--text); font-size:.84rem; font-weight:500;">💡 Try Batch Mode with Benchmark Dataset:</span>
+        <button class="sample-chip" style="background:var(--primary-dim); border-color:var(--primary); color:var(--primary); font-weight:600; padding:6px 14px; cursor:pointer;" onclick="loadBatchDemoFasta()">
+          ⚡ Load Demo FASTA Dataset (SARS-CoV-2 Spike &amp; N Protein)
+        </button>
+      </div>
+
+      <!-- Drag & Drop Upload Zone -->
+      <div class="upload-zone" id="batch-drop" onclick="document.getElementById('batch-files').click()">
+        <div class="icon">📁</div>
+        <p>Drop multiple .pep / .fsa / .fasta / .txt files here, or click to browse</p>
+        <input type="file" id="batch-files" multiple accept=".pep,.txt,.fsa,.fasta,.fa" onchange="addBatchFiles(this.files)">
+      </div>
+
+      <div id="batch-file-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+
+      <!-- Target HLA Alleles Selection for Batch -->
+      <div class="card" style="background:var(--panel2); margin:0;">
+        <div class="card-title">
+          <div class="card-title-left"><span class="icon">🎯</span> Target HLA Alleles for Batch</div>
+          <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearAllAlleles('batch')">Clear All</button>
+        </div>
+        <div class="allele-wrap">
+          <div class="allele-input-row">
+            <input type="text" id="batch-allele-search" placeholder="Search allele (e.g. HLA-A02:01, HLA-A11:01)..."
+              autocomplete="off" oninput="searchAlleles(this.value,'batch')" onfocus="searchAlleles(this.value,'batch')">
+          </div>
+
+          <div style="margin-bottom:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+              <div style="font-size:.75rem; color:var(--subtext); display:inline-flex; align-items:center;">
+                ⚡ Regional Presets &amp; Custom HLA File:
+                <div class="preset-info-wrapper">
+                  <span class="preset-info-icon" title="View details about HLA lists and data sources">i</span>
+                  <div class="preset-info-popover">
+                    <div class="popover-header">
+                      <div class="popover-title">🧬 HLA Regional Presets &amp; Data Sources</div>
+                    </div>
+                    <div class="popover-body">
+                      <div class="popover-item">
+                        <div class="popover-item-title">🇹🇼 Taiwan Common (High-Frequency Taiwanese HLA List)</div>
+                        <div class="popover-item-desc">
+                          <strong>Data Sources:</strong> AFND (Allele Frequency Net Database) Han Taiwanese datasets, Tzu Chi Marrow Repository, and local immunogenetics studies.<br>
+                          <strong>Included Alleles:</strong><br>
+                          • HLA-A: <code>HLA-A*11:01</code> (Top frequency ~45%), <code>A*24:02</code>, <code>A*02:07</code> (Han-specific subtype), <code>A*33:03</code><br>
+                          • HLA-B: <code>HLA-B*40:01</code>, <code>B*58:01</code> (High frequency / ADR biomarker), <code>B*13:01</code><br>
+                          • HLA-C: <code>HLA-C*07:02</code>, <code>C*01:02</code>
+                        </div>
+                      </div>
+                      <div class="popover-item" style="margin-top:8px;">
+                        <div class="popover-item-title">🌏 Asia Common (Common Asian HLA Alleles)</div>
+                        <div class="popover-item-desc">
+                          <strong>Data Sources:</strong> IEDB &amp; AFND East/Southeast Asian population reference sets.<br>
+                          <strong>Included Alleles:</strong><br>
+                          • HLA-A: <code>HLA-A*11:01</code>, <code>A*24:02</code>, <code>A*02:01</code>, <code>A*02:06</code> (East Asian high frequency)<br>
+                          • HLA-B: <code>HLA-B*40:01</code>, <code>B*15:02</code> (SE Asian / South Chinese high frequency), <code>B*51:01</code><br>
+                          • HLA-C: <code>HLA-C*07:02</code>, <code>C*03:04</code>
+                        </div>
+                      </div>
+                      <div class="popover-item" style="margin-top:8px;">
+                        <div class="popover-item-title">🌍 Europe &amp; 🌐 World Common</div>
+                        <div class="popover-item-desc">
+                          <strong>Data Sources:</strong> IEDB / AFND Global &amp; Caucasian highly representative reference allele panel.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label for="batch-hla-file-input" class="sample-chip" style="cursor:pointer; background:var(--primary-dim); border-color:var(--primary); color:var(--primary);" title="Upload your own custom HLA list file (.txt, .csv, .tsv)">
+                📁 Upload Custom HLA List (.txt/.csv)
+                <input type="file" id="batch-hla-file-input" accept=".txt,.csv,.tsv" style="display:none;" onchange="uploadCustomHlaFile(event, 'batch')">
+              </label>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+              <button class="sample-chip" onclick="loadHlaPreset('taiwan', 'batch')"
+                title="🇹🇼 Taiwan Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:07, HLA-A*33:03, HLA-B*40:01, HLA-B*58:01, HLA-B*13:01, HLA-C*07:02, HLA-C*01:02">
+                🇹🇼 Taiwan Common
+              </button>
+              <button class="sample-chip" onclick="loadHlaPreset('asia', 'batch')"
+                title="🌏 Asia Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:01, HLA-A*02:06, HLA-B*40:01, HLA-B*15:02, HLA-B*51:01, HLA-C*07:02, HLA-C*03:04">
+                🌏 Asia Common
+              </button>
+              <button class="sample-chip" onclick="loadHlaPreset('europe', 'batch')"
+                title="🌍 Europe Common: HLA-A*02:01, HLA-A*01:01, HLA-A*03:01, HLA-B*07:02, HLA-B*08:01, HLA-B*44:02, HLA-C*07:01, HLA-C*05:01">
+                🌍 Europe Common
+              </button>
+              <button class="sample-chip" onclick="loadHlaPreset('world', 'batch')"
+                title="🌐 World Common: HLA-A*02:01, HLA-A*01:01, HLA-A*11:01, HLA-A*24:02, HLA-B*07:02, HLA-B*44:02, HLA-B*15:01, HLA-C*07:01, HLA-C*04:01">
+                🌐 World Common
+              </button>
+            </div>
+          </div>
+
+          <div class="allele-dropdown" id="batch-allele-dropdown"></div>
+          <div class="allele-tags" id="batch-allele-tags"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px;">
+        <button class="btn btn-primary" onclick="submitBatch()" id="batch-run-btn" style="flex:1;">
+          <span>▶</span> Execute Batch Processing Pipeline
+        </button>
+      </div>
+
+      <!-- Batch Status Bar -->
+      <div class="status-bar" id="batch-status">
+        <div class="status-row-line">
+          <div class="spinner" id="batch-spinner"></div>
+          <div class="status-text" id="batch-status-text">Processing batch...</div>
+        </div>
+        <div class="progress-track" id="batch-progress-wrap" style="display:none;">
+          <div class="progress-fill" id="batch-progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Batch Completed Options -->
+      <div id="batch-results-box" style="display:none; flex-direction:column; gap:12px;">
+        <button class="btn btn-demo" onclick="switchTab('results')" style="width:100%; padding:12px;">
+          <span>👁️</span> Inspect Batch Results &amp; Interactive Tier Dashboard
+        </button>
+      </div>
+
+    </div>
+  </div><!-- /panel-batch -->
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- TAB: RESULTS & JOB ARCHIVE                           -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="tab-panel" id="panel-results">
+    
+    <div class="card" style="margin-bottom:20px;">
+      <div class="card-title">
+        <div class="card-title-left"><span class="icon">📜</span> Historical Prioritization Jobs &amp; Archive</div>
+        <button class="btn btn-ghost" style="padding:6px 14px; font-size:.78rem;" onclick="refreshJobsBoard()">🔄 Refresh Job List</button>
+      </div>
+      
+      <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <select id="job-selector" style="flex:1; min-width:280px;" onchange="loadSelectedJobFromDropdown()">
+          <option value="">-- Select a prioritization job to view interactive results --</option>
+        </select>
+        <button class="btn btn-primary" onclick="loadSelectedJobFromDropdown()" style="padding:9px 18px;">
+          <span>👁️</span> Inspect Prioritization Results
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Results View Container -->
+    <div id="results-view-container" style="display:none;">
+      
+      <!-- 🌟 Actionable Insights Banner -->
+      <div class="insights-banner">
+        <div class="insights-header">
+          <div class="insights-title">
+            <span>🌟</span> Actionable Multimodal &amp; ImmunoStruct Insights
+          </div>
+          <div class="insights-mode-tag">
+            ⚡ Dual-Layer Immunogenicity (Seq + 3D Graph) Highlighted
+          </div>
+        </div>
+
+        <div class="insights-grid">
+          <div class="insight-card">
+            <div class="insight-card-label">🥇 #1 Tier 1 Priority Candidate</div>
+            <div class="insight-card-val" id="ins-top-tier1">—</div>
+            <div class="insight-card-sub" id="ins-top-tier1-sub">Composite Score: —</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-card-label">💡 Structure-Driven Epitopes</div>
+            <div class="insight-card-val" id="ins-struct-driven">—</div>
+            <div class="insight-card-sub" id="ins-struct-sub">Discovered by 3D Graph</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-card-label">🌟 Double Validated Epitopes</div>
+            <div class="insight-card-val" id="ins-double-val">—</div>
+            <div class="insight-card-sub" id="ins-double-sub">Seq + 3D Dual Supported</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-card-label">🌍 World Population Coverage</div>
+            <div class="insight-card-val" id="ins-cov-val">—</div>
+            <div class="insight-card-sub" id="ins-cov-sub">East Asia: —</div>
+          </div>
+        </div>
+
+        <!-- 🎯 Best Epitope per Protein Sequence (Multi-FASTA) -->
+        <div id="ins-multi-protein-box" style="display:none; margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:.82rem; font-weight:600; color:var(--text); margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+            <span>🎯</span> <strong>Best Candidate Epitope per Protein Sequence (Multi-FASTA):</strong>
+            <span style="font-size:.74rem; color:var(--subtext); font-weight:normal;">(Click any protein chip to filter table)</span>
+          </div>
+          <div id="ins-protein-chips" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+        </div>
+      </div>
+
+      <!-- Summary pills -->
+      <div class="summary-pills">
+        <div class="pill total">
+          <div class="pill-num" id="r-total">—</div>
+          <div class="pill-label">Total Predictions</div>
+        </div>
+        <div class="pill tier1">
+          <div class="pill-num" id="r-t1">—</div>
+          <div class="pill-label">🌟 Tier 1 (High Priority)</div>
+        </div>
+        <div class="pill struct">
+          <div class="pill-num" id="r-struct">—</div>
+          <div class="pill-label">💡 Structure-Driven</div>
+        </div>
+        <div class="pill coverage">
+          <div class="pill-num" id="r-cov">—</div>
+          <div class="pill-label">World Population Coverage</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="chart-grid" id="chart-grid">
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">📊 %Rank EL Binding Affinity Tier Distribution</div>
+            <div class="chart-subtitle">Categorizes predicted peptides into Strong Binders (≤0.5%), Weak Binders (0.5%–2.0%), and Non-Binders (>2.0%).</div>
+          </div>
+          <div id="chart-rank"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">🧬 Candidate Binder Breakdown per HLA Allele</div>
+            <div class="chart-subtitle">Breakdown of Strong Binders (green), Weak Binders (amber), and Non-Binders (gray) across each selected HLA allele.</div>
+          </div>
+          <div id="chart-allele"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">🎯 T-Cell Immunogenicity vs. %Rank EL Quad-Plot</div>
+            <div class="chart-subtitle">Plots IEDB Immunogenicity Score against MHC binding rank (%Rank EL). Upper-left quadrant highlights optimal candidate epitopes.</div>
+          </div>
+          <div id="chart-imm-quad"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">🔬 Dual-Layer Multimodal Concordance</div>
+            <div class="chart-subtitle">Compares sequence-based IEDB score vs. ImmunoStruct 3D structure-based immunogenicity score.</div>
+          </div>
+          <div id="chart-concordance"></div>
+        </div>
+
+        <div class="chart-card chart-full">
+          <div class="chart-header">
+            <div class="chart-title">🌋 Presentation Score vs. %Rank EL Affinity (Volcano Plot)</div>
+            <div class="chart-subtitle">Correlates presentation likelihood (Score EL, X-axis) against relative binding rank (−log₁₀ %Rank/100, Y-axis). Upper-right points represent top presentation candidates.</div>
+          </div>
+          <div id="chart-volcano"></div>
+        </div>
+
+        <div class="chart-card chart-full">
+          <div class="chart-header">
+            <div class="chart-title">🔥 Top Candidate Peptides × HLA Alleles Presentation Heatmap</div>
+            <div class="chart-subtitle">Cross-allele presentation score (Score EL) heatmap for top candidate peptides, identifying promiscuous/broadly-presented epitopes.</div>
+          </div>
+          <div id="chart-heatmap"></div>
+        </div>
+      </div>
+
+      <!-- Table & Advanced Tier Filter Control Panel -->
+      <div class="card" style="margin-top:0;">
+        <div class="card-title">
+          <div class="card-title-left"><span class="icon">📋</span> Multimodal Prioritization Results Table</div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-row-top">
+            <input type="text" id="tbl-search" placeholder="🔍 Search peptide, protein ID or core (e.g. SPIKE, FLPS)..." oninput="filterTable()">
+            <select id="tbl-seq" onchange="filterTable()" style="display:none; max-width:240px;">
+              <option value="">All Sequences / Proteins</option>
+            </select>
+            <select id="tbl-tier" onchange="filterTable()">
+              <option value="T1" selected>🌟 Tier 1 Candidates Only (High Priority)</option>
+              <option value="T12">⚡ Tier 1 &amp; Tier 2 Candidates (High + Medium)</option>
+              <option value="STRUCT">💡 Structure-Driven Candidates Only</option>
+              <option value="ALL">🌐 All Candidates (Tier 1 + 2 + 3)</option>
+            </select>
+            <select id="tbl-allele" onchange="filterTable()">
+              <option value="">All HLA Alleles</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fast Paginated Table -->
+        <div class="table-wrap">
+          <table id="result-table">
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="pagination-bar" style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding-top:10px; border-top:1px solid var(--border2);">
+          <div style="display:flex; gap:8px; align-items:center;">
+            <button class="btn btn-ghost" style="padding:5px 14px; font-size:.78rem;" id="btn-prev-page" onclick="changePage(-1)">◀ Previous</button>
+            <button class="btn btn-ghost" style="padding:5px 14px; font-size:.78rem;" id="btn-next-page" onclick="changePage(1)">Next ▶</button>
+          </div>
+          <span style="color:var(--subtext); font-size:.78rem; font-family:'JetBrains Mono', monospace;" id="pagination-info">Page 1 of 1</span>
+        </div>
+
+        <div class="download-bar">
+          <button class="btn btn-success" onclick="exportFilteredData('csv')">⬇ Export Filtered Insights (CSV)</button>
+          <span style="color:var(--subtext); font-size:.78rem;" id="table-count"></span>
+        </div>
+      </div>
+
+      <!-- Historical Jobs Table -->
+      <div class="card" style="margin-top:20px;">
+        <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="card-title-left"><span class="icon">📜</span> All Historical Jobs &amp; Background Process Log</div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-ghost" style="padding:4px 10px; font-size:.75rem;" onclick="refreshJobsBoard()">🔄 Refresh List</button>
+            <button class="btn btn-danger" style="padding:4px 10px; font-size:.75rem; background:rgba(248,81,73,0.15); color:var(--danger); border:1px solid rgba(248,81,73,0.3);" onclick="clearAllJobsHistory()">🧹 Clear All</button>
+          </div>
+        </div>
+        <div class="table-wrap" style="max-height:280px; overflow-y:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:.82rem;">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border); text-align:left; color:var(--subtext);">
+                <th style="padding:8px 12px;">Job ID &amp; Name</th>
+                <th style="padding:8px 12px;">Type / Mode</th>
+                <th style="padding:8px 12px;">Target Alleles</th>
+                <th style="padding:8px 12px;">Hits (SB / WB)</th>
+                <th style="padding:8px 12px;">Status</th>
+                <th style="padding:8px 12px; text-align:right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="history-jobs-tbody">
+              <tr><td colspan="6" style="text-align:center; padding:20px; color:var(--subtext);">Loading historical jobs...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty State -->
+    <div id="results-empty-state" class="demo-preview-card" style="margin-top:20px;">
+      <div style="font-size:2.5rem; margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.15rem; font-weight:700;">No Job Selected</h3>
+      <p style="color:var(--subtext); font-size:.85rem; max-width:480px; margin:8px auto 16px;">
+        Please select a historical prediction job from the dropdown above or run a demonstration prediction.
+      </p>
+      <button class="btn btn-demo" onclick="loadDemoResults()">⚡ Load Demo Dataset</button>
+    </div>
+
+  </div><!-- /panel-results -->
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- TAB: ABOUT ARCHITECTURE (immunStruct.md)             -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <div class="tab-panel" id="panel-about">
+    <div style="max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
+
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-left"><span class="icon">📖</span> ImmunoStruct Dual-Layer Multimodal Architecture</div>
+        </div>
+        <p style="color:var(--subtext); line-height:1.7; font-size:.9rem;">
+          This platform implements the dual-layer multimodal prioritization architecture detailed in <strong style="color:var(--text);">immunStruct.md</strong> based on <em>Nature Machine Intelligence</em> (2026). It combines sequence-based predictors with <strong>ImmunoStruct 3D Graph Neural Networks</strong> to discover hidden epitopes that sequence-only models miss.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-left"><span class="icon">🧬</span> Dual-Layer Immunogenicity Mechanism</div>
+        </div>
+        <div style="background:var(--panel2); border:1px solid var(--border2); border-radius:var(--radius-sm); padding:16px; font-family:'JetBrains Mono', monospace; font-size:.85rem; color:var(--accent-purple); text-align:center; margin-bottom:16px;">
+          Layer 4A: IEDB Sequence Immunogenicity &nbsp; ∥ &nbsp; Layer 4B: ImmunoStruct 3D Graph Immunogenicity
+        </div>
+        <p style="color:var(--subtext); line-height:1.6; font-size:.85rem;">
+          Evaluating immunogenicity in parallel provides dual-layer evidence. ImmunoStruct processes pMHC 3D graph representations and TCR-facing bulky residue exposure, identifying <strong>Structure-Driven Candidates</strong> that sequence-only models penalize.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-left"><span class="icon">📊</span> 6-Dimension Multimodal Composite Score Equation</div>
+        </div>
+
+        <div style="background:var(--panel2); border:1px solid var(--border2); border-radius:var(--radius-sm); padding:16px; margin-bottom:16px;">
+          <div style="font-family:'JetBrains Mono', monospace; font-size:.85rem; color:var(--text); line-height:1.6;">
+            Score = 0.30×Presentation + 0.10×Processing + 0.15×IEDB_Seq + 0.25×ImmunoStruct_3D + 0.10×HLA_Breadth + 0.10×Population
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="background:rgba(0,245,196,.08); border:1px solid rgba(0,245,196,.25); border-radius:var(--radius-sm); padding:12px 16px;">
+            <strong style="color:var(--strong);">🌟 Double Validated (High IEDB + High ImmunoStruct)</strong>
+            <p style="color:var(--subtext); font-size:.82rem; margin-top:4px;">Highest confidence golden candidates supported by both sequence immunogenicity and 3D graph features.</p>
+          </div>
+          <div style="background:rgba(163,113,247,.08); border:1px solid rgba(163,113,247,.25); border-radius:var(--radius-sm); padding:12px 16px;">
+            <strong style="color:var(--accent-purple);">💡 Structure-Driven (Low IEDB + High ImmunoStruct)</strong>
+            <p style="color:var(--subtext); font-size:.82rem; margin-top:4px;">Novel epitopes discovered exclusively through 3D pMHC structural protrusion and TCR interaction geometry!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /panel-about -->
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer>
+    <div style="font-weight:600; font-size:.86rem; color:var(--text); margin-bottom:6px;">
+      Powered by LSBNB, IIS, Academia Sinica, TAIWAN
+    </div>
+    <div style="color:var(--subtext); font-size:.78rem; line-height:1.6;">
+      TRIAD Framework featuring ImmunoStruct 3D Graph Model. For academic research &amp; epitope discovery use.
+    </div>
+  </footer>
+
+</div><!-- /shell -->
+
+<div id="toast"></div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  JavaScript                                         -->
+<!-- ════════════════════════════════════════════════════ -->
+<script>
+let currentMode = 'peptide';
+let selectedAlleles = [];
+let batchSelectedAlleles = [];
+let batchFiles = [];
+let allAlleles = [];
+let allTableRows = [];
+let currentFilteredRows = [];
+let currentJobId = null;
+let pollTimer = null;
+
+let currentPage = 1;
+const pageSize = 25;
+
+window.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const r = await fetch('/api/alleles?q=');
+    allAlleles = await r.json();
+  } catch (e) {
+    console.error("Alleles fetch failed", e);
+  }
+  ['HLA-A*02:01','HLA-B*07:02'].forEach(a => addAlleleTag(a, 'predict'));
+  ['HLA-A*02:01','HLA-B*07:02'].forEach(a => addAlleleTag(a, 'batch'));
+  setupBatchDropZone();
+  refreshJobsBoard();
+  loadSystemResources();
+  setInterval(loadSystemResources, 8000);
+});
+
+async function loadSystemResources() {
+  try {
+    const r = await fetch('/api/system_resources');
+    if (!r.ok) return;
+    const d = await r.json();
+    if (d.cpu) {
+      document.getElementById('hw-cpu-cores').textContent = `${d.cpu.logical_cores} vCPUs`;
+      document.getElementById('hw-cpu-load').textContent = `Load: ${d.cpu.load_1m} · ${d.cpu.optimal_workers} Workers Pool`;
+    }
+    if (d.memory) {
+      document.getElementById('hw-ram-val').textContent = `${d.memory.available_gb} GB Free`;
+      document.getElementById('hw-ram-sub').textContent = `${d.memory.total_gb} GB RAM (${100 - d.memory.percent}% Avail)`;
+    }
+    if (d.ram_disk) {
+      document.getElementById('hw-shm-val').textContent = `${d.ram_disk.available_gb} GB Active`;
+      document.getElementById('hw-shm-sub').textContent = d.ram_disk.description || 'Zero-latency /dev/shm tmpfs';
+    }
+    if (d.disk) {
+      document.getElementById('hw-disk-val').textContent = `${d.disk.free_tb} TB Free`;
+      document.getElementById('hw-disk-sub').textContent = `Root Partition Cache (${100 - d.disk.used_percent}% Free)`;
+    }
+  } catch (e) {
+    console.error('System resources fetch failed', e);
+  }
+}
+
+function setupBatchDropZone() {
+  const zone = document.getElementById('batch-drop');
+  if (!zone) return;
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    zone.addEventListener(eventName, e => { e.preventDefault(); e.stopPropagation(); }, false);
+  });
+  ['dragenter', 'dragover'].forEach(eventName => {
+    zone.addEventListener(eventName, () => zone.classList.add('drag-over'), false);
+  });
+  ['dragleave', 'drop'].forEach(eventName => {
+    zone.addEventListener(eventName, () => zone.classList.remove('drag-over'), false);
+  });
+  zone.addEventListener('drop', e => {
+    const dt = e.dataTransfer;
+    if (dt && dt.files && dt.files.length > 0) addBatchFiles(dt.files);
+  }, false);
+}
+
+function loadSamplePeptides() {
+  switchTab('predict');
+  setMode('peptide');
+  document.getElementById('pep-input').value =
+`AAAWYLWEV
+AEFGPWQTV
+YLLPAIVHI
+FLPSDFFPSV
+GILGFVFTL
+SLYNTVATLY
+RMFPNAPYL
+LLDFVRMGV
+AAGLQDCTM`;
+  if (!selectedAlleles.includes('HLA-A*02:01')) addAlleleTag('HLA-A*02:01', 'predict');
+  if (!selectedAlleles.includes('HLA-B*07:02')) addAlleleTag('HLA-B*07:02', 'predict');
+  toast('💡 Loaded 9 benchmark sample peptides & target HLA alleles', 'success');
+}
+
+function loadSampleFasta() {
+  switchTab('predict');
+  setMode('fasta');
+  document.getElementById('fasta-input').value =
+`>sp|P0DTC2|SPIKE_SARS2 SARS-CoV-2 Spike protein RBD fragment
+RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFK
+CYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNS`;
+  if (!selectedAlleles.includes('HLA-A*02:01')) addAlleleTag('HLA-A*02:01', 'predict');
+  toast('💡 Loaded SARS-CoV-2 Spike protein FASTA', 'success');
+}
+
+async function loadDemoResults() {
+  loadSamplePeptides();
+  setStatus('running', 'Executing Multimodal Prioritization & ImmunoStruct pipeline...');
+
+  try {
+    const r = await fetch('/api/demo');
+    const data = await r.json();
+    if (data.error) {
+      setStatus('error', data.error);
+      return;
+    }
+    renderResults(data);
+    switchTab('results');
+    toast('⚡ Demo ImmunoStruct Dataset Loaded! Viewing Tier Dashboard', 'success');
+    refreshJobsBoard();
+  } catch (err) {
+    setStatus('error', 'Failed to load demo results: ' + err);
+  }
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (tab === 'results') setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('input-peptide').style.display = mode === 'peptide' ? 'block' : 'none';
+  document.getElementById('input-fasta').style.display   = mode === 'fasta'   ? 'block' : 'none';
+  document.getElementById('mode-pep').classList.toggle('active', mode === 'peptide');
+  document.getElementById('mode-fasta').classList.toggle('active', mode === 'fasta');
+}
+
+async function searchAlleles(q, ctx = 'predict') {
+  const dropdown = document.getElementById('allele-dropdown');
+  if (!q || q.length < 2) { dropdown.classList.remove('open'); return; }
+  const r = await fetch(`/api/alleles?q=${encodeURIComponent(q)}`);
+  const list = await r.json();
+  dropdown.innerHTML = '';
+  list.slice(0, 20).forEach(a => {
+    const div = document.createElement('div');
+    div.className = 'allele-option';
+    div.textContent = a;
+    div.onclick = () => { addAlleleTag(a, ctx); dropdown.classList.remove('open'); document.getElementById('allele-search').value = ''; };
+    dropdown.appendChild(div);
+  });
+  dropdown.classList.toggle('open', list.length > 0);
+}
+
+function addAlleleTag(allele, ctx = 'predict') {
+  if (selectedAlleles.includes(allele)) return;
+  selectedAlleles.push(allele);
+  const tagContainer = document.getElementById('allele-tags');
+  const tag = document.createElement('div');
+  tag.className = 'allele-tag';
+  tag.id = `tag-${allele.replace(/[^a-z0-9]/gi,'_')}`;
+  tag.innerHTML = `${allele} <button onclick="removeAllele('${allele}')">×</button>`;
+  tagContainer.appendChild(tag);
+}
+
+function removeAllele(allele) {
+  const idx = selectedAlleles.indexOf(allele);
+  if (idx > -1) selectedAlleles.splice(idx, 1);
+  const tag = document.getElementById(`tag-${allele.replace(/[^a-z0-9]/gi,'_')}`);
+  if (tag) tag.remove();
+}
+
+function clearAllAlleles() {
+  selectedAlleles = [];
+  document.getElementById('allele-tags').innerHTML = '';
+  toast('🧹 Cleared all selected HLA alleles', 'success');
+}
+
+const HLA_PRESETS = {
+  taiwan: ['HLA-A*11:01','HLA-A*24:02','HLA-A*02:07','HLA-A*33:03','HLA-B*40:01','HLA-B*58:01','HLA-B*13:01','HLA-C*07:02','HLA-C*01:02'],
+  asia:   ['HLA-A*11:01','HLA-A*24:02','HLA-A*02:01','HLA-A*02:06','HLA-B*40:01','HLA-B*15:02','HLA-B*51:01','HLA-C*07:02','HLA-C*03:04'],
+  europe: ['HLA-A*02:01','HLA-A*01:01','HLA-A*03:01','HLA-B*07:02','HLA-B*08:01','HLA-B*44:02','HLA-C*07:01','HLA-C*05:01'],
+  world:  ['HLA-A*02:01','HLA-A*01:01','HLA-A*11:01','HLA-A*24:02','HLA-B*07:02','HLA-B*44:02','HLA-B*15:01','HLA-C*07:01','HLA-C*04:01']
+};
+
+function loadHlaPreset(region) {
+  const list = HLA_PRESETS[region];
+  if (!list) return;
+  list.forEach(a => addAlleleTag(a));
+  const regionNames = { taiwan:'Taiwan Common 🇹🇼', asia:'Asia Common 🌏', europe:'Europe Common 🌍', world:'World Common 🌐' };
+  toast(`💡 Loaded ${regionNames[region]||region} HLA alleles (${list.length} alleles)`, 'success');
+}
+
+function uploadCustomHlaFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const text = e.target.result;
+    if (!text) return;
+
+    // Split by newlines, commas, tabs, semicolons, or spaces
+    const tokens = text.split(/[\r\n,\t; ]+/).map(s => s.trim()).filter(s => s.length > 0);
+    
+    let addedCount = 0;
+    tokens.forEach(tok => {
+      let clean = tok.toUpperCase();
+      if (['HLA','ALLELE','ALLELES','GENOTYPE','MHC','ID','PATIENT'].includes(clean)) return;
+
+      if (!clean.startsWith('HLA-') && !clean.startsWith('BOLA-') && !clean.startsWith('SLA-')) {
+        clean = 'HLA-' + clean;
+      }
+      if (/^HLA-[ABC]\d{2}/.test(clean)) {
+        clean = clean.replace(/^HLA-([ABC])/, 'HLA-$1*');
+      }
+
+      if (!selectedAlleles.includes(clean)) {
+        addAlleleTag(clean);
+        addedCount++;
+      }
+    });
+
+    toast(`📁 Uploaded ${file.name}: Loaded ${addedCount} custom HLA alleles`, 'success');
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+async function submitPrediction() {
+  const input = currentMode === 'peptide' ? document.getElementById('pep-input').value.trim() : document.getElementById('fasta-input').value.trim();
+  if (!input) { toast('Please enter input sequences.', 'error'); return; }
+  if (selectedAlleles.length === 0) { toast('Please select HLA alleles.', 'error'); return; }
+
+  const payload = { mode: currentMode, input, alleles: selectedAlleles, include_ba: true };
+  setStatus('running', 'Submitting Multimodal job...');
+  document.getElementById('run-btn').disabled = true;
+
+  const r = await fetch('/api/predict', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+  const data = await r.json();
+  if (data.error) { setStatus('error', data.error); document.getElementById('run-btn').disabled = false; return; }
+
+  currentJobId = data.job_id;
+  pollJob(data.job_id);
+}
+
+function pollJob(jobId) {
+  if (pollTimer) clearTimeout(pollTimer);
+  pollTimer = setTimeout(async () => {
+    try {
+      const r = await fetch(`/api/job/${jobId}`);
+      if (!r.ok) {
+        pollJob(jobId);
+        return;
+      }
+      const data = await r.json();
+      if (data.status === 'done') {
+        renderResults(data);
+        switchTab('results');
+        refreshJobsBoard();
+      } else if (data.status === 'error') {
+        setStatus('error', data.error || 'Job calculation error');
+        document.getElementById('run-btn').disabled = false;
+      } else {
+        const pct = data.meta?.progress_pct || 15;
+        const stage = data.meta?.progress_stage || `Running Multimodal algorithm — Job #${jobId}...`;
+        setStatus('running', `[${pct}%] ${stage}`);
+        pollJob(jobId);
+      }
+    } catch (e) {
+      pollJob(jobId);
+    }
+  }, 600);
+}
+
+async function refreshJobsBoard() {
+  try {
+    const r = await fetch('/api/jobs');
+    const jobs = await r.json();
+    const selector = document.getElementById('job-selector');
+    if (selector) {
+      selector.innerHTML = '<option value="">-- Select a prioritization job --</option>' +
+        jobs.filter(j => j.status === 'done').map(j => {
+          const label = j.name || `Job #${j.job_id}`;
+          return `<option value="${j.job_id}">${label} — ${j.meta?.n_total || 0} hits (${j.meta?.n_tier1 || 0} Tier 1, ${j.meta?.n_struct_driven || 0} Struct-Driven)</option>`;
+        }).join('');
+    }
+
+    const tbody = document.getElementById('history-jobs-tbody');
+    if (tbody) {
+      if (!jobs || jobs.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:24px; color:var(--subtext);">No previous jobs found. Submit a prediction to view history.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = jobs.map(j => {
+        const timeStr = j.created_at ? new Date(j.created_at).toLocaleTimeString() : '—';
+        const jobName = j.name || `Job #${j.job_id}`;
+        const modeBadge = j.mode === 'fasta' 
+          ? `<span style="background:rgba(88,166,255,0.15); color:var(--primary); padding:2px 8px; border-radius:10px; font-size:.72rem;">FASTA</span>`
+          : `<span style="background:rgba(0,245,196,0.15); color:var(--strong); padding:2px 8px; border-radius:10px; font-size:.72rem;">Peptide</span>`;
+        const allelesPreview = (j.alleles || []).slice(0, 3).join(', ') + ((j.alleles || []).length > 3 ? ` +${j.alleles.length - 3}` : '');
+        const hitsBadge = j.meta?.n_total != null 
+          ? `<strong style="color:var(--strong);">${j.meta.n_strong_binders || 0} SB</strong> / <span style="color:var(--weak);">${j.meta.n_weak_binders || 0} WB</span> <span style="color:var(--subtext);">(${j.meta.n_total} Total)</span>`
+          : '—';
+        const statusBadge = j.status === 'done'
+          ? `<span style="color:var(--success); font-weight:600;">✓ Done</span>`
+          : j.status === 'error'
+          ? `<span style="color:var(--danger); font-weight:600;">✕ Error</span>`
+          : `<span style="color:var(--primary); font-weight:600;">⚡ Running</span>`;
+
+        return `
+          <tr style="border-bottom:1px solid var(--border2); transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='transparent'">
+            <td style="padding:10px 12px;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span style="font-weight:600; color:var(--text);">${jobName}</span>
+                <button class="btn btn-ghost" style="padding:1px 5px; font-size:.7rem; color:var(--subtext);" title="Rename or Add Note" onclick="editJobName('${j.job_id}', '${(j.name || '').replace(/'/g, "\\'")}')">✏️</button>
+              </div>
+              <div style="font-size:.7rem; color:var(--subtext); font-family:'JetBrains Mono', monospace;">ID: ${j.job_id} · ${timeStr}</div>
+            </td>
+            <td style="padding:10px 12px;">${modeBadge}</td>
+            <td style="padding:10px 12px; font-size:.78rem; font-family:'JetBrains Mono', monospace; color:var(--subtext);">${allelesPreview || '—'}</td>
+            <td style="padding:10px 12px; font-size:.78rem;">${hitsBadge}</td>
+            <td style="padding:10px 12px;">${statusBadge}</td>
+            <td style="padding:10px 12px; text-align:right;">
+              <div style="display:inline-flex; gap:6px; align-items:center;">
+                ${j.status === 'done' ? `<button class="btn btn-ghost" style="padding:3px 10px; font-size:.74rem; color:var(--primary); border:1px solid rgba(88,166,255,0.3);" onclick="loadJobById('${j.job_id}', this)">👁️ View</button>` : ''}
+                ${j.raw_input ? `<button class="btn btn-ghost" style="padding:3px 10px; font-size:.74rem; color:var(--strong); border:1px solid rgba(0,245,196,0.3);" onclick="loadJobInputsToForm('${j.job_id}')" title="Edit original inputs and re-run">📥 Edit & Re-run</button>` : ''}
+                <button class="btn btn-danger" style="padding:3px 8px; font-size:.74rem; background:rgba(248,81,73,0.1); color:var(--danger); border:1px solid rgba(248,81,73,0.25);" onclick="deleteJob('${j.job_id}')" title="Delete job">🗑️</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+  } catch (e) { console.error("Jobs fetch failed", e); }
+}
+
+async function deleteJob(jobId) {
+  if (!confirm(`Are you sure you want to delete Job #${jobId} and its generated result files?`)) return;
+  try {
+    const r = await fetch(`/api/job/${jobId}`, { method: 'DELETE' });
+    const res = await r.json();
+    if (res.success) {
+      toast(`🗑️ Job #${jobId} deleted successfully.`, 'success');
+      refreshJobsBoard();
+    } else {
+      toast(res.error || 'Failed to delete job', 'error');
+    }
+  } catch (e) {
+    toast('Error deleting job: ' + e, 'error');
+  }
+}
+
+async function clearAllJobsHistory() {
+  if (!confirm('Are you sure you want to clear all historical jobs and temporary result files?')) return;
+  try {
+    const r = await fetch('/api/jobs', { method: 'DELETE' });
+    const res = await r.json();
+    if (res.success) {
+      toast(`🧹 Cleared ${res.cleared_count} historical jobs.`, 'success');
+      refreshJobsBoard();
+    } else {
+      toast('Failed to clear jobs history', 'error');
+    }
+  } catch (e) {
+    toast('Error clearing jobs history: ' + e, 'error');
+  }
+}
+
+async function editJobName(jobId, currentName) {
+  const newName = prompt(`Enter custom label / name for Job #${jobId}:`, currentName || `Job #${jobId}`);
+  if (newName === null || newName.trim() === '') return;
+  try {
+    const r = await fetch(`/api/job/${jobId}/rename`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: newName.trim() })
+    });
+    const res = await r.json();
+    if (res.success) {
+      toast(`✏️ Renamed Job #${jobId} to "${newName.trim()}"`, 'success');
+      refreshJobsBoard();
+    } else {
+      toast(res.error || 'Failed to rename job', 'error');
+    }
+  } catch (e) {
+    toast('Error renaming job: ' + e, 'error');
+  }
+}
+
+async function loadJobInputsToForm(jobId) {
+  try {
+    const r = await fetch(`/api/job/${jobId}`);
+    const data = await r.json();
+    if (!data.raw_input) {
+      toast('Original input data not found for this job.', 'error');
+      return;
+    }
+    switchTab('predict');
+    setMode(data.mode || 'peptide');
+    if (data.mode === 'fasta') {
+      document.getElementById('fasta-input').value = data.raw_input;
+    } else {
+      document.getElementById('pep-input').value = data.raw_input;
+    }
+    if (data.alleles && data.alleles.length > 0) {
+      clearAllAlleles();
+      data.alleles.forEach(a => addAlleleTag(a));
+    }
+    toast(`📥 Loaded inputs for Job #${jobId} into prediction form! You can now adjust parameters and re-run.`, 'success');
+  } catch (e) {
+    toast('Failed to load job inputs: ' + e, 'error');
+  }
+}
+
+async function loadJobById(jobId, btnEl = null) {
+  if (btnEl) {
+    btnEl.disabled = true;
+    btnEl.textContent = '⏳ Loading...';
+  }
+  try {
+    setStatus('running', `Loading Job #${jobId}...`);
+    switchTab('results');
+
+    // Highlight row in jobs table
+    document.querySelectorAll('#jobs-board-body tr').forEach(r => r.style.backgroundColor = '');
+    const activeRow = btnEl ? btnEl.closest('tr') : document.querySelector(`button[onclick*="loadJobById('${jobId}'"]`)?.closest('tr');
+    if (activeRow) {
+      activeRow.style.backgroundColor = 'rgba(88, 166, 255, 0.16)';
+    }
+
+    const r = await fetch(`/api/job/${jobId}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const data = await r.json();
+
+    if (data.status === 'done') {
+      const selector = document.getElementById('job-selector');
+      if (selector) selector.value = jobId;
+
+      renderResults(data);
+
+      setTimeout(() => {
+        const target = document.getElementById('results-view-container') || document.getElementById('tab-results');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 350, behavior: 'smooth' });
+        }
+      }, 100);
+
+      toast(`⚡ Loaded dashboard for Job #${jobId}`, 'success');
+    } else {
+      toast(`Job #${jobId} status: ${data.status}`, 'error');
+    }
+  } catch (err) {
+    console.error("loadJobById error:", err);
+    toast(`Failed to load Job #${jobId}: ${err.message}`, 'error');
+  } finally {
+    if (btnEl) {
+      btnEl.disabled = false;
+      btnEl.textContent = '👁️ View';
+    }
+  }
+}
+
+function loadSelectedJobFromDropdown() {
+  const jobId = document.getElementById('job-selector').value;
+  if (jobId) loadJobById(jobId);
+}
+
+function renderResults(data) {
+  setStatus('done', `Multimodal Prioritization complete — ${data.meta.n_total} candidates evaluated`);
+  document.getElementById('run-btn').disabled = false;
+
+  document.getElementById('r-total').textContent  = data.meta.n_total ?? '—';
+  document.getElementById('r-t1').textContent     = data.meta.n_tier1 ?? '—';
+  document.getElementById('r-struct').textContent = data.meta.n_struct_driven ?? '0';
+  document.getElementById('r-cov').textContent    = data.meta.cov_world_pct != null ? `${data.meta.cov_world_pct}%` : '—';
+
+  document.getElementById('results-empty-state').style.display = 'none';
+  document.getElementById('results-view-container').style.display = 'block';
+
+  if (data.charts) {
+    renderChart('chart-rank',         data.charts.rank_dist);
+    renderChart('chart-allele',       data.charts.allele_bar);
+    renderChart('chart-imm-quad',     data.charts.imm_quad);
+    renderChart('chart-concordance',  data.charts.concordance_chart);
+    renderChart('chart-volcano',      data.charts.volcano);
+    renderChart('chart-heatmap',      data.charts.heatmap);
+    requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+  }
+
+  allTableRows = data.table_data || [];
+  updateInsightsBanner(allTableRows, data.meta);
+  buildTableHeader(data.columns || [], allTableRows);
+  buildSequenceFilter(allTableRows);
+  buildAlleleFilter(allTableRows);
+  filterTable();
+}
+
+function updateInsightsBanner(rows, meta) {
+  if (!rows || rows.length === 0) return;
+
+  if (meta.top_tier1_pep && meta.top_tier1_pep !== '—') {
+    let topTitle = `${meta.top_tier1_pep} (${meta.top_tier1_mhc})`;
+    if (meta.top_tier1_identity && meta.top_tier1_identity !== 'PEPLIST') {
+      topTitle += ` • ${meta.top_tier1_identity}`;
+      if (meta.top_tier1_pos != null) topTitle += ` [Pos: ${meta.top_tier1_pos}]`;
+    }
+    document.getElementById('ins-top-tier1').textContent = topTitle;
+    document.getElementById('ins-top-tier1-sub').textContent = `Composite Score: ${parseFloat(meta.top_tier1_score).toFixed(4)}`;
+  }
+
+  document.getElementById('ins-struct-driven').textContent = meta.n_struct_driven != null ? `${meta.n_struct_driven} Candidates` : '0';
+  document.getElementById('ins-double-val').textContent    = meta.n_double_val != null ? `${meta.n_double_val} Candidates` : '0';
+
+  if (meta.cov_world_pct != null) {
+    document.getElementById('ins-cov-val').textContent = `${meta.cov_world_pct}% World`;
+    document.getElementById('ins-cov-sub').textContent = `East Asia: ${meta.cov_asia_pct || 0}%`;
+  }
+
+  // Multi-protein best epitope highlight box
+  const multiBox = document.getElementById('ins-multi-protein-box');
+  const chipsContainer = document.getElementById('ins-protein-chips');
+  if (multiBox && chipsContainer) {
+    const seqs = [...new Set(rows.map(r => r.Identity).filter(x => x && x !== 'PEPLIST'))].sort();
+    if (seqs.length > 1) {
+      multiBox.style.display = 'block';
+      chipsContainer.innerHTML = seqs.map(seq => {
+        const seqRows = rows.filter(r => r.Identity === seq);
+        const bestSeqRow = seqRows.sort((a,b) => (b.Composite_Score ?? 0) - (a.Composite_Score ?? 0))[0];
+        if (!bestSeqRow) return '';
+        const comp = parseFloat(bestSeqRow.Composite_Score || 0).toFixed(4);
+        const pos = bestSeqRow.Pos != null ? `Pos: ${bestSeqRow.Pos}` : '';
+        const tierClass = bestSeqRow.Tier === 'Tier 1' ? 'tier-Tier-1' : 'tier-Tier-2';
+        return `
+          <div class="file-chip" style="cursor:pointer; background:rgba(88,166,255,0.08); border:1px solid rgba(88,166,255,0.25); padding:6px 12px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;" onclick="filterBySequence('${seq}')" title="Click to filter table to ${seq}">
+            <span style="font-weight:700; color:var(--primary);">🧬 ${seq}</span>: 
+            <strong style="color:var(--text);">${bestSeqRow.Peptide}</strong> 
+            <span class="${tierClass}" style="padding:1px 6px; border-radius:4px; font-size:.72rem;">${bestSeqRow.Tier || 'T1'}</span>
+            <span style="color:var(--subtext); font-size:.78rem;">(${bestSeqRow.MHC} | ${pos} | Score: ${comp})</span>
+          </div>`;
+      }).join('');
+    } else {
+      multiBox.style.display = 'none';
+      chipsContainer.innerHTML = '';
+    }
+  }
+}
+
+function renderChart(containerId, htmlStr) {
+  const el = document.getElementById(containerId);
+  if (!el || !htmlStr) return;
+  el.innerHTML = htmlStr;
+  el.querySelectorAll('script').forEach(s => {
+    const ns = document.createElement('script');
+    ns.textContent = s.textContent;
+    el.appendChild(ns);
+  });
+}
+
+const COL_LABELS = {
+  Identity:'Protein ID / Identifier', Pos:'Pos', MHC:'HLA Allele', Peptide:'Peptide', Core:'Core',
+  Score_EL:'Score EL', Rank_EL:'%Rank EL', Affinity_nM:'Affinity (nM)',
+  Processing_Score:'Processing', Immunogenicity_Score:'IEDB Seq Score',
+  ImmunoStruct_Score:'ImmunoStruct 3D', Concordance:'Concordance',
+  Composite_Score:'Composite Score', Tier:'Tier'
+};
+const SHOW_COLS = ['Identity','Pos','MHC','Peptide','Core','Score_EL','Rank_EL','Affinity_nM','Processing_Score','Immunogenicity_Score','ImmunoStruct_Score','Concordance','Composite_Score','Tier'];
+
+const COL_TOOLTIPS = {
+  Identity: `<div style="font-weight:700; color:var(--primary); margin-bottom:3px;">🏷️ Protein ID / Identifier</div><div>FASTA header ID or source protein identifier.</div>`,
+  Pos: `<div style="font-weight:700; color:var(--primary); margin-bottom:3px;">📍 Position</div><div>Amino acid starting position in the protein sequence.</div>`,
+  Immunogenicity_Score: `<div style="font-weight:700; color:var(--strong); margin-bottom:3px;">🧬 Physicochemical T-Cell Immunogenicity</div><div><b>Method:</b> Calis et al., 2013 (PLoS Comput Biol)</div><div><b>Ref:</b> <i>Properties of MHC Class I Presented Peptides That Inspire Immunogenicity</i></div><div style="margin-top:3px; color:var(--subtext);">Score &gt; 0 indicates CD8+ T-cell activation potential.</div>`,
+  Rank_EL: `<div style="font-weight:700; color:var(--primary); margin-bottom:3px;">🎯 %Rank EL (Presentation)</div><div><b>Method:</b> Reynisson et al., 2020 (Nucleic Acids Res)</div><div><b>Model:</b> <i>MHC-I Antigen Presentation ANN</i></div><div style="margin-top:3px; color:var(--subtext);">≤ 0.5%: Strong Binder (SB), ≤ 2.0%: Weak Binder (WB).</div>`,
+  Affinity_nM: `<div style="font-weight:700; color:var(--accent-purple); margin-bottom:3px;">💊 Binding Affinity (IC50)</div><div><b>Method:</b> Quantitative Binding Affinity Model (IC50 in nM)</div><div style="margin-top:3px; color:var(--subtext);">&lt; 50 nM: High, &lt; 500 nM: Moderate affinity.</div>`
+};
+
+let sortCol = 'Composite_Score', sortAsc = false;
+let activeColumns = [];
+
+function getActiveColumns(cols, rows) {
+  let baseCols = SHOW_COLS.slice();
+  if (cols && Array.isArray(cols) && cols.length > 0) {
+    const filtered = baseCols.filter(c => cols.includes(c));
+    return filtered.length > 0 ? filtered : baseCols;
+  }
+  return baseCols;
+}
+
+function buildTableHeader(cols, rows) {
+  activeColumns = getActiveColumns(cols, rows || allTableRows);
+  const thead = document.getElementById('table-head');
+  thead.innerHTML = `<tr>${activeColumns.map(c => {
+    const label = COL_LABELS[c] || c;
+    const tt = COL_TOOLTIPS[c];
+    const infoIconHtml = tt ? `
+      <span class="preset-info-wrapper" onclick="event.stopPropagation()" style="margin-left:4px;">
+        <span class="preset-info-icon" style="width:13px; height:13px; font-size:.6rem;">i</span>
+        <span class="preset-info-popover" style="font-weight:normal; text-align:left; width:280px; font-size:.72rem; text-transform:none;">${tt}</span>
+      </span>` : '';
+    return `<th onclick="sortTable('${c}')" title="Click to sort by ${c}">${label}${infoIconHtml} ${sortCol===c?(sortAsc?'▲':'▼'):''}</th>`;
+  }).join('')}</tr>`;
+}
+
+function buildSequenceFilter(rows) {
+  const sel = document.getElementById('tbl-seq');
+  if (!sel) return;
+  const seqs = [...new Set(rows.map(r => r.Identity).filter(x => x && x !== 'PEPLIST'))].sort();
+  if (seqs.length > 0) {
+    sel.style.display = 'inline-block';
+    sel.innerHTML = `<option value="">All Sequences (${seqs.length} Proteins)</option>` +
+      seqs.map(s => {
+        const count = rows.filter(r => r.Identity === s).length;
+        return `<option value="${s}">🧬 ${s} (${count})</option>`;
+      }).join('');
+  } else {
+    sel.style.display = 'none';
+    sel.innerHTML = '<option value="">All Sequences / Proteins</option>';
+  }
+}
+
+function filterBySequence(seqId) {
+  const sel = document.getElementById('tbl-seq');
+  if (sel) {
+    sel.value = seqId;
+    filterTable();
+    const tableEl = document.getElementById('result-table');
+    if (tableEl) {
+      tableEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+}
+
+function buildAlleleFilter(rows) {
+  const alleles = [...new Set(rows.map(r => r.MHC))].sort();
+  const sel = document.getElementById('tbl-allele');
+  sel.innerHTML = '<option value="">All HLA Alleles</option>' + alleles.map(a => `<option value="${a}">${a}</option>`).join('');
+}
+
+function filterTable() {
+  const q  = document.getElementById('tbl-search').value.toLowerCase().trim();
+  const seqSel = document.getElementById('tbl-seq');
+  const seq    = seqSel && seqSel.style.display !== 'none' ? seqSel.value : '';
+  const tr = document.getElementById('tbl-tier').value;
+  const al = document.getElementById('tbl-allele').value;
+
+  currentFilteredRows = allTableRows.filter(r => {
+    if (seq && r.Identity !== seq) return false;
+    if (q) {
+      const matchPep = r.Peptide?.toLowerCase().includes(q);
+      const matchCore = r.Core?.toLowerCase().includes(q);
+      const matchSeq = r.Identity?.toLowerCase().includes(q);
+      if (!matchPep && !matchCore && !matchSeq) return false;
+    }
+    if (tr === 'T1' && r.Tier !== 'Tier 1') return false;
+    if (tr === 'T12' && !['Tier 1','Tier 2'].includes(r.Tier)) return false;
+    if (tr === 'STRUCT' && r.Concordance !== '💡 Structure-Driven') return false;
+    if (al && r.MHC !== al) return false;
+    return true;
+  });
+
+  currentFilteredRows = currentFilteredRows.sort((a, b) => {
+    const va = a[sortCol] ?? 0, vb = b[sortCol] ?? 0;
+    return sortAsc ? (va > vb ? 1 : -1) : (va < vb ? 1 : -1);
+  });
+
+  currentPage = 1;
+  renderTableBody(currentFilteredRows);
+  document.getElementById('table-count').textContent = `Showing ${currentFilteredRows.length} / ${allTableRows.length} candidates`;
+}
+
+function renderTableBody(rows) {
+  const keys = activeColumns.length > 0 ? activeColumns : SHOW_COLS;
+  const tbody = document.getElementById('table-body');
+  if (rows.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="${keys.length}" style="text-align:center; padding:30px; color:var(--subtext);">No candidates match the current filter criteria.</td></tr>`;
+    document.getElementById('pagination-info').textContent = 'Page 0 of 0';
+    return;
+  }
+
+  const totalPages = Math.ceil(rows.length / pageSize);
+  currentPage = Math.max(1, Math.min(currentPage, totalPages));
+  const startIdx = (currentPage - 1) * pageSize;
+  const pageRows = rows.slice(startIdx, startIdx + pageSize);
+
+  tbody.innerHTML = pageRows.map(r => {
+    const rankVal = parseFloat(r.Rank_EL) || 0;
+    const barW = Math.max(0, Math.min(100, (100 - rankVal) / 100 * 80));
+    return `<tr>${keys.map(k => {
+      if (k === 'Identity') {
+        return `<td><span class="sample-chip" style="cursor:pointer; font-size:.76rem; padding:2px 8px; font-weight:600;" onclick="filterBySequence('${r[k]}')" title="Click to filter by ${r[k]}">🧬 ${r[k] || '—'}</span></td>`;
+      }
+      if (k === 'Pos') {
+        return `<td><span style="font-family:monospace; font-weight:600; color:var(--text);">${r[k] != null ? r[k] : '—'}</span></td>`;
+      }
+      if (k === 'Rank_EL') {
+        return `<td><div class="rank-bar-wrap"><span style="min-width:50px;">${parseFloat(r[k]||0).toFixed(2)}%</span><div class="rank-bar" style="width:${barW}px"></div></div></td>`;
+      }
+      if (k === 'Tier') {
+        const cl = r[k] === 'Tier 1' ? 'tier-Tier-1' : r[k] === 'Tier 2' ? 'tier-Tier-2' : 'tier-Tier-3';
+        return `<td class="${cl}"><strong>${r[k] || 'Tier 3'}</strong></td>`;
+      }
+      if (k === 'Concordance') {
+        const cl = r[k] === '💡 Structure-Driven' ? 'tag-struct-driven' : r[k] === '🌟 Double Validated' ? 'tag-double-val' : '';
+        return `<td class="${cl}">${r[k] || '—'}</td>`;
+      }
+      if (k === 'Affinity_nM') return `<td>${r[k] != null ? parseFloat(r[k]).toFixed(0) + ' nM' : '—'}</td>`;
+      if (k === 'Score_EL' || k === 'Processing_Score') return `<td>${r[k] != null ? parseFloat(r[k]).toFixed(4) : '—'}</td>`;
+      if (k === 'Immunogenicity_Score') return `<td>${r[k] != null ? parseFloat(r[k]).toFixed(4) : '—'}</td>`;
+      if (k === 'ImmunoStruct_Score') return `<td style="color:var(--accent-purple); font-weight:600;">${r[k] != null ? parseFloat(r[k]).toFixed(4) : '—'}</td>`;
+      if (k === 'Composite_Score') return `<td style="color:var(--strong); font-weight:700;">${r[k] != null ? parseFloat(r[k]).toFixed(4) : '—'}</td>`;
+      return `<td>${r[k] ?? '—'}</td>`;
+    }).join('')}</tr>`;
+  }).join('');
+
+  document.getElementById('pagination-info').textContent = `Page ${currentPage} of ${totalPages} (${rows.length} hits)`;
+  document.getElementById('btn-prev-page').disabled = (currentPage === 1);
+  document.getElementById('btn-next-page').disabled = (currentPage === totalPages);
+}
+
+function changePage(delta) { currentPage += delta; renderTableBody(currentFilteredRows); }
+
+function sortTable(col) {
+  if (sortCol === col) sortAsc = !sortAsc;
+  else { sortCol = col; sortAsc = false; }
+  buildTableHeader(activeColumns);
+  filterTable();
+}
+
+function exportFilteredData(fmt) {
+  if (!currentFilteredRows || currentFilteredRows.length === 0) return;
+  const headers = activeColumns.length > 0 ? activeColumns : SHOW_COLS;
+  let content = fmt === 'csv' ? headers.join(",") + "\n" : headers.join("\t") + "\n";
+  currentFilteredRows.forEach(r => {
+    const row = headers.map(h => fmt === 'csv' ? `"${r[h] ?? ''}"` : `${r[h] ?? ''}`);
+    content += row.join(fmt === 'csv' ? "," : "\t") + "\n";
+  });
+  const blob = new Blob([content], { type: fmt === 'csv' ? 'text/csv;charset=utf-8;' : 'application/vnd.ms-excel;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `multimodal_immunostruct_${new Date().getTime()}.${fmt === 'csv' ? 'csv' : 'xls'}`;
+  a.click();
+  toast(`⬇ Exported ${currentFilteredRows.length} candidates (${fmt.toUpperCase()})`, 'success');
+}
+
+function setStatus(state, msg, pct = 0) {
+  const bar  = document.getElementById('status-bar');
+  const sp   = document.getElementById('status-spinner');
+  const txt  = document.getElementById('status-text');
+  bar.classList.add('visible');
+  sp.style.display = state === 'running' ? 'block' : 'none';
+  txt.className = 'status-text' + (state==='error'?' status-error':state==='done'?' status-done':'');
+  txt.textContent = msg;
+}
+
+function loadBatchDemoFasta() {
+  const demoFastaContent = `>sp|P0DTC2|SPIKE_SARS2 Spike glycoprotein OS=Severe acute respiratory syndrome coronavirus 2 OX=2697049
+MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHAIHVSGTNGTKRFDNPVLPFNDGVYFASTEKSNIIRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFCNDPFLGVYYHKNNKSWMESEFRVYSSANNCTFEYVSQPFLMDLEGKQGNFKNLREFVFKNIDGYFKIYSKHTPINLVRDLPQGFSALEPLVDLPIGINITRFQTLLALHRSYLTPGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNFNFNGLTGTGVLTESNKKFLPFQQFGRDIADTTDAVRDPQTLEILDITPCSFGGVSVITPGTNTSNQVAVLYQDVNCTEVPVAIHADQLTPTWRVYSTGSNVFQTRAGCLIGAEHVNNSYECDIPIGAGICASYQTQTNSPRRARSVASQSIIAYTMSLGAENSVAYSNNSIIPTNFTISVTTEILPVSMTKTSVDCTMYICGDSTECSNLLLQYGSFCTQLNRALTGIAVEQDKNTQEVFAQVKQIYKTPPIKDFGGFNFSQILPDPSKPSKRSFIEDLLFNKVTLADAGFIKQYGDCLGDIAARDLICAQKFNGLTVLPPLLTDEMIAQYTSALLAGTITSGWTFGAGAALQIPFAMQMAYRFNGIGVTQNVLYENQKLIANQFNSAIGKIQDSLSSTASALGKLQDVVNQNAQALNTLVKQLSSNFGAISSVLNDILSRLDKVEAEVQIDRLITGRLQSLQTYVTQQLIRAAEIRASANLAATKMSECVLGQSKRVDFCGKGYHLMSFPQSAPHGVVFLHVTYVPAQEKNFTTAPAICHDGKAHFPREGVFVSNGTHWFVTQRNFYEPQIITTDNTFVSGNCDVVIGIVNNTVYDPLQPELDSFKEELDKYFKNHTSPDVDLGDISGINASVVNIQKEIDRLNEVAKNLNESLIDLQELGKYEQYIKWPWYIWLGFIAGLIAIVMVTIMLCCMTSCCSCLKGCCSCGSCCKFDEDDSEPVLKGVKLHYT
+
+>sp|P0DTC9|NCAP_SARS2 Nucleocapsid protein OS=Severe acute respiratory syndrome coronavirus 2 OX=2697049
+MSDNGPQNQRNAPRITFGGPSDSTGSNQNGERSGARSKQRRPQGLPNNTASWFTALTQHGKEDLKFPRGQGVPINTNSSPDDQIGYYRRATRRIRGGDGKMKDLSPRWYFYYLGTGPEAGLPYGANKDGIIWVATEGALNTPKDHIGTRNPANNAAIVLQLPQGTTLPKGFYAEGSRGGSQASSRSSSRSRNSSRNSTPGSSRGTSPARMAGNGGDAALALLLLDRLNQLESKMSGKGQQQQGQTVTKKSAAEASKKPRQKRTATKAYNVTQAFGRRGPEQTQGNFGDQELIRQGTDYKHWPQIAQFAPSASAFFGMSRIGMEVTPSGTWLTYTAAIKLDDKDPNFKDQVILLNKHIDAYKTFPPTEPKKDKKKKADETQALPQRQKKQQTVTLLPAADLDDFSKQLQQSMSSADSTQA
+`;
+
+  const blob = new Blob([demoFastaContent], { type: 'text/plain' });
+  const demoFile = new File([blob], 'SARS_CoV2_Spike_and_NC.fasta', { type: 'text/plain', lastModified: new Date().getTime() });
+
+  addBatchFiles([demoFile]);
+
+  if (batchSelectedAlleles.length === 0) {
+    loadHlaPreset('taiwan', 'batch');
+  }
+
+  toast('💡 Loaded Demo FASTA Dataset: SARS_CoV2_Spike_and_NC.fasta (2 proteins) + Default HLA Alleles', 'success');
+}
+
+function addBatchFiles(files) {
+  if (!files || files.length === 0) return;
+  const listDiv = document.getElementById('batch-file-list');
+  if (!listDiv) return;
+  Array.from(files).forEach(f => {
+    if (!batchFiles.some(b => b.name === f.name)) {
+      batchFiles.push(f);
+      const item = document.createElement('div');
+      item.className = 'sample-chip';
+      item.style.justifyContent = 'space-between';
+      item.id = `batch-file-${f.name.replace(/[^a-z0-9]/gi,'_')}`;
+      item.innerHTML = `<span>📄 <strong>${f.name}</strong> (${(f.size/1024).toFixed(1)} KB)</span> <button onclick="removeBatchFile('${f.name}')" style="background:none;border:none;color:var(--danger);cursor:pointer;margin-left:8px;">×</button>`;
+      listDiv.appendChild(item);
+    }
+  });
+  toast(`📦 Added ${files.length} batch file(s)`, 'success');
+}
+
+function removeBatchFile(name) {
+  batchFiles = batchFiles.filter(f => f.name !== name);
+  const item = document.getElementById(`batch-file-${name.replace(/[^a-z0-9]/gi,'_')}`);
+  if (item) item.remove();
+}
+
+function clearBatch() {
+  batchFiles = [];
+  const listDiv = document.getElementById('batch-file-list');
+  if (listDiv) listDiv.innerHTML = '';
+  const box = document.getElementById('batch-results-box');
+  if (box) box.style.display = 'none';
+  toast('🧹 Batch files cleared', 'success');
+}
+
+async function submitBatch() {
+  if (batchFiles.length === 0) { toast('Please add at least one batch file (.pep / .fasta).', 'error'); return; }
+  if (batchSelectedAlleles.length === 0) { toast('Please select target HLA alleles for batch execution.', 'error'); return; }
+
+  const formData = new FormData();
+  batchFiles.forEach(f => formData.append('files', f));
+  batchSelectedAlleles.forEach(a => formData.append('alleles', a));
+
+  setBatchStatus('running', 'Uploading batch files and starting multi-core execution...');
+  document.getElementById('batch-run-btn').disabled = true;
+
+  try {
+    const r = await fetch('/api/predict_batch', { method: 'POST', body: formData });
+    const data = await r.json();
+    if (data.error) {
+      setBatchStatus('error', data.error);
+      document.getElementById('batch-run-btn').disabled = false;
+      return;
+    }
+    currentJobId = data.job_id;
+    pollJob(data.job_id, 'batch');
+    refreshJobsBoard();
+  } catch (err) {
+    setBatchStatus('error', 'Batch submission failed: ' + err);
+    document.getElementById('batch-run-btn').disabled = false;
+  }
+}
+
+function setBatchStatus(state, msg, pct = 0) {
+  const bar = document.getElementById('batch-status');
+  const txt = document.getElementById('batch-status-text');
+  const sp  = document.getElementById('batch-spinner');
+  if (!bar) return;
+  bar.classList.add('visible');
+  sp.style.display = state === 'running' ? 'block' : 'none';
+  txt.className = 'status-text' + (state==='error'?' status-error':state==='done'?' status-done':'');
+  txt.textContent = msg;
+}
+
+function toast(msg, type = 'success') {
+  const el = document.createElement('div');
+  el.className = `toast-msg ${type}`;
+  el.textContent = msg;
+  document.getElementById('toast').appendChild(el);
+  setTimeout(() => el.remove(), 3800);
+}
+</script>
+
+</body>
+</html>

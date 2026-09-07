@@ -240,26 +240,46 @@
       box-shadow: 0 0 8px rgba(88,166,255,.5);
       transform: scale(1.1);
     }
+    .preset-info-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
     .preset-info-popover {
       visibility: hidden;
       opacity: 0;
       position: absolute;
       top: calc(100% + 8px);
       left: 0;
-      width: 380px;
-      max-width: 88vw;
+      width: max-content;
+      min-width: 260px;
+      max-width: min(420px, 85vw);
+      max-height: 75vh;
+      overflow-y: auto;
       background: #161b22;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(88,166,255,.3);
       border-radius: 8px;
       padding: 12px 14px;
       color: var(--text);
       font-size: .76rem;
       line-height: 1.45;
-      box-shadow: 0 8px 24px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.05);
-      z-index: 1000;
+      box-shadow: 0 8px 24px rgba(0,0,0,.85), 0 0 0 1px rgba(88,166,255,.2);
+      z-index: 9999;
       pointer-events: none;
       transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
       transform: translateY(4px);
+      white-space: normal !important;
+      word-wrap: break-word !important;
+      word-break: break-word !important;
+      overflow-wrap: anywhere !important;
+      box-sizing: border-box !important;
+    }
+    .preset-info-popover::-webkit-scrollbar {
+      width: 5px;
+    }
+    .preset-info-popover::-webkit-scrollbar-thumb {
+      background: rgba(88,166,255,0.4);
+      border-radius: 3px;
     }
     .preset-info-wrapper:hover .preset-info-popover,
     .preset-info-wrapper:focus-within .preset-info-popover {
@@ -267,6 +287,10 @@
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
+    }
+    th:nth-last-child(-n+5) .preset-info-popover {
+      left: auto;
+      right: 0;
     }
     .popover-header {
       border-bottom: 1px solid var(--border2);
@@ -755,7 +779,7 @@
               <span class="icon">✏️</span> Sequence Input
               <div class="preset-info-wrapper" style="margin-left:4px;">
                 <span class="preset-info-icon" title="Click or hover to view supported sequence formats and file types">i</span>
-                <div class="preset-info-popover" style="width:420px; left:0;">
+                <div class="preset-info-popover" style="max-width:min(420px, 85vw); left:0;">
                   <div class="popover-header">
                     <div class="popover-title">📋 Supported Sequence Formats &amp; File Types</div>
                   </div>
@@ -1000,7 +1024,7 @@
           <span class="icon">📦</span> Batch Engine
           <div class="preset-info-wrapper" style="margin-left:4px;">
             <span class="preset-info-icon" title="View supported batch sequence formats and file types">i</span>
-            <div class="preset-info-popover" style="width:420px; left:0;">
+            <div class="preset-info-popover" style="max-width:min(420px, 85vw); left:0;">
               <div class="popover-header">
                 <div class="popover-title">📦 Batch File Formats &amp; Specifications</div>
               </div>
@@ -1294,7 +1318,7 @@
             <span class="icon">📋</span> Prediction Results &amp; Advanced Insights Table
             <div class="preset-info-wrapper" style="margin-left:8px;">
               <span class="preset-info-icon">i</span>
-              <div class="preset-info-popover" style="width:440px; right:0; left:auto;">
+              <div class="preset-info-popover" style="max-width:min(440px, 85vw); right:0; left:auto;">
                 <div class="popover-header">ℹ️ Prediction Methods &amp; Literature Sources</div>
                 <div style="margin-top:8px; display:flex; flex-direction:column; gap:10px;">
                   <div style="border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:8px;">
@@ -2688,7 +2712,7 @@ function buildTableHeader(cols, rows) {
     const infoIconHtml = tt ? `
       <span class="preset-info-wrapper" onclick="event.stopPropagation()" style="margin-left:4px;">
         <span class="preset-info-icon" style="width:13px; height:13px; font-size:.6rem;" title="View calculation details">i</span>
-        <span class="preset-info-popover" style="font-weight:normal; text-align:left; width:300px; font-size:.72rem; text-transform:none;">${tt}</span>
+        <span class="preset-info-popover" style="font-weight:normal; text-align:left; max-width:min(320px, 80vw); width:max-content; min-width:220px; font-size:.74rem; text-transform:none;">${tt}</span>
       </span>` : '';
     return `<th onclick="sortTable('${c}')" title="Click to sort by ${c}">${label}${infoIconHtml} ${sortCol===c?(sortAsc?'▲':'▼'):''}</th>`;
   }).join('')}</tr>`;

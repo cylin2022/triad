@@ -92,6 +92,7 @@ def parse_output(raw: str, include_ba: bool = False) -> pd.DataFrame:
             if m:
                 g = m.groups()
                 rows.append({
+                    "Identity": g[10] if g[10] else "PEPLIST",
                     "Pos": int(g[0]),
                     "MHC": g[1],
                     "Peptide": g[2],
@@ -101,7 +102,6 @@ def parse_output(raw: str, include_ba: bool = False) -> pd.DataFrame:
                     "Score_BA": float(g[13]),
                     "Affinity_nM": float(g[14]),
                     "Rank_BA": float(g[15]) if g[15] else None,
-                    "Identity": g[10],
                     "BindLevel": g[16] if g[16] else "",
                 })
         else:
@@ -109,6 +109,7 @@ def parse_output(raw: str, include_ba: bool = False) -> pd.DataFrame:
             if m:
                 g = m.groups()
                 rows.append({
+                    "Identity": g[10] if g[10] else "PEPLIST",
                     "Pos": int(g[0]),
                     "MHC": g[1],
                     "Peptide": g[2],
@@ -116,13 +117,15 @@ def parse_output(raw: str, include_ba: bool = False) -> pd.DataFrame:
                     "Score_EL": float(g[11]),
                     "Rank_EL": float(g[12]),
                     "Exp": float(g[13]) if g[13] else None,
-                    "Identity": g[10],
                     "BindLevel": g[14] if g[14] else "",
                 })
 
     df = pd.DataFrame(rows)
-    if not df.empty and "Rank_EL" in df.columns:
-        df = df.sort_values("Rank_EL").reset_index(drop=True)
+    if not df.empty:
+        cols = ["Identity", "Pos", "MHC", "Peptide", "Core"] + [c for c in df.columns if c not in ["Identity", "Pos", "MHC", "Peptide", "Core"]]
+        df = df[cols]
+        if "Rank_EL" in df.columns:
+            df = df.sort_values("Rank_EL").reset_index(drop=True)
     return df
 
 

@@ -23,3 +23,11 @@ netmhcpan_platform/uploads/
 nextgen_platform/results/
 nextgen_platform/uploads/
 .DS_Store
+
+# Internal design, proposal, and planning documents
+plan.md
+proposal.md
+integrated_output.md
+immunStruct.md
+advanced_features_plan
+

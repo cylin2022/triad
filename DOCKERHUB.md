@@ -206,8 +206,8 @@ curl -O http://localhost:5001/api/download/<JOB_ID>/csv
 
 ## 🔬 Literature & References
 
-1. **NetMHCpan Presentation Model**:Reynisson B, et al. *NetMHCpan-4.1 and NetMHCIIpan-4.0: improved predictions of MHC antigen presentation.* **Nucleic Acids Res.** 2020;48(W1):W449-W454. [doi:10.1093/nar/gkaa379](https://doi.org/10.1093/nar/gkaa379)
-2. **T-Cell Immunogenicity Model**:Calis JJ, et al. *Properties of MHC Class I Presented Peptides That Inspire Immunogenicity.* **PLoS Comput Biol.** 2013;9(10):e1003266. [doi:10.1371/journal.pcbi.1003266](https://doi.org/10.1371/journal.pcbi.1003266)
+1. **NetMHCpan Presentation Model**: Reynisson B, et al. *NetMHCpan-4.1 and NetMHCIIpan-4.0: improved predictions of MHC antigen presentation.* **Nucleic Acids Res.** 2020;48(W1):W449-W454. [doi:10.1093/nar/gkaa379](https://doi.org/10.1093/nar/gkaa379)
+2. **T-Cell Immunogenicity Model**: Calis JJ, et al. *Properties of MHC Class I Presented Peptides That Inspire Immunogenicity.* **PLoS Comput Biol.** 2013;9(10):e1003266. [doi:10.1371/journal.pcbi.1003266](https://doi.org/10.1371/journal.pcbi.1003266)
 3. **Population Coverage Database**:
    Gonzalez-Galarza FF, et al. *Allele frequency net database (AFND) 2020 update.* **Nucleic Acids Res.** 2020;48(D1):D783-D788. [doi:10.1093/nar/gkz1029](https://doi.org/10.1093/nar/gkz1029)
 

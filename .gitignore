@@ -34,4 +34,10 @@ docs/
 doc/
 DOC/
 
+# Checksums & Local License Texts
+*.sha256
+*.md5
+netMHCpan-4.2_license.txt
+
+
 

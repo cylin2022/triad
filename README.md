@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/cylin2022/triad/main/static/triad_logo.png" alt="TRIAD Logo" width="560" />
+</p>
+
 # TRIAD: Multimodal T-Cell Epitope Prioritization & Immunology AI Agent Platform
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/lsbnb/triad.svg)](https://hub.docker.io/r/lsbnb/triad)

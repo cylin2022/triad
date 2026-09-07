@@ -19,7 +19,7 @@
 
 ## 🧬 Overview
 
-**TRIAD** (*Multimodal T-Cell Epitope Prioritization and Autonomous Immunology AI Agent Platform*) is an integrated, high-performance web platform designed for rapid CD8+ T-cell epitope discovery, antigen presentation prediction, 3D pMHC structural modeling, physicochemical T-cell immunogenicity scoring, and global population coverage analysis.
+**TRIAD** (*Multimodal T-Cell Epitope Prioritization and Autonomous Immunology AI Agent Platform*) is an integrated, high-performance web platform designed for rapid CD8+ T-cell epitope discovery, antigen presentation prediction, physicochemical T-cell immunogenicity scoring, and global population coverage analysis.
 
 Developed by the **Laboratory of Systems Biology and Bioinformatics (LSBNB)**, Institute of Information Science, Academia Sinica, Taiwan.
 
@@ -30,7 +30,7 @@ Developed by the **Laboratory of Systems Biology and Bioinformatics (LSBNB)**, I
 - **High-Throughput Epitope Discovery**: Supports raw peptide lists or full-length protein FASTA sequences with configurable k-mer sliding windows (8–14 aa).
 - **MHC-I Antigen Presentation ANN**: Integrates NetMHCpan-4.2 trained on over 1,000,000 mass spectrometry eluted ligands (MS-EL) and quantitative binding affinity (BA) datasets.
 - **Physicochemical T-Cell Immunogenicity**: Implements Calis et al. (2013) log-odds scoring model based on position-weighted amino acid properties at TCR-contact positions (positions 4–8).
-- **3D pMHC Structural ImmunoStruct Modeling**: Incorporates 3D structural spatial interaction features to evaluate TCR contact stability and candidate concordance.
+- **Physicochemical TCR Contact Feature Evaluation**: Evaluates T-cell receptor contact amino acid properties to predict immune activation potential and candidate concordance.
 - **Population-Aware Coverage**: Computes non-redundant population coverage across global and regional cohorts (Taiwan, East Asia, Europe, World).
 - **Multimodal Candidate Tiering**: Automatically categorizes candidates into **Tier 1** (High priority), **Tier 2** (Secondary), and **Tier 3** based on a harmonized 4-dimensional Composite Priority Index.
 - **In-Memory RAM Disk Acceleration Engine**: Parallel multi-core batch processing using `/dev/shm` for zero-disk-latency temporary sequence ingestion.

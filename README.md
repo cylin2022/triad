@@ -211,4 +211,4 @@ curl -O http://localhost:5001/api/download/<JOB_ID>/csv
 
 **Laboratory of Systems Biology and Bioinformatics (LSBNB)**  
 Institute of Information Science, Academia Sinica, Taipei, TAIWAN.  
-Web: [https://hub.docker.io/r/lsbnb/triad](https://hub.docker.io/r/lsbnb/triad)
+Web: [https://hub.docker.com/r/lsbnb/triad](https://hub.docker.com/r/lsbnb/triad)

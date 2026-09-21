@@ -171,6 +171,30 @@
     }
     .sample-chip:hover { background: var(--primary-dim); border-color: var(--primary); transform: translateY(-1px); }
 
+    /* Species Toggle Switch */
+    .species-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--subtext);
+      padding: 6px 16px;
+      font-size: .84rem;
+      font-weight: 600;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all .2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .species-toggle-btn:hover {
+      color: var(--text);
+    }
+    .species-toggle-btn.active {
+      background: linear-gradient(135deg, var(--primary), #3b82f6);
+      color: #ffffff;
+      box-shadow: 0 2px 10px rgba(88, 166, 255, .35);
+    }
+
     .allele-wrap { position: relative; }
     .allele-input-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
     .allele-input-row input { flex: 1; }
@@ -604,6 +628,28 @@
     <button class="tab-btn" onclick="switchTab('about')" id="tab-about">ℹ️ Multimodal Architecture (immunStruct.md)</button>
   </div>
 
+  <!-- ── Species Selector Bar ────────────────────────────── -->
+  <div style="background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:12px 18px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-size:1.4rem;">🧬</span>
+      <div>
+        <div style="font-weight:700; font-size:.92rem; color:var(--text); display:flex; align-items:center; gap:8px;">
+          Target Organism &amp; MHC System
+          <span style="font-size:.7rem; padding:2px 7px; border-radius:10px; background:var(--panel2); border:1px solid var(--border); color:var(--strong);">Species-Aware</span>
+        </div>
+        <div style="font-size:.75rem; color:var(--subtext);" id="species-desc">Current: Human Clinical Mode (HLA-A/B/C &amp; Population Genetics)</div>
+      </div>
+    </div>
+    <div class="species-toggle-group" style="display:inline-flex; background:var(--panel2); border:1px solid var(--border); border-radius:30px; padding:3px;">
+      <button type="button" id="btn-species-human" class="species-toggle-btn active" onclick="setSpecies('human')">
+        👨‍⚕️ Human (HLA)
+      </button>
+      <button type="button" id="btn-species-mouse" class="species-toggle-btn" onclick="setSpecies('mouse')">
+        🐭 Mouse (H-2)
+      </button>
+    </div>
+  </div>
+
   <!-- ════════════════════════════════════════════════════ -->
   <!-- TAB: PREDICT                                        -->
   <!-- ════════════════════════════════════════════════════ -->
@@ -677,79 +723,81 @@
 
         <div class="card">
           <div class="card-title">
-            <div class="card-title-left"><span class="icon">🎯</span> HLA Alleles Selection &amp; Regional Presets</div>
-            <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearAllAlleles()">Clear All</button>
+            <div class="card-title-left" id="allele-card-title-predict"><span class="icon">🎯</span> HLA Alleles Selection &amp; Regional Presets</div>
+            <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearAllAlleles('predict')">Clear All</button>
           </div>
           <div class="allele-wrap">
             <div class="allele-input-row">
-              <input type="text" id="allele-search" placeholder="Search allele (e.g. HLA-A02:01, HLA-A11:01)..."
-                autocomplete="off" oninput="searchAlleles(this.value)" onfocus="searchAlleles(this.value)">
+              <input type="text" id="allele-search" placeholder="Search HLA allele (e.g. HLA-A*02:01, HLA-A*11:01)..."
+                autocomplete="off" oninput="searchAlleles(this.value, 'predict')" onfocus="searchAlleles(this.value, 'predict')">
             </div>
 
             <!-- Regional Common HLA Presets & Custom File Upload -->
             <div style="margin-bottom:10px;">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
                 <div style="font-size:.75rem; color:var(--subtext); display:inline-flex; align-items:center;">
-                  ⚡ Quick Regional Presets &amp; File Upload:
+                  ⚡ Quick Presets &amp; File Upload:
                   <div class="preset-info-wrapper">
-                    <span class="preset-info-icon" title="View details about HLA lists and data sources">i</span>
+                    <span class="preset-info-icon" title="View details about allele lists and data sources">i</span>
                     <div class="preset-info-popover">
                       <div class="popover-header">
-                        <div class="popover-title">🧬 HLA Regional Presets &amp; Data Sources</div>
+                        <div class="popover-title">🧬 MHC / HLA Regional &amp; Strain Sources</div>
                       </div>
                       <div class="popover-body">
-                        <div class="popover-item">
-                          <div class="popover-item-title">🇹🇼 Taiwan Common (High-Frequency Taiwanese HLA List)</div>
-                          <div class="popover-item-desc">
-                            <strong>Data Sources:</strong> AFND (Allele Frequency Net Database) Han Taiwanese datasets, Tzu Chi Marrow Repository, and local immunogenetics studies.<br>
-                            <strong>Included Alleles:</strong><br>
-                            • HLA-A: <code>HLA-A*11:01</code> (Top frequency ~45%), <code>A*24:02</code>, <code>A*02:07</code> (Han-specific subtype), <code>A*33:03</code><br>
-                            • HLA-B: <code>HLA-B*40:01</code>, <code>B*58:01</code> (High frequency / ADR biomarker), <code>B*13:01</code><br>
-                            • HLA-C: <code>HLA-C*07:02</code>, <code>C*01:02</code>
+                        <div class="popover-human">
+                          <div class="popover-item">
+                            <div class="popover-item-title">🇹🇼 Taiwan Common (High-Frequency Taiwanese HLA List)</div>
+                            <div class="popover-item-desc">
+                              <strong>Data Sources:</strong> AFND Han Taiwanese datasets, Tzu Chi Marrow Repository.<br>
+                              • HLA-A: <code>HLA-A*11:01</code> (~45%), <code>A*24:02</code>, <code>A*02:07</code>, <code>A*33:03</code><br>
+                              • HLA-B: <code>HLA-B*40:01</code>, <code>B*58:01</code>, <code>B*13:01</code> | HLA-C: <code>C*07:02</code>, <code>C*01:02</code>
+                            </div>
+                          </div>
+                          <div class="popover-item" style="margin-top:8px;">
+                            <div class="popover-item-title">🌏 Asia Common (East / Southeast Asian Sets)</div>
+                            <div class="popover-item-desc">
+                              • HLA-A: <code>HLA-A*11:01</code>, <code>A*24:02</code>, <code>A*02:01</code>, <code>A*02:06</code><br>
+                              • HLA-B: <code>HLA-B*40:01</code>, <code>B*15:02</code>, <code>B*51:01</code> | HLA-C: <code>C*07:02</code>, <code>C*03:04</code>
+                            </div>
+                          </div>
+                          <div class="popover-item" style="margin-top:8px;">
+                            <div class="popover-item-title">🌍 Europe &amp; 🌐 World Common</div>
+                            <div class="popover-item-desc">
+                              IEDB / AFND Global &amp; Caucasian highly representative reference allele panel.
+                            </div>
                           </div>
                         </div>
-                        <div class="popover-item" style="margin-top:8px;">
-                          <div class="popover-item-title">🌏 Asia Common (Common Asian HLA Alleles)</div>
-                          <div class="popover-item-desc">
-                            <strong>Data Sources:</strong> IEDB &amp; AFND East/Southeast Asian population reference sets.<br>
-                            <strong>Included Alleles:</strong><br>
-                            • HLA-A: <code>HLA-A*11:01</code>, <code>A*24:02</code>, <code>A*02:01</code>, <code>A*02:06</code> (East Asian high frequency)<br>
-                            • HLA-B: <code>HLA-B*40:01</code>, <code>B*15:02</code> (SE Asian / South Chinese high frequency), <code>B*51:01</code><br>
-                            • HLA-C: <code>HLA-C*07:02</code>, <code>C*03:04</code>
-                          </div>
-                        </div>
-                        <div class="popover-item" style="margin-top:8px;">
-                          <div class="popover-item-title">🌍 Europe &amp; 🌐 World Common</div>
-                          <div class="popover-item-desc">
-                            <strong>Data Sources:</strong> IEDB / AFND Global &amp; Caucasian highly representative reference allele panel.
+                        <div class="popover-mouse" style="display:none;">
+                          <div class="popover-item">
+                            <div class="popover-item-title">🐭 Mouse Common (Murine H-2 Model Strains)</div>
+                            <div class="popover-item-desc">
+                              <strong>Model Strains:</strong> Inbred laboratory mice for preclinical oncology and vaccine studies.<br>
+                              • <strong>C57BL/6 (H-2<sup>b</sup>)</strong>: <code>H-2-Kb</code>, <code>H-2-Db</code> (For MC38, B16F10, LLC models)<br>
+                              • <strong>BALB/c (H-2<sup>d</sup>)</strong>: <code>H-2-Kd</code>, <code>H-2-Dd</code>, <code>H-2-Ld</code> (For 4T1, CT26 models)<br>
+                              • <strong>C3H (H-2<sup>k</sup>)</strong>: <code>H-2-Kk</code>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <label for="hla-file-input" class="sample-chip" style="cursor:pointer; background:var(--primary-dim); border-color:var(--primary); color:var(--primary);" title="Upload your own custom HLA list file (.txt, .csv, .tsv)">
-                  📁 Upload Custom HLA List (.txt/.csv)
-                  <input type="file" id="hla-file-input" accept=".txt,.csv,.tsv" style="display:none;" onchange="uploadCustomHlaFile(event)">
+                <label for="hla-file-input" class="sample-chip" style="cursor:pointer; background:var(--primary-dim); border-color:var(--primary); color:var(--primary);" title="Upload your own custom HLA/H-2 list file (.txt, .csv, .tsv)">
+                  📁 Upload Custom File (.txt/.csv)
+                  <input type="file" id="hla-file-input" accept=".txt,.csv,.tsv" style="display:none;" onchange="uploadCustomHlaFile(event, 'predict')">
                 </label>
               </div>
-              <div style="display:flex; flex-wrap:wrap; gap:6px;">
-                <button class="sample-chip" onclick="loadHlaPreset('taiwan')"
-                  title="🇹🇼 Taiwan Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:07, HLA-A*33:03, HLA-B*40:01, HLA-B*58:01, HLA-B*13:01, HLA-C*07:02, HLA-C*01:02">
-                  🇹🇼 Taiwan Common
-                </button>
-                <button class="sample-chip" onclick="loadHlaPreset('asia')"
-                  title="🌏 Asia Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:01, HLA-A*02:06, HLA-B*40:01, HLA-B*15:02, HLA-B*51:01, HLA-C*07:02, HLA-C*03:04">
-                  🌏 Asia Common
-                </button>
-                <button class="sample-chip" onclick="loadHlaPreset('europe')"
-                  title="🌍 Europe Common: HLA-A*02:01, HLA-A*01:01, HLA-A*03:01, HLA-B*07:02, HLA-B*08:01, HLA-B*44:02, HLA-C*07:01, HLA-C*05:01">
-                  🌍 Europe Common
-                </button>
-                <button class="sample-chip" onclick="loadHlaPreset('world')"
-                  title="🌐 World Common: HLA-A*02:01, HLA-A*01:01, HLA-A*11:01, HLA-A*24:02, HLA-B*07:02, HLA-B*44:02, HLA-B*15:01, HLA-C*07:01, HLA-C*04:01">
-                  🌐 World Common
-                </button>
+              <div class="presets-human" style="display:flex; flex-wrap:wrap; gap:6px;">
+                <button class="sample-chip" onclick="loadHlaPreset('taiwan', 'predict')">🇹🇼 Taiwan Common</button>
+                <button class="sample-chip" onclick="loadHlaPreset('asia', 'predict')">🌏 Asia Common</button>
+                <button class="sample-chip" onclick="loadHlaPreset('europe', 'predict')">🌍 Europe Common</button>
+                <button class="sample-chip" onclick="loadHlaPreset('world', 'predict')">🌐 World Common</button>
+              </div>
+              <div class="presets-mouse" style="display:none; flex-wrap:wrap; gap:6px;">
+                <button class="sample-chip" onclick="loadMousePreset('b6', 'predict')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 C57BL/6 (B6)</button>
+                <button class="sample-chip" onclick="loadMousePreset('balb', 'predict')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 BALB/c</button>
+                <button class="sample-chip" onclick="loadMousePreset('c3h', 'predict')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 C3H</button>
+                <button class="sample-chip" onclick="loadMousePreset('all_mouse', 'predict')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 All Common Strains</button>
               </div>
             </div>
 
@@ -887,78 +935,80 @@
       <!-- Target HLA Alleles Selection for Batch -->
       <div class="card" style="background:var(--panel2); margin:0;">
         <div class="card-title">
-          <div class="card-title-left"><span class="icon">🎯</span> Target HLA Alleles for Batch</div>
+          <div class="card-title-left" id="allele-card-title-batch"><span class="icon">🎯</span> Target HLA Alleles &amp; Regional Presets</div>
           <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearAllAlleles('batch')">Clear All</button>
         </div>
         <div class="allele-wrap">
           <div class="allele-input-row">
-            <input type="text" id="batch-allele-search" placeholder="Search allele (e.g. HLA-A02:01, HLA-A11:01)..."
+            <input type="text" id="batch-allele-search" placeholder="Search HLA allele (e.g. HLA-A*02:01, HLA-A*11:01)..."
               autocomplete="off" oninput="searchAlleles(this.value,'batch')" onfocus="searchAlleles(this.value,'batch')">
           </div>
 
           <div style="margin-bottom:10px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
               <div style="font-size:.75rem; color:var(--subtext); display:inline-flex; align-items:center;">
-                ⚡ Regional Presets &amp; Custom HLA File:
+                ⚡ Quick Presets &amp; File Upload:
                 <div class="preset-info-wrapper">
-                  <span class="preset-info-icon" title="View details about HLA lists and data sources">i</span>
+                  <span class="preset-info-icon" title="View details about allele lists and data sources">i</span>
                   <div class="preset-info-popover">
                     <div class="popover-header">
-                      <div class="popover-title">🧬 HLA Regional Presets &amp; Data Sources</div>
+                      <div class="popover-title">🧬 MHC / HLA Regional &amp; Strain Sources</div>
                     </div>
                     <div class="popover-body">
-                      <div class="popover-item">
-                        <div class="popover-item-title">🇹🇼 Taiwan Common (High-Frequency Taiwanese HLA List)</div>
-                        <div class="popover-item-desc">
-                          <strong>Data Sources:</strong> AFND (Allele Frequency Net Database) Han Taiwanese datasets, Tzu Chi Marrow Repository, and local immunogenetics studies.<br>
-                          <strong>Included Alleles:</strong><br>
-                          • HLA-A: <code>HLA-A*11:01</code> (Top frequency ~45%), <code>A*24:02</code>, <code>A*02:07</code> (Han-specific subtype), <code>A*33:03</code><br>
-                          • HLA-B: <code>HLA-B*40:01</code>, <code>B*58:01</code> (High frequency / ADR biomarker), <code>B*13:01</code><br>
-                          • HLA-C: <code>HLA-C*07:02</code>, <code>C*01:02</code>
+                      <div class="popover-human">
+                        <div class="popover-item">
+                          <div class="popover-item-title">🇹🇼 Taiwan Common (High-Frequency Taiwanese HLA List)</div>
+                          <div class="popover-item-desc">
+                            <strong>Data Sources:</strong> AFND Han Taiwanese datasets, Tzu Chi Marrow Repository.<br>
+                            • HLA-A: <code>HLA-A*11:01</code> (~45%), <code>A*24:02</code>, <code>A*02:07</code>, <code>A*33:03</code><br>
+                            • HLA-B: <code>HLA-B*40:01</code>, <code>B*58:01</code>, <code>B*13:01</code> | HLA-C: <code>C*07:02</code>, <code>C*01:02</code>
+                          </div>
+                        </div>
+                        <div class="popover-item" style="margin-top:8px;">
+                          <div class="popover-item-title">🌏 Asia Common (East / Southeast Asian Sets)</div>
+                          <div class="popover-item-desc">
+                            • HLA-A: <code>HLA-A*11:01</code>, <code>A*24:02</code>, <code>A*02:01</code>, <code>A*02:06</code><br>
+                            • HLA-B: <code>HLA-B*40:01</code>, <code>B*15:02</code>, <code>B*51:01</code> | HLA-C: <code>C*07:02</code>, <code>C*03:04</code>
+                          </div>
+                        </div>
+                        <div class="popover-item" style="margin-top:8px;">
+                          <div class="popover-item-title">🌍 Europe &amp; 🌐 World Common</div>
+                          <div class="popover-item-desc">
+                            IEDB / AFND Global &amp; Caucasian highly representative reference allele panel.
+                          </div>
                         </div>
                       </div>
-                      <div class="popover-item" style="margin-top:8px;">
-                        <div class="popover-item-title">🌏 Asia Common (Common Asian HLA Alleles)</div>
-                        <div class="popover-item-desc">
-                          <strong>Data Sources:</strong> IEDB &amp; AFND East/Southeast Asian population reference sets.<br>
-                          <strong>Included Alleles:</strong><br>
-                          • HLA-A: <code>HLA-A*11:01</code>, <code>A*24:02</code>, <code>A*02:01</code>, <code>A*02:06</code> (East Asian high frequency)<br>
-                          • HLA-B: <code>HLA-B*40:01</code>, <code>B*15:02</code> (SE Asian / South Chinese high frequency), <code>B*51:01</code><br>
-                          • HLA-C: <code>HLA-C*07:02</code>, <code>C*03:04</code>
-                        </div>
-                      </div>
-                      <div class="popover-item" style="margin-top:8px;">
-                        <div class="popover-item-title">🌍 Europe &amp; 🌐 World Common</div>
-                        <div class="popover-item-desc">
-                          <strong>Data Sources:</strong> IEDB / AFND Global &amp; Caucasian highly representative reference allele panel.
+                      <div class="popover-mouse" style="display:none;">
+                        <div class="popover-item">
+                          <div class="popover-item-title">🐭 Mouse Common (Murine H-2 Model Strains)</div>
+                          <div class="popover-item-desc">
+                            <strong>Model Strains:</strong> Inbred laboratory mice for preclinical oncology and vaccine studies.<br>
+                            • <strong>C57BL/6 (H-2<sup>b</sup>)</strong>: <code>H-2-Kb</code>, <code>H-2-Db</code> (For MC38, B16F10, LLC models)<br>
+                            • <strong>BALB/c (H-2<sup>d</sup>)</strong>: <code>H-2-Kd</code>, <code>H-2-Dd</code>, <code>H-2-Ld</code> (For 4T1, CT26 models)<br>
+                            • <strong>C3H (H-2<sup>k</sup>)</strong>: <code>H-2-Kk</code>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <label for="batch-hla-file-input" class="sample-chip" style="cursor:pointer; background:var(--primary-dim); border-color:var(--primary); color:var(--primary);" title="Upload your own custom HLA list file (.txt, .csv, .tsv)">
-                📁 Upload Custom HLA List (.txt/.csv)
+              <label for="batch-hla-file-input" class="sample-chip" style="cursor:pointer; background:var(--primary-dim); border-color:var(--primary); color:var(--primary);" title="Upload your own custom HLA/H-2 list file (.txt, .csv, .tsv)">
+                📁 Upload Custom File (.txt/.csv)
                 <input type="file" id="batch-hla-file-input" accept=".txt,.csv,.tsv" style="display:none;" onchange="uploadCustomHlaFile(event, 'batch')">
               </label>
             </div>
-            <div style="display:flex; flex-wrap:wrap; gap:6px;">
-              <button class="sample-chip" onclick="loadHlaPreset('taiwan', 'batch')"
-                title="🇹🇼 Taiwan Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:07, HLA-A*33:03, HLA-B*40:01, HLA-B*58:01, HLA-B*13:01, HLA-C*07:02, HLA-C*01:02">
-                🇹🇼 Taiwan Common
-              </button>
-              <button class="sample-chip" onclick="loadHlaPreset('asia', 'batch')"
-                title="🌏 Asia Common: HLA-A*11:01, HLA-A*24:02, HLA-A*02:01, HLA-A*02:06, HLA-B*40:01, HLA-B*15:02, HLA-B*51:01, HLA-C*07:02, HLA-C*03:04">
-                🌏 Asia Common
-              </button>
-              <button class="sample-chip" onclick="loadHlaPreset('europe', 'batch')"
-                title="🌍 Europe Common: HLA-A*02:01, HLA-A*01:01, HLA-A*03:01, HLA-B*07:02, HLA-B*08:01, HLA-B*44:02, HLA-C*07:01, HLA-C*05:01">
-                🌍 Europe Common
-              </button>
-              <button class="sample-chip" onclick="loadHlaPreset('world', 'batch')"
-                title="🌐 World Common: HLA-A*02:01, HLA-A*01:01, HLA-A*11:01, HLA-A*24:02, HLA-B*07:02, HLA-B*44:02, HLA-B*15:01, HLA-C*07:01, HLA-C*04:01">
-                🌐 World Common
-              </button>
+            <div class="presets-human" style="display:flex; flex-wrap:wrap; gap:6px;">
+              <button class="sample-chip" onclick="loadHlaPreset('taiwan', 'batch')">🇹🇼 Taiwan Common</button>
+              <button class="sample-chip" onclick="loadHlaPreset('asia', 'batch')">🌏 Asia Common</button>
+              <button class="sample-chip" onclick="loadHlaPreset('europe', 'batch')">🌍 Europe Common</button>
+              <button class="sample-chip" onclick="loadHlaPreset('world', 'batch')">🌐 World Common</button>
+            </div>
+            <div class="presets-mouse" style="display:none; flex-wrap:wrap; gap:6px;">
+              <button class="sample-chip" onclick="loadMousePreset('b6', 'batch')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 C57BL/6 (B6)</button>
+              <button class="sample-chip" onclick="loadMousePreset('balb', 'batch')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 BALB/c</button>
+              <button class="sample-chip" onclick="loadMousePreset('c3h', 'batch')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 C3H</button>
+              <button class="sample-chip" onclick="loadMousePreset('all_mouse', 'batch')" style="border-color:var(--accent-purple); color:var(--accent-purple);">🐭 All Common Strains</button>
             </div>
           </div>
 
@@ -1293,6 +1343,7 @@
 <!-- ════════════════════════════════════════════════════ -->
 <script>
 let currentMode = 'peptide';
+let currentSpecies = 'human';
 let selectedAlleles = [];
 let batchSelectedAlleles = [];
 let batchFiles = [];
@@ -1429,46 +1480,6 @@ function setMode(mode) {
   document.getElementById('mode-fasta').classList.toggle('active', mode === 'fasta');
 }
 
-async function searchAlleles(q, ctx = 'predict') {
-  const dropdown = document.getElementById('allele-dropdown');
-  if (!q || q.length < 2) { dropdown.classList.remove('open'); return; }
-  const r = await fetch(`/api/alleles?q=${encodeURIComponent(q)}`);
-  const list = await r.json();
-  dropdown.innerHTML = '';
-  list.slice(0, 20).forEach(a => {
-    const div = document.createElement('div');
-    div.className = 'allele-option';
-    div.textContent = a;
-    div.onclick = () => { addAlleleTag(a, ctx); dropdown.classList.remove('open'); document.getElementById('allele-search').value = ''; };
-    dropdown.appendChild(div);
-  });
-  dropdown.classList.toggle('open', list.length > 0);
-}
-
-function addAlleleTag(allele, ctx = 'predict') {
-  if (selectedAlleles.includes(allele)) return;
-  selectedAlleles.push(allele);
-  const tagContainer = document.getElementById('allele-tags');
-  const tag = document.createElement('div');
-  tag.className = 'allele-tag';
-  tag.id = `tag-${allele.replace(/[^a-z0-9]/gi,'_')}`;
-  tag.innerHTML = `${allele} <button onclick="removeAllele('${allele}')">×</button>`;
-  tagContainer.appendChild(tag);
-}
-
-function removeAllele(allele) {
-  const idx = selectedAlleles.indexOf(allele);
-  if (idx > -1) selectedAlleles.splice(idx, 1);
-  const tag = document.getElementById(`tag-${allele.replace(/[^a-z0-9]/gi,'_')}`);
-  if (tag) tag.remove();
-}
-
-function clearAllAlleles() {
-  selectedAlleles = [];
-  document.getElementById('allele-tags').innerHTML = '';
-  toast('🧹 Cleared all selected HLA alleles', 'success');
-}
-
 const HLA_PRESETS = {
   taiwan: ['HLA-A*11:01','HLA-A*24:02','HLA-A*02:07','HLA-A*33:03','HLA-B*40:01','HLA-B*58:01','HLA-B*13:01','HLA-C*07:02','HLA-C*01:02'],
   asia:   ['HLA-A*11:01','HLA-A*24:02','HLA-A*02:01','HLA-A*02:06','HLA-B*40:01','HLA-B*15:02','HLA-B*51:01','HLA-C*07:02','HLA-C*03:04'],
@@ -1476,15 +1487,165 @@ const HLA_PRESETS = {
   world:  ['HLA-A*02:01','HLA-A*01:01','HLA-A*11:01','HLA-A*24:02','HLA-B*07:02','HLA-B*44:02','HLA-B*15:01','HLA-C*07:01','HLA-C*04:01']
 };
 
-function loadHlaPreset(region) {
+const MOUSE_PRESETS = {
+  b6:        ['H-2-Kb','H-2-Db'],
+  balb:      ['H-2-Kd','H-2-Dd','H-2-Ld'],
+  c3h:       ['H-2-Kk'],
+  all_mouse: ['H-2-Kb','H-2-Db','H-2-Kd','H-2-Dd','H-2-Ld']
+};
+
+function setSpecies(sp) {
+  currentSpecies = sp;
+  const isMouse = (sp === 'mouse');
+
+  // Update Toggle Button UI
+  document.getElementById('btn-species-human')?.classList.toggle('active', !isMouse);
+  document.getElementById('btn-species-mouse')?.classList.toggle('active', isMouse);
+
+  // Update Header Description
+  const descEl = document.getElementById('species-desc');
+  if (descEl) {
+    descEl.textContent = isMouse
+      ? 'Current: Mouse Preclinical Model (H-2-K/D/L & Inbred Strains: C57BL/6, BALB/c)'
+      : 'Current: Human Clinical Mode (HLA-A/B/C & Population Genetics)';
+  }
+
+  // Update Card Titles
+  const titlePredict = document.getElementById('allele-card-title-predict');
+  const titleBatch = document.getElementById('allele-card-title-batch');
+  if (titlePredict) {
+    titlePredict.innerHTML = isMouse
+      ? '<span class="icon">🎯</span> Mouse MHC (H-2) Alleles &amp; Inbred Strain Presets'
+      : '<span class="icon">🎯</span> HLA Alleles Selection &amp; Regional Presets';
+  }
+  if (titleBatch) {
+    titleBatch.innerHTML = isMouse
+      ? '<span class="icon">🎯</span> Target Mouse MHC (H-2) Alleles &amp; Inbred Strain Presets'
+      : '<span class="icon">🎯</span> Target HLA Alleles &amp; Regional Presets';
+  }
+
+  // Update Input Placeholders
+  const inputPredict = document.getElementById('allele-search');
+  const inputBatch = document.getElementById('batch-allele-search');
+  if (inputPredict) {
+    inputPredict.placeholder = isMouse
+      ? 'Search mouse allele (e.g. H-2-Kb, H-2-Db, B6, BALB/c)...'
+      : 'Search HLA allele (e.g. HLA-A*02:01, HLA-A*11:01)...';
+  }
+  if (inputBatch) {
+    inputBatch.placeholder = isMouse
+      ? 'Search mouse allele (e.g. H-2-Kb, H-2-Db, B6, BALB/c)...'
+      : 'Search HLA allele (e.g. HLA-A*02:01, HLA-A*11:01)...';
+  }
+
+  // Toggle Presets Buttons
+  document.querySelectorAll('.presets-human').forEach(el => el.style.display = isMouse ? 'none' : 'flex');
+  document.querySelectorAll('.presets-mouse').forEach(el => el.style.display = isMouse ? 'flex' : 'none');
+
+  // Toggle Popover contents
+  document.querySelectorAll('.popover-human').forEach(el => el.style.display = isMouse ? 'none' : 'block');
+  document.querySelectorAll('.popover-mouse').forEach(el => el.style.display = isMouse ? 'block' : 'none');
+
+  // Auto-switch selected alleles if current list belongs to the other species
+  if (isMouse) {
+    if (selectedAlleles.some(a => a.startsWith('HLA-'))) {
+      clearAllAlleles('predict');
+      loadMousePreset('b6', 'predict');
+    } else if (selectedAlleles.length === 0) {
+      loadMousePreset('b6', 'predict');
+    }
+    if (batchSelectedAlleles.some(a => a.startsWith('HLA-'))) {
+      clearAllAlleles('batch');
+      loadMousePreset('b6', 'batch');
+    } else if (batchSelectedAlleles.length === 0) {
+      loadMousePreset('b6', 'batch');
+    }
+  } else {
+    if (selectedAlleles.some(a => a.startsWith('H-2') || a.startsWith('H2'))) {
+      clearAllAlleles('predict');
+      loadHlaPreset('taiwan', 'predict');
+    } else if (selectedAlleles.length === 0) {
+      loadHlaPreset('taiwan', 'predict');
+    }
+    if (batchSelectedAlleles.some(a => a.startsWith('H-2') || a.startsWith('H2'))) {
+      clearAllAlleles('batch');
+      loadHlaPreset('taiwan', 'batch');
+    } else if (batchSelectedAlleles.length === 0) {
+      loadHlaPreset('taiwan', 'batch');
+    }
+  }
+
+  toast(isMouse ? '🐭 Switched to Mouse Preclinical Model (H-2)' : '👨‍⚕️ Switched to Human Clinical Mode (HLA)', 'success');
+}
+
+async function searchAlleles(q, ctx = 'predict') {
+  const suffix = ctx === 'batch' ? 'batch-' : '';
+  const dropdown = document.getElementById(suffix + 'allele-dropdown');
+  if (!q || q.length < 2) { dropdown.classList.remove('open'); return; }
+
+  const r = await fetch(`/api/alleles?q=${encodeURIComponent(q)}&species=${encodeURIComponent(currentSpecies)}`);
+  const list = await r.json();
+  dropdown.innerHTML = '';
+  list.slice(0, 20).forEach(a => {
+    const div = document.createElement('div');
+    div.className = 'allele-option';
+    div.textContent = a;
+    div.onclick = () => { addAlleleTag(a, ctx); dropdown.classList.remove('open'); document.getElementById(ctx === 'batch' ? 'batch-allele-search' : 'allele-search').value = ''; };
+    dropdown.appendChild(div);
+  });
+  dropdown.classList.toggle('open', list.length > 0);
+}
+
+function addAlleleTag(allele, ctx = 'predict') {
+  const arr = ctx === 'batch' ? batchSelectedAlleles : selectedAlleles;
+  const tagContainer = document.getElementById(ctx === 'batch' ? 'batch-allele-tags' : 'allele-tags');
+  if (arr.includes(allele)) return;
+  arr.push(allele);
+  const tag = document.createElement('div');
+  tag.className = 'allele-tag';
+  tag.id = `tag-${ctx}-${allele.replace(/[^a-z0-9]/gi,'_')}`;
+  tag.innerHTML = `${allele} <button onclick="removeAllele('${allele}','${ctx}')" aria-label="Remove">×</button>`;
+  tagContainer.appendChild(tag);
+}
+
+function removeAllele(allele, ctx = 'predict') {
+  const arr = ctx === 'batch' ? batchSelectedAlleles : selectedAlleles;
+  const idx = arr.indexOf(allele);
+  if (idx > -1) arr.splice(idx, 1);
+  const tag = document.getElementById(`tag-${ctx}-${allele.replace(/[^a-z0-9]/gi,'_')}`);
+  if (tag) tag.remove();
+}
+
+function loadHlaPreset(region, ctx = 'predict') {
   const list = HLA_PRESETS[region];
   if (!list) return;
-  list.forEach(a => addAlleleTag(a));
+  list.forEach(a => addAlleleTag(a, ctx));
   const regionNames = { taiwan:'Taiwan Common 🇹🇼', asia:'Asia Common 🌏', europe:'Europe Common 🌍', world:'World Common 🌐' };
   toast(`💡 Loaded ${regionNames[region]||region} HLA alleles (${list.length} alleles)`, 'success');
 }
 
-function uploadCustomHlaFile(event) {
+function loadMousePreset(strain, ctx = 'predict') {
+  const list = MOUSE_PRESETS[strain];
+  if (!list) return;
+  list.forEach(a => addAlleleTag(a, ctx));
+  const strainNames = { b6:'C57BL/6 (B6) 🐭', balb:'BALB/c 🐭', c3h:'C3H 🐭', all_mouse:'All Major Strains 🐭' };
+  toast(`💡 Loaded ${strainNames[strain]||strain} H-2 alleles (${list.length} alleles)`, 'success');
+}
+
+function clearAllAlleles(ctx = 'predict') {
+  if (ctx === 'batch') {
+    batchSelectedAlleles = [];
+    const el = document.getElementById('batch-allele-tags');
+    if (el) el.innerHTML = '';
+  } else {
+    selectedAlleles = [];
+    const el = document.getElementById('allele-tags');
+    if (el) el.innerHTML = '';
+  }
+  toast('🧹 Cleared all selected alleles', 'success');
+}
+
+function uploadCustomHlaFile(event, ctx = 'predict') {
   const file = event.target.files[0];
   if (!file) return;
 
@@ -1495,26 +1656,35 @@ function uploadCustomHlaFile(event) {
 
     // Split by newlines, commas, tabs, semicolons, or spaces
     const tokens = text.split(/[\r\n,\t; ]+/).map(s => s.trim()).filter(s => s.length > 0);
+    const arr = ctx === 'batch' ? batchSelectedAlleles : selectedAlleles;
     
     let addedCount = 0;
     tokens.forEach(tok => {
       let clean = tok.toUpperCase();
       if (['HLA','ALLELE','ALLELES','GENOTYPE','MHC','ID','PATIENT'].includes(clean)) return;
 
-      if (!clean.startsWith('HLA-') && !clean.startsWith('BOLA-') && !clean.startsWith('SLA-')) {
-        clean = 'HLA-' + clean;
-      }
-      if (/^HLA-[ABC]\d{2}/.test(clean)) {
-        clean = clean.replace(/^HLA-([ABC])/, 'HLA-$1*');
+      // Handle H-2 mouse alleles
+      if (/^H[-_]?2[-_]?[KDL]/i.test(tok)) {
+        let m = tok.match(/^H[-_]?2[-_]?([KDL])([a-z0-9]*)/i);
+        if (m) {
+          clean = `H-2-${m[1].toUpperCase()}${m[2].toLowerCase()}`;
+        }
+      } else {
+        if (!clean.startsWith('HLA-') && !clean.startsWith('BOLA-') && !clean.startsWith('SLA-') && !clean.startsWith('H-2-')) {
+          clean = 'HLA-' + clean;
+        }
+        if (/^HLA-[ABC]\d{2}/.test(clean)) {
+          clean = clean.replace(/^HLA-([ABC])/, 'HLA-$1*');
+        }
       }
 
-      if (!selectedAlleles.includes(clean)) {
-        addAlleleTag(clean);
+      if (!arr.includes(clean)) {
+        addAlleleTag(clean, ctx);
         addedCount++;
       }
     });
 
-    toast(`📁 Uploaded ${file.name}: Loaded ${addedCount} custom HLA alleles`, 'success');
+    toast(`📁 Uploaded ${file.name}: Loaded ${addedCount} custom alleles`, 'success');
     event.target.value = '';
   };
   reader.readAsText(file);
@@ -1523,7 +1693,7 @@ function uploadCustomHlaFile(event) {
 async function submitPrediction() {
   const input = currentMode === 'peptide' ? document.getElementById('pep-input').value.trim() : document.getElementById('fasta-input').value.trim();
   if (!input) { toast('Please enter input sequences.', 'error'); return; }
-  if (selectedAlleles.length === 0) { toast('Please select HLA alleles.', 'error'); return; }
+  if (selectedAlleles.length === 0) { toast('Please select MHC / HLA alleles.', 'error'); return; }
 
   const payload = { mode: currentMode, input, alleles: selectedAlleles, include_ba: true };
   setStatus('running', 'Submitting Multimodal job...');
@@ -2103,7 +2273,7 @@ function clearBatch() {
 
 async function submitBatch() {
   if (batchFiles.length === 0) { toast('Please add at least one batch file (.pep / .fasta).', 'error'); return; }
-  if (batchSelectedAlleles.length === 0) { toast('Please select target HLA alleles for batch execution.', 'error'); return; }
+  if (batchSelectedAlleles.length === 0) { toast('Please select target MHC / HLA alleles for batch execution.', 'error'); return; }
 
   const formData = new FormData();
   batchFiles.forEach(f => formData.append('files', f));

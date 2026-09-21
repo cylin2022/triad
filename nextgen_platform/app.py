@@ -88,11 +88,26 @@ def index():
 
 @app.route("/api/alleles")
 def api_alleles():
-    q = request.args.get("q", "").lower()
-    if q:
-        filtered = [a for a in ALL_ALLELES if q in a.lower()][:50]
+    q = request.args.get("q", "").lower().replace("*", "")
+    species = request.args.get("species", "").lower()
+
+    if species == "mouse":
+        pool = [a for a in ALL_ALLELES if a.startswith("H-2-") or a.startswith("H2-")]
+    elif species == "human":
+        pool = [a for a in ALL_ALLELES if a.startswith("HLA-")]
     else:
-        filtered = ALL_ALLELES[:50]
+        pool = ALL_ALLELES
+
+    if q:
+        is_mouse_search = any(term in q for term in ["mouse", "murine", "c57", "b6", "balb"])
+        if is_mouse_search and species != "human":
+            mouse_alleles = [a for a in ALL_ALLELES if a.startswith("H-2-") or a.startswith("H2-")]
+            filtered = [a for a in pool if q in a.lower().replace("*", "")]
+            filtered = list(dict.fromkeys(mouse_alleles + filtered))[:50]
+        else:
+            filtered = [a for a in pool if q in a.lower().replace("*", "")][:50]
+    else:
+        filtered = pool[:50]
     return jsonify(filtered)
 
 

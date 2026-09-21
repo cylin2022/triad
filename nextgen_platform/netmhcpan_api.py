@@ -33,7 +33,7 @@ TMPDIR         = get_ram_disk_tmpdir()
 
 HEADER_RE = re.compile(
     r"^\s*(\d+)\s+"            # Pos
-    r"(HLA-\S+)\s+"           # MHC
+    r"(\S+)\s+"               # MHC
     r"(\S+)\s+"               # Peptide
     r"(\S+)\s+"               # Core
     r"(\d+)\s+(\d+)\s+"       # Of, Gp
@@ -49,7 +49,7 @@ HEADER_RE = re.compile(
 
 BA_RE = re.compile(
     r"^\s*(\d+)\s+"
-    r"(HLA-\S+)\s+"
+    r"(\S+)\s+"
     r"(\S+)\s+"
     r"(\S+)\s+"
     r"(\d+)\s+(\d+)\s+"

@@ -73,9 +73,13 @@ def score_peptide(peptide: str, allele: Optional[str] = None) -> Optional[float]
         return None
 
     cterm = peplen - 1
-    mask_str = ALLELE_POSITION_MASK.get(_normalize_allele(allele))
+    norm_allele = _normalize_allele(allele)
+    mask_str = ALLELE_POSITION_MASK.get(norm_allele)
     if mask_str:
         mask_positions = [int(p) - 1 for p in mask_str.split(",")]
+    elif norm_allele and (norm_allele.startswith("H-2-") or norm_allele.startswith("H2-")):
+        # Mouse uncharacterized fallback: predominantly pocket C/D anchor (P2, P5, C-terminus)
+        mask_positions = [1, 4, cterm]
     else:
         mask_positions = [0, 1, cterm]
 

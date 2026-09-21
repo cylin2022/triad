@@ -5,6 +5,7 @@ Calculates T-cell immunogenicity scores for peptide:MHC Class I complexes.
 """
 
 import os
+import re
 import json
 import subprocess
 import tempfile
@@ -23,10 +24,16 @@ logger.setLevel(logging.INFO)
 
 def normalize_allele_for_iedb(allele: str) -> str:
     """
-    Format HLA allele string for IEDB TC1 (e.g., 'HLA-A02:01' -> 'HLA-A*02:01').
+    Format HLA / H-2 allele string for IEDB TC1 (e.g., 'HLA-A02:01' -> 'HLA-A*02:01', 'H-2-Kb' -> 'H-2-Kb').
     """
     allele = allele.strip()
-    if not allele.startswith("HLA-") and not allele.startswith("H2-"):
+    if allele.startswith("H-2") or allele.startswith("H2"):
+        # Format as H-2-Db, H-2-Kb, H-2-Kd, etc.
+        m = re.match(r"^H[-_]?2[-_]?([KDL])([a-z0-9]*)", allele, re.I)
+        if m:
+            return f"H-2-{m.group(1).upper()}{m.group(2).lower()}"
+        return allele
+    if not allele.startswith("HLA-"):
         allele = "HLA-" + allele
     if "HLA-" in allele and "*" not in allele:
         # e.g., HLA-A02:01 -> HLA-A*02:01

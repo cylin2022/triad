@@ -296,15 +296,27 @@ class BatchJob:
             s_struct = df["ImmunoStruct_Score"].fillna(0.50)
             s_breadth = df["HLA_Breadth_Score"].fillna(0.0)
 
-            # 6-Dimension Formula from immunStruct.md
-            df["Composite_Score"] = (
-                0.30 * s_pres +
-                0.10 * s_proc +
-                0.15 * s_iedb +
-                0.25 * s_struct +
-                0.10 * s_breadth +
-                0.10 * world_cov_frac
-            ).round(4)
+            # Determine if run is predominantly mouse alleles
+            is_mouse_job = any(str(a).startswith("H-2") or str(a).startswith("H2") for a in self.alleles)
+
+            # Multimodal Composite Score
+            if is_mouse_job:
+                df["Composite_Score"] = (
+                    0.35 * s_pres +
+                    0.15 * s_proc +
+                    0.20 * s_iedb +
+                    0.30 * s_struct
+                ).round(4)
+            else:
+                # 6-Dimension Formula from immunStruct.md
+                df["Composite_Score"] = (
+                    0.30 * s_pres +
+                    0.10 * s_proc +
+                    0.15 * s_iedb +
+                    0.25 * s_struct +
+                    0.10 * s_breadth +
+                    0.10 * world_cov_frac
+                ).round(4)
 
             # Assign Concordance Category (Dual-Layer Analysis)
             df["Concordance"] = df.apply(

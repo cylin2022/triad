@@ -256,13 +256,25 @@ class BatchJob:
             else:
                 s_breadth = pd.Series(0.0, index=df.index)
 
-            # Weighted Formula: 40% Pres + 25% Aff + 25% Imm + 10% Breadth
-            df["Composite_Score"] = (
-                0.40 * s_pres +
-                0.25 * s_aff +
-                0.25 * s_imm +
-                0.10 * s_breadth
-            ).round(4)
+            # Determine if run is predominantly mouse alleles
+            is_mouse_job = any(str(a).startswith("H-2") or str(a).startswith("H2") for a in self.alleles)
+
+            # Weighted Formula:
+            # Human: 40% Pres + 25% Aff + 25% Imm + 10% Breadth
+            # Mouse: 45% Pres + 25% Aff + 30% Imm (Inbred strains focus on single-strain potency)
+            if is_mouse_job:
+                df["Composite_Score"] = (
+                    0.45 * s_pres +
+                    0.25 * s_aff +
+                    0.30 * s_imm
+                ).round(4)
+            else:
+                df["Composite_Score"] = (
+                    0.40 * s_pres +
+                    0.25 * s_aff +
+                    0.25 * s_imm +
+                    0.10 * s_breadth
+                ).round(4)
 
             # Decision Tier Assignment
             def _assign_tier(row):

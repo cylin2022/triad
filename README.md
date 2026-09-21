@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/cylin2022/triad/main/static/triad_logo.png" alt="TRIAD Logo" width="560" />
+  <img src="https://raw.githubusercontent.com/cylin2022/triad/main/static/triad_logo_white.png" alt="TRIAD Logo" width="560" />
 </p>
 
 # TRIAD: Multimodal T-Cell Epitope Prioritization & Immunology AI Agent Platform

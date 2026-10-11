@@ -6,7 +6,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/lsbnb/triad.svg)](https://hub.docker.io/r/lsbnb/triad)
 [![Docker Image](https://img.shields.io/badge/docker-lsbnb%2Ftriad-blue.svg)](https://hub.docker.io/r/lsbnb/triad)
-[![Platform Version](https://img.shields.io/badge/version-v1.1-green.svg)](https://hub.docker.io/r/lsbnb/triad)
+[![Platform Version](https://img.shields.io/badge/version-v1.2-green.svg)](https://hub.docker.io/r/lsbnb/triad)
 [![Port Requirement](https://img.shields.io/badge/port%20mapping-5001%3A5001-important.svg)](https://hub.docker.io/r/lsbnb/triad)
 
 > ⚡ **CRITICAL DOCKER PORT MAPPING REQUIREMENT (`5001:5001`):**  

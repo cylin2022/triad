@@ -1,4 +1,4 @@
-# TRIAD Platform — port 5001, v1.1
+# TRIAD Platform — port 5001, v1.2
 #
 # netMHCpan-4.2 is NOT bundled in the image (its DTU license forbids
 # redistribution). Point `netMHCpan-4.2` at the directory you extracted your
@@ -15,7 +15,7 @@ services:
   triad_app:
     container_name: triad_app
     build: .
-    image: triad-platform:v1.1
+    image: triad-platform:v1.2
     ports:
       - "5001:5001"
     volumes:

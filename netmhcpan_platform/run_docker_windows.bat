@@ -18,12 +18,12 @@ docker rm triad_app >nul 2>&1
 docker stop netmhcpan-app >nul 2>&1
 docker rm netmhcpan-app >nul 2>&1
 
-docker image inspect triad-platform:v1.1 >nul 2>&1
+docker image inspect triad-platform:v1.2 >nul 2>&1
 if errorlevel 1 (
-    docker image inspect netmhcpan-platform:v1.1 >nul 2>&1
+    docker image inspect netmhcpan-platform:v1.2 >nul 2>&1
     if not errorlevel 1 (
-        echo [*] 正在建立映像檔標籤 triad-platform:v1.1...
-        docker tag netmhcpan-platform:v1.1 triad-platform:v1.1
+        echo [*] 正在建立映像檔標籤 triad-platform:v1.2...
+        docker tag netmhcpan-platform:v1.2 triad-platform:v1.2
     )
 )
 
@@ -37,7 +37,7 @@ if exist "%~dp0netMHCpan-4.2" (
 )
 
 echo [*] 正在啟動 TRIAD 平台容器 (triad_app)...
-docker run -d --name triad_app -p 5001:5001 %MOUNT_ARG% triad-platform:v1.1
+docker run -d --name triad_app -p 5001:5001 %MOUNT_ARG% triad-platform:v1.2
 
 if errorlevel 1 (
     echo.

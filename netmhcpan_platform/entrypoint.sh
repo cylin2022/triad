@@ -8,7 +8,7 @@ set -e
 BIN="${NETMHC_HOME:-/opt/netMHCpan-4.2}/Linux_x86_64/bin/netMHCpan-4.2"
 
 echo "============================================================"
-echo " TRIAD Platform (port ${FLASK_PORT:-5001}) — v1.1"
+echo " TRIAD Platform (port ${FLASK_PORT:-5001}) — v1.2"
 echo "============================================================"
 if [ -x "$BIN" ]; then
     echo "[entrypoint] netMHCpan-4.2 found at: $BIN"

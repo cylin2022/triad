@@ -27,7 +27,7 @@ from oss_binding_predictors import predict_smm, predict_comblib
 
 # ─── App Setup ────────────────────────────────────────────────────────────────
 
-PLATFORM_VERSION = "v1.1"
+PLATFORM_VERSION = "v1.2"
 
 BASE_DIR   = Path(__file__).parent
 RESULT_DIR = BASE_DIR / "results"
@@ -433,6 +433,73 @@ def download_result(job_id, fmt):
                      as_attachment=True,
                      download_name=f"netmhcpan_{job_id}.{fmt}")
 
+
+
+# ─── Population Coverage API (v1.2) ───────────────────────────────────────────
+import population_coverage as popcov
+
+@app.route("/api/coverage", methods=["POST"])
+def api_coverage():
+    """Coverage of an ALLELE PANEL — the share of people carrying one of these alleles."""
+    data = request.get_json(force=True) or {}
+    alleles = data.get("alleles") or []
+    region = data.get("region", "World")
+    if not alleles:
+        return jsonify({"error": "No alleles provided"}), 400
+    return jsonify(popcov.calculate_population_coverage(alleles, region))
+
+
+@app.route("/api/coverage/regions")
+def api_coverage_regions():
+    """Regions with frequency data, their allele pools, and the UI's region aliases."""
+    return jsonify({
+        "regions": popcov.REGIONS,
+        "aliases": popcov.REGION_ALIASES,
+        "groups": popcov.REGION_GROUPS,
+        "meta": popcov.REGION_META,
+        "top_alleles": {r: popcov.top_alleles(r, limit=25) for r in popcov.REGIONS},
+    })
+
+
+@app.route("/api/coverage/freq_table")
+def api_coverage_freq_table():
+    """
+    The raw allele-frequency tables, so the browser can recompute coverage on
+    every checkbox click without a round trip.
+
+    The browser mirrors the formula, never the data: population_coverage.py stays
+    the single source of truth for the numbers, and the JS engine is checked
+    against these same endpoints at startup.
+    """
+    table = {
+        region: {popcov.normalize_allele(a): f for a, f in freqs.items()}
+        for region, freqs in popcov.ALLELE_FREQUENCIES.items()
+    }
+    return jsonify({
+        "regions": popcov.REGIONS,
+        "aliases": popcov.REGION_ALIASES,
+        "max_locus_sum": popcov._MAX_LOCUS_SUM,
+        "table": table,
+        # Label, group, sample size and provenance note per region, so the
+        # selector can be hierarchical and can say where each table came from.
+        "meta": popcov.REGION_META,
+        "groups": popcov.REGION_GROUPS,
+        "small_sample_threshold": popcov.SMALL_SAMPLE_N,
+        "source": popcov.DATA_SOURCE,
+        "method": popcov.DATA_METHOD,
+        "generated_at": popcov.DATA_GENERATED,
+    })
+
+
+@app.route("/api/coverage/panel", methods=["POST"])
+def api_coverage_panel():
+    """Smallest high-frequency allele panel reaching a coverage goal for a region."""
+    data = request.get_json(force=True) or {}
+    return jsonify(popcov.build_panel(
+        region=data.get("region", "World"),
+        goal_pct=float(data.get("goal_pct", 90.0)),
+        max_alleles=int(data.get("max_alleles", 20)),
+    ))
 
 from resource_tuner import get_system_specs, cleanup_ram_disk
 

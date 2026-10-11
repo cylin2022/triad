@@ -1,4 +1,4 @@
-# TRIAD Platform — port 5001, v1.1
+# TRIAD Platform — port 5001, v1.2
 #
 # This image ships WITHOUT netMHCpan-4.2 itself: its academic license from
 # DTU Health Tech forbids redistribution to third parties. Each user must
@@ -12,7 +12,7 @@
 FROM python:3.10-slim
 
 LABEL org.opencontainers.image.title="triad-platform" \
-      org.opencontainers.image.version="v1.1"
+      org.opencontainers.image.version="v1.2"
 
 WORKDIR /app
 

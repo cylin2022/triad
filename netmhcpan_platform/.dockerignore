@@ -24,3 +24,8 @@ docs/
 doc/
 DOC/
 netMHCpan-4.2_license.txt
+
+# Table provenance tooling — not needed at runtime; the shipped tables in
+# population_coverage.py are the artifact, and tools/afnd.tsv is a 6 MB input
+# the generator re-downloads on demand.
+tools/

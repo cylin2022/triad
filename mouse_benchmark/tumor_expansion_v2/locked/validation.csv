@@ -1,0 +1,14 @@
+Peptide,WT,MHC,Label,PMID,Reference_ID,Tumor_Model,Context,Split,Source_Tokens,Mutation_Name,Restriction_Evidence,Assay_IDs
+ASYTPQAL,APYTPQAL,H-2-Kb,1,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_075809;Q9JIY0;name:pleckstrin homology domain-containing family o member 1 [mus musculus],Plekho1.P251S,MHC binding prediction,16007635
+FVWNFLRV,FVGNFLRV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q8R2W9;name:pantothenate kinase 3,Pank3.G321W,MHC binding prediction,16007634
+INAKRVTIM,IHAKRVTIM,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,"AAI07288;P68433;name:hist1h3i protein, partial",Hist1h3e.H114N,MHC binding prediction,16007641
+KVFNAPAL,KVFNAPAV,H-2-Kb,1,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,AAZ83265;Q9CQJ7;name:pttg3 [mus musculus],Pttg1.V53L,MHC binding prediction,16007639
+LSHYFEGVL,RSHYFEGVL,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,"EDL04164;O54950;name:protein kinase, amp-activated, gamma 1 non-catalytic subunit, partial [mus musculus]",Prkag1.R268L,MHC binding prediction,16007642
+MGNENVVEI,IGNENVVEI,H-2-Db,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,F8VQL0;NP_032617;name:hepatocyte growth factor receptor precursor [mus musculus],Met.I851M,MHC binding prediction,16007644
+MYFGHRAL,MYFGPRAL,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q8K203;name:endonuclease 8-like 3,Neil3.P90H,MHC binding prediction,16007640
+SAYQNTVHA,SGYQNTVHA,H-2-Db,1,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_081440;Q80YS5;name:leucine-rich repeat-containing protein 27 isoform a [mus musculus],Lrrc27.G330A,Single allele present,16007637
+SMPLWAKHM,SMPLWAKHV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,A2AKG8;name:focadhesin,BC057079.V1474M,MHC binding prediction,16007643
+STYTAYIV,STYTAYIG,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_083925;Q91VP7;name:transmembrane protein 101 [mus musculus],Tmem101.G96V,MHC binding prediction,15998326
+VIRLLSAL,VIRLLSAV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q9ESJ0;name:exportin-4,Xpo4.V611L,MHC binding prediction,16007638
+VMLYNTADEL,EMLYNTADEL,H-2-Db,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,O35382;name:exocyst complex component 4,Exoc4.E901V,MHC binding prediction,16007636
+VSAVTLSLL,VSTVTLSLL,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,A0A0A0MQ82;NP_057902;name:mitogen-activated protein kinase kinase kinase 6 [mus musculus],Map3k6.T552A,MHC binding prediction,16007645

@@ -1,0 +1,75 @@
+{
+  "dataset": {
+    "protein": "SARS-CoV-2 Spike Glycoprotein (P0DTC2)",
+    "length_aa": 1273,
+    "total_9mers": 1265,
+    "verified_epitopes": 55,
+    "background_peptides": 1210
+  },
+  "models": {
+    "triad_composite": {
+      "name": "TRIAD 4D Composite Score",
+      "roc_auc": 0.9584147257700976,
+      "pr_auc": 0.7929475274027062,
+      "top10_precision": 1.0,
+      "top10_recall": 0.18181818181818182,
+      "top20_precision": 1.0,
+      "top20_recall": 0.36363636363636365,
+      "top50_precision": 0.78,
+      "top50_recall": 0.7090909090909091
+    },
+    "netmhcpan_el": {
+      "name": "NetMHCpan-4.2 Presentation (Score_EL)",
+      "roc_auc": 0.9555897821187077,
+      "pr_auc": 0.7259534236890217,
+      "top10_precision": 1.0,
+      "top10_recall": 0.18181818181818182,
+      "top20_precision": 1.0,
+      "top20_recall": 0.36363636363636365,
+      "top50_precision": 0.7,
+      "top50_recall": 0.6363636363636364
+    },
+    "netmhcpan_ba": {
+      "name": "NetMHCpan-4.2 Binding Affinity (Score_BA)",
+      "roc_auc": 0.9625394440270474,
+      "pr_auc": 0.8214582091613712,
+      "top10_precision": 1.0,
+      "top10_recall": 0.18181818181818182,
+      "top20_precision": 1.0,
+      "top20_recall": 0.36363636363636365,
+      "top50_precision": 0.78,
+      "top50_recall": 0.7090909090909091
+    },
+    "tcr_immunogenicity": {
+      "name": "TCR Immunogenicity (Calis et al.)",
+      "roc_auc": 0.47926371149511654,
+      "pr_auc": 0.04342225685109419,
+      "top10_precision": 0.0,
+      "top10_recall": 0.0,
+      "top20_precision": 0.05,
+      "top20_recall": 0.01818181818181818,
+      "top50_precision": 0.06,
+      "top50_recall": 0.05454545454545454
+    }
+  },
+  "tier_enrichment": {
+    "Tier 1": {
+      "total_candidates": 13,
+      "verified_epitopes": 13,
+      "precision_pct": 100.0,
+      "recall_pct": 23.636363636363637
+    },
+    "Tier 2": {
+      "total_candidates": 29,
+      "verified_epitopes": 16,
+      "precision_pct": 55.172413793103445,
+      "recall_pct": 29.09090909090909
+    },
+    "Tier 3": {
+      "total_candidates": 1223,
+      "verified_epitopes": 26,
+      "precision_pct": 2.125919869174162,
+      "recall_pct": 47.27272727272727
+    }
+  }
+}

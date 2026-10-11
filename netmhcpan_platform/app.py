@@ -27,7 +27,7 @@ from oss_binding_predictors import predict_smm, predict_comblib
 
 # ─── App Setup ────────────────────────────────────────────────────────────────
 
-PLATFORM_VERSION = "v1.2"
+PLATFORM_VERSION = "v2.0"
 
 BASE_DIR   = Path(__file__).parent
 RESULT_DIR = BASE_DIR / "results"
@@ -434,9 +434,15 @@ def download_result(job_id, fmt):
                      download_name=f"netmhcpan_{job_id}.{fmt}")
 
 
+# ─── Vaccine Design API (v2.0) ────────────────────────────────────────────────
+# Everything below treats a SET of epitopes as the unit of design, rather than
+# individual peptide:allele rows. See epitope_set.py for the coverage model and
+# construct.py for the string-of-beads assembly and its junction audit.
 
-# ─── Population Coverage API (v1.2) ───────────────────────────────────────────
 import population_coverage as popcov
+import epitope_set as episet
+import construct as construct_mod
+
 
 @app.route("/api/coverage", methods=["POST"])
 def api_coverage():
@@ -500,6 +506,312 @@ def api_coverage_panel():
         goal_pct=float(data.get("goal_pct", 90.0)),
         max_alleles=int(data.get("max_alleles", 20)),
     ))
+
+
+def _binder_map_from_request(data) -> dict:
+    """
+    Build {peptide: [alleles]} from either an explicit map or raw prediction rows.
+
+    Callers that already hold the results table in the browser post `rows`;
+    callers working from a stored job post `job_id` and let the server read it.
+    """
+    if data.get("binder_map"):
+        return {p: list(a) for p, a in data["binder_map"].items()}
+
+    rows = data.get("rows")
+    if rows is None and data.get("job_id"):
+        with JOBS_LOCK:
+            job = JOBS.get(data["job_id"])
+        if job is not None and job.results is not None:
+            rows = job.results.to_dict(orient="records")
+        else:
+            csv_file = RESULT_DIR / f"{data['job_id']}.csv"
+            if csv_file.exists():
+                rows = pd.read_csv(csv_file).to_dict(orient="records")
+    rows = rows or []
+
+    return episet.build_binder_map(
+        rows,
+        rank_cut=float(data.get("rank_cut", episet.DEFAULT_RANK_CUT)),
+        peptides=data.get("peptides"),
+    )
+
+
+@app.route("/api/set_coverage", methods=["POST"])
+def api_set_coverage():
+    """
+    Coverage of an epitope SET: the share of people presenting at least one (and
+    at least two) of the chosen peptides. This is the number vaccine design turns
+    on — unlike panel coverage it moves as the user picks peptides.
+    """
+    data = request.get_json(force=True) or {}
+    binder_map = _binder_map_from_request(data)
+    result = episet.set_coverage(
+        binder_map,
+        region=data.get("region", "World"),
+        panel=data.get("panel") or [],
+    )
+    if data.get("all_regions"):
+        result["by_region"] = {
+            r: {
+                "coverage_pct": episet.set_coverage(binder_map, r)["coverage_pct"],
+                "coverage2_pct": episet.set_coverage(binder_map, r)["coverage2_pct"],
+            }
+            for r in popcov.REGIONS
+        }
+    return jsonify(result)
+
+
+@app.route("/api/marginal_coverage", methods=["POST"])
+def api_marginal_coverage():
+    """Percentage points each candidate peptide would add to the current set."""
+    data = request.get_json(force=True) or {}
+    all_map = _binder_map_from_request(data)
+    selected = {p: all_map.get(p, []) for p in (data.get("selected") or []) if p in all_map}
+    gains = episet.marginal_gains(
+        selected, all_map,
+        region=data.get("region", "World"),
+        objective=data.get("objective", "coverage_pct"),
+    )
+    ranked = sorted(gains.items(), key=lambda kv: -kv[1])
+    return jsonify({
+        "gains": gains,
+        "best": [{"peptide": p, "gain_pct": g} for p, g in ranked[:10] if g > 0],
+    })
+
+
+@app.route("/api/optimize_set", methods=["POST"])
+def api_optimize_set():
+    """Greedily complete an epitope set until it reaches the coverage goal."""
+    data = request.get_json(force=True) or {}
+    all_map = _binder_map_from_request(data)
+    if not all_map:
+        return jsonify({"error": "No binder peptides available to choose from."}), 400
+    return jsonify(episet.greedy_select(
+        all_map,
+        region=data.get("region", "World"),
+        goal_pct=float(data.get("goal_pct", 90.0)),
+        max_epitopes=int(data.get("max_epitopes", 20)),
+        objective=data.get("objective", "coverage_pct"),
+        seed=data.get("selected") or [],
+        tie_break=data.get("tie_break") or {},
+    ))
+
+
+@app.route("/api/construct/options")
+def api_construct_options():
+    """Linkers and terminal modules the designer offers, with their rationale."""
+    return jsonify({
+        "linkers": construct_mod.LINKERS,
+        "terminals": construct_mod.TERMINAL_MODULES,
+    })
+
+
+@app.route("/api/construct/build", methods=["POST"])
+def api_construct_build():
+    """Assemble peptides into a string-of-beads construct (no prediction run)."""
+    data = request.get_json(force=True) or {}
+    peptides = [p.strip().upper() for p in (data.get("peptides") or []) if p.strip()]
+    if not peptides:
+        return jsonify({"error": "No peptides provided"}), 400
+
+    c = construct_mod.build_construct(
+        peptides,
+        linker=data.get("linker", "AAY"),
+        n_term=data.get("n_term", "NONE"),
+        c_term=data.get("c_term", "NONE"),
+    )
+    c["fasta"] = construct_mod.to_fasta(c, name=data.get("name") or "TRIAD_multiepitope")
+    if data.get("include_dna"):
+        c["dna"] = construct_mod.back_translate(c["sequence"])
+    c["n_junction_windows"] = len(construct_mod.junction_windows(c))
+    return jsonify(c)
+
+
+@app.route("/api/construct/scan", methods=["POST"])
+def api_construct_scan():
+    """
+    Fold the assembled construct back through netMHCpan and flag every window
+    that is presented but was not one of the designed epitopes — the junctional
+    epitopes assembly created.
+    """
+    if not is_netmhc_installed():
+        return jsonify({"error": "netMHCpan-4.2 is not installed yet.",
+                        "setup_url": url_for("setup_page")}), 503
+
+    data = request.get_json(force=True) or {}
+    peptides = [p.strip().upper() for p in (data.get("peptides") or []) if p.strip()]
+    alleles = data.get("alleles") or []
+    if not peptides:
+        return jsonify({"error": "No peptides provided"}), 400
+    if not alleles:
+        return jsonify({"error": "No alleles selected"}), 400
+
+    alleles = [a.strip().replace("*", "") for a in alleles]
+    alleles = [a if a.split("-")[0] in ("HLA", "H", "BoLA", "SLA", "Mamu", "Patr", "Gogo", "DLA", "Eqca")
+               else "HLA-" + a for a in alleles]
+
+    c = construct_mod.build_construct(
+        peptides,
+        linker=data.get("linker", "AAY"),
+        n_term=data.get("n_term", "NONE"),
+        c_term=data.get("c_term", "NONE"),
+    )
+    try:
+        scan = construct_mod.scan_construct(
+            c, alleles, get_runner(),
+            lengths=data.get("lengths") or (8, 9, 10, 11),
+            rank_cut=float(data.get("rank_cut", 2.0)),
+        )
+    except Exception as e:
+        return jsonify({"error": f"Junction scan failed: {e}"}), 500
+
+    return jsonify({
+        "sequence": c["sequence"],
+        "length": c["length"],
+        "segments": c["segments"],
+        "properties": c["properties"],
+        "scan": scan,
+    })
+
+
+@app.route("/api/construct/optimize_order", methods=["POST"])
+def api_construct_optimize_order():
+    """
+    Search for the optimal epitope permutation that minimizes off-target
+    junctional epitope hits.
+    """
+    if not is_netmhc_installed():
+        return jsonify({"error": "netMHCpan-4.2 is not installed yet.",
+                        "setup_url": url_for("setup_page")}), 503
+
+    data = request.get_json(force=True) or {}
+    peptides = [p.strip().upper() for p in (data.get("peptides") or []) if p.strip()]
+    alleles = data.get("alleles") or []
+    if not peptides:
+        return jsonify({"error": "No peptides provided"}), 400
+    if not alleles:
+        return jsonify({"error": "No alleles selected"}), 400
+
+    alleles = [a.strip().replace("*", "") for a in alleles]
+    alleles = [a if a.split("-")[0] in ("HLA", "H", "BoLA", "SLA", "Mamu", "Patr", "Gogo", "DLA", "Eqca")
+               else "HLA-" + a for a in alleles]
+
+    try:
+        res = construct_mod.optimize_order(
+            peptides,
+            alleles,
+            get_runner(),
+            linker=data.get("linker", "AAY"),
+            n_term=data.get("n_term", "NONE"),
+            c_term=data.get("c_term", "NONE"),
+            lengths=data.get("lengths") or (8, 9, 10, 11),
+            rank_cut=float(data.get("rank_cut", 2.0)),
+        )
+    except Exception as e:
+        return jsonify({"error": f"Optimization failed: {e}"}), 500
+
+    return jsonify(res)
+
+
+# ─── Vaccine Construct Design History ──────────────────────────────────────────
+DESIGNS_FILE = RESULT_DIR / "saved_vaccine_designs.json"
+DESIGNS: dict[str, dict] = {}
+DESIGNS_LOCK = threading.Lock()
+
+def _load_saved_designs():
+    global DESIGNS
+    if DESIGNS_FILE.exists():
+        try:
+            with open(DESIGNS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, dict):
+                    DESIGNS = data
+        except Exception as e:
+            print(f"Warning: Failed to load saved designs: {e}")
+
+def _persist_saved_designs():
+    try:
+        with open(DESIGNS_FILE, "w", encoding="utf-8") as f:
+            json.dump(DESIGNS, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Warning: Failed to persist designs: {e}")
+
+_load_saved_designs()
+
+
+@app.route("/api/construct/designs", methods=["GET"])
+def api_get_construct_designs():
+    """Return all saved vaccine construct designs in reverse chronological order."""
+    with DESIGNS_LOCK:
+        items = list(DESIGNS.values())[::-1]
+    return jsonify(items)
+
+
+@app.route("/api/construct/designs", methods=["POST"])
+def api_save_construct_design():
+    """Save or update a vaccine construct design."""
+    data = request.get_json(force=True) or {}
+    design_id = data.get("id") or f"vax_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex[:4]}"
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    design_record = {
+        "id": design_id,
+        "name": (data.get("name") or f"Vaccine Construct #{len(DESIGNS) + 1}").strip(),
+        "timestamp": data.get("timestamp") or now,
+        "peptides": data.get("peptides") or [],
+        "linker": data.get("linker", "AAY"),
+        "n_term": data.get("n_term", "NONE"),
+        "c_term": data.get("c_term", "NONE"),
+        "sequence": data.get("sequence", ""),
+        "length": data.get("length", 0),
+        "properties": data.get("properties") or {},
+        "target_region": data.get("target_region", "East Asia"),
+        "coverage_goal": data.get("coverage_goal", 90),
+        "coverage_pct": data.get("coverage_pct", 0),
+        "coverage2_pct": data.get("coverage2_pct", 0),
+        "target_alleles": data.get("target_alleles") or [],
+        "scan_summary": data.get("scan_summary") or None,
+        "segments": data.get("segments") or [],
+        "fasta": data.get("fasta") or "",
+        "dna": data.get("dna") or "",
+    }
+    with DESIGNS_LOCK:
+        DESIGNS[design_id] = design_record
+        _persist_saved_designs()
+    return jsonify({"status": "success", "design": design_record})
+
+
+@app.route("/api/construct/designs/<design_id>", methods=["GET"])
+def api_get_construct_design(design_id: str):
+    """Get a specific saved construct design."""
+    with DESIGNS_LOCK:
+        design = DESIGNS.get(design_id)
+    if not design:
+        return jsonify({"error": "Design not found"}), 404
+    return jsonify(design)
+
+
+@app.route("/api/construct/designs/<design_id>", methods=["DELETE"])
+def api_delete_construct_design(design_id: str):
+    """Delete a saved construct design."""
+    with DESIGNS_LOCK:
+        existed = DESIGNS.pop(design_id, None)
+        if existed:
+            _persist_saved_designs()
+    if not existed:
+        return jsonify({"error": "Design not found"}), 404
+    return jsonify({"status": "deleted", "id": design_id})
+
+
+@app.route("/api/construct/designs", methods=["DELETE"])
+def api_clear_construct_designs():
+    """Clear all saved construct designs."""
+    with DESIGNS_LOCK:
+        DESIGNS.clear()
+        _persist_saved_designs()
+    return jsonify({"status": "cleared"})
+
 
 from resource_tuner import get_system_specs, cleanup_ram_disk
 

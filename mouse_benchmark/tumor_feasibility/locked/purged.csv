@@ -1,0 +1,4 @@
+Peptide,WT,MHC,Label,PMID,Reference_ID,Tumor_Model,Context,Split,Source_Tokens,Mutation_Name,Restriction_Evidence,Assay_IDs,Reason,Against_Split,Against_Peptide,Against_PMID
+FVWNFLRV,FVGNFLRV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q8R2W9;name:pantothenate kinase 3,Pank3.G321W,MHC binding prediction,16007634,same_source_protein,test,VWNFLRVNTL,36950115
+STYTAYIV,STYTAYIG,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_083925;Q91VP7;name:transmembrane protein 101 [mus musculus],Tmem101.G96V,MHC binding prediction,15998326,same_source_protein,test,VGYVHYGDWL,36950115
+VMLYNTADEL,EMLYNTADEL,H-2-Db,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,O35382;name:exocyst complex component 4,Exoc4.E901V,MHC binding prediction,16007636,same_source_protein,test,VMLYNTADEL,36950115

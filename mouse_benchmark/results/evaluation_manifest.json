@@ -1,0 +1,19 @@
+{
+  "sklearn": "1.3.0",
+  "seed": 20261009,
+  "largest_reference": "1003610",
+  "within_study_eligible_studies": 12,
+  "crossreactivity_title_references": [
+    "1003491",
+    "1020878",
+    "1020893",
+    "1021208",
+    "1022551",
+    "1023056",
+    "1025163",
+    "1026949",
+    "1036666",
+    "1253"
+  ],
+  "crossreactivity_title_pairs": 567
+}

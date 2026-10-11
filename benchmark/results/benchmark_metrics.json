@@ -1,0 +1,56 @@
+{
+  "models": {
+    "triad_composite": {
+      "name": "TRIAD Composite Score",
+      "roc_auc": 0.564984,
+      "pr_auc": 0.5310758550876559,
+      "top10_precision": 0.5,
+      "top20_precision": 0.45,
+      "top50_precision": 0.48
+    },
+    "tcr_immunogenicity": {
+      "name": "TCR Immunogenicity (Calis et al.)",
+      "roc_auc": 0.583448,
+      "pr_auc": 0.5304142513506321,
+      "top10_precision": 0.1,
+      "top20_precision": 0.15,
+      "top50_precision": 0.3
+    },
+    "netmhcpan_el": {
+      "name": "NetMHCpan-4.2 Presentation (Score_EL)",
+      "roc_auc": 0.528192,
+      "pr_auc": 0.4904266249548317,
+      "top10_precision": 0.1,
+      "top20_precision": 0.1,
+      "top50_precision": 0.38
+    },
+    "netmhcpan_ba": {
+      "name": "NetMHCpan-4.2 Binding Affinity (Score_BA)",
+      "roc_auc": 0.576768,
+      "pr_auc": 0.5542632857940732,
+      "top10_precision": 0.6,
+      "top20_precision": 0.5,
+      "top50_precision": 0.48
+    }
+  },
+  "tier_enrichment": {
+    "Tier 1": {
+      "total": 330,
+      "positive": 180,
+      "negative": 150,
+      "positive_rate": 0.5454545454545454
+    },
+    "Tier 2": {
+      "total": 81,
+      "positive": 38,
+      "negative": 43,
+      "positive_rate": 0.4691358024691358
+    },
+    "Tier 3": {
+      "total": 89,
+      "positive": 32,
+      "negative": 57,
+      "positive_rate": 0.3595505617977528
+    }
+  }
+}

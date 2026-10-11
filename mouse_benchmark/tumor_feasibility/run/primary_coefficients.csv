@@ -1,0 +1,14 @@
+feature,standardized_coefficient
+log_EL_rank,0.010387004410010442
+log_BA_rank,-0.20678616857261858
+log_affinity,-0.2595828338002206
+length,0.13250943370013335
+is_Kb,-0.174062575163323
+WT_minus_mutant_log_affinity,-0.03960151729823467
+WT_minus_mutant_log_EL_rank,-0.1494838320563161
+hydrophobic_fraction,0.028026142993456103
+aromatic_fraction,-0.06909309655014109
+charge_fraction,0.1943967662581925
+proline_fraction,0.23981299243603058
+mutation_position_fraction,0.07902940919606258
+hydrophobic_change,-0.010139860258836527

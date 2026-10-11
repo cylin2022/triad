@@ -1,0 +1,120 @@
+{
+  "locked_utc": "2026-10-10T10:59:10.465507+00:00",
+  "user_scope": "tumor_neoantigen",
+  "new_model_fit_has_started": false,
+  "prior_baseline_exposure": true,
+  "statistics": {
+    "train": {
+      "n": 100,
+      "positive": 73,
+      "negative": 27,
+      "studies": [
+        "31515258"
+      ],
+      "tumor_models": [
+        "B16F10",
+        "BBN963",
+        "MB49",
+        "UPPL1541"
+      ],
+      "by_allele": {
+        "H-2-Db": {
+          "count": 22,
+          "sum": 18
+        },
+        "H-2-Kb": {
+          "count": 78,
+          "sum": 55
+        }
+      }
+    },
+    "validation": {
+      "n": 10,
+      "positive": 3,
+      "negative": 7,
+      "studies": [
+        "33879241"
+      ],
+      "tumor_models": [
+        "E0771"
+      ],
+      "by_allele": {
+        "H-2-Db": {
+          "count": 2,
+          "sum": 1
+        },
+        "H-2-Kb": {
+          "count": 8,
+          "sum": 2
+        }
+      }
+    },
+    "test": {
+      "n": 69,
+      "positive": 49,
+      "negative": 20,
+      "studies": [
+        "36950115",
+        "40586324"
+      ],
+      "tumor_models": [
+        "CMT93",
+        "LLC1"
+      ],
+      "by_allele": {
+        "H-2-Db": {
+          "count": 33,
+          "sum": 27
+        },
+        "H-2-Kb": {
+          "count": 36,
+          "sum": 22
+        }
+      }
+    }
+  },
+  "overlap_audit": {
+    "train__validation": {
+      "sequence_or_source": 0,
+      "studies": 0,
+      "tumor_models": 0
+    },
+    "train__test": {
+      "sequence_or_source": 0,
+      "studies": 0,
+      "tumor_models": 0
+    },
+    "validation__test": {
+      "sequence_or_source": 0,
+      "studies": 0,
+      "tumor_models": 0
+    }
+  },
+  "curation_counts": {
+    "eligible": 182,
+    "not_verified_single_substitution_WT_pair": 4,
+    "not_IFNg_functional_assay": 14,
+    "second_in_vivo_process": 7,
+    "no_vaccination": 4,
+    "not_mutant_peptide_or_encoded_sequence_priming": 7,
+    "assay_tests_WT_or_other_antigen": 7
+  },
+  "conflicting_assays": 0,
+  "purged_pairs": 3,
+  "inputs": {
+    "data/iedb_mouse_kb_db.jsonl": "490d7d6b67f7f6bafd521dcd3bde1fe8745d4f0b49681ff9ea900fcc1a73c8c9",
+    "tumor_feasibility/sources/iedb_tumor_details.json": "29accafbe5ea1d296cb2af00b69c576b4643fe425fb4cf7f03e498571d588f59",
+    "tumor_feasibility/sources/smith_supp.xlsx": "29e12c25536009ddbb421ddb7bd6eb86ff0482b5a7775d2ba7f939f2bb679b7a"
+  },
+  "files": {
+    "validation.csv": "913d6a065a81eb53b9c90dc8f1bd233b2d4db6376e0ae7cb7bb02e817759099d",
+    "assay_curation.csv": "524fb4e179c20943d13577e5d292d0edb18c937e9b7af20e391932641c9277c0",
+    "purged.csv": "c341c49a55f2135e1628b7d4ff6584262a588f2f99a7d935192c7f00a3fa4f22",
+    "before_purging.csv": "7d03bb5b605e9d39b0135aa945f64ae2aafee865558fabe748c56e386b690d8b",
+    "train.csv": "b3a2a05d144aca2d8c278e13bfc6e7ff3c2479425be9de3ba5ee740061d0a928",
+    "conflicts.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "test.csv": "7259545cde7d0edcdcd0e8137bace20931168e75b88e1690e8eea3b5672bf39b"
+  },
+  "protocol_sha256": "c7096f190061a81b365ba2b483cc310ec48a1c8bf28a9afb00536b4943f71e03",
+  "prepare_sha256": "3cc3307bb6c67e8493a37c057eb40da8e67975d05e35359aa1956b2a55a62afc"
+}

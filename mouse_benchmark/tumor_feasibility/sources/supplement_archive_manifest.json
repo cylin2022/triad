@@ -1,0 +1,20 @@
+[
+  {
+    "file": "dna2021_supp.xlsx",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8059244/supplementaryFiles",
+    "member": "13073_2021_872_MOESM2_ESM.xlsx",
+    "sha256": "9c6ba95f1a1b968c136ff14d1a5a5dcb0f3cf4633dcf438e824f5f67f32cc966"
+  },
+  {
+    "file": "llc2023_supp.pdf",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10025090/supplementaryFiles",
+    "member": "mmc1.pdf",
+    "sha256": "b90e173e71a6d5703abb08c620cd432fcbba58ab59de8a595f369afc6e3c0073"
+  },
+  {
+    "file": "cmt2025_supp.pdf",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12462951/supplementaryFiles",
+    "member": "ADVS-12-e08040-s001.pdf",
+    "sha256": "5fd72da640396d5e21c8ad361bea8596f28b46cfd17f79a78af71111106b2dc6"
+  }
+]

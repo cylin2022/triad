@@ -19,6 +19,7 @@ from netmhcpan_api import NetMHCpanRunner
 from resource_tuner import get_optimal_batch_config, cleanup_ram_disk
 from immunogenicity_scorer import score_dataframe
 from population_coverage import calculate_population_coverage
+from epitope_set import build_binder_map, set_coverage
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
 
@@ -259,22 +260,22 @@ class BatchJob:
             # Determine if run is predominantly mouse alleles
             is_mouse_job = any(str(a).startswith("H-2") or str(a).startswith("H2") for a in self.alleles)
 
-            # Weighted Formula:
-            # Human: 40% Pres + 25% Aff + 25% Imm + 10% Breadth
-            # Mouse: 45% Pres + 25% Aff + 30% Imm (Inbred strains focus on single-strain potency)
+            # ── Biological Gated Multi-Modal Formula ─────────────────────────
+            # Prerequisite: Peptides must first be presented on the cell surface (s_base).
+            # Non-binders cannot activate T cells regardless of TCR-facing residues.
             if is_mouse_job:
-                df["Composite_Score"] = (
-                    0.45 * s_pres +
-                    0.25 * s_aff +
-                    0.30 * s_imm
-                ).round(4)
+                s_base = 0.55 * s_pres + 0.45 * s_aff
             else:
-                df["Composite_Score"] = (
-                    0.40 * s_pres +
-                    0.25 * s_aff +
-                    0.25 * s_imm +
-                    0.10 * s_breadth
-                ).round(4)
+                s_base = 0.50 * s_pres + 0.40 * s_aff + 0.10 * s_breadth
+
+            # TCR-contact modulation factor:
+            # Positive TCR contact propensity (bulky/aromatic side chains) boosts composite ranking,
+            # while negative propensity (small/hydrated residues) penalizes it.
+            # If peptide is a non-binder (s_base ≈ 0), score remains zero.
+            imm_raw = pd.to_numeric(df.get("Immunogenicity_Score", 0.0), errors="coerce").fillna(0.0)
+            imm_modulator = np.clip(1.0 + 0.35 * imm_raw, 0.5, 1.5)
+
+            df["Composite_Score"] = np.clip(s_base * imm_modulator, 0.0, 1.0).round(4)
 
             # Decision Tier Assignment
             def _assign_tier(row):
@@ -319,8 +320,24 @@ class BatchJob:
         n_tier2 = int((df["Tier"] == "Tier 2").sum()) if not df.empty and "Tier" in df.columns else 0
         n_tier3 = int((df["Tier"] == "Tier 3").sum()) if not df.empty and "Tier" in df.columns else 0
 
-        cov_world = calculate_population_coverage(self.alleles, "World")
-        cov_asia = calculate_population_coverage(self.alleles, "East Asia")
+        # Coverage comes in two flavours and v1.1 only reported the first one,
+        # which is why a job with no binders still showed ~95%:
+        #   panel_cov     — share of people carrying one of the alleles the user
+        #                   asked for. Fixed at submit time; says nothing about
+        #                   the predictions.
+        #   reachable_cov — share of people presenting at least one of the
+        #                   peptides that actually came back as a binder. This
+        #                   is the ceiling any vaccine built from this job can
+        #                   reach, so it is the headline figure now.
+        panel_world = calculate_population_coverage(self.alleles, "World")
+        panel_asia = calculate_population_coverage(self.alleles, "East Asia")
+
+        binder_map = build_binder_map(
+            df.to_dict(orient="records") if not df.empty else [],
+            rank_cut=2.0,
+        )
+        reach_world = set_coverage(binder_map, "World", panel=self.alleles)
+        reach_asia = set_coverage(binder_map, "East Asia", panel=self.alleles)
 
         top_imm_pep, top_imm_mhc, top_imm_score, top_imm_identity, top_imm_pos = "—", "", 0.0, "", None
         if not df.empty and "Immunogenicity_Score" in df.columns and df["Immunogenicity_Score"].notna().any():
@@ -357,8 +374,20 @@ class BatchJob:
             "n_tier1": n_tier1,
             "n_tier2": n_tier2,
             "n_tier3": n_tier3,
-            "cov_world_pct": cov_world["cumulative_coverage_pct"],
-            "cov_asia_pct": cov_asia["cumulative_coverage_pct"],
+            # Headline coverage = what the predicted binders can actually reach.
+            "cov_world_pct": reach_world["coverage_pct"],
+            "cov_asia_pct": reach_asia["coverage_pct"],
+            "cov_world_2hit_pct": reach_world["coverage2_pct"],
+            "cov_asia_2hit_pct": reach_asia["coverage2_pct"],
+            "n_binder_peptides": len(binder_map),
+            "n_responsive_alleles": reach_world["n_responsive_alleles"],
+            "uncovered_alleles": [u["allele"] for u in reach_world["uncovered_alleles"]],
+            # Panel coverage kept alongside it, clearly named.
+            "panel_cov_world_pct": panel_world["cumulative_coverage_pct"],
+            "panel_cov_asia_pct": panel_asia["cumulative_coverage_pct"],
+            "panel_cov_is_lower_bound": panel_world["is_lower_bound"],
+            "panel_unknown_alleles": panel_world["unknown_alleles"],
+            "panel_non_human_alleles": panel_world["non_human_alleles"],
             "top_imm_pep": top_imm_pep,
             "top_imm_mhc": top_imm_mhc,
             "top_imm_score": top_imm_score,

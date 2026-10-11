@@ -1,0 +1,70 @@
+[
+  {
+    "pmid": "31515258",
+    "error": "HTTP Error 500: "
+  },
+  {
+    "pmid": "31292145",
+    "error": "HTTP Error 500: "
+  },
+  {
+    "pmid": "36950115",
+    "pmcid": "PMC10025090",
+    "title": "Cancer vaccines based on whole-tumor lysate or neoepitopes with validated HLA binding outperform those with predicted HLA-binding affinity.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A36950115+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10025090/fullTextXML",
+    "sha256": "00d5a11455078f49d8c644889a62c34b6142f4c1ab0761a4126abe83369a4ccf"
+  },
+  {
+    "pmid": "40586324",
+    "pmcid": "PMC12462951",
+    "title": "Personalized Neoantigen Vaccine plus Regorafenib Increases Rgs2\u207aCD8\u207a T Cells Infiltration and Reprograms the Tumor Microenvironment in Microsatellite Stable Colorectal Cancer Liver Metastases.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A40586324+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12462951/fullTextXML",
+    "sha256": "59cad4fc80c3fe4cb4f20eecb03469d21990389dedf9becebcc739b9489acf5a"
+  },
+  {
+    "pmid": "37586771",
+    "pmcid": "PMC10432671",
+    "title": "Personalized neoantigen viro-immunotherapy platform for triple-negative breast cancer.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A37586771+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10432671/fullTextXML",
+    "sha256": "b727a351c2930c08678d183d3d165a86ea7ef3ef25ed5efda1c4c93f1f009009"
+  },
+  {
+    "pmid": "33879241",
+    "pmcid": "PMC8059244",
+    "title": "Optimized polyepitope neoantigen DNA vaccines elicit neoantigen-specific immune responses in preclinical models and in clinical translation.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A33879241+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8059244/fullTextXML",
+    "sha256": "aefbd11a56e78ace6e0a99a8ee3140815fa48a8e64630399add078bbc7e3f262"
+  },
+  {
+    "pmid": "35008270",
+    "pmcid": "PMC8750027",
+    "title": "Identification of Neoantigens in Two Murine Gastric Cancer Cell Lines Leading to the Neoantigen-Based Immunotherapy.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A35008270+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8750027/fullTextXML",
+    "sha256": "5ebb902a894c7205d86f3c9615340f05d710c137fceff005b5f34fca2f5062a6"
+  },
+  {
+    "pmid": "40738981",
+    "pmcid": "PMC12378472",
+    "title": "Neoantigen mRNA vaccines induce progenitor-exhausted T cells that support anti-PD-1 therapy in gastric cancer with peritoneal metastasis.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A40738981+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12378472/fullTextXML",
+    "sha256": "320b4012cfbc220fb837908292b42adab52d98369624b9ea5acb36959df2a617"
+  },
+  {
+    "pmid": "27799140",
+    "error": "HTTP Error 500: "
+  },
+  {
+    "pmid": "32923109",
+    "pmcid": "PMC7458608",
+    "title": "Identification of a neo-epitope dominating endogenous CD8 T cell responses to MC-38 colorectal cancer.",
+    "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A32923109+AND+SRC%3AMED&format=json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7458608/fullTextXML",
+    "sha256": "c16defebd79dc5302ff73aad3574d77ea51dacf13bcc70063bd4d2df9b2f7242"
+  }
+]

@@ -1,0 +1,9 @@
+Peptide,WT,MHC,Label,PMID,Reference_ID,Tumor_Model,Context,Split,Source_Tokens,Mutation_Name,Restriction_Evidence,Assay_IDs,Reason,Against_Peptide,Against_PMID
+ASYSLVAHI,ASYSQVAHI,H-2-Kb,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:nfe2l2,Nfe2l2_Q104L,MHC binding prediction,JEM_M19,mutant_or_WT_sequence_similarity,ASYSLVAHI,31292145
+DAYSHHSGF,DAYSHHSGV,H-2-Kb,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:cav2,Cav2_V25F,MHC binding prediction,JEM_M35,mutant_or_WT_sequence_similarity,DAYSHHSGF,31292145
+FSLSFQHPV,FSVSFQHPV,H-2-Db,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:med1,Med1_V452L,MHC binding prediction,JEM_M49,mutant_or_WT_sequence_similarity,FSLSFQHPV,31292145
+VGHFYGGL,GGHFYGGL,H-2-Kb,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:aoc2,Aoc2_G443V,MHC binding prediction,JEM_M75,mutant_or_WT_sequence_similarity,IVGHFYGGL,31292145
+IVYLYVVCV,IVYLYGVCV,H-2-Kb,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:jak1,Jak1_G654V,MHC binding prediction,JEM_M77,mutant_or_WT_sequence_similarity,IVYLYVVCV,31292145
+KGYRHKVPL,KGYRHKVPQ,H-2-Kb,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:nsd1,Nsd1_Q416L,MHC binding prediction,JEM_M83,mutant_or_WT_sequence_similarity,KGYRHKVPL,31292145
+MGVMNRRPI,MGGMNRRPI,H-2-Db,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:trp53,Trp53_G242V,MHC binding prediction,JEM_M112,mutant_or_WT_sequence_similarity,MGVMNRRPI,31292145
+ISYIPLFPHL,ISYIPLFPQL,H-2-Kb,0,31940002,PMC7144530,MC-38,SLP_vaccination_polyIC_antiCD40,test_capietto_holdout,name:ptplb,Ptplb_Q231H,MHC binding prediction,JEM_M218,mutant_or_WT_sequence_similarity,SYIPLFPHL,31292145

@@ -1,0 +1,111 @@
+{
+  "started_utc": "2026-10-08T17:59:00.451054+00:00",
+  "endpoint": "https://query-api.iedb.org/tcell_search",
+  "filters": {
+    "mhc_allele_name": "in.(H2-Kb,H2-Db)",
+    "host_organism_iri_search": "cs.{NCBITaxon:10090}",
+    "select": "tcell_id,structure_id,linear_sequence,structure_type,e_modification,reference_id,pubmed_id,reference_dates,reference_titles,qualitative_measure,mhc_class,mhc_allele_name,mhc_allele_evidence,host_organism_name,host_organism_iri,host_organism_iri_search,assay_names,assay_iris,immunization_description,direct_ex_vivo_bool,source_organism_name,parent_source_antigen_iri,parent_source_antigen_name,curated_source_antigen",
+    "order": "tcell_id.asc",
+    "limit": "1000"
+  },
+  "pages": [
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.0",
+      "content_range": "0-999/17816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1357054",
+      "content_range": "0-999/16816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1366343",
+      "content_range": "0-999/15816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1367347",
+      "content_range": "0-999/14816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1375226",
+      "content_range": "0-999/13816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1595005",
+      "content_range": "0-999/12816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1710801",
+      "content_range": "0-999/11816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1816581",
+      "content_range": "0-999/10816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1883013",
+      "content_range": "0-999/9816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1904704",
+      "content_range": "0-999/8816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1905928",
+      "content_range": "0-999/7816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.1958835",
+      "content_range": "0-999/6816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.2023189",
+      "content_range": "0-999/5816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.2723389",
+      "content_range": "0-999/4816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.4829791",
+      "content_range": "0-999/3816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.8126054",
+      "content_range": "0-999/2816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.17541416",
+      "content_range": "0-999/1816",
+      "rows": 1000
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.22780517",
+      "content_range": "0-815/816",
+      "rows": 816
+    },
+    {
+      "url": "https://query-api.iedb.org/tcell_search?mhc_allele_name=in.%28H2-Kb%2CH2-Db%29&host_organism_iri_search=cs.%7BNCBITaxon%3A10090%7D&select=tcell_id%2Cstructure_id%2Clinear_sequence%2Cstructure_type%2Ce_modification%2Creference_id%2Cpubmed_id%2Creference_dates%2Creference_titles%2Cqualitative_measure%2Cmhc_class%2Cmhc_allele_name%2Cmhc_allele_evidence%2Chost_organism_name%2Chost_organism_iri%2Chost_organism_iri_search%2Cassay_names%2Cassay_iris%2Cimmunization_description%2Cdirect_ex_vivo_bool%2Csource_organism_name%2Cparent_source_antigen_iri%2Cparent_source_antigen_name%2Ccurated_source_antigen&order=tcell_id.asc&limit=1000&tcell_id=gt.30939885",
+      "content_range": "*/0",
+      "rows": 0
+    }
+  ],
+  "rows": 17816,
+  "finished_utc": "2026-10-08T17:59:40.433320+00:00",
+  "sha256": "490d7d6b67f7f6bafd521dcd3bde1fe8745d4f0b49681ff9ea900fcc1a73c8c9"
+}

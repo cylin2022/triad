@@ -6,7 +6,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/lsbnb/triad.svg)](https://hub.docker.io/r/lsbnb/triad)
 [![Docker Image](https://img.shields.io/badge/docker-lsbnb%2Ftriad-blue.svg)](https://hub.docker.io/r/lsbnb/triad)
-[![Platform Version](https://img.shields.io/badge/version-v1.2-green.svg)](https://hub.docker.io/r/lsbnb/triad)
+[![Platform Version](https://img.shields.io/badge/version-v2.0-green.svg)](https://hub.docker.io/r/lsbnb/triad)
 [![Port Requirement](https://img.shields.io/badge/port%20mapping-5001%3A5001-important.svg)](https://hub.docker.io/r/lsbnb/triad)
 
 > ⚡ **CRITICAL DOCKER PORT MAPPING REQUIREMENT (`5001:5001`):**  
@@ -31,8 +31,10 @@ Developed by the **Laboratory of Systems Biology and Bioinformatics (LSBNB)**, I
 - **MHC-I Antigen Presentation ANN**: Integrates NetMHCpan-4.2 trained on over 1,000,000 mass spectrometry eluted ligands (MS-EL) and quantitative binding affinity (BA) datasets.
 - **Physicochemical T-Cell Immunogenicity**: Implements Calis et al. (2013) log-odds scoring model based on position-weighted amino acid properties at TCR-contact positions (positions 4–8).
 - **Physicochemical TCR Contact Feature Evaluation**: Evaluates T-cell receptor contact amino acid properties to predict immune activation potential and candidate concordance.
-- **Population-Aware Coverage**: Computes non-redundant population coverage across global and regional cohorts (Taiwan, East Asia, Europe, World).
+- **Population-Aware Coverage**: Computes non-redundant population coverage across **22 selectable populations** (Taiwan island-wide + 14 demographic/indigenous groups, East Asia, Europe, World).
 - **Multimodal Candidate Tiering**: Automatically categorizes candidates into **Tier 1** (High priority), **Tier 2** (Secondary), and **Tier 3** based on a harmonized 4-dimensional Composite Priority Index.
+- **Multi-Epitope Vaccine Designer Studio** *(v2.0)*: Full construct engineering suite with set-level population coverage, greedy submodular basket auto-fill (ΔCov), cleavable linkers, automated junctional order optimization minimizing off-target presentation, DNA back-translation, mRNA synthesis profiling (GC%, charge at pH 7.4, homopolymer check, CAI), and persistent design archive.
+- **Preclinical Mouse H-2 &amp; Tumor Neoantigen Benchmark Suite** *(v2.0)*: Dedicated species-aware mode (Clinical Human HLA vs Murine H-2: C57BL/6, BALB/c, C3H), allele-specific anchor masking (H-2-Kb/Db), curated benchmark across 329+ tumor neoantigens (Smith 2019, Fernando 2019, Capietto 2020 prospective cohort N=216), and verified empirical biophysical baseline standards.
 - **In-Memory RAM Disk Acceleration Engine**: Parallel multi-core batch processing using `/dev/shm` for zero-disk-latency temporary sequence ingestion.
 
 ---

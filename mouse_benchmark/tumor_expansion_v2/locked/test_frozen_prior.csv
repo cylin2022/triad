@@ -1,0 +1,70 @@
+Peptide,WT,MHC,Label,PMID,Reference_ID,Tumor_Model,Context,Split,Source_Tokens,Mutation_Name,Restriction_Evidence,Assay_IDs
+ALMLNDMELL,ALMLNDMELV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8VDM4;name:26s proteasome non-atpase regulatory subunit 2,Psmd2V278L,MHC binding assay,22401977
+CAFHHVFSPV,CAFHHVFSPA,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,F8WH29;Q80ZA4;name:polycystic kidney and hepatic disease 1-like 1,Pkhd1l1A3348V,MHC binding assay,22401991
+CAFHHVFSPV,CAFHHVFSPA,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,F8WH29;Q80ZA4;name:polycystic kidney and hepatic disease 1-like 1,Pkhd1l1A3348V,MHC binding assay,22402005
+FALGGNRQAL,FALGGNKQAL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8BHX3;name:borealin,Cdca8L80R,MHC binding assay,22401957
+FAVRNYWRGV,FAVRNYWRGF,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,A0A338P673;Q9R0A1;name:chloride channel protein 2,Clcn2F287V,MHC binding assay,22401950
+FGLINVTPNM,FGLINVTLNM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q58NB6;name:dehydrogenase/reductase sdr family member 9,Dhrs9L146P,MHC binding assay,22401951
+FQVAKMINPM,FQVAKMINLM,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q05909;name:receptor-type tyrosine-protein phosphatase gamma,PtprgL1385P,MHC binding assay,22401965
+FSITSDLWSL,FSVTSDLWSL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q3V129;name:serine/threonine-protein kinase ulk4,Ulk4V198I,MHC binding assay,22401970
+GALDTNIENM,GVLDTNIENM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q9D3L0;name:membrane protein fam174a,Fam174aV158A,MHC binding assay,22401959
+IAKINQDPQV,VAKINQDPQV,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q9D0F9;name:phosphoglucomutase-1,Pgm2V525I,MHC binding assay,22401966
+ISVANVPEGL,IIVANVPEGL,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,D3YYN7;Q6PIE5;name:sodium/potassium-transporting atpase subunit alpha,Atp1a2I326S,MHC binding assay,22401961
+KFNHQNVDTL,KFNHQNFDTL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8CDU5;name:ef-hand domain-containing family member b,EfhbF583V,MHC binding assay,22401974
+KGVDGNMHVM,KGVDGNMHVR,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,B1AQZ2;P28741;name:kinesin-like protein,Kif3aR242M,MHC binding assay,22401975
+KQTENLYIEL,KQTENLYMEL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8BG94;name:comm domain-containing protein 7,Commd7M175I,MHC binding assay,22401978
+KSYTFFSCSL,KSYTFFWCSL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,O88174;name:membrane cofactor protein,Cd46W24S,MHC binding assay,22401982
+LAVCNWPKPM,LAVSNWPKPM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8C1A9;name:protein abhd18,Abhd18S210C,MHC binding assay,22401953
+LESFTFRNNV,LESFTFRNHV,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q922Y0;name:dual specificity tyrosine-phosphorylation-regulated kinase 3,Dyrk3H282N,MHC binding assay,22401994
+LISFRIWQNL,LISFKIWQNL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,P97926;name:oxytocin receptor,OxtrL226R,MHC binding assay,22401988
+LSKVTNQLVV,LSEVTNQLVV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,H3BKG1;Q8CFH6;name:non-specific serine/threonine protein kinase,Sik2Q487L,MHC binding assay,22401973
+MALINGSVLT,MALINGSVVT,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,E9Q413;name:olfactory receptor,Olfr920V9L,MHC binding assay,22401968
+MAVGRNVLEL,MPVGRNVLEL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,"A0A1Y7VNR5;A2A8L5;name:protein tyrosine phosphatase, receptor type, f",PtprfP279A,MHC binding assay,22401952
+MDAVENGCAV,LDAVENGCAV,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,B7ZNK6;Q64191;name:aspartylglucosaminidase,AgaL54M,MHC binding assay,22401963
+MLGVYNHSVL,MLGEYNHSVL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,E9PVB5;name:tetratricopeptide repeat protein 17,Ttc17Q310V,MHC binding assay,22401967
+MSMEGILPGM,MSMEGIRPGM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q9D219;name:b-cell cll/lymphoma 9 protein,Bcl9R652L,MHC binding assay,22401981
+NSLKENSTLL,NSLEENSTLL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q9QXT9;name:zinc finger protein 354b,Zfp354bE188K,MHC binding assay,22401964
+QAFDNMKEPI,QAFDNMKEPV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,A0A2I3BQW0;P59598;name:asxl transcriptional regulator 1,Asxl1V827I,MHC binding assay,22401956
+QIYFYLFKLL,QVYFYLFKLL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q9JHD2;name:histone acetyltransferase kat2a,Kat2aV192I,MHC binding assay,22401992
+QSYRFRVRAI,QSYQFRVRAI,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,A2ABU4;name:myomesin-3,Myom3Q445R,MHC binding assay,22401995
+SALVVLEFSL,AALVVLEFSL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,F2Z3W9;Q8R115;name:transmembrane protein 82,Tmem82A92S,MHC binding assay,22401979
+SALVVLEFSL,AALVVLEFSL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,F2Z3W9;Q8R115;name:transmembrane protein 82,Tmem82A92S,MHC binding assay,22402002
+SIIGKNGETV,SIIGKKGETV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,A0A087WRH3;P57724;name:poly(rc) binding protein 4,Pcbp4L36N,MHC binding assay,22401969
+SNLTLHYRTL,SNLTLHYRTH,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q07231;name:zinc finger and scan domain-containing protein 21,Zscan21H409L,MHC binding assay,22401990
+SNLTLHYRTL,SNLTLHYRTH,H-2-Kb,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q07231;name:zinc finger and scan domain-containing protein 21,Zscan21H409L,MHC binding assay,22402004
+SQAMNSGTLL,SQAMNSGTVL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,A0A0A0MQJ4;Q501J7;name:phosphatase and actin regulator 4,Phactr4V280L,MHC binding assay,22401960
+SSFVDAYGYI,SSFVDVYGYI,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,E9Q2M9;name:wd repeat- and fyve domain-containing protein 4,Wdfy4V1162A,MHC binding assay,22401958
+SSFVDAYGYI,SSFVDVYGYI,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,E9Q2M9;name:wd repeat- and fyve domain-containing protein 4,Wdfy4V1162A,MHC binding assay,22402001
+STFLFSICSL,STFLFSICAL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,"P97441;S4R169;name:solute carrier family 30 (zinc transporter), member 3",Slc30a3A277S,MHC binding assay,22401985
+SVFSFGPSYF,SVFSFGPSSF,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q80U93;name:nuclear pore complex protein nup214,Nup214S486Y,MHC binding assay,22401996
+TAPASTCPSI,TAPASPCPSI,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8C147;name:dedicator of cytokinesis protein 8,Dock8P1124T,MHC binding assay,22401980
+VAFIIRRCNL,VVFIIRRCNL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8BG16;name:sodium-dependent neutral amino acid transporter b(0)at2,Slc6a15V636A,MHC binding assay,22401989
+VGYVHYGDWL,GGYVHYGDWL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q91VP7;name:transmembrane protein 101,Tmem101G96V,MHC binding assay,22401984
+VGYVHYGDWL,GGYVHYGDWL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q91VP7;name:transmembrane protein 101,Tmem101G96V,MHC binding assay,22402003
+VKVFFHSSSL,GKVFFHSSSL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q147Z4;Q8BI99;name:zinc finger protein 879,Zfp879,MHC binding assay,22401986
+VMLYNTADEL,EMLYNTADEL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,O35382;name:exocyst complex component 4,Exoc4Q901V,MHC binding assay,22401955
+VWNFLRVNTL,VGNFLRVNTL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q8R2W9;name:pantothenate kinase 3,Pank3G321W,MHC binding assay,22401987
+YAFPYAAYSM,CAFPYAAYSM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,Q6TCG5;name:membrane progestin receptor delta,Paqr6C129Y,MHC binding assay,22401972
+YGLEFHARAL,YGLEFQARAL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,A0A217FL60;Q8K0G5;name:earp complex and garp complex interacting protein 1,Tssc1Q14H,MHC binding assay,22401993
+YLYINAGSLI,YLSINAGSLI,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,"E9PYQ9;Q9ES07;name:solute carrier family 15 (h+/peptide transporter), member 2",Slc15a2S201Y,MHC binding assay,22401971
+YSIPTKIPVM,YSIPTEIPVM,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test_frozen_prior,"Q9D0G0;name:28s ribosomal protein s30, mitochondrial",Mrps30Q254L,MHC binding assay,22401976
+ASLLHFVDAPV,ASLLHFLDAPV,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,A2RSQ0;name:denn domain-containing protein 5b,Dennd5b L338V,MHC binding prediction,23044454
+AVFTLQMKL,AAFTLQMKL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q6WKZ8;name:e3 ubiquitin-protein ligase ubr2,Ubr2 A537V,MHC binding prediction,23044450
+CSITLNRHVI,CPITLNRHVI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q80TP3;name:e3 ubiquitin-protein ligase ubr5,Ubr5 P2546S,MHC binding prediction,23044457
+IAILNQKYA,VAILNQKYA,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q7TPH6;name:e3 ubiquitin-protein ligase mycbp2,Mycbp2 V1978I,MHC binding prediction,23044455
+IHEYLSTAPF,THEYLSTAPF,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,O70293;name:g protein-coupled receptor kinase 6,Grk6 T117I,MHC binding prediction,23044465
+KAFSRHWL,KAFSRPWL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,NP_035545;P97469;name:zinc finger protein snai2 [mus musculus],Snai2 P198H,MHC binding prediction,23044462
+LAYLPTAPPL,LAYLPTAPPP,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q9WU42;name:nuclear receptor corepressor 2,Ncor2 P1737L,MHC binding prediction,23044461
+LMWFEKTAL,LMWFDKTAL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q60767;name:lymphocyte antigen 75,Ly75 D1328E,MHC binding prediction,23044464
+LTVRYGRFLNL,MTVRYGRFLNL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q3URV1;name:protein broad-minded,Tbc1d32 M1054L,MHC binding prediction,23044448
+RAFSNAVDF,RAFSKAVDF,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,140969817;E9Q6A7;name:nucleosome-remodeling factor subunit bptf isoform 2 [mus musculus],Bptf K1284N,MHC binding prediction,23044456
+SAGQYFLNI,PAGQYFLNI,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q8VEK0;name:cell cycle control protein 50a,Tmem30a P290S,MHC binding prediction,23044451
+SNFYKCEI,SDFYKCEI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,NP_001074538;Q9Z2H1;name:regulator of g-protein signaling 11 [mus musculus],Rgs11 D224N,MHC binding prediction,23044458
+SQLSHSSRL,PQLSHSSRL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,P97868;name:e3 ubiquitin-protein ligase rbbp6,Rbbp6 P1616S,MHC binding prediction,23044460
+STYKEFCSL,STYKELCSL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q6PDI5;name:proteasome adapter and scaffold protein ecm29,Ecpas L1064F,Single allele present,23044467
+SVFTEHTNRL,SVLTEHTNRL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,NP_063917;Q9JKK8;name:serine/threonine-protein kinase atr,Atr L2126F,MHC binding prediction,23044452
+TIHMMLQPI,TVHMMLQPI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,NP_031592;O88738;name:baculoviral iap repeat-containing protein 6,BIRC6 V3064I,MHC binding prediction,23044466
+VHFSNSFTTI,VHFSNSFTSI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q504N2;name:solute carrier family 22 member 15,Slc22a15 S96T,MHC binding prediction,23044459
+VSHRFHNT,VSHRSHNT,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,NP_598639;Q8VE37;name:regulator of chromosome condensation isoform 2,Rcc1 S29F,MHC binding prediction,23044449
+VSLVLRHV,ASLVLRHV,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q8BGY4;name:kelch-like protein 26,K1h126 A154V,MHC binding prediction,23044453
+VTTSFIYF,VTTSFIYL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test_frozen_prior,Q9WVL3;name:solute carrier family 12 member 7,Slc12a7 L467F,MHC binding prediction,23044463

@@ -1,0 +1,608 @@
+Reference_ID,Title,PubMed_ID,Dates,Eligible_Assays,Curated_Pairs,Positive,Negative
+1003610,['A consensus epitope prediction approach identifies the breadth of murine CD8+ T cell responses to vaccinia virus'],,['2007'],2254,2174,25,2149
+1022717,['Whole-genome immunoinformatic analysis of F. tularensis: predicted CTL epitopes clustered in hotspots are prone to elicit a T-cell response.'],21625462,['2011'],1413,1406,109,1297
+1023105,['Clusters versus affinity-based approaches in F. tularensis whole genome search of CTL epitopes.'],22563500,['2012'],587,580,49,531
+1022551,['Quantitating T cell cross-reactivity for unrelated peptide antigens.'],19734234,['2009'],1176,555,0,555
+1003609,['Uncovering New Tricks for an Old Virus: CD8+ T Cell Response to LCMV Involves the L Antigen'],,['2007'],401,383,7,376
+1003945,['CD8+ T-Cell responses to Trypanosoma cruzi are highly focused on strain-variant trans-sialidase epitopes.'],16879036,['2006'],223,219,22,197
+1032405,['Novel CTL epitopes identified through a Y. pestis proteome-wide analysis in the search for vaccine candidates against plague.'],28606812,['2017'],179,179,179,0
+1000168,['Genome-wide characterization of a viral cytotoxic T lymphocyte epitope repertoire.'],12960169,['2003'],147,128,5,123
+1034799,['Most viral peptides displayed by class I MHC on infected cells are immunogenic.'],30718433,['2019'],183,107,81,26
+1036957,['Machine-Learning Prediction of Tumor Antigen Immunogenicity in the Selection of Therapeutic Epitopes.'],31515258,['2019'],102,102,75,27
+1042290,['Prediction and validation of murine MHC class I epitopes of the recombinant virus VSV-GP.'],36741416,['2022'],100,98,19,79
+1042224,['Cancer vaccines based on whole-tumor lysate or neoepitopes with validated HLA binding outperform those with predicted HLA-binding affinity.'],36950115,['2023'],51,49,41,8
+1041752,"['The CD8+ and CD4+ T Cell Immunogen Atlas of Zika Virus Reveals E, NS1 and NS4 Proteins as the Vaccine Targets.']",36366430,['2022'],34,34,34,0
+1036912,['-Based Vaccine Vector D1701-V Induces Strong CD8+ T Cell Response against the Transgene but Not against ORFV-Derived Epitopes.'],32531997,['2020'],64,31,0,31
+1019133,['Two kinetic patterns of epitope-specific CD8 T-cell responses following murine gammaherpesvirus 68 infection.'],20053740,['2010'],30,30,30,0
+1031165,['Mapping and Role of the CD8<sup>+</sup> T Cell Response During Primary Zika Virus Infection in Mice.'],28081442,['2017'],28,28,28,0
+1031971,['Multi-level Strategy for Identifying Proteasome-Catalyzed Spliced Epitopes Targeted by CD8<sup>+</sup> T Cells during Bacterial Infection.'],28768206,['2017'],25,24,2,22
+1032484,['Vaccination with recombinant adenovirus expressing peste des petits ruminants virus-F or -H proteins elicits T cell responses to epitopes that arises during PPRV infection.'],29157291,['2017'],21,21,6,15
+1002188,['A consensus epitope prediction approach identifies the breadth of murine T(CD8+)-cell responses to vaccinia virus.'],16767078,['2006'],51,20,20,0
+1021528,['Defining the herpes simplex virus-specific CD8+ T cell repertoire in C57BL/6 mice.'],21357536,['2011'],19,18,18,0
+1004524,['Four distinct patterns of memory CD8 T cell responses to chronic murine cytomegalovirus infection.'],16785542,['2006'],19,18,18,0
+1026458,['Mixed proteasomes function to increase viral peptide diversity and broaden antiviral CD8+ T cell responses.'],23709680,['2013'],78,16,9,7
+1013166,['Naive precursor frequencies and MHC binding rather than the degree of epitope diversity shape CD8+ T cell immunodominance.'],18641351,['2008'],89,16,14,2
+1028709,"['A novel ""priming-boosting"" strategy for immune interventions in cervical cancer.']",25575128,['2015'],22,15,3,12
+678,['Identification of poxvirus CD8+ T cell determinants to enable rational design and characterization of smallpox vaccines.'],15623576,['2005'],39,15,1,14
+1031056,['Screening and Identification of an H-2K<sup>b</sup>-Restricted CTL Epitope within the Glycoprotein of Hantaan Virus.'],27933274,['2016'],17,15,15,0
+1026685,['CD8+ T-cell epitope mapping for pneumonia virus of mice in H-2b mice.'],23824814,['2013'],14,14,14,0
+1046998,['Personalized Neoantigen Vaccine plus Regorafenib Increases Rgs2⁺CD8⁺ T Cells Infiltration and Reprograms the Tumor Microenvironment in Microsatellite Stable Colorectal Cancer Liver Metastases.'],40586324,['2025'],27,13,0,13
+1021536,['A dominant role for the immunoproteasome in CD8+ T cell responses to murine cytomegalovirus.'],21304910,['2011'],12,12,12,0
+1014887,['A protective role for dengue virus-specific CD8+ T cells.'],19342665,['2009'],12,12,12,0
+1031017,['Endogenous Neoantigen-Specific CD8 T Cells Identified in Two Glioblastoma Models Using a Cancer Immunogenomics Approach.'],27799140,['2016'],12,12,1,11
+1035129,['Targeting Mutated Plus Germline Epitopes Confers Pre-clinical Efficacy of an Instantly Formulated Cancer Nano-Vaccine.'],31156619,['2019'],11,11,11,0
+1028958,['Acute emergence and reversion of influenza A virus quasispecies within CD8+ T cell antigenic peptides.'],24173108,['2013'],18,11,11,0
+1006455,['The CD8+ T-cell response to lymphocytic choriomeningitis virus involves the L antigen: uncovering new tricks for an old virus.'],17329346,['2007'],28,10,10,0
+1038758,['Mapping and role of T cell response in SARS-CoV-2-infected mice.'],33464307,['2021'],10,10,10,0
+1028755,['Large-scale T cell epitope discovery'],,['2015'],10,10,10,0
+1043241,['Identification of T-Cell Epitopes Using a Combined In-Silico and Experimental Approach in a Mouse Model for SARS-CoV-2.'],37886945,['2023'],20,9,4,5
+1014996,['Vaccination with recombinant adenoviruses and dendritic cells expressing prostate-specific antigens is effective in eliciting CTL and suppresses tumor growth in the experimental prostate cancer.'],19267351,['2009'],12,9,6,3
+1027449,['Ovine and murine T cell epitopes from the non-structural protein 1 (NS1) of bluetongue virus serotype 8 (BTV-8) are shared among viral serotypes.'],24621015,['2014'],9,9,9,0
+1041850,['Structural Analyses of a Dominant Cryptosporidium parvum Epitope Presented by H-2K<sup>b</sup> Offer New Options To Combat Cryptosporidiosis.'],36602309,['2023'],14,9,6,3
+1027581,['An intact signal peptide on dengue virus E protein enhances immunogenicity for CD8(+) T cells and antibody when expressed from modified vaccinia Ankara.'],24726244,['2014'],10,9,1,8
+1045660,['Diversifying T-cell responses: safeguarding against pandemic influenza with mosaic nucleoprotein.'],39898643,['2025'],62,9,0,9
+1039184,['Optimized polyepitope neoantigen DNA vaccines elicit neoantigen-specific immune responses in preclinical models and in clinical translation.'],33879241,['2021'],31,9,0,9
+1035250,['Quantification of epitope abundance reveals the effect of direct and cross-presentation on influenza CTL responses.'],31253788,['2019'],20,9,9,0
+1032488,['A T Cell Receptor Locus Harbors a Malaria-Specific Immune Response Gene.'],29150238,['2017'],8,8,6,2
+1006569,['A CD8+ T cell heptaepitope minigene vaccine induces protective immunity against Chlamydia pneumoniae.'],15843575,['2005'],14,7,7,0
+1024554,['Prolongation of prion disease-associated symptomatic phase relates to CD3+ T cell recruitment into the CNS in murine scrapie-infected mice.'],22522067,['2012'],19,7,4,3
+1039991,"[""Neurodegeneration by α-synuclein-specific T cells in AAV-A53T-α-synuclein Parkinson's disease mice.""]",35032575,['2022'],7,7,3,4
+1022430,['T cell responses to bluetongue virus are directed against multiple and identical CD4+ and CD8+ T cell epitopes from the VP7 core protein in mouse and sheep.'],21807057,['2011'],8,7,5,2
+1037372,['Identification of a neo-epitope dominating endogenous CD8 T cell responses to MC-38 colorectal cancer.'],32923109,['2019'],11,7,2,5
+1048542,['Unveiling the epitope repertoires and protective roles of MERS-CoV-specific T cells in mice.'],41762655,['2026'],14,7,7,0
+1025802,['Immunodomination during peripheral vaccinia virus infection.'],23633956,['2013'],17,7,7,0
+1040838,['Harnessing anti-cytomegalovirus immunity for local immunotherapy against solid tumors.'],35749366,['2022'],7,7,7,0
+1006338,['Protective capacity and epitope specificity of CD8(+) T cells responding to lethal West Nile virus infection.'],17559175,['2007'],7,6,3,3
+1025202,"[""Antigen presentation under the influence of 'immune evasion' proteins and its modulation by interferon-gamma: implications for immunotherapy of cytomegalovirus infection with antiviral CD8 T cells.""]",22961126,['2012'],7,6,6,0
+1030316,['CD8(+) T\xa0cells of Listeria monocytogenes-infected mice recognize both linear and spliced proteasome products.'],26909514,['2016'],7,6,1,5
+1035424,['Efficient Tumor Clearance and Diversified Immunity through Neoepitope Vaccines and Combinatorial Immunotherapy.'],31292145,['2019'],26,6,6,0
+1036859,"[""An effective CTL peptide vaccine for Ebola Zaire Based on Survivors' CD8+ targeting of a particular nucleocapsid protein epitope with potential implications for COVID-19 vaccine design.""]",32418793,['2020'],6,6,3,3
+1027955,['Defining immune engagement thresholds for in vivo control of virus-driven lymphoproliferation.'],24967892,['2014'],7,6,5,1
+1025543,['Kinetics of antigen expression and epitope presentation during virus infection.'],23382674,['2013'],9,6,6,0
+1016515,['CD4+ T cell help has an epitope-dependent impact on CD8+ T cell memory inflation during murine cytomegalovirus infection.'],19692644,['2009'],5,5,5,0
+1038256,['HPV-Associated Tumor Eradication by Vaccination with Synthetic Short Peptides and Particle-Forming Liposomes.'],33605054,['2021'],7,5,3,2
+1036769,['Obesity Reshapes Visceral Fat-Derived MHC I Associated-Immunopeptidomes and Generates Antigenic Peptides to Drive CD8<sup>+</sup> T Cell Responses.'],32217358,['2020'],6,5,2,3
+1020878,['Sequential immunization with heterologous chimeric flaviviruses induces broad-spectrum cross-reactive CD8+ T cell responses.'],20536361,['2010'],32,5,4,1
+1025772,['Peptide pool immunization and CD8+ T cell reactivity.'],23499579,['2013'],5,5,5,0
+1035539,['Combination PD-1 and PD-L1 Blockade Promotes Durable Neoantigen-Specific T Cell-Mediated Immunity in Pancreatic Ductal Adenocarcinoma.'],31433988,['2019'],5,5,1,4
+1031766,['Evidence of cross-stage CD8+ T cell epitopes in malaria pre-erythrocytic and blood stage infections.'],28380250,['2017'],18,5,5,0
+1031373,['An RNA nanoparticle vaccine against Zika virus elicits antibody and CD8+ T cell responses in a mouse model.'],28325910,['2017'],5,5,1,4
+1027120,['The carboxypeptidase ACE shapes the MHC class I peptide repertoire.'],21964607,['2011'],5,5,5,0
+1001177,"['Structural and functional identification of major histocompatibility complex class I-restricted self-peptides as naturally occurring molecular mimics of viral antigens. Possible role in CD8+ T cell-mediated, virus-induced autoimmune disease.']",11278441,['2001'],6,5,0,5
+1045528,['Structural analyses of Cryptosporidium parvum epitopes reveal a novel scheme of decapeptide binding to H-2K<sup>b</sup>.'],39809366,['2025'],5,5,4,1
+1001331,['Narrowed TCR repertoire and viral escape as a consequence of heterologous immunity.'],16614754,['2006'],9,5,5,0
+1030762,['Strategies to enhance immunogenicity of cDNA vaccine encoded antigens by modulation of antigen processing.'],27593157,['2016'],6,5,4,1
+1042513,['Effects of SARS-CoV-2 Omicron BA.1 Spike Mutations on T-Cell Epitopes in Mice.'],36992472,['2023'],11,5,5,0
+1025919,['The context of gene expression defines the immunodominance hierarchy of cytomegalovirus antigens.'],23460738,['2013'],5,4,4,0
+1026725,['Broadening the repertoire of functional herpes simplex virus type 1-specific CD8+ T cells reduces viral reactivation from latency in sensory ganglia.'],23878317,['2013'],5,4,4,0
+1007939,['Structural and biological basis of CTL escape in coronavirus-infected mice.'],18322201,['2008'],9,4,1,3
+1025633,['Preemptive priming readily overcomes structure-based mechanisms of virus escape.'],23493558,['2013'],6,4,0,4
+1045369,['Identification of an H2-Kb or H2-Db restricted and glypican-3-derived cytotoxic T-lymphocyte epitope peptide.'],23354275,['2013'],6,4,4,0
+1006283,['Characterization of homologous and heterologous rotavirus-specific T-cell responses in infant and adult mice.'],15795243,['2005'],8,4,4,0
+1042732,['Glioma immunotherapy enhancement and CD8-specific sialic acid cleavage by isocitrate dehydrogenase (IDH)-1.'],37161052,['2023'],6,4,4,0
+1005988,['OX40 costimulation promotes persistence of cytomegalovirus-specific CD8 T Cells: A CD4-dependent mechanism.'],17675479,['2007'],4,4,4,0
+1040011,['Identification of Neoantigens in Two Murine Gastric Cancer Cell Lines Leading to the Neoantigen-Based Immunotherapy.'],35008270,['2021'],14,4,4,0
+1020305,"['Comprehensive assessment of determinant specificity, frequency, and cytokine signature of the primed CD8 cell repertoire induced by a minor transplantation antigen.']",10903727,['2000'],12,4,1,3
+1003553,['Quantitating the magnitude of the lymphocytic choriomeningitis virus-specific CD8 T-cell response: it is even bigger than we thought.'],17151096,['2007'],10,4,4,0
+1030099,['Modification of Antigen Impacts on Memory Quality after Adenovirus Vaccination.'],26944930,['2016'],7,4,4,0
+1036316,['Identification and characterization of protective CD8<sup>+</sup> T-epitopes in a malaria vaccine candidate SLTRiP.'],31967737,['2020'],4,4,2,2
+1013709,['The CD8 T-cell response against murine gammaherpesvirus 68 is directed toward a broad repertoire of epitopes from both early and late antigens.'],18922872,['2008'],4,4,4,0
+1034993,['Preclinical Development of a WT1 Oral Cancer Vaccine Using a Bacterial Vector to Treat Castration-Resistant Prostate Cancer.'],30824610,['2019'],10,3,0,3
+1014258,['Epithelial expression of human papillomavirus type 16 E7 protein results in peripheral CD8 T-cell suppression mediated by CD4+CD25+ T cells.'],19180468,['2009'],6,3,3,0
+1030004,"['Vaccine Targeting of Subdominant CD8+ T Cell Epitopes Increases the Breadth of the T Cell Response upon Viral Challenge, but May Impair Immediate Virus Control.']",26873995,['2016'],9,3,3,0
+1035361,['Simultaneous analysis of in vivo CD8+ T cell cytotoxicity against multiple epitopes using multicolor flow cytometry.'],18161531,['2007'],5,3,3,0
+1034551,['Activation of CD8⁺ T Cell Responses after Melanoma Antigen Targeting to CD169⁺ Antigen Presenting Cells in Mice and Humans.'],30764534,['2019'],5,3,2,1
+1023056,['Loss of anti-viral immunity by infection with a virus encoding a cross-reactive pathogenic epitope.'],22536152,['2012'],11,3,3,0
+1017811,['Altered CD8(+) T cell immunodominance after vaccinia virus infection and the naive repertoire in inbred and F(1) mice.'],19949110,['2010'],12,3,2,1
+1035461,['Identification of Novel Respiratory Syncytial Virus CD4<sup>+</sup> and CD8<sup>+</sup> T Cell Epitopes in C57BL/6 Mice.'],31356172,['2019'],3,3,3,0
+1037631,['A natural polymorphism of Mycobacterium tuberculosis in the esxH gene disrupts immunodomination by the TB10.4-specific CD8 T cell response.'],33075106,['2020'],4,3,3,0
+1037912,['Cutting Edge: Mouse SARS-CoV-2 Epitope Reveals Infection and Vaccine-Elicited CD8 T Cell Responses.'],33441437,['2021'],3,3,2,1
+1045190,['Staggered immunization with mRNA vaccines encoding SARS-CoV-2 polymerase or spike antigens broadens the T cell epitope repertoire.'],39589869,['2024'],8,3,3,0
+1035502,['Identification of Protective CD8 T Cell Responses in a Mouse Model of Zika Virus Infection.'],31379867,['2019'],3,3,3,0
+1003934,['Coadministration of an interleukin-12 gene and a Trypanosoma cruzi gene improves vaccine efficacy.'],12183527,['2002'],6,3,0,3
+1021167,['Differential in vivo clearance and response to secondary heterologous infections by H2(b)-restricted dengue virus-specific CD8+ T cells.'],20883162,['2010'],20,3,3,0
+1025286,['Targeting 4-1BB (CD137) to enhance CD8 T cell responses with poxviruses and viral antigens.'],23162550,['2012'],7,3,3,0
+1027364,['A temporal role of type I interferon signaling in CD8+ T cell maturation during acute West Nile virus infection.'],22144897,['2011'],4,3,3,0
+1027774,['CD8 T cell memory to a viral pathogen requires trans cosignaling between HVEM and BTLA.'],24205056,['2013'],9,3,3,0
+1035607,['Divergent memory responses driven by adenoviral vectors are impacted by epitope competition.'],31106398,['2019'],6,3,3,0
+1008000,['Identification of mouse AAV capsid-specific CD8+ T cell epitopes.'],16263332,['2005'],3,3,1,2
+1007948,['Cross-competition of CD8+ T cells shapes the immunodominance hierarchy during boost vaccination.'],17709425,['2007'],5,3,3,0
+1041708,['Immunopeptidomics-based design of mRNA vaccine formulations against Listeria monocytogenes.'],36241641,['2022'],3,3,3,0
+1025982,['Sustained CD8+ T cell memory inflation after infection with a single-cycle cytomegalovirus.'],21998590,['2011'],3,3,3,0
+1041853,['TGFβ-derived immune modulatory vaccine: targeting the immunosuppressive and fibrotic tumor microenvironment in a murine model of pancreatic cancer.'],36600556,['2022'],9,3,3,0
+1019805,['Generation of in silico predicted coxsackievirus B3-derived MHC class I epitopes by proteasomes.'],19997756,['2010'],3,3,1,2
+1020815,['Ethylenecarbodiimide-treated splenocytes carrying male CD4 epitopes confer histocompatibility Y chromosome antigen transplant protection by inhibiting CD154 upregulation.'],20713889,['2010'],2,2,2,0
+1029522,['Acute Viral Respiratory Infection Rapidly Induces a CD8+ T Cell Exhaustion-like Phenotype.'],26401005,['2015'],2,2,2,0
+1022514,['Primary vascularization of the graft determines the immunodominance of murine minor H antigens during organ transplantation.'],21900176,['2011'],6,2,2,0
+1022576,"['Blood-stage Plasmodium berghei infection generates a potent, specific CD8+ T-cell response despite residence largely in cells lacking MHC I processing machinery.']",21998471,['2011'],5,2,2,0
+1029362,['Subdominant H60 antigen-specific CD8 T-cell response precedes dominant H4 antigen-specific response during the initial phase of allogenic skin graft rejection.'],25676063,['2015'],2,2,2,0
+1024242,['SPAS-1 (stimulator of prostatic adenocarcinoma-specific T cells)/SH3GLB2: A prostate tumor antigen identified by CTLA-4 blockade.'],18303116,['2008'],2,2,2,0
+1022615,['Affinity thresholds for naive CD8+ CTL activation by peptides and engineered influenza A viruses.'],22039305,['2011'],3,2,2,0
+1024960,['Viral acute lower respiratory infections impair CD8+ T cells through PD-1.'],22797302,['2012'],4,2,2,0
+1029565,['Immunologic Control of Mus musculus Papillomavirus Type 1.'],26495972,['2015'],3,2,2,0
+1032613,['Influence of an immunodominant herpes simplex virus type 1 CD8+ T cell epitope on the target hierarchy and function of subdominant CD8+ T cells.'],29206240,['2017'],6,2,0,2
+1025322,['Molecular anatomy and number of antigen specific CD8 T cells required to cause type 1 diabetes.'],23209415,['2012'],4,2,1,1
+1033412,['Immune-mediated effects targeting hepatitis C virus in a syngeneic replicon cell transplantation mouse model.'],28646094,['2018'],6,2,2,0
+1025068,['Memory CD8+ T cells specific for a single immunodominant or subdominant determinant induced by peptide-dendritic cell immunization protect from an acute lethal viral disease.'],22740418,['2012'],2,2,2,0
+1016585,['Differential interferon responses enhance viral epitope generation by myocardial immunoproteasomes in murine enterovirus myocarditis.'],19590042,['2009'],2,2,2,0
+1025690,['A new model for CD8+ T cell memory inflation based upon a recombinant adenoviral vector.'],23509359,['2013'],2,2,2,0
+1020135,['DNA fusion vaccines induce targeted epitope-specific CTLs against minor histocompatibility antigens from a normal or tolerized repertoire.'],15383580,['2004'],2,2,2,0
+1028655,['CD73 is dispensable for the regulation of inflationary CD8+ T-cells after murine cytomegalovirus infection and adenovirus immunisation.'],25490556,['2014'],2,2,2,0
+1017757,['Accelerated induction of mycobacterial antigen-specific CD8+ T cells in the Mycobacterium tuberculosis-infected lung by subcutaneous vaccination with Mycobacterium bovis bacille Calmette-Guérin.'],19930045,['2009'],5,2,2,0
+1029324,['Gene Expression Driven by a Strong Viral Promoter in MVA Increases Vaccination Efficiency by Enhancing Antibody Responses and Unmasking CD8⁺ T Cell Epitopes.'],26344747,['2014'],3,2,2,0
+1032324,['CD8<sup>+</sup> T Cell Immune Response in Immunocompetent Mice during Zika Virus Infection.'],28835502,['2017'],3,2,2,0
+1025174,['Chemokine binding protein vCCI attenuates vaccinia virus without affecting the cellular response elicited by immunization with a recombinant vaccinia vector carrying the HPV16 E7 gene.'],23035852,['2012'],2,2,2,0
+1017768,['Key role of T cell defects in age-related vulnerability to West Nile virus.'],19901080,['2009'],2,2,2,0
+1028658,['IRF4 and BATF are critical for CD8⁺ T-cell function following infection with LCMV.'],24531538,['2014'],3,2,2,0
+1017866,['A continuous infusion of a minor histocompatibility antigen-immunodominant peptide induces a delay of male skin graft rejection.'],19249121,['2009'],2,2,2,0
+1019766,"['Identification of murine T-cell epitopes on low-molecular-mass secretory proteins (CFP11, CFP17, and TB18.5) of Mycobacterium tuberculosis.']",20457290,['2010'],2,2,2,0
+1022057,['Pivotal role of antibody and subsidiary contribution of CD8+ T cells to recovery from infection in a murine model of Japanese encephalitis.'],21450826,['2011'],2,2,1,1
+1017788,['Absence of tapasin alters immunodominance against a lymphocytic choriomeningitis virus polytope.'],19949070,['2010'],5,2,2,0
+1013133,['Altered immunodominance hierarchies of influenza A virus-specific H-2(b)-restricted CD8+ T cells in the absence of terminal deoxynucleotidyl transferase.'],18821218,['2008'],16,2,1,1
+1004369,['T-cell vaccination alters the course of murine herpesvirus 68 infection and the establishment of viral latency in mice.'],10559297,['1999'],2,2,2,0
+1039695,['CD8<sup>+</sup> T cells specific for cryptic apoptosis-associated epitopes exacerbate experimental autoimmune encephalomyelitis.'],34716313,['2021'],5,2,2,0
+1025960,['CD8+ T cell dysfunction and increase in murine gammaherpesvirus latent viral burden in the absence of 4-1BB ligand.'],17404306,['2007'],2,2,2,0
+1027642,['Structural and functional correlates of enhanced antiviral immunity generated by heteroclitic CD8 T cell epitopes.'],24795457,['2014'],6,2,2,0
+1004646,['The early expression of glycoprotein B from herpes simplex virus can be detected by antigen-specific CD8+ T cells.'],12551982,['2003'],3,2,2,0
+1040768,"['Calreticulin mutant myeloproliferative neoplasms induce MHC-I skewing, which can be overcome by an optimized peptide cancer vaccine.']",35704596,['2022'],6,2,2,0
+1003932,['Paraflagellar rod protein-specific CD8+ cytotoxic T lymphocytes target Trypanosoma cruzi-infected host cells.'],12406194,['2002'],4,2,2,0
+1040875,['A third vaccination with a single T\xa0cell epitope confers protection in a murine model of SARS-CoV-2 infection.'],35803932,['2022'],3,2,2,0
+1027406,['Escape from immune surveillance does not result in tolerance to tumor-associated antigens.'],15314541,['2004'],2,2,2,0
+1003535,['Hidden epitopes emerge in secondary influenza virus-specific CD8+ T cell responses.'],17312156,['2007'],2,2,2,0
+1001456,"['Novel peptide-based vaccines efficiently prime murine ""help""-independent CD8+ T cell responses in the liver.']",15368434,['2004'],7,2,2,0
+1043324,['Epithelial boost enhances antigen expression by vaccinia virus for the generation of potent CD8+ T cell-mediated antitumor immunity following DNA priming vaccination.'],30296681,['2018'],2,2,2,0
+1043953,['Preclinical evaluation of therapeutic vaccines for chronic hepatitis B that stimulate antiviral activities of T cells and NKT cells.'],38694959,['2024'],4,2,2,0
+1027041,['Deletion of naïve T cells recognizing the minor histocompatibility antigen HY with toxin-coupled peptide-MHC class I tetramers inhibits cognate CTL responses and alters immunodominance.'],24161680,['2013'],2,2,2,0
+1026949,['Disparate epitopes mediating protective heterologous immunity to unrelated viruses share peptide-MHC structural features recognized by cross-reactive T cells.'],24127554,['2013'],10,2,2,0
+200157,['Changing immunodominance patterns in antiviral CD8 T-cell responses after loss of epitope presentation or chronic antigenic stimulation.'],14592762,['2003'],7,2,2,0
+1026728,['A heterologous prime/boost vaccination strategy enhances the immunogenicity of therapeutic vaccines for hepatitis C virus.'],23776192,['2013'],3,2,2,0
+1026017,['Chlamydia trachomatis infection alters the development of memory CD8+ T cells.'],16951365,['2006'],3,2,2,0
+1045453,['Relapse or eradication of cancer is predicted by peptide-major histocompatibility complex affinity.'],23597565,['2013'],3,2,2,0
+1216,['Comprehensive early and lasting loss of memory CD8 T cells and functional memory during acute and persistent viral infections.'],14978120,['2004'],4,2,2,0
+1045921,['Strategy for eliciting antigen-specific CD8+ T cell-mediated immune response against a cryptic CTL epitope of merkel cell polyomavirus large T antigen.'],23095249,['2012'],2,2,1,1
+1129,['Perforin and Fas cytolytic pathways coordinately shape the selection and diversity of CD8+-T-cell escape variants of influenza virus.'],15956596,['2005'],6,2,2,0
+1120,['Regulatory T cells suppress CD8+ T cell responses induced by direct priming and cross-priming and moderate immunodominance disparities.'],15749866,['2005'],15,2,2,0
+1026028,['CD8 T cells utilize TRAIL to control influenza virus infection.'],18802095,['2008'],2,2,2,0
+1047156,['Neoantigen mRNA vaccines induce progenitor-exhausted T cells that support anti-PD-1 therapy in gastric cancer with peritoneal metastasis.'],40738981,['2025'],3,2,2,0
+794,['Yellow fever virus 17D envelope and NS3 proteins are major targets of the antiviral T cell response in mice.'],12036323,['2002'],2,2,2,0
+1026285,['Persistent enteric murine norovirus infection is associated with functionally suboptimal virus-specific CD8 T cell responses.'],23596300,['2013'],2,2,2,0
+1048489,['Immunopeptidomics Mapping of Listeria monocytogenes T Cell Epitopes in Mice.'],39147027,['2024'],5,2,1,1
+542,['Peripheral CD8+ T cell tolerance against melanocytic self-antigens in the skin is regulated in two steps by CD4+ T cells and local inflammation: implications for the pathophysiology of vitiligo.'],15654968,['2005'],3,2,2,0
+452,['Characterization of mouse MAGE-derived H-2Kb-restricted CTL epitopes.'],15384049,['2004'],4,2,2,0
+305,['Identification of an immunodominant H-2D(b)-restricted CTL epitope of human PSA.'],15651071,['2005'],8,2,2,0
+1039716,['Development of surface engineered antigenic exosomes as vaccines for respiratory syncytial virus.'],34725399,['2021'],4,2,2,0
+1022994,['γ-Herpesvirus reactivation differentially stimulates epitope-specific CD8 T cell responses.'],22407914,['2012'],2,2,2,0
+1012979,['Transplantation tolerance induced by intranasal administration of HY peptides.'],14726386,['2004'],2,2,2,0
+1008054,['Identification of Chlamydia pneumoniae-derived mouse CD8 epitopes.'],12065471,['2002'],5,2,2,0
+1013179,['The dynamics of mouse cytomegalovirus-specific CD4 T cell responses during acute and latent infection.'],18606665,['2008'],2,2,2,0
+1027927,['Promotion of a subdominant CD8 T cell response during murine gammaherpesvirus 68 infection in the absence of CD4 T cell help.'],24789784,['2014'],2,2,2,0
+1012878,"[""Differential outcome of tolerance induction in naive versus activated Theiler's virus epitope-specific CD8+ cytotoxic T cells.""]",17428853,['2007'],6,2,2,0
+1037333,['Overlapping Peptides Elicit Distinct CD8<sup>+</sup> T Cell Responses following Influenza A Virus Infection.'],32868409,['2020'],2,2,2,0
+1038435,['An artificial PAP gene breaks self-tolerance and promotes tumor regression in the TRAMP model for prostate carcinoma.'],22086231,['2012'],3,2,2,0
+1028007,['An attenuated herpes simplex virus type 1 (HSV1) encoding the HIV-1 Tat protein protects mice from a deadly mucosal HSV1 challenge.'],25033084,['2014'],3,2,2,0
+1010248,['Mutation in the immunodominant epitope of the HPV16 E7 oncoprotein as a mechanism of tumor escape.'],17962940,['2008'],2,2,1,1
+1039080,['A Murine CD8<sup>+</sup> T Cell Epitope Identified in the Receptor-Binding Domain of the SARS-CoV-2 Spike Protein.'],34208032,['2021'],2,2,2,0
+1012986,['The surprising kinetics of the T cell response to live antigenic cells.'],17911583,['2007'],2,2,2,0
+1028277,['Damage to the blood-brain barrier during experimental cerebral malaria results from synergistic effects of CD8+ T cells with different specificities.'],25156726,['2014'],2,2,2,0
+1006650,['Antigen-specific cytotoxic T lymphocytes protect against lethal West Nile virus encephalitis.'],17559174,['2007'],2,2,2,0
+1036095,['Limited recognition of Mycobacterium tuberculosis-infected macrophages by polyclonal CD4 and CD8 T cells from the lungs of infected mice.'],31636345,['2020'],4,2,2,0
+1036666,['Commensal bacteria stimulate antitumor responses via T cell cross-reactivity.'],32324171,['2020'],4,2,2,0
+1025850,['CD80 and CD86 control antiviral CD8+ T-cell function and immune surveillance of murine gammaherpesvirus 68.'],16940527,['2006'],2,2,2,0
+1028380,['Programmed death-1 impairs secondary effector lung CD8⁺ T cells during respiratory virus reinfection.'],25339663,['2014'],3,2,2,0
+1007685,['Mapping and restriction of a dominant viral CD4+ T cell core epitope by both MHC class I and MHC class II.'],17320138,['2007'],8,2,2,0
+1028656,['Enhanced response of T cells from murine gammaherpesvirus 68-infected mice lacking the suppressor of T cell receptor signaling molecules Sts-1 and Sts-2.'],24587276,['2014'],1,1,1,0
+1029489,['CD8 T cells use IFN-γ to protect against the lethal effects of a respiratory poxvirus infection.'],24748494,['2014'],1,1,1,0
+1026620,['Priming of autoreactive CD8(+) T cells is inhibited by immunogenic peptides which are competitive for major histocompatibility complex class I binding.'],23885222,['2013'],1,1,1,0
+1027951,['Effector CD8+ T cells are generated in response to an immunodominant epitope in type III effector YopE during primary Yersinia pseudotuberculosis infection.'],24799630,['2014'],1,1,1,0
+1026462,['Brain microvessel cross-presentation is a hallmark of experimental cerebral malaria.'],23681698,['2013'],1,1,1,0
+1029512,['CCR2+ Inflammatory Dendritic Cells and Translocation of Antigen by Type III Secretion Are Required for the Exceptionally Large CD8+ T Cell Response to the Protective YopE69-77 Epitope during Yersinia Infection.'],26468944,['2015'],1,1,1,0
+1026062,['Listeria monocytogenes-derived listeriolysin O has pathogen-associated molecular pattern-like properties independent of its hemolytic ability.'],23136118,['2013'],1,1,1,0
+1026247,['Antigen dose governs the shaping of CTL repertoires in vitro and in vivo.'],16431877,['2006'],1,1,1,0
+1026291,['Nonlytic Fc-fused IL-7 synergizes with Mtb32 DNA vaccine to enhance antigen-specific T cell responses in a therapeutic model of tuberculosis.'],23624092,['2013'],2,1,1,0
+1029479,['MCL1 enhances the survival of CD8+ memory T Cells after viral infection.'],25505074,['2015'],2,1,1,0
+1028038,['Differential presentation of endogenous and exogenous hepatitis B surface antigens influences priming of CD8(+) T cells in an epitope-specific manner.'],24723392,['2014'],5,1,1,0
+1028080,['Long-term functional duration of immune responses to HCV NS3/4A induced by DNA vaccination.'],24871581,['2014'],1,1,1,0
+1028551,"[""Invariant NKT cells regulate the CD8 T cell response during Theiler's virus infection.""]",24498175,['2014'],1,1,1,0
+1028769,['A gold glyco-nanoparticle carrying a Listeriolysin O peptide and formulated with Advax™ delta inulin adjuvant induces robust T-cell protection against listeria infection.'],25659269,['2015'],1,1,1,0
+1026698,['Chronic immunodeficiency in mice lacking RasGRP1 results in CD4 T cell immune activation and exhaustion.'],17675473,['2007'],1,1,1,0
+1028662,['CD4(+) T-cell dependence of primary CD8(+) T-cell response against vaccinia virus depends upon route of infection and viral dose.'],25544501,['2016'],1,1,1,0
+1029055,['T cells recognizing a 11mer influenza peptide complexed to H-2D(b) show promiscuity for peptide length.'],25559620,['2015'],2,1,1,0
+1027726,['Amotosalen-treated donor T cells have polyclonal antigen-specific long-term function without graft-versus-host disease after allogeneic bone marrow transplantation.'],15744235,['2005'],1,1,1,0
+1027770,['Eradication of established tumors by vaccination with Venezuelan equine encephalitis virus replicon particles delivering human papillomavirus 16 E7 RNA.'],11691804,['2001'],1,1,1,0
+1029121,['Co-administration with DNA encoding papillomavirus capsid proteins enhances the antitumor effects generated by therapeutic HPV DNA vaccination.'],26113972,['2015'],1,1,1,0
+1027596,['Animal model of respiratory syncytial virus: CD8+ T cells cause a cytokine storm that is chemically tractable by sphingosine-1-phosphate 1 receptor agonist therapy.'],24672024,['2014'],1,1,1,0
+1027595,['Human metapneumovirus virus-like particles induce protective B and T cell responses in a mouse model.'],24672031,['2014'],3,1,1,0
+1028524,['Increasing inflationary T-cell responses following transient depletion of MCMV-specific memory T cells.'],25331015,['2015'],1,1,1,0
+1028702,['Diverse heterologous primary infections radically alter immunodominance hierarchies and clinical outcomes following H7N9 influenza challenge in mice.'],25668410,['2015'],16,1,1,0
+1029315,['Identification and characterisation of T-cell epitopes for incorporation into dendritic cell-delivered Listeria vaccines.'],26031451,['2015'],4,1,1,0
+1026699,['Impaired CD8 T cell memory and CD4 T cell primary responses in IL-7R alpha mutant mice.'],17325202,['2007'],1,1,1,0
+1027777,['Perpetual expression of PAMPs necessary for optimal immune control and clearance of a persistent pathogen.'],24149620,['2013'],1,1,1,0
+1027257,['The effect of helper epitopes and cellular localization of an antigen on the outcome of gene gun DNA immunization.'],24385146,['2014'],1,1,1,0
+1027785,['Low-dose cyclophosphamide administered as daily or single dose enhances the antitumor effects of a therapeutic HPV vaccine.'],23011589,['2013'],1,1,1,0
+1027111,['A novel emulsion-type adjuvant containing CpG oligodeoxynucleotides enhances CD8+ T-cell-mediated anti-tumor immunity.'],24177312,['2014'],1,1,1,0
+1027830,['Pattern recognition receptor MDA5 modulates CD8+ T cell-dependent clearance of West Nile virus from the central nervous system.'],23966390,['2013'],1,1,1,0
+1026924,['HPV16 E5 peptide vaccine in treatment of cervical cancer in vitro and in vivo.'],24142729,['2013'],7,1,1,0
+1027767,['Adjuvant effect of dendritic cells transduced with recombinant vaccinia virus expressing HPV16-E7 is inhibited by co-expression of IL12.'],15138603,['2004'],1,1,1,0
+1029478,['Intravaginal HPV DNA vaccination with electroporation induces local CD8+ T-cell immune responses and antitumor effects against cervicovaginal tumors.'],25786869,['2015'],1,1,1,0
+1028548,['Impact of regulated secretion on antiparasitic CD8 T cell responses.'],24857659,['2014'],1,1,1,0
+286,['Identification of murine poxvirus-specific CD8+ CTL epitopes with distinct functional profiles.'],15699154,['2005'],3,1,1,0
+1029570,['The generation of CD8+ T-cell population specific for vaccinia virus epitope involved in the antiviral protection against ectromelia virus challenge.'],26474845,['2015'],1,1,1,0
+1039885,['Rapalog combined with CCR4 antagonist improves anticancer vaccines efficacy.'],30183073,['2018'],2,1,1,0
+1042488,['Individual Epitope-Specific CD8<sup>+</sup> T Cell Immune Responses Are Shaped Differently during Chronic Viral Infection.'],37242386,['2023'],6,1,1,0
+1040932,['Immunization With Lipopolysaccharide-Activated Dendritic Cells Generates a Specific CD8<sup>+</sup> T Cell Response That Confers Partial Protection Against Infection With .'],35903201,['2022'],1,1,1,0
+1040685,['Vaccine-induced systemic and mucosal T cell immunity to SARS-CoV-2 viral variants.'],35561224,['2022'],1,1,1,0
+1040304,['Humanization of T cell-mediated immunity in mice.'],34919442,['2021'],1,1,1,0
+1040288,['A novel peptide vaccination augments cytotoxic CD8<sup>+</sup> T-cell responses against Mycobacterium tuberculosis HspX antigen.'],35272134,['2022'],1,1,1,0
+1040239,['Single MHC-I Expression Promotes Virus-Induced Liver Immunopathology.'],35166071,['2022'],2,1,1,0
+1040063,['Development of a Spontaneous HPV16 E6/E7-Expressing Head and Neck Squamous Cell Carcinoma in HLA-A2 Transgenic Mice.'],35089069,['2022'],2,1,1,0
+1040026,['Neoadjuvant PD-1 Immune Checkpoint Blockade Reverses Functional Immunodominance among Tumor Antigen-Specific T Cells.'],31645352,['2020'],3,1,1,0
+1039606,['Monocytes Contribute to IFN-β Production via the MyD88-Dependent Pathway and Cytotoxic T-Cell Responses against Mucosal Respiratory Syncytial Virus Infection.'],34522440,['2021'],1,1,1,0
+1036997,['Adaptive Nanoparticle Platforms for High Throughput Expansion and Detection of Antigen-Specific T cells.'],32594746,['2020'],1,1,1,0
+1039134,['Tumor targeting nanoparticle E7<sub>49-57</sub>-HSP110-RGD elicits potent anti-tumor immune response in a CD8-dependent manner in cervical cancer-bearing mouse model.'],34270395,['2021'],1,1,1,0
+1039089,['Precursor Abundance Influences Divergent Antigen-Specific CD8<sup>+</sup> T Cell Responses after Yersinia pseudotuberculosis Foodborne Infection.'],34031132,['2021'],2,1,1,0
+1038851,['Lipid-nanoparticle-encapsulated mRNA vaccines induce protective memory CD8 T\xa0cells against a lethal viral infection.'],33992803,['2021'],2,1,1,0
+1038310,['Novel prostate acid phosphatase-based peptide vaccination strategy induces antigen-specific T-cell responses and limits tumour growth in mice.'],24338683,['2014'],3,1,1,0
+1038303,['Construction and characterization of an attenuated Listeria monocytogenes strain for clinical use in cancer immunotherapy.'],19020110,['2009'],1,1,1,0
+1037490,['Potent therapeutic efficacy of an alphavirus replicon DNA vaccine expressing human papilloma virus E6 and E7 antigens.'],30288352,['2018'],1,1,1,0
+1037365,['In vivo detection of antigen-specific CD8<sup>+</sup> T cells by immuno-positron emission tomography.'],32929269,['2020'],3,1,1,0
+1037323,['Combined prophylactic and therapeutic immune responses against human papillomaviruses induced by a thioredoxin-based L2-E7 nanoparticle vaccine.'],32886721,['2020'],4,1,1,0
+1042850,['Terminally exhausted CD8<sup>+</sup> T cells contribute to age-dependent severity of respiratory virus infection.'],37528458,['2023'],1,1,1,0
+1043859,['Antibody targeting tumor-derived soluble NKG2D ligand sMIC reprograms NK cell homeostatic survival and function and enhances melanoma response to PDL1 blockade therapy.'],32517713,['2020'],1,1,1,0
+1044109,['Antigen design enhances the immunogenicity of Semliki Forest virus-based therapeutic human papillomavirus vaccines.'],25756550,['2015'],1,1,1,0
+1044124,['Combination of proteasome and HDAC inhibitor enhances HPV16 E7-specific CD8+ T cell immune response and antitumor effects in a preclinical cervical cancer model.'],25591912,['2015'],1,1,1,0
+1048973,['Structural Basis for the Immunological Paradox of a High-Affinity Yet Non-Immunogenic MHC-I Epitope from .'],42589148,['2026'],1,1,0,1
+1048712,['Simultaneous TCR and IL-2 agonism selectively enhances epitope-specific CD8 T-cell responses during chronic viral infection.'],42294879,['2026'],2,1,1,0
+1047406,['A therapeutic multi-epitope protein vaccine targeting HPV16 E6 E7 elicits potent tumor regression and cytotoxic immune responses.'],41054971,['2025'],1,1,1,0
+1047023,['Prior infection with unrelated neurotropic virus exacerbates influenza disease and impairs lung T cell responses.'],38521764,['2024'],5,1,1,0
+1047013,['CD38-Targeting Peptide Vaccine Ameliorates Aging-Associated Phenotypes in Mice.'],40557469,['2025'],1,1,1,0
+1046326,['Selection of therapeutically effective T-cell receptors from the diverse tumor-bearing repertoire.'],40316304,['2025'],4,1,1,0
+1046314,['Phenotype and fate of liver-resident CD8 T cells during acute and chronic hepacivirus infection.'],37812637,['2023'],1,1,1,0
+1045912,['Vaccine-induced effector-memory CD8+ T cell responses predict therapeutic efficacy against tumors.'],22914049,['2012'],1,1,1,0
+1045290,['Comparison of vaccine-induced effector CD8 T cell responses directed against self- and non-self-tumor antigens: implications for cancer immunotherapy.'],24018273,['2013'],4,1,1,0
+1045286,['Multifunctional nanoparticles co-delivering Trp2 peptide and CpG adjuvant induce potent cytotoxic T-lymphocyte response against melanoma and its lung metastasis.'],24004885,['2013'],1,1,1,0
+1044938,['Novel H-2D<sup>b</sup>-restricted CD8 epitope derived from mouse MAGE-type antigen P1A mediates antitumor immunity in C57BL/6 mice.'],39384196,['2024'],4,1,1,0
+1044869,['Developing an erythrocyte‒MHC-I conjugate for cancer treatment.'],39349449,['2024'],3,1,1,0
+1044859,['Protection against HPV-16-Associated Tumors Requires the Activation of CD8+ Effector Memory T Cells and the Control of Myeloid-Derived Suppressor Cells.'],27222537,['2016'],1,1,1,0
+1044456,['Clinical human metapneumovirus isolates show distinct pathogenesis and inflammatory profiles but similar CD8<sup>+</sup> T cell impairment.'],38197640,['2024'],1,1,1,0
+1044412,['STING activator c-di-GMP enhances the anti-tumor effects of peptide vaccines in melanoma-bearing mice.'],25986168,['2015'],2,1,1,0
+1044166,['Transgene-derived overexpression of miR-17-92 in CD8+ T-cells confers enhanced cytotoxic activity.'],25677619,['2015'],1,1,1,0
+1044132,['Recurrence of melanoma following T cell treatment: continued antigen expression in a tumor that evades T cell recruitment.'],25363716,['2015'],1,1,1,0
+1037302,['Comprehensive Screening of Mouse T-Cell Epitopes in Human Herpesvirus 6B Glycoprotein H/L/Q1/Q2 Tetramer Complex.'],32775465,['2020'],2,1,1,0
+1036784,['Tuning antiviral CD8 T-cell response via proline-altered peptide ligand vaccination.'],32365082,['2020'],4,1,1,0
+1029665,['Vaccination with an adenoviral vector encoding the tumor antigen directly linked to invariant chain induces potent CD4(+) T-cell-independent CD8(+) T-cell-mediated tumor control.'],19637230,['2009'],1,1,1,0
+1031274,['YopE specific CD8+ T cells provide protection against systemic and mucosal Yersinia pseudotuberculosis infection.'],28207901,['2017'],1,1,1,0
+1033060,['The Immunogenicity of a Proline-Substituted Altered Peptide Ligand toward the Cancer-Associated TEIPP Neoepitope Trh4 Is Unrelated to Complex Stability.'],29507106,['2018'],2,1,1,0
+1032919,['Identification of a Novel CD8 T Cell Epitope Derived from  Protective Liver-Stage Antigen.'],29434602,['2018'],2,1,1,0
+1032381,['CD4 T Helper Cells Instruct Lymphopenia-Induced Memory-Like CD8 T Cells for Control of Acute LCMV Infection.'],28066432,['2016'],1,1,1,0
+1032380,['Transcription Factor Bcl11b Controls Effector and Memory CD8 T cell Fate Decision and Function during Poxvirus Infection.'],27790219,['2016'],1,1,1,0
+1032358,['Cutting Edge: The Aging Immune System Reveals the Biological Impact of Direct Antigen Presentation on CD8 T Cell Responses.'],28615415,['2017'],1,1,1,0
+1032342,['PD-1 Blockade Promotes Epitope Spreading in Anticancer CD8<sup>+</sup> T Cell Responses by Preventing Fratricidal Death of Subdominant Clones To Relieve Immunodomination.'],28939757,['2017'],11,1,1,0
+1032072,['Enhancing antitumor immunogenicity of HPV16-E7 DNA vaccine by fusing DNA encoding E7-antigenic peptide to DNA encoding capsid protein L1 of Bovine papillomavirus.'],28852471,['2017'],2,1,1,0
+1031846,['Characterization of HPV18 E6-specific T cell responses and establishment of HPV18 E6-expressing tumor model.'],28599791,['2017'],1,1,1,0
+1031049,['Peptide Processing Is Critical for T-Cell Memory Inflation and May Be Optimized to Improve Immune Protection by CMV-Based Vaccine Vectors.'],27977791,['2016'],1,1,1,0
+1036708,['Recombinant Live Attenuated Influenza Vaccine Viruses Carrying Conserved T-cell Epitopes of Human Adenoviruses Induce Functional Cytotoxic T-Cell Responses and Protect Mice against Both Infections.'],32344618,['2020'],1,1,1,0
+1030488,['A Human Trypanosome Suppresses CD8+ T Cell Priming by Dendritic Cells through the Induction of Immune Regulatory CD4+ Foxp3+ T Cells.'],27332899,['2016'],3,1,1,0
+1030401,['Exceptional antineoplastic activity of a dendritic-cell-targeted vaccine loaded with a Listeria peptide proposed against metastatic melanoma.'],26942874,['2016'],2,1,1,0
+1030357,['Low Mutation Burden in Ovarian Cancer May Limit the Utility of Neoantigen-Targeted Vaccines.'],27192170,['2016'],1,1,1,0
+1030319,['Type I Interferons Regulate the Magnitude and Functionality of Mouse Polyomavirus-Specific CD8 T Cells in a Virus Strain-Dependent Manner.'],26984726,['2016'],1,1,1,0
+1030213,['The IL-15 receptor {alpha} chain cytoplasmic domain is critical for normal IL-15Ralpha function but is not required for trans-presentation.'],18796634,['2008'],1,1,1,0
+1030011,['Identification of the murine H-2D(b) and human HLA-A*0201 MHC class I-restricted HPV6 E7-specific cytotoxic T lymphocyte epitopes.'],26759151,['2016'],1,1,1,0
+1030010,['Buccal injection of synthetic HPV long peptide vaccine induces local and systemic antigen-specific CD8+ T-cell immune responses and antitumor effects without adjuvant.'],26949512,['2016'],1,1,1,0
+1029851,['Protein-prime/modified vaccinia virus Ankara vector-boost vaccination overcomes tolerance in high-antigenemic HBV-transgenic mice.'],26776470,['2016'],3,1,1,0
+1033433,['Nanobody-Antigen Conjugates Elicit HPV-Specific Antitumor Immune Responses.'],29792298,['2018'],1,1,1,0
+1033595,['Nanoscale Peptide Self-assemblies Boost BCG-primed Cellular Immunity Against Mycobacterium tuberculosis.'],30131591,['2018'],6,1,1,0
+1033879,['Regulation of dendritic cell function and T cell priming by the fatty acid-binding protein AP2.'],17114450,['2006'],1,1,1,0
+1033886,['Direct analysis of the dynamics of the intestinal mucosa CD8 T cell response to systemic virus infection.'],11160292,['2001'],1,1,1,0
+1036673,"['CUE-101, a Novel E7-pHLA-IL2-Fc Fusion Protein, Enhances Tumor Antigen-Specific T-Cell Activation for the Treatment of HPV16-Driven Malignancies.']",31964784,['2020'],1,1,1,0
+1036655,['Chikungunya Virus Evades Antiviral CD8<sup>+</sup> T Cell Responses To Establish Persistent Infection in Joint-Associated Tissues.'],32102875,['2020'],1,1,1,0
+1036206,['The antigen-specific CD8+ T cell repertoire in unimmunized mice includes memory phenotype cells bearing markers of homeostatic expansion.'],19188498,['2009'],2,1,1,0
+1035814,['Alphavirus-based hepatitis C virus therapeutic vaccines: can universal helper epitopes enhance HCV-specific cytotoxic T lymphocyte responses?'],31620673,['2019'],1,1,1,0
+1035744,['Plasmacytoid Dendritic Cells Contribute to the Production of IFN-β via TLR7-MyD88-Dependent Pathway and CTL Priming during Respiratory Syncytial Virus Infection.'],31398816,['2019'],1,1,1,0
+1035105,['Vaccination with synthetic long peptide formulated with CpG in an oil-in-water emulsion induces robust E7-specific CD8 T cell responses and TC-1 tumor eradication.'],31170937,['2019'],2,1,1,0
+1034920,['Genetic Adjuvantation of Recombinant MVA with CD40L Potentiates CD8 T Cell Mediated Immunity.'],23986761,['2013'],1,1,1,0
+1034913,['Herpes Zoster DNA Vaccines with IL-7 and IL-33 Molecular Adjuvants Elicit Protective T Cell Immunity.'],30402333,['2018'],1,1,1,0
+1026053,['Programmed death 1 regulates development of central memory CD8 T cells after acute viral infection.'],21525385,['2011'],1,1,1,0
+1034594,['Endogenously Expressed Antigens Bind Mammalian RNA via Cationic Domains that Enhance Priming of Effector CD8\xa0T Cells by DNA Vaccination.'],30713086,['2019'],2,1,1,0
+1034102,['Nanoparticle Conjugation of Human Papillomavirus 16 E7-long Peptides Enhances Therapeutic Vaccine Efficacy against Solid Tumors in Mice.'],30131378,['2018'],1,1,1,0
+1033916,['The Inhibitory Receptor NKG2A Sustains Virus-Specific CD8⁺ T Cells in Response to a Lethal Poxvirus Infection.'],26680205,['2015'],1,1,1,0
+1033912,['Reactive glia promote development of CD103<sup>+</sup> CD69<sup>+</sup> CD8<sup>+</sup> T-cells through programmed cell death-ligand 1 (PD-L1).'],29602245,['2018'],1,1,1,0
+1033909,['Clonal exhaustion as a mechanism to protect against severe immunopathology and death from an overwhelming CD8 T cell response.'],24391647,['2013'],3,1,1,0
+1033897,"['Multiparity induces priming to male-specific minor histocompatibility antigen, HY, in mice and humans.']",12649154,['2003'],2,1,1,0
+1033892,['Immediate-early expression of a recombinant antigen by modified vaccinia virus ankara breaks the immunodominance of strong vector-specific B8R antigen in acute and memory CD8 T-cell responses.'],20538860,['2010'],2,1,1,0
+1033889,['CpG-matured murine plasmacytoid dendritic cells are capable of in vivo priming of functional CD8 T cell responses to endogenous but not exogenous antigens.'],14970182,['2004'],2,1,1,0
+1026061,['Viral MHC class I inhibition evades CD8+ T-cell effector responses in vivo but not CD8+ T-cell priming.'],23112205,['2012'],1,1,1,0
+1026019,['Adjuvant properties of listeriolysin O protein in a DNA vaccination strategy.'],17102978,['2007'],1,1,1,0
+1019829,['CD4+ TH1 cells generated by Ii-PADRE DNA at prime phase are important to induce effectors and memory CD8+ T cells.'],20463596,['2010'],1,1,1,0
+1015771,['Characterization of HLA-A2-restricted HPV-16 E7-specific CD8(+) T-cell immune responses induced by DNA vaccines in HLA-A2 transgenic mice.'],16107858,['2006'],1,1,1,0
+1020128,"['CD8 T cells specific for a donor-derived, self-restricted transplant antigen are nonpathogenic bystanders after vascularized heart transplantation in mice.']",16455975,['2006'],2,1,1,0
+1020086,['Remodeling specific immunity by use of MHC tetramers: demonstration in a graft-versus-host disease model.'],16269613,['2006'],1,1,1,0
+1019817,['Generation of Trypanosoma cruzi-specific CD8+ T-cell immunity is unaffected by the absence of type I interferon signaling.'],20457790,['2010'],3,1,1,0
+1019789,['Significant impact of sequence variations in the nucleoprotein on CD8 T cell-mediated cross-protection against influenza A virus infections.'],20485501,['2010'],3,1,1,0
+1019731,"['Induction of protective immunity against MHC class I-deficient, HPV16-associated tumours with peptide and dendritic cell-based vaccines.']",20126973,['2010'],1,1,1,0
+1019224,"[""Predominant clonal accumulation of CD8+ T cells with moderate avidity in the central nervous systems of Theiler's virus-infected C57BL/6 mice.""]",20071578,['2010'],1,1,1,0
+1019184,['Physiological numbers of CD4+ T cells generate weak recall responses following influenza virus challenge.'],20061406,['2010'],2,1,1,0
+1019164,['Characterization of murine T-cell epitopes on mycobacterial DNA-binding protein 1 (MDP1) using DNA vaccination.'],20188258,['2010'],1,1,1,0
+1017715,['HPV16E7 tumor antigen modified by KDEL sequence induce specific cytotoxic T lymphocytes-dependent antitumor immunity.'],19500947,['2009'],1,1,1,0
+1016617,['Design of agonistic altered peptides for the robust induction of CTL directed towards H-2Db in complex with the melanoma-associated epitope gp100.'],19789338,['2009'],3,1,1,0
+1016542,['Elimination of immunodominant epitopes from multispecific DNA-based vaccines allows induction of CD8 T cells that have a striking antiviral potential.'],19542448,['2009'],3,1,1,0
+1015840,['Regression of established human papillomavirus type 16 (HPV-16) immortalized tumors in vivo by vaccinia viruses expressing different forms of HPV-16 E7 correlates with enhanced CD8(+) T-cell responses that home to the tumor site.'],11559797,['2001'],2,1,1,0
+1015837,['Pharmacokinetic differences between a T cell-tolerizing and a T cell-activating peptide.'],11390461,['2001'],2,1,1,0
+1015827,"['T cell response to human papillomavirus 16 E7 in mice: comparison of Cr release assay, intracellular IFN-gamma production, ELISPOT and tetramer staining.']",12566712,['2002'],1,1,1,0
+1015818,['Heterologous boosting increases immunogenicity of chimeric papillomavirus virus-like particle vaccines.'],12804851,['2003'],3,1,1,0
+1015807,['Paucity of functional CTL epitopes in the E7 oncoprotein of cervical cancer associated human papillomavirus type 16.'],12534940,['2003'],1,1,1,0
+1015799,['Development of a DNA vaccine targeting human papillomavirus type 16 oncoprotein E6.'],15280455,['2004'],1,1,1,0
+1015791,['Transcutaneous immunization in mice: induction of T-helper and cytotoxic T lymphocyte responses and protection against human papillomavirus-induced tumors.'],16052529,['2006'],4,1,1,0
+1015776,['Codon optimized expression of HPV 16 E6 renders target cells susceptible to E6-specific CTL recognition.'],16949679,['2006'],2,1,1,0
+1020138,['HY peptides modulate transplantation responses to skin allografts.'],12407024,['2002'],1,1,1,0
+1020276,['Microchimerism maintains deletion of the donor cell-specific CD8+ T cell repertoire.'],16395404,['2006'],2,1,1,0
+1020277,['Role of immunoproteasomes in cross-presentation.'],16818754,['2006'],1,1,1,0
+1022250,['Differential regulation of effector- and central-memory responses to Toxoplasma gondii Infection by IL-12 revealed by tracking of Tgd057-specific CD8+ T cells.'],20333242,['2010'],3,1,1,0
+1023006,['Re-circulation of lymphocytes mediated by sphingosine-1-phosphate receptor-1 contributes to resistance against experimental infection with the protozoan parasite Trypanosoma cruzi.'],22381075,['2012'],2,1,1,0
+1022815,['Granzyme B regulates antiviral CD8+ T cell responses.'],22084442,['2011'],1,1,1,0
+1022806,['Consequences of suboptimal priming are apparent for low-avidity T-cell responses.'],21556018,['2012'],1,1,1,0
+1022614,['The antiviral immune response in mice devoid of immunoproteasome activity.'],22013127,['2011'],3,1,1,0
+1022431,['Major histocompatibility complex-dependent cytotoxic T lymphocyte repertoire and functional avidity contribute to strain-specific disease susceptibility after murine respiratory syncytial virus infection.'],21795345,['2011'],1,1,1,0
+1022353,['Targeting OX40 promotes lung-resident memory CD8 T cell populations that protect against respiratory poxvirus infection.'],21715499,['2011'],2,1,1,0
+1022276,['Immunogenicity in mice and rhesus monkeys vaccinated with recombinant vaccinia virus expressing bivalent E7E6 fusion proteins from human papillomavirus types 16 and 18.'],21672263,['2011'],1,1,1,0
+1022275,['Preclinical development of highly effective and safe DNA vaccines directed against HPV 16 E6 and E7.'],21207427,['2011'],1,1,1,0
+1022234,['Vaccination against lymphocytic choriomeningitis virus infection in MHC class II-deficient mice.'],21357263,['2011'],5,1,1,0
+1021274,['Vaccination with whole inactivated virus vaccine affects the induction of heterosubtypic immunity against influenza virus A/H5N1 and immunodominance of virus-specific CD8+ T-cell responses in mice.'],20335492,['2010'],12,1,1,0
+1022222,['Yersinia pestis YopE contains a dominant CD8 T cell epitope that confers protection in a mouse model of pneumonic plague.'],21653834,['2011'],4,1,1,0
+1022219,['Absence of vasoactive intestinal peptide expression in hematopoietic cells enhances Th1 polarization and antiviral immunity in mice.'],21677142,['2011'],1,1,1,0
+1021654,['A novel fusion protein-based vaccine comprising a cell penetrating and immunostimulatory peptide linked to human papillomavirus (HPV) type 16 E7 antigen generates potent immunologic and anti-tumor responses in mice.'],21145912,['2011'],1,1,1,0
+1021633,['Long term recall of memory CD8 T cells in mice to first and third generation smallpox vaccines.'],21195803,['2011'],1,1,1,0
+1021624,"[""Preferential induction of protective T cell responses to Theiler's virus in resistant (C57BL/6 x SJL)F1 mice.""]",21191011,['2011'],1,1,1,0
+1021619,['T Cell receptor clonotype influences epitope hierarchy in the CD8+ T cell response to respiratory syncytial virus infection.'],21118816,['2011'],1,1,1,0
+1021590,['Repeated in vivo stimulation of T and B cell responses in old mice generates protective immunity against lethal West Nile virus encephalitis.'],21339368,['2011'],1,1,1,0
+1021352,['Improving therapeutic HPV peptide-based vaccine potency by enhancing CD4+ T help and dendritic cell activation.'],21092195,['2010'],2,1,1,0
+1015772,['Eradication of established HPV 16-expressing tumors by a single administration of a vaccine composed of a liposome-encapsulated CTL-T helper fusion peptide in a water-in-oil emulsion.'],16675074,['2006'],3,1,1,0
+1015760,['Uptake of human papillomavirus virus-like particles by dendritic cells is mediated by Fcgamma receptors and contributes to acquisition of T cell immunity.'],17548594,['2007'],2,1,1,0
+1024511,['Linear fidelity in quantification of anti-viral CD8+ T cells.'],22745779,['2012'],2,1,1,0
+1015757,['Intradermal administration of DNA vaccines combining a strategy to bypass antigen processing with a strategy to prolong dendritic cell survival enhances DNA vaccine potency.'],17931752,['2007'],1,1,1,0
+1004728,"['Differential immune responses and protective efficacy induced by components of a tuberculosis polyprotein vaccine, Mtb72F, delivered as naked DNA or recombinant protein.']",15187142,['2004'],2,1,1,0
+1004706,['The murine cytomegalovirus immunomodulatory gene m152 prevents recognition of infected cells by M45-specific CTL but does not alter the immunodominance of the M45-specific CD8 T cell response in vivo.'],12077265,['2002'],2,1,1,0
+1003895,['Identification of Trypanosoma cruzi trans-sialidase family members as targets of protective CD8+ TC1 responses.'],9550413,['1997'],1,1,1,0
+1003562,['Protection against vaccinia virus challenge by CD8 memory T cells resolved by molecular mimicry.'],17079318,['2007'],5,1,1,0
+1003491,"['Breaking tolerance in hepatitis B surface antigen (HBsAg) transgenic mice by vaccination with cross-reactive, natural HBsAg variants.']",14635042,['2003'],8,1,1,0
+1003483,['Different immunogenicity of H-2 Kb-restricted epitopes in natural variants of the hepatitis B surface antigen.'],12938219,['2003'],28,1,1,0
+1002290,['Immunization with a circumsporozoite epitope fused to Bordetella pertussis adenylate cyclase in conjunction with cytotoxic T-lymphocyte-associated antigen 4 blockade confers protection against Plasmodium berghei liver-stage malaria.'],16552058,['2006'],2,1,1,0
+1001179,['Evaluation of T-cell responses to peptides and lipopeptides with MHC class I binding motifs derived from the amino acid sequence of the 19-kDa lipoprotein of Mycobacterium tuberculosis.'],11090876,['2000'],2,1,1,0
+1001176,['Immunoproteasomes shape immunodominance hierarchies of antiviral CD8(+) T cells at the levels of T cell repertoire and presentation of viral antigens.'],11390439,['2001'],6,1,1,0
+1001135,['Tracking antigen-specific CD8 T lymphocytes in the lungs of mice vaccinated with the Mtb72F polyprotein.'],16113299,['2005'],2,1,1,0
+1001097,['TNF receptor type 2 (p75) functions as a costimulator for antigen-driven T cell responses in vivo.'],16393990,['2006'],1,1,1,0
+1410,['Quantification of epitope-specific MHC class-II-restricted T cells following lymphocytic choriomeningitis virus infection.'],10222055,['1999'],1,1,1,0
+1365,['In vivo selection of a lymphocytic choriomeningitis virus variant that affects recognition of the GP33-43 epitope by H-2Db but not H-2Kb.'],11333891,['2001'],4,1,1,0
+1342,['Role of CD28-B7 interactions in generation and maintenance of CD8 T cell memory.'],11698427,['2001'],5,1,1,0
+1258,['Protection against CTL escape and clinical disease in a murine model of virus persistence.'],12902505,['2003'],2,1,1,0
+1253,['T cell immunodominance and maintenance of memory regulated by unexpectedly cross-reactive pathogens.'],12055626,['2002'],24,1,1,0
+1197,['Very diverse CD8 T cell clonotypic responses after virus infections.'],14978121,['2004'],2,1,1,0
+1196,['Molecular and functional dissection of the H-2Db-restricted subdominant cytotoxic T-cell response to lymphocytic choriomeningitis virus.'],11160751,['2001'],4,1,1,0
+711,['Identification of murine CD8 T cell epitopes in codon-optimized SARS-associated coronavirus spike protein.'],15823604,['2005'],1,1,1,0
+1005250,['Prediction of murine MHC class I epitopes in a major house dust mite allergen and induction of T1-type CD8+ T cell responses.'],9040009,['1997'],1,1,1,0
+1005895,['Cytomegalovirus misleads its host by priming of CD8 T cells specific for an epitope not presented in infected tissues.'],14699084,['2004'],3,1,1,0
+1006056,['Relative dominance of epitope-specific CD8+ T cell responses in an F1 hybrid mouse model of respiratory syncytial virus infection.'],17275872,['2007'],1,1,1,0
+1012900,['Cytotoxic T-lymphocyte epitope vaccination protects against human metapneumovirus infection and disease in mice.'],16439559,['2006'],1,1,1,0
+1015530,"['Specificity, magnitude, and kinetics of MOG-specific CD8+ T cell responses during experimental autoimmune encephalomyelitis.']",15593305,['2005'],1,1,1,0
+1014576,"['Enhanced priming of multispecific, murine CD8+ T cell responses by DNA vaccines expressing stress protein-binding polytope peptides.']",12874211,['2003'],5,1,1,0
+1013988,['A translatable molecular approach to determining CD8 T-cell epitopes in TMEV infection.'],18817825,['2008'],1,1,1,0
+1013961,['Cutting edge: culture with high doses of viral peptide induces previously unprimed CD8(+) T cells to produce cytokine.'],11509579,['2001'],5,1,1,0
+1013681,['OX40 drives protective vaccinia virus-specific CD8 T cells.'],19017988,['2008'],2,1,1,0
+1013547,['Enhanced major histocompatibility complex class I binding and immune responses through anchor modification of the non-canonical tumour-associated mucin 1-8 peptide.'],17067310,['2006'],6,1,1,0
+1013393,"['Quantitation of CD8(+) T-lymphocyte responses to multiple epitopes from simian virus 40 (SV40) large T antigen in C57BL/6 mice immunized with SV40, SV40 T-antigen-transformed cells, or vaccinia virus recombinants expressing full-length T antigen or epitope minigenes.']",10888631,['2000'],12,1,1,0
+1013268,['CD8+ T cells targeting a single immunodominant epitope are sufficient for elimination of established SV40 T antigen-induced brain tumors.'],18768900,['2008'],6,1,1,0
+1012389,['Critical contribution of immunoproteasomes in the induction of protective immunity against Trypanosoma cruzi in mice vaccinated with a plasmid encoding a CTL epitope fused to green fluorescence protein.'],18321749,['2008'],1,1,1,0
+1006184,['Human papillomavirus type 16 L1 capsomeres induce L1-specific cytotoxic T lymphocytes and tumor regression in C57BL/6 mice.'],12663770,['2003'],1,1,1,0
+1012349,"[""Conversion of tyrosine to the inflammation-associated analog 3'-nitrotyrosine at either TCR- or MHC-contact positions can profoundly affect recognition of the MHC class I-restricted epitope of lymphocytic choriomeningitis virus glycoprotein 33 by CD8 T cells.""]",18424715,['2008'],2,1,1,0
+1012042,['An inclusion membrane protein from Chlamydia trachomatis enters the MHC class I pathway and stimulates a CD8+ T cell response.'],14568950,['2003'],1,1,1,0
+1010875,['Contributions of the viral genetic background and a single amino acid substitution in an immunodominant CD8+ T-cell epitope to murine coronavirus neurovirulence.'],15994805,['2005'],3,1,1,0
+1010383,['Infection with Trypanosoma cruzi restricts the repertoire of parasite-specific CD8+ T cells leading to immunodominance.'],18209071,['2008'],9,1,1,0
+1008909,['Rapid accumulation of adoptively transferred CD8+ T cells at the tumor site is associated with long-term control of SV40 T antigen-induced tumors.'],18004562,['2008'],4,1,1,0
+1008098,['Cross-presentation of glycoprotein 96-associated antigens on major histocompatibility complex class I molecules requires receptor-mediated endocytosis.'],10839811,['2000'],1,1,1,0
+1007680,['Rates of processing determine the immunogenicity of immunoproteasome-generated epitopes.'],17548590,['2007'],3,1,1,0
+1006670,['Identification of an H-2D(b)-restricted CD8+ cytotoxic T lymphocyte epitope in the matrix protein of respiratory syncytial virus.'],15916793,['2005'],1,1,1,0
+1023093,"['The secreted lipoprotein, MPT83, of Mycobacterium tuberculosis is recognized during human tuberculosis and stimulates protective immunity in mice.']",22567094,['2012'],1,1,1,0
+1049037,['Structural basis for the lack of immunogenicity of a Cryptosporidium octapeptide: anchor switching induces MHC-I groove remodeling and instability.'],42336019,['2026'],1,1,0,1
+1025839,"['Lack of IL-7 and IL-15 signaling affects interferon-γ production by, more than survival of, small intestinal intraepithelial memory CD8+ T cells.']",21928282,['2011'],1,1,1,0
+1026021,['Control of memory CD8+ T cell differentiation by CD80/CD86-CD28 costimulation and restoration by IL-2 during the recall response.'],18178855,['2008'],1,1,1,0
+1025705,['BiVax: a peptide/poly-IC subunit vaccine that mimics an acute infection elicits vast and effective anti-tumor CD8 T-cell responses.'],23266830,['2013'],1,1,1,0
+1025921,['Dispensable role for 4-1BB and 4-1BBL in development of vaccinia virus-specific CD8 T cells.'],22037570,['2012'],1,1,1,0
+1025920,['Mycobacterium tuberculosis-specific CD8+ T cells require perforin to kill target cells and provide protection in vivo.'],19050279,['2008'],1,1,1,0
+1026023,['Drug-induced cure drives conversion to a stable and protective CD8+ T central memory response in chronic Chagas disease.'],18425131,['2008'],2,1,1,0
+1025915,['Limited role for CD4+ T-cell help in the initial priming of Trypanosoma cruzi-specific CD8+ T cells.'],17043105,['2007'],2,1,1,0
+1025823,['Co-transplantation of pure blood stem cells with antigen-specific but not bulk T cells augments functional immunity.'],22440752,['2012'],2,1,1,0
+1025824,['Allogeneic T cells treated with amotosalen prevent lethal cytomegalovirus disease without producing graft-versus-host disease following bone marrow transplantation.'],14634114,['2003'],2,1,1,0
+1025986,"['Age-related increases in PGD(2) expression impair respiratory DC migration, resulting in diminished T cell responses upon respiratory virus infection in mice.']",22105170,['2011'],2,1,1,0
+1026033,['Recall responses by helpless memory CD8+ T cells are restricted by the up-regulation of PD-1.'],19299723,['2009'],1,1,1,0
+1026020,['TGF-beta regulates pathology but not tissue CD8+ T cell dysfunction during experimental Trypanosoma cruzi infection.'],17823982,['2007'],1,1,1,0
+1025989,"[""2'-O methylation of the viral mRNA cap by West Nile virus evades ifit1-dependent and -independent mechanisms of host restriction in vivo.""]",22589727,['2012'],1,1,1,0
+1026018,['Endogenous CD4(+) CD25(+) regulatory T cells have a limited role in the control of Trypanosoma cruzi infection in mice.'],17101658,['2007'],3,1,1,0
+1025829,['DNA vaccines employing intracellular targeting strategies and a strategy to prolong dendritic cell life generate a higher number of CD8+ memory T cells and better long-term antitumor effects compared with a DNA prime-vaccinia boost regimen.'],15703486,['2005'],1,1,1,0
+1025994,['CD8+ T cells use TRAIL to restrict West Nile virus pathogenesis by controlling infection in neurons.'],22740407,['2012'],1,1,1,0
+1026013,['Listeria monocytogenes-based antibiotic resistance gene-free antigen delivery system applicable to other bacterial vectors and DNA vaccines.'],15501772,['2004'],1,1,1,0
+1025844,['Herpes simplex virus-specific memory CD8+ T cells are selectively activated and retained in latently infected sensory ganglia.'],12753737,['2003'],2,1,1,0
+1025922,['The adaptor molecule MyD88 directly promotes CD8 T cell responses to vaccinia virus.'],19414781,['2009'],2,1,1,0
+1025981,['Preferential replication of vaccinia virus in the ovaries is independent of immune regulation through IL-10 and TGF-β.'],21958373,['2011'],1,1,1,0
+1026002,['Differential regulation of antiviral T-cell immunity results in stable CD8+ but declining CD4+ T-cell memory.'],11479623,['2001'],7,1,1,0
+1025980,['The TNFR family members OX40 and CD27 link viral virulence to protective T cell vaccines in mice.'],21183789,['2011'],1,1,1,0
+1025964,['Targeting of antigen to the herpesvirus entry mediator augments primary adaptive immune responses.'],18193057,['2008'],1,1,1,0
+1025290,['Characterization of CD8+ T cell function and immunodominance generated with an H2O2-inactivated whole-virus vaccine.'],23055558,['2012'],4,1,1,0
+1025946,['Critical role for all-trans retinoic acid for optimal effector and effector memory CD8 T cell differentiation.'],23338237,['2013'],1,1,1,0
+1003509,"['Translation from cryptic reading frames of DNA vaccines generates an extended repertoire of immunogenic, MHC class I-restricted epitopes.']",15814688,['2005'],2,0,0,0
+1004546,['Th-cytotoxic T-lymphocyte chimeric epitopes extended by Nepsilon-palmitoyl lysines induce herpes simplex virus type 1-specific effector CD8+ Tc1 responses and protect against ocular infection.'],16306600,['2005'],3,0,0,0
+1012303,['The exception that reinforces the rule: crosspriming by cytosolic peptides that escape degradation.'],18549799,['2008'],2,0,0,0
+1040246,['Aluminum nanoparticles deliver a dual-epitope peptide for enhanced anti-tumor immunotherapy.'],35217098,['2022'],5,0,0,0
+1025975,['Inflation and long-term maintenance of CD8 T cells responding to a latent herpesvirus depend upon establishment of latency and presence of viral antigens.'],20007576,['2009'],1,0,0,0
+1004608,['CD4+CD25+ T cells regulate virus-specific primary and memory CD8+ T cell responses.'],12975455,['2003'],1,0,0,0
+1027441,['Tim-3 directly enhances CD8 T cell responses to acute Listeria monocytogenes infection.'],24567532,['2014'],1,0,0,0
+1040361,['A Novel H-2<sup>d</sup> Epitope for Influenza A Polymerase Acidic Protein.'],35337006,['2022'],1,0,0,0
+1003939,['Activation of natural killer T cells by alpha-galactosylceramide impairs DNA vaccine-induced protective immunity against Trypanosoma cruzi.'],12595437,['2003'],1,0,0,0
+1003547,['Priming with cold-adapted influenza A does not prevent infection but elicits long-lived protection against supralethal challenge with heterosubtypic virus.'],17202366,['2007'],4,0,0,0
+1026878,['Superior induction and maintenance of protective CD8 T cells in mice infected with mouse cytomegalovirus vector expressing RAE-1γ.'],24052528,['2013'],1,0,0,0
+1004968,['Modulation of CD4(+) T cell-dependent specific cytotoxic CD8(+) T cells differentiation and proliferation by the timing of increase in the pathogen load.'],17460760,['2007'],1,0,0,0
+1003563,['A correlation between function and selected measures of T cell avidity in influenza virus-specific CD8+ T cell responses.'],17072910,['2006'],4,0,0,0
+1037376,['Endogenous retroviral proteins provide an immunodominant but not requisite antigen in a murine immunotherapy tumor model.'],32923116,['2020'],2,0,0,0
+1013177,['The immunogenicity of adenovirus vectors limits the multispecificity of CD8 T-cell responses to vector-encoded transgenic antigens.'],18612271,['2008'],2,0,0,0
+1025971,['IL-21 and IL-15 cytokine DNA augments HSV specific effector and memory CD8+ T cell response.'],19233474,['2009'],1,0,0,0
+1027211,['CD4+ T-cell help is required for effective CD8+ T cell-mediated resolution of acute viral hepatitis in mice.'],24466045,['2014'],1,0,0,0
+1039317,['Cowpea Mosaic Virus (CPMV)-Based Cancer Testis Antigen NY-ESO-1 Vaccine Elicits an Antigen-Specific Cytotoxic T Cell Response.'],34368641,['2020'],1,0,0,0
+1025985,['Natural killer cells act as rheostats modulating antiviral T cells.'],22101430,['2011'],1,0,0,0
+1039394,['Conservation of S20 as an Ineffective and Disposable IFNγ-Inducing Determinant of  Sporozoites Indicates Diversion of Cellular Immunity.'],34421862,['2021'],2,0,0,0
+1027288,['Noncanonical expression of a murine cytomegalovirus early protein CD8 T-cell epitope as an immediate early epitope based on transcription from an upstream gene.'],24535000,['2014'],1,0,0,0
+1027176,['Co-expression of HLA-B7 and HLA-B27 alleles is associated with B7-restricted immunodominant responses following influenza infection.'],24113999,['2013'],1,0,0,0
+1008907,['Epitope-specific TCRbeta repertoire diversity imparts no functional advantage on the CD8+ T cell response to cognate viral peptides.'],18238896,['2008'],3,0,0,0
+1025977,['Galectin-9/TIM-3 interaction regulates virus-specific primary and memory CD8 T cell response.'],20463811,['2010'],1,0,0,0
+1038823,['Conserved and Novel Mouse CD8 T Cell Epitopes within SARS-CoV-2 Spike Receptor Binding Domain Protein Identified following Subunit Vaccination.'],33972373,['2021'],1,0,0,0
+1003500,['DNA vaccines prime CD8+ T cell responses to epitopes of viral antigens produced from overlapping reading frames of a single coding sequence.'],15593127,['2005'],1,0,0,0
+1027371,['Apoptosis of epitope-specific antiretroviral cytotoxic T lymphocytes via Fas ligand-Fas interactions.'],16987061,['2006'],1,0,0,0
+1027374,['Generation of effector memory T cell-based mucosal and systemic immunity with pulmonary nanoparticle vaccination.'],24068737,['2013'],1,0,0,0
+1025983,['Influence of galectin-9/Tim-3 interaction on herpes simplex virus-1 latency.'],22021615,['2011'],1,0,0,0
+1027375,['Targeted deletion of FGL2 leads to increased early viral replication and enhanced adaptive immunity in a murine model of acute viral hepatitis caused by LCMV WE.'],24146739,['2013'],2,0,0,0
+1005879,['Induction of CD8 T-cell-specific systemic and mucosal immunity against herpes simplex virus with CpG-peptide complexes.'],12050369,['2002'],4,0,0,0
+1039886,['Personalized Cancer Vaccine Platform for Clinically Relevant Oncolytic Enveloped Viruses.'],30005865,['2018'],1,0,0,0
+1012269,['In vivo dynamics of anti-viral CD8 T cell responses to different epitopes. An evaluation of bystander activation in primary and secondary responses to viral infection.'],9889966,['1998'],5,0,0,0
+1005824,['Immune responses against a single CD8+-T-cell epitope induced by virus vector vaccination can successfully control Trypanosoma cruzi infection.'],16239534,['2005'],3,0,0,0
+1004976,['Cutting edge: recombinant Listeria monocytogenes expressing a single immune-dominant peptide confers protective immunity to herpes simplex virus-1 infection.'],17404252,['2007'],1,0,0,0
+1025069,['Stable antigen is most effective for eliciting CD8+ T-cell responses after DNA vaccination and infection with recombinant vaccinia virus in vivo.'],22761378,['2012'],2,0,0,0
+1026011,['Reversal in the immunodominance hierarchy in secondary CD8+ T cell responses to influenza A virus: roles for cross-presentation and lysis-independent immunodomination.'],15470045,['2004'],3,0,0,0
+884,['A previously unrecognized H-2D(b)-restricted peptide prominent in the primary influenza A virus-specific CD8(+) T-cell response is much less apparent following secondary challenge.'],10729122,['2000'],8,0,0,0
+1295,['In vivo stimulation of CD137 broadens primary antiviral CD8+ T cell responses.'],12021777,['2002'],3,0,0,0
+1026217,['Potential role of invariant NKT cells in the control of pulmonary inflammation and CD8+ T cell response during acute influenza A virus H3N2 pneumonia.'],21490153,['2011'],1,0,0,0
+1026040,['IL-15 trans-presentation by pulmonary dendritic cells promotes effector CD8 T cell survival during influenza virus infection.'],20212069,['2010'],2,0,0,0
+1026042,"['Absence of mouse 2B4 promotes NK cell-mediated killing of activated CD8+ T cells, leading to prolonged viral persistence and altered pathogenesis.']",20440077,['2010'],2,0,0,0
+1171,['Effects of an epitope-specific CD8+ T-cell response on murine coronavirus central nervous system disease: protection from virus replication and antigen spread and selection of epitope escape mutants.'],14722270,['2004'],2,0,0,0
+1148,['Lack of prominent peptide-major histocompatibility complex features limits repertoire diversity in virus-specific CD8+ T cell populations.'],15735650,['2005'],2,0,0,0
+1061,['Immunoproteasome-deficient mice mount largely normal CD8+ T cell responses to lymphocytic choriomeningitis virus infection and DNA vaccination.'],16002717,['2005'],9,0,0,0
+995,['Consequences of immunodominant epitope deletion for minor influenza virus-specific CD8+-T-cell responses.'],15767433,['2005'],4,0,0,0
+987,['Induction of in vivo functional Db-restricted cytolytic T cell activity against a putative phosphate transport receptor of Mycobacterium tuberculosis.'],15153510,['2004'],1,0,0,0
+1047137,['Neo-antigen tumor vaccination depends on CD4-licensing conveyed by adeno-associated virus like particles.'],40671675,['2025'],1,0,0,0
+1331,['Diversity of epitope and cytokine profiles for primary and secondary influenza a virus-specific CD8+ T cell responses.'],11254721,['2001'],3,0,0,0
+814,['Dendritic cells infected with Mycobacterium bovis bacillus Calmette Guerin activate CD8(+) T cells with specificity for a novel mycobacterial epitope.'],11282984,['2001'],5,0,0,0
+1047241,['LCK-co-receptor association ensures T cell lineage fidelity and maximizes epitope-specific TCR diversity.'],39982976,['2025'],2,0,0,0
+757,['Induction of CD8+ T-lymphocyte responses to a secreted antigen of Mycobacterium tuberculosis by an attenuated vaccinia virus.'],11903615,['2001'],1,0,0,0
+1048116,"['Antigen specificity, not tissue compartment, determines clonal sharing among respiratory tract CD8<sup>+</sup> resident memory T\xa0cells.']",41772407,['2026'],2,0,0,0
+1026056,['Hematopoietic-specific targeting of influenza A virus reveals replication requirements for induction of antiviral immune responses.'],22778433,['2012'],2,0,0,0
+644,['Duration of infection and antigen display have minimal influence on the kinetics of the CD4+ T cell response to Listeria monocytogenes infection.'],15494519,['2004'],1,0,0,0
+494,['Hierarchies in cytokine expression profiles for acute and resolving influenza virus-specific CD8+ T cell responses: correlation of cytokine profile and TCR avidity.'],15100298,['2004'],2,0,0,0
+469,['Genetically programmed B lymphocytes are highly efficient in inducing anti-virus protective immunity mediated by central memory CD8 T cells.'],15542193,['2004'],1,0,0,0
+1049018,['Immunopeptidome profiling in pulmonary fibrosis provides a platform for identifying therapeutic targets.'],42010059,['2026'],9,0,0,0
+1327,"['Critical role for perforin-, Fas/FasL-, and TNFR1-mediated cytotoxic pathways in down-regulation of antigen-specific T cells during persistent viral infection.']",11752172,['2002'],3,0,0,0
+1026030,['The Erk2 MAPK regulates CD8 T cell proliferation and survival.'],19017950,['2008'],1,0,0,0
+1003473,['Dendritic cells pulsed with exogenous hepatitis B surface antigen particles efficiently present epitopes to MHC class I-restricted cytotoxic T cells.'],11920577,['2002'],2,0,0,0
+1026480,['Subsisting H1N1 influenza memory responses are insufficient to protect from pandemic H1N1 influenza challenge in C57BL/6 mice.'],23580424,['2013'],12,0,0,0
+1042326,['Tripartite-Motif 21 (TRIM21) Deficiency Results in a Modest Loss of Herpes Simplex Virus (HSV)-1 Surveillance in the Trigeminal Ganglia Following Cornea Infection.'],35336995,['2022'],1,0,0,0
+1025968,['Natural killer cells as novel helpers in anti-herpes simplex virus immune response.'],18715907,['2008'],2,0,0,0
+1002095,['Epitopes derived by incidental translational frameshifting give rise to a protective CTL response.'],16709853,['2006'],1,0,0,0
+1002085,['Pathogenic role for virus-specific CD4 T cells in mice with coronavirus-induced acute encephalitis.'],16816374,['2006'],1,0,0,0
+1001305,['Differential presentation of the same MHC class I epitopes by fibroblasts and dendritic cells.'],9498751,['1998'],3,0,0,0
+1042995,['Personalized neoantigen viro-immunotherapy platform for triple-negative breast cancer.'],37586771,['2023'],20,0,0,0
+1043189,['Cryptic MHC-E epitope from influenza elicits a potent cytolytic T cell response.'],37828378,['2023'],2,0,0,0
+303,['Vaccination with an acidic polymerase epitope of influenza virus elicits a potent antiviral T cell response but delayed clearance of an influenza virus challenge.'],15634888,['2005'],2,0,0,0
+1043653,['Intranasal Epitope-Polymer Vaccine Lodges Resident Memory T Cells Protecting Against Influenza Virus.'],38411375,['2024'],2,0,0,0
+1001092,['A virus-specific CD8+ T cell immunodominance hierarchy determined by antigen dose and precursor frequencies.'],16418289,['2006'],2,0,0,0
+1353,['CD4(+) T cells induced by a DNA vaccine: immunological consequences of epitope-specific lysosomal targeting.'],11581410,['2001'],2,0,0,0
+1000769,['Counting antigen-specific CD8 T cells: a reevaluation of bystander activation during viral infection.'],9491999,['1998'],5,0,0,0
+1000172,['Virus-specific CD8+ T cells in primary and secondary influenza pneumonia.'],9655482,['1998'],4,0,0,0
+1000158,['Strong memory CD8+ T cell responses against immunodominant and three new subdominant HLA-B27-restricted influenza A CTL epitopes following secondary infection of HLA-B27 transgenic mice.'],16054612,['2005'],1,0,0,0
+1446,['Protective immunity does not correlate with the hierarchy of virus-specific cytotoxic T cell responses to naturally processed peptides.'],9584143,['1998'],3,0,0,0
+1044561,['Cancer immunotherapy using a potent immunodominant CTL epitope.'],25245934,['2014'],1,0,0,0
+1044588,['Metronomic cyclophosphamide enhances HPV16E7 peptide vaccine induced antigen-specific and cytotoxic T-cell mediated antitumor immune response.'],25960932,['2014'],5,0,0,0
+1044724,['Altered epitopes enhance macrophage-mediated anti-tumour immunity to low-immunogenic tumour mutations.'],39174487,['2024'],12,0,0,0
+1044780,['The Altered Neonatal CD8<sup>+</sup> T Cell Immunodominance Hierarchy during Influenza Virus Infection Impacts Peptide Vaccination.'],39205245,['2024'],6,0,0,0
+1385,['A novel approach of direct ex vivo epitope mapping identifies dominant and subdominant CD4 and CD8 T cell epitopes from Listeria monocytogenes.'],11160235,['2001'],1,0,0,0
+1013220,['Late signals from CD27 prevent Fas-dependent apoptosis of primary CD8+ T cells.'],18292513,['2008'],1,0,0,0
+1027680,"['STAT3 regulates proliferation and survival of CD8+ T cells: enhances effector responses to HSV-1 infection, and inhibits IL-10+ regulatory CD8+ T cells in autoimmune uveitis.']",24204098,['2013'],1,0,0,0
+1025965,['Age-related dysregulation of CD8+ T cell memory specific for a persistent virus is independent of viral replication.'],18354208,['2008'],1,0,0,0
+1021205,['Fixing an irrelevant TCR alpha chain reveals the importance of TCR beta diversity for optimal TCR alpha beta pairing and function of virus-specific CD8+ T cells.'],20690181,['2010'],4,0,0,0
+1025821,['Type I IFN negatively regulates CD8+ T cell responses through IL-10-producing CD4+ T regulatory 1 cells.'],15611232,['2005'],4,0,0,0
+1021600,['Immunogenic dendritic cells primed by social defeat enhance adaptive immunity to influenza A virus.'],20656014,['2011'],1,0,0,0
+1028657,['Regulation of immune response and inflammatory reactions against viral infection by VCAM-1.'],18216105,['2008'],1,0,0,0
+1032055,['Rapid Evolution of the CD8+ TCR Repertoire in Neonatal Mice.'],26873987,['2016'],2,0,0,0
+1021275,['The context of epitope presentation can influence functional quality of recalled influenza A virus-specific memory CD8+ T cells.'],17675478,['2007'],5,0,0,0
+1032357,['IL-2 complex treatment amplifies CD8<sup>+</sup> T cell mediated immunity following herpes simplex virus-1 infection.'],27866863,['2016'],1,0,0,0
+1021233,['Quantitative and qualitative features of heterologous virus-vector-induced antigen-specific CD8+ T cells against Trypanosoma cruzi infection.'],20620143,['2010'],1,0,0,0
+1021208,['Bi-specific MHC heterodimers for characterization of cross-reactive T cells.'],20729210,['2010'],2,0,0,0
+1021206,"['Influenza epitope-specific CD8+ T cell avidity, but not cytokine polyfunctionality, can be determined by TCRβ clonotype.']",21041725,['2010'],2,0,0,0
+1020915,"['Analysis of A47, an immunoprevalent protein of vaccinia virus, leads to a reevaluation of the total antiviral CD8+ T cell response.']",20668091,['2010'],5,0,0,0
+1025729,['Competition between T cells maintains clonal dominance during memory inflation induced by MCMV.'],23404526,['2013'],1,0,0,0
+1020893,['Protective efficacy of cross-reactive CD8+ T cells recognising mutant viral epitopes depends on peptide-MHC-I structural interactions and T cell activation threshold.'],20711359,['2010'],1,0,0,0
+1032551,"['Phenotype and function of protective, CD4-independent CD8 T cell memory.']",22948808,['2013'],1,0,0,0
+1020892,['The effects of preexisting immunity to influenza on responses to influenza vectors in mice.'],20656032,['2010'],1,0,0,0
+1032846,['Dendritic cell vaccine induces antigen-specific CD8<sup>+</sup> T cells that are metabolically distinct from those of peptide vaccine and is well-combined with PD-1 checkpoint blockade.'],29399391,['2018'],1,0,0,0
+1028614,['NK1.1+ CD8+ T cells escape TGF-β control and contribute to early microbial pathogen response.'],25284210,['2014'],2,0,0,0
+1033041,['Laser Adjuvant-Assisted Peptide Vaccine Promotes Skin Mobilization of Dendritic Cells and Enhances Protective CD8<sup>+</sup> T<sub>EM</sub> and T<sub>RM</sub> Cell Responses against Herpesvirus Infection and Disease.'],29437976,['2018'],1,0,0,0
+1033051,['Identification of Tumoricidal TCRs from Tumor-Infiltrating Lymphocytes by Single-Cell Analysis.'],29475880,['2018'],2,0,0,0
+1028600,['Vaccine-elicited CD4 T cells induce immunopathology after chronic LCMV infection.'],25593185,['2015'],1,0,0,0
+1033333,['Vaccination With Recombinant Filamentous  Phages Against Parasite Infection Requires TLR9 Expression.'],29896197,['2018'],1,0,0,0
+1028661,['Suspension of thymic emigration promotes the maintenance of antigen-specific memory T cells and the recall responses.'],25450389,['2014'],1,0,0,0
+1022063,['Effect of MHC class I diversification on influenza epitope-specific CD8+ T cell precursor frequency and subsequent effector function.'],21536802,['2011'],6,0,0,0
+1025827,['Early CD4(+) T cell help prevents partial CD8(+) T cell exhaustion and promotes maintenance of Herpes Simplex Virus 1 latency.'],19949087,['2010'],1,0,0,0
+1025367,"['Increasing viral dose causes a reversal in CD8+ T cell immunodominance during primary influenza infection due to differences in antigen presentation, T cell avidity, and precursor numbers.']",23233728,['2013'],5,0,0,0
+1025092,['Actively induced antigen-specific CD8+ T cells by epitope-bearing parasite pre-infection but not prime/boost virus vector vaccination could ameliorate the course of Plasmodium yoelii blood-stage infection.'],22902783,['2012'],2,0,0,0
+1025112,['Autoreactive T cells bypass negative selection and respond to self-antigen stimulation during infection.'],22987800,['2012'],1,0,0,0
+1025163,['Multiple distinct forms of CD8+ T cell cross-reactivity and specificities revealed after 2009 H1N1 influenza A virus infection in mice.'],23029425,['2012'],30,0,0,0
+1029345,['Establishment of functional influenza virus-specific CD8(+) T cell memory pools after intramuscular immunization.'],26277069,['2015'],4,0,0,0
+1025199,['Targeting the genital tract mucosa with a lipopeptide/recombinant adenovirus prime/boost vaccine induces potent and long-lasting CD8+ T cell immunity against herpes: importance of MyD88.'],23018456,['2012'],3,0,0,0
+1029894,['The MHC Class I Cancer-Associated Neoepitope Trh4 Linked with Impaired Peptide Processing Induces a Unique Noncanonical TCR Conformer.'],26800871,['2016'],1,0,0,0
+1022771,['The magnitude of the T cell response to a clinically significant dose of influenza virus is regulated by TRAIL.'],21940678,['2011'],2,0,0,0
+1022507,['Delivery of a multivalent scrambled antigen vaccine induces broad spectrum immunity and protection against tuberculosis.'],21846485,['2011'],1,0,0,0
+1025310,['MHC class I cross-presentation by dendritic cells counteracts viral immune evasion.'],23189079,['2012'],1,0,0,0
+1022317,['Soluble proteins induce strong CD8+ T cell and antibody responses through electrostatic association with simple cationic or anionic lipopeptides that target TLR2.'],21742967,['2011'],1,0,0,0
+1028704,['Protective efficacy of individual CD8+ T cell specificities in chronic viral infection.'],25567678,['2015'],3,0,0,0
+1025441,['Alternative serotype adenovirus vaccine vectors elicit memory T cells with enhanced anamnestic capacity compared to Ad5 vectors.'],23152535,['2013'],2,0,0,0
+1030328,['The Combined Deficiency of Immunoproteasome Subunits Affects Both the Magnitude and Quality of Pathogen- and Genetic Vaccination-Induced CD8+ T Cell Responses to the Human Protozoan Parasite Trypanosoma cruzi.'],27128676,['2016'],2,0,0,0
+1028770,"['Epitope-specific CD4+, but not CD8+, T-cell responses induced by recombinant influenza A viruses protect against Mycobacterium tuberculosis infection.']",25430701,['2015'],5,0,0,0
+1022254,['T cell epitope specificity and pathogenesis of mouse hepatitis virus-1-induced disease in susceptible and resistant hosts.'],20554960,['2010'],8,0,0,0
+1025598,['Priming of CD8+ T cells against cytomegalovirus-encoded antigens is dominated by cross-presentation.'],23390296,['2013'],1,0,0,0
+1030517,['Exploring the induction of preproinsulin-specific Foxp3(+) CD4(+) Treg cells that inhibit CD8(+) T cell-mediated autoimmune diabetes by DNA vaccination.'],27406624,['2016'],2,0,0,0
+1025652,['Competition for antigen at the level of the APC is a major determinant of immunodominance during memory inflation in murine cytomegalovirus infection.'],23455500,['2013'],2,0,0,0
+1030829,['Reversed T Cell Receptor Docking on a Major Histocompatibility Class I Complex Limits Involvement in the Immune Response.'],27717799,['2016'],2,0,0,0
+1025668,['Antigen-specific memory regulatory CD4+Foxp3+ T cells control memory responses to influenza virus infection.'],23467933,['2013'],2,0,0,0
+1033374,['Intranasal delivery of adjuvant-free peptide nanofibers elicits resident CD8<sup>+</sup> T cell responses.'],29673645,['2018'],1,0,0,0
+1033473,['Lifelong CMV infection improves immune defense in old mice by broadening the mobilized TCR repertoire against third-party infection.'],29967140,['2018'],1,0,0,0
+1013543,['Complete modification of TCR specificity and repertoire selection does not perturb a CD8+ T cell immunodominance hierarchy.'],19047637,['2008'],1,0,0,0
+1025954,['In vivo ablation of CD11c-positive dendritic cells increases susceptibility to herpes simplex virus type 1 infection and diminishes NK and T-cell responses.'],16571815,['2006'],1,0,0,0
+1035376,['Inhibition of the Fibrinogen-Like Protein 2:FcγRIIB/RIII immunosuppressive pathway enhances antiviral T-cell and B-cell responses leading to clearance of lymphocytic choriomeningitis virus clone 13.'],29341118,['2018'],2,0,0,0
+1027845,['Interleukin-22 reduces lung inflammation during influenza A virus infection and protects against secondary bacterial infection.'],23596287,['2013'],1,0,0,0
+1027809,['IL-21 restricts virus-driven Treg cell expansion in chronic LCMV infection.'],23696736,['2013'],1,0,0,0
+1035743,['MicroRNA-155 enhances T cell trafficking and antiviral effector function in a model of coronavirus-induced neurologic disease.'],27604627,['2016'],1,0,0,0
+1025929,['Functional adaptive CD4 Foxp3 T cells develop in MHC class II-deficient mice.'],17142726,['2006'],1,0,0,0
+1025947,['Role of CD28/CD80-86 and CD40/CD154 costimulatory interactions in host defense to primary herpes simplex virus infection.'],11134274,['2001'],3,0,0,0
+1036158,['Differential Expression of Immune Checkpoint Molecules on CD8<sup>+</sup> T Cells Specific for Immunodominant and Subdominant Herpes Simplex Virus 1 Epitopes.'],31645447,['2020'],1,0,0,0
+1036204,['Shortening the infectious period does not alter expansion of CD8 T cells but diminishes their capacity to differentiate into memory cells.'],15557161,['2004'],1,0,0,0
+1025953,['4-1BB costimulation enhances HSV-1-specific CD8+ T cell responses by the induction of CD11c+CD8+ T cells.'],16524567,['2005'],1,0,0,0
+1027757,"['Lifelong persistent viral infection alters the naive T cell pool, impairing CD8 T cell immunity in late life.']",23087407,['2012'],1,0,0,0
+1035198,['Unique true predicted neoantigens (TPNAs) correlates with anti-tumor immune control in HCC patients.'],30340600,['2018'],44,0,0,0
+1027751,['Functional CD8 T cell memory responding to persistent latent infection is maintained for life.'],21890658,['2011'],2,0,0,0
+1027739,['CD8 T cells recruited early in mouse polyomavirus infection undergo exhaustion.'],22447978,['2012'],1,0,0,0
+1014073,['Combined NKT cell activation and influenza virus vaccination boosts memory CTL generation and protective immunity.'],19211791,['2009'],1,0,0,0
+1014036,"[""Capsid-specific cytotoxic T lymphocytes recognize three distinct H-2D(b)-restricted regions of the BeAn strain of Theiler's virus and exhibit different cytokine profiles.""]",11884537,['2002'],2,0,0,0
+1025958,['Latent virus influences the generation and maintenance of CD8+ T cell memory.'],17142732,['2006'],1,0,0,0
+1024555,['Blocking of PDL-1 interaction enhances primary and secondary CD8 T cell response to herpes simplex virus-1 infection.'],22808056,['2012'],1,0,0,0
+1025961,['Psychological stress compromises CD8+ T cell control of latent herpes simplex virus type 1 infections.'],17579052,['2007'],1,0,0,0
+1013644,['Prevention of cytotoxic T cell escape using a heteroclitic subdominant viral T cell determinant.'],18949029,['2008'],6,0,0,0
+1037300,['PD-L1 Checkpoint Inhibition Narrows the Antigen-Specific T Cell Receptor Repertoire in Chronic Lymphocytic Choriomeningitis Virus Infection.'],32641478,['2020'],2,0,0,0
+1025862,['Vaccination with an adenoviral vector that encodes and displays a retroviral antigen induces improved neutralizing antibody and CD4+ T-cell responses and confers enhanced protection.'],20007267,['2010'],1,0,0,0
+1016570,['Infection of mice with a human influenza A/H3N2 virus induces protective immunity against lethal infection with influenza A/H5N1 virus.'],19538996,['2009'],4,0,0,0
+1033653,['Enhancement of Peptide Vaccine Immunogenicity by Increasing Lymphatic Drainage and Boosting Serum Stability.'],29915023,['2018'],2,0,0,0
+1025852,['Endogenous 4-1BB ligand plays a critical role in protection from influenza-induced disease.'],19124736,['2009'],10,0,0,0
+1033871,"['Cognate memory CD4+ T cells generated with dendritic cell priming influence the expansion, trafficking, and differentiation of secondary CD8+ T cells and enhance tumor control.']",17947656,['2007'],1,0,0,0
+1026054,['Nonrandom attrition of the naive CD8+ T-cell pool with aging governed by T-cell receptor:pMHC interactions.'],21813761,['2011'],1,0,0,0
+1033884,['Vaccination using recombinants influenza and adenoviruses encoding amastigote surface protein-2 are highly effective on protection against Trypanosoma cruzi infection.'],23637908,['2013'],2,0,0,0
+1028505,['Topical herpes simplex virus 2 (HSV-2) vaccination with human papillomavirus vectors expressing gB/gD ectodomains induces genital-tissue-resident memory CD8+ T cells and reduces genital disease and viral shedding after HSV-2 challenge.'],25320297,['2015'],2,0,0,0
+1019794,['Exploiting cross-priming to generate protective CD8 T-cell immunity rapidly.'],20616089,['2010'],1,0,0,0
+1019792,['Primary CTL response magnitude in mice is determined by the extent of naive T cell recruitment and subsequent clonal expansion.'],20440073,['2010'],4,0,0,0
+1033893,['Chemokine CXCL10 (IP-10) is sufficient to trigger an immune response to injected antigens in a mouse model.'],16500735,['2006'],1,0,0,0
+1019764,['Lack of original antigenic sin in recall CD8(+) T cell responses.'],20439913,['2010'],1,0,0,0
+1033910,['Dendritic Cells Are Dispensable for T Cell Priming and Control of Acute Lymphocytic Choriomeningitis Virus Infection.'],27549169,['2016'],2,0,0,0
+1033913,['Memory CD4 T cells enhance primary CD8 T-cell responses.'],17438031,['2007'],1,0,0,0
+1035120,['Chronic spinal cord injury impairs primary CD8 T cell antiviral immunity but does not affect generation or function of memory CD8 T cells.'],30904474,['2019'],1,0,0,0
+1019289,['Direct antigen presentation by DC shapes the functional CD8(+) T-cell repertoire against the nuclear self-antigen La-SSB.'],19950171,['2010'],6,0,0,0
+1028214,['Induction of CD8 T cell heterologous protection by a single dose of single-cycle infectious influenza virus.'],25100831,['2014'],2,0,0,0
+1028180,['A CD8 T-cell epitope variant enhances immune targeting to a recombinant picornavirus vaccine antigen.'],25025983,['2014'],1,0,0,0
+1028144,['The cellular redox environment alters antigen presentation.'],25135637,['2014'],1,0,0,0
+1019138,['Influenza virus-specific immunological memory is enhanced by repeated social defeat.'],20083672,['2010'],2,0,0,0
+1025854,"['Coxsackievirus B3 inhibits antigen presentation in vivo, exerting a profound and selective effect on the MHC class I pathway.']",19834548,['2009'],1,0,0,0
+1025860,['Enumeration and functional evaluation of virus-specific CD4+ and CD8+ T cells in lymphoid and peripheral sites of coxsackievirus B3 infection.'],18305030,['2008'],2,0,0,0
+1016599,['Strain-specific protective immunity following vaccination against experimental Trypanosoma cruzi infection.'],19635607,['2009'],1,0,0,0
+1016580,['Highly efficient antiviral CD8+ T-cell induction by peptides coupled to the surfaces of liposomes.'],19675224,['2009'],2,0,0,0
+1026048,"['Elevated mitochondrial superoxide disrupts normal T cell development, impairing adaptive immune responses to an influenza challenge.']",21130157,['2011'],2,0,0,0

@@ -1,0 +1,2057 @@
+                               Supporting Information
+
+for Adv. Sci., DOI 10.1002/advs.202508040
+
+
+Personalized Neoantigen Vaccine plus Regorafenib Increases Rgs2+ CD8+ T Cells Inﬁltration
+and Reprograms the Tumor Microenvironment in Microsatellite Stable Colorectal Cancer
+Liver Metastases
+
+
+Hengkai Chen, Bin Chen, Yuanfeng Yang, Shoufeng Li, Huajun Cai, Zhicheng Zhuang, Yong Wu,
+Yuan Gao, Yupeng Chen, Xing Liu, Guoxian Guan* and Jinfu Zhuang*
+    Personalized Neoantigen Vaccine plus Regorafenib Increases
+
+       Rgs2⁺CD8⁺ T Cells Infiltration and Reprograms the Tumor
+
+    Microenvironment in Microsatellite Stable Colorectal Cancer
+
+                                  Liver Metastases
+
+Hengkai Chen 1,2†, Bin Chen 1,2†, Yuanfeng Yang 1,2†, Shoufeng Li 1,2, Huajun Cai
+
+1,2,   Zhicheng Zhuang 1,2, Yong Wu 1,2, Yuan Gao 1,2, Yupeng Chen1,2, Xing Liu 1,2,
+
+Guoxian Guan 1,2*, Jinfu Zhuang 1,2*
+
+1   Department of Colorectal Surgery, the First Affiliated Hospital of Fujian Medical
+
+University, Fuzhou 350005, China.
+
+2 Department of Colorectal Surgery, National Regional Medical Center, Binhai Campus
+
+
+
+of the First Affiliated Hospital, Fujian Medical University, Fuzhou 350212, China.
+
+3   Fujian Abdominal Surgery Research Institute, the First Affiliated Hospital, Fujian
+
+Medical University.
+
+
+
+
+Experimental Methods Section
+
+Cell line
+
+        Murine CRC cell line cmt93 cell was obtained from the American Type Culture
+
+Collection (ATCC). To generate Cmt93 cells expressing luciferase (cmt93-luc), the
+
+cells were transfected with a lentivirus containing the luciferase reporter gene, sourced
+
+from Shanghai Genechem Co., Ltd, for a duration for 48 hours. Following lentiviral
+
+transduction, stable expression of the luciferase gene was achieved by selecting cells
+
+with 2 μg/mL puromycin. Both CMT93 and CMT93-luc cells were cultured in
+Dulbecco’s Modified Eagle Medium (DMEM) supplemented with 10% fetal bovine
+
+serum (FBS), under conditions of 37°C and 5% CO2.
+
+Neoantigen identification and immunogenicity validation
+
+     The DNA and RNA from cmt93 cells and C57BL/6 mouse tail tissues followed
+
+by whole-exome sequencing and transcriptomic sequencing utilizing the Genomic
+
+DNA kit (Tiangen Biotech, China) and the EasyPure RNA kit (Transgen Biotech, China)
+
+in accordance with the manufacturer's protocols. Subsequently, the DNA samples
+
+underwent DNA library preparation and whole-exome capture using the SureSelect XT
+
+Mouse All Exon Kit, while the RNA samples were prepared for sequencing with the
+
+VAHTS Stranded mRNA-seq Library Prep Kit. The sequencing of both DNA and RNA
+
+libraries was carried out by Berry Genomics (Beijing) on Illumina Novoseq 6000
+
+(paired end, 150bp).
+
+     Mutations in cmt93 cells were identified using VarScan software with the mouse
+
+genome mm10 serving as the reference. Only mutations with a variant allele frequency
+
+(VAF) >10%. Variants were annotated using wANNOVAR to filter for
+
+nonsynonymous mutations. Mutations with <20 variant allele reads were excluded, and
+
+those with VAF >60% were also discarded also to remove possible germline mutations.
+
+     All mutations were confirmed at the RNA level using the bam2R algorithm from
+
+the R package DeepSNV (v1.24.0). Mutations with a VAF of ≥ 10% in RNA-seq data,
+
+located within genes exhibiting sufficient expression levels (TPM>1), were retained for
+
+further analysis.
+
+     The immunogenicity potential of these mutations was assessed using the
+NetMHCpan binding affinity predictor, with mutations generating 9-mer mutant
+
+peptides exhibiting an IC50 < 500nM to the H2-Kb allele being identified as potential
+
+neoantigens. Subsequently, these candidates were evaluated in C57BL/6 mouse tail
+
+tissues using DeepSNV, with mutations demonstrating a sequencing depth exceeding
+
+20× and no variant allele detected in all three mouse tail tissues being selected for
+
+further analysis in the subsequent investigation.
+
+     In order to identify potential neoantigen peptides, 20 neoantigen mutations chosen
+
+from cmt93 cells were synthesized into long peptides with high purity (>95%) from
+
+Genscipt Biotechnology Co., Ltd in China. For validation of neoantigen
+
+immunogenicity, these peptides were randomly divided into 2 pools (10μg/peptide) and
+
+combined with 50μg Poly(I:C) from Guangdong South China Pharmaceutical Co., Ltd
+
+for subcutaneous immunization of male C57BL/6 mice at the lateral flank on day 0, day
+
+4, and day 8.
+
+     To find potential neoantigen peptides, 20 mutations were chosen from Hepa1-6
+
+cells and synthesized into long peptides (17 amino acids) with high purity (>95%).
+
+These peptides were then divided into 2 pools and combined with Poly(I:C) for
+
+immunization of male C57BL/6 mice on days 0, 4, and 8. Erythrocytes were eliminated
+
+using 1 mL of Red Blood Cell Lysis Solution (Gibco), after which the resulting splenic
+
+T cells were subjected to two washes with PBS and subsequently enumerated for
+
+ELISPOT analysis.
+
+Enzyme-linked immunospot (ELISPOT) assay
+
+     The secretion of IFN-γ by mouse splenic T cells was assessed using an ELISPOT
+kit (Mabtech, 3321-4APT-10). Bone marrow-derived dendritic cells (BMDCs) were
+
+obtained through the following procedure: Femurs and tibias from 6-8 week-old naive
+
+C57BL/6 mice were isolated, with residual soft tissue and epiphyses removed. Marrow
+
+was collected by flushing the canals with PBS, followed by centrifugation at 800g for
+
+5 minutes at room temperature. The precipitated cells were then lysed with 1mL of Red
+
+Blood Cell Lysis Solution (Gibco) for 4 minutes, centrifuged at 800g for 5 minutes, and
+
+washed twice with PBS. On day 0, 2 million cells were added to each well of a 6-well
+
+plate and cultured with 2 mL of RPMI-1640 medium containing 10 ng/mL IL-4 (404-
+
+ML-010/CF) and 20 ng/mL mGM-CSF (R&D systems, 415-ML-020/CF) to generate
+
+BMDCs at 37°C with 5% CO2. Half of the medium was replaced on day 3. On day 6,
+
+BMDCs were exposed to a neoantigen peptide pool (4µg total, 0.55µg per peptide) or
+
+individual peptides (4µg each) for 48 hours. For the ELISPOT assay, 3×104 BMDCs
+
+(previously exposed to the neoantigen peptide) were co-cultured with 3×105 splenic T
+
+cells in a multiscreen 96-well filtration plate (Mabtech, 3321-4APT-2) at 37°C with 5%
+
+CO2 for another 48h. The plates were washed and then incubated with detection
+
+antibody (R4-6A2-biotin,1 µg/mL, 100µl/well) for 2 hours. After another wash, they
+
+were incubated with Streptavidin ALP (1:1000 dilution, 100µl per well) for 1 hour.
+
+Then, 3, 3', 5, 5'-Tetramethylbenzidine (TMB) substrate solution was added and
+
+incubated before stopping the reaction with deionized water. IFN-γ spot-forming cells
+
+were imaged and analyzed using an ELISPOT Analysis System (AT-Spot-2200,
+
+Beijing Antai Yongxin Medical Technology Co., Ltd).
+
+In vivo antitumor efficacy evaluation
+     To establish MSS-CRLM mouse model, C57BL/6 mice were intraperitoneally
+
+anesthetized with 50mg/kg of pentobarbital. Subsequently, the skin was aseptically
+
+prepared and midline laparotomy was conducted following abdominal shaving.
+
+Subsequent to these procedures, 3×105 cmt93-luc cells were injected via the superior
+
+mesenteric vein (SMV). Ultimately, the abdominal muscle and skin were meticulously
+
+sutured in multiple layers.
+
+     For evaluating the antitumor efficacy of neoantigen vaccine alone and
+
+combinational treatment in vivo, the MSS-CRLM model was divided into four groups
+
+(n=5). The mice in each group were subcutaneously injected with identified neoantigen
+
+peptides (10μg/peptide) mixed with 50μg Poly(I:C) in a 200μl volume on days 0, 4, and
+
+8. Regorafenib (Bayer, 73-4506) was administered by oral gavage every two days from
+
+day 0, a total of 7 times at a dose of 10 mg/kg in 34% PEG400 (Sigma-Aldrich), 12%
+
+pluronic F68 (Thermmo Fischer Scientific, Waltham, Massachusetts, USA), and 20%
+
+water per manufacturer’s recommendation. Mice treated with PBS served as the control
+
+group. Tumor burden in the MSS-CRLM model was assessed at 15-day intervals using
+
+the IVIS Spectrum animal imaging system (PerkinElmer, USA) after intraperitoneal
+
+injection of fluorescent substrates (D-luciferin potassium salt, XenolightTM) about 5
+
+min, then the mice were exposed for 2s to obtain bioluminescence images. The mice
+
+were sacrificed 15 days after initial treatment for further analysis.
+
+Immunofluorescence
+
+     The tumor isolated from mice was fixed in formalin and embedded in paraffin, as
+
+described previously. Sections measuring 4 μm in thickness were prepared on slides
+and allowed to air dry at room temperature. Subsequently, the slides were subjected to
+
+blocking before being incubated with primary antibodies (rabbit anti-mouse CD4 mAb,
+
+Servicebio, GB13064-1; rabbit anti-mouse CD8 mAb, Servicebio, GB13068) overnight
+
+at 4℃, followed by secondary antibodies (Wuhan servicebio technology CO., Ltd.) for
+
+30 minutes at room temperature. The resulting immuno-stained slides (5 slides per
+
+mouse; 3 mice) were digitally scanned at 10/40 magnification and cropped images were
+
+obtained by fluorescent microscope (NIKON ECLIPSE C1).
+
+Immunohistochemistry
+
+     Tumors from each mouse were fixed in formalin and embedded in paraffin.
+
+Sections of 4-μm thickness were then prepared on slides and allowed to air dry at room
+
+temperature. Following blocking, the slides were incubated overnight at 4℃ with a
+
+primary antibody (rabbit anti-mouse IFN-γ mAb, ThermoFisher, PA5-95560) and then
+
+for 30 minutes at room temperature with a secondary antibody (Fuzhou Maixin
+
+Biothech CO., Ltd). The resulting immuno-stained slides (5 slides per mouse; 3 mice)
+
+were digitally scanned at ×10/40 magnification and cropped images were obtained.
+
+HE staining
+
+     HE staining was performed following standard procedures. Briefly, after
+
+deparaffinization and rehydration, tissue sections of the heart, liver, spleen, lung, and
+
+kidney were stained with hematoxylin solution for 5 minutes, followed by 5 dips in 1%
+
+acid ethanol and rinsing in distilled water. Subsequently, the sections were stained with
+
+eosin solution (Servicebio, G1001) for 3 minutes, dehydrated with graded alcohol, and
+
+cleared in xylene. The HE-stained slides (5 slides per mouse; 3 mice) were digitized
+and cropped images were obtained.
+
+Tissue processing for flow cytometry
+
+     Tumor tissues obtained from mice were sectioned and subsequently minced using
+
+surgical scissors on day 15 following the initiation of treatment. The minced specimens
+
+were then subjected to enzymatic digestion in 5 mL of RPMI-1640 medium,
+
+supplemented with 1mg/mL collagenase type II (Sigma, C6885) and 2 mg/mL DNase
+
+I (Sigma, DN25), at 37 °C for 1 hour with gentle agitation. Following digestion, an
+
+equivalent volume of cold flow buffer (PBS with 5% BSA) was introduced. The
+
+resulting mixture was filtered through a 40μm cell strainer, and the resulting single-cell
+
+suspension was centrifuged at 800g for 20 minutes before being resuspended in flow
+
+buffer at a concentration of 1×107 cells per 1mL. Tissue and mononuclear cells were
+
+isolated through the application of Ficoll density gradient centrifugation.
+
+     For spleen cells isolation, spleens were excised and mechanically disrupted with a
+
+40μm syringe plunger. Mononuclear cells were subsequently separated using Ficoll
+
+density gradient centrifugation, followed by centrifugation at 800g for 5 minutes to
+
+obtain a single-cell suspension. The cells were then resuspended in flow buffer at a
+
+concentration of 1×107 cells per 1mL.
+
+     To isolate lymphocytes from the lymph nodes, the lymph nodes were mechanically
+
+disrupted using a 40μm cell strainer and a syringe plunger. The resulting single-cell
+
+suspension was then centrifuged at 800g for 5 minutes and subsequently resuspended
+
+in flow buffer at a concentration of 1×107 cells per 1mL.
+
+Flow cytometry and tetramer staining
+    For flow cytometry analysis, single-cell suspensions from tumor (as described
+
+above), spleen and lymph nodes were stained in PBS (0.5% BSA) for 30 min with
+
+following antibodies for 45 min, rotating in the dark, including anti-mouse Rgs2 mAb
+
+(Invitrogen™, PA5-102486) plus APC-conjugated secondary antibody (Invitrogen™,
+
+A-865), anti-mouse CD3-APC/FITC mAb (eBioscience™, 17-0032-82/11-0037-42),
+
+anti-mouse CD8-PE/FITC mAb (eBioscience™, 12-0081-82/11-0081-82), anti-mouse
+
+CD137-APC mAb (eBioscience™, 17-1371-82), anti-mouse CD279-PE-Cyanine7
+
+mAb (eBioscience™, 25-9985-82),and anti-mouse CD274-PE mAb (eBioscience™,
+
+12-5983-42), anti-mouse MHC Class I (H-2Kb) - APC mAb (eBioscience™, 17-5958-
+
+82). Flow cytometry was performed on a flow cytometer (BD FACSVerseTM, USA)
+
+and data were analyzed using FlowJo v.10.
+
+    The anti-mouse peptide-specific tetramer-PE was prepared using the
+
+QuickSwithTM Quant Tetramer Kit (MBL International, TB-7400-K1) in accordance
+
+with the manufacturer's instructions. In brief, 50μl of Tetramer (50μg/mL) was
+
+combined with 1μl of peptide solution (10nM) and 1μl of proprietary Peptide Exchange
+
+Factor, and then incubated for 4 hours at room temperature in the dark. The efficiency
+
+of the exchange process was assessed using a flow cytometer (BD FACSVerseTM, USA)
+
+as outlined in the accompanying manual, and validated peptide-MHC I-tetramers were
+
+stored at 4℃ until needed. For tetramer staining, single-cell suspensions from tumors
+
+were blocked with mouse Cohn fraction IgG (20μl per sample) for 5 minutes and then
+
+stained with 20μl of anti-mouse Tetramer-PE for epitopes (Ecpas_L1064F: H-2Kb) at
+
+room temperature for 30 minutes. Following tetramer preincubation, cells were stained
+with anti-mouse CD8-FITC monoclonal antibody (eBioscience™, 12-0081-82) for 20
+
+minutes in the dark with rotation. Flow cytometry analysis was conducted using a BD
+
+FACSVerseTM flow cytometer in the USA, and data were analyzed using FlowJo v.10
+
+software.
+
+Metastasis rechallenge experiments
+
+   To investigate the long-term immune memory efficacy of combinational therapy,
+
+MSS-CRLM mice model was constructed as described above. Following treatment
+
+with CRC-NeoVAS plus regorafenib, mice were re-injected via SMV with cmt93 cells
+
+45 days later. Tumor-burden mice treated with PBS underwent surgical resection of the
+
+tumor and served as controls. Tumor burden was monitored using the IVIS Spectrum
+
+animal imaging system.
+
+Flow cytometric sorting
+
+    Single-cell suspensions (as described above) underwent Fc block with RPMI-1640
+
+containing 5% BSA for 10 min on ice. Samples were then stained with 1:100 dilutions
+
+of anti-mouse CD3-FITC mAb, (eBioscience™, 17-0032-82), anti-mouse CD8-PE
+
+mAb (eBioscience™, 12-0081-82) for ELISPOT assay to test which T cell subset was
+
+activated by each neoantigen peptide, anti-human/anti-mouse CD3-FITC mAb,
+
+(eBioscience™, 11-0037-42/17-0032-82), anti-human/anti-mouse CD8-PE mAb
+
+(eBioscience™, 12-0088-42/12-0081-82) and anti-human/anti-mouse Rgs2 mAb
+
+(Invitrogen™, PA5-102486) plus APC-conjugated secondary antibody (Invitrogen™,
+
+A-865) for in vivo T cell cytotoxicity assay and adoptive cell therapy. Samples were
+
+stained in the dark for 30 min on ice, washed twice with flow buffer and resuspended
+in PBS with 0.5% BSA. Sorting was performed on a Fusion cell sorter (BD
+
+FACSAriaTM, USA).
+
+     Single-cell suspensions were subjected to Fc block with RPMI-1640 containing 5%
+
+BSA for 10 minutes on ice, as outlined above. Subsequently, the samples were stained
+
+with 1:100 dilutions of anti-mouse CD3-FITC mAb (eBioscience™, 17-0032-82) and
+
+anti-mouse CD8-PE mAb (eBioscience™, 12-0081-82) for ELISPOT assay to
+
+determine the activated T cell subset for each neoantigen peptide. Additionally, staining
+
+with anti-human/anti-mouse CD3-FITC mAb (eBioscience™, 11-0037-42/17-0032-
+
+82), anti-human/anti-mouse CD8-PE mAb (eBioscience™, 12-0088-42/12-0081-82),
+
+and anti-human/anti-mouse Rgs2 mAb (Invitrogen™, PA5-102486) plus APC-
+
+conjugated second antibody (Invitrogen™, A-865) was performed for in vivo T cell
+
+cytotoxicity assay and adoptive cell therapy.
+
+Single-cell RNA sequencing (scRNA-seq) library construction and data analysis
+
+     Tumor tissues obtained from the MSS-CRLM model following treatment with
+
+CRC-NeoVAS and/or regorafenib were processed for single-cell RNA sequencing
+
+(scRNA-seq) library preparation using the 10×Genomics Chromium Single Cell 5’
+
+Library & Gel Bead reagent kit and Chromium Single Cell V(D)J Enrichment Kit. The
+
+scRNA-seq libraries were generated using the 10×Genomics Chromium single cell 5’
+
+v2 reagent kit. Subsequently, the scRNA-seq reads obtained from the 10×Genomics
+
+platform were aligned to the reference genome (mm10) using Cell Ranger (v5.0.1,
+
+10×Genomics) with default parameters. Following mapping, UMI reads and cells
+
+meeting specified criteria were subjected to additional filtration using Seurat (v4.0.3)
+in R (v4.1.0). These criteria included: genes detected in fewer than 3 cells; cells with
+
+fewer than 500 detected genes; cells with more than 5000 detected genes; cells with
+
+over 5% of UMI reads mapped to mitochondrial genes; and cells with the highest
+
+expressed gene count corresponding to more than 20% of UMI reads.
+
+     Following the removal of low-quality cells and potential doublets, a total of 12417,
+
+9828, 14089, and 10341 cells were selected for analysis in the context of combinational
+
+therapy, neoantigen vaccine treatment alone, regorafenib treatment alone, and a control
+
+group. To facilitate a comparative and visual analysis, 7726 cells from each group were
+
+randomly chosen for subsequent examination. Subsequently, gene expression levels
+
+were normalized utilizing the NormalizeData function employing the LogNormalize
+
+method. UMAP dimensionality reduction was performed, and Seurat functions
+
+FindNeighbors and FindClusters were utilized for cell clustering. The cell clusters were
+
+annotated utilizing the SingleR package (v1.6.1) with annotations derived from the
+
+combination of the Immgen and MouseRNAseq datasets. Subsequently, to investigate
+
+the heterogeneity of T cells, T cell cluster was isolated and subjected to re-clustering
+
+using the UMAP algorithm in Seurat.
+
+Single-cell V(D)J analysis
+
+     The T-cell library underwent analysis using Cell Ranger (v5.0.1, 10× Genomics).
+
+The "vdj" command was employed to produce sequence annotations with default
+
+parameters utilizing the reference refdata-cellranger-vdj-GRCm38-alts-ensembl-5.0.0
+
+obtained     from     the     10×     Genomics       website.     Subsequently,      the
+
+"filtered_contig_annotations.csv" file for each sample generated by Cell Ranger was
+imported and reanalyzed using the R package scRepertoire (v1.3.2).
+
+T cell developmental trajectory
+
+     The T cell lineage trajectory and the corresponding trajectory plot were determined
+
+using Monocle2. Following the extraction of T cell clusters, genes with expression
+
+detected in fewer than 10 cells were excluded. Subsequently, genes with a q-value <
+
+0.01 in the 'differentialGeneTest' function were utilized to sequence the cells in
+
+pseudotime analysis.
+
+Cell-cell interaction analysis
+
+     In order to ascertain potential cell-cell interactions between Rgs2+CD8+ T cell and
+
+other T cell clusters, we utilized Cellchat to identify statistically significant ligand-
+
+receptor pairs. Ligand-receptor pairs with a p-value less than 0.05 were deemed to have
+
+significant interactions between the two cell types.
+
+Prognostic assessment using TCGA data
+
+     RNA-seq data and clinical information of patients with late-stage CRC from The
+
+Cancer Genome Atlas (TCGA) were obtained from the Genomic Data Commons (GDC)
+
+data portal. A total of 165 patients with transcriptome data for tumor samples were
+
+included in the analysis. Patients were categorized into two groups based on the median
+
+expression level of the Rgs2_CD8A two-gene signature, as evaluated by single-sample
+
+gene set enrichment analysis (ssGSEA). Survival analysis was conducted using Kaplan-
+
+Meier curves, and the significance of differences between the two groups was assessed
+
+using the log-rank test.
+
+In vitro T cell cytotoxicity assay on cmt93 cells.
+     In order to evaluate the cytotoxic potential of Rgs2+CD8+ T cells in vitro, MSS-
+
+CRLM mice were treated with RegoNeo and sacrificed 15 days post-treatment. Rgs2-
+
+CD8+/Rgs2+CD8+ T cells were isolated from fresh tumor excisions using single-cell
+
+sorting. Subsequently, Rgs2-CD8+/Rgs2+CD8+ T cells (3×104 cells per well) and cmt93
+
+cells (1×104 cells per well) were co-cultured in a 96-well plate with IL-2 (10ng/ml,
+
+R&D systems, MX2918061) at 37°C with 5% CO2 for 48 hours. The cells were
+
+harvested and co-stained with anti-mouse CD3-APC mAb (eBioscience™, 17-0031-
+
+82), annexin V-FITC, and Propidium Iodide at a concentration of 1.5 μg/mL to assess
+
+apoptosis in CD3-negative cells using a flow cytometer (BD FACSVerseTM, USA).
+
+The culture medium was filtered and collected for ELISA analysis of TNF-α (Boster,
+
+EK0527) and IFN-γ (Boster, EK0375) following the manufacturer's instructions.
+
+In vivo T cell therapy experiment
+
+     In the in vivo T cell therapy experiment, an orthotopic HCC model was established
+
+according to the aforementioned protocol. Subsequently, tumor-bearing mice were
+
+administered with FACS-sorted Rgs2+CD8+ T cells and Rgs2-CD8+ T cells (2×105 per
+
+mouse), while mice in the control group were treated with PBS. The T cells were
+
+isolated from tumor-bearing mice subjected to combinational therapy as previously
+
+outlined. Control mice receiving PBS treatment were included for comparison. All
+
+treated animals were given daily injections of 1×103 IU IL-2 infusion for a duration of
+
+5 days. Tumor measurements were conducted in a double-blinded manner by an
+
+impartial investigator. The tumor burden was monitored by the IVIS Spectrum animal
+
+imaging system (PerkinElmer, USA).
+MSS-CRLM patient derived organoids (PDOs) generation
+
+    Fresh tumor tissue samples were rinsed with Cancer Organoid Basal Medium
+
+(#B213152, bioGenous) until the supernatant was clear, then minced into small
+
+fragments, digested with Tumor Tissue Digestion Solution (#K601003, bioGenous) in
+
+SmartOrgan Dissociator (bioGenous) at 37 ℃ for 5~10 min. The digestion was
+
+terminated by adding 2~4% fetal bovine serum (FBS; #B118-500, Nobimpex). The
+
+supernatant was collected, passed through a 70 µm filter (#CSS013070, BIOFIL) and
+
+centrifuged. The erythrocytes were lysed with Red Blood Cell Lysis Solution
+
+(#E238010, bioGenous) and then centrifuged. The cell pellet was suspended in
+
+Organoid Culture ECM (#M315066, bioGenous) and plated into 24 well plates
+
+(#H803002, BDBIO). The organoids were overlaid with Human Colorectal Cancer
+
+Organoid Medium (#K2103-CR, bioGenous). Medium were changed every 2 days. The
+
+organoids can be passaged by Organoid Dissociation Solution (#E238001, bioGenous)
+
+or cryopreserved by Organoid Cryopreservation Medium (#E238023, bioGenous).
+
+In vitro T cell cytotoxicity assay on PDOs
+
+    In order to evaluate the cytotoxic effects of Rgs2+CD8+ T cells on PDOs, Rgs2-
+
+CD8+ T /Rgs2+CD8+ T cells were isolated from fresh CRLM tumor samples obtained
+
+from patients. Low-adherence 96-well plates(#30096L, BDBIO) were coated with 20%
+
+ECM (30 µL/well, 37 ° C, 30 min). Organoids were harvested using ice-cold Cancer
+
+Organoid Basal Medium. Subsequently, Rgs2-CD8+ T /Rgs2+CD8+ T cells (5×104 cells
+
+per well) and PDOs (1×104 cells per well) were co-cultured for 48 hours in a 96-well
+
+plate with IL-2 (10ng/mL, R&D systems, MX2918061) and OrganoidpleX Medium
+(150μL, #CO1233, bioGenous) at 37°C in a 5% CO2 environment. Bright-field
+
+imaging were established on day 1 and day 3. On Day 3, SYTOX ™ Green (1:1000;
+
+#S7020, invitrogen) was added (50 µL/well, 30 min dark incubation) for fluorescence
+
+and bright field images and viability assessment. Finally, photos were taken under a
+
+microscope at after fixed.
+
+     Written informed consent from MSS-CRLM patients was obtained in accordance
+
+with institutional review board approval for analysis. All studies involving human
+
+samples were conducted in compliance with ethical regulations and were preapproved
+
+by the Ethics Review Committee of the First Affiliated Hospital of Fujian Medical
+
+University (YAN[2023]110).
+Figure legends:
+
+Figure S1. Immune response evaluation for Neoantigen peptides vaccine. A. Tumor
+
+growth curves of each group (n=5) treated with PBS, neoantigen peptides alone,
+
+Poly(I:C) and Neo-CRCVAS. B. The histogram of ELISPOT assay demonstrating
+
+neoantigen-specific reactivity of splenic T cells against the pool of 7 neoantigen
+
+peptides in mice treated with PBS, Neoantigen peptides, Poly(I:C) and Neo-CRCVAS.
+
+Results are presented as mean ± SD . *p<0.05; **p<0.01; ***p<0.001; ****p<0.0001.
+
+Figure S2. Immune status changes of TME induced by Regorabenib. A. The effect
+
+on PDOs’ Apoptosis treated by regorafenib (5μM) with or without IFN-γ exposure
+
+(1ng/ml) for 48 hours. B. Flow cytometry analysis showing the percentage of tumor
+
+cells expressing PD-L1 caused by regorafenib with or without IFN-γ exposure for 24
+
+hours in each group (n=3). C. Flow cytometry analysis showing the percentage of
+
+MHC1 expression on tumor cells caused by regorafenib with or without IFN-γ exposure
+
+for 24 hours in each group (n=3). The statistical analysis was performed with ANOVA
+
+analysis. Results are presented as mean ± SD. *p<0.05; **p<0.01; ***p<0.001;
+
+****p<0.0001.
+
+Figure S3. Tumor therapeutic effect of RegoNeo treatment in MSS CRLKM mice
+
+model. A. Tumor growth curves of each group (n=5) treated with PBS, Neo-CRCVAS
+
+alone, regorafineb alone and RegoNeo. B. Tumor weight of each group treated with
+
+PBS, Neo-CRCVAS alone, regorafineb alone and RegoNeo at the end of the experiment
+
+or when mice died spontaneously (n=5). B. ELISPOT assay quantifying the neoantigen-
+
+specific IFN-γ secretion by splenic T cells from each group against 7 neoantigen
+peptides (n=3). C. The absolute number of Ecpas_L1064F:H-2Kb specific CD8+ T cells
+
+in infiltrating CD8+ T cells in the different treatment groups. The statistical analysis
+
+was performed with ANOVA analysis. Results are shown as mean ± SD. *p<0.05;
+
+**p<0.01; ***p<0.001; ****p<0.0001.
+
+Figure S4. In vivo safety evaluation of RegoNeo treatment. A-M. Blood plasma
+
+analysis for ALB (albumin), TBIL (total bilirubin), ALT (alanine aminotransferase),
+
+AST (aspartate aminotransferase), γ-GGT (Gamma-glutamyltransferase), AKP
+
+(alkaline phosphatase), CK (creatine kinase), Urea, SCr (serum creatinine), Glu
+
+(glucose), TG (triglyceride), TCHO (total cholesterol) during treatment for each group
+
+(n=5), N. HE staining for heart, liver, spleen, lung and kidney from mice treated with
+
+RegoNeo, with scare bars of 100μm (10×) and 25μm (40×). O. Body weight changes
+
+during treatment for all groups (n=5). The statistical analysis was performed using
+
+ANOVA analysis, Results are presented as mean ± SD.
+
+Figure S5. Long-term immune memory induced by RegoNeo treatment. A. The
+
+representative immunofluorescence image of CD4+ and CD8+ T cell infiltration in
+
+tumor tissues at each treated group, Scare bars, 100μm (10×), 50μm (20 × ). B. The
+
+histogram of absolute number of Ecpas_L1064F:H-2Kb specific CD8+ T cells in CRLM
+
+tumor tissue blood at 30 days after metastasis rechallenge. C. ELISPOT analysis showing
+
+the neoantigen specific-reactivity of splenic T cells against neoantigen pools from
+
+RegoNeo therapy treated mice at the 50th day after treatment. The statistical analysis
+
+was performed with ANOVA analysis, n=3 for all the groups. Results are shown as
+
+mean ± SD. *p<0.05; **p<0.01; ***p<0.001; ****p<0.0001.
+Figure S6. Tumor immune microenvironment landscape profiling via scRNA-seq
+
+data. A. The histogram showing the proportion of different of clusters within each
+
+treatment group. B. The histogram showing the proportion of all T clusters within each
+
+group. C. TCR Clonetype diversity Estimation of each T clusters using the inverse
+
+Simpson index. D. The histogram showing the number of shared TCR clonotypes in all
+
+T clusters. E. The histogram showing the expression of MIF in Rgs2+CD8+ T cells (left)
+
+and CD74 in B cells (right). The statistical analysis was performed with ANOVA
+
+analysis. Results are presented as mean ± SD. *p<0.05; **p<0.01; ***p<0.001;
+
+****p<0.0001.
+
+Figure S7. Antitumor potential of Rgs2+CD8+ T cells in MSS-CRLM. A. The
+
+infiltration of Rgs2+ T cell in tumor tissues assessed by immunofluorescence stain at
+
+each treated group, Scare bars, 100μm (10×), 50μm (20 × ). B. The histograms of
+
+absolute number of Ecpas_L1064F:H-2Kb specific CD8+ T cells in infiltrating
+
+Rgs2+CD8+ TILs (n=3) after different treatments. C. Tumor growth curves of each group
+
+(n=5) treated with control, Rgs2+CD8+ TILs and Rgs2+CD8+ TILs. The statistical
+
+analysis was performed with ANOVA analysis. Results are presented as mean ± SD.
+Figure S1
+
+
+A
+                             1.5×10                                                                       1.5×10                                                                1.5×10                                                                1.5×10
+                                            PBS                                                                        Neo alone                                                             Poly(I:C)                                                             Neo-CRCVAS
+
+
+
+
+                                                                                                                                                                                                                              Radiance (p/s/cm2/sr)
+     Radiance (p/s/cm2/sr)
+
+
+
+
+                                                                                  Radiance (p/s/cm2/sr)
+
+
+
+
+                                                                                                                                                        Radiance (p/s/cm2/sr)
+                             1.0×10                                                                       1.0×10                                                                1.0×10                                                                1.0×10
+
+
+                              5×10                                                                         5×10                                                                  5×10                                                                  5×10
+
+
+                                    0                                                                          0                                                                     0                                                                     0
+                                        0          15           30           45                                    0           15         30       45                                    0           15         30       45                                    0        15          30       45
+                                                  Days Post Treatment                                                        Days Post Treatment                                                   Days Post Treatment                                                 Days Post Treatment
+
+
+
+
+B
+                                                            * * **
+                              400                                 * * **
+                                                                        * * **
+
+                              300
+    IFN- Spots
+
+
+
+
+                              200
+
+                              100
+
+                                0
+                                                     e
+
+
+                                                                 )
+                                            S
+
+
+
+
+                                                                             S
+                                                              :C
+                                                   on
+                                        PB
+
+
+
+
+                                                                          VA
+                                                             (I
+                                                  al
+
+
+
+
+                                                                        C
+                                                           ly
+                                              eo
+
+
+
+
+                                                                        R
+                                                         Po
+                                             N
+
+
+
+
+                                                                     -C
+                                                                 eo
+                                                               N
+Figure S2
+
+A            Control   Rego                                           * * **
+                                                                    ***
+                                                                  ***
+
+
+
+
+                                 Cell variability (%)
+                                                        90
+
+                                                                               ***
+                                                        60
+                                                                             ** **
+
+
+                                                        30
+
+
+                                                         0
+
+
+
+
+                                                                  o
+                                                                 ol
+                                                               eg
+                                                              tr
+                                                             R
+                                                             on
+B
+
+
+
+
+                                                            C
+                 PBS     Rego                                             **
+                                                        60             **
+                                                                    * * * * ** * * *
+
+
+
+
+                                PD-L1 cells (%)
+                                                        40
+
+
+                                                        20
+ SSC-A
+
+
+
+
+                                                        0
+
+
+
+
+                                                                         o
+                                                                l
+                                                                o
+
+                                                                     eg
+     PD-L1
+
+
+
+
+                                                             tr
+
+                                                                    R
+                                                             on
+C
+
+
+
+
+                                                            C
+                PBS      Rego
+                                                        60
+                                                                              *
+                                                                         *
+
+
+
+
+                                MHCI cells (%)
+                                                                    **       ** * ** *
+                                                        40
+
+
+                                                        20
+ SSC-A
+
+
+
+
+                                                        0
+
+
+
+
+                                                                         o
+                                                                ol
+
+                                                                     eg
+                                                             tr
+
+                                                                    R
+     MHCI
+
+
+
+
+                                                             on
+                                                            C
+ Figure S3
+A
+                        3×10                   PBS                                                              3×10             Neo-CRCVAS                                                           3×10       Rego                                                                          3×10       RegoNeo
+Radiance (p/s/cm2/sr)
+
+
+
+
+                                                                                        Radiance (p/s/cm2/sr)
+
+
+
+
+                                                                                                                                                                              Radiance (p/s/cm2/sr)
+
+
+
+
+                                                                                                                                                                                                                                                                       Radiance (p/s/cm2/sr)
+                        2×10                                                                                    2×10                                                                                  2×10                                                                                     2×10
+
+
+                        1×10                                                                                    1×10                                                                                  1×10                                                                                     1×10
+
+
+                                   0                                                                                0                                                                                    0                                                                                        0
+                                           0     15       30   45   60       75    90                                    0         15     30       45   60      75       90                                  0     15         30              45   60   75       90                                   0     15      30   45   60       75   90
+                                                      Days Post Treatment                                                               Days Post Treatment                                                              Days Post Treatment                                                                     Days Post Treatment
+
+
+
+
+ B                                                                                                              C                                                                                                D
+                                                                                                                                                                                                                                                                                               * * **
+                                                                                                                                 800                         * * **                                                                           1.5×10                                                * * **
+                                           4                                                                                                                      * * **                                                                                                                                 * * **
+
+
+
+
+                                                                                                                                                                                                                        of CD8+ TILs (/10 )
+                                                                                                                                                                                                                         Ecpas-Tetramer+
+                                                                                                                                                                       * * **
+                        Tumor weight (g)
+
+
+
+
+                                                                                                                                 600
+                                                                                                                    IFN- Spots
+
+
+
+
+                                                                                                                                                                                                                                              1.0×10
+                                                                                                                                                                                                                                                                  **                             *
+                                           2                                                                                     400           ** *            *
+                                                                                                                                                                                                                                               5×10
+                                                                                                                                 200
+                                           0                                                                                       0                                                                                                               0
+                                                                                                                                                                                                eo
+
+
+
+
+                                                                                                                                                                                                                                                                                     S
+                                                                                                                                                                     o
+
+
+
+
+                                                                                                                                                                                                                                                                                                                 eo
+                                                                                                                                                                                                                                                                                                      o
+                                                                                  eo
+
+
+
+
+                                                                                                                                           S
+
+
+
+                                                                                                                                                     S
+                                                                         o
+
+
+
+
+                                                                                                                                                                                                                                                             S
+                                                                                                                                                                 eg
+
+
+
+
+                                                                                                                                                                                                                                                                       VA
+                                                      S
+
+
+
+                                                                S
+
+
+
+
+                                                                                                                                                                                                                                                                                                      eg
+                                                                                                                                         PB
+
+
+
+                                                                                                                                                   VA
+
+
+
+
+                                                                                                                                                                                   oN
+                                                                     eg
+
+
+
+
+                                                                                                                                                                                                                                                        PB
+
+
+
+
+                                                                                                                                                                                                                                                                                                                 oN
+                                                 PB
+
+
+
+
+                                                                                  oN
+                                                              VA
+
+
+
+
+                                                                                                                                                                R
+
+
+
+
+                                                                                                                                                                                                                                                                                                  R
+                                                                    R
+
+
+
+
+                                                                                                                                                                                                                                                                      C
+                                                                                                                                                                              eg
+                                                                                                                                                  C
+
+
+
+
+                                                                                                                                                                                                                                                                                                             eg
+                                                                              eg
+                                                             C
+
+
+
+
+                                                                                                                                                                                                                                                                      R
+                                                                                                                                                 R
+
+
+
+
+                                                                                                                                                                          R
+                                                            R
+
+
+
+
+                                                                                                                                                                                                                                                                                                            R
+                                                                                                                                                                                                                                                                 -C
+                                                                             R
+
+
+
+
+                                                                                                                                               -C
+                                                          -C
+
+
+
+
+                                                                                                                                                                                                                                                             eo
+                                                                                                                                               eo
+                                                      eo
+
+
+
+
+                                                                                                                                                                                                                                                             N
+                                                                                                                                               N
+                                                      N
+                                                                                                                                                                                                                                                                                   A
+
+
+
+
+                                                                                                                                                                                                                           E
+
+
+
+
+                                                                                                                                                           J
+
+
+
+
+                                                                                               N
+                                               40 ×                               10 ×                                                      SCr (umol/L)                                              -GGT (U/L)                                                 ALB (g/L)
+
+
+
+
+                                                                                                                                        0
+                                                                                                                                                                                                 0
+                                                                                                                                                                                                                                                             0
+
+
+
+
+                                                                                                                                            10
+                                                                                                                                                                                                     10
+                                                                                                                                                                                                                                                                  30
+
+
+
+
+                                                                                                                                                 20
+                                                                                                                                                      30
+                                                                                                                                                           40
+                                                                                                                                                                                                            20
+                                                                                                                                                                                                                   30
+                                                                                                                                                                                                                          40
+                                                                                                                                                                                                                                                                        60
+                                                                                                                                                                                                                                                                                  90
+                                                                                                                     C                                                        C                                                                C
+                                                                                                                         on                                                       on                                                               on
+                                                                                                                              tr                                                       tr                                                               tr
+                                                                                                                                   ol                                                       ol                                   N                 ol
+                                                                                                       N                                                        N
+                                                                                                                                                                                                                                                                                        Figure S4
+
+                                                                                                           eo                                                       eo                                                               eo         PB
+                                                                                                                -C           PB                                          -C           PB                                                  -C
+
+
+
+
+                                                                                              Heart
+                                                                                                                     R             S                                          R             S                                               R       S
+                                                                                                                         C                                                        C                                                           C
+                                                                                                                             V                                                        V                                                         V
+                                                                                                                      A                                                        A                                                                  A
+                                                                                                                        S                                                        S                                                                  S
+                                                                                                                    R                                                        R                                                                  R
+                                                                                                                      e                                                        e                                                                  e
+                                                                                                                 R go                                                     R go                                                              R go
+                                                                                                                  eg                                                       eg                                                                eg
+                                                                                                                     oN                                                       oN                                                                oN
+                                                                                                                        eo                                                       eo                                                                 eo
+
+
+
+
+                                                                                              Liver
+                                                                                                                                                                                                                                                                                   B
+
+
+
+
+                                                                                                                                                                                                                           F
+
+
+
+
+                                                                                                                                                           K
+                                                                                                                                        Glu (mmol/L)                                                 AKP (U/L)                                               TBil (umol/L)
+
+
+
+
+                                                                                                                                                                                                 0
+                                                                                                                                                                                                                                                                  5
+
+
+
+
+                                                                                                                                        0
+                                                                                                                                             4
+                                                                                                                                                  8
+                                                                                                                                                                                                                                                             0
+
+
+
+
+                                                                                                                                                                                                     50
+                                                                                                                     C                                                        C                                                                C
+
+
+
+
+                                                                                                                                                           12
+                                                                                                                                                                                                                                                                        10
+                                                                                                                                                                                                                                                                                  15
+
+
+
+
+                                                                                                                                                                                                            100
+                                                                                                                                                                                                                   150
+                                                                                                                                                                                                                          200
+                                                                                                                         on                                                       on                                                               on
+                                                                                                                              tr                                                       tr                                                               tr
+                                                                                                                                   ol                                                       ol                                   N                 ol
+                                                                                                       N                                                        N
+
+
+
+
+                                                                                              Spleen
+                                                                                                           eo                                                       eo                                                               eo         PB
+                                                                                                                -C           PB                                          -C           PB                                                  -C
+                                                                                                                     R             S                                          R             S                                               R       S
+                                                                                                                         C                                                        C                                                           C
+                                                                                                                             V                                                        V                                                         V
+                                                                                                                      A                                                        A                                                                  A
+                                                                                                                        S                                                        S                                                                  S
+                                                                                                                     R                                                       R                                                                  R
+                                                                                                                       eg                                                      e                                                            R
+                                                                                                                                                                                                                                                  eg
+                                                                                                                 R                                                        R go                                                                eg o
+                                                                                                                   eg o                                                    eg
+                                                                                                                     oN                                                       oN                                                                oN
+
+
+
+
+                                                                                              Lung
+                                                                                                                        eo                                                       eo                                                                eo
+                                                                                                                                                                                                                                                                                   C
+
+
+
+
+                                                                                                                                                                                                                           G
+
+
+
+
+                                                                                                                                            TG (mmol/L)    L                                           CK (U/L)                                                  ALT (U/L)
+                                                                                                                                                                                                                                                             0
+
+
+
+
+                                                                                                                                                                                                 0
+                                                                                                                                                                                                                                                                 50
+                                                                                                                                                                                                                                                                      100
+                                                                                                                                                                                                                                                                            150
+                                                                                                                                                                                                                                                                                  200
+
+
+
+
+                                                                                                                                                                                                                                               C
+
+
+
+
+                                                                                                                                        0
+                                                                                                                                             1
+                                                                                                                                                  2
+                                                                                                                                                           3
+                                                                                                                     C                                                        C
+                                                                                                                                                                                                     1000
+                                                                                                                                                                                                                          4000
+
+
+                                                                                                                                                                                                            2000
+                                                                                                                                                                                                                   3000
+
+
+
+
+                                                                                              Kidney
+                                                                                                                         on                                                       on                                                               on
+                                                                                                                              tr                                                       tr                                                               tr
+                                                                                                                                   ol                                                       ol                                   N                 ol
+                                                                                                       N                                                        N                                                                    eo
+                                                                                                           eo                                                       eo                                                                          PB
+                                                                                                                -C           PB                                          -C           PB                                                  -C
+                                                                                                                     R             S                                          R              S                                              R       S
+                                                                                                                         C                                                        C                                                           C
+
+
+
+
+                                                                                               O
+                                                       Body Weight(g)                                                        V                                                        V                                                         V
+                                                                                                                      A                                                        A                                                                  A
+                                                                                                                        S                                                        S                                                                  S
+
+
+
+
+                                                         10
+                                                                                 20
+                                                                                         30
+
+
+
+
+                                      0
+                                                                                                                     R                                                        R                                                                 R
+
+
+
+
+                      0
+                                                                                                                       eg                                                       eg                                                                eg
+                                                                                                                 R                                                        R                                                                 R
+                                                                                                                   eg o                                                     eg o                                                              eg o
+
+
+
+
+                      3
+                                                                                                                     oN                                                       oN                                                                oN
+                                                                                                                        eo                                                       eo                                                                eo
+
+
+
+
+                      6
+                                                                           PBS
+
+
+                                                       Rego
+
+
+
+
+                      9
+                                                                                                                                                                                                                                                                                   D
+
+
+
+
+                                                                                                                                                                                                                           H
+
+
+
+
+                                                                                                                                                           M
+
+
+
+
+                                             RegoNeo
+                                                                                                                                        TCHO (mg/L)                                              Urea (mmol/L)                                                   AST (U/L)
+
+
+
+
+                                                              Neo-CRCVAS
+                                                                                                                                        0
+                                                                                                                                            1
+                                                                                                                                                 2
+                                                                                                                                                           4
+                                                                                                                                                                                                                                                             0
+
+
+
+
+                                                                                                                                                                                                 0
+                                                                                                                                                                                                      4
+                                                                                                                                                                                                               8
+
+
+
+
+                                                                                                                                                      3
+                                                                                                                                                                                                                          12
+
+
+
+
+                                                                                                                     C                                                        C                                                                C
+                                                                                                                                                                                                                                                                  200
+                                                                                                                                                                                                                                                                        400
+                                                                                                                                                                                                                                                                                  600
+
+
+
+
+                                                                                                                         on                                                       on                                                               on
+                                                                                                                              tr                                                       tr                                                         tr
+                                                                                                                                   ol                                                       ol                                   N                   ol
+                                                                                                       N                                                        N                                                                    eo
+                                                                                                           eo                                                       eo                                                                           P
+                                                                                                                -C           PB                                          -C           PB                                                  -C       BS
+                                                                                                                     R             S                                          R              S                                               R
+                                                                                                                         C                                                        C                                                            C
+
+
+
+
+Days Post Treatment
+                                                                                                                             V                                                        V                                                          V
+                                                                                                                      A                                                        A                                                                   A
+                                                                                                                        S                                                        S                                                                    S
+                                                                                                                     R                                                        R                                                                  R
+                                                                                                                       eg                                                       eg                                                                 eg
+                                                                                                                 R                                                        R                                                                 R
+                                                                                                                   eg o                                                     eg o                                                              eg o
+                                                                                                                     oN                                                       oN                                                                 oN
+                                                                                                                                                                                                                                                     eo
+
+                      12 15 18 21 24 27 30
+                                                                                                                        eo                                                       eo
+                              DAPI CD8 CD4                    DAPI CD8 CD4                          A
+                                                                                                        Figure S5
+
+
+
+
+                                                                                      10 ×
+
+
+
+
+                                                10 ×
+                                                                                              PBS
+
+
+
+
+                                                    RegoNeo
+                                                                                      20 ×
+
+
+
+
+                                                20 ×
+                                                                                                    B
+
+
+
+
+                              Ecpas-Tetramer+ of CD8+ TILs (/10 )
+                              0
+                                                              1.0×10
+                                                                                     1.5×10
+
+
+
+
+                                           0.5×10
+
+
+
+
+             C
+              on
+                   tr
+                      o   l
+             R
+              eg
+                                                                              **
+
+
+
+
+                   oN
+                        eo
+                                                                                                    C
+
+
+
+
+                                               IFN- Spots
+Po
+                                     200
+                                                       400
+                                                                       600
+                                                                                     800
+
+
+
+
+                              0
+
+
+
+
+   sit
+        iv
+          eC
+            on
+                   tr
+                     ol
+              C
+               on
+                   tr
+                     ol
+             R
+N             eg
+                 o  N
+                                                                             ** **
+
+
+
+
+ eg
+    ativ             eo
+             eC
+               on
+                    tr
+                      ol
+Figure S6
+
+A                                                                                                                                        B
+                                                    1.00                                                                                                                                          1.00
+
+
+
+
+                                                    0.75
+                                                                                                                     cluster                                                                      0.75
+                                                                                                                         CancerCells                                                                                                                                       T1
+                                                                                                                         BCells
+      proportion
+
+
+
+
+                                                                                                                                                   proportion
+                                                                                                                                                                                                                                                                           T2
+                                                                                                                         ECs
+                                                                                                                         Erythrocytes                                                                                                                                      T3
+                                                    0.50                                                                 Fibroblasts                                                              0.50                                                                     T4
+                                                                                                                         KupfferCells                                                                                                                                      T5
+                                                                                                                         MPs                                                                                                                                               T6
+                                                                                                                         Neutrophils                                                                                                                                       T7
+                                                                                                                         PlasmaCells
+                                                                                                                                                                                                                                                                           T8
+                                                    0.25                                                                 TCells                                                                   0.25
+                                                                                                                         NK_Xcl1                                                                                                                                           T9
+
+
+
+
+                                                    0.00                                                                                                                                          0.00
+                                                                                         o
+
+
+
+
+                                                                                                                                                                                                                                          o
+                                                              eo
+
+
+
+
+                                                                                                     eo
+
+
+
+
+                                                                                                                                                                                                              eo
+
+
+
+
+                                                                                                                                                                                                                                                          eo
+                                                                            S
+
+
+
+
+                                                                                                                                                                                                                              S
+                                                                                       eg
+
+
+
+
+                                                                                                                                                                                                                                       eg
+                                                                           PB
+
+
+
+
+                                                                                                                                                                                                                          PB
+                                                            N
+
+
+
+
+                                                                                                   oN
+
+
+
+
+                                                                                                                                                                                                              N
+
+
+
+
+                                                                                                                                                                                                                                                  oN
+                                                                                      R
+
+
+
+
+                                                                                                                                                                                                                                      R
+C                                                                                                                                        D
+                                                                                                eg
+
+
+
+
+                                                                                                                                                                                                                                                  eg
+                                                                                               R
+
+
+
+
+                                                                                                                                                                                                                                                  R
+                                                        Clonetype diversity Estimation using the inverse Simpson index                                                                                   25
+
+
+                                                     60
+
+                                                                                                                                                        Number of shared
+                                                                                                                                                         TCR clonotypes
+                                                              Sample                                                                                                               20
+      Inverse Simpson index
+
+
+
+
+                                                                 PBS                                                                                                                                              16
+                                                                 Neo
+                                                                 Rego                                                                                                                                                    12
+                                                                 RegoNeo
+                                                                                                                                                                                   10                                          8
+                                                     40
+                                                                                                                                                                                                                                      4
+                                                                                                                                                                                                                                              3                3
+                                                                                                                                                                                                                                                      2            2            2
+                                                                                                                                                                                                                                                                       1            1   1
+                                                                                                                                                                                          0
+                                                                                                                                                                 T4
+                                                     20
+                                                                                                                                                                 T3
+
+                                                                                                                                                                 T2
+
+                                                                                                                                                                 T9
+
+                                                                                                                                                                 T1
+                                                     0
+                                                                                                                                                                 T6
+                                                                           eo
+
+
+
+
+                                                                                                      eo
+                                                                                          o
+                                                              S
+
+
+
+
+                                                                                                                                                                 T7
+                                                                                        eg
+                                                            PB
+
+
+
+                                                                           N
+
+
+
+
+                                                                                                   oN
+                                                                                      R
+
+
+                                                                                                 eg
+
+
+
+
+                                                                                                                               30       20   10             0
+                                                                                                R
+
+
+
+
+                                                                                                                                    Cluster size
+
+
+E
+                                                                                 * * **                                                                                                                                            * * **
+                                                                                      * * **                                                                                                                                            * * **
+                                                    5                                      **                                                                                                      8                                         ** * *
+            Expressiong of MIF in Rgs2+ CD8+ TILs
+
+
+
+
+                                                                                                                                                                 Expressiong of CD74 in B cells
+
+
+
+
+                                                    4
+                                                                                                                                                                                                   6
+                                                    3
+                                                                         * ** *                                                                                                                                             * ** *
+                                                                    * * **                                                                                                                         4                   * * **
+                                                    2
+
+                                                                                                                                                                                                   2
+                                                    1
+
+                                                    0                                                                                                                                              0
+                                                                                                  eo
+
+
+
+
+                                                                                                                                                                                                                                                  eo
+                                                                            S
+
+
+
+
+                                                                                                                                                                                                                              S
+                                                                                       o
+
+
+
+
+                                                                                                                                                                                                                                          o
+                                                               S
+
+
+
+
+                                                                                                                                                                                                                 S
+                                                                        VA
+
+
+
+
+                                                                                                                                                                                                                          VA
+                                                                                    eg
+
+
+
+
+                                                                                                                                                                                                                                     eg
+                                                           PB
+
+
+
+
+                                                                                                                                                                                                              PB
+                                                                                               oN
+
+
+
+
+                                                                                                                                                                                                                                                 oN
+                                                                                  R
+
+
+
+
+                                                                                                                                                                                                                                     R
+                                                                       C
+
+
+
+
+                                                                                                                                                                                                                         C
+                                                                                            eg
+
+
+
+
+                                                                                                                                                                                                                                              eg
+                                                                     R
+
+
+
+
+                                                                                                                                                                                                                       R
+                                                                                          R
+
+
+
+
+                                                                                                                                                                                                                                          R
+                                                                  -C
+
+
+
+
+                                                                                                                                                                                                                   -C
+                                                               eo
+
+
+
+
+                                                                                                                                                                                                               eo
+                                                              N
+
+
+
+
+                                                                                                                                                                                                              N
+Figure S7
+
+A                                                                       PBS                                       Neo-CRCVAS
+                                                            10 ×                      20 ×              10 ×                                  20 ×
+                                                                                                                                                                                                                                         * * **
+                                                                                                                                                                                                                                              * * **
+                                                                                                                                                                                                       30                                          ** * *
+                         DAPI Rgs2
+
+
+
+
+                                                                                                                                                                                Rgs2+ TILs (%)
+                                                                                                                                                                                                       20
+                                                                                                                                                                                                                                     * ** *
+                                                                        Rego                                                      RegoNeo                                                                                       * * **
+                                                             10 ×                      20 ×             10 ×                                   20 ×
+                                                                                                                                                                                                       10
+
+
+
+                                                                                                                                                                                                                0
+
+
+
+
+                                                                                                                                                                                                                                                       eo
+                                                                                                                                                                                                                                               o
+                                                                                                                                                                                                                                  S
+
+
+                                                                                                                                                                                                                                 S
+
+                                                                                                                                                                                                                                               eg
+                                                                                                                                                                                                                               PB
+
+
+                                                                                                                                                                                                                              VA
+
+
+
+
+                                                                                                                                                                                                                                                     oN
+                                                                                                                                                                                                                                              R
+                                                                                                                                                                                                                             C
+
+
+
+
+                                                                                                                                                                                                                                                     eg
+                                                                                                                                                                                                                            R
+
+
+
+
+                                                                                                                                                                                                                                                    R
+                                                                                                                                                                                                                          -C
+                                                                                                                                                                                                                            eo
+                                                                                                                                                                                                                           N
+B
+                                                                              * * **
+                                                                                    **
+                                                                                          ** * *
+                     Number of Ecpas-Tetramer+
+                    in Rgs2+CD8+ TILs (/1.5×10 )
+
+
+
+
+                                                   2.0
+
+                                                   1.5               **          **
+
+                                                   1.0
+
+                                                   0.5
+                                                       0
+                                                                                              eo
+                                                                                      o
+                                                              S
+
+
+                                                                          S
+
+                                                                                  eg
+                                                            PB
+
+
+                                                                        VA
+
+
+
+
+                                                                                             oN
+                                                                                 R
+                                                                     C
+
+
+
+
+                                                                                          eg
+                                                                    R
+
+
+
+
+                                                                                       R
+                                                                   -C
+                                                               eo
+                                                              N
+
+
+
+
+C
+                           2×10                                                                                                   2×10                                                                                   2×10
+                                                           Control                                                                           Rgs2-CD8+ T                                                                            Rgs2+CD8+ T
+                                                                                                                                                                                                 Radiance (p/s/cm2/sr)
+ Radiance (p/s/cm2/sr)
+
+
+
+
+                                                                                                          Radiance (p/s/cm2/sr)
+
+
+
+
+                           1×10                                                                                                   1×10                                                                                   1×10
+
+
+
+
+                                             0                                                                                       0                                                                                      0
+                                                   0                         5                     10                                    0                   5             10                                                   0                    5          10
+                                                                   Days Post Treatment                                                               Days Post Treatment                                                                  Days Post Treatment
+Table S2. Neoantigen mutations with high affinity to H-2Kb alleles
+   Gene     Mutation      Neoepitope         TPMa        VAFb      IC50 (MTc)
+   Ecpas     L1064F      STYKEFCSL         17.35324 0.431579          12.8
+ Tbc1d32     M1054L LTVRYGRFLNL             2.30625    0.42069        39.6
+   Rcc1       S29F       VSHRFHNT         23.706072 0.411765          76.3
+   Ubr2      A537V     AVFTLQMKL           11.28678 0.333333          76.5
+ Tmem30a      P290S      SAGQYFLNI          33.6073    0.522727       86.0
+    Atr      L2126F    SVFTEHTNRL          4.406605 0.409091         118.4
+  Klhl26     A154V       VSLVLRHV         10.831677 0.337931         125.6
+ Dennd5b     L338V    ASLLHFVDAPV             1.152    0.336207      131.8
+  Mycbp2     V1978I      IAILNQKYA        15.179241 0.472603         171.0
+    Bptf     K1284N     RAFSNAVDF         10.327738 0.357542         216.1
+   Ubr5      P2546S     CSITLNRHVI        27.878175 0.300469         225.5
+   Rgs11     D224N        SNFYKCEI         7.363055 0.275568         232.5
+ Slc22a15     S96T      VHFSNSFTTI            1.712    0.339286      241.4
+  Rbbp6      P1616S      SQLSHSSRL        18.597982 0.392405         242.0
+   Ncor2     P1737L    LAYLPTAPPL         29.053076 0.330935         291.0
+   Snai2     P198H       KAFSRHWL            6.1506       0.43       291.5
+  Slc12a7     L467F       VTTSFIYF         7.884342 0.495726         390.0
+   Ly75      D1328E    LMWFEKTAL           7.633376 0.485849         403.1
+   Grk6       T117I     IHEYLSTAPF         17.70934 0.407258         406.9
+   Birc6     V3064I      TIHMMLQPI        18.058234 0.357988         434.7
+  Pxylp1      T469I     SSINYYDAC          1.471476 0.466667         478.3
+ Tmem260     D333H VHFPGHRWNPV              4.07349    0.284768      480.6
+
+a: TPM, transcripts per kilobase per million mapped reads;
+b: VAF, variant allele frequency;
+c: MT, mutation.
+

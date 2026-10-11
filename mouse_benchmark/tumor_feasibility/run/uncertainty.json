@@ -1,0 +1,84 @@
+{
+  "test_pooled": {
+    "replicates": 1000,
+    "valid_replicates": 1000,
+    "groups_per_study": [
+      44,
+      20
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.18787200722424705,
+        0.04133890464069006
+      ],
+      "BA_Rank_Score": [
+        -0.21994657088801178,
+        -0.01805576765504561
+      ],
+      "Mouse_Composite": [
+        -0.19104680906886423,
+        0.03588414583439052
+      ],
+      "LR_binding": [
+        -0.2085392307318883,
+        -0.030074900893251773
+      ]
+    }
+  },
+  "PMID_36950115": {
+    "replicates": 1000,
+    "valid_replicates": 997,
+    "groups_per_study": [
+      44
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.14528872358163333,
+        0.04125175827369471
+      ],
+      "BA_Rank_Score": [
+        -0.17113746930561982,
+        0.025667513401932292
+      ],
+      "Mouse_Composite": [
+        -0.1497899168993277,
+        0.05602815473043376
+      ],
+      "LR_binding": [
+        -0.15766538871135838,
+        0.028177723282260175
+      ]
+    }
+  },
+  "PMID_40586324": {
+    "replicates": 1000,
+    "valid_replicates": 1000,
+    "groups_per_study": [
+      20
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.7000892857142856,
+        0.028687423687423597
+      ],
+      "BA_Rank_Score": [
+        -0.7273067210567211,
+        -0.10417939903234033
+      ],
+      "Mouse_Composite": [
+        -0.7523809523809524,
+        -0.007882363848272957
+      ],
+      "LR_binding": [
+        -0.6584201388888888,
+        -0.06120902906617179
+      ]
+    }
+  }
+}

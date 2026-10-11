@@ -1,0 +1,2188 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article id="advs70700" xml:lang="en" article-type="research-article" dtd-version="1.4"><?da-xref-anchor-style superscripted?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Adv Sci (Weinh)</journal-id><journal-id journal-id-type="iso-abbrev">Adv Sci (Weinh)</journal-id><journal-id journal-id-type="pmc-domain-id">2933</journal-id><journal-id journal-id-type="pmc-domain">advsci</journal-id><journal-id journal-id-type="nlm-id">101664569</journal-id><journal-id journal-id-type="publisher-id">ADVS</journal-id><journal-title-group><journal-title>Advanced Science</journal-title></journal-title-group><issn pub-type="epub">2198-3844</issn><?publisher_abbrev blackwell?><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12462951</article-id><article-id pub-id-type="pmcid-ver">PMC12462951.1</article-id><article-id pub-id-type="pmcaid">12462951</article-id><article-id pub-id-type="pmcaiid">12462951</article-id><article-id pub-id-type="pmid">40586324</article-id><article-id pub-id-type="doi">10.1002/advs.202508040</article-id><article-id pub-id-type="publisher-id">ADVS70700</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Personalized Neoantigen Vaccine plus Regorafenib Increases Rgs2⁺CD8⁺ T Cells Infiltration and Reprograms the Tumor Microenvironment in Microsatellite Stable Colorectal Cancer Liver Metastases</article-title></title-group><contrib-group><contrib id="advs70700-cr-0001" contrib-type="author"><name name-style="western"><surname>Chen</surname><given-names initials="H">Hengkai</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-6894-9819</contrib-id><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0002" contrib-type="author"><name name-style="western"><surname>Chen</surname><given-names initials="B">Bin</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0003" contrib-type="author"><name name-style="western"><surname>Yang</surname><given-names initials="Y">Yuanfeng</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0004" contrib-type="author"><name name-style="western"><surname>Li</surname><given-names initials="S">Shoufeng</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0005" contrib-type="author"><name name-style="western"><surname>Cai</surname><given-names initials="H">Huajun</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0006" contrib-type="author"><name name-style="western"><surname>Zhuang</surname><given-names initials="Z">Zhicheng</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0007" contrib-type="author"><name name-style="western"><surname>Wu</surname><given-names initials="Y">Yong</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0008" contrib-type="author"><name name-style="western"><surname>Gao</surname><given-names initials="Y">Yuan</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0009" contrib-type="author"><name name-style="western"><surname>Chen</surname><given-names initials="Y">Yupeng</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0010" contrib-type="author"><name name-style="western"><surname>Liu</surname><given-names initials="X">Xing</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs70700-cr-0011" contrib-type="author" corresp="yes"><name name-style="western"><surname>Guan</surname><given-names initials="G">Guoxian</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><address><email>xhyyggx@fjmu.edu.cn</email></address></contrib><contrib id="advs70700-cr-0012" contrib-type="author" corresp="yes"><name name-style="western"><surname>Zhuang</surname><given-names initials="J">Jinfu</given-names></name><xref rid="advs70700-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs70700-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="advs70700-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><address><email>zjf2611@fjmu.edu.cn</email></address></contrib></contrib-group><aff id="advs70700-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Colorectal Surgery</named-content>
+<institution>The First Affiliated Hospital of Fujian Medical University</institution>
+<city>Fuzhou</city>
+<postal-code>350005</postal-code>
+<country country="CN">China</country>
+</aff><aff id="advs70700-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Colorectal Surgery</named-content>
+<named-content content-type="organisation-division">National Regional Medical Center</named-content>
+<named-content content-type="organisation-division">Binhai Campus of the First Affiliated Hospital</named-content>
+<institution>Fujian Medical University</institution>
+<city>Fuzhou</city>
+<postal-code>350212</postal-code>
+<country country="CN">China</country>
+</aff><aff id="advs70700-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Fujian Abdominal Surgery Research Institute</named-content>
+<institution>The First Affiliated Hospital of Fujian Medical University</institution>
+<city>Fuzhou</city>
+<postal-code>350005</postal-code>
+<country country="CN">China</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>E‐mail: <email>xhyyggx@fjmu.edu.cn</email>; <email>zjf2611@fjmu.edu.cn</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>30</day><month>6</month><year>2025</year></pub-date><pub-date pub-type="collection"><month>9</month><year>2025</year></pub-date><volume>12</volume><issue seq="1090">36</issue><issue-id pub-id-type="pmc-issue-id">497525</issue-id><issue-id pub-id-type="doi">10.1002/advs.v12.36</issue-id><elocation-id>e08040</elocation-id><history>
+<date date-type="rev-recd"><day>18</day><month>6</month><year>2025</year></date>
+<date date-type="received"><day>04</day><month>5</month><year>2025</year></date>
+</history><pub-history><event event-type="pmc-release"><date><day>30</day><month>06</month><year>2025</year></date></event><event event-type="pmc-live"><date><day>26</day><month>09</month><year>2025</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2025-09-26 10:25:50.023"><day>26</day><month>09</month><year>2025</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2025 The Author(s). Advanced Science published by Wiley‐VCH GmbH</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="ADVS-12-e08040.pdf"><?pdf-name ADVS-12-e08040.pdf?><?pdf-size 13278466?><?pdf-md5 433f13049781fc719adafd12aea10c7b?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:db80/12462951/433f13049781/ADVS-12-e08040.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:ADVS-12-e08040.pdf"/><abstract><title>Abstract</title><p>Microsatellite stable colorectal cancer liver metastases (MSS‐CRLM) resist immune checkpoint inhibitors due to their immunosuppressive tumor microenvironment (TME) and low mutation burden (TMB). A personalized neoantigen vaccine, Neo‐CRCVAS, using whole‐exome and RNA sequencing of murine MSS‐CRC cells, comprising 7 immunogenic neoantigen peptides with Poly(I:C) is developed and combined with regorafenib as a novel therapy (RegoNeo). In MSS‐CRLM mouse models, RegoNeo significantly enhanced tumor regression and survival while establishing durable immune memory. Single‐cell RNA and TCR sequencing revealed that RegoNeo expanded a distinct Rgs2⁺CD8⁺ T cell population with strong cytotoxic activity and TCR clonal expansion. These Rgs2⁺CD8⁺ T cells, enriched for neoantigen‐specific T cells, demonstrated potent tumor‐killing capabilities in both mouse models and patient‐derived organoids. The findings establish RegoNeo as a promising personalized immunotherapy that reprograms the immunosuppressive tumor microenvironment by increasing Rgs2⁺CD8⁺ T cell infiltration, highlighting both the treatment approach and this specific T cell subset as potential therapeutic targets for MSS‐CRLM patients.</p></abstract><abstract id="advs70700-abs-0001" abstract-type="graphical"><p>This study synthesized a personalized neoantigen vaccine (Neo‐CRCVAS) and combined it with regorafenib, termed RegoNeo. This combination therapy significantly enhanced antitumor efficacy and promoted long‐term tumor‐specific immune memory in microsatellite stable colorectal cancer liver metastasis (MSS‐CRLM) models by increasing neoantigen‐specific Rgs2<sup>+</sup>CD8<sup>+</sup> T cells infiltration and reprogramming the immunosuppressive tumor microenvironment (TME), providing novel immunotherapy insights for MSS‐CRLM patients.
+<boxed-text position="anchor" content-type="graphic" orientation="portrait"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="ADVS-12-e08040-g003.jpg"><?image-name ADVS-12-e08040-g003.jpg?><?image-size 13582?><?image-md5 8f17f688654c387af2fdae3b7f042ad6?><?image-image-server-status NEVER_LOAD?><?image-original-height 125?><?image-original-width 180?><?image-scaled-height 125?><?image-scaled-width 180?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/8f17f688654c/ADVS-12-e08040-g003.jpg?></graphic></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="advs70700-kwd-0001">microsatellite stable colorectal cancer liver metastasis</kwd><kwd id="advs70700-kwd-0002">neoantigen vaccine</kwd><kwd id="advs70700-kwd-0003">regorafenib</kwd><kwd id="advs70700-kwd-0004">Rgs2<sup>+</sup>CD8<sup>+</sup> T cell</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>
+<institution-wrap><institution>National Natural Science Youth Foundation of China</institution></institution-wrap>
+</funding-source><award-id>82303728</award-id></award-group><award-group id="funding-0002"><funding-source>
+<institution-wrap><institution>Fujian Province Finance Project</institution></institution-wrap>
+</funding-source><award-id>BPB‐2023ZJF</award-id><award-id>BPB‐2024ZJF</award-id></award-group><award-group id="funding-0003"><funding-source>
+<institution-wrap><institution>Joint Funds for the Innovation of Science and Technology of Fujian Province</institution></institution-wrap>
+</funding-source><award-id>2023Y9026</award-id></award-group><award-group id="funding-0004"><funding-source>
+<institution-wrap><institution>Scientific Foundation of Fujian Province</institution></institution-wrap>
+</funding-source><award-id>2024J01524</award-id></award-group><award-group id="funding-0005"><funding-source>
+<institution-wrap><institution>Young and Middle aged talent training project of Fujian provincial health commission</institution></institution-wrap>
+</funding-source><award-id>2024GGA025</award-id></award-group></funding-group><counts><fig-count count="8"/><table-count count="0"/><page-count count="15"/><word-count count="8858"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>September 25, 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.6.4 mode:remove_FC converted:25.09.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="advs70700-cit-0001">
+<string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Yang</surname>
+</string-name>, et al. “<article-title>Personalized Neoantigen Vaccine plus Regorafenib Increases Rgs2⁺CD8⁺ T Cells Infiltration and Reprograms the Tumor Microenvironment in Microsatellite Stable Colorectal Cancer Liver Metastases</article-title>.” <source>Adv. Sci.</source>
+<volume>12</volume>, no. <issue>36</issue> (<year>2025</year>): <elocation-id>e08040</elocation-id>. <pub-id pub-id-type="doi">10.1002/advs.202508040</pub-id>
+<pub-id pub-id-type="pmcid">PMC12462951</pub-id><pub-id pub-id-type="pmid">40586324</pub-id></mixed-citation>
+</p></notes></front><body><sec id="advs70700-sec-0010"><label>1</label><title>Introduction</title><p>Colorectal cancer (CRC) ranks as the third most prevalent cancer and the second leading cause of cancer‐related deaths worldwide, responsible for more the 935 000 deaths annually.<sup>[</sup>
+<xref rid="advs70700-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>
+<sup>]</sup> Approximately half of CRC patients experience colorectal liver metastases (CRLM) disease progression, making it the leading cause of CRC‐related mortality.<sup>[</sup>
+<xref rid="advs70700-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>
+<sup>]</sup> Despite advancements in systemic chemotherapy, targeted therapies, and surgical resection, the prognosis for CRLM patients remains poor. The 5‐year overall survival (OS) rate for treated patients is 30%–57%, while untreated patients have a median OS less than 12 months.<sup>[</sup>
+<xref rid="advs70700-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>
+<sup>]</sup>
+</p><p>Recently, while tumor mutation burden (TMB) has proven inadequate as a predictive marker for immunotherapy efficacy in all solid cancer types,<sup>[</sup>
+<xref rid="advs70700-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>
+<sup>]</sup> checkpoint inhibitors (ICIs) have nonetheless substantially revolutionized cancer treatment, especially in tumors c with high TMB. In CRC, the response to ICIs heavily depends on mismatch repair (MMR) status. Microsatellite instability‐high (MSI‐H) or deficient mismatch repair (dMMR) tumors, with high TMB, account for ≈5%–10% of metastatic CRC (mCRC) cases and demonstrate significant benefit from ICIs, with objective response rates (ORRs) ≈30%–50%, even with monotherapy, and 2‐year OS rates exceeding 60%.<sup>[</sup>
+<xref rid="advs70700-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="advs70700-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>
+<sup>]</sup> In contrast, microsatellite stable (MSS) or proficient mismatch repair (pMMR) tumors, which account for 90%–95% of metastatic colorectal cancer (mCRC) cases, exhibit minimal responses to ICIs as monotherapy and demonstrate limited efficacy even when treated with a combination of programmed cell death 1 (PD‐1) and cytotoxic T lymphocyte‐associated antigen‐4 (CTLA‐4) antibodies. The ORR for these tumors is generally below 5%, and in the case of MSS‐CRLM, can be as low as 0%. Furthermore, the OS for patients with MSS‐mCRC shows barely any improvement when compared to chemotherapy alone.<sup>[</sup>
+<xref rid="advs70700-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="advs70700-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>
+<sup>]</sup> The immune resistance of MSS‐CRLM is primarily attributed to its immunosuppressive tumor microenvironment (TME), characterized by a low TMB (with a median number of ≈4–6 Mut Mb<sup>−1</sup>), restricted tumor‐infiltrating lymphocytes (TILs), an abundance of immunosuppressive cells, elevated expression of inhibitory immune checkpoints, and a limited capacity for antigen presentation.<sup>[</sup>
+<xref rid="advs70700-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="advs70700-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>
+<sup>]</sup> Consequently, strategies aimed at remodeling the TME and enhancing tumor immunogenicity are essential for overcoming immune resistance in MSS‐CRLM.</p><p>Neoantigens, originating from tumor‐specific somatic mutations absent in normal tissues, can be presented on tumor cell surfaces via major histocompatibility complex (MHC) molecules and identified as neoepitopes by T cell receptors. Personal vaccines targeting tumor neoantigens can induce tumor‐specific immune responses without causing central tolerance.<sup>[</sup>
+<xref rid="advs70700-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="advs70700-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>
+<sup>]</sup> Our clinical trials, along with others, have verified that personalized neoantigen vaccines are safe, feasible, and capable of inducing an immune response in melanoma, glioblastoma, non‐small cell lung cancer, and hepatocellular carcinoma.<sup>[</sup>
+<xref rid="advs70700-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="advs70700-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>, <xref rid="advs70700-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>, <xref rid="advs70700-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+<sup>]</sup> As for CRC, recent studies have also demonstrated that the neoantigen burden has the potential to accurately indicate the patients’ prognosis and a subset of these neoantigens may prove to be highly effective targets for CRC immunotherapy.<sup>[</sup>
+<xref rid="advs70700-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="advs70700-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>
+<sup>]</sup> Preliminary studies suggest that neoantigen vaccines can induce tumor‐specific immune responses even in MSS‐CRC.<sup>[</sup>
+<xref rid="advs70700-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="advs70700-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> Nevertheless, the immunosuppressive TME in MSS‐CRLM limits the efficacy of neoantigen vaccines alone. Therefore, combining neoantigen vaccines with agents that can reprogram the TME offers a promising strategy.</p><p>Tyrosine kinase inhibitors (TKIs) could both induce tumor vascular normalization, thereby enhancing the infiltration of effector immune cells and stimulating effector immune cells and dendritic cells (DCs) while concurrently suppressing immunosuppressive cells, leading to immunomodulation.<sup>[</sup>
+<xref rid="advs70700-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup> Among them, regorafenib was the only TKI that could reprogram the immunosuppressive TME by rescuing the upregulation of immune checkpoints including programmed cell death ligand 1 (PD‐L1) mediated by INF‐γ through the STAT pathway, while also upregulating MHC expression in both tumor cells and immune cells.<sup>[</sup>
+<xref rid="advs70700-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>
+<sup>]</sup> Consequently, these multifaceted mechanisms contribute to the inhibition of tumor cell growth and proliferation.<sup>[</sup>
+<xref rid="advs70700-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>, <xref rid="advs70700-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> However, the efficacy of regorafenib combined with traditional immunotherapy based on ICIs is hindered by the limited presence of tumor‐specific TILs in TME, thereby restricting the ORR of patients with MSS‐CRLM (ranging from 0%–8.7%), highlighting the need for optimized combinatorial approaches.<sup>[</sup>
+<xref rid="advs70700-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>, <xref rid="advs70700-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="advs70700-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>
+<sup>]</sup> Considering the broad potential of personalized neoantigen vaccines to trigger neoantigen‐specific T cells, it is plausible that combining this therapy with regorafenib could improve the ORR and long‐term effectiveness of immunotherapy in MSS‐CRLM by inducing tumor‐specific TILs and reprogramming TME through multi‐mechanisms.</p><p>In this study, we developed a personalized neoantigen peptide vaccine for the murine MSS‐CRC cell line (Neo‐CRCVAS) with safety, feasibility, and efficacy. Additionally, a Neo‐CRCVAS/regorafenib combination therapy (ReoNeo) was developed to enhance long‐term antitumor efficacy in a murine MSS‐CRLM model. Additionally, a comprehensive multi‐omics study was performed to explore the TME dynamics and potential immune responses after ReoNeo treatment. In summary, this study provides compelling evidence supporting the efficacy of personalized neoantigen therapy in combination with regorafenib for the treatment of MSS‐CRLM and reveals the potential role and mechanisms of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells as a promising target for MSS‐CRLM immunotherapy (<bold>Scheme</bold> <xref rid="advs70700-fig-0007" ref-type="fig">
+<bold>1</bold>
+</xref>).</p><fig position="float" fig-type="Scheme" id="advs70700-fig-0007" orientation="portrait"><label>Scheme 1</label><caption><p>The mechanisms of RegoNeo induing antitumor immunity in MSS‐CRLM. Personalized neoantigen vaccine elicits neoantigen‐specific T cells (left); Regorafenib reprograms the immunosuppressive TME (right); Rgs2<sup>+</sup>CD8<sup>+</sup> T cells recruit B cells through the CXCL12/CXCR4 axis and facilitate their collaboration via the MIF/CD74 pathway, thereby enhancing tumor‐specific immunity (middle).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="ADVS-12-e08040-g005.jpg"><?image-name ADVS-12-e08040-g005.jpg?><?image-size 76507?><?image-md5 086d673df603a74a6e77e91b035abc0a?><?image-image-server-status NEVER_LOAD?><?image-original-height 415?><?image-original-width 600?><?image-scaled-height 415?><?image-scaled-width 600?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/086d673df603/ADVS-12-e08040-g005.jpg?><?thumb-name ADVS-12-e08040-g005.gif?><?thumb-size 7021?><?thumb-md5 f0e386bc9bd7497070bc1adf182faf38?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 115?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/f0e386bc9bd7/ADVS-12-e08040-g005.gif?></graphic></fig></sec><sec id="advs70700-sec-0020"><label>2</label><title>Results</title><sec id="advs70700-sec-0030"><label>2.1</label><title>Identification and Screening of Neoantigens</title><p>Whole‐exome sequencing (WES) and transcriptome sequencing (RNA‐seq) were performed on murine MSS‐CRC cmt93 cells and C57BL/6 normal tissues to identify potential neoantigen peptides, followed by bioinformatics algorithms for analysis (<bold>Figure</bold> <xref rid="advs70700-fig-0001" ref-type="fig">
+<bold>1</bold>A</xref>). According to Figure <xref rid="advs70700-fig-0001" ref-type="fig">1B</xref>, VarScan identified a total of 66714 qualified nonsynonymous mutations in whole exome data with a variant allele frequency (VAF) ≥ 10% (Table <xref rid="advs70700-supinfo-0001" ref-type="">S1</xref>, Supporting Information); Integration with RNA‐seq data showed that 962 of those exhibited consistent expression levels, with a kilobase per million mapped reads (TPM) ≥1 for the corresponding gene expression. In order to identify potentially immunogenic neoantigens, 22 mutated peptides were found to have high binding affinity (IC50 &lt;500 nM) to H‐2K<sup>b</sup> alleles in cmt93 cells and C57BL/6 mice using NetMHCpan (Table <xref rid="advs70700-supinfo-0001" ref-type="">S2</xref>, Supporting Information). Subsequently, the peptides containing mutations from 20 neoantigens with higher immunogenicity (IC50&lt;500 nM to H‐2K<sup>b</sup>) were synthesized for the development of a neoantigen vaccine (Figure <xref rid="advs70700-fig-0001" ref-type="fig">1B</xref>). Next, twenty neoantigen peptides were split into two groups randomly and injected subcutaneously with Poly(I:C) into the lateral flank of male C57BL/6 mice on days 0, 4, and 8. Following the initial injection, the mice were euthanized after 15 days, and splenic T cells were subsequently collected for immune analysis. The ex vivo IFN‐γ ELISPOT assay (Figure <xref rid="advs70700-fig-0001" ref-type="fig">1C</xref>) demonstrated that 7 out of 20 mutated peptides (Klhl26_A154V, Ecpas_L1064F, Atr_L2126F, Tbc1d32_M1054L, Rcc1_S29F, Tmem30a_P290S, Ubr2_A537V) elicited strong immune responses in immunized mice by activating their autologous splenic T cells with neoantigen peptide‐loaded autologous matured dendritic cells (DCs), with no observed cross‐reactivity to the corresponding wild‐type peptide (Figure <xref rid="advs70700-fig-0001" ref-type="fig">1D</xref>). Consequently, the seven peptides that exhibited a significant immune response in vivo were chosen as components of the cmt93 neoantigen vaccine. Building on prior evidence that the toll‐like receptor 3 (TLR3) agonist Poly(I:C) is an effective adjuvant for neoantigen‐peptide vaccines in digestive system immunotherapy,<sup>[</sup>
+<xref rid="advs70700-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> we developed MSS‐CRC neoantigen vaccines (Neo‐CRCVAS) comprising seven neoantigen peptides (10 µg/peptide) combined with Poly(I:C) for further study.</p><fig position="float" fig-type="Figure" id="advs70700-fig-0001" orientation="portrait"><label>Figure 1</label><caption><p>Neoantigen identification and immunogenicity validation. A) Identification process of tumor neoepitope in murine MSS CRC cell line cmt93 cells. B) Neoantigen peptide screening workflow. C) ELISPOT validation of neoantigen immunogenicity. D) Cross‐reactivity analysis of seven neoantigen peptides with wild‐type counterparts.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="ADVS-12-e08040-g004.jpg"><?image-name ADVS-12-e08040-g004.jpg?><?image-size 74931?><?image-md5 5efba0ca576fdd8ddac2d3a650a46000?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 667?><?image-original-width 820?><?image-scaled-height 444?><?image-scaled-width 546?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/5efba0ca576f/ADVS-12-e08040-g004.jpg?><?thumb-name ADVS-12-e08040-g004.gif?><?thumb-size 7114?><?thumb-md5 78ec4a975e4725e67c1b0640bdd0b9c7?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 81?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/78ec4a975e47/ADVS-12-e08040-g004.gif?></graphic></fig></sec><sec id="advs70700-sec-0040"><label>2.2</label><title>Neo‐CRCVAS Displays Neoantigen‐Specific Antitumor Efficacy in MSS‐CRLM Mice Model</title><p>To assess the anti‐tumor effectiveness of Neo‐CRCVAS, an orthotopic MSS‐CRLM mouse model was developed by orthotopically injecting 3 × 10<sup>5</sup> cmt93 cells from a superior mesenteric vein (SMV), and Neo‐CRCVAS was administered on days 0, 4, and 8 (<bold>Figure</bold> <xref rid="advs70700-fig-0002" ref-type="fig">
+<bold>2</bold>A</xref>). Figure <xref rid="advs70700-fig-0002" ref-type="fig">2B</xref> and Figure <xref rid="advs70700-supinfo-0001" ref-type="">S1A</xref>, Supporting Information demonstrated that 15 days post‐neoantigen vaccination, the Neo‐CRCVAS treated group exhibited significant tumor regression (3/5, 60%) compared to the group treated with PBS, Poly(I:C) or neoantigen peptide alone (Neo‐CRCVAS alone). Moreover, during the 45‐day observation period, 40% of Neo‐CRCVAS‐treated mice (2/5) remained a low tumor burden and 100% survived, while 60%, 40%, and 40% were observed dead in the PBS, Poly(I:C), and Neo‐CRCVAS alone‐treated mice, respectively (Figure <xref rid="advs70700-fig-0002" ref-type="fig">2B</xref>). Next, we proceeded to investigate the ability of Neo‐CRCVAS to induce neoantigen‐specific reactivity by ELISPOT at day 15. As expected, the Neo‐CRCVAS group demonstrated strong neoantigen‐specific responses of splenic T cells to seven neoantigen peptides, whereas the PBS, Poly(I:C), and Neo‐CRCVAS alone groups showed minimal immunogenicity to the neoepitopes (Figure <xref rid="advs70700-fig-0002" ref-type="fig">2C</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S1B</xref>, Supporting Information).</p><fig position="float" fig-type="Figure" id="advs70700-fig-0002" orientation="portrait"><label>Figure 2</label><caption><p>Antitumor efficacy and potential resistant mechanism of Neo‐CRCVAS in MSS‐CRLM mice model. A) Treatment timeline for Neo‐CRCVAS in MSS‐CRLM mice model. B) Tumor burden monitoring of PBS, neoantigen peptides alone, Poly(I:C) alone and Neo‐CRCVAS treated mice by bioluminescence imaging (<italic toggle="yes">n</italic> = 5). C) ELISPOT assay showing neoantigen specific‐reactivity of splenic T cells against seven neoantigen peptides in mice treated with PBS, neoantigen peptides alone, Poly(I:C) alone and Neo‐CRCVAS. D) The representative immunofluorescence image of CD4<sup>+</sup> and CD8<sup>+</sup> T cell infiltration in tumor tissues and the representative immunohistochemistry image of IFN‐γ at each treated group, Scare bars, 100 µm (10×), 50 µm (20×). E) Flow cytometry showing the percentage of infiltrating CD8<sup>+</sup> T cells expressing PD‐1 and 4‐1BB (<italic toggle="yes">n</italic> = 3). F) Flow cytometry analysis showing the percentage of tumor cells expressing MHC1 (<italic toggle="yes">n</italic> = 3). G) Flow cytometry showing the percentage of tumor cells expressing PD‐L1 (<italic toggle="yes">n</italic> = 3). H) Top genes downregulated in biological process (BP), (C) cellular comparison (CC), and (D) molecular function (MF) in the GOALL enrichment analysis in tumor treated with Neo‐CRCVAS compared with tumor treated with PBS. The statistical analysis was performed with ANOVA analysis. Results are shown as mean ± SD. *<italic toggle="yes">p</italic> &lt; 0.05; **<italic toggle="yes">p</italic> &lt; 0.01; ***<italic toggle="yes">p</italic> &lt; 0.001; ****<italic toggle="yes">p</italic> &lt; 0.0001.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-7" orientation="portrait" xlink:href="ADVS-12-e08040-g002.jpg"><?image-name ADVS-12-e08040-g002.jpg?><?image-size 146466?><?image-md5 b7a8c25e7faa8c34a719d00f3f0cce64?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 964?><?image-original-width 820?><?image-scaled-height 642?><?image-scaled-width 546?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/b7a8c25e7faa/ADVS-12-e08040-g002.jpg?><?thumb-name ADVS-12-e08040-g002.gif?><?thumb-size 9882?><?thumb-md5 6b8ab8a5997e6233480b19f2a883c468?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 118?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/6b8ab8a5997e/ADVS-12-e08040-g002.gif?></graphic></fig><p>Although Neo‐CRCVAS treatment alone reduced tumor growth, but did not completely suppress tumor growth. 60% of tumors from Neo‐CRCVAS‐treated mice exhibited resistance to the treatment or continued to progress following the initial response. We hypothesized that the immunosuppressive TME of MSS‐CRLM may have limited the efficacy of vaccine treatment alone due to multiple immune evasion mechanisms. Thus, we analyzed the immunological changes in TME of Neo‐CRCVAS‐treated mice at day 15. Immunofluorescence (IF) and Immunohistochemistry (IHC) results revealed that, in Neo‐CRCVAS‐treated mice, lymphocytes were recruited to the tumor site, but the infiltration of lymphocytes into the tumor tissue and the secretion of IFN‐γ remained limited (Figure <xref rid="advs70700-fig-0002" ref-type="fig">2D</xref>). Additionally, TILs in Neo‐CRCVAS‐treated mice exhibited high expression of PD‐1 but low expression of activation marker 4‐1BB (Figure <xref rid="advs70700-fig-0002" ref-type="fig">2E</xref>); correspondingly, the obvious upregulation of PD‐L1 and downregulation of MHCI were confirmed by flow cytometry analysis in tumor tissues of Neo‐CRCVAS‐treated mice (Figure <xref rid="advs70700-fig-0002" ref-type="fig">2F,G</xref>). Moreover, Functional enrichment analysis based GOALL indicated a significant down‐regulation of antigen presentation, MHC expression, and cytotoxic cytokine genes in tumor tissue of Neo‐CRCVAS‐treated mice compared to those treated with PBS (Figure <xref rid="advs70700-fig-0002" ref-type="fig">2H</xref>). Such characteristics of TME in MSS‐CRLM worked together to promote immune escape following Neo‐CRCVAS monotherapy, which could be potentially reversed by regorafenib.</p></sec><sec id="advs70700-sec-0050"><label>2.3</label><title>Neo‐CRCVAS Combined with Regorafenib Boosts Antitumor Immunity Response</title><p>Due to the limited infiltration of lymphocytes, upregulation of PD‐L1, and downregulation of MHCI after Neo‐CRCVAS treatment, it is reasonable to combine Neo‐CRCVAS with regorafenib, the only TKI known to enhance immune cell infiltration and reverse IFN‐γ‐induced MHC downregulation and PD‐L1 upregulation, to strengthen the antitumor immune response. To reassess the immunomodulatory effects of regorafenib on MSS‐CRLM, patient‐derived organoids (PDOs) of MSS‐CRLM were developed and subsequently treated with IFN‐γ and regorafenib. The findings indicated that, without impacting the IFN‐γ‐induced apoptosis of tumor cells (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S2A</xref>, Supporting Information), there was a significant rise in MHCI expression was observed, along with a notable reduction in PD‐L1 expression in PDOs treated with regorafenib (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S2B,C</xref>, Supporting Information).</p><p>Considering regorafenib's capacity to enhance immune cell infiltration, upregulate tumor cell MHC, and downregulate PD‐L1 expression, we subsequently evaluated the potential of Neo‐CRCVAS combined with regorafenib (RegoNeo) to elicit tumor‐specific immune responses. As depicted in <bold>Figure</bold> <xref rid="advs70700-fig-0003" ref-type="fig">
+<bold>3</bold>A</xref>, orthotopic MSS‐CRLM mice were split into four groups and treated with PBS, Neo‐CRCVAS alone, regorafenib, and RegoNeo respectively. According to Figure <xref rid="advs70700-fig-0003" ref-type="fig">3B</xref> and Figure <xref rid="advs70700-supinfo-0001" ref-type="">S3A</xref>, Supporting Information, tumor burdens of mice in the PBS group experienced a significant increase at day 15, ultimately resulting in the mortality of all mice at day 60 (5/5). Conversely, both the Neo‐CRCVAS and regorafenib groups exhibited a 20% incidence of consistently low tumor burdens and a 40% survival rate at day 90. Notably, mice in the RegoNeo group demonstrated the most significant tumor suppression, achieving 80% sustained tumor regression and a 100% survival rate compared to the other three groups. At the end of the study or following the death of the mice, tumors were extracted and their weight was measured. The tumor weight findings corroborated the bioluminescence images, further validating the antitumor efficacy of RegoNeo therapy (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S3B</xref>, Supporting Information). The Kaplan‐Meier analysis further revealed that mice treated with RegoNeo exhibited a significantly prolonged overall survival compared to those treated with PBS, Neo‐CRCVAS, or regorafenib alone (<italic toggle="yes">p</italic> &lt; 0.0001, Figure <xref rid="advs70700-fig-0003" ref-type="fig">3C</xref>). Furthermore, to evaluate the safety of the RegoNeo treatment, biochemical tests were conducted, organ sections were stained with HE the 15th day after treatment (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S4A–N</xref>, Supporting Information), and body weight changes were monitored every three days (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S4O</xref>, Supporting Information). These findings provide evidence supporting the safety and viability of RegoNeo.</p><fig position="float" fig-type="Figure" id="advs70700-fig-0003" orientation="portrait"><label>Figure 3</label><caption><p>Antitumor efficacy of Neo‐CRCVAS plus regorafenib treatment (RegoNeo) in MSS‐CRLM mice model. A) Treatment timeline for Neo‐CRCVAS in MSS‐CRLM mice model. B) Tumor burden monitoring of PBS, Neo‐CRCVAS alone, Regorafenib alone and RegoNeo treated mice by bioluminescence imaging (<italic toggle="yes">n</italic> = 5). C) Kaplan‐Meier survival curves of PBS, Neo‐CRCVAS alone, Regorafenib alone and RegoNeo treated groups (<italic toggle="yes">n</italic> = 5). D) ELISPOT assay showing neoantigen specific‐reactivity of splenic T cells against seven neoantigen peptides in each treated group. E) The representative immunofluorescence image of CD4<sup>+</sup> and CD8<sup>+</sup> T cell infiltration in tumor tissues at each treated group, Scare bars, 100 µm (10×), 50 µm (20×). F) Flow cytometry showing the percentage of infiltrating CD8<sup>+</sup> T cells expressing PD‐1 and 4‐1BB (<italic toggle="yes">n</italic> = 3). G) Flow cytometry showing the percentage of tumor cells expressing PD‐L1 (<italic toggle="yes">n</italic> = 3). H) Flow cytometry analysis showing the percentage of tumor cells expressing MHC1 (<italic toggle="yes">n</italic> = 3). I) Flow cytometry analysis showing the percentage of Ecpas_L1064F:H‐2K<sup>b</sup> specific CD8<sup>+</sup> T cells in infiltrating CD8<sup>+</sup> T cells (<italic toggle="yes">n</italic> = 3). Ecpas, Ecpas_L1064F:H‐2K<sup>b</sup>. The statistical analysis was performed with ANOVA analysis. Survival curves were generated using Kaplan‐Meier estimates and tested using the log‐rank test. Results are shown as mean ± SD. *<italic toggle="yes">p</italic> &lt;0.05; **<italic toggle="yes">p</italic> &lt;0.01; ***<italic toggle="yes">p</italic> &lt;0.001; ****<italic toggle="yes">p</italic> &lt;0.0001.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-9" orientation="portrait" xlink:href="ADVS-12-e08040-g001.jpg"><?image-name ADVS-12-e08040-g001.jpg?><?image-size 278929?><?image-md5 df5771f9f04c2a32cf1b63d2f73b18d2?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 983?><?image-original-width 600?><?image-scaled-height 983?><?image-scaled-width 600?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/df5771f9f04c/ADVS-12-e08040-g001.jpg?><?thumb-name ADVS-12-e08040-g001.gif?><?thumb-size 12701?><?thumb-md5 ed4b418e94f231134c8345531b4492fb?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 164?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/ed4b418e94f2/ADVS-12-e08040-g001.gif?></graphic></fig><p>To further investigate if RegoNeo treatment can trigger immune responses against neoantigens, splenic T cells were collected on day 15 following RegoNeo therapy and tested for neoantigen‐specific reactivity against neoantigen pools using ELISPOT analysis. The findings indicated that mice undergoing combinational therapy exhibited a higher number of IFN‐γ spots compared to other treatment groups (Figure <xref rid="advs70700-fig-0003" ref-type="fig">3D</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S3C</xref>, Supporting Information). Subsequently, we evaluated the presence of TILs on the 15th day through IF staining following RegoNeo treatment. As expected, the results showed a notable increase in CD8<sup>+</sup> and CD4<sup>+</sup> T cell infiltration in the RegoNeo group compared to other groups (Figure <xref rid="advs70700-fig-0003" ref-type="fig">3E</xref>). Additionally, flow cytometry analysis showed that TILs from mice treated with RegoNeo exhibited increased expression of 4‐1BB and PD‐1 on CD8<sup>+</sup> T cells, markers of T‐cell activation and proliferation, compared to those treated with PBS, Neo‐CRCVAS, or regorafenib alone (Figure <xref rid="advs70700-fig-0003" ref-type="fig">3F</xref>), suggesting that the combination therapy activates a broader TIL repertoire. Moreover, the tumor cells from mice treated with RegoNeo exhibited significantly decreased levels of PD‐L1 expression and increased levels of MHCI expression compared to other treatments, confirmed by flow cytometry analyses (Figure <xref rid="advs70700-fig-0003" ref-type="fig">3G,H</xref>).</p><p>Next, to evaluate the recruitment of tumor‐specific T cells to tumor tissues following RegoNeo therapy, we synthesized a fluorescently labeled tetramer targeting the highly immunogenic neoantigen peptide Ecpas_L1064F:H‐2K<sup>b</sup> (Ecpas) in order to identify T cells expressing Ecpas‐specific T cell receptors (TCRs) within TILs. Figure <xref rid="advs70700-fig-0003" ref-type="fig">3I</xref> and Figure <xref rid="advs70700-supinfo-0001" ref-type="">S3D</xref>, Supporting Information showed a significant rise in intratumoral Ecpas‐specific CD8+ T cells in mice treated with Neo‐CRCVAS, with or without regorafenib, compared to PBS or regorafenib alone, suggesting that RegoNeo therapy promotes the infiltration of neoantigen‐specific T cells into tumors. In summary, the findings suggested that the combination of Neo‐CRCVAS with regorafenib could effectively stimulate a robust neoantigen‐specific antitumor immune response in an in vivo model, indicating potential for MSS‐CRLM therapy.</p></sec><sec id="advs70700-sec-0060"><label>2.4</label><title>RegoNeo Therapy in MSS‐CRLM Elicits Durable Immune Memory to Prevent Metastasis</title><p>Considering the robust immune responses and therapeutic effects in MSS‐CRLM treatment achieved by RegoNeo therapy, we continued to explore its effectiveness in preventing metastasis. MSS‐CRLM mice were constructed and treated with either a combinational therapy or PBS, following established methods. Tumor burden was assessed via bioluminescence imaging, as shown in <bold>Figure</bold> <xref rid="advs70700-fig-0004" ref-type="fig">
+<bold>4</bold>A</xref>. Fifteen days after treatment, all mice (<italic toggle="yes">n</italic> = 6) receiving RegoNeo showed tumor regression, whereas those treated with PBS (<italic toggle="yes">n</italic> = 5) experienced continued rapid tumor progression (Figure <xref rid="advs70700-fig-0004" ref-type="fig">4B</xref>). This result provided additional evidence for the effectiveness of RegoNeo therapy in treating MSS‐CRLM. Subsequently, mice that had been successfully treated with combination therapy were subjected to orthotopic injection of 2×10<sup>5</sup> cmt93 cells from SMV on day 20 post‐treatment to simulate the metastasis of CRLM while tumor‐burden mice treated with PBS underwent surgical resection of the tumor and received the same cell injection serving as control. It is noteworthy that the tumor could not exhibit growth in 5 out of 6 mice cured by RegoNeo, whereas all control mice experienced a rapid increase in tumor burden (Figure <xref rid="advs70700-fig-0004" ref-type="fig">4B</xref>).</p><fig position="float" fig-type="Figure" id="advs70700-fig-0004" orientation="portrait"><label>Figure 4</label><caption><p>Metastasis rechallenge of RegoNeo treatment in vivo. A) Treatment timeline for the process of establishing metastasis rechallenge MSS‐CRLM models. B) Tumor burdens of RegoNeo treated mice (<italic toggle="yes">n</italic> = 6) and PBS treated mice (<italic toggle="yes">n</italic> = 5) after treatment and rechallenge measured by bioluminescence imaging. C) Flow cytometry analysis showing the percentage of Ecpas_L1064F:H‐2K<sup>b</sup> specific CD8<sup>+</sup> T cells in CRLM tissue after 2 days metastasis rechallenge (<italic toggle="yes">n</italic> = 3). D) ELISPOT assay showing neoantigen specific‐reactivity of splenic T cells against 7 neoantigen peptides at the day 50 after treatment (<italic toggle="yes">n</italic> = 3). Ecpas, Ecpas_L1064F:H‐2Kb. The statistical analysis was performed with ANOVA analysis. Results are shown as mean ± SD. *<italic toggle="yes">p</italic> &lt; 0.05; **<italic toggle="yes">p</italic> &lt;0.01; ***<italic toggle="yes">p</italic> &lt;0.001; ****<italic toggle="yes">p</italic> &lt;0.0001.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-11" orientation="portrait" xlink:href="ADVS-12-e08040-g007.jpg"><?image-name ADVS-12-e08040-g007.jpg?><?image-size 87599?><?image-md5 f03f479bc387eed4367921c656e6222f?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 729?><?image-original-width 820?><?image-scaled-height 485?><?image-scaled-width 546?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/f03f479bc387/ADVS-12-e08040-g007.jpg?><?thumb-name ADVS-12-e08040-g007.gif?><?thumb-size 7849?><?thumb-md5 7501eaf8598f2dc5d0a21e7bf3daa37e?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 89?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/7501eaf8598f/ADVS-12-e08040-g007.gif?></graphic></fig><p>To evaluate the immune infiltration following metastasis rechallenge, the presence of TILs was assessed through IF staining of tumor tissue on the 45th day. As expected, the findings demonstrated a significant increase in CD8<sup>+</sup> and CD4<sup>+</sup> T cell infiltration in the RegoNeo group compared to the control group. (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5A</xref>, Supporting Information). Moreover, Peptide‐MHC tetramer staining indicated a notable presence of Ecpas‐specific CD8<sup>+</sup> T cells in tumor tissues from mice treated with RegoNeo therapy after metastasis rechallenge, while control mice exhibited minimal levels (Figure <xref rid="advs70700-fig-0004" ref-type="fig">4C</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5B</xref>, Supporting Information). Significantly, ELISPOT analysis demonstrated that splenic T cells from mice receiving RegoNeo therapy retained significant sensitivity to neoantigen pools 45 days post‐treatment (Figure <xref rid="advs70700-fig-0004" ref-type="fig">4D</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5C</xref>, Supporting Information). Collectively, these results indicated that the combination therapy, RegoNeo, for MSS‐CRLM, may elicit durable neoantigen‐specific immune memory responses, thereby potentially preventing metastasis after treatment.</p></sec><sec id="advs70700-sec-0070"><label>2.5</label><title>Immune Status Changes in the TME Post‐Combination Therapy</title><p>To better understand immune status changes in the TME of MSS‐CRLM models after RegoNeo therapy, single‐cell RNA‐seq, and single‐cell V(D)J sequencing were conducted on single cells from tumor tissues treated with PBS Neo‐CRCVAS, regorafenib, and RegoNeo. After quality control, 12417, 9828, 14089, and 100341 cells were kept for each of the four treated groups. For each group, 7726 cells were randomly chosen for further analysis. The Uniform Manifold Approximation and Projection (UMAP) identified 11 cell clusters (<bold>Figure</bold> <xref rid="advs70700-fig-0005" ref-type="fig">
+<bold>5</bold>A</xref>). Of these, the B cell cluster, endothelial cell cluster, kupffer cell cluster, NK cell cluster, and T cell cluster were found to be enriched in cells derived from RegoNeo‐treated mice compared to those from PBS‐treated mice (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5A</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5A</xref>, Supporting Information). Given the pivotal role of T cells in the antitumor responses, our study subsequently concentrated on the T cell clusters.</p><fig position="float" fig-type="Figure" id="advs70700-fig-0005" orientation="portrait"><label>Figure 5</label><caption><p>Characterization of immune microenvironment after RegoNeo treatment via scRNA‐seq data. A) UMAP plot showing cells merged from all groups. B) UMAP plot showing subsets of infiltrating T cell clusters merged from all groups (right) and each group (left). C) Heatmap showing the expression of top upregulated genes of T6 cluster. D) Expression levels of Gzmb, Ifng, Tnf across all T cell clusters. E) TCR clonetype diversity estimation of each treatment group using hill numbers. F) Unique TCR clonetype frequency across all T cell clusters. G) Clonetype percent across all T cell clusters of each treatment group, single, clonetype number is 1; median, clonetype number range from 2 to 10; large, clonetype number more than 10. H) Pseudotime trajectory of T cell clusters colored by clusters generated by Monocle2 (left); Pseudotime trajectory ofT cell clusters colored by pseudotime (dark blue to light blue) generated by Monocle2 (right). I) The overlap of TCR clonotypes between different T cell clusters. The number in each square indicating the overlap of clonotypes scaled to the length of unique clonotypes in the smaller sample. J) Bubble chart showing the cellular interactions involving chemokines between Rgs2<sup>+</sup>CD8<sup>+</sup> T cell subset and other cell subsets. The sizes of the bubbles indicate the significance of the interactions between different subsets and the color indicated the communication probability calculated by Cellchat. K) Bubble chart showing the cellular ligand‐receptor interactions involving chemokines between Rgs2<sup>+</sup>CD8<sup>+</sup> T cell subset and other cell subsets. The sizes of the bubbles indicate the significance of the interactions between different subsets and the color indicated the communication probability calculated by Cellchat. L) Kaplan‐Meier curves of 5‐year overall survival for patients with late‐stage CRC from TCGA stratified by median expression level of two‐gene signature (Rgs2 and CD8a). UMAP, uniform manifold approximation and projection. Survival curves were generated using Kaplan‐Meier estimates and tested using the log‐rank test.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-13" orientation="portrait" xlink:href="ADVS-12-e08040-g006.jpg"><?image-name ADVS-12-e08040-g006.jpg?><?image-size 269085?><?image-md5 b35f6f1e472df773d7373ec4f2d885ba?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1001?><?image-original-width 720?><?image-scaled-height 1001?><?image-scaled-width 720?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/b35f6f1e472d/ADVS-12-e08040-g006.jpg?><?thumb-name ADVS-12-e08040-g006.gif?><?thumb-size 10375?><?thumb-md5 bbc9058af062cd81b7dabc2c2b5c67df?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 139?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/bbc9058af062/ADVS-12-e08040-g006.gif?></graphic></fig><p>In order to more thoroughly analyze the diversity present within the T cell population, the T cell clusters were isolated and subjected to further clustering, yielding 9 distinct T cell clusters (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5B</xref>). It was observed that a significant reduction in Tregs_Foxp3 and CD8<sup>+</sup> Tex_ Lag3 within the RegoNeo group. Notably, the T6 cluster represented a subpopulation of CD8<sup>+</sup> T cells predominantly found in the RegoNeo‐treated group, with minimal presence in the remaining three groups (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5B</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5B</xref>, Supporting Information). The identification of marker genes in the T6 cluster revealed enrichment of Cd8a, Rgs2, Gzmb, Ccl4, Ccl5, and Ifng genes. Based on this, we subsequently referred T6 cluster as Rgs2<sup>+</sup>CD8<sup>+</sup>T cell (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5C</xref>). In addition to Gzmb and Ifng, the T6 cluster also exhibited a relatively high expression of Tnf, thereby corroborating the significant contributions of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in the immune response against cancer (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5D</xref>).</p><p>To further explore the variability of TCR clonotypes induced by combination treatment, we initially conducted a comparison of TCR clonotype diversities among different groups. Notably, the group treated with RegoNeo demonstrated the greatest number of TCR clonotypes (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5E</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5C</xref>, Supporting Information), especially within the Rgs2<sup>+</sup>CD8<sup>+</sup> T cell subset, which also exhibited a high frequency of unique clonotypes in comparison to the other groups (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5F</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5D</xref>, Supporting Information). Moreover, a majority of TCR clonotypes in Rgs2<sup>+</sup>CD8<sup>+</sup> T cells from the combination therapy group had a median to large expansion, as indicated by clonotype percent analysis (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5G</xref>). Altogether, these population dynamics observed suggested that the emergence of new TCR clonotypes and a substantial expansion of TCR clonotypes following RegoNeo therapy led to a shift in the TCR repertoire, which was potentially associated with efficacy immunotherapy efficacy.</p><p>Furthermore, the Monocle 2 algorithm was employed for pseudotime analysis, identifying two primary evolutionary pathways of T cells: one culminating in exhausted T cells (T2_CD8_Lag3_Tex and T7_CD8_Havcr2) and the other leading to T4_CD8_Mki67_Proliferating T (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5H</xref>). The trajectory initiated with T<underline underline-style="single">5</underline>_Naive T cells, succeeded by T1_CD8_Ifit1_T cells. Subsequently, T1_CD8_Ifit1_T cells differentiated into Rgs2<sup>+</sup>CD8<sup>+</sup> T cells, ultimately resulting in exhausted T cells (T2_CD8_Lag3_Tex and T7_CD8_Havcr2_Tex). Moreover, TCR sharing analysis provided additional evidence that Rgs2<sup>+</sup>CD8<sup>+</sup> T cells exhibited a high degree of TCR similarity with T1_CD8_Ifit1_T cells and T2_CD8_Lag3_Tex, suggesting a potential evolutionary relationship among the three cell types (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5I</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S5D</xref>, Supporting Information). Additionally, analysis of cellular interactions involving chemokines revealed that Rgs2<sup>+</sup>CD8<sup>+</sup> T cells and B cells communicated most frequently through CXCL12/CCR4 (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5J</xref>). The further analysis of ligand‐receptor interactions indicated that Rgs2<sup>+</sup>CD8<sup>+</sup> T cells most frequently communicated through the MIF/CD74 interaction (Figure <xref rid="advs70700-fig-0005" ref-type="fig">5K</xref>). Moreover, the Results also showed a relatively higher expression of MIF in Rgs2<sup>+</sup>CD8<sup>+</sup>T cells and CD74 in B cells in RegoNeo groups, thereby corroborating that finding (Figure <xref rid="advs70700-supinfo-0001" ref-type="">S6E</xref>, Supporting Information). Interestingly, the RegoNeo‐treated group showed a notable enrichment of both Rgs2<sup>+</sup>CD8<sup>+</sup>T cells and B cells, suggesting that the recruitment of B cells by Rgs2<sup>+</sup>CD8<sup>+</sup>T cells via CXCL12/CCR4, followed by interaction through the MIF/CD74 pathway, could potentially enhance the antitumor response. Kaplan‐Meier analysis of the TCGA dataset further validated the prognostic significance of the RGS2_CD8a signature in late‐stage CRC, showing that tumors with high RGS2_CD8a expression had notably better 5‐year OS rates (<italic toggle="yes">p</italic> = 0.0334, Figure <xref rid="advs70700-fig-0005" ref-type="fig">5L</xref>).</p></sec><sec id="advs70700-sec-0080"><label>2.6</label><title>Validation of the Antitumor Potential of Rgs2<sup>+</sup>CD8<sup>+</sup> T Cells in MSS‐CRLM Treatment</title><p>Encouraged by the above findings, it was hypothesized that there would be a substantial presence of neoantigen‐specific TILs in Rgs2<sup>+</sup>CD8<sup>+</sup> T cells following the combinational therapy. Flow cytometry analysis and IF staining of TILs from the treated groups demonstrated an enrichment of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in RegoNeo‐treated groups (<bold>Figure</bold> <xref rid="advs70700-fig-0006" ref-type="fig">
+<bold>6</bold>A</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S7A</xref>, Supporting Information). Moreover, the flow cytometry analysis revealed a significantly higher percentage of Ecpas‐specific CD8<sup>+</sup> T cells within Rgs2<sup>+</sup>CD8<sup>+</sup> T cells after combinational therapy compared to the other three groups (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6B</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S7B</xref>, Supporting Information), thus confirming this hypothesis. These findings provided further evidence of the enhanced infiltration of neoantigen‐specific Rgs2<sup>+</sup>CD8<sup>+</sup> T cells following the RegoNeo therapy.</p><fig position="float" fig-type="Figure" id="advs70700-fig-0006" orientation="portrait"><label>Figure 6</label><caption><p>Infiltration and anti‐tumor efficacy of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells. A) Flow cytometry analysis showing the percentage of Rgs2<sup>+</sup>CD8<sup>+</sup> TILs in infiltrating CD8<sup>+</sup> T cells of PBS, Neo‐CRCVAS alone, Regorafenib alone and RegoNeo treated groups (<italic toggle="yes">n</italic> = 3). B) Flow cytometry analysis showing the percentage of Ecpas_L1064F:H‐2K<sup>b</sup> specific CD8<sup>+</sup> T cells in infiltrating Rgs2<sup>+</sup>CD8<sup>+</sup> TILs (<italic toggle="yes">n</italic> = 3). C) Schematic diagram of in vitro tumor‐killing efficacy evaluation of Rgs2<sup>+</sup>CD8<sup>+</sup> and Rgs2<sup>−</sup>CD8<sup>+</sup> TILs cells isolated from MSS‐CLRM tumor tissues after combined treatment. D) Flow cytometry showing the percentage of apoptotic cells induced by Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> TILs (<italic toggle="yes">n</italic> = 3). E) ELISA assay showing secretion of TNF‐α from Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> TILs (<italic toggle="yes">n</italic> = 3). F) ELISA assay showing secretion of IFN‐γ from Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> TILs (<italic toggle="yes">n</italic> = 3). G) Schematic diagram of adoptive Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> TILs therapy in MSS‐CRLM mouse models. H) Tumor burden monitoring of mice after adoptive Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> TILs therapy by bioluminescence imaging (<italic toggle="yes">n</italic> = 5). I) Schematic diagram of in vitro tumor‐killing efficacy evaluation of Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> T cells isolated from MSS‐CRLM patient's tumor tissue. J) PDOs death induced by Rgs2<sup>+</sup>CD8<sup>+</sup> or Rgs2<sup>−</sup>CD8<sup>+</sup> TILs as determined by SYTOX Green assay ((left)), histograms showing the percentage of relative PDOs in each group (right). The statistical analysis was performed with ANOVA analysis. Results are shown as mean ± SD. *<italic toggle="yes">p </italic>&lt; 0.05; **<italic toggle="yes">p </italic>&lt; 0.01; ***<italic toggle="yes">p </italic>&lt; 0.001; ****<italic toggle="yes">p </italic>&lt; 0.0001.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-15" orientation="portrait" xlink:href="ADVS-12-e08040-g008.jpg"><?image-name ADVS-12-e08040-g008.jpg?><?image-size 256031?><?image-md5 c3b5c6d0364434a267579b6a8eb367a7?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1020?><?image-original-width 700?><?image-scaled-height 1020?><?image-scaled-width 700?><?image-cloudpmc-urn urn:cdn:blobs/db80/12462951/c3b5c6d03644/ADVS-12-e08040-g008.jpg?><?thumb-name ADVS-12-e08040-g008.gif?><?thumb-size 10637?><?thumb-md5 33eacf97c88fbe3fa9b2b3bcbde082a5?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 146?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/db80/12462951/33eacf97c88f/ADVS-12-e08040-g008.gif?></graphic></fig><p>Furthermore, Rgs2<sup>+</sup>CD8<sup>+</sup> T cells and Rgs2<sup>−</sup>CD8<sup>+</sup> T cells were separated from mice that underwent RegoNeo therapy, using flow cytometry sorting and assessed for tumor‐killing and cytokine secretion ability. Subsequently, these TILs were cocultured with cmt93 cells for 48 h (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6C</xref>). Intriguingly, the flow cytometry demonstrated an elevated level of apoptotic cells (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6D</xref>) and an increase in IFN‐γ/TNF secretion in the Rgs2<sup>+</sup>CD8<sup>+</sup> T cells cocultured group compared to the Rgs2<sup>−</sup>CD8<sup>+</sup> T cells, consistent with the results from ELISA assays. (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6E,F</xref>).</p><p>Additionally, we assessed the efficacy of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in MSS‐CRLM mice model. As demonstrated in Figure <xref rid="advs70700-fig-0006" ref-type="fig">6G</xref>, Rgs2<sup>+</sup>CD8<sup>+</sup> T cells and Rgs2<sup>−</sup>CD8<sup>+</sup> T cells from RegoNeo‐treated tumors were intravenously injected into MSS‐CRLM mice (<italic toggle="yes">n</italic> = 5), with subsequent IL‐2 administration for five days. The control group consisted of mice treated solely with IL‐2 (<italic toggle="yes">n</italic> = 5). Mice injected with Rgs2<sup>+</sup>CD8<sup>+</sup> T cells showed a significantly lower tumor burden than those in the control and Rgs2<sup>−</sup>CD8<sup>+</sup> T cell groups (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6H</xref>; Figure <xref rid="advs70700-supinfo-0001" ref-type="">S7C</xref>, Supporting Information), suggesting the crucial role of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in antitumor immunity.</p><p>To further validate these findings in MSS‐CRLM patients, Rgs2<sup>+</sup>CD8<sup>+</sup> T cells and Rgs2<sup>−</sup>CD8<sup>+</sup> T cells were isolated from freshly excised CRLM tumor tissues and cocultured with autologous PDOs for 48 h (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6I</xref>). Of note, SYTOX Green Assay showed significantly more apoptosis of PDOs in Rgs2<sup>+</sup>CD8<sup>+</sup> T cells cocultured groups (Figure <xref rid="advs70700-fig-0006" ref-type="fig">6J</xref>), providing compelling evidence for the critical role of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in anti‐tumor immunity.</p></sec></sec><sec id="advs70700-sec-0090"><label>3</label><title>Discussion</title><p>MSS‐CRLM remains one of the most challenging malignancies for immunotherapy, primarily due to its immunosuppressive TME, characterized by poor immune cell infiltration, low TMB, and resistance to immune checkpoint blockade.<sup>[</sup>
+<xref rid="advs70700-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="advs70700-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>
+<sup>]</sup> The limited effectiveness of current immunotherapies is attributed to the absence of tumor‐specific TILs, elevated levels of immunosuppressive molecules like PD‐L1, and diminished MHC molecule expression on tumor cells.<sup>[</sup>
+<xref rid="advs70700-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="advs70700-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>
+<sup>]</sup> Therefore, there is a critical demand for the development of novel strategies that can reprogram its immunosuppressive TME and induce tumor‐specific TILs, enabling a robust and durable antitumor immune response. Neoantigen vaccines have shown clinical benefits by inducing antigen‐specific T‐cell immune responses in serval solid tumors.<sup>[</sup>
+<xref rid="advs70700-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>
+<sup>]</sup> Further research is still needed to explore its effectiveness in MSS‐CRLM.<sup>[</sup>
+<xref rid="advs70700-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+<sup>]</sup> In our study, we initially developed a personalized neoantigen vaccine, Neo‐CRCVAS. Following subcutaneous administration of the peptides, antigen‐presenting cells consistently internalized, processed and presented these peptides on MHCI molecules. This approach demonstrated promising therapeutic effects in the MSS‐CRLM mouse model. Nevertheless, we also observed that, in addition to the lack of immune cell infiltration, tumor cells treated with CRC‐NeoVAS alone exhibited a high level of PD‐L1 and a low level of MHC, which was prone to T cell exhaustion and deficiency of tumor antigen presentation function. Remarkably, the combination of CRC‐NeoVAS and regorafenib (RegoNeo) significantly enhanced the neoantigen‐specific immune response by reprogramming TME. This combined therapy has demonstrated excellent synergistic anti‐tumor effects and durable tumor‐specific immunological memory in the preclinical MSS‐CRLM model and metastasis rechallenge. These findings indicate the potential effectiveness of this treatment strategy in clinical practice for MSS‐CRLM.</p><p>While CD8<sup>+</sup> T cells constitute the predominant subset of TILs and play a crucial role in immune responses in solid tumors, only a few subsets have strong anti‐tumor capabilities through targeting tumor antigens, regulating immune cell chemotaxis, and secreting cytotoxic factors.<sup>[</sup>
+<xref rid="advs70700-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>, <xref rid="advs70700-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> Our previous study has demonstrated that CD8<sup>+</sup>T<sub>RM</sub> cells with neoantigen‐specific TCR may be a promising immunotherapeutic target for HCC.<sup>[</sup>
+<xref rid="advs70700-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> However, the key subset of MSS‐CRLM still needs to be deeply explored. In this study, we identified a notable enrichment of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells derived from T1_CD8_Ifit1_T cells in MSS‐CRLM tumor tissue following RegoNeo treatment compared to other treated groups. Particularly noteworthy was the increase in both the diversity and expansion of TCR clonotypes within this subset. Furthermore, our study confirmed that this subset exhibited a higher proportion of neoantigen‐specific T cells and an increased secretion of tumoricidal cytokines compared to other T cell subsets. In both in vitro and in vivo MSS‐CRLM mouse models or PDO models, Rgs2<sup>+</sup>CD8<sup>+</sup> T cells demonstrated significant tumor‐killing capabilities. Overall, our findings provide compelling evidence for the critical role of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in the immune response against MSS‐CRLM.</p><p>In addition, G protein signal transduction regulator 2 (Rgs2) serves as a regulator of G protein‐coupled receptors, which could influence the targeted migration of immune cells toward the tumor site and fully activate, as well as secretion of cytokines, thereby enhancing the synergistic tumor‐killing ability.<sup>[</sup>
+<xref rid="advs70700-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> Research indicates that Rgs2 is integral to the pathophysiology of various tumors, with its expression levels in colorectal cancer being strongly correlated with patients’ prognosis. Notably, the downregulation of Rgs2 is significantly associated with the recurrence and metastasis of CRC, and diminished expression of Rgs2 serves as a prognostic marker for reduced survival rates.<sup>[</sup>
+<xref rid="advs70700-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>
+<sup>]</sup> However, the extent to which Rgs2<sup>+</sup>CD8<sup>+</sup> T cells possess these capabilities in MSS‐CRLM remains further investigated. Here, we found that Rgs2<sup>+</sup>CD8<sup>+</sup> T cells had the potential of cytokine secretion, such as IFN‐γ and TNF, to activate other immune cells involved in the anti‐tumor response. Additionally, Rgs2<sup>+</sup>CD8<sup>+</sup> T cells also exhibit high expression of various chemokines including CCL4 and CXCL12, which may facilitate the recruitment of B cells to tumor sites and subsequently engage in interactions through the MIF/CD74 pathway to enhance activation and proliferation, thereby augmenting the anti‐tumor immune response to augment the anti‐tumor immune response. Notably, scRNA sequencing data also revealed a significant enrichment of B cells in the RegoNeo group. These findings suggest that Rgs2<sup>+</sup>CD8<sup>+</sup> T cells may collaborate with other immune cells such as B cells to boost anti‐tumor immunity.</p><p>In conclusion, our study showed that combining CRC‐NeoVAS with regorafenib, termed RegoNeo, effectively induced a robust antitumor response and established durable tumor‐specific immune memory in the MSS‐CRLM model by reprogramming the immunosuppressive TME. Furthermore, we observed a significant enrichment of the Rgs2<sup>+</sup>CD8<sup>+</sup> T cell subset in tumor tissues following the combined treatment, which consisted of a large proportion of neoantigen‐specific T cells and was closely associated with the therapeutic efficacy. Overall, these results suggest a potentially promising strategy to improve the antitumor immune response through increasing the number and activation of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells in patients with MSS‐CRLM, although further validation is still required in other preclinical models and clinical trials. However, due to the limited MSS models used in this study, the corresponding findings still need to be further validated in other MSS animal models and clinical trials.</p></sec><sec id="advs70700-sec-0100"><label>4</label><title>Experimental Section</title><sec id="advs70700-sec-0130"><title>Identification and Validation of Neoantigen Immunogenicity</title><p>WES and RNA‐sq were conducted on DNA and RNA from Murine CRC cell line cmt93 and C57BL/6 mouse tail tissue. Mutation variants in cmt93 cells were identified using VarScan<sup>[</sup>
+<xref rid="advs70700-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> software, utilizing the mouse genome mm10 as a reference. Only mutations with a variant allele frequency (VAF) greater than 10% were included in the analysis. The remaining variants underwent annotation using wANNOVAR<sup>[</sup>
+<xref rid="advs70700-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> in order to identify and filter out nonsynonymous mutations.</p><p>The immunogenicity of all mutations was assessed by utilizing the NetMHCpan<sup>[</sup>
+<xref rid="advs70700-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>
+<sup>]</sup> binding affinity predictor, with mutations generating 9‐mer mutant peptides exhibiting an IC50 &lt; 500 nM to the H‐2Kb allele being identified as potential neoantigens. Detailed methodology is available in the Supporting Materials and Methods section.</p></sec><sec id="advs70700-sec-0140"><title>Validation of Neoantigen Immunogenicity</title><p>Male C57BL/6 mice (aged 6–8 weeks) were sourced from China Wushi, Inc. in Shanghai, China, with approval from the Animal Ethics Committee of Fujian Medical University (IACUC FJMU 2023‐Y‐0500). To identify potential neoantigen peptides, 22 mutations from cmt93 cells were selected, with 20 synthesized into long peptides by Genscipt Biotechnology Co., Ltd, China.</p><p>To assess neoantigen immunogenicity, 20 neoantigen peptides were split into two pools (10 µg each) and mixed with 50 µg Poly(I:C) (Guangdong South China Pharmaceutical Co., Ltd). The mixture was subcutaneously administered to male C57BL/6 mice at the lateral flank on days 0, 4, and 8. On day 14, the mice were euthanized and splenic T cells were quantified for ELISPOT assay. Additional methodological details are available in the Supporting Materials and Methods section.</p></sec><sec id="advs70700-sec-0150"><title>Antitumor Efficacy in Vivo Evaluation</title><p>The MSS‐CRLM model was established by intrasplenic injection of 5×10<sup>5</sup> cmt93‐luc cells into the SMV of mice over a period of 10 days. To assess the antitumor efficacy of the neoantigen vaccine both independently and in combination with other treatments in vivo, the MSS‐CRLM model was categorized into four groups, each containing five subjects. Mice in each group received subcutaneous injections of identified neoantigen peptides (10 µg/peptide) combined with 50 µg Poly(I:C) in a 200 µL volume on days 0, 4, and 8. Regorafenib (Bayer, 73–4506) was given orally every two days starting from day 0, for a total of 7 doses at 10 mg kg<sup>−1</sup>. The formulation included 34% PEG400 (Sigma‐Aldrich), 12% pluronic F68 (Thermo Fisher Scientific), and 20% water, following the manufacturer's guidelines. Mice treated with PBS served as the control group. Tumor burden in the MSS‐CRLM model was assessed at 15‐day intervals using the IVIS Spectrum animal imaging system (PerkinElmer, USA). All mice were re‐injected with 2×10<sup>5</sup> cmt93 cells via the SMV again 50 days after a successful cure with combination therapy for metastasis rechallenge experiments. Mice with tumor burden treated with PBS underwent surgical tumor resection and served as controls. The tumor burden was subsequently monitored every 15 days. Detailed descriptions of the methods used for assessing therapeutic efficacy, tissue processing, flow cytometry, tetramer staining, sequencing, IF, IHC, and HE staining are provided in the Supporting Materials and Methods section.</p></sec><sec id="advs70700-sec-0160"><title>Analysis of Single‐Cell RNA Sequencing (scRNA‐seq) and Bulk RNA‐Sequencing (RNA‐seq) Data</title><p>Single‐cell suspensions were collected from tumor tissue in the MSS‐CRLM model following treatment with Neoantigen, regorafenib, or both. The suspension was prepared for scRNA‐seq using the 10×Genomics Chromium Single Cell 5′ Library &amp; Gel Bead Kit and the V(D)J Enrichment Kit. Cell Ranger was used to align scRNA‐seq reads from the 10×Genomics platform to the mm10 reference genome. Seurat<sup>[</sup>
+<xref rid="advs70700-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>
+<sup>]</sup> in R (v4.1.0) was used to filter qualified UMI reads and cells.</p><p>After excluding low‐quality cells and probable doublets, 7726 cells were randomly selected from each group for analysis. Gene expression levels underwent normalization via the LogNormalize method. Seurat functions were utilized for t‐SNE dimensionality reduction and cell clustering. Cell clusters were annotated using the SingleR package (v1.6.1),<sup>[</sup>
+<xref rid="advs70700-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>
+<sup>]</sup> utilizing data from the Immgen<sup>[</sup>
+<xref rid="advs70700-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref>
+<sup>]</sup> and MouseRNAseq datasets. The Supporting Materials and Methods section provided an in‐depth account of the methodologies used, including single‐cell V(D)J analysis, T‐cell development trajectory analysis, cell‐cell interaction analysis, and Bulk RNA‐seq data analysis.</p></sec><sec id="advs70700-sec-0170"><title>In Vitro and In Vivo T Cell Antitumor Efficacy Assay</title><p>Rgs2<sup>+</sup>CD8<sup>−</sup>/ Rgs2<sup>+</sup>CD8<sup>+</sup> T cells were isolated from fresh tumor tissues from MSS‐CRLM mice models and patients. Methods for T cell antitumor efficacy assay in vitro were detailed in the Supporting Materials and Methods section. For the in vivo T cell antitumor efficacy assay, either Rgs2<sup>+</sup>CD8<sup>−</sup>/ Rgs2<sup>+</sup>CD8<sup>+</sup> T cells (2×10<sup>5</sup> per mouse) were administered via intravenous injection into the MSS‐CRLM model, with each group consisting of five mice (<italic toggle="yes">n</italic> = 5). MSS‐CRLM mice treated with PBS served as the control group. Subsequently, all treated mice were administered a daily injection of 1×10<sup>3</sup> IU IL‐2 for 5 consecutive days. The tumor burden was monitored at intervals every 5 days as previously described.</p></sec><sec id="advs70700-sec-0180"><title>MSS‐CRLM Patient‐Derived Organoids (PDOs) Generation</title><p>Fresh tumor tissue samples were rinsed with Cancer Organoid Basal Medium (#B213152, bioGenous) until the supernatant was clear, then minced into small fragments, digested with Tumor Tissue Digestion Solution (#K601003, bioGenous) in SmartOrgan Dissociator (bioGenous) at 37 °C for 5–10 min. The digestion was terminated by adding 2%–4% fetal bovine serum (FBS; #B118‐500, Nobimpex). The supernatant was collected, passed through a 70 µm filter (#CSS013070, BIOFIL), and centrifuged. The erythrocytes were lysed with Red Blood Cell Lysis Solution (#E238010, bioGenous) and then centrifuged. The cell pellet was suspended in Organoid Culture ECM (#M315066, bioGenous) and plated into 24 well plates (#H803002, BDBIO). The organoids were overlaid with the Human Colorectal Cancer Organoid Medium (#K2103‐CR, bioGenous). The medium was changed every 2 days. The organoids can be passaged by Organoid Dissociation Solution (#E238001, bioGenous) or cryopreserved by Organoid Cryopreservation Medium (#E238023, bioGenous).</p></sec><sec id="advs70700-sec-0190"><title>In Vitro T Cell Cytotoxicity Assay on PDOs</title><p>In order to evaluate the cytotoxic effects of Rgs2<sup>+</sup>CD8<sup>+</sup> T cells on PDOs, Rgs2<sup>−</sup>CD8<sup>+</sup> T /Rgs2<sup>+</sup>CD8<sup>+</sup> T cells were isolated from fresh CRLM tumor samples obtained from patients. Low‐adherence 96‐well plates(#30096L, BDBIO) were coated with 20% ECM (30 µL/well, 37 °C, 30 min). Organoids were harvested using an ice‐cold Cancer Organoid Basal Medium. Subsequently, Rgs2<sup>−</sup>CD8<sup>+</sup> T /Rgs2<sup>+</sup>CD8<sup>+</sup> T cells (5 × 10<sup>4</sup> cells per well) and PDOs (1 × 10<sup>4</sup> cells per well) were co‐cultured for 48 h in a 96‐well plate with IL‐2 (10 ng mL<sup>−1</sup>, R&amp;D systems, MX2918061) and OrganoidpleX Medium (150 µL, #CO1233, bioGenous) at 37 °C in a 5% CO2 environment. Bright‐field imaging was established on day 1 and day 3. On Day 3, SYTOX Green (1:1000; #S7020, invitrogen) was added (50 µL/well, 30 min dark incubation) for fluorescence and bright field images and viability assessment. Finally, photos were taken under a microscope at after fixed.</p></sec><sec id="advs70700-sec-0200"><title>Statistical Analysis</title><p>The correlation matrices were assessed using Pearson's correlation coefficient. Kaplan‐Meier estimates were utilized to construct survival curves, with significance determined by the log‐rank test. A two‐tailed Student's t‐test or a one‐way ANOVA was used for the statistical comparison of the sample data in GraphPad Prism 8.0, with statistical significance defined as *<italic toggle="yes">p</italic> &lt; 0.05. **<italic toggle="yes">p</italic> &lt; 0.01, ***<italic toggle="yes">p</italic> &lt; 0.001, ****<italic toggle="yes">p</italic> &lt; 0.001. Data were presented as means ± standard deviation (SD) based on a minimum of three independent biological samples.</p></sec><sec id="advs70700-sec-0210"><title>Ethics Approval and Consent to Participate</title><p>Written informed consent was obtained from MSS‐CRLM patients to obtain tumor tissues for analysis. All procedures were performed in accordance with the Declaration of Helsinki. This study was approved by the Ethics Review Committee of The First Affiliated Hospital of Fujian Medical University (YAN[2023]110) and the Animal Ethics Committee of Fujian Medical University (IACUC FJMU 2023‐Y‐0500)</p></sec><sec id="advs70700-sec-0220"><title>Consent for Publication</title><p>This manuscript has not been submitted elsewhere for publication in whole or in part, and all the listed authors have approved the manuscript that is enclosed.</p></sec></sec><sec sec-type="COI-statement" id="advs70700-sec-0240"><title>Conflict of Interest</title><p>The authors declare no conflict of interest.</p></sec><sec id="advs70700-sec-0250"><title>Author Contributions</title><p>H.C., G.G., and J.Z. performed conception and design. H.C., B.C., Y.Y., S.L., H.C., Z.Z., and W.Y. performed development of methodology. H.C., B.C., Y.G., Y.C., X.L., Z.Z., and S.L. performed Acquisition of Data. H.C., B.C., Y.Y., G.G., and J.Z. performed analysis and interpretation of data. H.C., B.C., Y.Y., G.G., and J.Z. performed wrote, reviewed and/or revision of the manuscript. G.G., J.Z. performed Study Supervision. H.K.C., B.C., and Y.F.Y. contributed equally to this work.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="advs70700-supinfo-0001" position="float" content-type="local-data" orientation="portrait"/><supplementary-material id="advs70700-supitem-0001" position="float" content-type="local-data" orientation="portrait"><caption><p>Supporting Information</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ADVS-12-e08040-s001.pdf" position="float" orientation="portrait"><?suppdata-name ADVS-12-e08040-s001.pdf?><?suppdata-size 29813478?><?suppdata-md5 92a459787b53539c2c44fb050c1431ca?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type pdf?><?suppdata-cloudpmc-urn urn:app:db80/12462951/92a459787b53/ADVS-12-e08040-s001.pdf?></media></supplementary-material></sec></body><back><ack id="advs70700-sec-0230"><title>Acknowledgements</title><p>This work was supported by the National Natural Science Youth Foundation of China (Grant number 82303728), the Fujian Province Finance Project (Grant numbers BPB‐2023ZJF, BPB‐2024ZJF), the Joint Funds for the Innovation of Science and Technology of Fujian Province (Grant Number 2023Y9026), the Scientific Foundation of Fujian Province (Grant Number 2024J01524), Young and Middle aged talent training project of Fujian provincial health commission (Grant Number 2024GGA025) for data collection and analysis.</p></ack><sec sec-type="data-availability" id="advs70700-sec-0270"><title>Data Availability Statement</title><p>The data that support the findings of this study are available from corresponding author upon reasonable request.</p></sec><ref-list id="advs70700-bibl-0001"><ref id="advs70700-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="advs70700-cite-0001">
+<string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Bray</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Laversanne</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Sung</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Ferlay</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. L.</given-names>
+<surname>Siegel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Soerjomataram</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Jemal</surname>
+</string-name>, <source>CA Cancer J. Clin.</source>
+<year>2024</year>, <volume>74</volume>, <fpage>229</fpage>.<pub-id pub-id-type="pmid">38572751</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3322/caac.21834</pub-id></mixed-citation></ref><ref id="advs70700-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="advs70700-cite-0002">
+<string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Cervantes</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Adam</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Roselló</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Arnold</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Normanno</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Taïeb</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Seligmann</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>De Baere</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Osterlund</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Yoshino</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Martinelli</surname>
+</string-name>, <source>Ann. Oncol.</source>
+<year>2023</year>, <volume>34</volume>, <fpage>10</fpage>.<pub-id pub-id-type="pmid">36307056</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.annonc.2022.10.003</pub-id></mixed-citation></ref><ref id="advs70700-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="advs70700-cite-0003">
+<string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Adam</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. J.</given-names>
+<surname>de Haas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. A.</given-names>
+<surname>Wicherts</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. A.</given-names>
+<surname>Aloia</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Delvart</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Azoulay</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Bismuth</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Castaing</surname>
+</string-name>, <source>J. Clin. Oncol.</source>
+<year>2008</year>, <volume>26</volume>, <fpage>3672</fpage>.<pub-id pub-id-type="pmid">18669451</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1200/JCO.2007.15.7297</pub-id></mixed-citation></ref><ref id="advs70700-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="advs70700-cite-0004">
+<string-name name-style="western">
+<given-names>D. J.</given-names>
+<surname>McGrail</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. G.</given-names>
+<surname>Pilié</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. U.</given-names>
+<surname>Rashid</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Voorwerk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Slagter</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Kok</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Jonasch</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Khasraw</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. B.</given-names>
+<surname>Heimberger</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Lim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. T.</given-names>
+<surname>Ueno</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. K.</given-names>
+<surname>Litton</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Ferrarotto</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. T.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. L.</given-names>
+<surname>Moulder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.‐Y.</given-names>
+<surname>Lin</surname>
+</string-name>, <source>Ann. Oncol.</source>
+<year>2021</year>, <volume>32</volume>, <fpage>661</fpage>.<pub-id pub-id-type="pmid">33736924</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.annonc.2021.02.006</pub-id><pub-id pub-id-type="pmcid">PMC8053682</pub-id></mixed-citation></ref><ref id="advs70700-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="advs70700-cite-0005">
+<string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Overman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>McDermott</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. L.</given-names>
+<surname>Leach</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Lonardi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.‐J.</given-names>
+<surname>Lenz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. A.</given-names>
+<surname>Morse</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Desai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Hill</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Axelson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Moss</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. V.</given-names>
+<surname>Goldberg</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z. A.</given-names>
+<surname>Cao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐M.</given-names>
+<surname>Ledeine</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. A.</given-names>
+<surname>Maglinte</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kopetz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>André</surname>
+</string-name>, <source>Lancet Oncol.</source>
+<year>2017</year>, <volume>18</volume>, <fpage>1182</fpage>.<pub-id pub-id-type="pmid">28734759</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/S1470-2045(17)30422-9</pub-id><pub-id pub-id-type="pmcid">PMC6207072</pub-id></mixed-citation></ref><ref id="advs70700-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="advs70700-cite-0006">
+<string-name name-style="western">
+<given-names>T.</given-names>
+<surname>André</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.‐K.</given-names>
+<surname>Shiu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. W.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. V.</given-names>
+<surname>Jensen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. H.</given-names>
+<surname>Jensen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Punt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Garcia‐Carbonero</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Benavides</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Gibbs</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>de la Fouchardiere</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Rivera</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Elez</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Bendell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. T.</given-names>
+<surname>Le</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Yoshino</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Van Cutsem</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. Z. H.</given-names>
+<surname>Farooqui</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Marinello</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. A.</given-names>
+<surname>Diaz</surname>
+</string-name>, <source>N. Engl. J. Med.</source>
+<year>2020</year>, <volume>383</volume>, <fpage>2207</fpage>.33264544
+</mixed-citation></ref><ref id="advs70700-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="advs70700-cite-0007">
+<string-name name-style="western">
+<given-names>D. T.</given-names>
+<surname>Le</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. N.</given-names>
+<surname>Durham</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. N.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. R.</given-names>
+<surname>Bartlett</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. K.</given-names>
+<surname>Aulakh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Lu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Kemberling</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Wilt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. S.</given-names>
+<surname>Luber</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Wong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. S.</given-names>
+<surname>Azad</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. A.</given-names>
+<surname>Rucki</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Laheru</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Donehower</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Zaheer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. A.</given-names>
+<surname>Fisher</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. S.</given-names>
+<surname>Crocenzi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. J.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. F.</given-names>
+<surname>Greten</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. G.</given-names>
+<surname>Duffy</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. K.</given-names>
+<surname>Ciombor</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. D.</given-names>
+<surname>Eyring</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. H.</given-names>
+<surname>Lam</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Joe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. P.</given-names>
+<surname>Kang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Holdhoff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Danilova</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Cope</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Meyer</surname>
+</string-name>, et al., <source>Science</source>
+<year>2017</year>, <volume>357</volume>, <fpage>409</fpage>.<pub-id pub-id-type="pmid">28596308</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1126/science.aan6733</pub-id><pub-id pub-id-type="pmcid">PMC5576142</pub-id></mixed-citation></ref><ref id="advs70700-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="advs70700-cite-0008">
+<string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Eng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. W.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Bendell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Argilés</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. C.</given-names>
+<surname>Tebbutt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Di Bartolomeo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Falcone</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Fakih</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Kozloff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. H.</given-names>
+<surname>Segal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Sobrero</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Yan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Uyei</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Roberts</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Ciardiello</surname>
+</string-name>, <source>Lancet Oncol.</source>
+<year>2019</year>, <volume>20</volume>, <fpage>849</fpage>.<pub-id pub-id-type="pmid">31003911</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/S1470-2045(19)30027-0</pub-id></mixed-citation></ref><ref id="advs70700-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="advs70700-cite-0009">
+<string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Galon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Bruni</surname>
+</string-name>, <source>Nat. Rev. Drug Disc.</source>
+<year>2019</year>, <volume>18</volume>, <fpage>197</fpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41573-018-0007-y</pub-id><pub-id pub-id-type="pmid">30610226</pub-id></mixed-citation></ref><ref id="advs70700-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="advs70700-cite-0010">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Binnewies</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. W.</given-names>
+<surname>Roberts</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Kersten</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Chan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. F.</given-names>
+<surname>Fearon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Merad</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. M.</given-names>
+<surname>Coussens</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. I.</given-names>
+<surname>Gabrilovich</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Ostrand‐Rosenberg</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. C.</given-names>
+<surname>Hedrick</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. H.</given-names>
+<surname>Vonderheide</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Pittet</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. K.</given-names>
+<surname>Jain</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Zou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. K.</given-names>
+<surname>Howcroft</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. C.</given-names>
+<surname>Woodhouse</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Weinberg</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. F.</given-names>
+<surname>Krummel</surname>
+</string-name>, <source>Nat. Med.</source>
+<year>2018</year>, <volume>24</volume>, <fpage>541</fpage>.<pub-id pub-id-type="pmid">29686425</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41591-018-0014-x</pub-id><pub-id pub-id-type="pmcid">PMC5998822</pub-id></mixed-citation></ref><ref id="advs70700-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="advs70700-cite-0011">
+<string-name name-style="western">
+<given-names>P. A.</given-names>
+<surname>Ott</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. B.</given-names>
+<surname>Keskin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. A.</given-names>
+<surname>Shukla</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. J.</given-names>
+<surname>Bozym</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Luoma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Giobbie‐Hurder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Peter</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O.</given-names>
+<surname>Olive</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. A.</given-names>
+<surname>Carter</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. J.</given-names>
+<surname>Lieb</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Eisenhaure</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Gjini</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Stevens</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W. J.</given-names>
+<surname>Lane</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Javeri</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Nellaiappan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>Salazar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Daley</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Seaman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. I.</given-names>
+<surname>Buchbinder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. H.</given-names>
+<surname>Yoon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Harden</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Lennon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Gabriel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. J.</given-names>
+<surname>Rodig</surname>
+</string-name>, et al., <source>Nature</source>
+<year>2017</year>, <volume>547</volume>, <fpage>217</fpage>.<pub-id pub-id-type="pmid">28678778</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nature22991</pub-id><pub-id pub-id-type="pmcid">PMC5577644</pub-id></mixed-citation></ref><ref id="advs70700-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="advs70700-cite-0012">
+<string-name name-style="western">
+<given-names>U.</given-names>
+<surname>Sahin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Derhovanessian</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Miller</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.‐P.</given-names>
+<surname>Kloke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Simon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Löwer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Bukur</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. D.</given-names>
+<surname>Tadmor</surname>
+</string-name>, <string-name name-style="western">
+<given-names>U.</given-names>
+<surname>Luxemburger</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Schrörs</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Omokoko</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Vormehr</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Albrecht</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Paruzynski</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. N.</given-names>
+<surname>Kuhn</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Buck</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Heesch</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. H.</given-names>
+<surname>Schreeb</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Müller</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Ortseifer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Vogler</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Godehardt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Attig</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Rae</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Breitkreuz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Tolliver</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Suchan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Martic</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Hohberger</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Sorn</surname>
+</string-name>, et al., <source>Nature</source>
+<year>2017</year>, <volume>547</volume>, <fpage>222</fpage>.<pub-id pub-id-type="pmid">28678784</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nature23003</pub-id></mixed-citation></ref><ref id="advs70700-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="advs70700-cite-0013">
+<string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. E.</given-names>
+<surname>Leet</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. L.</given-names>
+<surname>Allesøe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Oliveira</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>Luoma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Forman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. B.</given-names>
+<surname>Iorgulescu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Holden</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Sarkizova</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. H.</given-names>
+<surname>Gohil</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Redd</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Elagina</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Giobbie‐Hurder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Peter</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Ciantra</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Rodig</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O.</given-names>
+<surname>Olive</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Shetty</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Pyrdol</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Uduman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. C.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Bachireddy</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. I.</given-names>
+<surname>Buchbinder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. H.</given-names>
+<surname>Yoon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Neuberg</surname>
+</string-name>, et al., <source>Nat. Med.</source>
+<year>2021</year>, <volume>27</volume>, <fpage>515</fpage>.<pub-id pub-id-type="pmid">33479501</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41591-020-01206-4</pub-id><pub-id pub-id-type="pmcid">PMC8273876</pub-id></mixed-citation></ref><ref id="advs70700-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="advs70700-cite-0014">
+<string-name name-style="western">
+<given-names>D. B.</given-names>
+<surname>Keskin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. J.</given-names>
+<surname>Anandappa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Tirosh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. D.</given-names>
+<surname>Mathewson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Oliveira</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Giobbie‐Hurder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Felt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Gjini</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. A.</given-names>
+<surname>Shukla</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. M.</given-names>
+<surname>Le</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. L.</given-names>
+<surname>Allesøe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. R.</given-names>
+<surname>Richman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. S.</given-names>
+<surname>Kowalczyk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Abdelrahman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. E.</given-names>
+<surname>Geduldig</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Charbonneau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Pelton</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. B.</given-names>
+<surname>Iorgulescu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Elagina</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O.</given-names>
+<surname>Olive</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>McCluskey</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. R.</given-names>
+<surname>Olsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Stevens</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W. J.</given-names>
+<surname>Lane</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>Salazar</surname>
+</string-name>, et al., <source>Nature</source>
+<year>2019</year>, <volume>565</volume>, <fpage>234</fpage>.<pub-id pub-id-type="pmid">30568305</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41586-018-0792-9</pub-id><pub-id pub-id-type="pmcid">PMC6546179</pub-id></mixed-citation></ref><ref id="advs70700-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="advs70700-cite-0015">
+<string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Anagnostou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. N.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. M.</given-names>
+<surname>Forde</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Niknafs</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Bhattacharya</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>White</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Adleff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Phallen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Wali</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Hruban</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V. B.</given-names>
+<surname>Guthrie</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Rodgers</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Naidoo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Kang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Sharfman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Georgiades</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Verde</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Illei</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q. K.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Gabrielson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. V.</given-names>
+<surname>Brock</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. A.</given-names>
+<surname>Zahnow</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. B.</given-names>
+<surname>Baylin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. B.</given-names>
+<surname>Scharpf</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>Brahmer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Karchin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. M.</given-names>
+<surname>Pardoll</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V. E.</given-names>
+<surname>Velculescu</surname>
+</string-name>, <source>Cancer Discov.</source>
+<year>2017</year>, <volume>7</volume>, <fpage>264</fpage>.<pub-id pub-id-type="pmid">28031159</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1158/2159-8290.CD-16-0828</pub-id><pub-id pub-id-type="pmcid">PMC5733805</pub-id></mixed-citation></ref><ref id="advs70700-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="advs70700-cite-0016">
+<string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Cai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Su</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Qiu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Dong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Wei</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Luo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zeng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, <source>Mol. Cancer</source>
+<year>2021</year>, <volume>20</volume>, <fpage>164</fpage>.<pub-id pub-id-type="pmid">34903219</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12943-021-01467-8</pub-id><pub-id pub-id-type="pmcid">PMC8667400</pub-id></mixed-citation></ref><ref id="advs70700-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="advs70700-cite-0017">
+<string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Cafri</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. J.</given-names>
+<surname>Gartner</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Zaks</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Hopson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Levin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. C.</given-names>
+<surname>Paria</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. R.</given-names>
+<surname>Parkhurst</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Yossef</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F. J.</given-names>
+<surname>Lowery</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. S.</given-names>
+<surname>Jafferji</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. D.</given-names>
+<surname>Prickett</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. L.</given-names>
+<surname>Goff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. T.</given-names>
+<surname>McGowan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Seitter</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. L.</given-names>
+<surname>Shindorf</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Parikh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. D.</given-names>
+<surname>Chatani</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. F.</given-names>
+<surname>Robbins</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. A.</given-names>
+<surname>Rosenberg</surname>
+</string-name>, <source>J. Clin. Invest.</source>
+<year>2020</year>, <volume>130</volume>, <fpage>5976</fpage>.<pub-id pub-id-type="pmid">33016924</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1172/JCI134915</pub-id><pub-id pub-id-type="pmcid">PMC7598064</pub-id></mixed-citation></ref><ref id="advs70700-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="advs70700-cite-0018">
+<string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Pecci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Cantini</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Bittoni</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Lenci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Lupi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Crocetti</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Giglio</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Giampieri</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Berardi</surname>
+</string-name>, <source>Curr. Treat Options Oncol.</source>
+<year>2021</year>, <volume>22</volume>, <fpage>69</fpage>.<pub-id pub-id-type="pmid">34110510</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s11864-021-00870-z</pub-id><pub-id pub-id-type="pmcid">PMC8192371</pub-id></mixed-citation></ref><ref id="advs70700-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="advs70700-cite-0019">
+<string-name name-style="western">
+<given-names>C. D.</given-names>
+<surname>Palmer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. R.</given-names>
+<surname>Rappaport</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Davis</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. G.</given-names>
+<surname>Hart</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. D.</given-names>
+<surname>Scallan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.‐J.</given-names>
+<surname>Hong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Gitlin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. D.</given-names>
+<surname>Kraemer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kounlavouth</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Schenk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Skoberne</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Taquechel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Marrali</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>Jaroslavsky</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. N.</given-names>
+<surname>Nganje</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Maloney</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Navarro‐Gomez</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. C.</given-names>
+<surname>Greene</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Grotenbreg</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Greer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Blair</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. D.</given-names>
+<surname>Cao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Chan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Bae</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. I.</given-names>
+<surname>Spira</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Roychowdhury</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. P.</given-names>
+<surname>Carbone</surname>
+</string-name>, et al., <source>Nat. Med.</source>
+<year>2022</year>, <volume>28</volume>, <fpage>1619</fpage>.<pub-id pub-id-type="pmid">35970920</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41591-022-01937-6</pub-id></mixed-citation></ref><ref id="advs70700-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="advs70700-cite-0020">
+<string-name name-style="western">
+<given-names>Y.‐J.</given-names>
+<surname>Zhu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.‐T.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐X.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐X.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.‐L.</given-names>
+<surname>Mu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Du</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐L.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Tang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <source>Clin. Transl. Med.</source>
+<year>2023</year>, <volume>13</volume>, <fpage>1461</fpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/ctm2.1461</pub-id><pub-id pub-id-type="pmcid">PMC10623652</pub-id><pub-id pub-id-type="pmid">37921274</pub-id></mixed-citation></ref><ref id="advs70700-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="advs70700-cite-0021">
+<string-name name-style="western">
+<given-names>S. M.</given-names>
+<surname>Wilhelm</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Dumas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Adnane</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Lynch</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. A.</given-names>
+<surname>Carter</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Schütz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.‐H.</given-names>
+<surname>Thierauch</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Zopf</surname>
+</string-name>, <source>Int. J. Cancer</source>
+<year>2011</year>, <volume>129</volume>, <fpage>245</fpage>.<pub-id pub-id-type="pmid">21170960</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/ijc.25864</pub-id></mixed-citation></ref><ref id="advs70700-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="advs70700-cite-0022">
+<string-name name-style="western">
+<given-names>R.‐Y.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.‐F.</given-names>
+<surname>Kong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.‐P.</given-names>
+<surname>Xia</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.‐L.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐Y.</given-names>
+<surname>Tang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐H.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Senthilkumar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.‐L.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.‐L.</given-names>
+<surname>Xu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Mai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.‐D.</given-names>
+<surname>Peng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.‐H.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.‐K.</given-names>
+<surname>Feng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Deng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.‐F.</given-names>
+<surname>Zhu</surname>
+</string-name>, <source>Clin. Cancer Res.</source>
+<year>2019</year>, <volume>25</volume>, <fpage>4530</fpage>.<pub-id pub-id-type="pmid">30940655</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1158/1078-0432.CCR-18-2840</pub-id></mixed-citation></ref><ref id="advs70700-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="advs70700-cite-0023">
+<string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Takahashi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Umemura</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Yano</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Okishio</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kataoka</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Okuda</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Seko</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Yamaguchi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Moriguchi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Okanoue</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Itoh</surname>
+</string-name>, <source>Front. Oncol.</source>
+<year>2021</year>, <volume>11</volume>, <elocation-id>707473</elocation-id>.<pub-id pub-id-type="pmid">34458148</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fonc.2021.707473</pub-id><pub-id pub-id-type="pmcid">PMC8385668</pub-id></mixed-citation></ref><ref id="advs70700-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="advs70700-cite-0024">
+<string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Fukuoka</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Hara</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Takahashi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Kojima</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Kawazoe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Asayama</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Yoshii</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Kotani</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Tamura</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Mikamoto</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Hirano</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Wakabayashi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Nomura</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Sato</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Kuwata</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Togashi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Nishikawa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Shitara</surname>
+</string-name>, <source>J. Clin. Oncol.</source>
+<year>2020</year>, <volume>38</volume>, <fpage>2053</fpage>.<pub-id pub-id-type="pmid">32343640</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1200/JCO.19.03296</pub-id></mixed-citation></ref><ref id="advs70700-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="advs70700-cite-0025">
+<string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Cousin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Cantarel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐P.</given-names>
+<surname>Guegan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Gomez‐Roca</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐P.</given-names>
+<surname>Metges</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Adenis</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Pernot</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Bellera</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Kind</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Auzanneau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Le Loarer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Soubeyran</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Bessede</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Italiano</surname>
+</string-name>, <source>Clin. Cancer Res.</source>
+<year>2021</year>, <volume>27</volume>, <fpage>2139</fpage>.<pub-id pub-id-type="pmid">33495314</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1158/1078-0432.CCR-20-3416</pub-id></mixed-citation></ref><ref id="advs70700-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="advs70700-cite-0026">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Fakih</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. P. S.</given-names>
+<surname>Raghav</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. Z.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Larson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. L.</given-names>
+<surname>Cohn</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. K.</given-names>
+<surname>Huyck</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Cosgrove</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. A.</given-names>
+<surname>Fiorillo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Tam</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>D'Adamo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Sharma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. J.</given-names>
+<surname>Brennan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. A.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Coppieters</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Zebger‐Gong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Weispfenning</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Seidel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. A.</given-names>
+<surname>Ploeger</surname>
+</string-name>, <string-name name-style="western">
+<given-names>U.</given-names>
+<surname>Mueller</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. S. V.</given-names>
+<surname>de Oliveira</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. S.</given-names>
+<surname>Paulson</surname>
+</string-name>, <source>EClinicalMedicine</source>
+<year>2023</year>, <volume>58</volume>, <elocation-id>101917</elocation-id>.<pub-id pub-id-type="pmid">37090438</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.eclinm.2023.101917</pub-id><pub-id pub-id-type="pmcid">PMC10119887</pub-id></mixed-citation></ref><ref id="advs70700-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="advs70700-cite-0027">
+<string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Qiu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Dong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Shi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Cai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Ye</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Ouyang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Cai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, <source>J. Immunother. Cancer</source>
+<year>2022</year>, <volume>10</volume>, <elocation-id>004389</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/jitc-2021-004389</pub-id><pub-id pub-id-type="pmcid">PMC9486396</pub-id><pub-id pub-id-type="pmid">36113894</pub-id></mixed-citation></ref><ref id="advs70700-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="advs70700-cite-0028">
+<string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Ganesh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z. K.</given-names>
+<surname>Stadler</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Cercek</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. B.</given-names>
+<surname>Mendelsohn</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Shia</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. H.</given-names>
+<surname>Segal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. A.</given-names>
+<surname>Diaz</surname>
+</string-name>, <source>Nat. Rev. Gastroenterol. Hepatol.</source>
+<year>2019</year>, <volume>16</volume>, <fpage>361</fpage>.<pub-id pub-id-type="pmid">30886395</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41575-019-0126-x</pub-id><pub-id pub-id-type="pmcid">PMC7295073</pub-id></mixed-citation></ref><ref id="advs70700-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="advs70700-cite-0029">
+<string-name name-style="western">
+<given-names>N. J.</given-names>
+<surname>Llosa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Luber</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Siegel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. H.</given-names>
+<surname>Awan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Oke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Zhu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. R.</given-names>
+<surname>Bartlett</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. K.</given-names>
+<surname>Aulakh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. D.</given-names>
+<surname>Thompson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. M.</given-names>
+<surname>Jaffee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. N.</given-names>
+<surname>Durham</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. L.</given-names>
+<surname>Sears</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. T.</given-names>
+<surname>Le</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. A.</given-names>
+<surname>Diaz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. M.</given-names>
+<surname>Pardoll</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Housseau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Anders</surname>
+</string-name>, <source>Cancer Immunol. Res.</source>
+<year>2019</year>, <volume>7</volume>, <fpage>1574</fpage>.<pub-id pub-id-type="pmid">31439614</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1158/2326-6066.CIR-18-0927</pub-id><pub-id pub-id-type="pmcid">PMC6774859</pub-id></mixed-citation></ref><ref id="advs70700-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="advs70700-cite-0030">
+<string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Zhang</surname>
+</string-name>, <source>Cell Mol. Immunol.</source>
+<year>2020</year>, <volume>17</volume>, <fpage>807</fpage>.<pub-id pub-id-type="pmid">32612154</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41423-020-0488-6</pub-id><pub-id pub-id-type="pmcid">PMC7395159</pub-id></mixed-citation></ref><ref id="advs70700-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="advs70700-cite-0031">
+<string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Du</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Bai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>He</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Tian</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>J. Immunother. Cancer</source>
+<year>2022</year>, <volume>10</volume>, <elocation-id>003564</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/jitc-2021-003564</pub-id><pub-id pub-id-type="pmcid">PMC8883272</pub-id><pub-id pub-id-type="pmid">35217574</pub-id></mixed-citation></ref><ref id="advs70700-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="advs70700-cite-0032">
+<string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Zeng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z. M.</given-names>
+<surname>Gül</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Pick</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Cheng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Bill</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Naulaerts</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Barnoud</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.‐C.</given-names>
+<surname>Hsueh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. H.</given-names>
+<surname>Moller</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Cenerenti</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Su</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Jemelin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Petrenko</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Dibner</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Hugues</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Jandus</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O.</given-names>
+<surname>Michielin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.‐C.</given-names>
+<surname>Ho</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. D.</given-names>
+<surname>Garg</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Simonetta</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Pittet</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Scheiermann</surname>
+</string-name>, <source>Cell</source>
+<year>2024</year>, <volume>187</volume>, <fpage>2690</fpage>.<pub-id pub-id-type="pmid">38723627</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.cell.2024.04.015</pub-id></mixed-citation></ref><ref id="advs70700-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="advs70700-cite-0033">
+<string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Xie</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Ding</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Chen</surname>
+</string-name>, <source>Acta Pharm. Sin. B</source>
+<year>2021</year>, <volume>11</volume>, <fpage>1365</fpage>.<pub-id pub-id-type="pmid">34221857</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.apsb.2021.03.027</pub-id><pub-id pub-id-type="pmcid">PMC8245853</pub-id></mixed-citation></ref><ref id="advs70700-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="advs70700-cite-0034">
+<string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Reif</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. G.</given-names>
+<surname>Cyster</surname>
+</string-name>, <source>J. Immunol.</source>
+<year>2000</year>, <volume>164</volume>, <fpage>4720</fpage>.<pub-id pub-id-type="pmid">10779778</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.4049/jimmunol.164.9.4720</pub-id></mixed-citation></ref><ref id="advs70700-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="advs70700-cite-0035">
+<string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Xu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Cai</surname>
+</string-name>, <source>Biosci. Rep.</source>
+<year>2010</year>, <volume>30</volume>, <fpage>383</fpage>.<pub-id pub-id-type="pmid">20001967</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1042/BSR20090129</pub-id></mixed-citation></ref><ref id="advs70700-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="advs70700-cite-0036">
+<string-name name-style="western">
+<given-names>D. C.</given-names>
+<surname>Koboldt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Wylie</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. E.</given-names>
+<surname>Larson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. D.</given-names>
+<surname>McLellan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. R.</given-names>
+<surname>Mardis</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. M.</given-names>
+<surname>Weinstock</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. K.</given-names>
+<surname>Wilson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Ding</surname>
+</string-name>, <source>Bioinformatics</source>
+<year>2009</year>, <volume>25</volume>, <fpage>2283</fpage>.<pub-id pub-id-type="pmid">19542151</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/bioinformatics/btp373</pub-id><pub-id pub-id-type="pmcid">PMC2734323</pub-id></mixed-citation></ref><ref id="advs70700-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="advs70700-cite-0037">
+<string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>J. Med. Genet.</source>
+<year>2012</year>, <volume>49</volume>, <fpage>433</fpage>.<pub-id pub-id-type="pmid">22717648</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/jmedgenet-2012-100918</pub-id><pub-id pub-id-type="pmcid">PMC3556337</pub-id></mixed-citation></ref><ref id="advs70700-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="advs70700-cite-0038">
+<string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Jurtz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Paul</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Andreatta</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Marcatili</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Peters</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Nielsen</surname>
+</string-name>, <source>J. Immunol.</source>
+<year>2017</year>, <volume>199</volume>, <fpage>3360</fpage>.<pub-id pub-id-type="pmid">28978689</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.4049/jimmunol.1700893</pub-id><pub-id pub-id-type="pmcid">PMC5679736</pub-id></mixed-citation></ref><ref id="advs70700-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="advs70700-cite-0039">
+<string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Satija</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. A.</given-names>
+<surname>Farrell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Gennert</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. F.</given-names>
+<surname>Schier</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Regev</surname>
+</string-name>, <source>Nat. Biotechnol.</source>
+<year>2015</year>, <volume>33</volume>, <fpage>495</fpage>.<pub-id pub-id-type="pmid">25867923</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nbt.3192</pub-id><pub-id pub-id-type="pmcid">PMC4430369</pub-id></mixed-citation></ref><ref id="advs70700-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="advs70700-cite-0040">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Aran</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. P.</given-names>
+<surname>Looney</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Fong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Hsu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Chak</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. P.</given-names>
+<surname>Naikawadi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. J.</given-names>
+<surname>Wolters</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. R.</given-names>
+<surname>Abate</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. J.</given-names>
+<surname>Butte</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Bhattacharya</surname>
+</string-name>, <source>Nat. Immunol.</source>
+<year>2019</year>, <volume>20</volume>, <fpage>163</fpage>.<pub-id pub-id-type="pmid">30643263</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41590-018-0276-y</pub-id><pub-id pub-id-type="pmcid">PMC6340744</pub-id></mixed-citation></ref><ref id="advs70700-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="advs70700-cite-0041">
+<string-name name-style="western">
+<given-names>T. S. P.</given-names>
+<surname>Heng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. W.</given-names>
+<surname>Painter</surname>
+</string-name>, <source>Nat. Immunol.</source>
+<year>2008</year>, <volume>9</volume>, <fpage>1091</fpage>.<pub-id pub-id-type="pmid">18800157</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ni1008-1091</pub-id></mixed-citation></ref></ref-list></back></article>

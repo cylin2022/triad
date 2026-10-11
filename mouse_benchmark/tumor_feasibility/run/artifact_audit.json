@@ -1,0 +1,28 @@
+{
+  "audited_utc": "2026-10-10T11:06:50.177317+00:00",
+  "rows": 179,
+  "split_and_source_hashes_valid": true,
+  "lock_before_fit_before_test_evaluation": true,
+  "serialized_predictions_match": true,
+  "scalers_fit_training_only": true,
+  "external_metrics_recomputed_without_refitting": true,
+  "cross_split_sequence_source_overlap": 0,
+  "python": "3.9.18",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.3.0",
+    "scipy": "1.10.1",
+    "joblib": "1.2.0",
+    "openpyxl": "3.1.2",
+    "matplotlib": "3.8.0"
+  },
+  "code_hashes": {
+    "audit.py": "953aef83a06a139069a9ac2261387e9be1fea1ce44bd094dcdacd16b3a733809",
+    "test_tumor.py": "00922f30b0321ce3f4303d6b9e77af8fb7607743b8fc2ef38a2143c675471948",
+    "assess.py": "7db39148a42f614c43b5eb1497a7c325ee355e43cece7cbdf049846da4608c7f",
+    "plot.py": "fe380d7290ff0e1ce7ba3254084a992ec358adff82e5b2113d2979e004cdaf3b",
+    "prepare.py": "3cc3307bb6c67e8493a37c057eb40da8e67975d05e35359aa1956b2a55a62afc",
+    "train.py": "cf6546e8a9ba8fb415e6d0872243680f17e88cd313db80f748a3cfb5b2a8932d"
+  }
+}

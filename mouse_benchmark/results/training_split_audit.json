@@ -1,0 +1,40 @@
+{
+  "diagnostic_only_no_training": true,
+  "folds": [
+    {
+      "fold": 0,
+      "n": 7,
+      "positive": 2,
+      "negative": 5,
+      "groups": 1
+    },
+    {
+      "fold": 1,
+      "n": 3569,
+      "positive": 374,
+      "negative": 3195,
+      "groups": 34
+    },
+    {
+      "fold": 2,
+      "n": 199,
+      "positive": 157,
+      "negative": 42,
+      "groups": 34
+    },
+    {
+      "fold": 3,
+      "n": 2592,
+      "positive": 581,
+      "negative": 2011,
+      "groups": 48
+    },
+    {
+      "fold": 4,
+      "n": 12,
+      "positive": 10,
+      "negative": 2,
+      "groups": 1
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "smith_supp.xlsx",
+    "url": "https://ndownloader.figshare.com/files/40005507",
+    "sha256": "29e12c25536009ddbb421ddb7bd6eb86ff0482b5a7775d2ba7f939f2bb679b7a"
+  },
+  {
+    "file": "dna2021_supp.xlsx",
+    "url": "https://static-content.springer-cdn.com/esm/art%3A10.1186%2Fs13073-021-00872-3/MediaObjects/13073_2021_872_MOESM2_ESM.xlsx",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "file": "llc2023_supp.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10025090/bin/mmc1.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "cmt2025_supp.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12462951/bin/ADVS-12-e08040-s001.pdf",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

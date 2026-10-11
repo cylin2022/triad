@@ -1,0 +1,9 @@
+PMID,IEDB_Reference,Decision,Context,Tumor_Model,Evidence_and_reason,Source
+31515258,1036957,train,Peptide vaccination,B16F10;BBN963;MB49;UPPL1541,Publisher supplementary table mutant/WT/tumor match; exclude P815 mHA and class II,https://pubmed.ncbi.nlm.nih.gov/31515258/
+33879241,1039184,validation,DNA or SLP vaccination before tumor challenge,E0771,Full text and Table S2; detailed IEDB immunization comments; exclude naive and tumor-only assays,https://pubmed.ncbi.nlm.nih.gov/33879241/
+36950115,1042224,test,Mutant peptide-pulsed BMDC vaccination plus restimulation,LLC1,Full text and supplemental Table S1/Figure S3; retain actual mutant assay and WT pair,https://pubmed.ncbi.nlm.nih.gov/36950115/
+40586324,1046998,test,Pooled peptide vaccination,CMT93,Full text and Table S2; IEDB assay antigen resolves 7 WT controls,https://pubmed.ncbi.nlm.nih.gov/40586324/
+31292145,1035424,review_queue,Neoepitope vaccination,unresolved,Not incorporated: per-peptide provenance and full context not reviewed in this version,https://pubmed.ncbi.nlm.nih.gov/31292145/
+37586771,1042995,review_queue,Long peptide and oncolytic-virus contexts,E0771.LMB,Related to validation tumor lineage; mixed treatment contexts; not incorporated,https://pubmed.ncbi.nlm.nih.gov/37586771/
+35008270,1040011,excluded_current_endpoint,Tumor-infiltrating response; in-vitro induction; selected vaccines,YTN2;YTN16,Mixed endpoints and selected known positives; not a comparable unbiased vaccination panel,https://pubmed.ncbi.nlm.nih.gov/35008270/
+40738981,1047156,excluded_current_endpoint,Selected mRNA vaccine targets,YTN16,Only small selected-positive candidate set in this snapshot; not used as a discriminative benchmark,https://pubmed.ncbi.nlm.nih.gov/40738981/

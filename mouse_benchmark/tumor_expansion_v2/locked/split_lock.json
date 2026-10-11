@@ -1,0 +1,96 @@
+{
+  "locked_utc": "2026-10-10T17:14:25.936866+00:00",
+  "experiment": "mouse_tumor_neoantigen_expansion_v2",
+  "statistics": {
+    "train": {
+      "n": 113,
+      "positive": 79,
+      "negative": 34,
+      "prevalence": 0.6991150442477876,
+      "studies": [
+        "31292145",
+        "31515258"
+      ],
+      "tumor_models": [
+        "B16F10",
+        "BBN963",
+        "MB49",
+        "MC-38",
+        "UPPL1541"
+      ]
+    },
+    "validation": {
+      "n": 13,
+      "positive": 3,
+      "negative": 10,
+      "prevalence": 0.23076923076923078,
+      "studies": [
+        "33879241"
+      ],
+      "tumor_models": [
+        "E0771"
+      ]
+    },
+    "test_frozen_prior": {
+      "n": 69,
+      "positive": 49,
+      "negative": 20,
+      "prevalence": 0.7101449275362319,
+      "studies": [
+        "36950115",
+        "40586324"
+      ],
+      "tumor_models": [
+        "CMT93",
+        "LLC1"
+      ]
+    },
+    "test_capietto_holdout": {
+      "n": 216,
+      "positive": 22,
+      "negative": 194,
+      "prevalence": 0.10185185185185185,
+      "studies": [
+        "31940002"
+      ],
+      "tumor_models": [
+        "MC-38",
+        "TRAMP-C1"
+      ]
+    },
+    "exploratory_balbc": {
+      "n": 185,
+      "positive": 18,
+      "negative": 167,
+      "prevalence": 0.0972972972972973,
+      "studies": [
+        "31940002"
+      ],
+      "tumor_models": [
+        "CT26",
+        "EMT6"
+      ]
+    }
+  },
+  "purged_from_capietto_holdout": 8,
+  "inputs": {
+    "iedb_mouse_kb_db.jsonl": "490d7d6b67f7f6bafd521dcd3bde1fe8745d4f0b49681ff9ea900fcc1a73c8c9",
+    "iedb_tumor_details.json": "29accafbe5ea1d296cb2af00b69c576b4643fe425fb4cf7f03e498571d588f59",
+    "smith_supp.xlsx": "29e12c25536009ddbb421ddb7bd6eb86ff0482b5a7775d2ba7f939f2bb679b7a",
+    "JEM_20190179_DataS1.xlsx": "b385e6b91b19fab192c7ed5e3af2c927964185b99bd769027ba7e4d413342034"
+  },
+  "files": {
+    "test_capietto_all.csv": "b30f584a835cf1017cdcb79d77aa811eb81ba45fcc9a7c8654582cd82b8fd453",
+    "purged_capietto_from_holdout.csv": "d5c806cb14e178f5df96a0ae656a18513d84578c9a07413ad39e26a094a7737f",
+    "validation.csv": "9111c7a6a39badbd5b060dd366a995c68f13b8bd42d60abf435ebdc8b32f05df",
+    "assay_curation.csv": "52ddacafefa17873e1d03dc295502f10cdd54f8b6f96d32cf794b228caa34d99",
+    "train_combined_capietto.csv": "53cf8b26ecd0418983c95fd9cac46b4a1a2e96ad37de9d9b0ec371e178eabac2",
+    "test_capietto_holdout.csv": "a5ed1d1472cfa12cc319ed200826b2ed8cfac56f7e399e62478a07794509bd4d",
+    "exploratory_balbc.csv": "0e78bfe3a85108e7f39404dcbee97f0420dc6ff9779f8c478e1de2076e89fbb5",
+    "test_frozen_prior.csv": "2fdc4084f7482ba93184c87127d926bc3273d4ff692ea1eb03690befe0e2295a",
+    "train.csv": "3b7ed34052c9d8086cc9e3d7918682f6d942512d43727ba800b29d0055acf78d",
+    "conflicts.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "protocol_sha256": "b8b6219002add6cf7369551d167c50eed5d8d9ad31b6c32e1e5ba98b734590c5",
+  "prepare_sha256": "3e90184deb3a70ab14cc28cde7c825eb6cca6faf141dc507c5b0ae6b9a643cd7"
+}

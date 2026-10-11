@@ -13,6 +13,7 @@
 4. [HLA Allele Selection & Population Presets](#hla-allele-selection--population-presets)
 5. [Output Metrics & Interpretation Guide](#output-metrics--interpretation-guide)
 6. [Batch Multi-File Parallel Engine](#batch-multi-file-parallel-engine)
+6b. [Multi-Epitope Vaccine Design & Preclinical Mouse Suite (v2.0)](#6b-multi-epitope-vaccine-design--preclinical-mouse-suite-v20)
 7. [REST API & Command-Line Automation](#rest-api--command-line-automation)
 8. [Hardware Acceleration & In-Memory RAM Disk](#hardware-acceleration--in-memory-ram-disk)
 9. [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
@@ -29,7 +30,7 @@ TRIAD integrates three complementary computational dimensions to rank and priori
 2. **Physicochemical T-Cell Immunogenicity Model** (Calis et al., 2013):
    Scores the intrinsic capability of MHC-bound peptides to trigger TCR (T-cell receptor) activation based on position-weighted amino acid physicochemical properties (aromaticity, large hydrophobicity, side-chain bulkiness at TCR-facing positions 4, 5, 6, 7, and 8).
 3. **Cumulative Population Coverage Estimation**:
-   Computes non-redundant human population coverage (%) across target regions (Taiwan, East Asia, Europe, World) derived from high-quality allele frequency databases (AFND, Tzu Chi Marrow Repository, and 1000 Genomes).
+   Computes non-redundant human population coverage (%) across 22 selectable populations — Taiwan island-wide plus each of its Han and Indigenous groups, East Asia, Europe and World — derived from the Allele Frequency Net Database (AFND). See [Frequency-table provenance](#frequency-table-provenance).
 4. **Composite Priority Score (CPS)**:
    A multi-objective candidate prioritization function balancing presentation likelihood, T-cell immunogenicity, and allele breadth.
 
@@ -128,7 +129,7 @@ Alleles must adhere to standard IPD-IMGT/HLA nomenclature:
 
 ### Built-in Regional Presets
 Click any of the preset chips on the UI to load verified high-frequency allele combinations:
-- **🇹🇼 Taiwan Common**: High-frequency Han Taiwanese HLA markers (e.g., `HLA-A*11:01` [~45% frequency], `A*24:02`, `A*02:07`, `A*33:03`, `B*40:01`, `B*58:01`, `C*07:02`).
+- **🇹🇼 Taiwan Common**: High-frequency Han Taiwanese HLA markers — `HLA-A*11:01` (allele frequency 0.291), `A*24:02` (0.178), `A*02:07` (0.109), `A*33:03` (0.106), `B*40:01` (0.217), `B*58:01` (0.099), `C*07:02` (0.203). For a specific Taiwanese community, set the target population in **Vaccine Design Target** instead — Hakka, Amis, Paiwan and the other groups each have their own table.
 - **🌏 East Asian**: Predominant alleles in East Asian cohorts (`HLA-A*24:02`, `A*02:01`, `A*11:01`, `B*46:01`, `B*40:01`, `C*01:02`).
 - **🌍 European**: Western European reference alleles (`HLA-A*02:01`, `A*01:01`, `A*03:01`, `B*07:02`, `B*08:01`, `C*07:01`).
 - **🌐 World Reference Set**: 12 global representative alleles providing >90% worldwide population coverage.
@@ -161,6 +162,201 @@ For large-scale processing of proteomes, viral variants, or patient cohort libra
 4. Click **▶ Run Batch Processing Pipeline**.
 5. The scheduler distributes sequence chunks evenly across up to 40 CPU cores in parallel, utilizing RAM disk (`/dev/shm`) for zero-disk-latency temporary I/O.
 6. Upon completion, click **⬇ Download Batch CSV** to export consolidated multi-file reports.
+
+---
+
+## 6b. Multi-Epitope Vaccine Design & Preclinical Mouse Suite (v2.0)
+
+Prediction ranks peptides one at a time. A vaccine is a **set**, and the question that decides its
+design is how much of a population the set reaches *together*. This section covers the set-level
+and construct engineering workflow in v2.0.
+
+### Why the old coverage number was not enough
+
+Up to v1.1 the results page showed the coverage of the **allele panel** you typed into the search box.
+That figure is fixed the moment you submit and does not move when the predictions come back — a job
+in which nothing bound still displayed ~95%. v1.2 keeps it (clearly labelled) but promotes a second
+figure to the headline:
+
+| Figure | Meaning | Moves when… |
+| :--- | :--- | :--- |
+| **Panel coverage** | Share of people carrying at least one allele you selected. | You change the allele panel. |
+| **Reachable coverage** | Share of people presenting at least one peptide the job returned as a binder. The ceiling any vaccine from this job can reach. | The predictions change. |
+| **Set coverage** | Share of people presenting at least one peptide *you have ticked*. | Every checkbox click. |
+
+### Step 1 — State the design target
+
+In **🔬 Predict Pipeline → 💉 Vaccine Design Target**:
+
+- **Target population** — Taiwan, East Asia, World or Europe (see *Frequency-table provenance* below).
+- **Coverage goal** — the share of that population that must present at least one vaccine epitope.
+- **Redundancy** — whether you require ≥1 or ≥2 epitopes per person.
+- **🤖 Auto-build panel** — picks the smallest set of high-frequency alleles reaching the goal, so you
+  never have to guess how many alleles to select.
+
+### Step 2 — Build the epitope set
+
+Run the prediction, then in **📊 Results** tick peptides in the leftmost column. The **💉 Epitope Set**
+panel beside the table updates on every click with:
+
+- **≥ 1 epitope per person** — headline set coverage, with a marker at your goal.
+- **≥ 2 epitopes (redundancy)** — the share of people who would still respond if one epitope were lost.
+  A set whose ≥2 figure sits far below its ≥1 figure is fragile regardless of the headline number.
+- **Not reached** — panel alleles the set never presents to, ranked by frequency.
+- **Best next pick** — the single peptide with the highest marginal gain, with a one-click Add.
+
+Useful controls: **ΔCov** column (sortable) shows what each peptide would add *on top of* the current
+set — a Tier 1 peptide restricted to an allele you already cover scores ~0, while a Tier 2 peptide on
+an untouched allele can be worth several points. **🤖 Auto-complete to goal** fills the set greedily,
+breaking ties by Composite Score.
+
+### Step 3 — Assemble and audit the construct
+
+**💉 Vaccine Designer** turns the set into a string-of-beads immunogen:
+
+- **Linkers** — `AAY` (proteasome cleavage, class I), `KK` (cathepsin B), `GPGPG` (class II / HTL,
+  suppresses junctional epitopes), `EAAAK` (rigid domain spacer), or none.
+- **Terminal modules** — start Met, His6, TAT cell-penetrating peptide, PADRE universal helper epitope.
+- **Order** — drag rows to reorder; the sequence and every downstream number update immediately.
+- **Properties** — length, mass, GRAVY hydropathy (Kyte–Doolittle), predicted pI (EMBOSS pKa set).
+- **Exports** — FASTA, back-translated DNA (most-frequent human codon per residue — a synthesis
+  starting point, *not* a finished optimisation), and a CSV design report.
+
+**⚠️ Junctional Epitope Scan** is the quality gate. Joining epitopes creates sequence present in
+neither the pathogen nor the host; if such a window is itself presented it competes with your designed
+epitopes for the same MHC molecules and can drive off-target responses. The scan folds the construct
+back through netMHCpan-4.2 and flags every presented window that is **not** one of your epitopes,
+naming the join that produced it. Reorder the epitopes or switch to GPGPG and re-scan.
+
+### The coverage model
+
+Individuals are drawn under Hardy–Weinberg equilibrium with the HLA-A / B / C loci independent.
+Writing `P₀(T)` for the probability an individual carries none of the alleles in `T`:
+
+```text
+P₀(T)   = ∏ over loci L of ( 1 − Σ f(a) for a ∈ T at locus L )²
+
+≥1 hit  = 1 − P₀(R)                             R   = alleles presenting ≥1 chosen peptide
+≥2 hits = 1 − P₀(R) − Σ_e [ P₀(B_e) − P₀(R) ]   B_e = alleles presenting some peptide ≠ e
+```
+
+Both are computed exactly rather than by simulation, so they update instantly and do not jitter
+between clicks. The browser mirrors this formula for interactivity but fetches the frequency data from
+`/api/coverage/freq_table`, keeping `population_coverage.py` the single source of truth.
+
+### Frequency-table provenance
+
+Every value in the 22 population tables is regenerated from a single public input by
+`tools/build_afnd_tables.py`, so the numbers are auditable rather than hand-entered:
+
+```bash
+python3 tools/build_afnd_tables.py --verify        # re-derive and diff against the shipped tables
+python3 tools/build_afnd_tables.py --legacy-delta  # show how much the v1.2 fixes moved v1.1's tables
+python3 tools/build_afnd_tables.py --emit --json --out data/allele_frequencies.json
+```
+
+**Source.** `afnd.tsv` from the community mirror [slowkow/allelefrequencies](https://github.com/slowkow/allelefrequencies)
+(MIT; license bundled in `THIRD_PARTY_LICENSES/`), derived from the Allele Frequency Net Database
+(Gonzalez-Galarza FF *et al.*, *Nucleic Acids Res* 2020;48:D783–D788, CC BY 4.0).
+**Method.** 2-field HLA-A/B/C records, `alleles_over_2n` averaged by reported sample size *n*, top 18
+alleles kept per population. The tables live in `data/allele_frequencies.json`.
+
+### Taiwan is not one population
+
+Its component groups differ far too much to share a table, so **each is selectable in its own right**:
+
+| Selectable population | AFND entries | *n* |
+| :--- | :--- | ---: |
+| 🇹🇼 **Taiwan (island-wide)** | Han and recognised Indigenous tables combined at **97.5% / 2.5%** population shares | 2,640 |
+| Han 漢人 (all) | Tzu Chi Cord Blood Bank, Han Chinese, pop 2, pop 3, Minnan, Hakka | 1,947 |
+| └ Minnan / Hoklo 閩南 | `Taiwan Minnan pop 1` | 102 |
+| └ Hakka 客家 | `Taiwan Hakka` | 55 ⚠ |
+| Indigenous 原住民族 (all) | The 11 nationally recognised peoples | 693 |
+| └ Amis 阿美族 · Atayal 泰雅族 · Bunun 布農族 · Paiwan 排灣族 · Puyuma 卑南族 · Rukai 魯凱族 · Saisiyat 賽夏族 · Tao 達悟族 · Truku 太魯閣族 · Thao 邵族 · Tsou 鄒族 | one AFND entry each | 30–106 ⚠ |
+| Pingpu 平埔族 (all) | Pazeh, Siraya — in neither aggregate | 106 ⚠ |
+
+⚠ = fewer than 100 individuals; the UI warns before you design against these.
+
+How different are they? Enough that an island-wide average is the wrong tool for a targeted design:
+
+| Allele | Minnan | Hakka | Amis | Paiwan | Saisiyat | Tao |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `HLA-A*11:01` | 0.309 | **0.400** | 0.010 | 0.000 | 0.000 | 0.000 |
+| `HLA-A*24:02` | 0.309 | 0.282 | 0.628 | **0.863** | 0.569 | 0.540 |
+| `HLA-C*07:02` | 0.206 | 0.227 | 0.163 | 0.020 | **0.667** | 0.010 |
+| `HLA-B*39:01` | 0.005 | 0.000 | 0.010 | 0.000 | **0.549** | 0.000 |
+| `HLA-B*15:25` | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | **0.400** |
+
+**Why the island-wide table is blended, not pooled.** AFND holds 11 recognised Indigenous entries
+(*n* = 693) against 6 Han-representative ones (*n* = 1,947), so averaging by sample size alone would hand
+Indigenous peoples **26%** of the table — against roughly **2.5%** of the population (~580,000 of
+23.4 million, Ministry of the Interior). `A*24:02` runs at 0.633 in the Indigenous entries versus 0.167 in
+the Han ones, so a pooled average would report it at **0.2892** instead of 0.1785, overstating every
+A\*24:02-restricted epitope by 62%. The blend combines the two group tables at their demographic shares;
+allele frequencies are additive across subpopulations weighted by population share, so this is the correct
+combination, not an approximation.
+
+Plains Indigenous (Pazeh, Siraya) sit in **neither** aggregate: they are not nationally recognised
+Indigenous peoples and are largely assimilated into the Han-identifying population, so folding them into
+either bucket would misstate that bucket.
+
+### Broader regions
+
+| Region | AFND populations | *n* |
+| :--- | :--- | ---: |
+| 🌏 East Asia | China, Japan, Taiwan, Mongolia, Hong Kong. **Does not include Korea.** | 56,845 |
+| 🌐 World | Every AFND population. Weighted by sample size, so the megaregistries (DKMS, NMDP) dominate — an average of the studies present, *not* a world census. | 7,026,383 |
+| 🌍 Europe | 24 European countries. | 3,685,409 |
+
+### Two data-quality corrections in v1.2
+
+**1. Sample sizes with thousands separators were silently dropped.** AFND writes large cohorts as
+`3,456,066`. Parsing `n` with a plain `float()` throws, and the record was skipped — 36.6% of HLA-A/B/C
+rows and **99.0% of all sampled individuals**, including DKMS German donors (*n* = 3,456,066) and NMDP
+European Caucasian (*n* = 1,242,890). v1.1's World and Europe tables were therefore built from the ~1% of
+the data with *n* < 1,000. Run `--legacy-delta` to see the full effect; the headline moves:
+
+| | v1.1 | v1.2 |
+| :--- | ---: | ---: |
+| World `A*02:01` | 0.1519 | **0.2393** |
+| World `A*03:01` | 0.0545 | **0.1233** |
+| Europe `A*02:01` | 0.2399 | **0.2834** |
+| East Asia `A*11:01` | 0.2429 | **0.1868** |
+
+Taiwan and every Taiwan subgroup are **unaffected** — no Taiwan population in AFND has *n* ≥ 1,000.
+
+**2. A minimum-support filter.** With the parser fixed, one mis-entered record can dominate a pooled
+region: AFND lists `C*01:57` at 0.1996 in a single 4,889-person NMDP cohort and nowhere else, which was
+enough to push a genuinely rare allele into the World top-18. Pooled regions (World, East Asia, Europe)
+now require an allele to be reported by **≥ 3 populations**. The curated Taiwan groups are exempt, because
+there a single-population allele is usually the signal — Tao carry `B*15:25` at 0.400 and no other group
+does.
+
+Two further changes to the coverage **model** (as opposed to the data) also move the numbers:
+alleles at the same locus are now summed before the Hardy–Weinberg square rather than multiplied as
+independent events — a locus has only two slots, so v1.1's product form under-estimated coverage within
+a locus; and alleles with no frequency record for the selected region now contribute 0 and are listed in
+the UI, instead of silently receiving a fabricated 0.08. Panel coverage is therefore an explicit
+**lower bound**, and mouse H-2 runs no longer report a meaningless "human population coverage".
+
+**Vaccine design API** (see section 7 for the full list):
+
+```bash
+# Set coverage for chosen peptides
+curl -X POST http://localhost:5001/api/set_coverage \
+  -H "Content-Type: application/json" \
+  -d '{"job_id":"<JOB_ID>","peptides":["FLPSDFFPSV","QVPLRPMTYK"],"region":"East Asia","all_regions":true}'
+
+# Greedy completion to a coverage goal
+curl -X POST http://localhost:5001/api/optimize_set \
+  -H "Content-Type: application/json" \
+  -d '{"job_id":"<JOB_ID>","region":"East Asia","goal_pct":90}'
+
+# Assemble and audit the construct
+curl -X POST http://localhost:5001/api/construct/scan \
+  -H "Content-Type: application/json" \
+  -d '{"peptides":["FLPSDFFPSV","QVPLRPMTYK"],"alleles":["HLA-A02:01","HLA-A11:01"],"linker":"AAY"}'
+```
 
 ---
 
@@ -216,6 +412,56 @@ curl -s -X POST http://localhost:5001/api/predict_oss \
     "allele": "HLA-A*02:01",
     "methods": ["smm", "smmpmbec", "comblib"]
   }' | jq .
+```
+
+### Vaccine Design Endpoints (v2.0)
+
+All set-level endpoints accept the binder matrix in any of three forms: `job_id` (server reads the
+stored job), `rows` (raw prediction records), or `binder_map` (`{peptide: [alleles]}` directly).
+Add `peptides` to restrict a job to a chosen subset, and `rank_cut` to change the binder threshold
+(default `2.0`).
+
+| Endpoint | Method | Purpose |
+| :--- | :--- | :--- |
+| `/api/coverage` | POST | Coverage of an allele **panel**. |
+| `/api/coverage/regions` | GET | Regions with frequency data, aliases, top alleles per region. |
+| `/api/coverage/freq_table` | GET | Raw allele-frequency tables (what the browser engine loads). |
+| `/api/coverage/panel` | POST | Smallest allele panel reaching a coverage goal. |
+| `/api/set_coverage` | POST | Coverage of an epitope **set** (≥1 and ≥2 hits, unreached alleles). |
+| `/api/marginal_coverage` | POST | Percentage points each candidate would add to the current set. |
+| `/api/optimize_set` | POST | Greedy completion of a set to a coverage goal. |
+| `/api/construct/options` | GET | Available linkers and terminal modules with their rationale. |
+| `/api/construct/build` | POST | Assemble a construct; returns sequence, segments, properties, FASTA, DNA. |
+| `/api/construct/scan` | POST | Assemble **and** scan the joins for junctional epitopes. |
+| `/api/construct/optimize_order` | POST | Permutation search to find epitope order minimizing junctional hits. |
+| `/api/construct/designs` | GET/POST/DELETE | Persistent vaccine design archive storage, retrieval and deletion. |
+
+```bash
+# Coverage of a chosen epitope set, across every region at once
+curl -s -X POST http://localhost:5001/api/set_coverage \
+  -H "Content-Type: application/json" \
+  -d '{
+    "job_id": "c4d7e821",
+    "peptides": ["FLPSDFFPSV", "QVPLRPMTYK"],
+    "region": "East Asia",
+    "panel": ["HLA-A*02:01", "HLA-A*11:01", "HLA-B*40:01"],
+    "all_regions": true
+  }' | jq '{coverage_pct, coverage2_pct, uncovered_alleles, by_region}'
+
+# Fewest epitopes reaching 90% of East Asia
+curl -s -X POST http://localhost:5001/api/optimize_set \
+  -H "Content-Type: application/json" \
+  -d '{"job_id": "c4d7e821", "region": "East Asia", "goal_pct": 90}' \
+  | jq '{peptides, coverage_pct, goal_met, trace}'
+
+# Assemble and audit the joins
+curl -s -X POST http://localhost:5001/api/construct/scan \
+  -H "Content-Type: application/json" \
+  -d '{
+    "peptides": ["FLPSDFFPSV", "QVPLRPMTYK"],
+    "alleles": ["HLA-A02:01", "HLA-A11:01"],
+    "linker": "AAY", "n_term": "MET"
+  }' | jq '{sequence, scan: {n_windows: .scan.n_windows, n_hits: .scan.n_hits, hits: .scan.hits}}'
 ```
 
 ---

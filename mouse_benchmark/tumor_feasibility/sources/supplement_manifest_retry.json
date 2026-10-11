@@ -1,0 +1,22 @@
+[
+  {
+    "file": "dna2021_supp.xlsx",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/8059244/bin/13073_2021_872_MOESM2_ESM.xlsx",
+    "error": "Not expected file type"
+  },
+  {
+    "file": "llc2023_supp.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/10025090/bin/mmc1.pdf",
+    "error": "Not expected file type"
+  },
+  {
+    "file": "cmt2025_supp.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/12462951/bin/ADVS-12-e08040-s001.pdf",
+    "error": "Not expected file type"
+  },
+  {
+    "file": "cmt_assay.json",
+    "url": "https://query-api.iedb.org/tcell_export?tcell_id=in.(23044448,23044468)",
+    "error": "HTTP Error 400: Bad Request"
+  }
+]

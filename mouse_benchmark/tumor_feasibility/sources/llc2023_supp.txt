@@ -1,0 +1,647 @@
+iScience, Volume 26
+
+
+
+Supplemental information
+
+
+
+Cancer vaccines based on whole-tumor lysate or
+neoepitopes with validated HLA binding outperform
+those with predicted HLA-binding afﬁnity
+Hajer Fritah, Michele Graciotti, Cheryl Lai-Lai Chiang, Anne-Laure Huguenin-
+Bergenat, Rémy Petremand, Ritaparna Ahmed, Philippe Guillaume, Julien
+Schmidt, Brian J. Stevenson, David Gfeller, Alexandre Harari, and Lana E. Kandalaft
+Figure S1. Tumor measurement in the ID8 ovarian model. Bioluminescence measurement of
+tumor burden in mice implanted intraperitoneally with 5x106 ID8 tumor cells and vaccinated i.d. every week
+for four weeks with PBS and unpulsed DC. Related to Figure 1.
+
+
+
+
+                                                                                                        1
+Figure S2. In vitro binding to H2-Db and H2-Kb of in silico predicted neoantigens.
+In silico predicted 10-mers derived from LLC1 cell line (Fig. 1a) were synthesized and tested for
+their ability to bind to H2-Db and H-2Kb using an ELISA assay. Re- folding of the α-chain and the
+β2 microglobulin-biotinylated light chain following peptide binding was monitored through
+optical density (O.D.) measurement at 245 nm. Data are reported as mean±SEM. Ova257-264
+SIINFEKL, Gp10025-33 KVPRNQDWL and Almsl LYLDSKSDTTV were used as positive
+controls (+) for H2-Kb, H2-Db and H2-Kd, respectively. PBS was used as a negative control (-);
+the black line represents the threshold for positive binding (O.D. of the negative control). Only
+peptides with an O.D. above the threshold were selected for further in vivo study. Non-binding
+peptides are highlighted in red. Related to Figure 1.
+
+
+
+
+                                                                                               2
+Figure S3. Immunogenicity of LLC1 neoantigens in vivo.
+2x105 splenic CD8+ T cells obtained one week after immunization with DCs pulsed with candidate
+neoantigens were re-challenged with the indicated recombinant peptides (1µg/mL) and analyzed
+by IFN-γ ELISpot. Data show individual mice together with mean±SEM. Positivity (black line) is
+defined as the mean IFN-γ production of the negative control peptide from another cell line (ID8
+Tmem260 LHYLHYCEL) + 3SDs). PMA and ionomycin were used as positive controls. Related
+to Figure 1.
+
+
+
+
+                                                                                              3
+                                                 In silico H-2-   In silico H-2-
+                                                                                   Validated in vitro   Immunogenicity
+   Gene and                                       Db binding       Kb binding
+                   Sequence      Allele                                             binding affinity     (SFU/ 0.2x10E6
+   Mutation                                         affinity         affinity
+                                                                                         (O.D)               cells)
+                                                   (%RANK)          (%RANK)
+
+
+    Dhrs9L146P    FGLINVTPNM     H-2-Db            1,00E-02            NA              9,78E-01            2,25E+02
+                                         b
+   Vps33aV76F      AADFKNIIFL    H-2-D             6,00E-02            NA              1,83E-01               NA
+                                         b
+    PtprfP279A    MAVGRNVLEL     H-2-D             6,00E-02            NA              2,78E-01            1,34E+02
+                                         b
+  Abhd18S210C     LAVCNWPKPM     H-2-D             6,00E-02            NA              1,06E+00            1,02E+02
+                                         b
+   Mtmr10R633I    FSIPANLHGI     H-2-D             7,00E-02            NA              1,68E-01               NA
+                                         b
+   Exoc4Q901V     VMLYNTADEL     H-2-D             9,00E-02            NA              4,72E-01            5,48E+01
+                                         b
+    Asxl1V827I    QAFDNMKEPI     H-2-D             9,00E-02            NA              2,42E-01            7,10E+01
+                                         b
+   Cdca8L80R      FALGGNRQAL     H-2-D             1,20E-01            NA              8,41E-01            7,83E+01
+                                         b
+   Clcn2F287V     FAVRNYWRGV     H-2-D             1,20E-01            NA              1,11E+00            2,38E+02
+                                         b
+  Pcdh18Q625V     SGNVENIFIM     H-2-D             1,50E-01            NA              1,84E-01               NA
+                                     b       b
+   Wdfy4V1162A    SSFVDAYGYI    H-2-D /K           1,50E-01         4,00E-01       3,18E-01 /4,4E-01       1,97E+02
+                                         b
+    Extl1Q540N    RTGMTNDFSM     H-2-D             1,70E-01            NA              1,41E-01               NA
+                                         b
+    Itpr2L651P     TAIPVTQEPI    H-2-D             1,70E-01            NA              1,56E-01               NA
+                                         b
+  Fam174aV158A    GALDTNIENM     H-2-D             1,70E-01            NA              8,17E-01            5,72E+01
+                                         b
+  Phactr4V280L    SQAMNSGTLL     H-2-D             1,70E-01            NA              1,04E+00            5,98E+01
+                                         b
+   Atp1a2I326S    ISVANVPEGL     H-2-D             1,70E-01            NA              7,73E-01            3,27E+01
+                                         b
+    MetI851M      SMGNENVVEI     H-2-D             2,00E-01            NA              2,86E-01            4,05E+01
+                                         b
+     AgaL54M      MDAVENGCAV     H-2-D             2,00E-01            NA              2,11E-01            4,62E+01
+                                         b
+  Zfp354bE188K    NSLKENSTLL     H-2-D             2,00E-01            NA              4,86E-01            7,14E+01
+                                         b
+   PtprgL1385P    FQVAKMINPM     H-2-D             2,50E-01            NA              4,33E-01            9,37E+00
+                                         b
+  St3gal5N334Y    WGHYKNIPTI     H-2-D             2,50E-01            NA              1,45E-01               NA
+                                         b
+   Pgm2V525I      IAKINQDPQV     H-2-D             2,50E-01            NA              7,04E-01            3,67E+00
+                                         b
+   Ttc17Q310V     MLGVYNHSVL     H-2-D             3,00E-01            NA              5,48E-01            4,44E+02
+                                         b
+   Olfr920V9L     MALINGSVLT     H-2-D             3,00E-01            NA              4,40E-01            3,95E+02
+                                         b
+   Pcbp4L36N      SIIGKNGETV     H-2-D             3,00E-01            NA              2,56E-01            1,42E+02
+                                         b
+    Ulk4V198I     FSITSDLWSL     H-2-D             4,00E-01            NA              5,43E-01            6,73E+01
+                                         b
+  Slc15a2S201Y     YLYINAGSLI    H-2-D             4,00E-01            NA              6,49E-01            7,58E+01
+                                         b
+    Rpa1L625T     KATVMDVTPV     H-2-D             4,00E-01            NA              1,51E-01               NA
+                                     b       b
+   Paqr6C129Y     YAFPYAAYSM    H-2-D /K           4,00E-01         3,00E-01       4,43E-01/2,99E-01       2,80E+01
+                                         b
+    Sik2Q487L     LSKVTNQLVV     H-2-D             4,00E-01            NA              3,16E-01            9,64E+01
+                                         b
+    EfhbF583V     KFNHQNVDTL     H-2-D             4,00E-01            NA              5,08E-01            1,45E+02
+                                         b
+   Kif3aR242M     KGVDGNMHVM     H-2-D             5,00E-01            NA              8,80E-01            3,85E+01
+                                         b
+  Mrps30Q254L     YSIPTKIPVM     H-2-D             5,00E-01            NA              6,88E-01            2,53E+01
+                                         b
+   Psmd2V278L     ALMLNDMELL     H-2-D             5,00E-01            NA              5,73E-01            1,29E+02
+                                         b
+   Epha2M61V      MQNIMDDVPI     H-2-D             5,00E-01            NA              1,66E-01               NA
+                                         b
+   RhdQ19V_S25I   WALVLQTAFI     H-2-D             5,00E-01            NA              1,86E-01               NA
+                                         b
+  Commd7M175I     KQTENLYIEL     H-2-D             5,00E-01            NA              5,71E-01            8,52E+01
+                                         b
+  Tmem82A92S      SALVVLEFSL     H-2-D             5,00E-01            NA              3,46E-01            2,04E+02
+
+Table S1
+                                                                                                                          4
+                                               In silico H-2-   In silico H-2-
+                                                                                 Validated in vitro   Immunogenicity
+   Gene and                                     Db binding       Kb binding
+                      Sequence     Allele                                         binding affinity     (SFU/ 0.2x10E6
+   Mutation                                       affinity         affinity
+                                                                                       (O.D)               cells)
+                                                 (%RANK)          (%RANK)
+
+   Dock8P1124T       TAPASTCPSI    H-2-Db        5,00E-01            NA              5,48E-01            1,85E+02
+                                           b
+    Bcl9R652L        MSMEGILPGM    H-2-D         5,00E-01            NA              3,68E-01            1,53E+02
+                                           b
+    Cd46W24S         KSYTFFSCSL    H-2-K            NA            1,00E-02           9,81E-01            3,51E+02
+                                           b
+  Olfr1393F61Y       TPMYYFLSHL    H-2-K            NA            4,00E-02           3,01E-01            6,58E+01
+                                           b
+  Olfr1392C64S       TPMYYFLSHL    H-2-K            NA            4,00E-02           2,64E-01            7,76E+01
+                                           b
+  Tmem101G96V        VGYVHYGDWL    H-2-K            NA            9,00E-02           1,09E+00            5,35E+01
+                                           b
+  Slc30a3A277S       STFLFSICSL    H-2-K            NA            1,00E-01           5,92E-01            9,27E+01
+                                           b
+     Zfp879          VKVFFHSSSL    H-2-K            NA            1,70E-01           6,39E-01            3,83E+01
+                                           b
+   Pank3G321W        VWNFLRVNTL    H-2-K            NA            1,70E-01           6,22E-01            3,51E+01
+                                           b
+    OxtrL226R        LISFRIWQNL    H-2-K            NA            3,00E-01           3,15E-01            8,41E+01
+                                           b
+  Slc6a15V636A       VAFIIRRCNL    H-2-K            NA            3,00E-01           8,66E-01            3,62E+01
+                                           b
+  Zscan21H409L       SNLTLHYRTL    H-2-K            NA            4,00E-01           4,93E-01            1,05E+01
+                                           b
+  Pkhd1l1A3348V      CAFHHVFSPV    H-2-K            NA            4,00E-01           9,87E-01            5,45E+01
+                                           b
+    Kat2aV192I       QIYFYLFKLL    H-2-K            NA            4,00E-01           3,27E-01            1,13E+02
+                                           b
+ Olfr1393H30Y_I37L    YILIFYSLTL   H-2-K            NA            4,00E-01           1,98E-01               NA
+                                           b
+    Tssc1Q14H        YGLEFHARAL    H-2-K            NA            4,00E-01           1,42E+00            2,72E+01
+                                           b
+   Dyrk3H282N        LESFTFRNNV    H-2-K            NA            5,00E-01           2,78E-01            5,02E+01
+                                           b
+   Myom3Q445R        QSYRFRVRAI    H-2-K            NA            5,00E-01           1,41E+00            1,38E+02
+                                           b
+ Rab3gap2N881Y       SLYTEYWKLL    H-2-K            NA            5,00E-01           1,41E-01               NA
+                                           b
+  Nup214S486Y        SVFSFGPSYF    H-2-K            NA            5,00E-01           9,55E-01            5,25E+01
+
+
+
+
+Table S1. List of in silico predicted LLC1 neoantigens validated by an in vitro binding assay
+to cognate MHC-I H2-Db and H2-Kb alleles. Mutation calling based on in silico predictions to
+MHC class I alleles was performed using NetMHCpanV3.0. In silico predictions were further
+refined based on RNA expression level and distance-to-self score. Out of 58 in silico validated
+neoantigens, 47 were effectively binding to MHC class I H2-Db and H2-Kb alleles. NA: not
+applicable. Related to Figure 1.
+
+
+
+
+                                                                                                                        5
+A
+
+
+
+
+B
+
+                                                                      NetMHCpanBA         NetMHCpan
+                                                   PRIME binding
+    GeneMutation     Sequence       Allele                            binding affinity   binding affinity
+                                                  affinity (%RANK)
+                                                                         (%RANK)            (%RANK)
+
+      Olfr920V9L    MALINGSVLT      H-2-Db           1,00E-02            7,00E-03           1,00E-02
+
+     Dhrs9L146P     FGLINVTPNM      H-2-Db           1,00E-02            8,00E-03           5,30E-02
+     Copg2M540I     RQIALNATYI      H-2-Db           1,00E-02            1,00E-02           2,70E-02
+
+     Vps33aV76F     AADFKNIIFL      H-2-Db           1,00E-02            3,60E-03           2,00E-02
+
+     Slc36a1I298V   MAIVTVLYI       H-2-Db           1,00E-02            4,80E-02           1,31E-01
+
+      Cd46W24S      KSYTFFSCSL      H-2-Kb           4,00E-02            1,10E-02           9,30E-02
+
+      EfhbF583V     FNHQNVDTL       H-2-Db           6,00E-01            1,20E-02           8,00E-03
+                                            b
+     Lrrc27G330A    SAYQNTVHA       H-2-D            2,00E+00            1,14E+00           1,30E-02
+                                            b
+      Tcn2F286L     GALQNPLMI       H-2-D            3,00E+00            2,28E+00           1,40E-02
+                                            b
+      Kcna3G65E     RVVINISEL       H-2-D            4,00E+00            2,35E+00           1,50E-02
+
+
+
+Figure S4. Efficacy of WTL-DC vaccines and neoantigen-based vaccines in lung (LLC1)
+cancer model. A. Tumor growth curves (mean±SEM) of mice implanted s.c. with 2x105 LLC1
+tumor cells (5< n<19) and vaccinated with WTL-DC or the top five peptides from each peptide
+selection pipeline (i.e. in silico prediction with NetMHCpan, NetMHCpanBA or PRIME) or in
+silico prediction prior to in vitro validation (i.e. raw in silico). Statistical analyses: non-parametric
+multiple unpaired t-test. b. description of the top five peptides from each selection pipeline. Related
+to Figure 1.
+
+
+
+
+                                                                                                            6
+                                 P=0.03
+
+
+
+
+Figure S5. Efficacy of Clcn2-DC and Clcn2 WT-DC vaccines and neoantigen-based vaccines
+in lung (LLC1) cancer model. A. Tumor growth curves (mean±SEM ) of mice implanted s.c.
+with 2x105 LLC1 tumor cells (5<n<19) and vaccinated with Clcn2-DC and Clcn2 WT-DC.
+Statistical analyses: non-parametric multiple unpaired t-test. Related to Figure 1.
+
+
+
+
+                                                                                    7
+                                In vitro MHC-I binding affinity (O.D)
+                                                                        2.5
+
+
+                                                                        2.0
+
+
+                                                                        1.5
+
+
+                                                                        1.0
+
+
+                                                                        0.5
+
+
+                                                                        0.0
+
+
+
+
+                                                                                        T
+
+
+
+
+                                                                                                     rl)
+                                                                                       W
+
+
+
+
+                                                                                                     ct
+                                                                                   5c
+
+
+
+
+                                                                                                 (+
+                                                                                  c8
+
+
+
+
+                                                                                                s1
+                                                                              cd
+
+
+
+
+                                                                                            lm
+                                                                              C
+
+
+
+
+                                                                                            A
+Figure S6. In vitro binding of the wild-type peptide version of Ccdc85cYIRPFETKVK with sequence
+YIRPLETKVK in comparison to Alms control with sequence SYLDSKSDTTV. Related to Figure
+2.
+
+
+
+
+                                                                                                           8
+Figure S7. In silico binding predictions of immunogenic and non-immunogenic peptides from
+WTL-DC vaccinated OC patients (n=5) from Tanyi, et al.[S1] Relative in silico binding to
+HLA-I alleles of immunogenic and non- immunogenic peptides from the six patients for which
+peptide manufacturing was possible (as reported in Tanyi, et al, Table S2). Statistical analyses:
+Non-parametric One- Way ANOVA (Kruskal Wallis-test), n.s: P>0.05, NA: not applicable.
+Related to Figure 2.
+
+
+
+
+                                                                                               9
+Table S2
+
+
+                                                                              Validated in
+                    Gene and                              In silico binding
+    PATIENT ID                       Sequence    Allele                       vitro binding    Immunogenicity
+                    Mutation                                affinity [nM]*
+                                                                              affinity (O.D)
+
+
+                    Rnf224D87G      AMLDLGLAAF   B15:01      1,28E+01           1,78E+00             N
+
+                   Sema3gP412A      LQFARAHALM   B15:01      1,97E+01           1,73E+00             N
+
+                 Loc100132247H62Y   YVIIAFPTSY   B15:01      1,82E+01           1,62E+00             N
+
+                  Slc25a48V200M     PYMFLSEWI    A24:02      2,91E+01           1,43E+00             N
+
+                  Slc25a48V200M      LYFIPYMFL   A24:02      2,18E+02           1,37E+00             Y
+
+                   Sema3gP412A      QFARAHALMF   A24:02      1,02E+02           1,06E+00             Y
+
+                     Fpr2D71V       CYLNLALAVF   A24:02      3,05E+01           6,30E-01             Y
+
+                     Cd1cF34L        HVIQILSFV   A69:01      6,24E+00             NA*                Y
+      207 (8)        Fpr2D71V       AVFSFTATL    A69:01      9,30E+01             NA*                Y
+
+                    Hcar1V136I       VAAGIICTL   C03:03      9,58E+00             NA*                N
+
+                     Fpr2D71V       YLNLALAVF    B15:01      1,12E+01             NA*                N
+                   Csnk1eL102V       FSVKTVLLL   C03:03      1,39E+01             NA*                N
+
+                    Wars2P266L      FTSEVTYDL    A69:01      2,44E+01             NA*                N
+
+                   Sema3gP412A      LQFARAHAL    B15:01      1,97E+01             NA*                N
+                     Fpr2D71V       LAVFSFTATL   C03:03      3,37E+01           1,33E-01             Y
+
+                   Sema3gP412A      FARAHALMF    B15:01      5,58E+01             NA*                Y
+
+                     NMIR147G       NSGVGFQVYV   A69:01      3,28E+01             NA*                N
+                   Gpr125T208M      IMVRDTRCVY   B15:01      1,06E+01           1,75E+00             N
+
+                    Heatr6S515N     IACNIRELHR   A31:01      7,53E+01           1,47E+00             Y
+
+                    Znf606S172F     YIWDDPWFFR   A31:01      1,88E+01           1,47E+00             N
+
+                   Celsr3W2483R     RSKAICVQR    A31:01      5,45E+00           1,45E+00             N
+
+                    Wnk3L1260V      GLSFTCPSV    A02:01      2,08E+01           1,34E+00             N
+
+                    Birc6G4169D     FLRLPDYAEV   A02:01      5,79E+00           1,32E+00             N
+                   Trim26G497W      ALDYEWGTV    A02:01      5,15E+02           1,22E+00             Y
+
+                     Jak2H163L      FVLGWIKVPV   A02:01      6,64E+00           9,89E-01             N
+
+                    Wnk3L1260V      FGLSFTCPSV   A02:01      1,53E+01           9,66E-01             N
+     209 (10)
+                     PigbI230V       FVIRPTAVI   C03:03      1,22E+01           6,18E-01             N
+
+                     Ebf4I510S      FASMPSSPPL   C03:03      3,04E+00           6,08E-01             N
+
+                     Ebf4I510S      TATSPFASM    C03:03      5,44E+00           5,11E-01             N
+                     Ebf4I510S      ASMPSSPPL    B15:01      4,03E+02             NA*                Y
+
+                   Trim26G497W      LDYEWGTVTF   B15:01      2,20E+03           6,55E-01             Y
+
+                    Dchs1P141L      HALAFPQAR    A31:01      3,93E+01           1,39E+00             Y
+                    Heatr6S515N      FSVMIACNI   C03:03      3,75E+02           1,80E-01             Y
+
+                     Ebf4I510S      FASMPSSPP    C03:03      6,63E+02           4,40E-01             Y
+
+                    Chd3L542V       YHIHCVNPPL   C03:03      1,78E+03           2,62E-01             Y
+
+
+
+.
+
+
+
+
+                                                                                                                10
+                                                   In silico
+              Gene and                             binding     Validated in vitro binding
+PATIENT ID                    Sequence    Allele                                            Immunogenicity
+              Mutation                              affinity         affinity (O.D)
+                                                     [nM]*
+
+              Izumo4A202V    HRATPVFLV    C06:02   4,55E+01            1,45E+00                   N
+
+             Mybpc2L688V     RWMKVNFEVF   A24:02   6,05E+00            1,32E+00                   N
+
+              Tnpo2G866S      MFYKILHSF   A24:02   2,94E+01            1,24E+00                   N
+
+              Mark3D551Y     ATPYRIRFPR   A11:01   2,97E+01            8,44E-01                   N
+
+              Muc12T3387I    ITFQSWPNSK   A11:01   2,58E+01            7,39E-01                   N
+
+  210 (11)   Capn10A498T      LSAIRTVAK   A11:01   4,73E+01            7,30E-01                   N
+
+              Oxnad1V78L     AASESPSLK    A11:01   4,99E+01            6,75E-01                   N
+
+             Capn10A498T     SLSAIRTVAK   A11:01   2,75E+01            4,84E-01                   N
+
+              Als2clK131E    SEYWRGQREA   B45:01   3,74E+01               NA*                     N
+
+              CDH10V235L     REQYQLVIQA   B45:01   4,32E+01               NA*                     N
+
+              SEPT9R289H     SILEQMHRK    A11:01   1,65E+01            5,00E-01                   Y
+              Or10g7G20A      ALDAPLFGI   A02:06   2,76E+01            1,30E+00                   N
+
+              Slc35g5G46D    ALLDGGLPA    A02:06   2,82E+01            1,28E+00                   N
+
+               Or2l8F199L    WVYEGTVLL    A02:06   7,29E+00            1,27E+00                   N
+
+               HhatL75F      KQWLVWLFL    A02:06   4,08E+01            1,24E+00                   Y
+              Or2l8G212A     FPFIAISCSY   B35:01   3,84E+00            1,11E+00                   N
+
+  302(13)     Zfhx2T2270S    QSAGPGRPL    C03:03   2,81E+01            6,69E-01                   N
+
+              Lilra6V341M    VASGENMTL    C03:03   1,43E+01            5,82E-01                   N
+
+               Or2l8F199L     VLLSATIFL   A02:06   1,80E+01            4,12E-01                   N
+
+               Or2l8F199L     LLSATIFLV   A02:06   6,58E+00            3,77E-01                   N
+
+               Or2l8F199L    VLLSATIFLV   A02:06   2,06E+01            2,47E-01                   N
+
+              Hsdl2G308A     QPKPRSAAV    B07:02   1,83E+01            1,97E+00                   N
+
+              Znf764R159H    APHRGHPSL    B07:02   4,01E+00            1,93E+00                   N
+
+              Ccdc8G222V     APRAGPGVV    B07:02   6,08E+00            1,93E+00                   N
+
+             Col11a2P1496R    RPGEVIQPL   B07:02   1,19E+01            1,82E+00                   N
+              Hsdl2G308A     QPKPRSAAV    B07:02   1,83E+01            1,97E+00                   N
+
+             Zcchc11P1265H   GRKLFGTHFY   B27:05   1,47E+02            1,77E+00                   Y
+               NfibP160L     SPHCTNLAL    B07:02   4,86E+00            1,69E+00                   N
+
+              Slc5a5V59M     RRLAALPMGL   B27:05   7,96E+00            1,67E+00                   N
+
+              Tnrc6aP312Q    GQWGFSHGA    B27:05   1,58E+03            1,60E+00                   Y
+  304(15)     Or2t3C132Y      YRPLHYPLL   B27:05   7,25E+02            1,50E+00                   Y
+              CenpiR177C     AMFDFIDCK    A11:01   1,32E+01            1,01E+00                   N
+
+              Or2t3C132Y     RYAAVYRPL    C07:02   1,27E+02            9,69E-01                   Y
+              Or2t3C132Y     YRPLHYPLLM   C07:02   5,33E+01            9,67E-01                   Y
+             Zcchc11P1265H   GTHFYPLIGR   A11:01   7,01E+01            7,02E-01                   Y
+             Dscaml1K1506M   SLMCGTWYK    A11:01   5,36E+00            5,53E-01                   N
+
+               NaaaD347V     TVMSAGSPVK   A11:01   1,26E+01            5,32E-01                   N
+
+               Tp53A159V     RVRVMAIYK    A11:01   2,29E+01            4,04E-01                   N
+
+              Or2t3C132Y     VYRPLHYPL    C07:02   1,07E+02            1,45E+00                   Y
+
+
+Table S2. Description of neoantigens from WTL-DC vaccinated OC patients (n=5) from
+Tanyi, et al. [S1] In silico predictions (as reported in Tanyi, et al.) were performed using
+                                                                                                             11
+NetMHCpanV4.0. In vitro binding assay as described in methods. *data from Tanyi, et al. NA:
+Not available due to the lack of HLA allele for the in vitro binding assay. Y/N: yes/no. Related to
+Figure 2.
+
+
+
+
+                                                                                                12
+Table S3
+
+
+PATIENT ID &                                                                Validated in vitro
+                 Gene and                               In silico binding
+  (clinical                       Sequence     Allele                        binding affinity
+                 Mutation                                 affinity [nM]*
+ response)                                                                        (O.D)
+
+
+                 Ros1I1530K       STYMIQKAV    A32:01      1,18E+03             1,08E+00
+
+                  Nf1T522A        TQGSAAELI    A24:02      2,15E+03             1,38E+00
+   1 (PD)
+                 GnasQ237H       KWIHCFNDV     A24:02      1,45E+03             1,99E+00
+
+                 GnasQ237H        HCFNDVTAI    A32:01      1,32E+03             2,46E+00
+
+                Map2k4I367T       LLKHPFTLM    A30:01      2,26E+03             2,50E+00
+
+   3 (SD)       Map2k4I367T      KELLKHPFTL    A02:01      6,00E+01             1,40E+00
+
+                Map2k4I367T      FTLMYEERAV    A02:01      7,60E+01             2,80E+00
+
+                  EgfrL858R       KITDFGRAK    A11:01      1,63E+02             2,70E+00
+
+                  EgfrL858R       TDFGRAKLL    C06:02      6,24E+02             6,00E-01
+   5 (PR)
+                  EgfrL858R      VKITDFGRAK    A11:01      6,44E+02             1,70E+00
+
+                  EgfrL858R       ITDFGRAKL    C01:02      1,83E+03             2,46E+00
+
+               Tp53R248L_Q331E   SSCMGGMNLR    A11:01      5,60E+01             2,38E+00
+                Epha3Q508E        TIYVFEIRAR   A11:01      3,73E+02             6,60E-01
+   6 (SD)
+                 Jak2G180W       QEECLWMAV     B40:02      1,72E+02             2,30E+00
+
+                 Jak2G180W       EECLWMAVL     B40:02      2,15E+02             2,80E+00
+                 Tp53R267G       LLGGNSFEV     A02:06      2,60E+01             2,55E+00
+
+   7 (SD)       Rock1N163K       YMPGGDLVKL    A02:06      9,30E+01             2,50E+00
+
+                  Idh2I269M       RFKDIFQEM    C14:02      1,30E+02             2,01E+00
+                  EgfrL858R       KITDFGRAK    A11:01      1,63E+02             2,70E+00
+
+                  EgfrL858R      HVKITDFGRAK   A11:01      4,20E+03             2,82E+00
+   8 (PR)
+               Tp53P152L_M237I   STPLPGTRVR    A11:01      1,19E+03             2,48E+00
+               Tp53P152L_M237I   NYICNSSCM     C07:02      1,24E+03             2,79E+00
+
+                Aqp12aL28R       RLPVGAYEV     A02:01      3,30E+01             2,77E+00
+
+                Aqp12aL28R       KARLPVGAY     A03:01      2,25E+03             2,60E+00
+
+                Aqp12aL28R       RASKARLPV     B08:01      2,95E+03             2,50E+00
+
+   11 (PR)      Aqp12aL28R       RRASKARLP     C06:02      9,91E+02             6,60E-01
+
+                Aqp12aL28R       ARRASKARL     C07:02      2,32E+03             2,80E+00
+
+                Aqp12aL28R       ARLPVGAYEV    A02:01      3,08E+02             2,30E+00
+
+                  EgfrH773L      VMASVDNPL     A02:01      3,00E+01             2,74E+00
+
+                  EgfrH773L       KITDFGRAK    A11:01      1,63E+02             2,70E+00
+
+                  EgfrH773L       HVKITDFGR    A31:01      1,00E+01             2,80E+00
+
+                  EgfrH773L       RILKVTEFK    A11:01      1,20E+01             2,78E+00
+
+                  EgfrH773L      RILKVTEFKK    A11:01      2,40E+01             2,50E+00
+
+   14 (PR)        EgfrH773L      LRILKVTEFK    A11:01      6,20E+01             2,49E+00
+
+                 Brca2I2840V      TSSGLYVFR    A31:01      1,00E+01             2,60E+00
+
+                 Brca2I2840V     GLYVFRNER     A31:01      1,60E+01             2,63E+00
+
+                 Brca2I2840V     KTSSGLYVFR    A31:01      8,00E+00             2,74E+00
+
+                 Brca2I2840V     EKTSSGLYVFR   A31:01      2,10E+01             2,67E+00
+
+               EgfrH773L_V774M   VMASVDNPL     A02:01      3,00E+01             2,73E+00
+   22 (PR)
+               EgfrH773L_V774M   NPLMCRLLGI    A02:01      9,40E+01             2,80E+00
+
+                                                                                                 13
+               Fgfr1R734W   MMMWDCWHA         A02:01         3,00E+00         2,69E+00
+
+               Fgfr1R734W   YMMMWDCWHA        A02:01         4,00E+00         2,80E+00
+
+               Fgfr1R734W   MMMWDCWHAV        A02:01         3,00E+00         2,60E+00
+
+               Fgfr1R734W   YMMMWDCWHAV       A02:01         6,00E+00         2,50E+00
+
+
+
+Table S3. Description of neoantigens from peptide vaccinated NSCLC patients (n=9) from
+Li, et al. [S2] In silico predictions (*as reported in Li, et al.) were performed using
+NetMHCpanV4.0. In vitro binding assay as described in methods. PD: progressive disease. PR:
+partial response. SD: stable disease. Related to Figure 2.
+
+
+
+
+                                                                                         14
+                                  Allele           Positive control
+                                   A*02:01          RLSSPLHFV
+                                   A*02:06          RLDYFMFAV
+                                   A*11:01          ASNASSAAK
+                                   A*24:02          LWPVTLACF
+                                   A*31:01          GVQSHVCVR
+                                   B*07:02           RPASPAAKL
+                                   B*15:01           VQTFLQISF
+                                   B*27:05         GRKLFGTHFY
+                                   B*35:01          ECSNLLLQY
+                                   C*03:03          QSAGPGRPL
+                                   C*06:02           FLRNLVPRT
+                                   C*07:02          CRVLCCYVL
+
+
+
+Table S4. Positive controls used for the in vitro validation assay of peptides from Tanyi et al.
+[S1] and Li et al. [S2]. Related to Figure 2.
+
+
+
+
+                                                                                             15
+References
+
+[S1] Tanyi, J.L., Bobisse, S., Ophir, E., Tuyaerts, S., Roberti, A., Genolet, R., Baumgartner, P.,
+     Stevenson, B.J., Iseli, C., Dangaj, D., et al. (2018). Personalized cancer vaccine effectively mobilizes
+     antitumor T cell immunity in ovarian cancer. Sci Transl Med 10. 10.1126/scitranslmed.aao5931.
+
+[S2] Li, F., Deng, L., Jackson, K.R., Talukder, A.H., Katailiha, A.S., Bradley, S.D., Zou, Q., Chen, C.,
+     Huo, C., Chiu, Y., et al. (2021). Neoantigen vaccination induces clinical and immunologic responses
+     in non-small cell lung cancer patients harboring EGFR mutations. J Immunother Cancer 9.
+     10.1136/jitc-2021-002531.
+
+
+
+
+                                                                                                          16
+

@@ -1,0 +1,120 @@
+{
+  "test_frozen_prior_pooled": {
+    "replicates": 1000,
+    "valid_replicates": 1000,
+    "groups_per_study": [
+      44,
+      20
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.1306654404914898,
+        0.08706740794897222
+      ],
+      "BA_Rank_Score": [
+        -0.15986357947329077,
+        0.023087383503783785
+      ],
+      "Mouse_Composite": [
+        -0.13435531006932774,
+        0.07998483617595141
+      ],
+      "LR_binding": [
+        -0.1367208151508559,
+        0.003564119326512976
+      ],
+      "LR_tumor_expanded": [
+        -0.11740326433585692,
+        0.12429674630473321
+      ]
+    }
+  },
+  "test_frozen_prior_expanded_model": {
+    "replicates": 1000,
+    "valid_replicates": 1000,
+    "groups_per_study": [
+      44,
+      20
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.15474170355277095,
+        0.10310984224940424
+      ],
+      "BA_Rank_Score": [
+        -0.17897297084473018,
+        0.0423043369015951
+      ],
+      "Mouse_Composite": [
+        -0.15263997970447712,
+        0.09945806411033302
+      ],
+      "LR_binding": [
+        -0.17916894100623137,
+        0.04866601829368163
+      ]
+    }
+  },
+  "test_capietto_holdout": {
+    "replicates": 1000,
+    "valid_replicates": 1000,
+    "groups_per_study": [
+      210
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.1793867059849294,
+        0.17368364802335265
+      ],
+      "BA_Rank_Score": [
+        -0.20918744928937882,
+        0.07043357656728763
+      ],
+      "Mouse_Composite": [
+        -0.14032165339691816,
+        0.2154857357591928
+      ],
+      "LR_binding": [
+        -0.10419847283073799,
+        0.08540338162788945
+      ],
+      "LR_tumor_expanded": [
+        -0.14665875667096853,
+        0.09645828638792492
+      ]
+    }
+  },
+  "test_capietto_holdout_expanded_model": {
+    "replicates": 1000,
+    "valid_replicates": 1000,
+    "groups_per_study": [
+      210
+    ],
+    "method": "paired sequence/source-group bootstrap, within fixed studies",
+    "scope": "conditional candidate sampling only; not new-study uncertainty",
+    "primary_minus_comparator_AP_95": {
+      "Mouse_Base": [
+        -0.14448306020859986,
+        0.19689874204744798
+      ],
+      "BA_Rank_Score": [
+        -0.17327473734591822,
+        0.09234225219074124
+      ],
+      "Mouse_Composite": [
+        -0.12037315282731999,
+        0.24001229050673525
+      ],
+      "LR_binding": [
+        -0.1231993874313656,
+        0.15553822383463375
+      ]
+    }
+  }
+}

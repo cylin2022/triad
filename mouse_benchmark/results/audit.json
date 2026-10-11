@@ -1,0 +1,8 @@
+{
+  "eligible_pairs_before_conflicts": 6626,
+  "verified_pairs": 6379,
+  "all_assay_labels_and_provenance_match": true,
+  "prediction_input_hashes_match": true,
+  "production_Calis_and_composite_parity_all_pairs": true,
+  "precision_sensitivity": "post-hoc numerical audit, not a trained model"
+}

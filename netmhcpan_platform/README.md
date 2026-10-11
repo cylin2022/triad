@@ -2,7 +2,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/lsbnb/triad.svg)](https://hub.docker.io/r/lsbnb/triad)
 [![Docker Image](https://img.shields.io/badge/docker-lsbnb%2Ftriad-blue.svg)](https://hub.docker.io/r/lsbnb/triad)
-[![Platform Version](https://img.shields.io/badge/version-v1.2-green.svg)](https://hub.docker.io/r/lsbnb/triad)
+[![Platform Version](https://img.shields.io/badge/version-v2.0-green.svg)](https://hub.docker.io/r/lsbnb/triad)
 [![Port Requirement](https://img.shields.io/badge/port%20mapping-5001%3A5001-important.svg)](https://hub.docker.io/r/lsbnb/triad)
 
 > ⚡ **CRITICAL DOCKER PORT MAPPING REQUIREMENT (`5001:5001`):**  
@@ -29,23 +29,241 @@ Developed by the **Laboratory of Systems Biology and Bioinformatics (LSBNB)**, I
 - **Physicochemical TCR Contact Feature Evaluation**: Evaluates T-cell receptor contact amino acid properties to predict immune activation potential and candidate concordance.
 - **Population-Aware Coverage**: Computes non-redundant population coverage across **22 selectable populations** — Taiwan island-wide plus each of its Han and Indigenous groups, East Asia, Europe and World — using a locus-aware Hardy–Weinberg model.
 - **Multimodal Candidate Tiering**: Automatically categorizes candidates into **Tier 1** (High priority), **Tier 2** (Secondary), and **Tier 3** based on a harmonized 4-dimensional Composite Priority Index.
+- **Multi-Epitope Vaccine Designer Studio** *(v2.0)*: Complete construct engineering suite — greedy submodular basket auto-fill (ΔCov), string-of-beads linker assembly, automated junctional order optimization minimizing off-target presentation, DNA back-translation, mRNA synthesis profiling (GC%, charge at pH 7.4, homopolymer check, CAI), and persistent design archive.
+- **Preclinical Mouse H-2 & Tumor Neoantigen Benchmark Suite** *(v2.0)*: Dedicated species-aware mode (Clinical Human HLA vs Murine H-2: C57BL/6, BALB/c, C3H), allele-specific anchor masking (H-2-Kb/Db), curated benchmark across 329+ tumor neoantigens (Smith 2019, Fernando 2019, Capietto 2020 prospective cohort N=216), and verified empirical biophysical baseline standards.
 - **In-Memory RAM Disk Acceleration Engine**: Parallel multi-core batch processing using `/dev/shm` for zero-disk-latency temporary sequence ingestion.
 
 ---
 
-## 🆕 What's New in v1.2
+## 🆕 What's New in v2.0
 
-### 🇹🇼 Taiwan Demographic Genetics & Locus-Aware Population Coverage
+TRIAD v2.0 introduces two major scientific and engineering pillars:
 
-v1.2 upgrades the population genetics framework:
+### 💉 Pillar 1: Multi-Epitope Vaccine Designer Studio
 
-| Addition | What it does |
+**Vaccine design is set-level, not peptide-level.** Standard screening ranks isolated peptide:HLA pairs; vaccine engineering requires a coherent **epitope set** that maximizes population coverage while preventing off-target junctional immunogenicity:
+
+| Feature | Description |
 | :--- | :--- |
-| **🇹🇼 Taiwan Populations** | Taiwan is now **15 selectable populations** instead of a silent fallback to East Asia: island-wide, Han, Minnan, Hakka, Indigenous, the 11 recognised peoples individually, and Pingpu. |
-| **Locus-Aware Model** | Alleles at the same locus are summed before the Hardy–Weinberg square instead of multiplied as independent events, preventing under-estimation within loci. |
-| **Lower Bound Reporting** | Alleles with no frequency record contribute 0 and are explicitly reported rather than receiving fabricated frequencies. |
-| **AFND Data Quality Fixes** | Corrected thousand-separator parsing in AFND sample sizes, recovering 99.0% of sampled individuals (including DKMS and NMDP registries). |
+| **Design Target &amp; Auto-Panel** | Pick target population (World, East Asia, Europe, or 15 Taiwan groups) and coverage goal (e.g., 90%); auto-builds the minimal high-frequency allele panel. |
+| **Interactive Epitope Basket** | Instant set-level ≥1-hit and ≥2-hit redundancy calculations, showing remaining uncovered alleles in real time. |
+| **Marginal Gain (ΔCov)** | Dynamic percentage points each candidate adds on top of the current basket, allowing promiscuous Tier 2 epitopes to outrank redundant Tier 1 hits. |
+| **Greedy Submodular Auto-Fill** | One-click auto-completion of the optimal epitope set reaching the coverage target with minimal peptides. |
+| **String-of-Beads Assembly** | Configurable cleavable linkers (AAY, GPGPG, KK, EAAAK) and terminal tags (His6, FLAG, HA, TAT, none). |
+| **Junctional Epitope Scanner** | Full NetMHCpan fold-back audit flagging any off-target neoepitopes formed across junctional boundaries. |
+| **Junctional Order Optimizer** | Heuristic permutation search minimizing junctional off-target binders to enhance construct safety. |
+| **mRNA &amp; DNA Physicochemical Profiling** | In silico evaluation of length, molecular weight, GRAVY, pI, net charge at pH 7.4, GC% content, homopolymer risk, and CAI. |
+| **Design History &amp; Multi-Format Export** | Persistent design archive with JSON, FASTA, DNA, and comprehensive CSV report downloads. |
 
-### Frequency-Table Provenance
+### 🐭 Pillar 2: Preclinical Mouse H-2 Suite &amp; Tumor Neoantigen Benchmark
 
-All 22 population tables live in `data/allele_frequencies.json`, regenerated and re-verified from one public input by `tools/build_afnd_tables.py`. Source: [slowkow/allelefrequencies](https://github.com/slowkow/allelefrequencies) mirror of AFND.
+Comprehensive integration of preclinical mouse immunology models and experimentally validated neoantigen datasets:
+
+| Feature | Description |
+| :--- | :--- |
+| **Species-Aware Mode Separation** | Clean separation of Clinical Human (HLA) and Preclinical Murine (H-2) pipelines; human demographic genetics are safely bypassed in mouse mode. |
+| **Inbred Strain Presets** | One-click presets for C57BL/6 (`H-2-Kb`, `H-2-Db`), BALB/c (`H-2-Kd`, `H-2-Dd`, `H-2-Ld`), and C3H (`H-2-Kk`). |
+| **Murine Anchor Masking** | Tailored TCR-contact feature extraction masking strain-specific MHC anchor residues (Kb: p5 and p8/p9; Db: p5 and p9). |
+| **Curated Neoantigen Benchmarks** | Standardized datasets across Smith 2019, Fernando 2019, and the large-scale prospective Capietto 2020 cohort (PMC7144530, N=216) with strict zero-leakage cross-validation. |
+| **Biophysical Gold Standard** | Empirical validation demonstrating NetMHCpan BA rank as the superior prospective predictor of murine CD8+ immunogenicity (AP 0.882 &amp; 0.300). |
+
+### Frequency-table provenance
+
+All 22 population tables live in `data/allele_frequencies.json`, regenerated and re-verified from one
+public input by `tools/build_afnd_tables.py` (`--verify` diffs the shipped file against a fresh build,
+`--legacy-delta` shows how much the v1.2 fixes moved v1.1's numbers). Source: the
+[slowkow/allelefrequencies](https://github.com/slowkow/allelefrequencies) mirror of AFND.
+
+**Taiwan is not one population.** Its groups differ far too much to share a table — `A*24:02` is 0.309 in
+the Minnan entries and **0.863** in the Paiwan ones, Saisiyat carry `C*07:02` at 0.667, Tao carry
+`B*15:25` at 0.400 where no other group does — so each is selectable in its own right, and the
+island-wide table is an explicit 97.5% Han / 2.5% Indigenous demographic blend rather than a pooled
+average (pooling would give Indigenous peoples 26% of the table against ~2.5% of the population).
+Several single-people tables rest on 30–106 individuals and the UI warns before you design on them.
+
+**Two data-quality bugs fixed.** AFND writes large sample sizes with thousands separators; parsing `n`
+with a plain `float()` silently discarded those records — 36.6% of rows and **99.0% of all sampled
+individuals**, including the DKMS and NMDP registries, so v1.1's World and Europe tables were built from
+the ~1% of the data with *n* < 1,000 (World `A*02:01` 0.1519 → 0.2393 once fixed). With the parser fixed,
+pooled regions now also require an allele to be reported by ≥ 3 populations, because a single mis-entered
+AFND record (`C*01:57` at 0.1996 in one cohort, nowhere else) was otherwise enough to push a rare allele
+into the World top-18. Taiwan and all its subgroups are unaffected by both. Also worth knowing:
+**East Asia does not include Korea**. Details in [USAGE.md](USAGE.md#frequency-table-provenance).
+
+---
+
+## 🚀 Quick Start Guide
+
+### 1. Pull Image from Docker Hub
+
+```bash
+docker pull lsbnb/triad:latest
+# or
+docker pull lsbnb/mhcpan_shell:latest
+```
+
+---
+
+### 2. Launch Container with Port Mapping `5001:5001`
+
+#### Option A: Command Line Interface (CLI)
+
+Run the container mapping host port `5001` to container port `5001`:
+
+```bash
+docker run -d \
+  --name triad_app \
+  -p 5001:5001 \
+  --restart unless-stopped \
+  lsbnb/triad:latest
+```
+
+Open your browser and navigate to:  
+👉 **`http://localhost:5001`** (or `http://127.0.0.1:5001`)
+
+---
+
+#### Option B: Docker Desktop Graphical Interface (Windows / macOS GUI Users)
+
+If you use **Docker Desktop** GUI:
+
+1. Click **Run** on the `lsbnb/triad:latest` image.
+2. Expand **Optional settings** &rarr; **Ports**.
+3. Fill in **`5001`** in the **Host port** field (which maps to `:5001/tcp`).
+4. Click **Run**.
+
+> ⚠️ **IMPORTANT:** Leaving **Host port** empty causes Docker Desktop to assign a random host port, making `http://localhost:5001` inaccessible.
+
+![Docker Desktop Host Port 5001 Setup](https://raw.githubusercontent.com/cylin2022/triad/main/static/docker_desktop_port_setting.png)
+
+---
+
+## 🔑 NetMHCpan-4.2 Academic Licensing & Setup Guide
+
+`netMHCpan-4.2` is academic-licensed software copyrighted by **DTU Health Tech (Technical University of Denmark)**. Its academic license explicitly prohibits third-party redistribution of binary executables and model parameters (`"not give the program to third parties"`).
+
+For legal compliance, the public Docker image (`lsbnb/triad`) ships as a clean application shell **without** pre-bundled DTU files. Each user must obtain their own copy directly from DTU.
+
+### Step 1: Request Linux Package from DTU
+1. Visit the [Official DTU Download Portal](https://services.healthtech.dtu.dk/services/NetMHCpan-4.2/).
+2. Request the Linux tarball package (filename format: `netMHCpan-4.2.Linux.tar.gz`).
+
+### Step 2: Configure Container (Choose Method 1 or Method 2)
+
+#### Method 1: Host Directory Volume Mount (Server / CLI)
+Extract the package on your host machine and mount it to `/opt/netMHCpan-4.2`:
+
+```bash
+# 1. Unpack DTU package on host
+tar -xzvf netMHCpan-4.2.Linux.tar.gz
+
+# 2. Start container with volume mount and port mapping 5001:5001
+docker run -d \
+  --name triad_app \
+  -p 5001:5001 \
+  -v /dev/shm:/dev/shm \
+  -v "$(pwd)/netMHCpan-4.2:/opt/netMHCpan-4.2" \
+  lsbnb/triad:latest
+```
+
+#### Method 2: Web Upload Wizard (No Terminal Access Needed)
+1. Start the container with port mapping `5001:5001`:
+   ```bash
+   docker run -d --name triad_app -p 5001:5001 lsbnb/triad:latest
+   ```
+2. Open **`http://localhost:5001/setup`** in your web browser.
+3. Upload your `netMHCpan-4.2.Linux.tar.gz` file.
+4. Confirm license compliance and click **Upload & Install**. The platform automatically extracts, verifies, tests, and activates the engine.
+
+---
+
+## 🐳 Docker Compose Deployment
+
+Create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+
+services:
+  triad:
+    image: lsbnb/triad:latest
+    container_name: triad_app
+    ports:
+      - "5001:5001"
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./netMHCpan-4.2:/opt/netMHCpan-4.2
+    restart: unless-stopped
+```
+
+Run with:
+
+```bash
+docker compose up -d
+```
+
+---
+
+## 📊 Output Data Format & Column Ordering
+
+Output tables and exported CSV / Excel reports strictly follow standard NetMHCpan ordering with **Protein ID / Identifier** positioned in the first column:
+
+| Col # | Field | Label | Description |
+| :--- | :--- | :--- | :--- |
+| 1 | `Identity` | **Protein ID / Identifier** | FASTA header sequence ID or source protein identifier (e.g. `sp\|P0DTC2\|SPIKE_SARS2` or `PEPLIST`). |
+| 2 | `Pos` | Position | Amino acid starting position in the source protein. |
+| 3 | `MHC` | HLA Allele | Targeted HLA allele (e.g., `HLA-A*02:01`). |
+| 4 | `Peptide` | Peptide Sequence | Predicted k-mer peptide amino acid sequence. |
+| 5 | `Core` | Core Motif | Binding core motif predicted by NetMHCpan. |
+| 6 | `Score_EL` | Presentation Score | Raw eluted ligand presentation probability (`0.0000 ~ 1.0000`). |
+| 7 | `Rank_EL` | %Rank EL | Presentation percentile rank ($\le 0.5\%$: Strong Binder, $\le 2.0\%$: Weak Binder). |
+| 8 | `Affinity_nM` | Binding IC50 (nM) | Quantitative IC50 binding affinity in nanomolar ($<50\text{ nM}$: High affinity). |
+| 9 | `Immunogenicity_Score` | T-Cell Immunogenicity | Calis et al. physicochemical TCR contact activation score ($>0.0$: Active). |
+| 10 | `Composite_Score` | Composite Priority Index | 4-Dimensional harmonized priority index (`0.0000 ~ 1.0000`). |
+| 11 | `Tier` | Decision Priority Tier | **Tier 1** (High priority), **Tier 2** (Secondary), **Tier 3** (Low priority). |
+| 12 | `BindLevel` | Binder Category | `SB` (Strong Binder), `WB` (Weak Binder), or empty. |
+
+---
+
+## 🌐 REST API Usage Examples
+
+### 1. Check System Specs & RAM Disk Status
+```bash
+curl -s http://localhost:5001/api/system_resources | jq .
+```
+
+### 2. Submit Prediction Payload
+```bash
+curl -s -X POST http://localhost:5001/api/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "mode": "peptide",
+    "input": "AAAWYLWEV\nAEFGPWQTV\nYLLPAIVHI\nGILGFVFTL",
+    "alleles": ["HLA-A*02:01", "HLA-B*07:02"],
+    "include_ba": true
+  }'
+```
+
+### 3. Download Filtered CSV Report
+```bash
+curl -O http://localhost:5001/api/download/<JOB_ID>/csv
+```
+
+---
+
+## 🔬 Literature & References
+
+1. **NetMHCpan Presentation Model**:  
+   Reynisson B, et al. *NetMHCpan-4.1 and NetMHCIIpan-4.0: improved predictions of MHC antigen presentation.* **Nucleic Acids Res.** 2020;48(W1):W449-W454. [doi:10.1093/nar/gkaa379](https://doi.org/10.1093/nar/gkaa379)
+2. **T-Cell Immunogenicity Model**:  
+   Calis JJ, et al. *Properties of MHC Class I Presented Peptides That Inspire Immunogenicity.* **PLoS Comput Biol.** 2013;9(10):e1003266. [doi:10.1371/journal.pcbi.1003266](https://doi.org/10.1371/journal.pcbi.1003266)
+3. **Population Coverage Database**:  
+   Gonzalez-Galarza FF, et al. *Allele frequency net database (AFND) 2020 update.* **Nucleic Acids Res.** 2020;48(D1):D783-D788. [doi:10.1093/nar/gkz1029](https://doi.org/10.1093/nar/gkz1029)
+
+---
+
+## 🏛️ Maintained By
+
+**Laboratory of Systems Biology and Bioinformatics (LSBNB)**  
+Institute of Information Science, Academia Sinica, Taipei, TAIWAN.  
+Web: [https://hub.docker.io/r/lsbnb/triad](https://hub.docker.io/r/lsbnb/triad)

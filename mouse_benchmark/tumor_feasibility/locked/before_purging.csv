@@ -1,0 +1,183 @@
+Peptide,WT,MHC,Label,PMID,Reference_ID,Tumor_Model,Context,Split,Source_Tokens,Mutation_Name,Restriction_Evidence,Assay_IDs
+AAFNNVEATQL,AAFNNLEATQL,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,73532758;Q8BKX6;name:serine/threonine-protein kinase smg1 [mus musculus],AAFNNVEATQL,MHC binding prediction,8125971
+AAVSHFLCYTL,AAVSHSLCYTL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,name:olfactory receptor 358,AAVSHFLCYTL,MHC binding prediction,8125972
+AMVTWTLRM,AMVTWTLRL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,name:2410002f23rik protein,AMVTWTLRM,MHC binding prediction,8125976
+ASLMHWTRM,ASLMHWARM,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,P49117;name:nuclear receptor subfamily 2 group c member 2,ASLMHWTRM,MHC binding prediction,8125977
+ASVTNFQIV,ASVKNFQIV,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,6755905;O88413;name:tubby-related protein 3 [mus musculus],ASVTNFQIV,MHC binding prediction,8125979
+ATYIHPTM,ATYIYPTM,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,name:cdna sequence bc051665,ATYIHPTM,MHC binding prediction,8125981
+ATYIHPTML,ATYIYPTML,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q9D2L1;name:arylsulfatase k,ATYIHPTML,MHC binding prediction,8125982
+ATYIHPTMLL,ATYIYPTMLL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,Q9D2L1;name:arylsulfatase k,ATYIHPTMLL,MHC binding prediction,8125983
+CAYHHHYL,CAYHHRYL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,Q7M732;name:retrotransposon-like protein 1,CAYHHHYL,MHC binding prediction,8125998
+ETLLNSATI,ETLLNSATT,H-2-Db,0,31515258,1036957,BBN963,peptide_vaccination,train,6753322;P80315;name:t-complex protein 1 subunit delta [mus musculus],ETLLNSATI,MHC binding prediction,8126007
+FNFNSSNTSHL,FNFNSSNTSRL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,1566846674;A0A0G2JG52;name:beta/gamma crystallin domain-containing protein 1 isoform 2 [mus musculus],FNFNSSNTSHL,MHC binding prediction,8126012
+FNYKRRPNL,FNYKRRHNL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,12643781;Q60974;name:nuclear receptor corepressor 1,FNYKRRPNL,MHC binding prediction,8126013
+FSLNVVNL,FSPNVVNL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,71061455;Q8K1M6;name:dynamin-1-like protein isoform b [mus musculus],FSLNVVNL,MHC binding prediction,8126015
+FSLNVVNLTLV,FSPNVVNLTLV,H-2-Db,1,31515258,1036957,BBN963,peptide_vaccination,train,71061455;Q8K1M6;name:dynamin-1-like protein isoform b [mus musculus],FSLNVVNLTLV,MHC binding prediction,8126016
+FTFTSFWAYKI,FIFTSFWAYKI,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,"211825881;Q9ET30;name:tm9sf3 protein, partial [mus musculus]",FTFTSFWAYKI,MHC binding prediction,8126017
+FYFNYKRRPNL,FYFNYKRRHNL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,12643781;Q60974;name:nuclear receptor corepressor 1,FYFNYKRRPNL,MHC binding prediction,8126022
+GMAVRALNM,GMAVRELNM,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,"50510475;Q8BLU0;name:mkiaa0405 protein, partial [mus musculus]",GMAVRALNM,MHC binding prediction,8126027
+GNLAWTFTIL,GNLAWAFTIL,H-2-Kb,0,31515258,1036957,UPPL1541,peptide_vaccination,train,74227959;name:unnamed protein product [mus musculus],GNLAWTFTIL,MHC binding prediction,8126028
+HAVNNMTL,TAVNNMTL,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,124487035;Q8VDD9;name:ph-interacting protein [mus musculus],HAVNNMTL,MHC binding prediction,8126038
+HLYRLWLL,HLYRMWLL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q6PB97;name:f-box/lrr-repeat protein 19,HLYRLWLL,MHC binding prediction,8126040
+HLYRLWLLKRL,HLYRMWLLKRL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q6PB97;name:f-box/lrr-repeat protein 19,HLYRLWLLKRL,MHC binding prediction,8126041
+HTLPRMLL,HTLPWMLL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,name:mcg147714,HTLPRMLL,MHC binding prediction,8126042
+IAICVSDTV,IAICVSVTV,H-2-Db,1,31515258,1036957,BBN963,peptide_vaccination,train,6678177;P70452;name:syntaxin-4 [mus musculus],IAICVSDTV,MHC binding prediction,8126046
+IAMQNTTQL,IAIQNTTQL,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,157951641;A0A087WRT4;name:protocadherin fat 1 precursor [mus musculus],IAMQNTTQL,MHC binding prediction,8126047
+ISFGVTWWTMM,MSFGVTWWTMM,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,Q91W89;name:alpha-mannosidase 2c1,ISFGVTWWTMM,MHC binding prediction,8126052
+ISRNRHTL,ISCNRHTL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,14916479;P24668;name:cation-dependent mannose-6-phosphate receptor precursor [mus musculus],ISRNRHTL,MHC binding prediction,8126053
+ISWKTWINL,ISWITWINL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,ONTIE_0003123;name:immunoglobulin heavy chain variable region,ISWKTWINL,MHC binding prediction,8126054
+ITVSCRHYTAF,TTVSCRHYTAF,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,Q60751;name:insulin-like growth factor 1 receptor,ITVSCRHYTAF,MHC binding prediction,8126055
+IVYTNGSLL,TVYTNGSLL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,6679495;F6TAB3;name:pregnancy specific glycoprotein 17 [mus musculus],IVYTNGSLL,MHC binding prediction,8126056
+IVYTNGSLLL,TVYTNGSLLL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,6679495;F6TAB3;name:pregnancy specific glycoprotein 17 [mus musculus],IVYTNGSLLL,MHC binding prediction,8126057
+KAMATMEI,KAMATMDI,H-2-Db,0,31515258,1036957,BBN963,peptide_vaccination,train,"Q9Z2I9;name:succinate--coa ligase [adp-forming] subunit beta, mitochondrial",KAMATMEI,MHC binding prediction,8126061
+KGHEFIPTF,KGHEFIPTL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,"50510551;P70336;name:mkiaa0619 protein, partial [mus musculus]",KGHEFIPTF,MHC binding prediction,8126063
+KNYRHVSCL,KNYRQVSCL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,P51944;name:cyclin-f,KNYRHVSCL,MHC binding prediction,8126065
+KVFSLNVVNL,KVFSPNVVNL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,71061455;Q8K1M6;name:dynamin-1-like protein isoform b [mus musculus],KVFSLNVVNL,MHC binding prediction,8126066
+LAWTFTIL,LAWAFTIL,H-2-Kb,0,31515258,1036957,UPPL1541,peptide_vaccination,train,74227959;name:unnamed protein product [mus musculus],LAWTFTIL,MHC binding prediction,8126070
+LMMLKNVGFAL,LLMLKNVGFAL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,134288861;Q3UFM5;name:nucleolar mif4g domain-containing protein 1 [mus musculus],LMMLKNVGFAL,MHC binding prediction,8126080
+LNVYYLPL,LKVYYLPL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,126273666;Q64323;name:n-acetylglucosaminyl-phosphatidylinositol biosynthetic protein [mus musculus],LNVYYLPL,MHC binding prediction,8126081
+MILGWFLKL,MILGWLLKL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,Q3UZ57;name:axonemal dynein light chain domain-containing protein 1,MILGWFLKL,MHC binding prediction,8126089
+MISRNRHTL,MISCNRHTL,H-2-Db,1,31515258,1036957,BBN963,peptide_vaccination,train,14916479;P24668;name:cation-dependent mannose-6-phosphate receptor precursor [mus musculus],MISRNRHTL,MHC binding prediction,8126090
+MLVDQYFPL,LLVDQYFPL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,116235489;P43883;name:perilipin-2 [mus musculus],MLVDQYFPL,MHC binding prediction,8126091
+MMLKNVGFAL,LMLKNVGFAL,H-2-Db,0,31515258,1036957,BBN963,peptide_vaccination,train,134288861;Q3UFM5;name:nucleolar mif4g domain-containing protein 1 [mus musculus],MMLKNVGFAL,MHC binding prediction,8126092
+MWYTRFLIF,MWYTSFLIF,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,Q8CFW1;name:anoctamin-2,MWYTRFLIF,MHC binding prediction,8126093
+MYFTFTSF,MYFIFTSF,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,"211825881;Q9ET30;name:tm9sf3 protein, partial [mus musculus]",MYFTFTSF,MHC binding prediction,8126094
+NGYCHLCPSSF,NGFCHLCPSSF,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,Q8BVE8;name:histone-lysine n-methyltransferase nsd2,NGYCHLCPSSF,MHC binding prediction,8126097
+QHLYRLWLL,QHLYRMWLL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,Q8R151;name:nfx1-type zinc finger-containing protein 1,QHLYRLWLL,MHC binding prediction,8126104
+QMFAKMSSF,QMCAKMSSF,H-2-Kb,0,31515258,1036957,B16F10,peptide_vaccination,train,134288898;Q4U2R1;name:e3 ubiquitin-protein ligase herc2 [mus musculus],QMFAKMSSF,MHC binding prediction,8126105
+QSISRFSRSTL,QSISRFSRPTL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,Q6NZG4;name:noxin,QSISRFSRSTL,MHC binding prediction,8126106
+QSLGFTYLRL,QRLGFTYLRL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,7656914;P98197;name:probable phospholipid-transporting atpase ih isoform 1 [mus musculus],QSLGFTYLRL,MHC binding prediction,8126107
+RACANLQVLI,RACANLQVLM,H-2-Db,1,31515258,1036957,MB49,peptide_vaccination,train,158749638;G3X8Y8;name:toll-like receptor 2 precursor [mus musculus],RACANLQVLI,MHC binding prediction,8126114
+RALLSTMHTM,RALLSTMHTV,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,38259194;Q80TZ3;name:putative tyrosine-protein phosphatase auxilin isoform c [mus musculus],RALLSTMHTM,MHC binding prediction,8126115
+RALNMNLL,RELNMNLL,H-2-Db,1,31515258,1036957,BBN963,peptide_vaccination,train,"50510475;Q8BLU0;name:mkiaa0405 protein, partial [mus musculus]",RALNMNLL,MHC binding prediction,8126116
+RIFLISNL,CIFLISNL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,6680359;A0A1L1SUW6;name:interferon gamma inducible protein 47 [mus musculus],RIFLISNL,MHC binding prediction,8126119
+RMLQNSDTL,RMLQNSDKL,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,"148675265;Q3U1D0;name:lines homolog 2 (drosophila), isoform cra_f, partial [mus musculus]",RMLQNSDTL,MHC binding prediction,8126123
+RMLQNSDTLL,RMLQNSDKLL,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,"148675265;Q3U1D0;name:lines homolog 2 (drosophila), isoform cra_f, partial [mus musculus]",RMLQNSDTLL,MHC binding prediction,8126124
+SALWSDTPM,SALWSDTPK,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,12055059;Q9EPL9;name:pristanoyl-coa oxidase [mus musculus],SALWSDTPM,MHC binding prediction,8126141
+SHFLCYTL,SHSLCYTL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,O35227;name:adam7,SHFLCYTL,MHC binding prediction,8126146
+SIFIEMYFTF,SIFIEMYFIF,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,"211825881;Q9ET30;name:tm9sf3 protein, partial [mus musculus]",SIFIEMYFTF,MHC binding prediction,8126148
+SMGSNDSDTL,SMGSNDIDTL,H-2-Db,1,31515258,1036957,BBN963,peptide_vaccination,train,2746335;O54965;name:ring zinc finger protein [mus musculus],SMGSNDSDTL,MHC binding prediction,8126151
+SNVMQLLL,SDVMQLLL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,29789199;Q8BKC5;name:importin-5 isoform 1 [mus musculus],SNVMQLLL,MHC binding prediction,8126153
+SQHLYRLWL,SQHLYRMWL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q8C6G1;name:cilia- and flagella-associated protein 410,SQHLYRLWL,MHC binding prediction,8126154
+SQHLYRLWLL,SQHLYRMWLL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q6PB97;name:f-box/lrr-repeat protein 19,SQHLYRLWLL,MHC binding prediction,8126155
+SQVANWNLV,RQVANWNLV,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,Q3KNL4;name:riken cdna 1700024g13,SQVANWNLV,MHC binding prediction,8126157
+SQVANWNLVVM,RQVANWNLVVM,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,Q91ZX6;name:sentrin-specific protease 2,SQVANWNLVVM,MHC binding prediction,8126158
+SSILYVKSL,SAILYVKSL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,154240716;P43406;name:integrin alpha-v precursor [mus musculus],SSILYVKSL,MHC binding prediction,8126160
+SSILYVKSLL,SAILYVKSLL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,154240716;P43406;name:integrin alpha-v precursor [mus musculus],SSILYVKSLL,MHC binding prediction,8126161
+SSISIHQIHLI,SSISIHQIHLV,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,Q3TZI6;name:cyclin-j,SSISIHQIHLI,MHC binding prediction,8126162
+SSPYLHQHL,PSPYLHQHL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,"name:core-binding factor, runt domain, alpha subunit 2, translocated to, 2 homolog (human)",SSPYLHQHL,MHC binding prediction,8126163
+SSPYLHQHLL,PSPYLHQHLL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,"name:core-binding factor, runt domain, alpha subunit 2, translocated to, 2 homolog (human)",SSPYLHQHLL,MHC binding prediction,8126164
+SSYNASFLPSI,SSYNASFLPSF,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,68052855;Q922T2;name:microfibril-associated glycoprotein 3,SSYNASFLPSI,MHC binding prediction,8126165
+SSYVHTPDNAF,SSYVHIPDNAF,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,313103268;A0A1D5RMG3;name:4930503l19rik isoform 12 transcript variant 21 [mus musculus],SSYVHTPDNAF,MHC binding prediction,8126166
+STFAIHLL,GTFAIHLL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,"15826842;F7A2U7;name:serine (or cysteine) proteinase inhibitor, clade b, member 9b [mus musculus]",STFAIHLL,MHC binding prediction,8126167
+STFAIHLLKM,GTFAIHLLKM,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,"15826842;F7A2U7;name:serine (or cysteine) proteinase inhibitor, clade b, member 9b [mus musculus]",STFAIHLLKM,MHC binding prediction,8126168
+STFAIHLLKML,GTFAIHLLKML,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,"15826842;F7A2U7;name:serine (or cysteine) proteinase inhibitor, clade b, member 9b [mus musculus]",STFAIHLLKML,MHC binding prediction,8126169
+SYFLSLPNQL,SYSLSLPNQL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,Q6A078;name:centrosomal protein of 290 kda,SYFLSLPNQL,MHC binding prediction,8126172
+TLFSSWLSSL,SLFSSWLSSL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,Q8BGG0;name:zinc transporter 8,TLFSSWLSSL,MHC binding prediction,8126192
+TNFEWCISIL,TNFEWYISIL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,"148699560;O54774;name:adaptor-related protein complex 3, delta 1 subunit, isoform cra_a [mus musculus]",TNFEWCISIL,MHC binding prediction,8126194
+TQFPRRHL,TQFPRRRL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,P12023;name:amyloid beta a4 protein,TQFPRRHL,MHC binding prediction,8126196
+TSQHLYRLWLL,TSQHLYRMWLL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q8R151;name:nfx1-type zinc finger-containing protein 1,TSQHLYRLWLL,MHC binding prediction,8126197
+TSYSTAAL,TSYSTAAA,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,"21312260;Q9CZS1;name:aldehyde dehydrogenase x, mitochondrial precursor [mus musculus]",TSYSTAAL,MHC binding prediction,8126198
+TSYSTAALL,TSYSTAAAL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,"21312260;Q9CZS1;name:aldehyde dehydrogenase x, mitochondrial precursor [mus musculus]",TSYSTAALL,MHC binding prediction,8126199
+TTILNCFHDVL,TTILNCFHDFL,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,"283135110;Q3V3R1;name:monofunctional c1-tetrahydrofolate synthase, mitochondrial precursor [mus musculus]",TTILNCFHDVL,MHC binding prediction,8126200
+VALLPSVML,VALFPSVML,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,Q9D4F8;name:gamma-tubulin complex component 4,VALLPSVML,Single allele present,8126206
+VAVAHVAAF,VAVAHVAGF,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,1151258;Q61090;name:transmembrane receptor [mus musculus],VAVAHVAAF,MHC binding prediction,8126207
+VHYLRLSL,VHYLRLSR,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,"17978260;Q91Z92;name:beta-1,3-galactosyltransferase 6 [mus musculus]",VHYLRLSL,MHC binding prediction,8126210
+VHYLRLSLEYL,VHYLRLSREYL,H-2-Kb,0,31515258,1036957,B16F10,peptide_vaccination,train,"17978260;Q91Z92;name:beta-1,3-galactosyltransferase 6 [mus musculus]",VHYLRLSLEYL,MHC binding prediction,8126211
+VMDSWCCYL,GMDSWCCYL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,Q9CWS1;name:e3 ubiquitin-protein ligase rnf135,VMDSWCCYL,MHC binding prediction,8126213
+VMDSWCCYLKL,GMDSWCCYLKL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q9CWS1;name:e3 ubiquitin-protein ligase rnf135,VMDSWCCYLKL,MHC binding prediction,8126214
+VMISRNRHTL,VMISCNRHTL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,14916479;P24668;name:cation-dependent mannose-6-phosphate receptor precursor [mus musculus],VMISRNRHTL,MHC binding prediction,8126215
+VMLKKMVVL,VMLKKMVLL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,name:mcg147253,VMLKKMVVL,MHC binding prediction,8126216
+VMLKKMVVLAV,VMLKKMVLLAV,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,name:mcg147253,VMLKKMVVLAV,MHC binding prediction,8126217
+VSFAPLVQL,VSFAPLVQP,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,40555847;P59913;name:protein-l-isoaspartate (d-aspartate) o-methyltransferase domain containing 1 [mus musculus],VSFAPLVQL,MHC binding prediction,8126221
+VSHFLCYTL,VSHSLCYTL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,Q68SA9;name:a disintegrin and metallopeptidase domain 7,VSHFLCYTL,MHC binding prediction,8126222
+VSLTLFSSWL,VSLSLFSSWL,H-2-Kb,1,31515258,1036957,BBN963,peptide_vaccination,train,name:mcg1045244,VSLTLFSSWL,MHC binding prediction,8126224
+VVMISRNRHTL,VVMISCNRHTL,H-2-Kb,0,31515258,1036957,BBN963,peptide_vaccination,train,14916479;P24668;name:cation-dependent mannose-6-phosphate receptor precursor [mus musculus],VVMISRNRHTL,MHC binding prediction,8126225
+VVYTFFDF,VVYKFFDF,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,145976944;Q8CG73;name:protein fantom [mus musculus],VVYTFFDF,MHC binding prediction,8126226
+VYSYFLSL,VYSYSLSL,H-2-Kb,0,31515258,1036957,MB49,peptide_vaccination,train,P60755;name:mam domain-containing glycosylphosphatidylinositol anchor protein 2,VYSYFLSL,MHC binding prediction,8126230
+YFLENLDKL,YFLDNLDKL,H-2-Db,0,31515258,1036957,BBN963,peptide_vaccination,train,89001109;P27601;name:guanine nucleotide-binding protein subunit alpha-13 isoform 1 [mus musculus],YFLENLDKL,MHC binding prediction,8126234
+YGFRNVVHI,YGFRKVVHI,H-2-Db,1,31515258,1036957,B16F10,peptide_vaccination,train,1063390004;P38532;name:heat shock factor protein 1 isoform 5 [mus musculus],YGFRNVVHI,MHC binding prediction,8126235
+YGYILRSYL,YGYVLRSYL,H-2-Kb,1,31515258,1036957,B16F10,peptide_vaccination,train,"148671415;O35601;name:fyn binding protein, isoform cra_b [mus musculus]",YGYILRSYL,MHC binding prediction,8126236
+YSYFLSLPNQL,YSYSLSLPNQL,H-2-Kb,1,31515258,1036957,MB49,peptide_vaccination,train,Q6A078;name:centrosomal protein of 290 kda,YSYFLSLPNQL,MHC binding prediction,8126237
+ASYTPQAL,APYTPQAL,H-2-Kb,1,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_075809;Q9JIY0;name:pleckstrin homology domain-containing family o member 1 [mus musculus],Plekho1.P251S,MHC binding prediction,16007635
+FVWNFLRV,FVGNFLRV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q8R2W9;name:pantothenate kinase 3,Pank3.G321W,MHC binding prediction,16007634
+INAKRVTIM,IHAKRVTIM,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,"AAI07288;P68433;name:hist1h3i protein, partial",Hist1h3e.H114N,MHC binding prediction,16007641
+KVFNAPAL,KVFNAPAV,H-2-Kb,1,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,AAZ83265;Q9CQJ7;name:pttg3 [mus musculus],Pttg1.V53L,MHC binding prediction,16007639
+LSHYFEGVL,RSHYFEGVL,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,"EDL04164;O54950;name:protein kinase, amp-activated, gamma 1 non-catalytic subunit, partial [mus musculus]",Prkag1.R268L,MHC binding prediction,16007642
+MGNENVVEI,IGNENVVEI,H-2-Db,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,F8VQL0;NP_032617;name:hepatocyte growth factor receptor precursor [mus musculus],Met.I851M,MHC binding prediction,16007644
+MYFGHRAL,MYFGPRAL,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q8K203;name:endonuclease 8-like 3,Neil3.P90H,MHC binding prediction,16007640
+SAYQNTVHA,SGYQNTVHA,H-2-Db,1,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_081440;Q80YS5;name:leucine-rich repeat-containing protein 27 isoform a [mus musculus],Lrrc27.G330A,Single allele present,16007637
+SMPLWAKHM,SMPLWAKHV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,A2AKG8;name:focadhesin,BC057079.V1474M,MHC binding prediction,16007643
+STYTAYIV,STYTAYIG,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,NP_083925;Q91VP7;name:transmembrane protein 101 [mus musculus],Tmem101.G96V,MHC binding prediction,15998326
+VIRLLSAL,VIRLLSAV,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,Q9ESJ0;name:exportin-4,Xpo4.V611L,MHC binding prediction,16007638
+VMLYNTADEL,EMLYNTADEL,H-2-Db,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,O35382;name:exocyst complex component 4,Exoc4.E901V,MHC binding prediction,16007636
+VSAVTLSLL,VSTVTLSLL,H-2-Kb,0,33879241,1039184,E0771,DNA_or_SLP_vaccination,validation,A0A0A0MQ82;NP_057902;name:mitogen-activated protein kinase kinase kinase 6 [mus musculus],Map3k6.T552A,MHC binding prediction,16007645
+ALMLNDMELL,ALMLNDMELV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8VDM4;name:26s proteasome non-atpase regulatory subunit 2,Psmd2V278L,MHC binding assay,22401977
+CAFHHVFSPV,CAFHHVFSPA,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,F8WH29;Q80ZA4;name:polycystic kidney and hepatic disease 1-like 1,Pkhd1l1A3348V,MHC binding assay,22401991
+CAFHHVFSPV,CAFHHVFSPA,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,F8WH29;Q80ZA4;name:polycystic kidney and hepatic disease 1-like 1,Pkhd1l1A3348V,MHC binding assay,22402005
+FALGGNRQAL,FALGGNKQAL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8BHX3;name:borealin,Cdca8L80R,MHC binding assay,22401957
+FAVRNYWRGV,FAVRNYWRGF,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,A0A338P673;Q9R0A1;name:chloride channel protein 2,Clcn2F287V,MHC binding assay,22401950
+FGLINVTPNM,FGLINVTLNM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q58NB6;name:dehydrogenase/reductase sdr family member 9,Dhrs9L146P,MHC binding assay,22401951
+FQVAKMINPM,FQVAKMINLM,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q05909;name:receptor-type tyrosine-protein phosphatase gamma,PtprgL1385P,MHC binding assay,22401965
+FSITSDLWSL,FSVTSDLWSL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q3V129;name:serine/threonine-protein kinase ulk4,Ulk4V198I,MHC binding assay,22401970
+GALDTNIENM,GVLDTNIENM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q9D3L0;name:membrane protein fam174a,Fam174aV158A,MHC binding assay,22401959
+IAKINQDPQV,VAKINQDPQV,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q9D0F9;name:phosphoglucomutase-1,Pgm2V525I,MHC binding assay,22401966
+ISVANVPEGL,IIVANVPEGL,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,D3YYN7;Q6PIE5;name:sodium/potassium-transporting atpase subunit alpha,Atp1a2I326S,MHC binding assay,22401961
+KFNHQNVDTL,KFNHQNFDTL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8CDU5;name:ef-hand domain-containing family member b,EfhbF583V,MHC binding assay,22401974
+KGVDGNMHVM,KGVDGNMHVR,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,B1AQZ2;P28741;name:kinesin-like protein,Kif3aR242M,MHC binding assay,22401975
+KQTENLYIEL,KQTENLYMEL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8BG94;name:comm domain-containing protein 7,Commd7M175I,MHC binding assay,22401978
+KSYTFFSCSL,KSYTFFWCSL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,O88174;name:membrane cofactor protein,Cd46W24S,MHC binding assay,22401982
+LAVCNWPKPM,LAVSNWPKPM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8C1A9;name:protein abhd18,Abhd18S210C,MHC binding assay,22401953
+LESFTFRNNV,LESFTFRNHV,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q922Y0;name:dual specificity tyrosine-phosphorylation-regulated kinase 3,Dyrk3H282N,MHC binding assay,22401994
+LISFRIWQNL,LISFKIWQNL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,P97926;name:oxytocin receptor,OxtrL226R,MHC binding assay,22401988
+LSKVTNQLVV,LSEVTNQLVV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,H3BKG1;Q8CFH6;name:non-specific serine/threonine protein kinase,Sik2Q487L,MHC binding assay,22401973
+MALINGSVLT,MALINGSVVT,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,E9Q413;name:olfactory receptor,Olfr920V9L,MHC binding assay,22401968
+MAVGRNVLEL,MPVGRNVLEL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,"A0A1Y7VNR5;A2A8L5;name:protein tyrosine phosphatase, receptor type, f",PtprfP279A,MHC binding assay,22401952
+MDAVENGCAV,LDAVENGCAV,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,B7ZNK6;Q64191;name:aspartylglucosaminidase,AgaL54M,MHC binding assay,22401963
+MLGVYNHSVL,MLGEYNHSVL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,E9PVB5;name:tetratricopeptide repeat protein 17,Ttc17Q310V,MHC binding assay,22401967
+MSMEGILPGM,MSMEGIRPGM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q9D219;name:b-cell cll/lymphoma 9 protein,Bcl9R652L,MHC binding assay,22401981
+NSLKENSTLL,NSLEENSTLL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q9QXT9;name:zinc finger protein 354b,Zfp354bE188K,MHC binding assay,22401964
+QAFDNMKEPI,QAFDNMKEPV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,A0A2I3BQW0;P59598;name:asxl transcriptional regulator 1,Asxl1V827I,MHC binding assay,22401956
+QIYFYLFKLL,QVYFYLFKLL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q9JHD2;name:histone acetyltransferase kat2a,Kat2aV192I,MHC binding assay,22401992
+QSYRFRVRAI,QSYQFRVRAI,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,A2ABU4;name:myomesin-3,Myom3Q445R,MHC binding assay,22401995
+SALVVLEFSL,AALVVLEFSL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,F2Z3W9;Q8R115;name:transmembrane protein 82,Tmem82A92S,MHC binding assay,22401979
+SALVVLEFSL,AALVVLEFSL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,F2Z3W9;Q8R115;name:transmembrane protein 82,Tmem82A92S,MHC binding assay,22402002
+SIIGKNGETV,SIIGKKGETV,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,A0A087WRH3;P57724;name:poly(rc) binding protein 4,Pcbp4L36N,MHC binding assay,22401969
+SNLTLHYRTL,SNLTLHYRTH,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q07231;name:zinc finger and scan domain-containing protein 21,Zscan21H409L,MHC binding assay,22401990
+SNLTLHYRTL,SNLTLHYRTH,H-2-Kb,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q07231;name:zinc finger and scan domain-containing protein 21,Zscan21H409L,MHC binding assay,22402004
+SQAMNSGTLL,SQAMNSGTVL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,A0A0A0MQJ4;Q501J7;name:phosphatase and actin regulator 4,Phactr4V280L,MHC binding assay,22401960
+SSFVDAYGYI,SSFVDVYGYI,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,E9Q2M9;name:wd repeat- and fyve domain-containing protein 4,Wdfy4V1162A,MHC binding assay,22401958
+SSFVDAYGYI,SSFVDVYGYI,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,E9Q2M9;name:wd repeat- and fyve domain-containing protein 4,Wdfy4V1162A,MHC binding assay,22402001
+STFLFSICSL,STFLFSICAL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,"P97441;S4R169;name:solute carrier family 30 (zinc transporter), member 3",Slc30a3A277S,MHC binding assay,22401985
+SVFSFGPSYF,SVFSFGPSSF,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q80U93;name:nuclear pore complex protein nup214,Nup214S486Y,MHC binding assay,22401996
+TAPASTCPSI,TAPASPCPSI,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8C147;name:dedicator of cytokinesis protein 8,Dock8P1124T,MHC binding assay,22401980
+VAFIIRRCNL,VVFIIRRCNL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8BG16;name:sodium-dependent neutral amino acid transporter b(0)at2,Slc6a15V636A,MHC binding assay,22401989
+VGYVHYGDWL,GGYVHYGDWL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q91VP7;name:transmembrane protein 101,Tmem101G96V,MHC binding assay,22401984
+VGYVHYGDWL,GGYVHYGDWL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q91VP7;name:transmembrane protein 101,Tmem101G96V,MHC binding assay,22402003
+VKVFFHSSSL,GKVFFHSSSL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q147Z4;Q8BI99;name:zinc finger protein 879,Zfp879,MHC binding assay,22401986
+VMLYNTADEL,EMLYNTADEL,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,O35382;name:exocyst complex component 4,Exoc4Q901V,MHC binding assay,22401955
+VWNFLRVNTL,VGNFLRVNTL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q8R2W9;name:pantothenate kinase 3,Pank3G321W,MHC binding assay,22401987
+YAFPYAAYSM,CAFPYAAYSM,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,Q6TCG5;name:membrane progestin receptor delta,Paqr6C129Y,MHC binding assay,22401972
+YGLEFHARAL,YGLEFQARAL,H-2-Kb,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,A0A217FL60;Q8K0G5;name:earp complex and garp complex interacting protein 1,Tssc1Q14H,MHC binding assay,22401993
+YLYINAGSLI,YLSINAGSLI,H-2-Db,1,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,"E9PYQ9;Q9ES07;name:solute carrier family 15 (h+/peptide transporter), member 2",Slc15a2S201Y,MHC binding assay,22401971
+YSIPTKIPVM,YSIPTEIPVM,H-2-Db,0,36950115,1042224,LLC1,BMDC_vaccination_restimulation,test,"Q9D0G0;name:28s ribosomal protein s30, mitochondrial",Mrps30Q254L,MHC binding assay,22401976
+ASLLHFVDAPV,ASLLHFLDAPV,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,A2RSQ0;name:denn domain-containing protein 5b,Dennd5b L338V,MHC binding prediction,23044454
+AVFTLQMKL,AAFTLQMKL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q6WKZ8;name:e3 ubiquitin-protein ligase ubr2,Ubr2 A537V,MHC binding prediction,23044450
+CSITLNRHVI,CPITLNRHVI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q80TP3;name:e3 ubiquitin-protein ligase ubr5,Ubr5 P2546S,MHC binding prediction,23044457
+IAILNQKYA,VAILNQKYA,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q7TPH6;name:e3 ubiquitin-protein ligase mycbp2,Mycbp2 V1978I,MHC binding prediction,23044455
+IHEYLSTAPF,THEYLSTAPF,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,O70293;name:g protein-coupled receptor kinase 6,Grk6 T117I,MHC binding prediction,23044465
+KAFSRHWL,KAFSRPWL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,NP_035545;P97469;name:zinc finger protein snai2 [mus musculus],Snai2 P198H,MHC binding prediction,23044462
+LAYLPTAPPL,LAYLPTAPPP,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q9WU42;name:nuclear receptor corepressor 2,Ncor2 P1737L,MHC binding prediction,23044461
+LMWFEKTAL,LMWFDKTAL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q60767;name:lymphocyte antigen 75,Ly75 D1328E,MHC binding prediction,23044464
+LTVRYGRFLNL,MTVRYGRFLNL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q3URV1;name:protein broad-minded,Tbc1d32 M1054L,MHC binding prediction,23044448
+RAFSNAVDF,RAFSKAVDF,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,140969817;E9Q6A7;name:nucleosome-remodeling factor subunit bptf isoform 2 [mus musculus],Bptf K1284N,MHC binding prediction,23044456
+SAGQYFLNI,PAGQYFLNI,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q8VEK0;name:cell cycle control protein 50a,Tmem30a P290S,MHC binding prediction,23044451
+SNFYKCEI,SDFYKCEI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,NP_001074538;Q9Z2H1;name:regulator of g-protein signaling 11 [mus musculus],Rgs11 D224N,MHC binding prediction,23044458
+SQLSHSSRL,PQLSHSSRL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,P97868;name:e3 ubiquitin-protein ligase rbbp6,Rbbp6 P1616S,MHC binding prediction,23044460
+STYKEFCSL,STYKELCSL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q6PDI5;name:proteasome adapter and scaffold protein ecm29,Ecpas L1064F,Single allele present,23044467
+SVFTEHTNRL,SVLTEHTNRL,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,NP_063917;Q9JKK8;name:serine/threonine-protein kinase atr,Atr L2126F,MHC binding prediction,23044452
+TIHMMLQPI,TVHMMLQPI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,NP_031592;O88738;name:baculoviral iap repeat-containing protein 6,BIRC6 V3064I,MHC binding prediction,23044466
+VHFSNSFTTI,VHFSNSFTSI,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q504N2;name:solute carrier family 22 member 15,Slc22a15 S96T,MHC binding prediction,23044459
+VSHRFHNT,VSHRSHNT,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,NP_598639;Q8VE37;name:regulator of chromosome condensation isoform 2,Rcc1 S29F,MHC binding prediction,23044449
+VSLVLRHV,ASLVLRHV,H-2-Kb,1,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q8BGY4;name:kelch-like protein 26,K1h126 A154V,MHC binding prediction,23044453
+VTTSFIYF,VTTSFIYL,H-2-Kb,0,40586324,1046998,CMT93,pooled_peptide_vaccination,test,Q9WVL3;name:solute carrier family 12 member 7,Slc12a7 L467F,MHC binding prediction,23044463

@@ -1,0 +1,879 @@
+# /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/bin/netMHCpan-4.2 -p /home/cylin/NETMHC/mouse_benchmark/tumor_expansion_v2/run/netmhcpan_raw/H-2-Db.pep -rdir /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64 -syn /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/synlist_nocontext.bin -hlapseudo /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/MHC_pseudo.dat -tdir /home/cylin/NETMHC/mouse_benchmark/tumor_expansion_v2/run/netmhcpan_raw/tmp/netMHCpan_XXXXXX -version /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/version -thrfmt /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/threshold/%s.thr.%s -allname /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/allelenames -a H-2-Db -rankS 0.5 -rankW 2.0 -BA
+# Sun Oct 11 01:15:42 2026
+# User: cylin
+# PWD : /home/cylin/NETMHC
+# Host: Linux mirai 5.4.0-214-generic x86_64
+# -p       1                    Use peptide input
+# -rdir    /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64 Home directory for NetMHCpan
+# -syn     /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/synlist_nocontext.bin Synaps file
+# -hlapseudo /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/MHC_pseudo.dat File with HLA pseudo sequences
+# -tdir    /home/cylin/NETMHC/mouse_benchmark/tumor_expansion_v2/run/netmhcpan_raw/tmp/netMHCpan_XXXXXX Temporary directory
+# -version /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/version File with version information
+# -thrfmt  /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/threshold/%s.thr.%s Format for threshold filenames
+# -allname /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/allelenames File with print names for alleles
+# -a       H-2-Db               Allele for prediction (multiple alleles with ,)
+# -rankS   0.500000             Rank Threshold for Strong binders
+# -rankW   2.000000             Rank Threshold for Weak binders
+# -BA      1                    Include Binding affinity prediction
+# Command line parameters set to:
+#	[-rdir filename]     /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64 Home directory for NetMHCpan
+#	[-syn filename]      /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/synlist_nocontext.bin Synaps file
+#	[-v]                 0                    Verbose mode
+#	[-dirty]             0                    Dirty mode, leave tmp dir+files
+#	[-tdir filename]     /home/cylin/NETMHC/mouse_benchmark/tumor_expansion_v2/run/netmhcpan_raw/tmp/netMHCpan_XXXXXX Temporary directory
+#	[-hlapseudo filename] /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/MHC_pseudo.dat File with HLA pseudo sequences
+#	[-hlaseq filename]                        File with full length MHC sequence
+#	[-pathogen]          0                    Include pathogen epitope predictions
+#	[-neo]               0                    Include neoepitope predictions
+#	[-context]           0                    Predict with context encoding
+#	[-a line]            H-2-Db               Allele for prediction (multiple alleles with ,)
+#	[-f filename]                             File with the input data
+#	[-w]                 0                    w option for webface
+#	[-s]                 0                    Sort output on descending affinity
+#	[-p]                 1                    Use peptide input
+#	[-pmhc]              0                    Use peptide-MHC input
+#	[-rankS float]       0.500000             Rank Threshold for Strong binders
+#	[-rankW float]       2.000000             Rank Threshold for Weak binders
+#	[-l filename]        9                    Peptide length (multiple length with ,) Used for FASTA input only.
+#	[-xls]               0                    Save output into xls file
+#	[-xlsfile filename]  NetMHCpan_out.xls    Filename for xls dump
+#	[-t float]           -99.900002           Threshold for output (%rank) [<0 print all]
+#	[-inptype int]       0                    Input type [0] FASTA [1] PEPTIDE [2] PEPTIDECONT [3] PEPTIDEMHC [4] PEPTIDECONTMHC
+#	[-termAcon]          0                    Encode context extending protein sequence as A [default is X]
+#	[-version filename]  /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/version File with version information
+#	[-thrfmt filename]   /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/threshold/%s.thr.%s Format for threshold filenames
+#	[-listMHC]           0                    Print list of alleles included in netMHCpan
+#	[-allname filename]  /home/cylin/NETMHC/netMHCpan-4.2/Linux_x86_64/data/allelenames File with print names for alleles
+#	[-BA]                1                    Include Binding affinity prediction
+
+# NetMHCpan version 4.2d
+
+# Tmpdir made /home/cylin/NETMHC/mouse_benchmark/tumor_expansion_v2/run/netmhcpan_raw/tmp/netMHCpan_Ow82Lz
+
+# Input is in PEPTIDE format
+
+# Prediction Mode: EL+BA
+
+# H-2-Db : Distance to training data  0.000 (using nearest neighbor H-2-Db)
+
+# Allele: H-2-Db
+# Rank Threshold for Strong binder   0.500
+# Rank Threshold for Weak binder   2.000
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Pos            MHC           Peptide      Core Of Gp Gl Ip Il             Icore        Identity Score_EL %Rank_EL Score_BA %Rank_BA  Aff(nM) BindLevel
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   1         H-2-Db       AAFNNLEATQL AAFNNLTQL  0  6  2  0  0       AAFNNLEATQL         PEPLIST 0.879156    0.011 0.598982    0.025    76.63 <= SB
+   2         H-2-Db       AAFNNVEATQL AAFNNVEAL  0  8  2  0  0       AAFNNVEATQL         PEPLIST 0.887814    0.010 0.583879    0.027    90.23 <= SB
+   3         H-2-Db         AAFTLQMKL AAFTLQMKL  0  0  0  0  0         AAFTLQMKL         PEPLIST 0.299507    0.330 0.252698    0.706  3247.49 <= SB
+   4         H-2-Db         AALHRLLRV AALHRLLRV  0  0  0  0  0         AALHRLLRV         PEPLIST 0.052364    2.207 0.132779    3.129 11886.30
+   5         H-2-Db         AALLNSAGL AALLNSAGL  0  0  0  0  0         AALLNSAGL         PEPLIST 0.882482    0.011 0.647220    0.015    45.47 <= SB
+   6         H-2-Db         AALLNSAVL AALLNSAVL  0  0  0  0  0         AALLNSAVL         PEPLIST 0.987904    0.001 0.832531    0.005     6.12 <= SB
+   7         H-2-Db         AALREFLVL AALREFLVL  0  0  0  0  0         AALREFLVL         PEPLIST 0.485947    0.139 0.351627    0.283  1113.48 <= SB
+   8         H-2-Db         AALREFRVL AALREFRVL  0  0  0  0  0         AALREFRVL         PEPLIST 0.289149    0.345 0.254036    0.696  3200.81 <= SB
+   9         H-2-Db          AALTFRRL AAL-TFRRL  0  0  0  3  1          AALTFRRL         PEPLIST 0.010544    7.397 0.071168   10.107 23150.04
+  10         H-2-Db        AALVVLEFSL AALVVLEFL  0  8  1  0  0        AALVVLEFSL         PEPLIST 0.160001    0.734 0.271777    0.574  2641.80 <= WB
+  11         H-2-Db         AAQHHHWQL AAQHHHWQL  0  0  0  0  0         AAQHHHWQL         PEPLIST 0.188368    0.611 0.179899    1.630  7138.91 <= WB
+  12         H-2-Db         AAQHHRWQL AAQHHRWQL  0  0  0  0  0         AAQHHRWQL         PEPLIST 0.113386    1.078 0.149095    2.481  9962.72 <= WB
+  13         H-2-Db         AARHRLLRV AARHRLLRV  0  0  0  0  0         AARHRLLRV         PEPLIST 0.003295   14.752 0.047448   18.652 29923.61
+  14         H-2-Db         AATRNDFTL AATRNDFTL  0  0  0  0  0         AATRNDFTL         PEPLIST 0.935379    0.006 0.674779    0.011    33.74 <= SB
+  15         H-2-Db       AAVSHFLCYTL AAVSHFYTL  0  6  2  0  0       AAVSHFLCYTL         PEPLIST 0.119374    1.020 0.339199    0.311  1273.75 <= WB
+  16         H-2-Db       AAVSHSLCYTL AAVSHSYTL  0  6  2  0  0       AAVSHSLCYTL         PEPLIST 0.099981    1.228 0.301958    0.432  1905.80 <= WB
+  17         H-2-Db         AFFYFFEHG AFFYFFEHG  0  0  0  0  0         AFFYFFEHG         PEPLIST 0.000241   44.351 0.041653   22.166 31859.93
+  18         H-2-Db         AFFYFFEHR AFFYFFEHR  0  0  0  0  0         AFFYFFEHR         PEPLIST 0.000302   41.136 0.023317   42.577 38851.03
+  19         H-2-Db         AGLPMGYYI AGLPMGYYI  0  0  0  0  0         AGLPMGYYI         PEPLIST 0.501550    0.130 0.409290    0.172   596.66 <= SB
+  20         H-2-Db        ALMLNDMELL ALMLNMELL  0  5  1  0  0        ALMLNDMELL         PEPLIST 0.232312    0.455 0.352870    0.280  1098.61 <= SB
+  21         H-2-Db        ALMLNDMELV ALMLNMELV  0  5  1  0  0        ALMLNDMELV         PEPLIST 0.091636    1.335 0.284687    0.504  2297.39 <= WB
+  22         H-2-Db          ALYVCGSL ALYVCG-SL  0  0  0  6  1          ALYVCGSL         PEPLIST 0.000500   34.528 0.048979   17.863 29432.00
+  23         H-2-Db          ALYVSGSL ALYVSG-SL  0  0  0  6  1          ALYVSGSL         PEPLIST 0.003010   15.476 0.050710   17.074 28885.98
+  24         H-2-Db         AMVTWTLRL AMVTWTLRL  0  0  0  0  0         AMVTWTLRL         PEPLIST 0.055529    2.096 0.153971    2.318  9450.72
+  25         H-2-Db         AMVTWTLRM AMVTWTLRM  0  0  0  0  0         AMVTWTLRM         PEPLIST 0.065358    1.828 0.170788    1.827  7878.49 <= WB
+  26         H-2-Db          APYTPQAL -APYTPQAL  0  0  0  0  1          APYTPQAL         PEPLIST 0.005906   10.665 0.037941   24.977 33165.64
+  27         H-2-Db         AQARNSLEL AQARNSLEL  0  0  0  0  0         AQARNSLEL         PEPLIST 0.823220    0.017 0.557551    0.034   119.96 <= SB
+  28         H-2-Db         AQARNSREL AQARNSREL  0  0  0  0  0         AQARNSREL         PEPLIST 0.668314    0.055 0.424359    0.148   506.90 <= SB
+  29         H-2-Db         AQLANDVVL AQLANDVVL  0  0  0  0  0         AQLANDVVL         PEPLIST 0.904510    0.009 0.621375    0.019    60.14 <= SB
+  30         H-2-Db         AQLPNDVVL AQLPNDVVL  0  0  0  0  0         AQLPNDVVL         PEPLIST 0.889997    0.010 0.540818    0.041   143.77 <= SB
+  31         H-2-Db         ASACNVQHL ASACNVQHL  0  0  0  0  0         ASACNVQHL         PEPLIST 0.830312    0.017 0.614108    0.021    65.06 <= SB
+  32         H-2-Db         ASAGNVQHL ASAGNVQHL  0  0  0  0  0         ASAGNVQHL         PEPLIST 0.850697    0.015 0.499898    0.066   223.85 <= SB
+  33         H-2-Db          ASFHAAFL ASF-HAAFL  0  0  0  3  1          ASFHAAFL         PEPLIST 0.036014    2.970 0.132533    3.142 11918.00
+  34         H-2-Db          ASFHAGFL ASF-HAGFL  0  0  0  3  1          ASFHAGFL         PEPLIST 0.011810    6.849 0.095119    6.121 17865.30
+  35         H-2-Db         ASISTATPV ASISTATPV  0  0  0  0  0         ASISTATPV         PEPLIST 0.380674    0.214 0.441822    0.125   419.63 <= SB
+  36         H-2-Db         ASISTATRV ASISTATRV  0  0  0  0  0         ASISTATRV         PEPLIST 0.152623    0.773 0.200682    1.244  5701.25 <= WB
+  37         H-2-Db       ASLLHFLDAPV ASLLHFLPV  0  7  2  0  0       ASLLHFLDAPV         PEPLIST 0.028880    3.547 0.294936    0.461  2056.25
+  38         H-2-Db       ASLLHFVDAPV ASLLHFVPV  0  7  2  0  0       ASLLHFVDAPV         PEPLIST 0.052933    2.187 0.285081    0.502  2287.62
+  39         H-2-Db         ASLMHWARM ASLMHWARM  0  0  0  0  0         ASLMHWARM         PEPLIST 0.249458    0.405 0.367718    0.252   935.56 <= SB
+  40         H-2-Db         ASLMHWTRM ASLMHWTRM  0  0  0  0  0         ASLMHWTRM         PEPLIST 0.340521    0.267 0.398742    0.188   668.79 <= SB
+  41         H-2-Db         ASLPMGYYI ASLPMGYYI  0  0  0  0  0         ASLPMGYYI         PEPLIST 0.644724    0.064 0.515590    0.053   188.90 <= SB
+  42         H-2-Db          ASLVLRHV ASLVLR-HV  0  0  0  6  1          ASLVLRHV         PEPLIST 0.006235   10.324 0.075364    9.200 22122.66
+  43         H-2-Db         ASMTNMELM ASMTNMELM  0  0  0  0  0         ASMTNMELM         PEPLIST 0.986543    0.001 0.855420    0.005     4.78 <= SB
+  44         H-2-Db         ASMTNRELM ASMTNRELM  0  0  0  0  0         ASMTNRELM         PEPLIST 0.979751    0.002 0.834372    0.005     6.00 <= SB
+  45         H-2-Db         ASVKNFQIV ASVKNFQIV  0  0  0  0  0         ASVKNFQIV         PEPLIST 0.901887    0.009 0.643176    0.016    47.50 <= SB
+  46         H-2-Db         ASVTNFQIV ASVTNFQIV  0  0  0  0  0         ASVTNFQIV         PEPLIST 0.921668    0.007 0.688005    0.010    29.25 <= SB
+  47         H-2-Db         ASYHGFLPV ASYHGFLPV  0  0  0  0  0         ASYHGFLPV         PEPLIST 0.158261    0.743 0.322993    0.360  1517.88 <= WB
+  48         H-2-Db         ASYHNMGDL ASYHNMGDL  0  0  0  0  0         ASYHNMGDL         PEPLIST 0.352607    0.248 0.366932    0.253   943.56 <= SB
+  49         H-2-Db         ASYNGFLPV ASYNGFLPV  0  0  0  0  0         ASYNGFLPV         PEPLIST 0.199785    0.566 0.353613    0.279  1089.82 <= WB
+  50         H-2-Db         ASYRNMGDL ASYRNMGDL  0  0  0  0  0         ASYRNMGDL         PEPLIST 0.484429    0.140 0.452542    0.114   373.67 <= SB
+  51         H-2-Db         ASYSLVAHI ASYSLVAHI  0  0  0  0  0         ASYSLVAHI         PEPLIST 0.350224    0.251 0.329313    0.341  1417.55 <= SB
+  52         H-2-Db         ASYSQVAHI ASYSQVAHI  0  0  0  0  0         ASYSQVAHI         PEPLIST 0.238413    0.437 0.264245    0.620  2866.09 <= SB
+  53         H-2-Db          ASYTPQAL ASY-TPQAL  0  0  0  3  1          ASYTPQAL         PEPLIST 0.021142    4.528 0.066517   11.282 24344.92
+  54         H-2-Db          ATINFRRL ATI-NFRRL  0  0  0  3  1          ATINFRRL         PEPLIST 0.068454    1.757 0.115706    4.171 14297.80 <= WB
+  55         H-2-Db          ATINFRRR ATI-NFRRR  0  0  0  3  1          ATINFRRR         PEPLIST 0.000305   41.000 0.017481   54.872 41383.36
+  56         H-2-Db          ATYIHPTM ATY-IHPTM  0  0  0  3  1          ATYIHPTM         PEPLIST 0.019882    4.749 0.081734    7.998 20649.21
+  57         H-2-Db         ATYIHPTML ATYIHPTML  0  0  0  0  0         ATYIHPTML         PEPLIST 0.194122    0.588 0.194584    1.342  6090.11 <= WB
+  58         H-2-Db        ATYIHPTMLL ATYIHPTLL  0  7  1  0  0        ATYIHPTMLL         PEPLIST 0.031475    3.325 0.121675    3.758 13403.68
+  59         H-2-Db          ATYIYPTM ATY-IYPTM  0  0  0  3  1          ATYIYPTM         PEPLIST 0.015928    5.557 0.081747    7.996 20646.29
+  60         H-2-Db         ATYIYPTML ATYIYPTML  0  0  0  0  0         ATYIYPTML         PEPLIST 0.084131    1.440 0.139937    2.823 11000.50 <= WB
+  61         H-2-Db        ATYIYPTMLL ATYIYPTLL  0  7  1  0  0        ATYIYPTMLL         PEPLIST 0.010622    7.362 0.101438    5.405 16684.52
+  62         H-2-Db         AVFTLQMKL AVFTLQMKL  0  0  0  0  0         AVFTLQMKL         PEPLIST 0.067614    1.777 0.128550    3.351 12442.72 <= WB
+  63         H-2-Db          AVIGYSLL AVI-GYSLL  0  0  0  3  1          AVIGYSLL         PEPLIST 0.005576   11.007 0.059456   13.447 26277.74
+  64         H-2-Db          AVLTFRRL AVL-TFRRL  0  0  0  3  1          AVLTFRRL         PEPLIST 0.002982   15.556 0.042801   21.395 31466.46
+  65         H-2-Db         AWLSKVSRL AWLSKVSRL  0  0  0  0  0         AWLSKVSRL         PEPLIST 0.011003    7.193 0.069137   10.610 23664.44
+  66         H-2-Db         AWVSKVSRL AWVSKVSRL  0  0  0  0  0         AWVSKVSRL         PEPLIST 0.007227    9.431 0.056451   14.614 27146.23
+  67         H-2-Db        CAFHHVFSPA CAFHHVFSA  0  8  1  0  0        CAFHHVFSPA         PEPLIST 0.001050   25.719 0.173025    1.776  7690.10
+  68         H-2-Db        CAFHHVFSPV CAFHHVFSV  0  8  1  0  0        CAFHHVFSPV         PEPLIST 0.003579   14.136 0.223430    0.964  4457.37
+  69         H-2-Db        CAFPYAAYSM CAFPYAAYM  0  8  1  0  0        CAFPYAAYSM         PEPLIST 0.009368    8.015 0.199260    1.266  5789.66
+  70         H-2-Db         CAMAMFGYM CAMAMFGYM  0  0  0  0  0         CAMAMFGYM         PEPLIST 0.079967    1.513 0.496203    0.070   232.98 <= WB
+  71         H-2-Db          CAVKFLKL CAV-KFLKL  0  0  0  3  1          CAVKFLKL         PEPLIST 0.002735   16.281 0.056994   14.395 26987.08
+  72         H-2-Db          CAVKLLKL CAV-KLLKL  0  0  0  3  1          CAVKLLKL         PEPLIST 0.001606   21.166 0.045139   19.931 30680.41
+  73         H-2-Db          CAYHHHYL CAY-HHHYL  0  0  0  3  1          CAYHHHYL         PEPLIST 0.036609    2.935 0.183809    1.543  6843.17
+  74         H-2-Db          CAYHHRYL CAY-HHRYL  0  0  0  3  1          CAYHHRYL         PEPLIST 0.008132    8.772 0.125114    3.538 12914.02
+  75         H-2-Db         CAYSISSGI CAYSISSGI  0  0  0  0  0         CAYSISSGI         PEPLIST 0.011450    6.995 0.151508    2.401  9705.91
+  76         H-2-Db         CGLGPLARL CGLGPLARL  0  0  0  0  0         CGLGPLARL         PEPLIST 0.008578    8.477 0.072892    9.720 22722.23
+  77         H-2-Db         CGLVPLARL CGLVPLARL  0  0  0  0  0         CGLVPLARL         PEPLIST 0.023253    4.219 0.126463    3.460 12727.01
+  78         H-2-Db          CGVPFTDL CGV-PFTDL  0  0  0  3  1          CGVPFTDL         PEPLIST 0.001122   24.982 0.046078   19.402 30370.26
+  79         H-2-Db         CGYEHTAVL CGYEHTAVL  0  0  0  0  0         CGYEHTAVL         PEPLIST 0.110120    1.111 0.210438    1.112  5130.11 <= WB
+  80         H-2-Db         CHLHSLLQL CHLHSLLQL  0  0  0  0  0         CHLHSLLQL         PEPLIST 0.005107   11.596 0.095082    6.125 17872.47
+  81         H-2-Db          CIFLISNL CIF-LISNL  0  0  0  3  1          CIFLISNL         PEPLIST 0.000547   33.378 0.043161   21.157 31344.29
+  82         H-2-Db        CPITLNRHVI CPILNRHVI  0  3  1  0  0        CPITLNRHVI         PEPLIST 0.008550    8.493 0.178075    1.668  7281.17
+  83         H-2-Db         CQLHSLLQL CQLHSLLQL  0  0  0  0  0         CQLHSLLQL         PEPLIST 0.028213    3.621 0.159529    2.133  8899.18
+  84         H-2-Db         CSASLDHTI CSASLDHTI  0  0  0  0  0         CSASLDHTI         PEPLIST 0.033463    3.165 0.176375    1.703  7416.33
+  85         H-2-Db         CSASWDHTI CSASWDHTI  0  0  0  0  0         CSASWDHTI         PEPLIST 0.010437    7.445 0.136315    2.959 11440.07
+  86         H-2-Db        CSITLNRHVI CSILNRHVI  0  3  1  0  0        CSITLNRHVI         PEPLIST 0.094561    1.299 0.458161    0.108   351.63 <= WB
+  87         H-2-Db         CSYLPELPL CSYLPELPL  0  0  0  0  0         CSYLPELPL         PEPLIST 0.015433    5.690 0.194402    1.345  6102.14
+  88         H-2-Db         CSYLPEQPL CSYLPEQPL  0  0  0  0  0         CSYLPEQPL         PEPLIST 0.027072    3.747 0.199878    1.257  5751.09
+  89         H-2-Db         CTFSHLTKL CTFSHLTKL  0  0  0  0  0         CTFSHLTKL         PEPLIST 0.039726    2.752 0.159106    2.147  8939.97
+  90         H-2-Db         CTLQFEAAL CTLQFEAAL  0  0  0  0  0         CTLQFEAAL         PEPLIST 0.007193    9.457 0.134246    3.052 11699.03
+  91         H-2-Db         CTLQFEAAW CTLQFEAAW  0  0  0  0  0         CTLQFEAAW         PEPLIST 0.000744   29.603 0.061950   12.596 25578.12
+  92         H-2-Db          CVVPFTDL CVV-PFTDL  0  0  0  3  1          CVVPFTDL         PEPLIST 0.000544   33.441 0.032973   29.614 34997.01
+  93         H-2-Db         CVYEHTAVL CVYEHTAVL  0  0  0  0  0         CVYEHTAVL         PEPLIST 0.057530    2.026 0.170261    1.840  7923.52
+  94         H-2-Db         DAYSHHSGF DAYSHHSGF  0  0  0  0  0         DAYSHHSGF         PEPLIST 0.012611    6.525 0.064723   11.767 24822.20
+  95         H-2-Db         DAYSHHSGV DAYSHHSGV  0  0  0  0  0         DAYSHHSGV         PEPLIST 0.007406    9.295 0.063634   12.071 25116.31
+  96         H-2-Db         DQPLYSSSL DQPLYSSSL  0  0  0  0  0         DQPLYSSSL         PEPLIST 0.036975    2.914 0.073880    9.505 22480.68
+  97         H-2-Db         DSGANATAT DSGANATAT  0  0  0  0  0         DSGANATAT         PEPLIST 0.004304   12.766 0.068584   10.747 23806.43
+  98         H-2-Db         EALVNLNKL EALVNLNKL  0  0  0  0  0         EALVNLNKL         PEPLIST 0.685036    0.045 0.441244    0.125   422.26 <= SB
+  99         H-2-Db         EALVNLTKL EALVNLTKL  0  0  0  0  0         EALVNLTKL         PEPLIST 0.794089    0.020 0.528663    0.047   163.98 <= SB
+ 100         H-2-Db        EMLYNTADEL EMLYNTDEL  0  6  1  0  0        EMLYNTADEL         PEPLIST 0.117384    1.039 0.258615    0.662  3046.13 <= WB
+ 101         H-2-Db         ETLLNSATI ETLLNSATI  0  0  0  0  0         ETLLNSATI         PEPLIST 0.363728    0.234 0.399793    0.187   661.24 <= SB
+ 102         H-2-Db         ETLLNSATT ETLLNSATT  0  0  0  0  0         ETLLNSATT         PEPLIST 0.008055    8.823 0.110159    4.615 15182.19
+ 103         H-2-Db        FAIHKSDMDL FAIHKSDML  0  8  1  0  0        FAIHKSDMDL         PEPLIST 0.209445    0.528 0.243008    0.782  3606.46 <= WB
+ 104         H-2-Db        FAILKSDMDL FAILKSDML  0  8  1  0  0        FAILKSDMDL         PEPLIST 0.308149    0.318 0.307543    0.409  1794.06 <= SB
+ 105         H-2-Db        FAINMETCWI FAINMTCWI  0  5  1  0  0        FAINMETCWI         PEPLIST 0.021826    4.424 0.389744    0.204   737.18
+ 106         H-2-Db        FAINMETGWI FAINMETWI  0  7  1  0  0        FAINMETGWI         PEPLIST 0.113866    1.073 0.319817    0.370  1570.95 <= WB
+ 107         H-2-Db        FALGGNKQAL FALGNKQAL  0  3  1  0  0        FALGGNKQAL         PEPLIST 0.678004    0.049 0.427236    0.144   491.36 <= SB
+ 108         H-2-Db        FALGGNRQAL FALGNRQAL  0  3  1  0  0        FALGGNRQAL         PEPLIST 0.652278    0.062 0.450812    0.116   380.73 <= SB
+ 109         H-2-Db         FALMNLKAL FALMNLKAL  0  0  0  0  0         FALMNLKAL         PEPLIST 0.927641    0.006 0.740454    0.008    16.58 <= SB
+ 110         H-2-Db         FALMNRKAL FALMNRKAL  0  0  0  0  0         FALMNRKAL         PEPLIST 0.868199    0.012 0.671887    0.011    34.82 <= SB
+ 111         H-2-Db         FAMLGTIFL FAMLGTIFL  0  0  0  0  0         FAMLGTIFL         PEPLIST 0.512299    0.124 0.499209    0.067   225.53 <= SB
+ 112         H-2-Db         FAMLGTLFL FAMLGTLFL  0  0  0  0  0         FAMLGTLFL         PEPLIST 0.435823    0.169 0.497938    0.068   228.65 <= SB
+ 113         H-2-Db        FAVRNYWRGF FAVRNYWRF  0  8  1  0  0        FAVRNYWRGF         PEPLIST 0.193919    0.589 0.322219    0.362  1530.64 <= WB
+ 114         H-2-Db        FAVRNYWRGV FAVRNYWRV  0  8  1  0  0        FAVRNYWRGV         PEPLIST 0.303109    0.325 0.416411    0.160   552.42 <= SB
+ 115         H-2-Db        FGLINVTLNM FGLINVTLM  0  8  1  0  0        FGLINVTLNM         PEPLIST 0.628981    0.067 0.577992    0.028    96.16 <= SB
+ 116         H-2-Db        FGLINVTPNM FGLINVTPM  0  8  1  0  0        FGLINVTPNM         PEPLIST 0.719247    0.034 0.717055    0.009    21.36 <= SB
+ 117         H-2-Db          FGSIFSTL FGS-IFSTL  0  0  0  3  1          FGSIFSTL         PEPLIST 0.014127    6.046 0.088352    6.967 19222.39
+ 118         H-2-Db         FHLDNILRV FHLDNILRV  0  0  0  0  0         FHLDNILRV         PEPLIST 0.226412    0.472 0.234040    0.860  3973.94 <= SB
+ 119         H-2-Db         FHQDNILRV FHQDNILRV  0  0  0  0  0         FHQDNILRV         PEPLIST 0.103845    1.181 0.144681    2.645 10450.01 <= WB
+ 120         H-2-Db       FIFTSFWAYKI FIFTSFYKI  0  6  2  0  0       FIFTSFWAYKI         PEPLIST 0.002455   17.221 0.128845    3.335 12403.17
+ 121         H-2-Db          FIQPFLKL F-IQPFLKL  0  0  0  1  1          FIQPFLKL         PEPLIST 0.003246   14.859 0.039835   23.497 32492.79
+ 122         H-2-Db          FIQPFWKL F-IQPFWKL  0  0  0  1  1          FIQPFWKL         PEPLIST 0.003570   14.157 0.045412   19.777 30590.18
+ 123         H-2-Db         FLLESYLNL FLLESYLNL  0  0  0  0  0         FLLESYLNL         PEPLIST 0.086659    1.397 0.189383    1.432  6442.64 <= WB
+ 124         H-2-Db         FMLAFFMAF FMLAFFMAF  0  0  0  0  0         FMLAFFMAF         PEPLIST 0.022092    4.386 0.174238    1.750  7589.85
+ 125         H-2-Db         FMLPFFMAF FMLPFFMAF  0  0  0  0  0         FMLPFFMAF         PEPLIST 0.047475    2.379 0.180185    1.624  7116.81
+ 126         H-2-Db       FNFNSSNTSHL FNFSNTSHL  0  3  2  0  0       FNFNSSNTSHL         PEPLIST 0.382844    0.211 0.386228    0.212   765.77 <= SB
+ 127         H-2-Db       FNFNSSNTSRL FNFSNTSRL  0  3  2  0  0       FNFNSSNTSRL         PEPLIST 0.190523    0.602 0.268621    0.591  2733.57 <= WB
+ 128         H-2-Db          FNFWLHKL FNF-WLHKL  0  0  0  3  1          FNFWLHKL         PEPLIST 0.007869    8.948 0.067653   10.977 24047.52
+ 129         H-2-Db         FNYKRRHNL FNYKRRHNL  0  0  0  0  0         FNYKRRHNL         PEPLIST 0.063161    1.878 0.132403    3.148 11934.66 <= WB
+ 130         H-2-Db         FNYKRRPNL FNYKRRPNL  0  0  0  0  0         FNYKRRPNL         PEPLIST 0.047847    2.365 0.111980    4.464 14886.04
+ 131         H-2-Db          FQLAFGHL FQLAFGH-L  0  0  0  7  1          FQLAFGHL         PEPLIST 0.023877    4.129 0.127223    3.420 12622.73
+ 132         H-2-Db          FQLAFGHQ FQLAFGHQ-  0  0  0  8  1          FQLAFGHQ         PEPLIST 0.000559   33.077 0.028942   34.185 36557.11
+ 133         H-2-Db        FQVAKMINLM FQVKMINLM  0  3  1  0  0        FQVAKMINLM         PEPLIST 0.077706    1.557 0.200651    1.245  5703.19 <= WB
+ 134         H-2-Db        FQVAKMINPM FQVKMINPM  0  3  1  0  0        FQVAKMINPM         PEPLIST 0.151123    0.781 0.335146    0.323  1330.86 <= WB
+ 135         H-2-Db         FSCFNPKCL FSCFNPKCL  0  0  0  0  0         FSCFNPKCL         PEPLIST 0.068438    1.757 0.208700    1.134  5227.49 <= WB
+ 136         H-2-Db         FSFFNPKCL FSFFNPKCL  0  0  0  0  0         FSFFNPKCL         PEPLIST 0.448491    0.161 0.423591    0.149   511.12 <= SB
+ 137         H-2-Db        FSITSDLWSL FSITSLWSL  0  5  1  0  0        FSITSDLWSL         PEPLIST 0.223039    0.481 0.365742    0.256   955.78 <= SB
+ 138         H-2-Db          FSLNVVNL FSL-NVVNL  0  0  0  3  1          FSLNVVNL         PEPLIST 0.445806    0.162 0.353094    0.280  1095.96 <= SB
+ 139         H-2-Db       FSLNVVNLTLV FSLVNLTLV  0  3  2  0  0       FSLNVVNLTLV         PEPLIST 0.307247    0.319 0.552668    0.036   126.47 <= SB
+ 140         H-2-Db          FSLQCALL FSL-QCALL  0  0  0  3  1          FSLQCALL         PEPLIST 0.002978   15.565 0.144113    2.666 10514.49
+ 141         H-2-Db          FSLQFALL FSL-QFALL  0  0  0  3  1          FSLQFALL         PEPLIST 0.021149    4.527 0.171921    1.800  7782.49
+ 142         H-2-Db         FSLSFQHPV FSLSFQHPV  0  0  0  0  0         FSLSFQHPV         PEPLIST 0.313152    0.310 0.485387    0.081   261.91 <= SB
+ 143         H-2-Db          FSPNVVNL FSP-NVVNL  0  0  0  3  1          FSPNVVNL         PEPLIST 0.462052    0.152 0.282146    0.518  2361.41 <= SB
+ 144         H-2-Db       FSPNVVNLTLV FSPVNLTLV  0  3  2  0  0       FSPNVVNLTLV         PEPLIST 0.551394    0.098 0.521923    0.050   176.39 <= SB
+ 145         H-2-Db         FSVSFQHPV FSVSFQHPV  0  0  0  0  0         FSVSFQHPV         PEPLIST 0.290147    0.344 0.433670    0.135   458.32 <= SB
+ 146         H-2-Db        FSVTSDLWSL FSVTSLWSL  0  5  1  0  0        FSVTSDLWSL         PEPLIST 0.103168    1.189 0.278494    0.538  2456.59 <= WB
+ 147         H-2-Db          FSYIVELL FSY-IVELL  0  0  0  3  1          FSYIVELL         PEPLIST 0.061844    1.908 0.146062    2.593 10295.04 <= WB
+ 148         H-2-Db          FSYIVERL FSY-IVERL  0  0  0  3  1          FSYIVERL         PEPLIST 0.050987    2.255 0.108423    4.761 15470.19
+ 149         H-2-Db       FTFTSFWAYKI FTFTSFYKI  0  6  2  0  0       FTFTSFWAYKI         PEPLIST 0.009405    7.993 0.196255    1.314  5981.02
+ 150         H-2-Db          FVGNFLRV FVG-NFLRV  0  0  0  3  1          FVGNFLRV         PEPLIST 0.006326   10.231 0.070339   10.312 23358.79
+ 151         H-2-Db          FVIDFKPL FVI-DFKPL  0  0  0  3  1          FVIDFKPL         PEPLIST 0.015457    5.683 0.100630    5.484 16831.20
+ 152         H-2-Db          FVIDFKPR FVIDFKPR-  0  0  0  8  1          FVIDFKPR         PEPLIST 0.000149   51.392 0.015987   58.834 42058.07
+ 153         H-2-Db         FVLESYLNL FVLESYLNL  0  0  0  0  0         FVLESYLNL         PEPLIST 0.133535    0.894 0.206909    1.157  5329.79 <= WB
+ 154         H-2-Db          FVMDYIPG FVMDYIPG-  0  0  0  8  1          FVMDYIPG         PEPLIST 0.000106   56.467 0.039331   23.879 32670.51
+ 155         H-2-Db          FVMDYIPV FVM-DYIPV  0  0  0  3  1          FVMDYIPV         PEPLIST 0.006397   10.157 0.125649    3.503 12839.47
+ 156         H-2-Db          FVWNFLRV FVW-NFLRV  0  0  0  3  1          FVWNFLRV         PEPLIST 0.011733    6.880 0.094381    6.215 18008.47
+ 157         H-2-Db       FYFNYKRRHNL FYFKRRHNL  0  3  2  0  0       FYFNYKRRHNL         PEPLIST 0.004516   12.428 0.093005    6.391 18278.57
+ 158         H-2-Db       FYFNYKRRPNL FYFKRRPNL  0  3  2  0  0       FYFNYKRRPNL         PEPLIST 0.002999   15.507 0.079720    8.357 21104.19
+ 159         H-2-Db        GALDTNIENM GALTNIENM  0  3  1  0  0        GALDTNIENM         PEPLIST 0.807015    0.019 0.548354    0.038   132.52 <= SB
+ 160         H-2-Db         GAYSISSGI GAYSISSGI  0  0  0  0  0         GAYSISSGI         PEPLIST 0.048015    2.360 0.122628    3.697 13266.07
+ 161         H-2-Db         GGVLAVANI GGVLAVANI  0  0  0  0  0         GGVLAVANI         PEPLIST 0.026684    3.790 0.107566    4.833 15614.23
+ 162         H-2-Db        GGYVHYGDWL GGYVHYDWL  0  6  1  0  0        GGYVHYGDWL         PEPLIST 0.046966    2.396 0.185333    1.507  6731.22
+ 163         H-2-Db        GKVFFHSSSL GKVFFHSSL  0  6  1  0  0        GKVFFHSSSL         PEPLIST 0.000791   28.874 0.047820   18.455 29803.39
+ 164         H-2-Db         GMAVRALNM GMAVRALNM  0  0  0  0  0         GMAVRALNM         PEPLIST 0.037750    2.868 0.129294    3.312 12343.03
+ 165         H-2-Db         GMAVRELNM GMAVRELNM  0  0  0  0  0         GMAVRELNM         PEPLIST 0.029306    3.500 0.109208    4.695 15339.22
+ 166         H-2-Db         GMDSWCCYL GMDSWCCYL  0  0  0  0  0         GMDSWCCYL         PEPLIST 0.001586   21.304 0.108295    4.772 15491.61
+ 167         H-2-Db       GMDSWCCYLKL GMDSWYLKL  0  5  2  0  0       GMDSWCCYLKL         PEPLIST 0.000276   42.472 0.083479    7.717 20262.99
+ 168         H-2-Db         GMMTSAEAV GMMTSAEAV  0  0  0  0  0         GMMTSAEAV         PEPLIST 0.170445    0.684 0.312327    0.392  1703.56 <= WB
+ 169         H-2-Db        GNLAWAFTIL GNLAWFTIL  0  5  1  0  0        GNLAWAFTIL         PEPLIST 0.003744   13.801 0.102547    5.297 16485.57
+ 170         H-2-Db        GNLAWTFTIL GNLAWFTIL  0  5  1  0  0        GNLAWTFTIL         PEPLIST 0.003812   13.670 0.108846    4.725 15399.52
+ 171         H-2-Db          GTFAIHLL GTF-AIHLL  0  0  0  3  1          GTFAIHLL         PEPLIST 0.004202   12.927 0.048512   18.087 29581.02
+ 172         H-2-Db        GTFAIHLLKM GTFIHLLKM  0  3  1  0  0        GTFAIHLLKM         PEPLIST 0.007617    9.133 0.075654    9.140 22053.25
+ 173         H-2-Db       GTFAIHLLKML GTFAIHLLL  0  8  2  0  0       GTFAIHLLKML         PEPLIST 0.003977   13.349 0.062551   12.409 25412.47
+ 174         H-2-Db         GTFSHLTKL GTFSHLTKL  0  0  0  0  0         GTFSHLTKL         PEPLIST 0.105813    1.159 0.151009    2.417  9758.50 <= WB
+ 175         H-2-Db          GVIGYSLL GVI-GYSLL  0  0  0  3  1          GVIGYSLL         PEPLIST 0.001826   19.934 0.041889   21.997 31778.58
+ 176         H-2-Db        GVLDTNIENM GVLTNIENM  0  3  1  0  0        GVLDTNIENM         PEPLIST 0.337402    0.272 0.297467    0.451  2000.71 <= SB
+ 177         H-2-Db         GYVVKLRGL GYVVKLRGL  0  0  0  0  0         GYVVKLRGL         PEPLIST 0.001643   20.934 0.031621   31.049 35512.59
+ 178         H-2-Db          HAVNNMTL HAV-NNMTL  0  0  0  3  1          HAVNNMTL         PEPLIST 0.291113    0.342 0.252135    0.711  3267.34 <= SB
+ 179         H-2-Db         HGCERYPAL HGCERYPAL  0  0  0  0  0         HGCERYPAL         PEPLIST 0.012487    6.575 0.064171   11.917 24970.90
+ 180         H-2-Db         HGYERYPAL HGYERYPAL  0  0  0  0  0         HGYERYPAL         PEPLIST 0.137021    0.871 0.164163    1.984  8463.94 <= WB
+ 181         H-2-Db          HGYSLSHL HGY-SLSHL  0  0  0  3  1          HGYSLSHL         PEPLIST 0.010900    7.239 0.065530   11.549 24606.42
+ 182         H-2-Db          HGYSLSHV HGY-SLSHV  0  0  0  3  1          HGYSLSHV         PEPLIST 0.004918   11.834 0.056414   14.629 27157.01
+ 183         H-2-Db          HLYRLWLL HLY-RLWLL  0  0  0  3  1          HLYRLWLL         PEPLIST 0.002732   16.292 0.061642   12.692 25663.55
+ 184         H-2-Db       HLYRLWLLKRL HLYRLLKRL  0  5  2  0  0       HLYRLWLLKRL         PEPLIST 0.000805   28.683 0.054450   15.435 27740.20
+ 185         H-2-Db          HLYRMWLL HLY-RMWLL  0  0  0  3  1          HLYRMWLL         PEPLIST 0.003351   14.632 0.069751   10.458 23507.83
+ 186         H-2-Db       HLYRMWLLKRL HLYRLLKRL  0  4  2  0  0       HLYRMWLLKRL         PEPLIST 0.001125   24.952 0.065056   11.677 24732.94
+ 187         H-2-Db         HSFVDSVGF HSFVDSVGF  0  0  0  0  0         HSFVDSVGF         PEPLIST 0.045537    2.446 0.124355    3.586 13020.58
+ 188         H-2-Db         HSFVYSVGF HSFVYSVGF  0  0  0  0  0         HSFVYSVGF         PEPLIST 0.014968    5.814 0.093551    6.321 18170.98
+ 189         H-2-Db       HSLTDSSSDFM HSLTSSDFM  0  4  2  0  0       HSLTDSSSDFM         PEPLIST 0.194687    0.586 0.319482    0.371  1576.64 <= WB
+ 190         H-2-Db       HSLTNSSSDFM HSLTNSDFM  0  5  2  0  0       HSLTNSSSDFM         PEPLIST 0.787279    0.021 0.657258    0.013    40.79 <= SB
+ 191         H-2-Db          HTLPRMLL HTL-PRMLL  0  0  0  3  1          HTLPRMLL         PEPLIST 0.002171   18.331 0.036437   26.216 33709.66
+ 192         H-2-Db          HTLPWMLL HTL-PWMLL  0  0  0  3  1          HTLPWMLL         PEPLIST 0.001831   19.911 0.046272   19.293 30306.71
+ 193         H-2-Db         IAICVSDTV IAICVSDTV  0  0  0  0  0         IAICVSDTV         PEPLIST 0.247363    0.411 0.429034    0.142   481.90 <= SB
+ 194         H-2-Db         IAICVSVTV IAICVSVTV  0  0  0  0  0         IAICVSVTV         PEPLIST 0.093734    1.309 0.286116    0.497  2262.15 <= WB
+ 195         H-2-Db         IAILNQKYA IAILNQKYA  0  0  0  0  0         IAILNQKYA         PEPLIST 0.674451    0.051 0.537522    0.043   148.99 <= SB
+ 196         H-2-Db         IAIQNTTQL IAIQNTTQL  0  0  0  0  0         IAIQNTTQL         PEPLIST 0.993831    0.001 0.819477    0.006     7.05 <= SB
+ 197         H-2-Db        IAKINQDPQV IAKINQDPV  0  8  1  0  0        IAKINQDPQV         PEPLIST 0.275013    0.366 0.361305    0.264  1002.79 <= SB
+ 198         H-2-Db         IAMQNTTQL IAMQNTTQL  0  0  0  0  0         IAMQNTTQL         PEPLIST 0.990710    0.001 0.816913    0.006     7.25 <= SB
+ 199         H-2-Db          ICYGSAPL ICY-GSAPL  0  0  0  3  1          ICYGSAPL         PEPLIST 0.001299   23.376 0.048684   17.997 29526.20
+ 200         H-2-Db       IDVMLENYNNL IMLENYNNL  0  1  2  0  0       IDVMLENYNNL         PEPLIST 0.196306    0.579 0.292534    0.471  2110.38 <= WB
+ 201         H-2-Db         IGAGFFSDV IGAGFFSDV  0  0  0  0  0         IGAGFFSDV         PEPLIST 0.005880   10.691 0.070151   10.359 23406.27
+ 202         H-2-Db         IGAGFFSEV IGAGFFSEV  0  0  0  0  0         IGAGFFSEV         PEPLIST 0.033677    3.148 0.114442    4.271 14494.77
+ 203         H-2-Db         IGDLGLATL IGDLGLATL  0  0  0  0  0         IGDLGLATL         PEPLIST 0.151715    0.778 0.154950    2.286  9351.17 <= WB
+ 204         H-2-Db         IGDLRLATL IGDLRLATL  0  0  0  0  0         IGDLRLATL         PEPLIST 0.125497    0.964 0.141103    2.779 10862.49 <= WB
+ 205         H-2-Db         IGGHFYGGL IGGHFYGGL  0  0  0  0  0         IGGHFYGGL         PEPLIST 0.004192   12.943 0.056031   14.783 27269.84
+ 206         H-2-Db       IGIANFLLCPL IGIANFLLL  0  8  2  0  0       IGIANFLLCPL         PEPLIST 0.210878    0.522 0.629618    0.018    55.01 <= WB
+ 207         H-2-Db       IGIANFQLCPL IGIANFQLL  0  8  2  0  0       IGIANFQLCPL         PEPLIST 0.346125    0.258 0.651590    0.014    43.37 <= SB
+ 208         H-2-Db         IGNENVVEI IGNENVVEI  0  0  0  0  0         IGNENVVEI         PEPLIST 0.859543    0.014 0.518139    0.052   183.76 <= SB
+ 209         H-2-Db        IGYSLLPLIL IGYLLPLIL  0  3  1  0  0        IGYSLLPLIL         PEPLIST 0.024062    4.103 0.131347    3.204 12071.89
+ 210         H-2-Db        IGYSLLPLIV IGYLLPLIV  0  3  1  0  0        IGYSLLPLIV         PEPLIST 0.007073    9.554 0.099079    5.658 17116.03
+ 211         H-2-Db         IHAKRVTIM IHAKRVTIM  0  0  0  0  0         IHAKRVTIM         PEPLIST 0.017345    5.240 0.081962    7.961 20598.45
+ 212         H-2-Db        IHEYLSTAPF IHYLSTAPF  0  2  1  0  0        IHEYLSTAPF         PEPLIST 0.001676   20.752 0.073652    9.555 22536.29
+ 213         H-2-Db         IHPKAFPLI IHPKAFPLI  0  0  0  0  0         IHPKAFPLI         PEPLIST 0.040553    2.703 0.110669    4.572 15098.66
+ 214         H-2-Db         IHPKALPLI IHPKALPLI  0  0  0  0  0         IHPKALPLI         PEPLIST 0.036235    2.957 0.099155    5.649 17101.90
+ 215         H-2-Db        IIVANVPEGL IIVANVPEL  0  8  1  0  0        IIVANVPEGL         PEPLIST 0.194674    0.586 0.207728    1.147  5282.78 <= WB
+ 216         H-2-Db          ILLRLKFL ILLRLK-FL  0  0  0  6  1          ILLRLKFL         PEPLIST 0.002964   15.605 0.059793   13.321 26181.97
+ 217         H-2-Db        ILYPRVRAGM ILYPRVRAM  0  8  1  0  0        ILYPRVRAGM         PEPLIST 0.007927    8.909 0.070581   10.252 23297.64
+ 218         H-2-Db        ILYPSVRAGM ILYPSVRAM  0  8  1  0  0        ILYPSVRAGM         PEPLIST 0.013424    6.265 0.078323    8.616 21425.69
+ 219         H-2-Db          IMLQYHAL IML-QYHAL  0  0  0  3  1          IMLQYHAL         PEPLIST 0.017607    5.183 0.123862    3.618 13090.23
+ 220         H-2-Db          IMTFLHNL IMT-FLHNL  0  0  0  3  1          IMTFLHNL         PEPLIST 0.004985   11.749 0.067514   11.012 24083.73
+ 221         H-2-Db          IMTYLHNL IMT-YLHNL  0  0  0  3  1          IMTYLHNL         PEPLIST 0.002641   16.587 0.053286   15.921 28091.99
+ 222         H-2-Db          IMVQYHAL IMV-QYHAL  0  0  0  3  1          IMVQYHAL         PEPLIST 0.012726    6.483 0.094012    6.262 18080.44
+ 223         H-2-Db         INAKRVTIM INAKRVTIM  0  0  0  0  0         INAKRVTIM         PEPLIST 0.026036    3.861 0.082350    7.899 20511.98
+ 224         H-2-Db         IQIAKEMAL IQIAKEMAL  0  0  0  0  0         IQIAKEMAL         PEPLIST 0.199328    0.568 0.176718    1.696  7388.88 <= WB
+ 225         H-2-Db         IQIAKEMAQ IQIAKEMAQ  0  0  0  0  0         IQIAKEMAQ         PEPLIST 0.001033   25.889 0.026697   37.255 37455.95
+ 226         H-2-Db        IQLVNGSLAV IQLVNGLAV  0  6  1  0  0        IQLVNGSLAV         PEPLIST 0.426825    0.174 0.443974    0.123   409.97 <= SB
+ 227         H-2-Db         IQQHTFALV IQQHTFALV  0  0  0  0  0         IQQHTFALV         PEPLIST 0.023601    4.169 0.104579    5.098 16127.10
+ 228         H-2-Db         IQQHTFAQV IQQHTFAQV  0  0  0  0  0         IQQHTFAQV         PEPLIST 0.027967    3.648 0.090581    6.693 18764.30
+ 229         H-2-Db        IQRVNGSLAV IQRVNSLAV  0  5  1  0  0        IQRVNGSLAV         PEPLIST 0.054113    2.146 0.160987    2.084  8759.85
+ 230         H-2-Db        IRLYFQDKQM IRLYFQDKM  0  8  1  0  0        IRLYFQDKQM         PEPLIST 0.000379   38.080 0.033195   29.373 34912.99
+ 231         H-2-Db          ISCNRHTL ISC-NRHTL  0  0  0  3  1          ISCNRHTL         PEPLIST 0.058969    1.982 0.172446    1.789  7738.42 <= WB
+ 232         H-2-Db       ISFGVTWWTMM ISFTWWTMM  0  3  2  0  0       ISFGVTWWTMM         PEPLIST 0.006067   10.497 0.144088    2.667 10517.30
+ 233         H-2-Db         ISGQHLLAV ISGQHLLAV  0  0  0  0  0         ISGQHLLAV         PEPLIST 0.056583    2.059 0.135094    3.007 11592.28
+ 234         H-2-Db         ISGQHLVAV ISGQHLVAV  0  0  0  0  0         ISGQHLVAV         PEPLIST 0.094148    1.304 0.155798    2.257  9265.72 <= WB
+ 235         H-2-Db         ISPTVRATL ISPTVRATL  0  0  0  0  0         ISPTVRATL         PEPLIST 0.454123    0.157 0.284827    0.503  2293.91 <= SB
+ 236         H-2-Db         ISPTVRATV ISPTVRATV  0  0  0  0  0         ISPTVRATV         PEPLIST 0.302775    0.325 0.238693    0.818  3778.85 <= SB
+ 237         H-2-Db          ISRNRHTL IS-RNRHTL  0  0  0  2  1          ISRNRHTL         PEPLIST 0.069365    1.735 0.151281    2.408  9729.87 <= WB
+ 238         H-2-Db        ISVANVPEGL ISVANVPEL  0  8  1  0  0        ISVANVPEGL         PEPLIST 0.633048    0.066 0.421882    0.151   520.67 <= SB
+ 239         H-2-Db         ISWITWINL ISWITWINL  0  0  0  0  0         ISWITWINL         PEPLIST 0.047272    2.386 0.165759    1.947  8319.03
+ 240         H-2-Db         ISWKTWINL ISWKTWINL  0  0  0  0  0         ISWKTWINL         PEPLIST 0.083105    1.458 0.174124    1.752  7599.22 <= WB
+ 241         H-2-Db          ISYLKDNA ISY-LKDNA  0  0  0  3  1          ISYLKDNA         PEPLIST 0.002320   17.727 0.043042   21.236 31384.64
+ 242         H-2-Db          ISYLKGNA ISYLKG-NA  0  0  0  6  1          ISYLKGNA         PEPLIST 0.001020   26.019 0.034738   27.814 34334.99
+ 243         H-2-Db       ITVSCRHYTAF ITVRHYTAF  0  3  2  0  0       ITVSCRHYTAF         PEPLIST 0.006557    9.994 0.116437    4.114 14185.25
+ 244         H-2-Db         IVGHFYGGL IVGHFYGGL  0  0  0  0  0         IVGHFYGGL         PEPLIST 0.001149   24.719 0.036062   26.551 33846.83
+ 245         H-2-Db          IVHEHMNI IVHEHMN-I  0  0  0  7  1          IVHEHMNI         PEPLIST 0.001878   19.678 0.031302   31.414 35635.39
+ 246         H-2-Db         IVHGYMSKI IVHGYMSKI  0  0  0  0  0         IVHGYMSKI         PEPLIST 0.006159   10.403 0.053610   15.786 27993.47
+ 247         H-2-Db         IVHGYMSKM IVHGYMSKM  0  0  0  0  0         IVHGYMSKM         PEPLIST 0.008469    8.547 0.060896   12.925 25871.42
+ 248         H-2-Db          IVLEHMNI IVLEHMN-I  0  0  0  7  1          IVLEHMNI         PEPLIST 0.003160   15.059 0.044109   20.561 31024.33
+ 249         H-2-Db          IVYKRSAV IVY-KRSAV  0  0  0  3  1          IVYKRSAV         PEPLIST 0.002017   18.994 0.034730   27.822 34337.98
+ 250         H-2-Db         IVYLYGVCV IVYLYGVCV  0  0  0  0  0         IVYLYGVCV         PEPLIST 0.001625   21.038 0.050158   17.326 29058.96
+ 251         H-2-Db         IVYLYVVCV IVYLYVVCV  0  0  0  0  0         IVYLYVVCV         PEPLIST 0.000991   26.359 0.044500   20.319 30893.55
+ 252         H-2-Db         IVYTNGSLL IVYTNGSLL  0  0  0  0  0         IVYTNGSLL         PEPLIST 0.667574    0.056 0.464649    0.102   327.79 <= SB
+ 253         H-2-Db        IVYTNGSLLL IVYTNGLLL  0  6  1  0  0        IVYTNGSLLL         PEPLIST 0.248730    0.407 0.291973    0.473  2123.23 <= SB
+ 254         H-2-Db          IVYVHRGG IVY-VHRGG  0  0  0  3  1          IVYVHRGG         PEPLIST 0.000025   78.044 0.012508   69.340 43671.34
+ 255         H-2-Db          IVYVHRGV IVY-VHRGV  0  0  0  3  1          IVYVHRGV         PEPLIST 0.000972   26.570 0.031981   30.668 35374.75
+ 256         H-2-Db        IWLYFQDKQM IWLYFQDKM  0  8  1  0  0        IWLYFQDKQM         PEPLIST 0.000436   36.227 0.043079   21.211 31372.06
+ 257         H-2-Db          KAFSRHWL KAF-SRHWL  0  0  0  3  1          KAFSRHWL         PEPLIST 0.016028    5.531 0.099884    5.566 16967.59
+ 258         H-2-Db          KAFSRPWL KAF-SRPWL  0  0  0  3  1          KAFSRPWL         PEPLIST 0.009491    7.947 0.081377    8.061 20729.12
+ 259         H-2-Db       KAGRGANWSLL KAGRNWSLL  0  4  2  0  0       KAGRGANWSLL         PEPLIST 0.264711    0.381 0.359892    0.267  1018.23 <= SB
+ 260         H-2-Db       KAGRGANWSLR KAGRNWSLR  0  4  2  0  0       KAGRGANWSLR         PEPLIST 0.000624   31.709 0.042295   21.729 31639.34
+ 261         H-2-Db         KAICNVRRM KAICNVRRM  0  0  0  0  0         KAICNVRRM         PEPLIST 0.707530    0.037 0.562522    0.032   113.68 <= SB
+ 262         H-2-Db         KAIGNVRRM KAIGNVRRM  0  0  0  0  0         KAIGNVRRM         PEPLIST 0.739778    0.029 0.437700    0.130   438.76 <= SB
+ 263         H-2-Db        KALLNGDGAI KALLNGDAI  0  7  1  0  0        KALLNGDGAI         PEPLIST 0.863814    0.013 0.643656    0.016    47.26 <= SB
+ 264         H-2-Db        KALLNGEGAI KALLNGEAI  0  7  1  0  0        KALLNGEGAI         PEPLIST 0.831210    0.017 0.594550    0.025    80.39 <= SB
+ 265         H-2-Db          KAMATMDI KAMATMD-I  0  0  0  7  1          KAMATMDI         PEPLIST 0.010598    7.373 0.106928    4.887 15722.45
+ 266         H-2-Db          KAMATMEI KAM-ATMEI  0  0  0  3  1          KAMATMEI         PEPLIST 0.015659    5.630 0.107542    4.835 15618.36
+ 267         H-2-Db         KAYKKPELL KAYKKPELL  0  0  0  0  0         KAYKKPELL         PEPLIST 0.358062    0.241 0.245469    0.763  3511.70 <= SB
+ 268         H-2-Db         KAYTKPELL KAYTKPELL  0  0  0  0  0         KAYTKPELL         PEPLIST 0.448369    0.161 0.287026    0.494  2239.98 <= SB
+ 269         H-2-Db        KFNHQNFDTL KNHQNFDTL  0  1  1  0  0        KFNHQNFDTL         PEPLIST 0.169858    0.686 0.319341    0.371  1579.04 <= WB
+ 270         H-2-Db        KFNHQNVDTL KNHQNVDTL  0  1  1  0  0        KFNHQNVDTL         PEPLIST 0.194373    0.587 0.303341    0.427  1877.51 <= WB
+ 271         H-2-Db         KGHEFIPTF KGHEFIPTF  0  0  0  0  0         KGHEFIPTF         PEPLIST 0.105747    1.160 0.133350    3.099 11813.06 <= WB
+ 272         H-2-Db         KGHEFIPTL KGHEFIPTL  0  0  0  0  0         KGHEFIPTL         PEPLIST 0.200908    0.561 0.174088    1.753  7602.13 <= WB
+ 273         H-2-Db         KGTLYYYTL KGTLYYYTL  0  0  0  0  0         KGTLYYYTL         PEPLIST 0.051840    2.226 0.141944    2.748 10764.18
+ 274         H-2-Db        KGVDGNMHVM KGVDNMHVM  0  4  1  0  0        KGVDGNMHVM         PEPLIST 0.511782    0.125 0.342602    0.300  1227.70 <= SB
+ 275         H-2-Db        KGVDGNMHVR KGVDNMHVR  0  4  1  0  0        KGVDGNMHVR         PEPLIST 0.001758   20.305 0.037546   25.297 33307.48
+ 276         H-2-Db         KGWCMAFWI KGWCMAFWI  0  0  0  0  0         KGWCMAFWI         PEPLIST 0.004351   12.690 0.212227    1.090  5031.76
+ 277         H-2-Db         KGWGMAFWI KGWGMAFWI  0  0  0  0  0         KGWGMAFWI         PEPLIST 0.023025    4.252 0.181054    1.606  7050.25
+ 278         H-2-Db         KGYPHWPAL KGYPHWPAL  0  0  0  0  0         KGYPHWPAL         PEPLIST 0.247143    0.412 0.229408    0.902  4178.19 <= SB
+ 279         H-2-Db         KGYPHWPAR KGYPHWPAR  0  0  0  0  0         KGYPHWPAR         PEPLIST 0.002134   18.490 0.038286   24.703 33041.93
+ 280         H-2-Db         KGYRHKVPL KGYRHKVPL  0  0  0  0  0         KGYRHKVPL         PEPLIST 0.243661    0.422 0.278937    0.535  2444.85 <= SB
+ 281         H-2-Db         KGYRHKVPQ KGYRHKVPQ  0  0  0  0  0         KGYRHKVPQ         PEPLIST 0.000770   29.194 0.041961   21.950 31753.81
+ 282         H-2-Db         KIHENLEEM KIHENLEEM  0  0  0  0  0         KIHENLEEM         PEPLIST 0.796120    0.020 0.524237    0.049   172.03 <= SB
+ 283         H-2-Db         KIHQNLEEM KIHQNLEEM  0  0  0  0  0         KIHQNLEEM         PEPLIST 0.806864    0.019 0.556306    0.034   121.59 <= SB
+ 284         H-2-Db          KILTFDQL KIL-TFDQL  0  0  0  3  1          KILTFDQL         PEPLIST 0.008833    8.328 0.062584   12.398 25403.18
+ 285         H-2-Db          KILTFDRL KIL-TFDRL  0  0  0  3  1          KILTFDRL         PEPLIST 0.005364   11.272 0.054183   15.547 27820.62
+ 286         H-2-Db        KIPKFSMPGF KIPKFSMPF  0  8  1  0  0        KIPKFSMPGF         PEPLIST 0.011302    7.061 0.067307   11.069 24137.82
+ 287         H-2-Db        KMPKFSMPGF KMPKFSMPF  0  8  1  0  0        KMPKFSMPGF         PEPLIST 0.020183    4.696 0.111274    4.521 15000.22
+ 288         H-2-Db         KMSSNAFFV KMSSNAFFV  0  0  0  0  0         KMSSNAFFV         PEPLIST 0.377825    0.218 0.491781    0.075   244.40 <= SB
+ 289         H-2-Db         KMSSYAFFV KMSSYAFFV  0  0  0  0  0         KMSSYAFFV         PEPLIST 0.014134    6.044 0.157599    2.197  9086.92
+ 290         H-2-Db         KNHWNSTML KNHWNSTML  0  0  0  0  0         KNHWNSTML         PEPLIST 0.188489    0.610 0.239513    0.811  3745.47 <= WB
+ 291         H-2-Db         KNHWNSTMR KNHWNSTMR  0  0  0  0  0         KNHWNSTMR         PEPLIST 0.001866   19.740 0.035362   27.195 34104.09
+ 292         H-2-Db         KNWIKYARF KNWIKYARF  0  0  0  0  0         KNWIKYARF         PEPLIST 0.010140    7.593 0.065009   11.690 24745.41
+ 293         H-2-Db         KNWINYARF KNWINYARF  0  0  0  0  0         KNWINYARF         PEPLIST 0.106493    1.151 0.198707    1.275  5824.41 <= WB
+ 294         H-2-Db         KNYRHVSCL KNYRHVSCL  0  0  0  0  0         KNYRHVSCL         PEPLIST 0.029712    3.467 0.125920    3.489 12801.94
+ 295         H-2-Db         KNYRQVSCL KNYRQVSCL  0  0  0  0  0         KNYRQVSCL         PEPLIST 0.011082    7.158 0.083679    7.685 20219.22
+ 296         H-2-Db        KPMTKNTQDI KPMKNTQDI  0  3  1  0  0        KPMTKNTQDI         PEPLIST 0.010780    7.292 0.096071    5.999 17682.16
+ 297         H-2-Db        KPMTKNTQYI KMTKNTQYI  0  1  1  0  0        KPMTKNTQYI         PEPLIST 0.111756    1.093 0.230500    0.892  4129.11 <= WB
+ 298         H-2-Db        KQTENLYIEL KQTENLIEL  0  6  1  0  0        KQTENLYIEL         PEPLIST 0.313566    0.310 0.305189    0.419  1840.32 <= SB
+ 299         H-2-Db        KQTENLYMEL KQTENLYEL  0  7  1  0  0        KQTENLYMEL         PEPLIST 0.263630    0.382 0.293540    0.467  2087.54 <= SB
+ 300         H-2-Db         KSFHFYCPL KSFHFYCPL  0  0  0  0  0         KSFHFYCPL         PEPLIST 0.050334    2.278 0.352070    0.282  1108.16
+ 301         H-2-Db         KSFHFYCRL KSFHFYCRL  0  0  0  0  0         KSFHFYCRL         PEPLIST 0.038079    2.849 0.185609    1.501  6711.15
+ 302         H-2-Db         KSFRQKPNL KSFRQKPNL  0  0  0  0  0         KSFRQKPNL         PEPLIST 0.066854    1.795 0.127694    3.396 12558.62 <= WB
+ 303         H-2-Db         KSFSQKPNL KSFSQKPNL  0  0  0  0  0         KSFSQKPNL         PEPLIST 0.067259    1.785 0.122337    3.715 13307.96 <= WB
+ 304         H-2-Db        KSYTFFSCSL KSYTFFCSL  0  6  1  0  0        KSYTFFSCSL         PEPLIST 0.019594    4.800 0.252650    0.707  3249.19
+ 305         H-2-Db        KSYTFFWCSL KSYTFFWCL  0  8  1  0  0        KSYTFFWCSL         PEPLIST 0.008251    8.693 0.250079    0.727  3340.86
+ 306         H-2-Db          KVFNAPAL KVF-NAPAL  0  0  0  3  1          KVFNAPAL         PEPLIST 0.066252    1.808 0.122335    3.715 13308.29 <= WB
+ 307         H-2-Db          KVFNAPAV KVF-NAPAV  0  0  0  3  1          KVFNAPAV         PEPLIST 0.031001    3.364 0.092165    6.498 18445.47
+ 308         H-2-Db        KVFSLNVVNL KVFLNVVNL  0  3  1  0  0        KVFSLNVVNL         PEPLIST 0.239517    0.434 0.254832    0.690  3173.38 <= SB
+ 309         H-2-Db        KVFSPNVVNL KVFPNVVNL  0  3  1  0  0        KVFSPNVVNL         PEPLIST 0.344153    0.261 0.240044    0.806  3724.00 <= SB
+ 310         H-2-Db         KVLQKLCQL KVLQKLCQL  0  0  0  0  0         KVLQKLCQL         PEPLIST 0.034364    3.092 0.116365    4.119 14196.31
+ 311         H-2-Db         LAFFEAASI LAFFEAASI  0  0  0  0  0         LAFFEAASI         PEPLIST 0.040047    2.733 0.164101    1.986  8469.61
+ 312         H-2-Db         LAFFEAASM LAFFEAASM  0  0  0  0  0         LAFFEAASM         PEPLIST 0.078717    1.537 0.198076    1.284  5864.29 <= WB
+ 313         H-2-Db       LAIMTQHLEPI LAIMHLEPI  0  4  2  0  0       LAIMTQHLEPI         PEPLIST 0.130605    0.919 0.427418    0.144   490.40 <= WB
+ 314         H-2-Db         LALTDLQYI LALTDLQYI  0  0  0  0  0         LALTDLQYI         PEPLIST 0.560968    0.094 0.490209    0.076   248.60 <= SB
+ 315         H-2-Db        LAPYFISEPL LAPYFIEPL  0  6  1  0  0        LAPYFISEPL         PEPLIST 0.150455    0.785 0.312647    0.392  1697.66 <= WB
+ 316         H-2-Db        LAPYFLSEPL LAPYFLEPL  0  6  1  0  0        LAPYFLSEPL         PEPLIST 0.096565    1.273 0.308567    0.405  1774.29 <= WB
+ 317         H-2-Db         LAQNRHCEL LAQNRHCEL  0  0  0  0  0         LAQNRHCEL         PEPLIST 0.017154    5.281 0.103558    5.198 16306.24
+ 318         H-2-Db       LASMTQHLEPI LATQHLEPI  0  2  2  0  0       LASMTQHLEPI         PEPLIST 0.014964    5.815 0.238386    0.821  3791.40
+ 319         H-2-Db        LAVCNWPKPM LAVCNWPKM  0  8  1  0  0        LAVCNWPKPM         PEPLIST 0.029261    3.505 0.414543    0.163   563.70
+ 320         H-2-Db        LAVSNWPKPM LAVSNWPKM  0  8  1  0  0        LAVSNWPKPM         PEPLIST 0.158078    0.744 0.440847    0.126   424.08 <= WB
+ 321         H-2-Db          LAWAFTIL LAW-AFTIL  0  0  0  3  1          LAWAFTIL         PEPLIST 0.008173    8.745 0.088325    6.970 19227.93
+ 322         H-2-Db          LAWTFTIL LAW-TFTIL  0  0  0  3  1          LAWTFTIL         PEPLIST 0.013039    6.386 0.100555    5.492 16844.69
+ 323         H-2-Db        LAYLPTAPPL LAYLPTPPL  0  6  1  0  0        LAYLPTAPPL         PEPLIST 0.028210    3.621 0.179738    1.633  7151.29
+ 324         H-2-Db        LAYLPTAPPP LAYLPTPPP  0  6  1  0  0        LAYLPTAPPP         PEPLIST 0.000508   34.320 0.052680   16.187 28276.74
+ 325         H-2-Db        LDAVENGCAV LAVENGCAV  0  1  1  0  0        LDAVENGCAV         PEPLIST 0.083666    1.448 0.230024    0.896  4150.44 <= WB
+ 326         H-2-Db        LDNEDYYSLL LDNEDYYLL  0  7  1  0  0        LDNEDYYSLL         PEPLIST 0.000999   26.259 0.033586   28.953 34765.82
+ 327         H-2-Db        LESFTFRNHV LSFTFRNHV  0  1  1  0  0        LESFTFRNHV         PEPLIST 0.003015   15.464 0.070645   10.237 23281.52
+ 328         H-2-Db        LESFTFRNNV LSFTFRNNV  0  1  1  0  0        LESFTFRNNV         PEPLIST 0.001943   19.360 0.057528   14.180 26831.70
+ 329         H-2-Db         LFFPCANPL LFFPCANPL  0  0  0  0  0         LFFPCANPL         PEPLIST 0.002845   15.936 0.121770    3.751 13389.80
+ 330         H-2-Db         LFFPCSNPL LFFPCSNPL  0  0  0  0  0         LFFPCSNPL         PEPLIST 0.002709   16.368 0.122033    3.735 13351.88
+ 331         H-2-Db         LGFFLQIYL LGFFLQIYL  0  0  0  0  0         LGFFLQIYL         PEPLIST 0.039967    2.738 0.169887    1.849  7955.67
+ 332         H-2-Db          LGSIFSTL LGS-IFSTL  0  0  0  3  1          LGSIFSTL         PEPLIST 0.004244   12.861 0.051690   16.632 28581.19
+ 333         H-2-Db         LGVCMYEML LGVCMYEML  0  0  0  0  0         LGVCMYEML         PEPLIST 0.018446    5.001 0.239948    0.807  3727.89
+ 334         H-2-Db         LGVCMYGML LGVCMYGML  0  0  0  0  0         LGVCMYGML         PEPLIST 0.001613   21.124 0.138868    2.863 11128.44
+ 335         H-2-Db          LGVLFSLL LGV-LFSLL  0  0  0  3  1          LGVLFSLL         PEPLIST 0.003464   14.386 0.070849   10.186 23230.30
+ 336         H-2-Db          LGVLFSQL LGV-LFSQL  0  0  0  3  1          LGVLFSQL         PEPLIST 0.004220   12.899 0.061722   12.667 25641.41
+ 337         H-2-Db        LISFKIWQNL LSFKIWQNL  0  1  1  0  0        LISFKIWQNL         PEPLIST 0.003319   14.702 0.073410    9.607 22595.35
+ 338         H-2-Db        LISFRIWQNL ISFRIWQNL  1  0  0  0  0         ISFRIWQNL         PEPLIST 0.003117   15.177 0.084089    7.619 20129.79
+ 339         H-2-Db          LKVYYLPL LKV-YYLPL  0  0  0  3  1          LKVYYLPL         PEPLIST 0.000129   53.496 0.030334   32.529 36010.86
+ 340         H-2-Db         LKYCHLLVL LKYCHLLVL  0  0  0  0  0         LKYCHLLVL         PEPLIST 0.008829    8.330 0.113933    4.311 14574.77
+ 341         H-2-Db         LKYCHLLVR LKYCHLLVR  0  0  0  0  0         LKYCHLLVR         PEPLIST 0.000042   70.240 0.019387   50.454 40538.81
+ 342         H-2-Db          LLLRLKFL LLLRLK-FL  0  0  0  6  1          LLLRLKFL         PEPLIST 0.001080   25.408 0.045941   19.479 30415.46
+ 343         H-2-Db       LLMLKNVGFAL LMLKNVFAL  1  6  1  0  0        LMLKNVGFAL         PEPLIST 0.008613    8.456 0.183204    1.557  6888.12
+ 344         H-2-Db         LLVDQYFPL LLVDQYFPL  0  0  0  0  0         LLVDQYFPL         PEPLIST 0.014190    6.026 0.112329    4.437 14829.93
+ 345         H-2-Db         LMLENYNNL LMLENYNNL  0  0  0  0  0         LMLENYNNL         PEPLIST 0.683709    0.046 0.521426    0.050   177.34 <= SB
+ 346         H-2-Db        LMLKNVGFAL LMLKNVFAL  0  6  1  0  0        LMLKNVGFAL         PEPLIST 0.248580    0.408 0.410752    0.169   587.30 <= SB
+ 347         H-2-Db       LMMLKNVGFAL MMLKNVFAL  1  6  1  0  0        MMLKNVGFAL         PEPLIST 0.019727    4.776 0.251723    0.714  3281.94
+ 348         H-2-Db         LMWFDKTAL LMWFDKTAL  0  0  0  0  0         LMWFDKTAL         PEPLIST 0.067245    1.785 0.202873    1.211  5567.68 <= WB
+ 349         H-2-Db         LMWFEKTAL LMWFEKTAL  0  0  0  0  0         LMWFEKTAL         PEPLIST 0.028636    3.574 0.144817    2.640 10434.64
+ 350         H-2-Db          LNFLHNFI LNF-LHNFI  0  0  0  3  1          LNFLHNFI         PEPLIST 0.005137   11.558 0.081351    8.066 20734.99
+ 351         H-2-Db          LNFQHNFI LNFQH-NFI  0  0  0  5  1          LNFQHNFI         PEPLIST 0.002808   16.045 0.060841   12.942 25886.94
+ 352         H-2-Db          LNFWLHKL LNF-WLHKL  0  0  0  3  1          LNFWLHKL         PEPLIST 0.002053   18.840 0.040187   23.229 32369.28
+ 353         H-2-Db        LNNEDYYSLL LNNEDYYLL  0  7  1  0  0        LNNEDYYSLL         PEPLIST 0.002363   17.567 0.048215   18.245 29676.25
+ 354         H-2-Db         LNQLYELAL LNQLYELAL  0  0  0  0  0         LNQLYELAL         PEPLIST 0.002862   15.888 0.046103   19.388 30362.17
+ 355         H-2-Db         LNQLYERAL LNQLYERAL  0  0  0  0  0         LNQLYERAL         PEPLIST 0.001857   19.784 0.031101   31.645 35713.27
+ 356         H-2-Db          LNVYYLPL LNV-YYLPL  0  0  0  3  1          LNVYYLPL         PEPLIST 0.000575   32.721 0.056363   14.649 27171.99
+ 357         H-2-Db          LQFIQPPL LQF-IQPPL  0  0  0  3  1          LQFIQPPL         PEPLIST 0.009577    7.900 0.092647    6.437 18349.54
+ 358         H-2-Db          LQFIQSPL LQF-IQSPL  0  0  0  3  1          LQFIQSPL         PEPLIST 0.007069    9.557 0.105577    5.000 15953.84
+ 359         H-2-Db          LQPLFSAL LQP-LFSAL  0  0  0  3  1          LQPLFSAL         PEPLIST 0.014743    5.875 0.074074    9.465 22433.68
+ 360         H-2-Db          LQPLFYAL LQP-LFYAL  0  0  0  3  1          LQPLFYAL         PEPLIST 0.017293    5.251 0.084238    7.595 20097.30
+ 361         H-2-Db         LSAARYALL LSAARYALL  0  0  0  0  0         LSAARYALL         PEPLIST 0.018327    5.027 0.119511    3.896 13721.22
+ 362         H-2-Db         LSASRYALL LSASRYALL  0  0  0  0  0         LSASRYALL         PEPLIST 0.019261    4.858 0.119794    3.878 13679.19
+ 363         H-2-Db        LSEVTNQLVV LSVTNQLVV  0  2  1  0  0        LSEVTNQLVV         PEPLIST 0.096928    1.268 0.244177    0.773  3561.14 <= WB
+ 364         H-2-Db         LSHYFEGVL LSHYFEGVL  0  0  0  0  0         LSHYFEGVL         PEPLIST 0.011030    7.181 0.090799    6.666 18720.13
+ 365         H-2-Db        LSKVTNQLVV LSVTNQLVV  0  2  1  0  0        LSKVTNQLVV         PEPLIST 0.024791    3.998 0.175576    1.721  7480.73
+ 366         H-2-Db        LSNLNRNATV LSNLNRATV  0  6  1  0  0        LSNLNRNATV         PEPLIST 0.066485    1.803 0.228418    0.912  4223.21 <= WB
+ 367         H-2-Db        LSNVNRNATV LSNVNRATV  0  6  1  0  0        LSNVNRNATV         PEPLIST 0.097869    1.256 0.255227    0.687  3159.84 <= WB
+ 368         H-2-Db       LTVRYGRFLNL LTVRRFLNL  0  4  2  0  0       LTVRYGRFLNL         PEPLIST 0.001899   19.575 0.061505   12.735 25701.54
+ 369         H-2-Db        MALINGSVLT MALINGSVL  0  0  0  0  0         MALINGSVL         PEPLIST 0.075566    1.599 0.314276    0.387  1668.00 <= WB
+ 370         H-2-Db        MALINGSVVT MALINSVVT  0  5  1  0  0        MALINGSVVT         PEPLIST 0.069880    1.723 0.273560    0.564  2591.32 <= WB
+ 371         H-2-Db         MALSTDYAL MALSTDYAL  0  0  0  0  0         MALSTDYAL         PEPLIST 0.263774    0.382 0.325529    0.352  1476.80 <= SB
+ 372         H-2-Db         MALSTYYAL MALSTYYAL  0  0  0  0  0         MALSTYYAL         PEPLIST 0.353032    0.247 0.429976    0.140   477.01 <= SB
+ 373         H-2-Db         MAPIDHTAM MAPIDHTAM  0  0  0  0  0         MAPIDHTAM         PEPLIST 0.763808    0.025 0.502539    0.062   217.55 <= SB
+ 374         H-2-Db         MAPIDHTTM MAPIDHTTM  0  0  0  0  0         MAPIDHTTM         PEPLIST 0.874806    0.012 0.586230    0.027    87.96 <= SB
+ 375         H-2-Db        MAVGRNVLEL MAVRNVLEL  0  3  1  0  0        MAVGRNVLEL         PEPLIST 0.779710    0.022 0.555175    0.035   123.09 <= SB
+ 376         H-2-Db        MDAVENGCAV MAVENGCAV  0  1  1  0  0        MDAVENGCAV         PEPLIST 0.134531    0.888 0.291984    0.473  2122.98 <= WB
+ 377         H-2-Db       MDVMLENYNNL MMLENYNNL  0  1  2  0  0       MDVMLENYNNL         PEPLIST 0.144409    0.822 0.301034    0.436  1924.95 <= WB
+ 378         H-2-Db         MGFFLQIYL MGFFLQIYL  0  0  0  0  0         MGFFLQIYL         PEPLIST 0.092716    1.322 0.245779    0.761  3499.93 <= WB
+ 379         H-2-Db         MGGMNRRPI MGGMNRRPI  0  0  0  0  0         MGGMNRRPI         PEPLIST 0.250200    0.403 0.466322    0.100   321.91 <= SB
+ 380         H-2-Db         MGNENVVEI MGNENVVEI  0  0  0  0  0         MGNENVVEI         PEPLIST 0.840322    0.016 0.543285    0.040   139.99 <= SB
+ 381         H-2-Db         MGVMNRRPI MGVMNRRPI  0  0  0  0  0         MGVMNRRPI         PEPLIST 0.497974    0.132 0.635772    0.017    51.46 <= SB
+ 382         H-2-Db         MILGWFLKL MILGWFLKL  0  0  0  0  0         MILGWFLKL         PEPLIST 0.004068   13.170 0.064040   11.952 25006.33
+ 383         H-2-Db         MILGWLLKL MILGWLLKL  0  0  0  0  0         MILGWLLKL         PEPLIST 0.004041   13.223 0.056848   14.454 27029.76
+ 384         H-2-Db         MISCNRHTL MISCNRHTL  0  0  0  0  0         MISCNRHTL         PEPLIST 0.164665    0.709 0.324933    0.354  1486.35 <= WB
+ 385         H-2-Db         MISRNRHTL MISRNRHTL  0  0  0  0  0         MISRNRHTL         PEPLIST 0.302434    0.326 0.320692    0.367  1556.14 <= SB
+ 386         H-2-Db        MLGEYNHSVL MLGENHSVL  0  4  1  0  0        MLGEYNHSVL         PEPLIST 0.037539    2.881 0.210826    1.107  5108.64
+ 387         H-2-Db        MLGVYNHSVL MLVYNHSVL  0  2  1  0  0        MLGVYNHSVL         PEPLIST 0.085860    1.410 0.312038    0.393  1708.89 <= WB
+ 388         H-2-Db         MLVDQYFPL MLVDQYFPL  0  0  0  0  0         MLVDQYFPL         PEPLIST 0.034166    3.108 0.158230    2.176  9025.06
+ 389         H-2-Db        MMKYYYECVL MMKYYYEVL  0  7  1  0  0        MMKYYYECVL         PEPLIST 0.000382   37.964 0.109379    4.680 15310.92
+ 390         H-2-Db        MMKYYYESVL MMKYYYEVL  0  7  1  0  0        MMKYYYESVL         PEPLIST 0.002835   15.963 0.097264    5.864 17455.41
+ 391         H-2-Db        MMLKNVGFAL MMLKNVFAL  0  6  1  0  0        MMLKNVGFAL         PEPLIST 0.380230    0.215 0.505198    0.059   211.38 <= SB
+ 392         H-2-Db          MNIAHLHL MNIAHLH-L  0  0  0  7  1          MNIAHLHL         PEPLIST 0.008131    8.773 0.067254   11.083 24151.64
+ 393         H-2-Db          MNIAHLQL MNI-AHLQL  0  0  0  3  1          MNIAHLQL         PEPLIST 0.005000   11.731 0.054347   15.478 27771.07
+ 394         H-2-Db        MPVGRNVLEL MPVRNVLEL  0  3  1  0  0        MPVGRNVLEL         PEPLIST 0.056317    2.069 0.163077    2.014  8563.98
+ 395         H-2-Db         MQQLNPEFV MQQLNPEFV  0  0  0  0  0         MQQLNPEFV         PEPLIST 0.655318    0.061 0.531804    0.045   158.50 <= SB
+ 396         H-2-Db         MQQQNPEFV MQQQNPEFV  0  0  0  0  0         MQQQNPEFV         PEPLIST 0.664978    0.057 0.500280    0.065   222.93 <= SB
+ 397         H-2-Db         MSALNLSCA MSALNLSCA  0  0  0  0  0         MSALNLSCA         PEPLIST 0.050597    2.269 0.291903    0.474  2124.83
+ 398         H-2-Db         MSAQNLATV MSAQNLATV  0  0  0  0  0         MSAQNLATV         PEPLIST 0.842731    0.015 0.653851    0.014    42.32 <= SB
+ 399         H-2-Db       MSFGVTWWTMM MSFTWWTMM  0  3  2  0  0       MSFGVTWWTMM         PEPLIST 0.003719   13.850 0.156742    2.226  9171.53
+ 400         H-2-Db        MSMEGILPGM MSMEGILPM  0  8  1  0  0        MSMEGILPGM         PEPLIST 0.102179    1.200 0.277151    0.545  2492.57 <= WB
+ 401         H-2-Db        MSMEGIRPGM MSMEGIRPM  0  8  1  0  0        MSMEGIRPGM         PEPLIST 0.062914    1.883 0.206254    1.166  5367.70 <= WB
+ 402         H-2-Db         MSRCNHNRL MSRCNHNRL  0  0  0  0  0         MSRCNHNRL         PEPLIST 0.076035    1.589 0.243259    0.780  3596.70 <= WB
+ 403         H-2-Db         MSTLNLSCA MSTLNLSCA  0  0  0  0  0         MSTLNLSCA         PEPLIST 0.023326    4.209 0.234852    0.853  3939.19
+ 404         H-2-Db         MSTQNLATV MSTQNLATV  0  0  0  0  0         MSTQNLATV         PEPLIST 0.740493    0.029 0.593855    0.026    81.00 <= SB
+ 405         H-2-Db         MSYFLQGKL MSYFLQGKL  0  0  0  0  0         MSYFLQGKL         PEPLIST 0.028258    3.616 0.132324    3.153 11944.96
+ 406         H-2-Db         MSYFLQGTL MSYFLQGTL  0  0  0  0  0         MSYFLQGTL         PEPLIST 0.061784    1.910 0.221986    0.979  4527.55 <= WB
+ 407         H-2-Db       MTVRYGRFLNL MTVRRFLNL  0  4  2  0  0       MTVRYGRFLNL         PEPLIST 0.004133   13.045 0.083340    7.740 20293.56
+ 408         H-2-Db         MWYTRFLIF MWYTRFLIF  0  0  0  0  0         MWYTRFLIF         PEPLIST 0.004614   12.272 0.067255   11.083 24151.40
+ 409         H-2-Db         MWYTSFLIF MWYTSFLIF  0  0  0  0  0         MWYTSFLIF         PEPLIST 0.001443   22.290 0.064406   11.853 24907.26
+ 410         H-2-Db          MYFGHRAL MYF-GHRAL  0  0  0  3  1          MYFGHRAL         PEPLIST 0.003013   15.467 0.053716   15.742 27961.62
+ 411         H-2-Db          MYFGPRAL MYF-GPRAL  0  0  0  3  1          MYFGPRAL         PEPLIST 0.002199   18.206 0.039934   23.421 32457.98
+ 412         H-2-Db          MYFIFTSF MYF-IFTSF  0  0  0  3  1          MYFIFTSF         PEPLIST 0.001583   21.322 0.048518   18.084 29579.11
+ 413         H-2-Db          MYFTFTSF MYF-TFTSF  0  0  0  3  1          MYFTFTSF         PEPLIST 0.002232   18.066 0.058480   13.811 26556.62
+ 414         H-2-Db         NAFLQGFHM NAFLQGFHM  0  0  0  0  0         NAFLQGFHM         PEPLIST 0.214736    0.507 0.257430    0.671  3085.41 <= WB
+ 415         H-2-Db          NAVYFPLV NAV-YFPLV  0  0  0  3  1          NAVYFPLV         PEPLIST 0.001852   19.809 0.044090   20.573 31030.75
+ 416         H-2-Db       NGFCHLCPSSF NGFLCPSSF  0  3  2  0  0       NGFCHLCPSSF         PEPLIST 0.000433   36.316 0.119176    3.917 13770.97
+ 417         H-2-Db       NGYCHLCPSSF NGYCHLSSF  0  6  2  0  0       NGYCHLCPSSF         PEPLIST 0.000462   35.492 0.111574    4.496 14951.51
+ 418         H-2-Db        NSLEENSTLL NSLENSTLL  0  3  1  0  0        NSLEENSTLL         PEPLIST 0.524793    0.116 0.398223    0.189   672.56 <= SB
+ 419         H-2-Db        NSLKENSTLL NSLKNSTLL  0  4  1  0  0        NSLKENSTLL         PEPLIST 0.480862    0.142 0.395007    0.194   696.38 <= SB
+ 420         H-2-Db         PAGQYFLNI PAGQYFLNI  0  0  0  0  0         PAGQYFLNI         PEPLIST 0.003293   14.758 0.042933   21.308 31421.75
+ 421         H-2-Db        PIFDYNYNGL PIFYNYNGL  0  3  1  0  0        PIFDYNYNGL         PEPLIST 0.002323   17.714 0.048856   17.919 29471.17
+ 422         H-2-Db         PQLSHSSRL PQLSHSSRL  0  0  0  0  0         PQLSHSSRL         PEPLIST 0.007040    9.583 0.057409   14.227 26866.12
+ 423         H-2-Db         PSPYLHQHL PSPYLHQHL  0  0  0  0  0         PSPYLHQHL         PEPLIST 0.032578    3.236 0.077581    8.759 21598.29
+ 424         H-2-Db        PSPYLHQHLL PSPYLHHLL  0  6  1  0  0        PSPYLHQHLL         PEPLIST 0.012112    6.727 0.084577    7.541 20023.64
+ 425         H-2-Db          PSYVPAPL PSY-VPAPL  0  0  0  3  1          PSYVPAPL         PEPLIST 0.000859   27.961 0.038212   24.762 33068.32
+ 426         H-2-Db        QAFDNMKEPI QAFDNKEPI  0  5  1  0  0        QAFDNMKEPI         PEPLIST 0.353303    0.247 0.414215    0.164   565.70 <= SB
+ 427         H-2-Db        QAFDNMKEPV QAFDNKEPV  0  5  1  0  0        QAFDNMKEPV         PEPLIST 0.204229    0.548 0.326814    0.348  1456.40 <= WB
+ 428         H-2-Db        QAYLGYLAML QAYLYLAML  0  4  1  0  0        QAYLGYLAML         PEPLIST 0.015047    5.793 0.116381    4.118 14193.80
+ 429         H-2-Db        QAYLRYLAML QAYRYLAML  0  3  1  0  0        QAYLRYLAML         PEPLIST 0.012887    6.433 0.121193    3.788 13473.79
+ 430         H-2-Db          QEHWFTEL QEH-WFTEL  0  0  0  3  1          QEHWFTEL         PEPLIST 0.001184   24.383 0.029834   33.110 36205.95
+ 431         H-2-Db         QFFHCYCPL QFFHCYCPL  0  0  0  0  0         QFFHCYCPL         PEPLIST 0.000217   45.773 0.092751    6.423 18328.94
+ 432         H-2-Db         QFFHCYCPV QFFHCYCPV  0  0  0  0  0         QFFHCYCPV         PEPLIST 0.000169   49.390 0.074354    9.407 22365.67
+ 433         H-2-Db         QHLYRLWLL QHLYRLWLL  0  0  0  0  0         QHLYRLWLL         PEPLIST 0.007697    9.072 0.081026    8.124 20808.03
+ 434         H-2-Db         QHLYRMWLL QHLYRMWLL  0  0  0  0  0         QHLYRMWLL         PEPLIST 0.007177    9.470 0.079452    8.405 21165.51
+ 435         H-2-Db        QIFDYNYNGL QIFYNYNGL  0  3  1  0  0        QIFDYNYNGL         PEPLIST 0.011759    6.870 0.085988    7.322 19720.45
+ 436         H-2-Db         QILGFLILL QILGFLILL  0  0  0  0  0         QILGFLILL         PEPLIST 0.002926   15.710 0.046844   18.972 30119.71
+ 437         H-2-Db         QILVFLILL QILVFLILL  0  0  0  0  0         QILVFLILL         PEPLIST 0.003522   14.261 0.057189   14.316 26930.27
+ 438         H-2-Db        QIYFYLFKLL QIYFLFKLL  0  4  1  0  0        QIYFYLFKLL         PEPLIST 0.000249   43.880 0.050506   17.167 28949.67
+ 439         H-2-Db         QMCAKMSSF QMCAKMSSF  0  0  0  0  0         QMCAKMSSF         PEPLIST 0.002761   16.198 0.049258   17.736 29343.32
+ 440         H-2-Db         QMFAKMSSF QMFAKMSSF  0  0  0  0  0         QMFAKMSSF         PEPLIST 0.033296    3.179 0.122937    3.677 13221.92
+ 441         H-2-Db        QRLGFTYLRL QRLFTYLRL  0  3  1  0  0        QRLGFTYLRL         PEPLIST 0.000690   30.494 0.035778   26.804 33950.87
+ 442         H-2-Db        QSIINPDWNF QSIINPWNF  0  6  1  0  0        QSIINPDWNF         PEPLIST 0.175882    0.662 0.287118    0.493  2237.76 <= WB
+ 443         H-2-Db        QSIINPHWNF QSIINPHWF  0  8  1  0  0        QSIINPHWNF         PEPLIST 0.137732    0.866 0.240479    0.802  3706.52 <= WB
+ 444         H-2-Db       QSISRFSRPTL QSISRFPTL  0  6  2  0  0       QSISRFSRPTL         PEPLIST 0.022478    4.331 0.125955    3.487 12797.12
+ 445         H-2-Db       QSISRFSRSTL QSISRFSTL  0  6  2  0  0       QSISRFSRSTL         PEPLIST 0.020440    4.651 0.140366    2.807 10949.56
+ 446         H-2-Db        QSLGFTYLRL QSLFTYLRL  0  3  1  0  0        QSLGFTYLRL         PEPLIST 0.004513   12.433 0.084389    7.571 20064.60
+ 447         H-2-Db        QSYQFRVRAI QSYQFRVRI  0  8  1  0  0        QSYQFRVRAI         PEPLIST 0.003688   13.910 0.078073    8.664 21483.52
+ 448         H-2-Db        QSYRFRVRAI QSYRFRVRI  0  8  1  0  0        QSYRFRVRAI         PEPLIST 0.003062   15.333 0.084728    7.516 19990.97
+ 449         H-2-Db          QSYVPAPL QSYV-PAPL  0  0  0  4  1          QSYVPAPL         PEPLIST 0.008546    8.496 0.074300    9.418 22378.70
+ 450         H-2-Db        QSYVSLRPDL QSYVSLRPL  0  8  1  0  0        QSYVSLRPDL         PEPLIST 0.009880    7.735 0.106726    4.904 15756.87
+ 451         H-2-Db        QSYVSLWPDL QSYVSLWPL  0  8  1  0  0        QSYVSLWPDL         PEPLIST 0.010145    7.591 0.167155    1.914  8194.31
+ 452         H-2-Db          QVHWFTEL QVH-WFTEL  0  0  0  3  1          QVHWFTEL         PEPLIST 0.002926   15.710 0.046519   19.154 30225.84
+ 453         H-2-Db        QVYFYLFKLL QVYFLFKLL  0  4  1  0  0        QVYFYLFKLL         PEPLIST 0.000343   39.403 0.053366   15.887 28067.42
+ 454         H-2-Db        RACANLQVLI RACANLVLI  0  6  1  0  0        RACANLQVLI         PEPLIST 0.103817    1.181 0.299068    0.444  1966.35 <= WB
+ 455         H-2-Db        RACANLQVLM RACANLVLM  0  6  1  0  0        RACANLQVLM         PEPLIST 0.155595    0.758 0.317971    0.375  1602.64 <= WB
+ 456         H-2-Db         RAFSKAVDF RAFSKAVDF  0  0  0  0  0         RAFSKAVDF         PEPLIST 0.115882    1.054 0.148841    2.490  9990.14 <= WB
+ 457         H-2-Db         RAFSNAVDF RAFSNAVDF  0  0  0  0  0         RAFSNAVDF         PEPLIST 0.743999    0.029 0.517652    0.052   184.73 <= SB
+ 458         H-2-Db        RALLSTMHTM RALLTMHTM  0  4  1  0  0        RALLSTMHTM         PEPLIST 0.215999    0.502 0.297315    0.451  2003.98 <= WB
+ 459         H-2-Db        RALLSTMHTV RALLTMHTV  0  4  1  0  0        RALLSTMHTV         PEPLIST 0.086754    1.396 0.208696    1.135  5227.73 <= WB
+ 460         H-2-Db          RALNMNLL RAL-NMNLL  0  0  0  3  1          RALNMNLL         PEPLIST 0.315921    0.306 0.287659    0.491  2224.68 <= SB
+ 461         H-2-Db         RALSGLEPF RALSGLEPF  0  0  0  0  0         RALSGLEPF         PEPLIST 0.457511    0.155 0.437545    0.130   439.50 <= SB
+ 462         H-2-Db         RALSGWEPF RALSGWEPF  0  0  0  0  0         RALSGWEPF         PEPLIST 0.371938    0.225 0.459519    0.107   346.50 <= SB
+ 463         H-2-Db         RALTDLQYI RALTDLQYI  0  0  0  0  0         RALTDLQYI         PEPLIST 0.795487    0.020 0.575904    0.028    98.36 <= SB
+ 464         H-2-Db         RARYFLGNL RARYFLGNL  0  0  0  0  0         RARYFLGNL         PEPLIST 0.009223    8.099 0.076918    8.888 21753.80
+ 465         H-2-Db         RARYFWGNL RARYFWGNL  0  0  0  0  0         RARYFWGNL         PEPLIST 0.010935    7.223 0.094484    6.202 17988.32
+ 466         H-2-Db        RAWKDHKAYI RAWKHKAYI  0  4  1  0  0        RAWKDHKAYI         PEPLIST 0.136633    0.874 0.246636    0.754  3467.65 <= WB
+ 467         H-2-Db        RAWKNHKAYI RAWKNKAYI  0  5  1  0  0        RAWKNHKAYI         PEPLIST 0.491430    0.136 0.494563    0.072   237.16 <= SB
+ 468         H-2-Db          RDKWMENL RDK-WMENL  0  0  0  3  1          RDKWMENL         PEPLIST 0.000970   26.601 0.018494   52.525 40932.53
+ 469         H-2-Db          RELNMNLL REL-NMNLL  0  0  0  3  1          RELNMNLL         PEPLIST 0.009208    8.108 0.072467    9.812 22827.07
+ 470         H-2-Db         RGFMWLPGF RGFMWLPGF  0  0  0  0  0         RGFMWLPGF         PEPLIST 0.010638    7.355 0.086649    7.220 19579.86
+ 471         H-2-Db         RGFMWLPGL RGFMWLPGL  0  0  0  0  0         RGFMWLPGL         PEPLIST 0.024703    4.011 0.120766    3.816 13536.14
+ 472         H-2-Db          RIFLISNL RIF-LISNL  0  0  0  3  1          RIFLISNL         PEPLIST 0.003724   13.840 0.051018   16.935 28789.75
+ 473         H-2-Db         RMLQNSDKL RMLQNSDKL  0  0  0  0  0         RMLQNSDKL         PEPLIST 0.888698    0.010 0.674949    0.011    33.68 <= SB
+ 474         H-2-Db        RMLQNSDKLL RMLQNSKLL  0  6  1  0  0        RMLQNSDKLL         PEPLIST 0.317116    0.305 0.410212    0.170   590.74 <= SB
+ 475         H-2-Db         RMLQNSDTL RMLQNSDTL  0  0  0  0  0         RMLQNSDTL         PEPLIST 0.964603    0.003 0.798690    0.006     8.83 <= SB
+ 476         H-2-Db        RMLQNSDTLL RMLQNSTLL  0  6  1  0  0        RMLQNSDTLL         PEPLIST 0.608964    0.073 0.559684    0.033   117.23 <= SB
+ 477         H-2-Db         RNRRIFALL RNRRIFALL  0  0  0  0  0         RNRRIFALL         PEPLIST 0.017814    5.138 0.081888    7.973 20614.94
+ 478         H-2-Db         RNRRIFGLL RNRRIFGLL  0  0  0  0  0         RNRRIFGLL         PEPLIST 0.007191    9.459 0.058625   13.757 26515.05
+ 479         H-2-Db         RQLSEYEGI RQLSEYEGI  0  0  0  0  0         RQLSEYEGI         PEPLIST 0.073328    1.646 0.156911    2.220  9154.83 <= WB
+ 480         H-2-Db         RQVANWNLV RQVANWNLV  0  0  0  0  0         RQVANWNLV         PEPLIST 0.636292    0.066 0.556165    0.034   121.78 <= SB
+ 481         H-2-Db       RQVANWNLVVM RQVANLVVM  0  5  2  0  0       RQVANWNLVVM         PEPLIST 0.482190    0.141 0.491236    0.075   245.85 <= SB
+ 482         H-2-Db         RSHYFEGVL RSHYFEGVL  0  0  0  0  0         RSHYFEGVL         PEPLIST 0.026152    3.848 0.109588    4.663 15276.32
+ 483         H-2-Db          RSRFQTLM RS-RFQTLM  0  0  0  2  1          RSRFQTLM         PEPLIST 0.002615   16.672 0.048985   17.860 29429.91
+ 484         H-2-Db          RTFLSPLL RTF-LSPLL  0  0  0  3  1          RTFLSPLL         PEPLIST 0.009862    7.745 0.064418   11.850 24904.16
+ 485         H-2-Db          RTLLSPLL RTL-LSPLL  0  0  0  3  1          RTLLSPLL         PEPLIST 0.006752    9.828 0.058992   13.620 26410.07
+ 486         H-2-Db          RTMAVGHL RTMAVGH-L  0  0  0  7  1          RTMAVGHL         PEPLIST 0.002501   17.048 0.048575   18.054 29560.78
+ 487         H-2-Db          RTRAVGHL RTR-AVGHL  0  0  0  3  1          RTRAVGHL         PEPLIST 0.000564   32.960 0.022132   44.750 39352.69
+ 488         H-2-Db          RVYLMLPL RVY-LMLPL  0  0  0  3  1          RVYLMLPL         PEPLIST 0.005751   10.824 0.100733    5.474 16812.29
+ 489         H-2-Db          RVYRMLPL RVY-RMLPL  0  0  0  3  1          RVYRMLPL         PEPLIST 0.009644    7.863 0.116701    4.093 14144.72
+ 490         H-2-Db          RYKWMENL R-YKWMENL  0  0  0  1  1          RYKWMENL         PEPLIST 0.000878   27.724 0.032322   30.310 35244.29
+ 491         H-2-Db         SAATNPNAM SAATNPNAM  0  0  0  0  0         SAATNPNAM         PEPLIST 0.948821    0.005 0.665606    0.012    37.27 <= SB
+ 492         H-2-Db         SAGEVLIPL SAGEVLIPL  0  0  0  0  0         SAGEVLIPL         PEPLIST 0.282933    0.354 0.267359    0.597  2771.14 <= SB
+ 493         H-2-Db         SAGQYFLNI SAGQYFLNI  0  0  0  0  0         SAGQYFLNI         PEPLIST 0.105793    1.159 0.168816    1.874  8048.42 <= WB
+ 494         H-2-Db         SAHTMLPGM SAHTMLPGM  0  0  0  0  0         SAHTMLPGM         PEPLIST 0.292716    0.340 0.293161    0.468  2096.11 <= SB
+ 495         H-2-Db         SAHTMLPGV SAHTMLPGV  0  0  0  0  0         SAHTMLPGV         PEPLIST 0.114139    1.070 0.197459    1.294  5903.59 <= WB
+ 496         H-2-Db         SAILYVKSL SAILYVKSL  0  0  0  0  0         SAILYVKSL         PEPLIST 0.299822    0.330 0.249940    0.728  3345.87 <= SB
+ 497         H-2-Db        SAILYVKSLL SAILVKSLL  0  4  1  0  0        SAILYVKSLL         PEPLIST 0.056810    2.051 0.199313    1.265  5786.34
+ 498         H-2-Db         SAIQDDIPL SAIQDDIPL  0  0  0  0  0         SAIQDDIPL         PEPLIST 0.834703    0.016 0.603383    0.024    73.06 <= SB
+ 499         H-2-Db         SAIQDNIPL SAIQDNIPL  0  0  0  0  0         SAIQDNIPL         PEPLIST 0.864595    0.013 0.620707    0.020    60.57 <= SB
+ 500         H-2-Db         SAIRSYQDV SAIRSYQDV  0  0  0  0  0         SAIRSYQDV         PEPLIST 0.284263    0.352 0.331449    0.334  1385.16 <= SB
+ 501         H-2-Db         SAIRSYQYV SAIRSYQYV  0  0  0  0  0         SAIRSYQYV         PEPLIST 0.792534    0.020 0.612390    0.021    66.28 <= SB
+ 502         H-2-Db        SALVVLEFSL SALVVLEFL  0  8  1  0  0        SALVVLEFSL         PEPLIST 0.206427    0.540 0.323955    0.357  1502.15 <= WB
+ 503         H-2-Db         SALWSDTPK SALWSDTPK  0  0  0  0  0         SALWSDTPK         PEPLIST 0.002680   16.461 0.083815    7.663 20189.44
+ 504         H-2-Db         SALWSDTPM SALWSDTPM  0  0  0  0  0         SALWSDTPM         PEPLIST 0.330643    0.283 0.508612    0.057   203.71 <= SB
+ 505         H-2-Db         SAMAMFGYM SAMAMFGYM  0  0  0  0  0         SAMAMFGYM         PEPLIST 0.596811    0.078 0.685970    0.010    29.90 <= SB
+ 506         H-2-Db        SAPPLLEGPL SAPPLLEPL  0  7  1  0  0        SAPPLLEGPL         PEPLIST 0.503665    0.129 0.364527    0.258   968.43 <= SB
+ 507         H-2-Db        SAPPLPEGPL SAPPLPEPL  0  7  1  0  0        SAPPLPEGPL         PEPLIST 0.449814    0.160 0.304564    0.422  1852.81 <= SB
+ 508         H-2-Db         SASRRLLVL SASRRLLVL  0  0  0  0  0         SASRRLLVL         PEPLIST 0.121314    1.002 0.182368    1.576  6950.68 <= WB
+ 509         H-2-Db         SASRRLRVL SASRRLRVL  0  0  0  0  0         SASRRLRVL         PEPLIST 0.043050    2.556 0.115106    4.218 14390.94
+ 510         H-2-Db         SASTNPNAM SASTNPNAM  0  0  0  0  0         SASTNPNAM         PEPLIST 0.868681    0.012 0.561460    0.032   115.00 <= SB
+ 511         H-2-Db         SAVDFKLHI SAVDFKLHI  0  0  0  0  0         SAVDFKLHI         PEPLIST 0.259139    0.389 0.214020    1.069  4935.10 <= SB
+ 512         H-2-Db         SAVDFKRHI SAVDFKRHI  0  0  0  0  0         SAVDFKRHI         PEPLIST 0.117916    1.034 0.139290    2.847 11077.75 <= WB
+ 513         H-2-Db         SAWEVLIPL SAWEVLIPL  0  0  0  0  0         SAWEVLIPL         PEPLIST 0.330237    0.284 0.337857    0.315  1292.38 <= SB
+ 514         H-2-Db         SAWVPFGGL SAWVPFGGL  0  0  0  0  0         SAWVPFGGL         PEPLIST 0.058882    1.984 0.154957    2.285  9350.41 <= WB
+ 515         H-2-Db         SAWVPVGGL SAWVPVGGL  0  0  0  0  0         SAWVPVGGL         PEPLIST 0.051965    2.221 0.127699    3.395 12557.89
+ 516         H-2-Db         SAYQNTVHA SAYQNTVHA  0  0  0  0  0         SAYQNTVHA         PEPLIST 0.828896    0.017 0.608082    0.022    69.44 <= SB
+ 517         H-2-Db         SCISKAMLI SCISKAMLI  0  0  0  0  0         SCISKAMLI         PEPLIST 0.028357    3.605 0.118514    3.960 13869.97
+ 518         H-2-Db          SCYGSAPL SCY-GSAPL  0  0  0  3  1          SCYGSAPL         PEPLIST 0.001422   22.437 0.054889   15.252 27608.79
+ 519         H-2-Db          SDFYKCEI SDF-YKCEI  0  0  0  3  1          SDFYKCEI         PEPLIST 0.000713   30.108 0.038544   24.498 32949.66
+ 520         H-2-Db          SDVMQLLL SDV-MQLLL  0  0  0  3  1          SDVMQLLL         PEPLIST 0.003139   15.117 0.050755   17.054 28871.94
+ 521         H-2-Db         SGYQNTVHA SGYQNTVHA  0  0  0  0  0         SGYQNTVHA         PEPLIST 0.566372    0.092 0.446566    0.120   398.63 <= SB
+ 522         H-2-Db          SHFLCYTL SHF-LCYTL  0  0  0  3  1          SHFLCYTL         PEPLIST 0.002529   16.952 0.100828    5.465 16795.04
+ 523         H-2-Db          SHSLCYTL SHS-LCYTL  0  0  0  3  1          SHSLCYTL         PEPLIST 0.001245   23.817 0.069575   10.501 23552.73
+ 524         H-2-Db          SHYRAYIL SHY-RAYIL  0  0  0  3  1          SHYRAYIL         PEPLIST 0.004248   12.853 0.061927   12.603 25584.64
+ 525         H-2-Db          SHYRAYLL SHY-RAYLL  0  0  0  3  1          SHYRAYLL         PEPLIST 0.005160   11.529 0.072040    9.905 22932.78
+ 526         H-2-Db        SIFIEMYFIF SIFIEYFIF  0  5  1  0  0        SIFIEMYFIF         PEPLIST 0.000919   27.204 0.084366    7.575 20069.53
+ 527         H-2-Db        SIFIEMYFTF SIFIEYFTF  0  5  1  0  0        SIFIEMYFTF         PEPLIST 0.006228   10.332 0.128988    3.328 12383.96
+ 528         H-2-Db        SIIGKKGETV SIIKKGETV  0  3  1  0  0        SIIGKKGETV         PEPLIST 0.039561    2.762 0.089074    6.878 19072.82
+ 529         H-2-Db        SIIGKNGETV SIIKNGETV  0  3  1  0  0        SIIGKNGETV         PEPLIST 0.535593    0.108 0.389077    0.205   742.52 <= SB
+ 530         H-2-Db          SIIVFNLL SII-VFNLL  0  0  0  3  1          SIIVFNLL         PEPLIST 0.007259    9.406 0.070266   10.330 23377.17
+ 531         H-2-Db          SIIVFNLV SII-VFNLV  0  0  0  3  1          SIIVFNLV         PEPLIST 0.002340   17.650 0.052814   16.127 28235.66
+ 532         H-2-Db        SILSFCTSNI SILSFCTNI  0  7  1  0  0        SILSFCTSNI         PEPLIST 0.002299   17.806 0.146827    2.564 10210.18
+ 533         H-2-Db          SIYFSRRF SIY-FSRRF  0  0  0  3  1          SIYFSRRF         PEPLIST 0.001056   25.652 0.029325   33.715 36405.86
+ 534         H-2-Db          SIYSSRRF SIY-SSRRF  0  0  0  3  1          SIYSSRRF         PEPLIST 0.000888   27.589 0.025376   39.219 37995.14
+ 535         H-2-Db        SLFSSWLSSL SLFSSWLSL  0  7  1  0  0        SLFSSWLSSL         PEPLIST 0.010636    7.356 0.169198    1.865  8015.22
+ 536         H-2-Db         SLLEHMSLH SLLEHMSLH  0  0  0  0  0         SLLEHMSLH         PEPLIST 0.002050   18.855 0.039817   23.510 32498.92
+ 537         H-2-Db         SLLEHMSLL SLLEHMSLL  0  0  0  0  0         SLLEHMSLL         PEPLIST 0.151759    0.778 0.224117    0.957  4424.35 <= WB
+ 538         H-2-Db          SLRSFQAL S-LRSFQAL  0  0  0  1  1          SLRSFQAL         PEPLIST 0.003136   15.126 0.061081   12.867 25819.63
+ 539         H-2-Db        SMGSNDIDTL SMGSNIDTL  0  5  1  0  0        SMGSNDIDTL         PEPLIST 0.577788    0.087 0.498691    0.067   226.80 <= SB
+ 540         H-2-Db        SMGSNDSDTL SMGSNSDTL  0  5  1  0  0        SMGSNDSDTL         PEPLIST 0.436608    0.168 0.450282    0.116   382.92 <= SB
+ 541         H-2-Db         SMPLWAKHM SMPLWAKHM  0  0  0  0  0         SMPLWAKHM         PEPLIST 0.118079    1.033 0.205625    1.174  5404.35 <= WB
+ 542         H-2-Db         SMPLWAKHV SMPLWAKHV  0  0  0  0  0         SMPLWAKHV         PEPLIST 0.058667    1.990 0.151005    2.417  9758.96 <= WB
+ 543         H-2-Db         SNFHFMCAL SNFHFMCAL  0  0  0  0  0         SNFHFMCAL         PEPLIST 0.030227    3.426 0.200234    1.251  5728.99
+ 544         H-2-Db         SNFHFMCAR SNFHFMCAR  0  0  0  0  0         SNFHFMCAR         PEPLIST 0.000743   29.623 0.041242   22.460 32001.75
+ 545         H-2-Db          SNFYKCEI SNF-YKCEI  0  0  0  3  1          SNFYKCEI         PEPLIST 0.001431   22.377 0.051750   16.606 28562.75
+ 546         H-2-Db        SNLSFCTSNI SNLSFCTNI  0  7  1  0  0        SNLSFCTSNI         PEPLIST 0.004838   11.934 0.181558    1.595  7011.87
+ 547         H-2-Db        SNLTLHYRTH SNLTLHYTH  0  7  1  0  0        SNLTLHYRTH         PEPLIST 0.000546   33.395 0.033008   29.576 34983.74
+ 548         H-2-Db        SNLTLHYRTL SNLTLYRTL  0  5  1  0  0        SNLTLHYRTL         PEPLIST 0.034845    3.054 0.162506    2.033  8617.05
+ 549         H-2-Db          SNVMQLLL SNV-MQLLL  0  0  0  3  1          SNVMQLLL         PEPLIST 0.005286   11.371 0.063453   12.128 25165.54
+ 550         H-2-Db          SPFLLITL SPF-LLITL  0  0  0  3  1          SPFLLITL         PEPLIST 0.011856    6.831 0.073460    9.596 22583.01
+ 551         H-2-Db          SPFLRITL SPF-LRITL  0  0  0  3  1          SPFLRITL         PEPLIST 0.014314    5.989 0.077242    8.825 21677.64
+ 552         H-2-Db        SQAMNSGTLL SQAMNGTLL  0  5  1  0  0        SQAMNSGTLL         PEPLIST 0.598482    0.077 0.477682    0.091   284.68 <= SB
+ 553         H-2-Db        SQAMNSGTVL SQAMNGTVL  0  5  1  0  0        SQAMNSGTVL         PEPLIST 0.672147    0.053 0.499749    0.066   224.21 <= SB
+ 554         H-2-Db         SQESKGVYV SQESKGVYV  0  0  0  0  0         SQESKGVYV         PEPLIST 0.113537    1.076 0.150791    2.425  9781.53 <= WB
+ 555         H-2-Db         SQESNGVYV SQESNGVYV  0  0  0  0  0         SQESNGVYV         PEPLIST 0.703304    0.038 0.490538    0.076   247.71 <= SB
+ 556         H-2-Db         SQHLYRLWL SQHLYRLWL  0  0  0  0  0         SQHLYRLWL         PEPLIST 0.070570    1.706 0.193948    1.353  6132.15 <= WB
+ 557         H-2-Db        SQHLYRLWLL SQHLRLWLL  0  4  1  0  0        SQHLYRLWLL         PEPLIST 0.017681    5.167 0.174056    1.754  7604.78
+ 558         H-2-Db         SQHLYRMWL SQHLYRMWL  0  0  0  0  0         SQHLYRMWL         PEPLIST 0.059906    1.958 0.192497    1.377  6229.21 <= WB
+ 559         H-2-Db        SQHLYRMWLL SQHLRMWLL  0  4  1  0  0        SQHLYRMWLL         PEPLIST 0.016300    5.466 0.168205    1.889  8101.80
+ 560         H-2-Db         SQLSEYEGI SQLSEYEGI  0  0  0  0  0         SQLSEYEGI         PEPLIST 0.141615    0.840 0.212345    1.089  5025.38 <= WB
+ 561         H-2-Db         SQLSHSSRL SQLSHSSRL  0  0  0  0  0         SQLSHSSRL         PEPLIST 0.250481    0.402 0.252542    0.708  3252.98 <= SB
+ 562         H-2-Db          SQRSFQAL SQR-SFQAL  0  0  0  3  1          SQRSFQAL         PEPLIST 0.008050    8.827 0.060590   13.024 25957.37
+ 563         H-2-Db         SQVANWNLV SQVANWNLV  0  0  0  0  0         SQVANWNLV         PEPLIST 0.796701    0.020 0.655645    0.014    41.51 <= SB
+ 564         H-2-Db       SQVANWNLVVM SQVANLVVM  0  5  2  0  0       SQVANWNLVVM         PEPLIST 0.632507    0.067 0.586436    0.027    87.77 <= SB
+ 565         H-2-Db         SRVAGFNPA SRVAGFNPA  0  0  0  0  0         SRVAGFNPA         PEPLIST 0.003019   15.452 0.079207    8.449 21221.63
+ 566         H-2-Db          SSFGPVGL SSF-GPVGL  0  0  0  3  1          SSFGPVGL         PEPLIST 0.007219    9.437 0.049142   17.788 29380.08
+ 567         H-2-Db        SSFTPSHPPL SSFTPHPPL  0  5  1  0  0        SSFTPSHPPL         PEPLIST 0.141808    0.839 0.255009    0.689  3167.31 <= WB
+ 568         H-2-Db        SSFTRSHPPL SSFTRHPPL  0  5  1  0  0        SSFTRSHPPL         PEPLIST 0.091796    1.333 0.257966    0.667  3067.56 <= WB
+ 569         H-2-Db        SSFVDAYGYI SSFVDAYYI  0  7  1  0  0        SSFVDAYGYI         PEPLIST 0.308272    0.317 0.422118    0.151   519.34 <= SB
+ 570         H-2-Db        SSFVDVYGYI SSFVDVYYI  0  7  1  0  0        SSFVDVYGYI         PEPLIST 0.352932    0.247 0.420696    0.153   527.39 <= SB
+ 571         H-2-Db          SSFVPVGL SSFVP-VGL  0  0  0  5  1          SSFVPVGL         PEPLIST 0.010517    7.409 0.065338   11.601 24657.51
+ 572         H-2-Db          SSIKVVGL SSI-KVVGL  0  0  0  3  1          SSIKVVGL         PEPLIST 0.011533    6.962 0.057958   14.006 26707.19
+ 573         H-2-Db         SSILYVKSL SSILYVKSL  0  0  0  0  0         SSILYVKSL         PEPLIST 0.166412    0.700 0.196217    1.314  5983.44 <= WB
+ 574         H-2-Db        SSILYVKSLL SSILVKSLL  0  4  1  0  0        SSILYVKSLL         PEPLIST 0.026088    3.855 0.174899    1.735  7535.70
+ 575         H-2-Db          SSIMQLYL SSI-MQLYL  0  0  0  3  1          SSIMQLYL         PEPLIST 0.086296    1.403 0.211016    1.105  5098.13 <= WB
+ 576         H-2-Db       SSISIHQIHLI SSISIIHLI  0  5  2  0  0       SSISIHQIHLI         PEPLIST 0.191893    0.597 0.270415    0.581  2681.02 <= WB
+ 577         H-2-Db       SSISIHQIHLV SSISIIHLV  0  5  2  0  0       SSISIHQIHLV         PEPLIST 0.081139    1.492 0.196861    1.303  5941.91 <= WB
+ 578         H-2-Db         SSISKAMLI SSISKAMLI  0  0  0  0  0         SSISKAMLI         PEPLIST 0.323149    0.295 0.314641    0.385  1661.42 <= SB
+ 579         H-2-Db          SSITVVGL SSI-TVVGL  0  0  0  3  1          SSITVVGL         PEPLIST 0.011470    6.987 0.068121   10.861 23925.98
+ 580         H-2-Db         SSLKSYVQL SSLKSYVQL  0  0  0  0  0         SSLKSYVQL         PEPLIST 0.488475    0.138 0.357258    0.272  1047.67 <= SB
+ 581         H-2-Db         SSLTSSVPG SSLTSSVPG  0  0  0  0  0         SSLTSSVPG         PEPLIST 0.005427   11.194 0.189584    1.429  6428.69
+ 582         H-2-Db         SSLTSSVPV SSLTSSVPV  0  0  0  0  0         SSLTSSVPV         PEPLIST 0.364316    0.234 0.496043    0.071   233.39 <= SB
+ 583         H-2-Db          SSMVPSAL SSM-VPSAL  0  0  0  3  1          SSMVPSAL         PEPLIST 0.020065    4.717 0.098065    5.773 17304.77
+ 584         H-2-Db          SSMVPSAV SSMV-PSAV  0  0  0  4  1          SSMVPSAV         PEPLIST 0.009531    7.925 0.078954    8.494 21279.78
+ 585         H-2-Db         SSPDSLHYL SSPDSLHYL  0  0  0  0  0         SSPDSLHYL         PEPLIST 0.717423    0.034 0.398712    0.188   669.01 <= SB
+ 586         H-2-Db        SSPGFCNTFL SSPGFCTFL  0  6  1  0  0        SSPGFCNTFL         PEPLIST 0.076620    1.578 0.278099    0.540  2467.12 <= WB
+ 587         H-2-Db        SSPGFCNTFR SSPGFCNTF  0  0  0  0  0         SSPGFCNTF         PEPLIST 0.000720   29.980 0.063196   12.208 25235.58
+ 588         H-2-Db          SSPQLLPL SSP-QLLPL  0  0  0  3  1          SSPQLLPL         PEPLIST 0.070306    1.712 0.171205    1.817  7842.97 <= WB
+ 589         H-2-Db          SSPSFAKI SSP-SFAKI  0  0  0  3  1          SSPSFAKI         PEPLIST 0.055125    2.110 0.117636    4.019 14002.42
+ 590         H-2-Db          SSPSLAKI SSP-SLAKI  0  0  0  3  1          SSPSLAKI         PEPLIST 0.046582    2.410 0.102440    5.307 16504.69
+ 591         H-2-Db         SSPYLHQHL SSPYLHQHL  0  0  0  0  0         SSPYLHQHL         PEPLIST 0.433293    0.170 0.290173    0.481  2164.99 <= SB
+ 592         H-2-Db        SSPYLHQHLL SSPYLHHLL  0  6  1  0  0        SSPYLHQHLL         PEPLIST 0.224244    0.478 0.266479    0.603  2797.63 <= SB
+ 593         H-2-Db         SSPYSLHYL SSPYSLHYL  0  0  0  0  0         SSPYSLHYL         PEPLIST 0.709660    0.036 0.466433    0.100   321.53 <= SB
+ 594         H-2-Db          SSRFQTLM SS-RFQTLM  0  0  0  2  1          SSRFQTLM         PEPLIST 0.003348   14.637 0.056729   14.502 27064.70
+ 595         H-2-Db         SSVAGFNPA SSVAGFNPA  0  0  0  0  0         SSVAGFNPA         PEPLIST 0.119491    1.019 0.302067    0.432  1903.56 <= WB
+ 596         H-2-Db          SSVLFEDM SSV-LFEDM  0  0  0  3  1          SSVLFEDM         PEPLIST 0.014558    5.924 0.110562    4.581 15116.27
+ 597         H-2-Db          SSVLFEYM SSV-LFEYM  0  0  0  3  1          SSVLFEYM         PEPLIST 0.106469    1.152 0.237008    0.833  3848.37 <= WB
+ 598         H-2-Db       SSYNASFLPSF SSYSFLPSF  0  3  2  0  0       SSYNASFLPSF         PEPLIST 0.022870    4.274 0.125825    3.494 12815.05
+ 599         H-2-Db       SSYNASFLPSI SSYSFLPSI  0  3  2  0  0       SSYNASFLPSI         PEPLIST 0.055934    2.082 0.179830    1.631  7144.19
+ 600         H-2-Db       SSYVHIPDNAF SSYVHINAF  0  6  2  0  0       SSYVHIPDNAF         PEPLIST 0.099082    1.240 0.167349    1.909  8177.13 <= WB
+ 601         H-2-Db       SSYVHTPDNAF SSYVHTNAF  0  6  2  0  0       SSYVHTPDNAF         PEPLIST 0.083232    1.455 0.156829    2.223  9162.93 <= WB
+ 602         H-2-Db          STFAIHLL STF-AIHLL  0  0  0  3  1          STFAIHLL         PEPLIST 0.014078    6.061 0.077803    8.716 21546.46
+ 603         H-2-Db        STFAIHLLKM STFIHLLKM  0  3  1  0  0        STFAIHLLKM         PEPLIST 0.021767    4.433 0.116591    4.102 14161.56
+ 604         H-2-Db       STFAIHLLKML SAIHLLKML  0  1  2  0  0       STFAIHLLKML         PEPLIST 0.008995    8.233 0.094074    6.254 18068.36
+ 605         H-2-Db        STFLFSICAL STFLFICAL  0  5  1  0  0        STFLFSICAL         PEPLIST 0.002526   16.960 0.176783    1.695  7383.68
+ 606         H-2-Db        STFLFSICSL STFLFICSL  0  5  1  0  0        STFLFSICSL         PEPLIST 0.003322   14.694 0.174209    1.750  7592.21
+ 607         H-2-Db         STLKSYVQL STLKSYVQL  0  0  0  0  0         STLKSYVQL         PEPLIST 0.239288    0.435 0.236960    0.834  3850.39 <= SB
+ 608         H-2-Db          STPQLLPL STP-QLLPL  0  0  0  3  1          STPQLLPL         PEPLIST 0.031522    3.322 0.114602    4.258 14469.62
+ 609         H-2-Db          STYGIPRL STY-GIPRL  0  0  0  3  1          STYGIPRL         PEPLIST 0.005811   10.763 0.040266   23.169 32341.63
+ 610         H-2-Db         STYKEFCSL STYKEFCSL  0  0  0  0  0         STYKEFCSL         PEPLIST 0.073466    1.643 0.183167    1.557  6890.85 <= WB
+ 611         H-2-Db         STYKELCSL STYKELCSL  0  0  0  0  0         STYKELCSL         PEPLIST 0.055787    2.087 0.155740    2.259  9271.55
+ 612         H-2-Db          STYTAYIG STYTAYIG-  0  0  0  8  1          STYTAYIG         PEPLIST 0.000103   56.892 0.021677   45.620 39546.68
+ 613         H-2-Db          STYTAYIV STY-TAYIV  0  0  0  3  1          STYTAYIV         PEPLIST 0.004012   13.280 0.052818   16.125 28234.39
+ 614         H-2-Db          STYVIPRL STY-VIPRL  0  0  0  3  1          STYVIPRL         PEPLIST 0.007938    8.902 0.050098   17.353 29077.82
+ 615         H-2-Db         SVFGQSDDL SVFGQSDDL  0  0  0  0  0         SVFGQSDDL         PEPLIST 0.025045    3.970 0.090766    6.670 18726.75
+ 616         H-2-Db         SVFGQSNDL SVFGQSNDL  0  0  0  0  0         SVFGQSNDL         PEPLIST 0.010994    7.197 0.061306   12.797 25756.90
+ 617         H-2-Db        SVFSFGPSSF SVFSFGPSF  0  7  1  0  0        SVFSFGPSSF         PEPLIST 0.016700    5.379 0.092788    6.419 18321.52
+ 618         H-2-Db        SVFSFGPSYF SVFSFPSYF  0  5  1  0  0        SVFSFGPSYF         PEPLIST 0.041140    2.669 0.149396    2.471  9930.27
+ 619         H-2-Db        SVFTEHTNRL SVFTHTNRL  0  4  1  0  0        SVFTEHTNRL         PEPLIST 0.024741    4.005 0.084795    7.506 19976.62
+ 620         H-2-Db        SVLTEHTNRL SVLTHTNRL  0  4  1  0  0        SVLTEHTNRL         PEPLIST 0.023629    4.165 0.084902    7.489 19953.49
+ 621         H-2-Db         SVYRHQQPT SVYRHQQPT  0  0  0  0  0         SVYRHQQPT         PEPLIST 0.009030    8.212 0.104676    5.088 16110.16
+ 622         H-2-Db         SVYRQQQPT SVYRQQQPT  0  0  0  0  0         SVYRQQQPT         PEPLIST 0.003138   15.121 0.071922    9.930 22962.15
+ 623         H-2-Db        SYFLSLPNQL SYFLLPNQL  0  4  1  0  0        SYFLSLPNQL         PEPLIST 0.016526    5.417 0.110521    4.584 15122.97
+ 624         H-2-Db         SYIPLFPHL SYIPLFPHL  0  0  0  0  0         SYIPLFPHL         PEPLIST 0.142029    0.837 0.173414    1.768  7657.75 <= WB
+ 625         H-2-Db         SYIPLFPQL SYIPLFPQL  0  0  0  0  0         SYIPLFPQL         PEPLIST 0.124978    0.969 0.150789    2.425  9781.79 <= WB
+ 626         H-2-Db        SYSLSLPNQL SSLSLPNQL  0  1  1  0  0        SYSLSLPNQL         PEPLIST 0.015191    5.755 0.108440    4.759 15467.21
+ 627         H-2-Db         SYVVKLRGL SYVVKLRGL  0  0  0  0  0         SYVVKLRGL         PEPLIST 0.005613   10.967 0.054360   15.473 27767.37
+ 628         H-2-Db        TAPASPCPSI TAPASPCPI  0  8  1  0  0        TAPASPCPSI         PEPLIST 0.101234    1.212 0.279813    0.530  2421.81 <= WB
+ 629         H-2-Db        TAPASTCPSI TAPASTCPI  0  8  1  0  0        TAPASTCPSI         PEPLIST 0.085144    1.422 0.322029    0.363  1533.80 <= WB
+ 630         H-2-Db         TATRNDFTL TATRNDFTL  0  0  0  0  0         TATRNDFTL         PEPLIST 0.875975    0.012 0.605667    0.023    71.28 <= SB
+ 631         H-2-Db          TAVNNMTL TAV-NNMTL  0  0  0  3  1          TAVNNMTL         PEPLIST 0.346421    0.257 0.287538    0.491  2227.61 <= SB
+ 632         H-2-Db         TAVVRQRTL TAVVRQRTL  0  0  0  0  0         TAVVRQRTL         PEPLIST 0.153067    0.771 0.181603    1.594  7008.46 <= WB
+ 633         H-2-Db         TAVVRQSTL TAVVRQSTL  0  0  0  0  0         TAVVRQSTL         PEPLIST 0.339987    0.268 0.292793    0.470  2104.47 <= SB
+ 634         H-2-Db          TAVYFPLV TAV-YFPLV  0  0  0  3  1          TAVYFPLV         PEPLIST 0.003803   13.686 0.056251   14.695 27204.96
+ 635         H-2-Db          TAYHARIL TAY-HARIL  0  0  0  3  1          TAYHARIL         PEPLIST 0.014131    6.045 0.062835   12.320 25334.30
+ 636         H-2-Db         TGHEWRYYF TGHEWRYYF  0  0  0  0  0         TGHEWRYYF         PEPLIST 0.053998    2.150 0.136076    2.968 11469.78
+ 637         H-2-Db         TGLMSLGTL TGLMSLGTL  0  0  0  0  0         TGLMSLGTL         PEPLIST 0.127460    0.947 0.257720    0.669  3075.77 <= WB
+ 638         H-2-Db         TGLMSLGTV TGLMSLGTV  0  0  0  0  0         TGLMSLGTV         PEPLIST 0.062431    1.894 0.228949    0.907  4199.02 <= WB
+ 639         H-2-Db          TGSVFGEL TGSVFG-EL  0  0  0  6  1          TGSVFGEL         PEPLIST 0.002321   17.723 0.039138   24.027 32738.57
+ 640         H-2-Db          TGSVVGEL TGSVVG-EL  0  0  0  6  1          TGSVVGEL         PEPLIST 0.001847   19.833 0.026840   37.053 37398.12
+ 641         H-2-Db         TGTLYYYTL TGTLYYYTL  0  0  0  0  0         TGTLYYYTL         PEPLIST 0.050112    2.286 0.141654    2.759 10797.98
+ 642         H-2-Db       TGWMNKHLNLL TGWMNKHLL  0  7  2  0  0       TGWMNKHLNLL         PEPLIST 0.174834    0.666 0.309180    0.403  1762.56 <= WB
+ 643         H-2-Db       TGWMNKHLNLV TGWMNKHLV  0  7  2  0  0       TGWMNKHLNLV         PEPLIST 0.071930    1.676 0.250585    0.723  3322.61 <= WB
+ 644         H-2-Db          TGYHARIL TGY-HARIL  0  0  0  3  1          TGYHARIL         PEPLIST 0.006173   10.388 0.050586   17.131 28924.59
+ 645         H-2-Db         TGYVERSPL TGYVERSPL  0  0  0  0  0         TGYVERSPL         PEPLIST 0.148145    0.797 0.264173    0.620  2868.32 <= WB
+ 646         H-2-Db         TGYVERSPR TGYVERSPR  0  0  0  0  0         TGYVERSPR         PEPLIST 0.002373   17.526 0.052502   16.267 28331.21
+ 647         H-2-Db        THEYLSTAPF THYLSTAPF  0  2  1  0  0        THEYLSTAPF         PEPLIST 0.002046   18.872 0.073109    9.672 22668.98
+ 648         H-2-Db         TIHMMLQPI TIHMMLQPI  0  0  0  0  0         TIHMMLQPI         PEPLIST 0.079647    1.519 0.296859    0.453  2013.90 <= WB
+ 649         H-2-Db        TLFSSWLSSL TLFSSWLSL  0  7  1  0  0        TLFSSWLSSL         PEPLIST 0.005245   11.423 0.126366    3.465 12740.36
+ 650         H-2-Db        TNFEWCISIL TNFEWCIIL  0  7  1  0  0        TNFEWCISIL         PEPLIST 0.001591   21.270 0.109914    4.635 15222.60
+ 651         H-2-Db        TNFEWYISIL TNFEWYIIL  0  7  1  0  0        TNFEWYISIL         PEPLIST 0.005829   10.744 0.092548    6.449 18369.19
+ 652         H-2-Db          TQFPRRHL TQF-PRRHL  0  0  0  3  1          TQFPRRHL         PEPLIST 0.007035    9.587 0.049838   17.471 29159.58
+ 653         H-2-Db          TQFPRRRL TQF-PRRRL  0  0  0  3  1          TQFPRRRL         PEPLIST 0.003254   14.841 0.034001   28.543 34609.90
+ 654         H-2-Db          TSIMQLYL TSI-MQLYL  0  0  0  3  1          TSIMQLYL         PEPLIST 0.048521    2.342 0.158015    2.183  9046.15
+ 655         H-2-Db         TSLECLSNL TSLECLSNL  0  0  0  0  0         TSLECLSNL         PEPLIST 0.068877    1.746 0.217458    1.029  4754.92 <= WB
+ 656         H-2-Db         TSLEGLSNL TSLEGLSNL  0  0  0  0  0         TSLEGLSNL         PEPLIST 0.210483    0.524 0.226814    0.929  4297.11 <= WB
+ 657         H-2-Db       TSQHLYRLWLL TSLYRLWLL  0  2  2  0  0       TSQHLYRLWLL         PEPLIST 0.005649   10.929 0.105640    4.995 15943.00
+ 658         H-2-Db       TSQHLYRMWLL TSLYRMWLL  0  2  2  0  0       TSQHLYRMWLL         PEPLIST 0.004632   12.245 0.103243    5.229 16361.87
+ 659         H-2-Db          TSSCPSDL TSSCPSD-L  0  0  0  7  1          TSSCPSDL         PEPLIST 0.000227   45.112 0.023843   41.662 38630.59
+ 660         H-2-Db          TSYCPSDL TSYCPSD-L  0  0  0  7  1          TSYCPSDL         PEPLIST 0.001751   20.343 0.053947   15.645 27891.63
+ 661         H-2-Db          TSYSTAAA TSY-STAAA  0  0  0  3  1          TSYSTAAA         PEPLIST 0.001382   22.730 0.041498   22.277 31913.43
+ 662         H-2-Db         TSYSTAAAL TSYSTAAAL  0  0  0  0  0         TSYSTAAAL         PEPLIST 0.177725    0.654 0.221644    0.983  4544.32 <= WB
+ 663         H-2-Db          TSYSTAAL TSY-STAAL  0  0  0  3  1          TSYSTAAL         PEPLIST 0.013065    6.378 0.078103    8.658 21476.72
+ 664         H-2-Db         TSYSTAALL TSYSTAALL  0  0  0  0  0         TSYSTAALL         PEPLIST 0.139212    0.856 0.206511    1.162  5352.83 <= WB
+ 665         H-2-Db       TTILNCFHDFL TTILNHDFL  0  5  2  0  0       TTILNCFHDFL         PEPLIST 0.324998    0.292 0.644876    0.015    46.64 <= SB
+ 666         H-2-Db       TTILNCFHDVL TTILNHDVL  0  5  2  0  0       TTILNCFHDVL         PEPLIST 0.343760    0.262 0.589100    0.026    85.27 <= SB
+ 667         H-2-Db       TTVSCRHYTAF TTVRHYTAF  0  3  2  0  0       TTVSCRHYTAF         PEPLIST 0.005279   11.380 0.103120    5.241 16383.70
+ 668         H-2-Db         TVHMMLQPI TVHMMLQPI  0  0  0  0  0         TVHMMLQPI         PEPLIST 0.115548    1.057 0.318279    0.374  1597.30 <= WB
+ 669         H-2-Db         TVLQKLCQL TVLQKLCQL  0  0  0  0  0         TVLQKLCQL         PEPLIST 0.026088    3.855 0.109324    4.685 15319.97
+ 670         H-2-Db         TVYTNGSLL TVYTNGSLL  0  0  0  0  0         TVYTNGSLL         PEPLIST 0.671847    0.053 0.462734    0.104   334.65 <= SB
+ 671         H-2-Db        TVYTNGSLLL TVYTNGLLL  0  6  1  0  0        TVYTNGSLLL         PEPLIST 0.250601    0.402 0.284360    0.506  2305.53 <= SB
+ 672         H-2-Db         TWHEWRYYF TWHEWRYYF  0  0  0  0  0         TWHEWRYYF         PEPLIST 0.004926   11.823 0.061880   12.618 25597.58
+ 673         H-2-Db        VAFIIRRCNL VAFIIRRNL  0  7  1  0  0        VAFIIRRCNL         PEPLIST 0.009887    7.731 0.144802    2.640 10436.43
+ 674         H-2-Db         VAILNQKYA VAILNQKYA  0  0  0  0  0         VAILNQKYA         PEPLIST 0.680317    0.048 0.537235    0.043   149.46 <= SB
+ 675         H-2-Db        VAKINQDPQV VAKINQDPV  0  8  1  0  0        VAKINQDPQV         PEPLIST 0.255193    0.394 0.351138    0.284  1119.40 <= SB
+ 676         H-2-Db         VALFPSVML VALFPSVML  0  0  0  0  0         VALFPSVML         PEPLIST 0.130881    0.916 0.161642    2.062  8698.02 <= WB
+ 677         H-2-Db         VALLPSVML VALLPSVML  0  0  0  0  0         VALLPSVML         PEPLIST 0.200508    0.563 0.187855    1.460  6550.08 <= WB
+ 678         H-2-Db         VAMCRLGIF VAMCRLGIF  0  0  0  0  0         VAMCRLGIF         PEPLIST 0.012940    6.417 0.178401    1.661  7255.52
+ 679         H-2-Db         VAMGRLGIF VAMGRLGIF  0  0  0  0  0         VAMGRLGIF         PEPLIST 0.033341    3.175 0.120430    3.837 13585.38
+ 680         H-2-Db         VAQNRHCEL VAQNRHCEL  0  0  0  0  0         VAQNRHCEL         PEPLIST 0.040704    2.694 0.126859    3.439 12672.54
+ 681         H-2-Db         VAVAHVAAF VAVAHVAAF  0  0  0  0  0         VAVAHVAAF         PEPLIST 0.323269    0.295 0.275739    0.552  2530.93 <= SB
+ 682         H-2-Db         VAVAHVAGF VAVAHVAGF  0  0  0  0  0         VAVAHVAGF         PEPLIST 0.088239    1.378 0.147511    2.538 10134.90 <= WB
+ 683         H-2-Db         VAVEIIAVL VAVEIIAVL  0  0  0  0  0         VAVEIIAVL         PEPLIST 0.499631    0.131 0.296574    0.454  2020.12 <= SB
+ 684         H-2-Db         VAVEMIAVL VAVEMIAVL  0  0  0  0  0         VAVEMIAVL         PEPLIST 0.637635    0.065 0.414244    0.164   565.52 <= SB
+ 685         H-2-Db          VDSIHALL V-DSIHALL  0  0  0  1  1          VDSIHALL         PEPLIST 0.001878   19.679 0.033000   29.585 34986.72
+ 686         H-2-Db         VFFPRHREL VFFPRHREL  0  0  0  0  0         VFFPRHREL         PEPLIST 0.023074    4.245 0.079970    8.313 21047.21
+ 687         H-2-Db         VFFPRRREL VFFPRRREL  0  0  0  0  0         VFFPRRREL         PEPLIST 0.015835    5.582 0.069326   10.563 23616.22
+ 688         H-2-Db         VGFSLPSHL VGFSLPSHL  0  0  0  0  0         VGFSLPSHL         PEPLIST 0.190487    0.602 0.207430    1.151  5299.87 <= WB
+ 689         H-2-Db       VGLSNHVLGHL VGLSNHVHL  0  7  2  0  0       VGLSNHVLGHL         PEPLIST 0.564685    0.093 0.459850    0.107   345.26 <= SB
+ 690         H-2-Db       VGLSNHVRGHL VGLSNHVHL  0  7  2  0  0       VGLSNHVRGHL         PEPLIST 0.452415    0.158 0.392066    0.199   718.89 <= SB
+ 691         H-2-Db        VGNFLRVNTL VGFLRVNTL  0  2  1  0  0        VGNFLRVNTL         PEPLIST 0.031417    3.330 0.112886    4.393 14740.85
+ 692         H-2-Db         VGVLAVANI VGVLAVANI  0  0  0  0  0         VGVLAVANI         PEPLIST 0.044924    2.468 0.141362    2.770 10832.12
+ 693         H-2-Db          VGYCETLL VGY-CETLL  0  0  0  3  1          VGYCETLL         PEPLIST 0.003573   14.151 0.075429    9.187 22107.06
+ 694         H-2-Db          VGYSETLL VGY-SETLL  0  0  0  3  1          VGYSETLL         PEPLIST 0.012528    6.559 0.067963   10.900 23967.04
+ 695         H-2-Db        VGYVHYGDWL VGYVHYDWL  0  6  1  0  0        VGYVHYGDWL         PEPLIST 0.082944    1.460 0.254828    0.690  3173.51 <= WB
+ 696         H-2-Db        VHFSNSFTSI VHFSNFTSI  0  5  1  0  0        VHFSNSFTSI         PEPLIST 0.162238    0.722 0.345489    0.295  1189.95 <= WB
+ 697         H-2-Db        VHFSNSFTTI VHFSNFTTI  0  5  1  0  0        VHFSNSFTTI         PEPLIST 0.216837    0.499 0.382598    0.219   796.44 <= SB
+ 698         H-2-Db          VHYLRLSL VHY-LRLSL  0  0  0  3  1          VHYLRLSL         PEPLIST 0.004264   12.829 0.061658   12.687 25659.01
+ 699         H-2-Db       VHYLRLSLEYL VHYLRLEYL  0  5  2  0  0       VHYLRLSLEYL         PEPLIST 0.014248    6.008 0.152050    2.382  9649.24
+ 700         H-2-Db          VHYLRLSR VHY-LRLSR  0  0  0  3  1          VHYLRLSR         PEPLIST 0.000153   50.966 0.019494   50.207 40492.10
+ 701         H-2-Db       VHYLRLSREYL VHYLRREYL  0  5  2  0  0       VHYLRLSREYL         PEPLIST 0.014820    5.854 0.156775    2.225  9168.27
+ 702         H-2-Db          VIAIFIIL VIA-IFIIL  0  0  0  3  1          VIAIFIIL         PEPLIST 0.000724   29.921 0.026934   36.919 37359.96
+ 703         H-2-Db          VIAIFIIV VIA-IFIIV  0  0  0  3  1          VIAIFIIV         PEPLIST 0.000275   42.478 0.019441   50.330 40515.24
+ 704         H-2-Db          VIHRYREV VIH-RYREV  0  0  0  3  1          VIHRYREV         PEPLIST 0.000643   31.342 0.026024   38.226 37729.74
+ 705         H-2-Db          VIQRYREV V-IQRYREV  0  0  0  1  1          VIQRYREV         PEPLIST 0.000476   35.134 0.023290   42.626 38862.61
+ 706         H-2-Db          VIRLLSAL V-IRLLSAL  0  0  0  1  1          VIRLLSAL         PEPLIST 0.001717   20.526 0.049808   17.485 29169.16
+ 707         H-2-Db          VIRLLSAV V-IRLLSAV  0  0  0  1  1          VIRLLSAV         PEPLIST 0.000590   32.410 0.037718   25.158 33245.78
+ 708         H-2-Db         VITDFFGHL VITDFFGHL  0  0  0  0  0         VITDFFGHL         PEPLIST 0.012367    6.624 0.055015   15.200 27571.31
+ 709         H-2-Db         VITYFFGHL VITYFFGHL  0  0  0  0  0         VITYFFGHL         PEPLIST 0.004423   12.576 0.061758   12.656 25631.31
+ 710         H-2-Db         VIYAECLRV VIYAECLRV  0  0  0  0  0         VIYAECLRV         PEPLIST 0.001847   19.833 0.046420   19.210 30258.28
+ 711         H-2-Db          VIYQLCAC VIY-QLCAC  0  0  0  3  1          VIYQLCAC         PEPLIST 0.000022   79.712 0.017445   54.956 41399.54
+ 712         H-2-Db          VIYQLCAF VIY-QLCAF  0  0  0  3  1          VIYQLCAF         PEPLIST 0.000550   33.295 0.037307   25.491 33393.83
+ 713         H-2-Db         VIYSECLRV VIYSECLRV  0  0  0  0  0         VIYSECLRV         PEPLIST 0.002352   17.606 0.047211   18.778 30000.53
+ 714         H-2-Db         VKRTRFLRL VKRTRFLRL  0  0  0  0  0         VKRTRFLRL         PEPLIST 0.001603   21.190 0.028600   34.627 36692.64
+ 715         H-2-Db         VKRTRFLRR VKRTRFLRR  0  0  0  0  0         VKRTRFLRR         PEPLIST 0.000231   44.877 0.008851   82.577 45434.05
+ 716         H-2-Db        VKVFFHSSSL VKVFFHSSL  0  6  1  0  0        VKVFFHSSSL         PEPLIST 0.001748   20.359 0.057648   14.131 26796.97
+ 717         H-2-Db         VLIQWLPAL VLIQWLPAL  0  0  0  0  0         VLIQWLPAL         PEPLIST 0.039606    2.759 0.136365    2.957 11433.86
+ 718         H-2-Db         VLMQWLPAL VLMQWLPAL  0  0  0  0  0         VLMQWLPAL         PEPLIST 0.030903    3.371 0.148419    2.504 10035.84
+ 719         H-2-Db         VLYLLDTSL VLYLLDTSL  0  0  0  0  0         VLYLLDTSL         PEPLIST 0.062885    1.884 0.148448    2.503 10032.72 <= WB
+ 720         H-2-Db         VLYLVDTSL VLYLVDTSL  0  0  0  0  0         VLYLVDTSL         PEPLIST 0.033295    3.179 0.100016    5.551 16943.25
+ 721         H-2-Db         VMDSWCCYL VMDSWCCYL  0  0  0  0  0         VMDSWCCYL         PEPLIST 0.003302   14.737 0.138222    2.888 11206.47
+ 722         H-2-Db       VMDSWCCYLKL VMDSWYLKL  0  5  2  0  0       VMDSWCCYLKL         PEPLIST 0.000373   38.300 0.102112    5.339 16563.30
+ 723         H-2-Db         VMGRHCGYL VMGRHCGYL  0  0  0  0  0         VMGRHCGYL         PEPLIST 0.018130    5.070 0.184386    1.529  6800.55
+ 724         H-2-Db         VMGRHCWYL VMGRHCWYL  0  0  0  0  0         VMGRHCWYL         PEPLIST 0.054324    2.138 0.263950    0.622  2875.25
+ 725         H-2-Db        VMISCNRHTL VMICNRHTL  0  3  1  0  0        VMISCNRHTL         PEPLIST 0.426992    0.174 0.615911    0.020    63.80 <= SB
+ 726         H-2-Db        VMISRNRHTL VMIRNRHTL  0  3  1  0  0        VMISRNRHTL         PEPLIST 0.641515    0.065 0.547736    0.038   133.41 <= SB
+ 727         H-2-Db         VMKAHGTSL VMKAHGTSL  0  0  0  0  0         VMKAHGTSL         PEPLIST 0.123701    0.980 0.166749    1.923  8230.37 <= WB
+ 728         H-2-Db         VMKAHRTSL VMKAHRTSL  0  0  0  0  0         VMKAHRTSL         PEPLIST 0.082979    1.460 0.153185    2.345  9531.43 <= WB
+ 729         H-2-Db         VMLENYNNL VMLENYNNL  0  0  0  0  0         VMLENYNNL         PEPLIST 0.816184    0.018 0.579071    0.028    95.05 <= SB
+ 730         H-2-Db         VMLKKMVLL VMLKKMVLL  0  0  0  0  0         VMLKKMVLL         PEPLIST 0.179293    0.648 0.237418    0.830  3831.32 <= WB
+ 731         H-2-Db       VMLKKMVLLAV VMLKKMVLV  0  8  2  0  0       VMLKKMVLLAV         PEPLIST 0.003673   13.941 0.085316    7.425 19864.25
+ 732         H-2-Db         VMLKKMVVL VMLKKMVVL  0  0  0  0  0         VMLKKMVVL         PEPLIST 0.260951    0.386 0.268987    0.589  2722.74 <= SB
+ 733         H-2-Db       VMLKKMVVLAV VMLKKMVVV  0  8  2  0  0       VMLKKMVVLAV         PEPLIST 0.003910   13.479 0.082167    7.928 20552.80
+ 734         H-2-Db        VMLYNTADEL VMLYNTDEL  0  6  1  0  0        VMLYNTADEL         PEPLIST 0.538278    0.106 0.523453    0.049   173.49 <= SB
+ 735         H-2-Db         VMMTSAEAV VMMTSAEAV  0  0  0  0  0         VMMTSAEAV         PEPLIST 0.292361    0.340 0.406866    0.175   612.52 <= SB
+ 736         H-2-Db         VNGLLYVSG VNGLLYVSG  0  0  0  0  0         VNGLLYVSG         PEPLIST 0.000226   45.190 0.031420   31.280 35590.10
+ 737         H-2-Db         VNGLLYVSV VNGLLYVSV  0  0  0  0  0         VNGLLYVSV         PEPLIST 0.009932    7.707 0.083527    7.710 20252.61
+ 738         H-2-Db          VNSIHALL VNS-IHALL  0  0  0  3  1          VNSIHALL         PEPLIST 0.002826   15.990 0.039744   23.566 32524.82
+ 739         H-2-Db          VQFMACNL VQF-MACNL  0  0  0  3  1          VQFMACNL         PEPLIST 0.005946   10.623 0.096907    5.904 17522.86
+ 740         H-2-Db          VQFMSCNL VQF-MSCNL  0  0  0  3  1          VQFMSCNL         PEPLIST 0.006227   10.333 0.100821    5.466 16796.28
+ 741         H-2-Db        VQINNPVTFL VQINNVTFL  0  5  1  0  0        VQINNPVTFL         PEPLIST 0.736857    0.030 0.503004    0.062   216.46 <= SB
+ 742         H-2-Db        VQINNPVTFQ VQINNPVTF  0  0  0  0  0         VQINNPVTF         PEPLIST 0.036634    2.934 0.119128    3.920 13778.18
+ 743         H-2-Db         VRFSLPSHL VRFSLPSHL  0  0  0  0  0         VRFSLPSHL         PEPLIST 0.014680    5.891 0.077132    8.846 21703.49
+ 744         H-2-Db          VRYVDGGI VRYVDG-GI  0  0  0  6  1          VRYVDGGI         PEPLIST 0.000098   57.656 0.015799   59.334 42143.46
+ 745         H-2-Db          VRYVYGGI VRYVYG-GI  0  0  0  6  1          VRYVYGGI         PEPLIST 0.000146   51.755 0.022730   43.634 39098.64
+ 746         H-2-Db         VSAVTLSLL VSAVTLSLL  0  0  0  0  0         VSAVTLSLL         PEPLIST 0.106163    1.155 0.193828    1.355  6140.13 <= WB
+ 747         H-2-Db         VSFAPLVQL VSFAPLVQL  0  0  0  0  0         VSFAPLVQL         PEPLIST 0.200378    0.563 0.178781    1.653  7225.73 <= WB
+ 748         H-2-Db         VSFAPLVQP VSFAPLVQP  0  0  0  0  0         VSFAPLVQP         PEPLIST 0.005772   10.803 0.049200   17.762 29361.59
+ 749         H-2-Db         VSHFLCYTL VSHFLCYTL  0  0  0  0  0         VSHFLCYTL         PEPLIST 0.051414    2.240 0.213073    1.080  4985.92
+ 750         H-2-Db          VSHRFHNT VSHR-FHNT  0  0  0  4  1          VSHRFHNT         PEPLIST 0.000746   29.567 0.026083   38.136 37705.63
+ 751         H-2-Db          VSHRSHNT VSHRSHNT-  0  0  0  8  1          VSHRSHNT         PEPLIST 0.000273   42.620 0.018942   51.486 40734.55
+ 752         H-2-Db         VSHSLCYTL VSHSLCYTL  0  0  0  0  0         VSHSLCYTL         PEPLIST 0.119160    1.022 0.251216    0.718  3299.98 <= WB
+ 753         H-2-Db        VSLSLFSSWL VSLSLFSWL  0  6  1  0  0        VSLSLFSSWL         PEPLIST 0.018034    5.091 0.263607    0.625  2885.96
+ 754         H-2-Db        VSLTLFSSWL VSLTLFSWL  0  6  1  0  0        VSLTLFSSWL         PEPLIST 0.022720    4.296 0.276132    0.550  2520.19
+ 755         H-2-Db          VSLVLRHV VSLVLR-HV  0  0  0  6  1          VSLVLRHV         PEPLIST 0.005732   10.844 0.075156    9.243 22172.48
+ 756         H-2-Db         VSPQHRPVL VSPQHRPVL  0  0  0  0  0         VSPQHRPVL         PEPLIST 0.411258    0.186 0.263069    0.629  2902.79 <= SB
+ 757         H-2-Db         VSPQRRPVL VSPQRRPVL  0  0  0  0  0         VSPQRRPVL         PEPLIST 0.214981    0.506 0.183493    1.550  6866.64 <= WB
+ 758         H-2-Db         VSPVNDLDV VSPVNDLDV  0  0  0  0  0         VSPVNDLDV         PEPLIST 0.594626    0.078 0.438544    0.129   434.77 <= SB
+ 759         H-2-Db         VSPVNDVDV VSPVNDVDV  0  0  0  0  0         VSPVNDVDV         PEPLIST 0.689100    0.043 0.464856    0.102   327.06 <= SB
+ 760         H-2-Db         VSRCNHNRL VSRCNHNRL  0  0  0  0  0         VSRCNHNRL         PEPLIST 0.094118    1.304 0.216713    1.038  4793.36 <= WB
+ 761         H-2-Db         VSTVTLSLL VSTVTLSLL  0  0  0  0  0         VSTVTLSLL         PEPLIST 0.060790    1.935 0.159484    2.134  8903.50 <= WB
+ 762         H-2-Db          VTTSFIYF VTT-SFIYF  0  0  0  3  1          VTTSFIYF         PEPLIST 0.002071   18.763 0.045496   19.730 30562.26
+ 763         H-2-Db          VTTSFIYL VTT-SFIYL  0  0  0  3  1          VTTSFIYL         PEPLIST 0.007679    9.086 0.071379   10.055 23097.41
+ 764         H-2-Db          VTVFVNNL VTV-FVNNL  0  0  0  3  1          VTVFVNNL         PEPLIST 0.004035   13.235 0.038439   24.582 32987.17
+ 765         H-2-Db          VTVFVSNL VTV-FVSNL  0  0  0  3  1          VTVFVSNL         PEPLIST 0.002858   15.901 0.041176   22.508 32024.68
+ 766         H-2-Db         VVFDSVQRI VVFDSVQRI  0  0  0  0  0         VVFDSVQRI         PEPLIST 0.044611    2.479 0.080904    8.146 20835.45
+ 767         H-2-Db         VVFDSVQRS VVFDSVQRS  0  0  0  0  0         VVFDSVQRS         PEPLIST 0.000653   31.153 0.021414   46.129 39659.50
+ 768         H-2-Db        VVFIIRRCNL VVFIIRRCL  0  8  1  0  0        VVFIIRRCNL         PEPLIST 0.001182   24.395 0.081075    8.115 20797.00
+ 769         H-2-Db         VVFNHFYNI VVFNHFYNI  0  0  0  0  0         VVFNHFYNI         PEPLIST 0.155740    0.757 0.217848    1.025  4734.86 <= WB
+ 770         H-2-Db         VVFNHIYNI VVFNHIYNI  0  0  0  0  0         VVFNHIYNI         PEPLIST 0.146051    0.811 0.185036    1.514  6752.95 <= WB
+ 771         H-2-Db         VVLLFNSTV VVLLFNSTV  0  0  0  0  0         VVLLFNSTV         PEPLIST 0.022730    4.294 0.125395    3.520 12874.92
+ 772         H-2-Db         VVLLFYSTV VVLLFYSTV  0  0  0  0  0         VVLLFYSTV         PEPLIST 0.017539    5.198 0.132373    3.150 11938.61
+ 773         H-2-Db       VVMISCNRHTL VVMINRHTL  0  4  2  0  0       VVMISCNRHTL         PEPLIST 0.309009    0.316 0.457269    0.109   355.04 <= SB
+ 774         H-2-Db       VVMISRNRHTL VVMINRHTL  0  4  2  0  0       VVMISRNRHTL         PEPLIST 0.347995    0.255 0.386407    0.211   764.28 <= SB
+ 775         H-2-Db          VVYKFFDF VVYKFFD-F  0  0  0  7  1          VVYKFFDF         PEPLIST 0.003419   14.485 0.051763   16.600 28558.68
+ 776         H-2-Db          VVYKRSAV VVY-KRSAV  0  0  0  3  1          VVYKRSAV         PEPLIST 0.002031   18.936 0.033264   29.298 34887.04
+ 777         H-2-Db          VVYTFFDF VVYTFFD-F  0  0  0  7  1          VVYTFFDF         PEPLIST 0.002183   18.278 0.053937   15.649 27894.67
+ 778         H-2-Db        VWNFLRVNTL VNFLRVNTL  0  1  1  0  0        VWNFLRVNTL         PEPLIST 0.006214   10.346 0.094237    6.233 18036.50
+ 779         H-2-Db          VYFYIAIV VYF-YIAIV  0  0  0  3  1          VYFYIAIV         PEPLIST 0.000626   31.669 0.031422   31.277 35589.25
+ 780         H-2-Db          VYFYIGIV VYF-YIGIV  0  0  0  3  1          VYFYIGIV         PEPLIST 0.000326   40.108 0.025826   38.528 37810.75
+ 781         H-2-Db          VYPFHMIL VYP-FHMIL  0  0  0  3  1          VYPFHMIL         PEPLIST 0.005223   11.450 0.055983   14.803 27284.07
+ 782         H-2-Db          VYPIHMIL VYP-IHMIL  0  0  0  3  1          VYPIHMIL         PEPLIST 0.006615    9.944 0.054636   15.358 27684.47
+ 783         H-2-Db          VYSYFLSL V-YSYFLSL  0  0  0  1  1          VYSYFLSL         PEPLIST 0.001315   23.242 0.046652   19.079 30182.56
+ 784         H-2-Db          VYSYSLSL V-YSYSLSL  0  0  0  1  1          VYSYSLSL         PEPLIST 0.000764   29.280 0.035260   27.296 34141.61
+ 785         H-2-Db         WARCNFNLL WARCNFNLL  0  0  0  0  0         WARCNFNLL         PEPLIST 0.109821    1.114 0.398034    0.190   673.94 <= WB
+ 786         H-2-Db         WTRCNFNLL WTRCNFNLL  0  0  0  0  0         WTRCNFNLL         PEPLIST 0.023188    4.229 0.249761    0.729  3352.36
+ 787         H-2-Db         YAFLQGFHM YAFLQGFHM  0  0  0  0  0         YAFLQGFHM         PEPLIST 0.534033    0.109 0.448962    0.118   388.43 <= SB
+ 788         H-2-Db        YAFPYAAYSM YAFPYAAYM  0  8  1  0  0        YAFPYAAYSM         PEPLIST 0.225214    0.475 0.346307    0.293  1179.46 <= SB
+ 789         H-2-Db         YFLDNLDKL YFLDNLDKL  0  0  0  0  0         YFLDNLDKL         PEPLIST 0.298041    0.332 0.275420    0.554  2539.68 <= SB
+ 790         H-2-Db         YFLENLDKL YFLENLDKL  0  0  0  0  0         YFLENLDKL         PEPLIST 0.415859    0.182 0.366641    0.254   946.53 <= SB
+ 791         H-2-Db         YGFRKVVHI YGFRKVVHI  0  0  0  0  0         YGFRKVVHI         PEPLIST 0.432688    0.171 0.336741    0.318  1308.08 <= SB
+ 792         H-2-Db         YGFRNVVHI YGFRNVVHI  0  0  0  0  0         YGFRNVVHI         PEPLIST 0.968843    0.003 0.765224    0.007    12.68 <= SB
+ 793         H-2-Db        YGLEFHARAL YGLEFHARL  0  8  1  0  0        YGLEFHARAL         PEPLIST 0.057388    2.031 0.184632    1.524  6782.48
+ 794         H-2-Db        YGLEFQARAL YGLEFARAL  0  5  1  0  0        YGLEFQARAL         PEPLIST 0.041831    2.628 0.148491    2.502 10028.00
+ 795         H-2-Db       YGLRNDYHMNL YGLRNHMNL  0  5  2  0  0       YGLRNDYHMNL         PEPLIST 0.588643    0.081 0.542953    0.040   140.49 <= SB
+ 796         H-2-Db       YGLRNDYHMNM YGLRNHMNM  0  5  2  0  0       YGLRNDYHMNM         PEPLIST 0.551183    0.098 0.549904    0.037   130.31 <= SB
+ 797         H-2-Db         YGYILRSYL YGYILRSYL  0  0  0  0  0         YGYILRSYL         PEPLIST 0.516277    0.122 0.486234    0.080   259.52 <= SB
+ 798         H-2-Db         YGYVLRSYL YGYVLRSYL  0  0  0  0  0         YGYVLRSYL         PEPLIST 0.566711    0.092 0.521701    0.050   176.81 <= SB
+ 799         H-2-Db        YLSINAGSLI YLSINASLI  0  6  1  0  0        YLSINAGSLI         PEPLIST 0.057167    2.039 0.222418    0.974  4506.47
+ 800         H-2-Db        YLYINAGSLI YLYINASLI  0  6  1  0  0        YLYINAGSLI         PEPLIST 0.202394    0.556 0.351234    0.284  1118.23 <= WB
+ 801         H-2-Db         YQPLYSSSL YQPLYSSSL  0  0  0  0  0         YQPLYSSSL         PEPLIST 0.251346    0.400 0.213153    1.080  4981.64 <= SB
+ 802         H-2-Db         YSGANATAT YSGANATAT  0  0  0  0  0         YSGANATAT         PEPLIST 0.183148    0.632 0.313702    0.388  1678.40 <= WB
+ 803         H-2-Db        YSIPTEIPVM YSIPTIPVM  0  5  1  0  0        YSIPTEIPVM         PEPLIST 0.331665    0.281 0.287945    0.490  2217.81 <= SB
+ 804         H-2-Db        YSIPTKIPVM YSITKIPVM  0  3  1  0  0        YSIPTKIPVM         PEPLIST 0.360456    0.238 0.305352    0.418  1837.10 <= SB
+ 805         H-2-Db       YSYFLSLPNQL YSYFLPNQL  0  5  2  0  0       YSYFLSLPNQL         PEPLIST 0.078135    1.549 0.222855    0.970  4485.20 <= WB
+ 806         H-2-Db       YSYSLSLPNQL YSLSLPNQL  0  2  2  0  0       YSYSLSLPNQL         PEPLIST 0.136275    0.876 0.273869    0.562  2582.68 <= WB
+ 807         H-2-Db        YTICNPCGPV YTICNPCPV  0  7  1  0  0        YTICNPCGPV         PEPLIST 0.026962    3.759 0.466532    0.100   321.18
+ 808         H-2-Db        YTICNPCVPV YTICNPVPV  0  6  1  0  0        YTICNPCVPV         PEPLIST 0.025470    3.924 0.514300    0.054   191.55
+ 809         H-2-Db         YVWGRYDFL YVWGRYDFL  0  0  0  0  0         YVWGRYDFL         PEPLIST 0.144880    0.818 0.227053    0.926  4286.01 <= WB
+ 810         H-2-Db         YVWGRYDLL YVWGRYDLL  0  0  0  0  0         YVWGRYDLL         PEPLIST 0.091230    1.340 0.173504    1.766  7650.32 <= WB
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Protein PEPLIST. Allele H-2-Db. Number of strong binders 193. Number of weak binders 155. Number of peptides 810
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------

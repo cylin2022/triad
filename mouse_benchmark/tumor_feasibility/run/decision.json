@@ -1,0 +1,10 @@
+{
+  "decision": "do_not_promote",
+  "scope": "mouse_tumor_SNV_vaccination_IFNg",
+  "primary_model": "LR_tumor_primary",
+  "primary_test_AP": 0.756683,
+  "BA_rank_test_AP": 0.881516,
+  "production_changed": false,
+  "reason": "No advantage over strong binding baseline in either held-out study; only one training study.",
+  "next_step": "Add independently curated tumor vaccination studies and reserve a new external test before model development."
+}

@@ -1,0 +1,11 @@
+{
+  "python": "3.9.18",
+  "platform": "Linux-5.4.0-214-generic-x86_64-with-glibc2.31",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.3.0",
+    "scipy": "1.10.1",
+    "matplotlib": "3.8.0"
+  }
+}

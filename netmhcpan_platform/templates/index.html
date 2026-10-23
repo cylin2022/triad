@@ -230,6 +230,7 @@
       border-color: var(--primary); box-shadow: 0 0 0 3px rgba(88,166,255,.12);
     }
     textarea { resize: vertical; min-height: 130px; font-family: 'JetBrains Mono', monospace; font-size: .82rem; }
+    ::placeholder { color: rgba(139, 148, 158, 0.45) !important; font-style: italic; opacity: 1; }
 
     /* Quick Example Chips */
     .chip-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; margin-bottom: 12px; }
@@ -2136,7 +2137,7 @@
                 💡 Load Spike Sample
               </button>
             </div>
-            <textarea id="vax-fasta-input" style="min-height:95px; font-family:'JetBrains Mono',monospace; font-size:.78rem; margin-bottom:8px;" placeholder=">Antigen_Protein&#10;MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHAIHVSGTNGTKRFDNPVLPFNDGVYFASTEKSNIIRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFCNDPFLGVYYHKNNKSWMESEFRVYSSANNCTFEYVSQPFLMDLEGKQGNFKNLREFVFKNIDGYFKIYSKHTPINLVRDLPQGFSALEPLVDLPIGINITRFQTLLALHRSYLTPGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNFNFNGLTGTGVLTESNKKFLPFQQFGRDIADTTDAVRDPQTLEILDITPCSFGGVSVITPGTNTSNQVAVLYQDVNCTEVPVAIHADQLTPTWRVYSTGSNVFQTRAGCLIGAEHVNNSYECDIPIGAGICASYQTQTNSPRRARSVASQSIIAYTMSLGAENSVAYSNNSIAIPTNFTISVTTEILPVSMTKTSVDCTMYICGDSTECSNLLLQYGSFCTQLNRALTGIAVEQDKNTQEVFAQVKQIYKTPPIKDFGGFNFSQILPDPSKPSKRSFIEDLLFNKVTLADAGFIKQYGDCLGDIAARDLICAQKFNGLTVLPPLLTDEMIAQYTSALLAGTITSGWTFGAGAALQIPFAMQMAYRFNGIGVTQNVLYENQKLIANQFNSAIGKIQDSLSSTASALGKLQDVVNQNAQALNTLVKQLSSNFGAISSVLNDILSRLDKVEAEVQIDRLITGRLQSLQTYVTQQLIRAAEIRASANLAATKMSECVLGQSKRVDFCGKGYHLMSFPQSAPHGVVFLHVTYVPAQEKNFTTAPAICHDGKAHFPREGVFVSNGTHWFVTQRNFYEPQIITTDNTFVSGNCDVVIGIVNNTVYDPLQPELDSFKEELDKYFKNHTSPDVDLGDISGINASVVNIQKEIDRLNEVAKNLNESLIDLQELGKYEQYIKWPWYIWLGFIAGLIAIVMVTIMLCCMTSCCSCLKGCCSCGSCCKFDEDDSEPVLKGVKLHYT"></textarea>
+            <textarea id="vax-fasta-input" style="min-height:95px; font-family:'JetBrains Mono',monospace; font-size:.78rem; margin-bottom:8px;" placeholder=">Antigen_Protein&#10;Paste protein FASTA or amino acid sequence here (or click '💡 Load Spike Sample' above)..."></textarea>
             
             <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
               <div style="display:flex; align-items:center; gap:6px; font-size:.74rem; color:var(--subtext);">
@@ -2165,7 +2166,7 @@
                 💡 Load Sample
               </button>
             </div>
-            <textarea id="vax-manual-input" style="min-height:95px; font-family:'JetBrains Mono',monospace; font-size:.82rem; margin-bottom:8px;" placeholder="GILGFVFTL&#10;FLPSDFFPSV&#10;AAAWYLWEV&#10;SLYNTVATLY&#10;YLLPAIVHI"></textarea>
+            <textarea id="vax-manual-input" style="min-height:95px; font-family:'JetBrains Mono',monospace; font-size:.82rem; margin-bottom:8px;" placeholder="Paste peptide sequences, one per line (8–14 aa, e.g. GILGFVFTL)..."></textarea>
             <button class="btn btn-success" id="vax-manual-add-btn" style="width:100%; justify-content:center; padding:7px 12px; font-size:.78rem;" onclick="addManualPeptidesToBasket()">
               🔬 Screen &amp; Add Peptides
             </button>

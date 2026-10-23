@@ -1806,7 +1806,7 @@
             <span class="cov-row-label">≥ 2 epitopes (redundancy)</span>
             <span class="cov-row-val" id="basket-cov2" style="color:var(--primary);">0.00%</span>
           </div>
-          <div class="cov-track"><div class="cov-fill" id="basket-cov2-bar" style="width:0%; background:var(--primary);"></div><div class="cov-goal-mark" id="basket-goal2-mark" style="left:50%;"></div></div>
+          <div class="cov-track"><div class="cov-fill" id="basket-cov2-bar" style="width:0%; background:var(--primary);"></div><div class="cov-goal-mark" id="basket-goal2-mark" style="left:90%;"></div></div>
         </div>
 
         <div class="basket-list" id="basket-list"></div>
@@ -2000,8 +2000,8 @@
             </div>
 
             <div class="dt-field">
-              <label for="dt-goal2">🛡️ Redundancy Goal (Hit ≥ 2) — <span id="dt-goal2-val">50%</span></label>
-              <input type="range" id="dt-goal2" min="0" max="95" step="5" value="50" oninput="updateDesignTarget()">
+              <label for="dt-goal2">🛡️ Redundancy Goal (Hit ≥ 2) — <span id="dt-goal2-val">90%</span></label>
+              <input type="range" id="dt-goal2" min="0" max="95" step="5" value="90" oninput="updateDesignTarget()">
               <div class="dt-hint">Fraction predicted to present ≥ 2 epitopes — the buffer against HLA loss and single-epitope escape. Auto-fill keeps adding until this is met too. Set to 0 to rank on ≥ 1 coverage alone.</div>
             </div>
 
@@ -2148,15 +2148,17 @@
               <span>Weight auto-fill picks by immunogenicity (±50%, as in Composite_Score)</span>
             </label>
             <label style="display:flex; align-items:center; gap:6px; font-size:.75rem; color:var(--subtext); cursor:pointer; flex-wrap:wrap;">
-              <input type="checkbox" id="vax-imm-filter-on" onchange="updateStudioImmSettings()">
+              <input type="checkbox" id="vax-imm-filter-on" checked onchange="updateStudioImmSettings()">
               <span>Exclude candidates scoring below</span>
-              <input type="number" id="vax-imm-min" value="0.00" step="0.05" disabled
+              <input type="number" id="vax-imm-min" value="0.05" step="0.05"
                      onchange="updateStudioImmSettings()" oninput="updateStudioImmSettings()"
                      style="width:72px; font-size:.74rem; padding:2px 6px;">
             </label>
             <div class="dt-hint" style="margin-top:6px;">
               Presentation stays the gate: immunogenicity only reorders peptides NetMHCpan already
-              calls binders. Applies to this Studio alone — the Predict table keeps its own ranking.
+              calls binders. The 0.05 floor keeps the redundancy goal from being met with peptides
+              the Calis model scores below baseline — without it, most designs pick up at least one.
+              Applies to this Studio alone — the Predict table keeps its own ranking.
             </div>
           </div>
 
@@ -2204,7 +2206,7 @@
             </div>
             <div class="cov-track" style="height:8px; border-radius:4px;">
               <div class="cov-fill basket-cov2-bar" id="dsg-cov2-bar" style="width:0%; background:var(--primary); border-radius:4px;"></div>
-              <div class="cov-goal-mark" id="dsg-goal2-mark" style="left:50%;"></div>
+              <div class="cov-goal-mark" id="dsg-goal2-mark" style="left:90%;"></div>
             </div>
           </div>
 
@@ -2899,7 +2901,7 @@ const pageSize = 25;
 let FREQ = { table: {}, aliases: {}, regions: ['World'], max_locus_sum: 0.99 };
 let covRegion   = 'Taiwan';      // region the design targets
 let covGoal     = 90;            // coverage goal, %
-let covGoal2    = 50;            // vaccine design only: Hit>=2 redundancy goal, % (0 = off)
+let covGoal2    = 90;            // vaccine design only: Hit>=2 redundancy goal, % (0 = off)
 const DEPTH_W   = 0.6;           // worth of a point of Hit>=2 against a point of Hit>=1
 let epitopeSet  = [];            // peptides the user has put in the basket
 let binderMap   = {};            // {peptide: [alleles]} for the loaded job
@@ -2910,7 +2912,7 @@ let immMap      = {};            // {peptide: Calis immunogenicity score} from t
 let pendingManualPeptides = [];  // peptides sent to NetMHCpan from Step 2, awaiting their job
 let lastManualNonBinders  = [];  // screened peptides the panel is not predicted to present
 let studioImmWeight = true;      // vaccine design only: weight greedy picks by immunogenicity
-let studioImmMin    = null;      // vaccine design only: drop candidates below this Calis score
+let studioImmMin    = 0.05;      // vaccine design only: drop candidates below this Calis score
 
 /* The 20 standard amino acids. Not /g: a global regex keeps lastIndex between
    .test() calls and would reject every other peptide. */

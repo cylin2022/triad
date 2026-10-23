@@ -102,7 +102,7 @@
     .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
     .stat-label { font-size: .72rem; color: var(--subtext); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
 
-    /* ── Scientific Workflow Pipeline Guide (先後順序引導) ── */
+    /* ── Scientific Workflow Pipeline Guide (Execution Progression) ── */
     .workflow-stepper-container {
       margin: 16px auto 26px;
       max-width: 1040px;
@@ -1091,92 +1091,92 @@
 
     <div class="hero-actions" style="margin-top:10px;">
       <button class="btn btn-demo" onclick="loadDemoResults()" style="box-shadow:0 0 16px rgba(0,245,196,0.25);">
-        <span>⚡</span> 快速體驗：載入示範數據與成果看板 (Load Demo Results)
+        <span>⚡</span> Quick Demo: Load Benchmark Sample &amp; Deliverables
       </button>
     </div>
   </section>
 
-  <!-- ── 4-Step Scientific Pipeline Flow (核心先後順序指引) ── -->
+  <!-- ── 4-Step Scientific Pipeline Flow ── -->
   <div class="workflow-stepper-container">
     <div class="stepper-header-label">
-      <span>🧭 科研分析工作流順序 (Scientific Analysis Pipeline &amp; Progression)</span>
-      <span style="font-weight:normal; font-size:.7rem; color:var(--primary);">點擊任一步驟即可切換對應功能</span>
+      <span>🧭 Scientific Analysis Pipeline &amp; Progression</span>
+      <span style="font-weight:normal; font-size:.7rem; color:var(--primary);">Click any step to switch view</span>
     </div>
     <div class="stepper-track">
       <!-- Step 1 -->
-      <div class="stepper-step active" id="flow-step-1" onclick="switchTab('predict')" title="步驟 1：輸入胜肽序列或 FASTA 蛋白，挑選目標 HLA 或小鼠 H-2">
+      <div class="stepper-step active" id="flow-step-1" onclick="switchTab('predict')" title="Step 1: Input peptide or protein FASTA sequences, choose HLA or H-2 alleles">
         <div class="step-num-bubble">01</div>
         <div class="step-body">
-          <div class="step-title"><span>🔬</span> 序列與對偶基因</div>
-          <div class="step-desc">胜肽/FASTA · 人類 HLA/小鼠 H-2</div>
+          <div class="step-title"><span>🔬</span> Sequence &amp; Alleles</div>
+          <div class="step-desc">Peptides/FASTA · Human HLA / Mouse H-2</div>
         </div>
         <div class="step-arrow">➔</div>
       </div>
       <!-- Step 2 -->
-      <div class="stepper-step" id="flow-step-2" onclick="switchTab('predict')" title="步驟 2：執行神經網路呈遞、TCR 免疫原性與族群覆蓋預測">
+      <div class="stepper-step" id="flow-step-2" onclick="switchTab('predict')" title="Step 2: Neural network presentation, TCR immunogenicity &amp; population coverage">
         <div class="step-num-bubble">02</div>
         <div class="step-body">
-          <div class="step-title"><span>⚡</span> 多維度篩選排序</div>
+          <div class="step-title"><span>⚡</span> Screening &amp; Ranking</div>
           <div class="step-desc">NetMHCpan · Calis TCR · Tier 1/2/3</div>
         </div>
         <div class="step-arrow">➔</div>
       </div>
       <!-- Step 3 -->
-      <div class="stepper-step" id="flow-step-3" onclick="switchTab('designer')" title="步驟 3：表位購物籃組合、連接子防禦突變、mRNA 理化分析">
+      <div class="stepper-step" id="flow-step-3" onclick="switchTab('designer')" title="Step 3: Epitope basket assembly, junctional defense &amp; mRNA physicochemical profiling">
         <div class="step-num-bubble">03</div>
         <div class="step-body">
-          <div class="step-title"><span>💉</span> 多表位疫苗設計</div>
-          <div class="step-desc">購物籃 ΔCov · 接縫防禦 · mRNA 檢驗</div>
+          <div class="step-title"><span>💉</span> Vaccine Design Studio</div>
+          <div class="step-desc">Basket ΔCov · Junction Defense · mRNA Audit</div>
         </div>
         <div class="step-arrow">➔</div>
       </div>
       <!-- Step 4 -->
-      <div class="stepper-step" id="flow-step-4" onclick="switchTab('results')" title="步驟 4：檢視成果總結看板，一鍵匯出出版級 CSV 報表與構建體">
+      <div class="stepper-step" id="flow-step-4" onclick="switchTab('results')" title="Step 4: Review executive deliverables, export publication-grade CSV/Excel &amp; FASTA">
         <div class="step-num-bubble">04</div>
         <div class="step-body">
-          <div class="step-title"><span>📊</span> 成果產出與匯出</div>
-          <div class="step-desc">出版級 CSV/Excel · 構建體 FASTA</div>
+          <div class="step-title"><span>📊</span> Deliverables &amp; Export</div>
+          <div class="step-desc">Publication CSV/Excel · Construct FASTA</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ── Main Navigation Tabs (大項目清晰切換) ───────────────────────────── -->
+  <!-- ── Main Navigation Tabs ───────────────────────────── -->
   <div class="tab-bar" role="tablist">
     <button class="tab-btn active" onclick="switchTab('predict')" id="tab-predict">
       <span class="tab-badge-num">1</span>
       <span class="tab-btn-content">
-        <span class="tab-main-label">🔬 表位篩選</span>
-        <span class="tab-sub-label">Epitope Screening</span>
+        <span class="tab-main-label">🔬 Epitope Screening</span>
+        <span class="tab-sub-label">Step 1: Input &amp; Screening</span>
       </span>
     </button>
     <button class="tab-btn" onclick="switchTab('designer')" id="tab-designer">
       <span class="tab-badge-num">2</span>
       <span class="tab-btn-content">
-        <span class="tab-main-label">💉 疫苗設計工作室 <span class="tab-v2-pill">v2.0</span></span>
-        <span class="tab-sub-label">Vaccine Studio</span>
+        <span class="tab-main-label">💉 Vaccine Studio <span class="tab-v2-pill">v2.0</span></span>
+        <span class="tab-sub-label">Step 3: Multi-Epitope Construct</span>
       </span>
       <span id="tab-designer-count" style="display:none; background:var(--strong); color:#03251f; border-radius:9px; padding:0 6px; font-size:.68rem; font-weight:800; margin-left:4px;">0</span>
     </button>
     <button class="tab-btn" onclick="switchTab('batch')" id="tab-batch">
       <span class="tab-badge-num">3</span>
       <span class="tab-btn-content">
-        <span class="tab-main-label">📦 批次預測引擎</span>
-        <span class="tab-sub-label">Batch Pipeline</span>
+        <span class="tab-main-label">📦 Batch Pipeline</span>
+        <span class="tab-sub-label">High-Throughput Proteome</span>
       </span>
     </button>
     <button class="tab-btn" onclick="switchTab('results')" id="tab-results">
       <span class="tab-badge-num">4</span>
       <span class="tab-btn-content">
-        <span class="tab-main-label">📊 成果中心與報告</span>
-        <span class="tab-sub-label">Results &amp; Deliverables</span>
+        <span class="tab-main-label">📊 Results &amp; Reports</span>
+        <span class="tab-sub-label">Step 2 &amp; 4: Deliverables Hub</span>
       </span>
     </button>
     <button class="tab-btn" onclick="switchTab('about')" id="tab-about">
       <span class="tab-badge-num">5</span>
       <span class="tab-btn-content">
-        <span class="tab-main-label">📖 系統手冊與指標</span>
-        <span class="tab-sub-label">Documentation</span>
+        <span class="tab-main-label">📖 Documentation</span>
+        <span class="tab-sub-label">Manual &amp; System Specs</span>
       </span>
     </button>
   </div>
@@ -1218,7 +1218,7 @@
           <div class="card-title">
             <div class="card-title-left">
               <span class="step-indicator-pill">Step 1</span>
-              <span class="icon">✏️</span> 序列輸入與格式設定 (Sequence Input)
+              <span class="icon">✏️</span> Sequence Input &amp; Formatting
               <div class="preset-info-wrapper" style="margin-left:4px;">
                 <span class="preset-info-icon" title="Click or hover to view supported sequence formats and file types">i</span>
                 <div class="preset-info-popover" style="max-width:min(420px, 85vw); left:0;">
@@ -1311,7 +1311,7 @@
           <div class="card-title">
             <div class="card-title-left" id="allele-card-title-predict">
               <span class="step-indicator-pill">Step 2</span>
-              <span class="icon">🎯</span> 目標對偶基因與預設 (Target Alleles &amp; Presets)
+              <span class="icon">🎯</span> Target Alleles &amp; Panel Presets
             </div>
             <button class="btn btn-ghost" style="padding:4px 10px; font-size:.74rem; color:var(--danger);" onclick="clearAllAlleles('predict')">Clear All</button>
           </div>
@@ -1400,7 +1400,7 @@
           <div class="card-title">
             <div class="card-title-left">
               <span class="step-indicator-pill">Step 3</span>
-              <span class="icon">⚙️</span> 預測參數與啟動 (Parameters &amp; Run)
+              <span class="icon">⚙️</span> Predictive Parameters &amp; Run
             </div>
           </div>
           <div style="display:flex; flex-direction:column; gap:12px;">
@@ -1419,9 +1419,9 @@
           </div>
           <div style="margin-top:20px; display:flex; gap:12px; align-items:center;">
             <button class="btn btn-primary" onclick="submitPrediction()" id="run-btn" style="flex:1; padding:12px 20px; font-size:.95rem; font-weight:700; box-shadow:0 0 16px rgba(0,245,196,0.25);">
-              <span>🚀</span> 啟動多維度表位預測 (Run Full Pipeline)
+              <span>🚀</span> Run Full Triad Pipeline
             </button>
-            <button class="btn btn-ghost" onclick="clearAll()" style="padding:12px 16px;">✕ 重設 (Clear)</button>
+            <button class="btn btn-ghost" onclick="clearAll()" style="padding:12px 16px;">✕ Reset Form</button>
           </div>
         </div>
 
@@ -1695,39 +1695,39 @@
               <div style="display:flex; align-items:center; gap:8px;">
                 <span class="step-indicator-pill" style="font-size:.68rem;">PIPELINE STEP 02 &amp; 04</span>
                 <h3 style="font-size:1.08rem; font-weight:700; color:#fff; margin:0;">
-                  分析成果與篩選導出中心 (Deliverables &amp; Export Hub)
+                  Executive Deliverables &amp; Export Hub
                 </h3>
               </div>
               <p style="font-size:.78rem; color:var(--subtext); margin:3px 0 0 0;">
-                依據 NetMHCpan 親和力、免疫原性 (T-cell Immunogenicity) 及人群覆蓋度進行多維度表位篩選，並即時匯出科研成果。
+                Multi-dimensional epitope screening across NetMHCpan presentation affinity, TCR immunogenicity, and population coverage.
               </p>
             </div>
           </div>
           <!-- Action Deliverable Buttons -->
           <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-            <button class="btn btn-success" style="padding:8px 16px; font-weight:600; font-size:.82rem; display:flex; align-items:center; gap:6px;" onclick="exportFilteredData('csv')" title="匯出當前篩選之所有表位為標準 CSV 檔案">
-              <span>⬇</span> 匯出篩選成果 (CSV)
+            <button class="btn btn-success" style="padding:8px 16px; font-weight:600; font-size:.82rem; display:flex; align-items:center; gap:6px;" onclick="exportFilteredData('csv')" title="Export active filtered predictions to standard CSV">
+              <span>⬇</span> Export Filtered (CSV)
             </button>
-            <button class="btn btn-ghost" style="padding:8px 14px; font-size:.82rem; border-color:var(--border);" onclick="exportFilteredData('excel')" title="匯出當前篩選之表位為 Excel 試算表">
-              <span>📊</span> 匯出 Excel
+            <button class="btn btn-ghost" style="padding:8px 14px; font-size:.82rem; border-color:var(--border);" onclick="exportFilteredData('excel')" title="Export active filtered predictions to Excel spreadsheet">
+              <span>📊</span> Export Excel
             </button>
-            <button class="btn btn-primary" style="padding:8px 16px; font-weight:600; font-size:.82rem; background:linear-gradient(135deg, var(--accent-purple), #7928ca); border:none; display:flex; align-items:center; gap:6px;" onclick="switchTab('designer')" title="將篩選出的表位帶入 Step 3 構建多表位疫苗">
-              <span>💉</span> 進入疫苗設計構建 (Step 3) ➔
+            <button class="btn btn-primary" style="padding:8px 16px; font-weight:600; font-size:.82rem; background:linear-gradient(135deg, var(--accent-purple), #7928ca); border:none; display:flex; align-items:center; gap:6px;" onclick="switchTab('designer')" title="Transfer filtered candidate epitopes to Step 3 Vaccine Studio">
+              <span>💉</span> Open Vaccine Studio (Step 3) ➔
             </button>
           </div>
         </div>
 
         <div style="display:flex; gap:16px; flex-wrap:wrap; background:rgba(0,0,0,0.3); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); align-items:center;">
           <div style="font-size:.78rem; color:var(--subtext); display:flex; align-items:center; gap:6px;">
-            <span>📌</span> 當前顯示表位：<strong id="summary-filtered-count" style="color:var(--strong);">—</strong> 筆
+            <span>📌</span> Active Filtered Hits: <strong id="summary-filtered-count" style="color:var(--strong);">—</strong>
           </div>
           <span style="color:rgba(255,255,255,0.15);">|</span>
           <div style="font-size:.78rem; color:var(--subtext); display:flex; align-items:center; gap:6px;">
-            <span>🔬</span> 預測胜肽配對總量：<strong id="summary-total-count" style="color:#fff;">—</strong> 條
+            <span>🔬</span> Total Peptide-Allele Pairs: <strong id="summary-total-count" style="color:#fff;">—</strong>
           </div>
           <span style="color:rgba(255,255,255,0.15);">|</span>
           <div style="font-size:.78rem; color:var(--subtext); display:flex; align-items:center; gap:6px;">
-            <span>💡</span> <span style="color:var(--warning);">先後順序引導：</span>於下方表格勾選或過濾表位加入購物籃 ➔ 點擊右上「進入疫苗設計構建 (Step 3)」
+            <span>💡</span> <span style="color:var(--warning);">Workflow Progression:</span> Select/filter epitopes into the basket below ➔ Click "Open Vaccine Studio (Step 3)" to build constructs
           </div>
         </div>
       </div>
@@ -2125,20 +2125,20 @@
             <span style="font-size:1.6rem;">💉</span>
             <span class="step-indicator-pill" style="font-size:.7rem; background:rgba(163,113,247,0.2); color:#c49bff; border-color:rgba(163,113,247,0.4);">PIPELINE STEP 03</span>
             <h2 style="font-size:1.24rem; font-weight:700; color:#fff; margin:0;">
-              多表位疫苗抗原構建工作室 (Multi-Epitope Vaccine Studio)
+              Multi-Epitope Vaccine Design Studio
             </h2>
             <span style="font-size:.7rem; padding:2px 8px; border-radius:12px; background:rgba(0,245,196,0.15); color:var(--strong); font-weight:700;">v2.0 Triad</span>
           </div>
           <p style="color:var(--subtext); font-size:.84rem; max-width:860px; line-height:1.6; margin:0;">
-            <strong>工作流程銜接：</strong>承接 <strong>Step 1</strong> 序列輸入與 <strong>Step 2</strong> 篩選出的高親和力表位集合（或由預設範例載入），在此進行<strong>多人群全球覆蓋度計算 (IPD-IMGT)</strong>、<strong>貪婪最優表位挑選 (Greedy Selector)</strong>、<strong>串聯連接子組裝 (AAY/GPGPG/H-2 專用接頭)</strong>，並自動執行<strong>接合區新表位安全審計 (Junctional Neo-epitope Audit)</strong>。
+            <strong>Workflow Progression:</strong> Building upon candidate epitopes identified in <strong>Step 1</strong> and <strong>Step 2</strong> (or loaded from presets), this dedicated studio computes <strong>global population coverage (IPD-IMGT)</strong>, executes <strong>greedy set optimization</strong>, models <strong>string-of-beads linker assembly (AAY/GPGPG/H-2 linkers)</strong>, and runs automated <strong>junctional neo-epitope safety audits</strong>.
           </p>
         </div>
         <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
           <button class="btn btn-demo" style="padding:7px 14px; font-size:.78rem;" onclick="loadDemoVaccineStudio()">
-            ⚡ 載入經典範例 (Load Preset)
+            ⚡ Load Curated Preset
           </button>
           <button class="btn btn-ghost" style="padding:7px 12px; font-size:.78rem; color:var(--danger);" onclick="clearStudio()">
-            🧹 清空重置 (Reset)
+            🧹 Reset Studio
           </button>
         </div>
       </div>
@@ -6657,7 +6657,7 @@ function exportFilteredData(fmt) {
     a.href = url;
     a.download = `triad_epitopes_filtered_${new Date().getTime()}.csv`;
     a.click();
-    toast(`⬇ 成功匯出 ${currentFilteredRows.length} 筆過濾表位成果 (CSV)`, 'success');
+    toast(`⬇ Exported ${currentFilteredRows.length} filtered epitope candidates (CSV)`, 'success');
   } else {
     content += headers.join("\t") + "\n";
     currentFilteredRows.forEach(r => {
@@ -6670,7 +6670,7 @@ function exportFilteredData(fmt) {
     a.href = url;
     a.download = `triad_epitopes_filtered_${new Date().getTime()}.xls`;
     a.click();
-    toast(`⬇ 成功匯出 ${currentFilteredRows.length} 筆過濾表位成果 (Excel)`, 'success');
+    toast(`⬇ Exported ${currentFilteredRows.length} filtered epitope candidates (Excel)`, 'success');
   }
 }
 

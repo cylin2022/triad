@@ -1985,7 +1985,7 @@
           </div>
 
           <div class="dt-grid">
-            <div class="dt-field">
+            <div class="dt-field" id="dt-region-field">
               <label for="dt-region">🌍 Target Population</label>
               <select id="dt-region" onchange="updateDesignTarget()"></select>
               <div class="dt-hint" id="dt-region-hint"></div>
@@ -1994,15 +1994,15 @@
             </div>
 
             <div class="dt-field">
-              <label for="dt-goal">🎯 Population Coverage Goal — <span id="dt-goal-val">90%</span></label>
+              <label for="dt-goal"><span id="dt-goal-label">🎯 Population Coverage Goal</span> — <span id="dt-goal-val">90%</span></label>
               <input type="range" id="dt-goal" min="50" max="99" step="1" value="90" oninput="updateDesignTarget()">
-              <div class="dt-hint">Fraction of target population predicted to present ≥ 1 vaccine epitope.</div>
+              <div class="dt-hint" id="dt-goal-hint">Fraction of target population predicted to present ≥ 1 vaccine epitope.</div>
             </div>
 
             <div class="dt-field">
               <label for="dt-goal2">🛡️ Redundancy Goal (Hit ≥ 2) — <span id="dt-goal2-val">90%</span></label>
               <input type="range" id="dt-goal2" min="0" max="95" step="5" value="90" oninput="updateDesignTarget()">
-              <div class="dt-hint">Fraction predicted to present ≥ 2 epitopes — the buffer against HLA loss and single-epitope escape. Auto-fill keeps adding until this is met too. Set to 0 to rank on ≥ 1 coverage alone.</div>
+              <div class="dt-hint" id="dt-goal2-hint">Fraction predicted to present ≥ 2 epitopes — the buffer against HLA loss and single-epitope escape. Auto-fill keeps adding until this is met too. Set to 0 to rank on ≥ 1 coverage alone.</div>
             </div>
 
           </div>
@@ -2010,7 +2010,7 @@
           <div class="dt-summary" id="dt-summary" style="margin-top:14px;">
             <div class="dt-summary-main">
               <span id="dt-panel-cov">—</span>
-              <span class="dt-summary-label">Theoretical upper coverage of allele pool for <b id="dt-region-name">East Asia</b></span>
+              <span class="dt-summary-label" id="dt-summary-label">Theoretical upper coverage of allele pool for <b id="dt-region-name">East Asia</b></span>
             </div>
             <div class="dt-summary-actions">
               <button class="btn btn-ghost" style="padding:5px 12px; font-size:.75rem;" onclick="autoBuildPanel()">
@@ -2025,14 +2025,20 @@
               <label style="font-size:.78rem; font-weight:600; color:var(--text); margin:0;">
                 🎯 Target MHC / HLA Allele Panel (<span id="studio-allele-count">0</span>):
               </label>
-              <div style="display:flex; gap:5px; flex-wrap:wrap;">
+              <div style="display:flex; gap:5px; flex-wrap:wrap;" id="studio-presets-human">
                 <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('taiwan')">🇹🇼 Taiwan</button>
                 <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('asia')">🌏 Asia</button>
                 <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('europe')">🌍 Europe</button>
                 <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('world')">🌐 World</button>
-                <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('b6')">🖱️ B6</button>
+              </div>
+              <div style="display:none; gap:5px; flex-wrap:wrap;" id="studio-presets-mouse">
+                <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('b6')">🐭 C57BL/6</button>
+                <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('balb')">🐭 BALB/c</button>
+                <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('c3h')">🐭 C3H</button>
+                <button class="btn btn-ghost" style="padding:2px 7px; font-size:.68rem;" onclick="applyStudioAllelePreset('all_mouse')">🧬 All H-2</button>
               </div>
             </div>
+            <div class="dt-warn" id="studio-species-mismatch" style="display:none; margin-bottom:8px;"></div>
             <div class="studio-allele-box" id="studio-allele-chips">
               <span style="color:var(--subtext); font-size:.74rem;">No target alleles selected.</span>
             </div>
@@ -2184,14 +2190,14 @@
         <div class="card" style="border-left:4px solid var(--primary);">
           <div class="card-title">
             <div class="card-title-left">
-              <span class="icon">🌍</span> <span>Step 3: Set-Level Population Coverage</span>
+              <span class="icon">🌍</span> <span id="dsg-cov-title">Step 3: Set-Level Population Coverage</span>
             </div>
             <span style="font-size:.72rem; color:var(--subtext);" id="dsg-region-note"></span>
           </div>
 
           <div style="margin-bottom:14px;">
             <div style="display:flex; justify-content:space-between; font-size:.82rem; margin-bottom:5px;">
-              <span style="color:var(--text); font-weight:600;">Population presenting ≥ 1 epitope (Hit ≥ 1):</span>
+              <span style="color:var(--text); font-weight:600;" id="dsg-cov1-label">Population presenting ≥ 1 epitope (Hit ≥ 1):</span>
               <span id="dsg-cov1-val" class="basket-cov1-val" style="font-weight:700; color:var(--strong);">0.00%</span>
             </div>
             <div class="cov-track" style="height:10px; border-radius:5px;">
@@ -2202,7 +2208,7 @@
 
           <div style="margin-bottom:16px;">
             <div style="display:flex; justify-content:space-between; font-size:.82rem; margin-bottom:5px;">
-              <span style="color:var(--text); font-weight:600;">Dual immune presentation redundancy (Hit ≥ 2):</span>
+              <span style="color:var(--text); font-weight:600;" id="dsg-cov2-label">Dual immune presentation redundancy (Hit ≥ 2):</span>
               <span id="dsg-cov2-val" class="basket-cov2-val" style="font-weight:700; color:var(--primary);">0.00%</span>
             </div>
             <div class="cov-track" style="height:8px; border-radius:4px;">
@@ -2988,49 +2994,74 @@ function absenceProb(alleles, region) {
   return p;
 }
 
-/* Coverage of an epitope SET. `peps` are peptide strings; alleles come from binderMap. */
+function isMouseAlleleList(list) {
+  return (list || []).some(a => /^H-?2-/i.test(String(a).trim()));
+}
+
+/* Coverage of an epitope SET. `peps` are peptide strings; alleles come from binderMap.
+
+   Two different denominators, because the two species ask different questions.
+   For a human panel the question is what fraction of a POPULATION presents the
+   set, so coverage runs through the AFND allele frequencies. Inbred mouse strains
+   have no such population: a B6 animal carries H-2-Kb and H-2-Db with certainty,
+   and the frequency table has no entry for them at all — which is why a mouse
+   design used to read 0.00% and auto-fill could never find a candidate that
+   improved anything. There the meaningful target is how many of the panel's MHC
+   molecules the set actually engages, so coverage becomes a fraction of the panel.
+   Both branches return the same shape, so every caller and the greedy search work
+   unchanged. */
 function setCoverageJS(peps, region, panel) {
   region = resolveRegion(region || covRegion);
+  if (!panel) panel = designTargetAlleles.length ? designTargetAlleles : selectedAlleles;
   const lists = peps.map(p => binderMap[p] || []);
   const R = [...new Set(lists.flat())];
 
-  const p0 = absenceProb(R, region);
-  const cov1 = 1 - p0;
-
-  let pExactlyOne = 0;
-  for (let i = 0; i < peps.length; i++) {
-    const others = [];
-    for (let j = 0; j < peps.length; j++) if (j !== i) others.push(...lists[j]);
-    pExactlyOne += absenceProb(others, region) - p0;
-  }
-  pExactlyOne = Math.max(0, pExactlyOne);
-  const cov2 = Math.max(0, Math.min(cov1, 1 - p0 - pExactlyOne));
-
-  const hit = new Set(R.map(normAllele));
-  const uncovered = (panel || []).filter(a => !hit.has(normAllele(a)))
-    .map(a => ({ allele: a, frequency: alleleFreq(a, region) }))
-    .sort((x, y) => y.frequency - x.frequency);
-
-  // How many epitopes of the set each panel allele presents. Hit>=2 can only rise
-  // where that number reaches 2, so this is the actionable half of the cov1/cov2
-  // gap: it names exactly which alleles are still carried by a single epitope.
+  // Epitopes per panel allele. Hit>=2 can only rise where this reaches 2, so it is
+  // the actionable half of the cov1/cov2 gap — and on a mouse panel it IS the metric.
   const depth = {};
   for (const a of (panel || [])) depth[normAllele(a)] = 0;
   for (const l of lists) {
     for (const a of new Set(l.map(normAllele))) if (a in depth) depth[a]++;
   }
+
+  const mouse = isMouseAlleleList(panel);
   const byFreq = list => list
-    .map(a => ({ allele: a, frequency: alleleFreq(a, region) }))
-    .sort((x, y) => y.frequency - x.frequency);
+    .map(a => ({ allele: a, frequency: mouse ? null : alleleFreq(a, region) }))
+    .sort((x, y) => mouse ? 0 : (y.frequency - x.frequency));
+
+  const hit = new Set(R.map(normAllele));
+  const uncovered = byFreq((panel || []).filter(a => !hit.has(normAllele(a))));
+  const single    = byFreq((panel || []).filter(a => depth[normAllele(a)] === 1));
+  const deep      = byFreq((panel || []).filter(a => depth[normAllele(a)] >= 2));
+
+  let cov1, cov2;
+  if (mouse) {
+    const n = (panel || []).length;
+    cov1 = n ? (n - uncovered.length) / n : 0;
+    cov2 = n ? deep.length / n : 0;
+  } else {
+    const p0 = absenceProb(R, region);
+    cov1 = 1 - p0;
+    let pExactlyOne = 0;
+    for (let i = 0; i < peps.length; i++) {
+      const others = [];
+      for (let j = 0; j < peps.length; j++) if (j !== i) others.push(...lists[j]);
+      pExactlyOne += absenceProb(others, region) - p0;
+    }
+    pExactlyOne = Math.max(0, pExactlyOne);
+    cov2 = Math.max(0, Math.min(cov1, 1 - p0 - pExactlyOne));
+  }
 
   return {
     coverage_pct:  +(cov1 * 100).toFixed(2),
     coverage2_pct: +(cov2 * 100).toFixed(2),
+    mouse,
+    panel_size: (panel || []).length,
     responsive: R,
     uncovered,
     depth,
-    single: byFreq((panel || []).filter(a => depth[normAllele(a)] === 1)),
-    deep:   byFreq((panel || []).filter(a => depth[normAllele(a)] >= 2))
+    single,
+    deep
   };
 }
 
@@ -3042,7 +3073,7 @@ function setCoverageJS(peps, region, panel) {
    because the two can disagree. */
 function studioIsMouse() {
   const panel = designTargetAlleles.length ? designTargetAlleles : selectedAlleles;
-  if (panel.length) return panel.some(a => /^H-?2-/i.test(String(a).trim()));
+  if (panel.length) return isMouseAlleleList(panel);
   return currentSpecies === 'mouse';
 }
 
@@ -3404,10 +3435,14 @@ function updateDesignTarget() {
   // Panel coverage: judge against the panel the Studio shows, not the Predict tab's list.
   const panel = designTargetAlleles.length ? designTargetAlleles
               : (studioPanelSeeded ? [] : selectedAlleles);
+  const mousePanel = isMouseAlleleList(panel);
   const cov = document.getElementById('dt-panel-cov');
   if (cov) {
     if (!panel.length) {
       cov.textContent = '—';
+    } else if (mousePanel) {
+      cov.textContent = String(panel.length);
+      cov.style.color = 'var(--accent-purple)';
     } else {
       const pct = (1 - absenceProb(panel, covRegion)) * 100;
       cov.textContent = pct.toFixed(1) + '%';
@@ -3417,18 +3452,76 @@ function updateDesignTarget() {
 
   const warn = document.getElementById('dt-warn');
   if (warn) {
-    const t = FREQ.table[resolveRegion(covRegion)] || {};
-    const unknown = panel.filter(a => a.startsWith('HLA-') && t[normAllele(a)] == null);
-    const nonHuman = panel.filter(a => !a.startsWith('HLA-'));
     const bits = [];
-    if (unknown.length)  bits.push(`<b>${unknown.length}</b> allele(s) have no frequency record for ${covRegion} and count as 0, so panel coverage is a <b>lower bound</b>: ${unknown.slice(0, 6).join(', ')}${unknown.length > 6 ? '…' : ''}`);
-    if (nonHuman.length) bits.push(`<b>${nonHuman.length}</b> non-human allele(s) are excluded from human population coverage: ${nonHuman.slice(0, 4).join(', ')}${nonHuman.length > 4 ? '…' : ''}`);
+    if (mousePanel) {
+      // A mixed panel would be scored against one denominator and read as the other.
+      const human = panel.filter(a => !/^H-?2-/i.test(String(a).trim()));
+      if (human.length) bits.push(`This panel mixes <b>${human.length}</b> human allele(s) with mouse H-2 molecules: ${human.slice(0, 4).join(', ')}${human.length > 4 ? '…' : ''}. Coverage is counted per MHC molecule, so the human alleles contribute no population figure. Design the two species separately.`);
+    } else {
+      const t = FREQ.table[resolveRegion(covRegion)] || {};
+      const unknown = panel.filter(a => a.startsWith('HLA-') && t[normAllele(a)] == null);
+      const nonHuman = panel.filter(a => !a.startsWith('HLA-'));
+      if (unknown.length)  bits.push(`<b>${unknown.length}</b> allele(s) have no frequency record for ${covRegion} and count as 0, so panel coverage is a <b>lower bound</b>: ${unknown.slice(0, 6).join(', ')}${unknown.length > 6 ? '…' : ''}`);
+      if (nonHuman.length) bits.push(`<b>${nonHuman.length}</b> non-human allele(s) are excluded from human population coverage: ${nonHuman.slice(0, 4).join(', ')}${nonHuman.length > 4 ? '…' : ''}`);
+    }
     warn.innerHTML = bits.map(b => '⚠️ ' + b).join('<br>');
     warn.style.display = bits.length ? 'block' : 'none';
   }
 
-  renderPresetSuggestion(panel);
+  renderSpeciesCoverageLabels();
+  if (!mousePanel) renderPresetSuggestion(panel);
   renderBasket();
+}
+
+/* The coverage denominator differs by species, so the words around it have to move
+   with it: a mouse design reporting a percentage "of the population" would be a
+   claim the model never made. */
+function renderSpeciesCoverageLabels() {
+  const mouse = studioIsMouse();
+  const n = (designTargetAlleles.length ? designTargetAlleles : selectedAlleles).length;
+  const set  = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  const show = (id, on)   => { const el = document.getElementById(id); if (el) el.style.display = on ? '' : 'none'; };
+
+  set('dt-goal-label', mouse ? '🎯 H-2 Molecule Coverage Goal' : '🎯 Population Coverage Goal');
+  set('dt-goal-hint', mouse
+    ? `Fraction of the ${n} H-2 molecule(s) on this panel that must present at least one epitope. An inbred strain carries its haplotype with certainty, so coverage counts molecules engaged, not people reached.`
+    : 'Fraction of target population predicted to present ≥ 1 vaccine epitope.');
+  set('dt-goal2-hint', mouse
+    ? 'Fraction of panel H-2 molecules that must present ≥ 2 epitopes — the buffer against escape by loss of a single epitope. Set to 0 to rank on ≥ 1 coverage alone.'
+    : 'Fraction predicted to present ≥ 2 epitopes — the buffer against HLA loss and single-epitope escape. Auto-fill keeps adding until this is met too. Set to 0 to rank on ≥ 1 coverage alone.');
+  set('dsg-cov-title',  mouse ? 'Step 3: Set-Level H-2 Molecule Coverage' : 'Step 3: Set-Level Population Coverage');
+  set('dsg-cov1-label', mouse ? 'H-2 molecules presenting ≥ 1 epitope (Hit ≥ 1):' : 'Population presenting ≥ 1 epitope (Hit ≥ 1):');
+  set('dsg-cov2-label', mouse ? 'H-2 molecules presenting ≥ 2 epitopes (Hit ≥ 2):' : 'Dual immune presentation redundancy (Hit ≥ 2):');
+  set('dt-summary-label', mouse
+    ? 'H-2 molecules on the target panel — population frequencies do not apply to inbred strains'
+    : `Theoretical upper coverage of allele pool for <b id="dt-region-name">${covRegion}</b>`);
+
+  // Everything downstream of the frequency table is human-only.
+  show('dt-region-field', !mouse);
+  show('dsg-coverage-grid', !mouse);
+
+  // The preset row follows the species TOGGLE, never the current panel: these are
+  // the buttons that change the panel, so gating them on what the panel already is
+  // would strand a user who switches species back with a mouse panel still loaded.
+  const ph = document.getElementById('studio-presets-human');
+  const pm = document.getElementById('studio-presets-mouse');
+  const toggleMouse = currentSpecies === 'mouse';
+  if (ph) ph.style.display = toggleMouse ? 'none' : 'flex';
+  if (pm) pm.style.display = toggleMouse ? 'flex' : 'none';
+
+  // A panel that disagrees with the toggle is legal but easy to miss, and it is
+  // what decides the coverage denominator — so say so rather than silently differ.
+  const mism = document.getElementById('studio-species-mismatch');
+  if (mism) {
+    const disagree = (designTargetAlleles.length || selectedAlleles.length) && mouse !== toggleMouse;
+    mism.innerHTML = disagree
+      ? `\u26a0\ufe0f The panel holds ${mouse ? 'mouse H-2 molecules' : 'human HLA alleles'} while the
+         species toggle reads ${toggleMouse ? 'Mouse' : 'Human'}. Coverage is being scored
+         ${mouse ? 'per H-2 molecule' : 'against human population frequencies'} \u2014 pick a preset
+         above to switch the panel.`
+      : '';
+    mism.style.display = disagree ? 'block' : 'none';
+  }
 }
 
 /* Target Population and the preset buttons are separate controls: the first picks the
@@ -3699,8 +3792,9 @@ async function autoFillBasket() {
   const both = res.goalMet && res.goal2Met;
   const covTxt = `${res.coverage.toFixed(1)}% ≥ 1 · ${res.coverage2.toFixed(1)}% ≥ 2`;
   const goalTxt = covGoal2 ? `${covGoal}% / ${covGoal2}%` : `${covGoal}%`;
+  const where = studioIsMouse() ? 'the H-2 panel' : covRegion;
   toast(both
-    ? `🤖 Added ${n} epitope(s) — ${covTxt} of ${covRegion} (goal ${goalTxt} met)`
+    ? `🤖 Added ${n} epitope(s) — ${covTxt} of ${where} (goal ${goalTxt} met)`
     : `🤖 Added ${n} epitope(s) — ${covTxt}, the best this pool reaches; goal ${goalTxt}`,
     both ? 'success' : 'error');
 }
@@ -3925,6 +4019,10 @@ function setSpecies(sp) {
   document.querySelectorAll('.presets-human').forEach(el => el.style.display = isMouse ? 'none' : 'flex');
   document.querySelectorAll('.presets-mouse').forEach(el => el.style.display = isMouse ? 'flex' : 'none');
 
+  // The Studio has its own panel and its own coverage denominator; both follow.
+  renderSpeciesCoverageLabels();
+  renderStudioImmControls();
+
   // Toggle Popover contents
   document.querySelectorAll('.popover-human').forEach(el => el.style.display = isMouse ? 'none' : 'block');
   document.querySelectorAll('.popover-mouse').forEach(el => el.style.display = isMouse ? 'block' : 'none');
@@ -4106,9 +4204,10 @@ function openDesigner() {
 }
 
 function refreshDesigner() {
-  // The panel decides whether the Calis layer applies at all, and the panel can
-  // change under us, so re-evaluate the controls on every refresh.
+  // The panel decides whether the Calis layer applies and what coverage even
+  // means, and the panel can change under us, so re-evaluate both every refresh.
   renderStudioImmControls();
+  renderSpeciesCoverageLabels();
 
   // Coverage recap across every region we have data for
   const note = document.getElementById('dsg-region-note');
@@ -4190,8 +4289,9 @@ function refreshDesigner() {
   const warn = document.getElementById('dsg-coverage-warn');
   if (warn) {
     const bits = [];
+    const denom = cov.mouse ? `the ${cov.panel_size} H-2 molecule(s) on the panel` : covRegion;
     if (epitopeSet.length > 0 && cov.coverage_pct < covGoal) {
-      bits.push(`Current epitope set covers <b>${cov.coverage_pct.toFixed(1)}%</b> of ${covRegion}, below target <b>${covGoal}%</b>.`);
+      bits.push(`Current epitope set covers <b>${cov.coverage_pct.toFixed(1)}%</b> of ${denom}, below target <b>${covGoal}%</b>.`);
     }
     if (epitopeSet.length > 0 && covGoal2 > 0 && cov.coverage2_pct < covGoal2) {
       const names = cov.single.slice(0, 6).map(u => u.allele).join(', ');
@@ -4855,7 +4955,10 @@ function downloadConstruct(kind) {
     const lines = [
       `# TRIAD v2.0 multi-epitope design report`,
       `# Generated,${new Date().toISOString()}`,
-      `# Target region,${covRegion}`,
+      cov.mouse
+        ? `# Coverage basis,fraction of the ${cov.panel_size} H-2 molecules on the target panel`
+        : `# Coverage basis,fraction of the ${covRegion} population (AFND allele frequencies)`,
+      cov.mouse ? `# Target panel,mouse H-2` : `# Target region,${covRegion}`,
       `# Coverage goal,${covGoal}%`,
       `# Redundancy goal (>=2 epitopes),${covGoal2}%`,
       `# Set coverage >=1 epitope,${cov.coverage_pct}%`,

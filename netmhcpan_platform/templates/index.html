@@ -255,6 +255,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .species-toggle-btn:hover {
       color: var(--text);
@@ -263,6 +265,10 @@
       background: linear-gradient(135deg, var(--primary), #3b82f6);
       color: #ffffff;
       box-shadow: 0 2px 10px rgba(88, 166, 255, .35);
+    }
+    #btn-species-mouse.active {
+      background: linear-gradient(135deg, var(--accent-purple), #8b5cf6);
+      box-shadow: 0 2px 10px rgba(163, 113, 247, .35);
     }
 
     /* ── v2.0 Vaccine Design: target card ──────────────────────────── */
@@ -1072,11 +1078,11 @@
         <div style="font-size:.75rem; color:var(--subtext);" id="species-desc">Current: Human Clinical Mode (HLA-A/B/C &amp; Population Genetics)</div>
       </div>
     </div>
-    <div class="species-toggle-group" style="display:inline-flex; background:var(--panel2); border:1px solid var(--border); border-radius:30px; padding:3px;">
-      <button type="button" id="btn-species-human" class="species-toggle-btn active" onclick="setSpecies('human')">
+    <div class="species-toggle-group" style="display:inline-flex; background:var(--panel2); border:1px solid var(--border); border-radius:30px; padding:3px; flex-shrink:0; white-space:nowrap;">
+      <button type="button" id="btn-species-human" class="species-toggle-btn active" style="white-space:nowrap;" onclick="setSpecies('human')">
         👨‍⚕️ Human (HLA)
       </button>
-      <button type="button" id="btn-species-mouse" class="species-toggle-btn" onclick="setSpecies('mouse')">
+      <button type="button" id="btn-species-mouse" class="species-toggle-btn" style="white-space:nowrap;" onclick="setSpecies('mouse')">
         🐭 Mouse (H-2) <span style="font-size:.65rem; background:rgba(88,166,255,0.2); color:var(--primary); border:1px solid rgba(88,166,255,0.3); border-radius:6px; padding:1px 5px; font-weight:700; margin-left:3px;">v2.0</span>
       </button>
     </div>
@@ -1087,10 +1093,10 @@
   <!-- ════════════════════════════════════════════════════ -->
   <div class="tab-panel active" id="panel-predict">
 
-    <div class="main-grid">
+    <div class="main-grid" style="grid-template-columns: minmax(360px, 1fr) minmax(360px, 1fr); gap:20px; align-items:start;">
 
-      <!-- ── Left: Input Panel ────────────────────────── -->
-      <div style="display:flex;flex-direction:column;gap:18px;">
+      <!-- ── Left Column: Step 1 Input & Guidance ────────────────── -->
+      <div style="display:flex; flex-direction:column; gap:18px;">
 
         <!-- Input mode -->
         <div class="card">
@@ -1185,6 +1191,11 @@
           </button>
         </div>
 
+      </div><!-- /Left Column -->
+
+      <!-- ── Right Column: Step 2 Alleles & Step 3 Run ────────────── -->
+      <div style="display:flex; flex-direction:column; gap:18px;">
+
         <!-- Allele selector -->
         <div class="card">
           <div class="card-title">
@@ -1274,7 +1285,7 @@
           </div>
         </div>
 
-        <!-- Options -->
+        <!-- Options & Run -->
         <div class="card">
           <div class="card-title">
             <div class="card-title-left">
@@ -1316,39 +1327,7 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- ── Right: Direct Quick Preview Card ────────────────────────── -->
-      <div>
-        <div id="predict-quick-card" class="demo-preview-card">
-          <div style="font-size:2.6rem; margin-bottom:12px;">🔬</div>
-          <h3 style="font-size:1.25rem; font-weight:700; color:var(--text);">TRIAD Accelerated Framework</h3>
-          <p style="color:var(--subtext); font-size:.88rem; max-width:540px; margin:8px auto 0; line-height:1.6;">
-            TRIAD: T-Cell Epitope Ranking, Immunogenicity, and Allele Distribution Framework.
-          </p>
-
-          <div class="demo-grid">
-            <div class="demo-item">
-              <h4><span>⚡</span> Multi-Core Parallel Engine</h4>
-              <p>Accelerates binding &amp; immunogenicity scoring across 16+ Xeon CPU cores.</p>
-            </div>
-            <div class="demo-item">
-              <h4><span>🧬</span> T-Cell Immunogenicity Score</h4>
-              <p>Evaluates amino acid physicochemical properties and TCR contact positions (Calis et al. 2013).</p>
-            </div>
-            <div class="demo-item">
-              <h4><span>🌍</span> Population Coverage %</h4>
-              <p>Estimates World and East Asian population coverage percentage for multi-epitope vaccine targets.</p>
-            </div>
-          </div>
-
-          <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-            <button class="btn btn-demo" onclick="loadDemoResults()" style="padding:12px 28px; font-size:.95rem;">
-              <span>⚡</span> Load Demo Data &amp; View Results Tab
-            </button>
-          </div>
-        </div>
-      </div>
+      </div><!-- /Right Column -->
 
     </div><!-- /main-grid -->
   </div><!-- /panel-predict -->
@@ -2019,6 +1998,24 @@
       </div>
     </div>
 
+    <!-- 🧭 Studio Workflow Progression Strip -->
+    <div style="background:rgba(22,27,34,0.85); border:1px solid rgba(163,113,247,0.3); border-radius:var(--radius); padding:10px 16px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div style="font-size:.76rem; font-weight:700; color:var(--accent-purple); text-transform:uppercase; letter-spacing:.08em; display:flex; align-items:center; gap:6px;">
+        <span>🧭</span> Studio Design Progression:
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:.76rem;">
+        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(163,113,247,0.15); border:1px solid rgba(163,113,247,0.4); border-radius:6px; padding:3px 8px; color:#fff; font-weight:600;"><span style="background:var(--accent-purple); color:#fff; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">1</span> Target Genetics</span>
+        <span style="color:var(--subtext);">➔</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(0,245,196,0.12); border:1px solid rgba(0,245,196,0.35); border-radius:6px; padding:3px 8px; color:var(--strong); font-weight:600;"><span style="background:var(--strong); color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">2</span> Epitope Basket</span>
+        <span style="color:var(--subtext);">➔</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(88,166,255,0.12); border:1px solid rgba(88,166,255,0.35); border-radius:6px; padding:3px 8px; color:var(--primary); font-weight:600;"><span style="background:var(--primary); color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">3</span> Coverage Recap</span>
+        <span style="color:var(--subtext);">➔</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(0,180,216,0.12); border:1px solid rgba(0,180,216,0.35); border-radius:6px; padding:3px 8px; color:#00b4d8; font-weight:600;"><span style="background:#00b4d8; color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">4</span> Construct Assembly</span>
+        <span style="color:var(--subtext);">➔</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(248,81,73,0.12); border:1px solid rgba(248,81,73,0.35); border-radius:6px; padding:3px 8px; color:var(--danger); font-weight:600;"><span style="background:var(--danger); color:#fff; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">5</span> Safety Audit</span>
+      </div>
+    </div>
+
     <!-- 2-Column Responsive Workspace Grid -->
     <div class="main-grid" style="grid-template-columns: minmax(360px, 440px) 1fr; gap:20px; align-items:start;">
 
@@ -2029,6 +2026,7 @@
         <div class="card design-target-card" style="border-left:4px solid var(--accent-purple);">
           <div class="card-title">
             <div class="card-title-left">
+              <span style="background:var(--accent-purple); color:#fff; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Phase 1</span>
               <span class="icon">🎯</span> <span>Target Genetics &amp; Population Setup</span>
             </div>
             <span style="font-size:.72rem; color:var(--accent-purple); font-weight:600;">Population Genetics</span>
@@ -2103,12 +2101,16 @@
             </div>
           </div>
           <div class="dt-warn" id="dt-warn" style="display:none;"></div>
+          <div style="margin-top:12px; font-size:.73rem; color:var(--subtext); text-align:right;">
+            ➔ Next: Add epitopes into Basket below (Phase 2)
+          </div>
         </div>
 
         <!-- 2. Epitope Input & Basket Manager Card -->
         <div class="card" style="border-left:4px solid var(--strong);">
           <div class="card-title">
             <div class="card-title-left">
+              <span style="background:var(--strong); color:#03251f; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Phase 2</span>
               <span class="icon">🧬</span> <span>Candidate Epitope Basket</span>
               <span class="basket-count-val" style="color:var(--strong); font-weight:700;">(0)</span>
             </div>
@@ -2229,6 +2231,9 @@
             <div id="vax-basket-gap"></div>
             <div id="vax-basket-suggest"></div>
           </div>
+          <div style="margin-top:12px; font-size:.73rem; color:var(--subtext); text-align:right;">
+            ➔ Next: Review Coverage on the right (Phase 3)
+          </div>
         </div>
 
       </div><!-- /Left Column -->
@@ -2240,6 +2245,7 @@
         <div class="card" style="border-left:4px solid var(--primary);">
           <div class="card-title">
             <div class="card-title-left">
+              <span style="background:var(--primary); color:#03251f; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Phase 3</span>
               <span class="icon">🌍</span> <span id="dsg-cov-title">Set-Level Population Coverage</span>
             </div>
             <span style="font-size:.72rem; color:var(--subtext);" id="dsg-region-note"></span>
@@ -2272,12 +2278,16 @@
 
           <div class="prop-grid" id="dsg-coverage-grid"></div>
           <div id="dsg-coverage-warn"></div>
+          <div style="margin-top:12px; font-size:.73rem; color:var(--subtext); text-align:right;">
+            ➔ Next: Assemble String-of-Beads Construct below (Phase 4)
+          </div>
         </div>
 
         <!-- Construct Assembly Card -->
         <div class="card" style="border-left:4px solid #00b4d8;">
           <div class="card-title">
             <div class="card-title-left">
+              <span style="background:#00b4d8; color:#03251f; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Phase 4</span>
               <span class="icon">🔗</span> <span>String-of-Beads Construct Assembly</span>
             </div>
             <button class="btn btn-ghost btn-opt-order" id="btn-auto-opt-order" onclick="optimizeConstructOrder()" style="padding:4px 10px; font-size:.72rem; color:var(--accent-purple); border-color:var(--accent-purple);" title="Automatically search all permutations to minimize off-target junctional binding">
@@ -2318,12 +2328,16 @@
           </div>
           <div class="construct-seq" id="dsg-sequence">—</div>
           <div class="prop-grid" id="dsg-props"></div>
+          <div style="margin-top:12px; font-size:.73rem; color:var(--subtext); text-align:right;">
+            ➔ Next: Audit Junctional Safety below (Phase 5)
+          </div>
         </div>
 
         <!-- Junctional Scan & Off-Target Suite Card -->
         <div class="card" style="border-left:4px solid var(--weak);">
           <div class="card-title">
             <div class="card-title-left">
+              <span style="background:var(--danger); color:#fff; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Phase 5</span>
               <span class="icon">🛡️</span> <span>Off-Target Assessment &amp; Junctional Audit</span>
             </div>
             <button class="btn btn-primary" style="padding:6px 16px; font-size:.78rem;" onclick="scanJunctions()" id="dsg-scan-btn">
@@ -2387,6 +2401,36 @@
           <span style="font-size:.74rem; background:rgba(0,245,196,0.12); color:var(--strong); padding:3px 10px; border-radius:6px; font-weight:600;">40 vCPU Parallel Engine</span>
           <span style="font-size:.74rem; background:rgba(163,113,247,0.12); color:var(--accent-purple); padding:3px 10px; border-radius:6px; font-weight:600;">RAM Disk Zero-Disk IO</span>
           <span style="font-size:.74rem; background:rgba(245,166,35,0.12); color:var(--weak); padding:3px 10px; border-radius:6px; font-weight:600;">REST API v1.1</span>
+        </div>
+      </div>
+
+      <!-- TRIAD Core Architecture & Framework Highlights (Consolidated from Quick Preview) -->
+      <div class="card" style="border-left:4px solid var(--accent-purple);">
+        <div class="card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="icon">🔬</span>
+            <span style="font-weight:700;">TRIAD Computational Framework Highlights</span>
+          </div>
+          <button class="btn btn-demo" onclick="loadDemoResults()" style="padding:6px 14px; font-size:.76rem;">
+            <span>⚡</span> Load Benchmark Sample Dataset
+          </button>
+        </div>
+        <p style="color:var(--subtext); font-size:.86rem; line-height:1.6; margin-bottom:14px;">
+          TRIAD seamlessly unifies high-throughput presentation affinity modeling, machine-learned position-specific immunogenicity scoring, and regional population coverage into three core computational engines:
+        </p>
+        <div class="demo-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:12px;">
+          <div class="demo-item">
+            <h4><span>⚡</span> Multi-Core Parallel Engine</h4>
+            <p>Accelerates NetMHCpan-4.2 presentation scoring across 16+ to 40+ Xeon CPU cores using shared-memory zero-disk IO.</p>
+          </div>
+          <div class="demo-item">
+            <h4><span>🧬</span> T-Cell Immunogenicity Score</h4>
+            <p>Evaluates amino acid physicochemical properties and TCR contact positions (Calis et al. 2013) to prioritize immunogenic epitopes.</p>
+          </div>
+          <div class="demo-item">
+            <h4><span>🌍</span> Population Coverage %</h4>
+            <p>Estimates World, East Asian, and regional population coverage using IPD-IMGT allele frequency distributions for multi-epitope vaccine targets.</p>
+          </div>
         </div>
       </div>
 
@@ -3164,9 +3208,11 @@ function setCoverageJS(peps, region, panel) {
    panel the design is actually scored against, not the global species toggle,
    because the two can disagree. */
 function studioIsMouse() {
+  if (currentSpecies === 'mouse') return true;
+  if (currentSpecies === 'human') return false;
   const panel = designTargetAlleles.length ? designTargetAlleles : selectedAlleles;
   if (panel.length) return isMouseAlleleList(panel);
-  return currentSpecies === 'mouse';
+  return false;
 }
 
 /* Vaccine-design-only gate: drop candidates whose Calis score falls below the
@@ -4133,6 +4179,10 @@ function setSpecies(sp) {
     } else if (batchSelectedAlleles.length === 0) {
       loadMousePreset('b6', 'batch');
     }
+    // Also auto-switch Vaccine Studio target alleles
+    if (designTargetAlleles.some(a => a.startsWith('HLA-')) || designTargetAlleles.length === 0) {
+      designTargetAlleles = [...MOUSE_PRESETS.b6];
+    }
   } else {
     if (selectedAlleles.some(a => a.startsWith('H-2') || a.startsWith('H2'))) {
       clearAllAlleles('predict');
@@ -4146,7 +4196,15 @@ function setSpecies(sp) {
     } else if (batchSelectedAlleles.length === 0) {
       loadHlaPreset('taiwan', 'batch');
     }
+    // Also auto-switch Vaccine Studio target alleles
+    if (designTargetAlleles.some(a => a.startsWith('H-2') || a.startsWith('H2')) || designTargetAlleles.length === 0) {
+      designTargetAlleles = [...HLA_PRESETS.taiwan];
+    }
   }
+
+  // Re-render Vaccine Studio panels and labels
+  renderStudioAlleleChips();
+  updateDesignTarget();
 
   toast(isMouse ? '🐭 Switched to Mouse Preclinical Model (H-2)' : '👨‍⚕️ Switched to Human Clinical Mode (HLA)', 'success');
 }

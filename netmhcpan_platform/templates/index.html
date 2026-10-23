@@ -1999,7 +1999,7 @@
     </div>
 
     <!-- 🧭 Studio Workflow Progression Strip -->
-    <div style="background:rgba(22,27,34,0.85); border:1px solid rgba(163,113,247,0.3); border-radius:var(--radius); padding:10px 16px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+    <div style="background:rgba(22,27,34,0.85); border:1px solid rgba(163,113,247,0.3); border-radius:var(--radius); padding:10px 16px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
       <div style="font-size:.76rem; font-weight:700; color:var(--accent-purple); text-transform:uppercase; letter-spacing:.08em; display:flex; align-items:center; gap:6px;">
         <span>🧭</span> Studio Design Progression:
       </div>
@@ -2008,11 +2008,35 @@
         <span style="color:var(--subtext);">➔</span>
         <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(0,245,196,0.12); border:1px solid rgba(0,245,196,0.35); border-radius:6px; padding:3px 8px; color:var(--strong); font-weight:600;"><span style="background:var(--strong); color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">2</span> Epitope Basket</span>
         <span style="color:var(--subtext);">➔</span>
-        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(88,166,255,0.12); border:1px solid rgba(88,166,255,0.35); border-radius:6px; padding:3px 8px; color:var(--primary); font-weight:600;"><span style="background:var(--primary); color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">3</span> Coverage Recap</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(88,166,255,0.12); border:1px solid rgba(88,166,255,0.35); border-radius:6px; padding:3px 8px; color:var(--primary); font-weight:600;"><span style="background:var(--primary); color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">3</span> Coverage &amp; Optimization</span>
         <span style="color:var(--subtext);">➔</span>
         <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(0,180,216,0.12); border:1px solid rgba(0,180,216,0.35); border-radius:6px; padding:3px 8px; color:#00b4d8; font-weight:600;"><span style="background:#00b4d8; color:#03251f; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">4</span> Construct Assembly</span>
         <span style="color:var(--subtext);">➔</span>
         <span style="display:inline-flex; align-items:center; gap:5px; background:rgba(248,81,73,0.12); border:1px solid rgba(248,81,73,0.35); border-radius:6px; padding:3px 8px; color:var(--danger); font-weight:600;"><span style="background:var(--danger); color:#fff; border-radius:50%; width:16px; height:16px; display:inline-flex; align-items:center; justify-content:center; font-size:.65rem;">5</span> Safety Audit</span>
+      </div>
+    </div>
+
+    <!-- 📊 Studio Executive Design Summary Bar -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:12px; margin-bottom:18px;">
+      <div style="background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; border-left:3px solid var(--accent-purple);">
+        <div style="font-size:.7rem; color:var(--subtext); text-transform:uppercase; font-weight:700;">1. Target Genetics</div>
+        <div style="font-size:.92rem; font-weight:700; color:#fff; margin-top:2px;" id="kpi-vax-target">Taiwan (Han Chinese)</div>
+        <div style="font-size:.72rem; color:var(--accent-purple);" id="kpi-vax-alleles">7 Alleles on Panel</div>
+      </div>
+      <div style="background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; border-left:3px solid var(--strong);">
+        <div style="font-size:.7rem; color:var(--subtext); text-transform:uppercase; font-weight:700;">2. Epitope Basket</div>
+        <div style="font-size:.92rem; font-weight:700; color:var(--strong); margin-top:2px;"><span id="kpi-vax-count">0</span> Candidates</div>
+        <div style="font-size:.72rem; color:var(--subtext);">TCR Immunogenicity Filtered</div>
+      </div>
+      <div style="background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; border-left:3px solid var(--primary);">
+        <div style="font-size:.7rem; color:var(--subtext); text-transform:uppercase; font-weight:700;">3. Population Coverage</div>
+        <div style="font-size:.92rem; font-weight:700; color:var(--primary); margin-top:2px;" id="kpi-vax-cov">0.00%</div>
+        <div style="font-size:.72rem; color:var(--subtext);">Goal: <b id="kpi-vax-goal" style="color:#fff;">90%</b></div>
+      </div>
+      <div style="background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; border-left:3px solid #00b4d8;">
+        <div style="font-size:.7rem; color:var(--subtext); text-transform:uppercase; font-weight:700;">4. Construct &amp; Safety</div>
+        <div style="font-size:.92rem; font-weight:700; color:#fff; margin-top:2px;" id="kpi-vax-safety">Ready to Audit</div>
+        <div style="font-size:.72rem; color:var(--subtext);">Junctional Neo-epitopes</div>
       </div>
     </div>
 
@@ -2032,27 +2056,16 @@
             <span style="font-size:.72rem; color:var(--accent-purple); font-weight:600;">Population Genetics</span>
           </div>
 
-          <div class="dt-grid">
+          <div class="dt-grid" style="grid-template-columns: 1fr; gap:10px;">
             <div class="dt-field" id="dt-region-field">
-              <label for="dt-region">🌍 Target Population</label>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <label for="dt-region" style="margin:0; font-weight:600;">🌍 Target Population / Cohort</label>
+                <span style="font-size:.72rem; color:var(--subtext);" id="dt-region-hint"></span>
+              </div>
               <select id="dt-region" onchange="updateDesignTarget()"></select>
-              <div class="dt-hint" id="dt-region-hint"></div>
               <div id="dt-preset-suggest"></div>
               <div class="dt-smalln" id="dt-smalln" style="display:none;"></div>
             </div>
-
-            <div class="dt-field">
-              <label for="dt-goal"><span id="dt-goal-label">🎯 Population Coverage Goal</span> — <span id="dt-goal-val">90%</span></label>
-              <input type="range" id="dt-goal" min="50" max="99" step="1" value="90" oninput="updateDesignTarget()">
-              <div class="dt-hint" id="dt-goal-hint">Fraction of target population predicted to present ≥ 1 vaccine epitope.</div>
-            </div>
-
-            <div class="dt-field">
-              <label for="dt-goal2">🛡️ Redundancy Goal (Hit ≥ 2) — <span id="dt-goal2-val">90%</span></label>
-              <input type="range" id="dt-goal2" min="0" max="95" step="5" value="90" oninput="updateDesignTarget()">
-              <div class="dt-hint" id="dt-goal2-hint">Fraction predicted to present ≥ 2 epitopes — the buffer against HLA loss and single-epitope escape. Auto-fill keeps adding until this is met too. Set to 0 to rank on ≥ 1 coverage alone.</div>
-            </div>
-
           </div>
 
           <div class="dt-summary" id="dt-summary" style="margin-top:14px;">
@@ -2094,10 +2107,6 @@
               <input type="text" id="studio-add-allele-input" placeholder="Add allele (e.g. HLA-A*02:01, H-2-Kb)..." style="font-size:.74rem; padding:4px 8px; flex:1;" onkeydown="if(event.key==='Enter'){event.preventDefault(); addStudioAlleleFromInput();}">
               <button class="btn btn-ghost" style="padding:4px 10px; font-size:.72rem;" onclick="addStudioAlleleFromInput()">+ Add</button>
               <button class="btn btn-ghost" style="padding:4px 10px; font-size:.72rem; color:var(--danger);" onclick="clearStudioAlleles()">Clear alleles</button>
-            </div>
-            <div class="dt-hint" style="margin-top:6px;">
-              This panel belongs to the Studio. It starts as a copy of the <b>Predict</b> tab's alleles, then stays independent.
-              <b>Target Population</b> above only picks the allele-frequency table used for the coverage maths.
             </div>
           </div>
           <div class="dt-warn" id="dt-warn" style="display:none;"></div>
@@ -2197,28 +2206,25 @@
           </div>
 
           <!-- T-Cell Immunogenicity in epitope selection (Vaccine Studio only) -->
-          <div style="border-top:1px solid var(--border2); padding-top:12px; margin-bottom:4px;">
-            <div style="font-size:.78rem; font-weight:600; color:var(--text); margin-bottom:7px;">
-              🧬 T-Cell Immunogenicity (Calis) in epitope selection
+          <div style="border-top:1px solid var(--border2); padding-top:10px; margin-bottom:4px;">
+            <div style="font-size:.78rem; font-weight:600; color:var(--text); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+              <span>🧬 T-Cell Immunogenicity (Calis Gating)</span>
+              <span style="font-size:.7rem; color:var(--subtext);">TCR Recognition Filter</span>
             </div>
-            <label style="display:flex; align-items:center; gap:6px; font-size:.75rem; color:var(--subtext); cursor:pointer; margin-bottom:5px;">
-              <input type="checkbox" id="vax-imm-weight" checked onchange="updateStudioImmSettings()">
-              <span>Weight auto-fill picks by immunogenicity (±50%, as in Composite_Score)</span>
-            </label>
-            <label style="display:flex; align-items:center; gap:6px; font-size:.75rem; color:var(--subtext); cursor:pointer; flex-wrap:wrap;">
-              <input type="checkbox" id="vax-imm-filter-on" checked onchange="updateStudioImmSettings()">
-              <span>Exclude candidates scoring below</span>
-              <input type="number" id="vax-imm-min" value="0.05" step="0.05"
-                     onchange="updateStudioImmSettings()" oninput="updateStudioImmSettings()"
-                     style="width:72px; font-size:.74rem; padding:2px 6px;">
-            </label>
-            <div class="dt-warn" id="vax-imm-mouse-note" style="display:none; margin-top:8px;"></div>
-            <div class="dt-hint" style="margin-top:6px;">
-              Presentation stays the gate: immunogenicity only reorders peptides NetMHCpan already
-              calls binders. The 0.05 floor keeps the redundancy goal from being met with peptides
-              the Calis model scores below baseline — without it, most designs pick up at least one.
-              Applies to this Studio alone — the Predict table keeps its own ranking.
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <label style="display:flex; align-items:center; gap:6px; font-size:.74rem; color:var(--text); cursor:pointer;">
+                <input type="checkbox" id="vax-imm-weight" checked onchange="updateStudioImmSettings()">
+                <span>Prioritize immunogenic binders in greedy selection (Composite Score weighting)</span>
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; font-size:.74rem; color:var(--text); cursor:pointer;">
+                <input type="checkbox" id="vax-imm-filter-on" checked onchange="updateStudioImmSettings()">
+                <span>Cutoff: Exclude candidates scoring below Calis</span>
+                <input type="number" id="vax-imm-min" value="0.05" step="0.05"
+                       onchange="updateStudioImmSettings()" oninput="updateStudioImmSettings()"
+                       style="width:68px; font-size:.74rem; padding:2px 6px;">
+              </label>
             </div>
+            <div class="dt-warn" id="vax-imm-mouse-note" style="display:none; margin-top:6px;"></div>
           </div>
 
           <!-- Basket Contents List -->
@@ -2241,16 +2247,61 @@
       <!-- Right Column: Set Coverage, Assembly, and Audit & Export -->
       <div style="display:flex; flex-direction:column; gap:18px;">
 
-        <!-- Live Coverage Recap Card -->
+        <!-- Phase 3: Coverage Evaluation & Optimization Command Center -->
         <div class="card" style="border-left:4px solid var(--primary);">
           <div class="card-title">
             <div class="card-title-left">
               <span style="background:var(--primary); color:#03251f; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Phase 3</span>
-              <span class="icon">🌍</span> <span id="dsg-cov-title">Set-Level Population Coverage</span>
+              <span class="icon">📊</span> <span id="dsg-cov-title">Coverage Evaluation &amp; Greedy Optimization</span>
             </div>
             <span style="font-size:.72rem; color:var(--subtext);" id="dsg-region-note"></span>
           </div>
 
+          <!-- Optimization Action & Goal Command Banner -->
+          <div style="background:linear-gradient(135deg, rgba(0,245,196,0.08), rgba(88,166,255,0.08)); border:1px solid rgba(0,245,196,0.3); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div>
+              <div style="font-weight:700; font-size:.86rem; color:#fff; display:flex; align-items:center; gap:6px;">
+                <span>🤖</span> Greedy Subset Optimizer
+              </div>
+              <div style="font-size:.74rem; color:var(--subtext); margin-top:2px;">
+                Iteratively selects epitopes maximizing cumulative coverage &amp; dual-presentation buffer until target goals are reached.
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="autoFillBasket()" style="padding:8px 18px; font-size:.84rem; font-weight:700; box-shadow:0 0 16px rgba(0,245,196,0.25);">
+              <span>⚡</span> Run Greedy Optimization
+            </button>
+          </div>
+
+          <!-- Interactive Goals Configuration Grid (User-Tenable Target Goals) -->
+          <div class="dt-grid" style="margin-bottom:14px; background:var(--panel2); padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border);">
+            <div class="dt-field">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <label for="dt-goal" style="margin:0; font-size:.78rem; font-weight:600;"><span id="dt-goal-label">🎯 Coverage Goal</span>: <b id="dt-goal-val" style="color:var(--strong);">90%</b></label>
+                <div style="display:flex; gap:4px;">
+                  <button type="button" class="btn btn-ghost" style="padding:1px 6px; font-size:.68rem;" onclick="document.getElementById('dt-goal').value=80; updateDesignTarget();">80%</button>
+                  <button type="button" class="btn btn-ghost" style="padding:1px 6px; font-size:.68rem;" onclick="document.getElementById('dt-goal').value=90; updateDesignTarget();">90%</button>
+                  <button type="button" class="btn btn-ghost" style="padding:1px 6px; font-size:.68rem;" onclick="document.getElementById('dt-goal').value=95; updateDesignTarget();">95%</button>
+                </div>
+              </div>
+              <input type="range" id="dt-goal" min="50" max="99" step="1" value="90" oninput="updateDesignTarget()">
+              <div class="dt-hint" id="dt-goal-hint" style="display:none;"></div>
+            </div>
+
+            <div class="dt-field">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <label for="dt-goal2" style="margin:0; font-size:.78rem; font-weight:600;">🛡️ Redundancy (Hit ≥ 2): <b id="dt-goal2-val" style="color:var(--primary);">90%</b></label>
+                <div style="display:flex; gap:4px;">
+                  <button type="button" class="btn btn-ghost" style="padding:1px 6px; font-size:.68rem;" onclick="document.getElementById('dt-goal2').value=0; updateDesignTarget();">Off</button>
+                  <button type="button" class="btn btn-ghost" style="padding:1px 6px; font-size:.68rem;" onclick="document.getElementById('dt-goal2').value=50; updateDesignTarget();">50%</button>
+                  <button type="button" class="btn btn-ghost" style="padding:1px 6px; font-size:.68rem;" onclick="document.getElementById('dt-goal2').value=90; updateDesignTarget();">90%</button>
+                </div>
+              </div>
+              <input type="range" id="dt-goal2" min="0" max="95" step="5" value="90" oninput="updateDesignTarget()">
+              <div class="dt-hint" id="dt-goal2-hint" style="display:none;"></div>
+            </div>
+          </div>
+
+          <!-- Dual Real-Time Progress Tracks -->
           <div style="margin-bottom:14px;">
             <div style="display:flex; justify-content:space-between; font-size:.82rem; margin-bottom:5px;">
               <span style="color:var(--text); font-weight:600;" id="dsg-cov1-label">Population presenting ≥ 1 epitope (Hit ≥ 1):</span>
@@ -3786,6 +3837,8 @@ function clearStudio() {
     const el = document.getElementById(id);
     if (el) el.innerHTML = '';
   });
+  const kpiSafety = document.getElementById('kpi-vax-safety');
+  if (kpiSafety) kpiSafety.textContent = 'Ready to Audit';
   renderBasket();
   refreshDesigner();
   renderTableBody(currentFilteredRows);
@@ -3978,6 +4031,26 @@ function renderBasket() {
   if (dsgGoal2Mark) { dsgGoal2Mark.style.left = covGoal2 + '%'; dsgGoal2Mark.style.display = covGoal2 ? 'block' : 'none'; }
   const dsgGoalMark = document.getElementById('dsg-goal-mark');
   if (dsgGoalMark) dsgGoalMark.style.left = covGoal + '%';
+
+  // Update Executive KPI Summary Bar
+  const kpiCount = document.getElementById('kpi-vax-count');
+  if (kpiCount) kpiCount.textContent = epitopeSet.length;
+  const kpiCov = document.getElementById('kpi-vax-cov');
+  if (kpiCov) {
+    kpiCov.textContent = cov.coverage_pct.toFixed(2) + '%';
+    kpiCov.style.color = cov.coverage_pct >= covGoal ? 'var(--strong)' : 'var(--primary)';
+  }
+  const kpiGoal = document.getElementById('kpi-vax-goal');
+  if (kpiGoal) kpiGoal.textContent = covGoal + '%';
+  const kpiTarget = document.getElementById('kpi-vax-target');
+  if (kpiTarget) {
+    kpiTarget.textContent = studioIsMouse() ? 'Mouse Preclinical' : (covRegion || 'Human HLA');
+  }
+  const kpiAlleles = document.getElementById('kpi-vax-alleles');
+  if (kpiAlleles) {
+    const pal = designTargetAlleles.length ? designTargetAlleles : selectedAlleles;
+    kpiAlleles.textContent = `${pal.length} Alleles on Panel`;
+  }
 
   // Basket contents in Results
   const list = document.getElementById('basket-list');
@@ -4835,6 +4908,17 @@ function renderScanResults(s, alleles) {
     : hasStrong
       ? `<span style="background:rgba(248,81,73,0.15); color:var(--danger); padding:3px 8px; border-radius:10px; font-weight:700; font-size:.7rem;">🔴 HIGH OFF-TARGET RISK (${s.n_strong} SB)</span>`
       : `<span style="background:rgba(245,166,35,0.15); color:var(--weak); padding:3px 8px; border-radius:10px; font-weight:700; font-size:.7rem;">🟡 MODERATE RISK (${s.n_hits} WB)</span>`;
+
+  const kpiSafety = document.getElementById('kpi-vax-safety');
+  if (kpiSafety) {
+    if (isClean) {
+      kpiSafety.innerHTML = '<span style="color:var(--strong);">🟢 Clean (0 Hits)</span>';
+    } else if (hasStrong) {
+      kpiSafety.innerHTML = `<span style="color:var(--danger);">🔴 Risk (${s.n_strong} SB)</span>`;
+    } else {
+      kpiSafety.innerHTML = `<span style="color:var(--weak);">🟡 Moderate (${s.n_hits} WB)</span>`;
+    }
+  }
 
   let dashHtml = `
     <div class="offtarget-grid">

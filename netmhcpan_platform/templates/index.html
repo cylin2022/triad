@@ -102,83 +102,6 @@
     .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
     .stat-label { font-size: .72rem; color: var(--subtext); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
 
-    /* ── Scientific Workflow Pipeline Guide (Execution Progression) ── */
-    .workflow-stepper-container {
-      margin: 16px auto 26px;
-      max-width: 1040px;
-      width: 100%;
-      background: linear-gradient(135deg, rgba(13, 17, 23, 0.9) 0%, rgba(22, 27, 34, 0.85) 100%);
-      border: 1px solid rgba(88, 166, 255, 0.25);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-      position: relative;
-    }
-    .stepper-header-label {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 10px; font-size: .75rem; font-weight: 700; color: var(--subtext);
-      text-transform: uppercase; letter-spacing: .08em; padding: 0 4px;
-    }
-    .stepper-track {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      position: relative;
-    }
-    @media (max-width: 900px) {
-      .stepper-track { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px) {
-      .stepper-track { grid-template-columns: 1fr; }
-    }
-    .stepper-step {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      position: relative;
-    }
-    .stepper-step:hover {
-      background: rgba(88, 166, 255, 0.08);
-      border-color: rgba(88, 166, 255, 0.4);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
-    }
-    .stepper-step.active {
-      background: linear-gradient(135deg, rgba(0, 245, 196, 0.1), rgba(88, 166, 255, 0.12));
-      border-color: var(--primary);
-      box-shadow: 0 0 12px rgba(88, 166, 255, 0.2);
-    }
-    .step-num-bubble {
-      width: 26px; height: 26px; border-radius: 50%;
-      background: var(--panel2); border: 1px solid var(--border2);
-      color: var(--text); font-size: .75rem; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-family: 'JetBrains Mono', monospace;
-    }
-    .stepper-step.active .step-num-bubble {
-      background: var(--primary); color: #03251f; border-color: var(--primary);
-    }
-    .step-body { flex: 1; min-width: 0; }
-    .step-title {
-      font-size: .84rem; font-weight: 700; color: var(--text);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      display: flex; align-items: center; gap: 5px;
-    }
-    .step-desc {
-      font-size: .7rem; color: var(--subtext); margin-top: 2px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .step-arrow {
-      color: var(--border); font-size: .8rem; margin-left: auto;
-    }
-    .stepper-step:hover .step-arrow { color: var(--primary); }
-
     /* ── Step Badges for Form Cards ──────────────────────── */
     .step-indicator-pill {
       display: inline-flex; align-items: center; justify-content: center;
@@ -1096,52 +1019,7 @@
     </div>
   </section>
 
-  <!-- ── 4-Step Scientific Pipeline Flow ── -->
-  <div class="workflow-stepper-container">
-    <div class="stepper-header-label">
-      <span>🧭 Scientific Analysis Pipeline &amp; Progression</span>
-      <span style="font-weight:normal; font-size:.7rem; color:var(--primary);">Click any step to switch view</span>
-    </div>
-    <div class="stepper-track">
-      <!-- Step 1 -->
-      <div class="stepper-step active" id="flow-step-1" onclick="switchTab('predict')" title="Step 1: Input peptide or protein FASTA sequences, choose HLA or H-2 alleles">
-        <div class="step-num-bubble">01</div>
-        <div class="step-body">
-          <div class="step-title"><span>🔬</span> Sequence &amp; Alleles</div>
-          <div class="step-desc">Peptides/FASTA · Human HLA / Mouse H-2</div>
-        </div>
-        <div class="step-arrow">➔</div>
-      </div>
-      <!-- Step 2 -->
-      <div class="stepper-step" id="flow-step-2" onclick="switchTab('predict')" title="Step 2: Neural network presentation, TCR immunogenicity &amp; population coverage">
-        <div class="step-num-bubble">02</div>
-        <div class="step-body">
-          <div class="step-title"><span>⚡</span> Screening &amp; Ranking</div>
-          <div class="step-desc">NetMHCpan · Calis TCR · Tier 1/2/3</div>
-        </div>
-        <div class="step-arrow">➔</div>
-      </div>
-      <!-- Step 3 -->
-      <div class="stepper-step" id="flow-step-3" onclick="switchTab('designer')" title="Step 3: Epitope basket assembly, junctional defense &amp; mRNA physicochemical profiling">
-        <div class="step-num-bubble">03</div>
-        <div class="step-body">
-          <div class="step-title"><span>💉</span> Vaccine Design Studio</div>
-          <div class="step-desc">Basket ΔCov · Junction Defense · mRNA Audit</div>
-        </div>
-        <div class="step-arrow">➔</div>
-      </div>
-      <!-- Step 4 -->
-      <div class="stepper-step" id="flow-step-4" onclick="switchTab('results')" title="Step 4: Review executive deliverables, export publication-grade CSV/Excel &amp; FASTA">
-        <div class="step-num-bubble">04</div>
-        <div class="step-body">
-          <div class="step-title"><span>📊</span> Deliverables &amp; Export</div>
-          <div class="step-desc">Publication CSV/Excel · Construct FASTA</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Main Navigation Tabs ───────────────────────────── -->
+  <!-- ── Main Navigation Tabs (Unified Workflow Progression) ────────────────── -->
   <div class="tab-bar" role="tablist">
     <button class="tab-btn active" onclick="switchTab('predict')" id="tab-predict">
       <span class="tab-badge-num">1</span>
@@ -1150,26 +1028,26 @@
         <span class="tab-sub-label">Step 1: Input &amp; Screening</span>
       </span>
     </button>
-    <button class="tab-btn" onclick="switchTab('designer')" id="tab-designer">
+    <button class="tab-btn" onclick="switchTab('results')" id="tab-results">
       <span class="tab-badge-num">2</span>
       <span class="tab-btn-content">
+        <span class="tab-main-label">📊 Results &amp; Reports</span>
+        <span class="tab-sub-label">Step 2: Deliverables Hub</span>
+      </span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('designer')" id="tab-designer">
+      <span class="tab-badge-num">3</span>
+      <span class="tab-btn-content">
         <span class="tab-main-label">💉 Vaccine Studio <span class="tab-v2-pill">v2.0</span></span>
-        <span class="tab-sub-label">Step 3: Multi-Epitope Construct</span>
+        <span class="tab-sub-label">Step 3: Construct Studio</span>
       </span>
       <span id="tab-designer-count" style="display:none; background:var(--strong); color:#03251f; border-radius:9px; padding:0 6px; font-size:.68rem; font-weight:800; margin-left:4px;">0</span>
     </button>
     <button class="tab-btn" onclick="switchTab('batch')" id="tab-batch">
-      <span class="tab-badge-num">3</span>
+      <span class="tab-badge-num">4</span>
       <span class="tab-btn-content">
         <span class="tab-main-label">📦 Batch Pipeline</span>
         <span class="tab-sub-label">High-Throughput Proteome</span>
-      </span>
-    </button>
-    <button class="tab-btn" onclick="switchTab('results')" id="tab-results">
-      <span class="tab-badge-num">4</span>
-      <span class="tab-btn-content">
-        <span class="tab-main-label">📊 Results &amp; Reports</span>
-        <span class="tab-sub-label">Step 2 &amp; 4: Deliverables Hub</span>
       </span>
     </button>
     <button class="tab-btn" onclick="switchTab('about')" id="tab-about">
@@ -3558,19 +3436,6 @@ function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-' + tab)?.classList.add('active');
   document.getElementById('tab-' + tab)?.classList.add('active');
-
-  // Synchronize 4-step workflow stepper progression
-  document.querySelectorAll('.stepper-step').forEach(s => s.classList.remove('active'));
-  if (tab === 'predict') {
-    document.getElementById('flow-step-1')?.classList.add('active');
-    document.getElementById('flow-step-2')?.classList.add('active');
-  } else if (tab === 'designer') {
-    document.getElementById('flow-step-3')?.classList.add('active');
-  } else if (tab === 'results') {
-    document.getElementById('flow-step-4')?.classList.add('active');
-  } else if (tab === 'batch') {
-    document.getElementById('flow-step-1')?.classList.add('active');
-  }
 
   if (tab === 'results') {
     setTimeout(() => window.dispatchEvent(new Event('resize')), 50);

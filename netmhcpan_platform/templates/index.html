@@ -1806,7 +1806,7 @@
             <span class="cov-row-label">≥ 2 epitopes (redundancy)</span>
             <span class="cov-row-val" id="basket-cov2" style="color:var(--primary);">0.00%</span>
           </div>
-          <div class="cov-track"><div class="cov-fill" id="basket-cov2-bar" style="width:0%; background:var(--primary);"></div></div>
+          <div class="cov-track"><div class="cov-fill" id="basket-cov2-bar" style="width:0%; background:var(--primary);"></div><div class="cov-goal-mark" id="basket-goal2-mark" style="left:50%;"></div></div>
         </div>
 
         <div class="basket-list" id="basket-list"></div>
@@ -1997,6 +1997,12 @@
               <label for="dt-goal">🎯 Population Coverage Goal — <span id="dt-goal-val">90%</span></label>
               <input type="range" id="dt-goal" min="50" max="99" step="1" value="90" oninput="updateDesignTarget()">
               <div class="dt-hint">Fraction of target population predicted to present ≥ 1 vaccine epitope.</div>
+            </div>
+
+            <div class="dt-field">
+              <label for="dt-goal2">🛡️ Redundancy Goal (Hit ≥ 2) — <span id="dt-goal2-val">50%</span></label>
+              <input type="range" id="dt-goal2" min="0" max="95" step="5" value="50" oninput="updateDesignTarget()">
+              <div class="dt-hint">Fraction predicted to present ≥ 2 epitopes — the buffer against HLA loss and single-epitope escape. Auto-fill keeps adding until this is met too. Set to 0 to rank on ≥ 1 coverage alone.</div>
             </div>
 
           </div>
@@ -2198,8 +2204,11 @@
             </div>
             <div class="cov-track" style="height:8px; border-radius:4px;">
               <div class="cov-fill basket-cov2-bar" id="dsg-cov2-bar" style="width:0%; background:var(--primary); border-radius:4px;"></div>
+              <div class="cov-goal-mark" id="dsg-goal2-mark" style="left:50%;"></div>
             </div>
           </div>
+
+          <div id="dsg-depth" style="margin-bottom:16px;"></div>
 
           <div class="prop-grid" id="dsg-coverage-grid"></div>
           <div id="dsg-coverage-warn"></div>
@@ -2890,6 +2899,8 @@ const pageSize = 25;
 let FREQ = { table: {}, aliases: {}, regions: ['World'], max_locus_sum: 0.99 };
 let covRegion   = 'Taiwan';      // region the design targets
 let covGoal     = 90;            // coverage goal, %
+let covGoal2    = 50;            // vaccine design only: Hit>=2 redundancy goal, % (0 = off)
+const DEPTH_W   = 0.6;           // worth of a point of Hit>=2 against a point of Hit>=1
 let epitopeSet  = [];            // peptides the user has put in the basket
 let binderMap   = {};            // {peptide: [alleles]} for the loaded job
 let gainCache   = null;          // {peptide: marginal gain}, invalidated on set change
@@ -2986,11 +2997,26 @@ function setCoverageJS(peps, region, panel) {
     .map(a => ({ allele: a, frequency: alleleFreq(a, region) }))
     .sort((x, y) => y.frequency - x.frequency);
 
+  // How many epitopes of the set each panel allele presents. Hit>=2 can only rise
+  // where that number reaches 2, so this is the actionable half of the cov1/cov2
+  // gap: it names exactly which alleles are still carried by a single epitope.
+  const depth = {};
+  for (const a of (panel || [])) depth[normAllele(a)] = 0;
+  for (const l of lists) {
+    for (const a of new Set(l.map(normAllele))) if (a in depth) depth[a]++;
+  }
+  const byFreq = list => list
+    .map(a => ({ allele: a, frequency: alleleFreq(a, region) }))
+    .sort((x, y) => y.frequency - x.frequency);
+
   return {
     coverage_pct:  +(cov1 * 100).toFixed(2),
     coverage2_pct: +(cov2 * 100).toFixed(2),
     responsive: R,
-    uncovered
+    uncovered,
+    depth,
+    single: byFreq((panel || []).filter(a => depth[normAllele(a)] === 1)),
+    deep:   byFreq((panel || []).filter(a => depth[normAllele(a)] >= 2))
   };
 }
 
@@ -3035,31 +3061,57 @@ function computeGains(candidatePeps) {
   return out;
 }
 
-/* Greedy completion — the JS twin of epitope_set.greedy_select(). */
-function greedyComplete(candidatePeps, goalPct, maxN, tieBreak, weightFn) {
+/* Greedy completion — the JS twin of epitope_set.greedy_select().
+
+   Two objectives, not one: reach `goalPct` of the population with >=1 epitope AND
+   `goal2Pct` with >=2. Ranking on Hit>=1 alone discards every peptide that only
+   doubles up on an allele already covered — which is exactly the peptide that buys
+   escape redundancy — and stops the moment Hit>=1 is satisfied, so depth could
+   never improve however many candidates were on offer. Scoring the blend fixes
+   both. With goal2Pct = 0 and depthWeight = 0 this is the original cov1-only
+   search, unchanged. */
+function greedyComplete(candidatePeps, goalPct, maxN, tieBreak, weightFn, goal2Pct, depthWeight) {
+  const g2 = goal2Pct || 0;
+  const w  = depthWeight || 0;
+  const obj = c => c.coverage_pct + w * c.coverage2_pct;
+
   const chosen = epitopeSet.slice();
-  let current = setCoverageJS(chosen).coverage_pct;
+  let cov = setCoverageJS(chosen);
+  let current = obj(cov);
   const added = [];
-  while (chosen.length < maxN && current < goalPct) {
-    // Rank by coverage gain, optionally scaled by how likely the peptide is to be
-    // seen by a TCR once presented. A pick must still raise coverage to qualify.
-    let best = null, bestVal = current, bestTb = -Infinity, bestScore = 0;
+  while (chosen.length < maxN && (cov.coverage_pct < goalPct || cov.coverage2_pct < g2)) {
+    // Rank by blended gain, optionally scaled by how likely the peptide is to be
+    // seen by a TCR once presented. A pick must still move the objective to qualify.
+    let best = null, bestCov = null, bestTb = -Infinity, bestScore = 0;
     for (const p of candidatePeps) {
       if (chosen.includes(p)) continue;
-      const val = setCoverageJS(chosen.concat([p])).coverage_pct;
+      const cand = setCoverageJS(chosen.concat([p]));
+      const val = obj(cand);
       if (val <= current + 1e-9) continue;
       const score = (val - current) * (weightFn ? weightFn(p) : 1);
       const tb = (tieBreak && tieBreak[p]) || 0;
       if (score > bestScore + 1e-9 || (Math.abs(score - bestScore) <= 1e-9 && tb > bestTb)) {
-        best = p; bestVal = val; bestTb = tb; bestScore = score;
+        best = p; bestCov = cand; bestTb = tb; bestScore = score;
       }
     }
     if (!best) break;
     chosen.push(best);
-    added.push({ peptide: best, gain: +(bestVal - current).toFixed(2), coverage: bestVal });
-    current = bestVal;
+    added.push({
+      peptide: best,
+      gain:  +(bestCov.coverage_pct  - cov.coverage_pct).toFixed(2),
+      gain2: +(bestCov.coverage2_pct - cov.coverage2_pct).toFixed(2),
+      coverage: bestCov.coverage_pct
+    });
+    cov = bestCov;
+    current = obj(cov);
   }
-  return { chosen, added, coverage: current, goalMet: current >= goalPct };
+  return {
+    chosen, added,
+    coverage:  cov.coverage_pct,
+    coverage2: cov.coverage2_pct,
+    goalMet:   cov.coverage_pct  >= goalPct,
+    goal2Met:  cov.coverage2_pct >= g2
+  };
 }
 
 /* ── Init ───────────────────────────────────────────── */
@@ -3262,11 +3314,15 @@ function buildRegionSelector() {
 function updateDesignTarget() {
   const regionSel = document.getElementById('dt-region');
   const goalSel   = document.getElementById('dt-goal');
+  const goal2Sel  = document.getElementById('dt-goal2');
   if (regionSel) covRegion = regionSel.value;
   if (goalSel)   covGoal   = parseInt(goalSel.value, 10);
+  if (goal2Sel)  covGoal2  = parseInt(goal2Sel.value, 10);
 
   const goalLabel = document.getElementById('dt-goal-val');
   if (goalLabel) goalLabel.textContent = covGoal + '%';
+  const goal2Label = document.getElementById('dt-goal2-val');
+  if (goal2Label) goal2Label.textContent = covGoal2 ? covGoal2 + '%' : 'off';
 
   const nameEl = document.getElementById('dt-region-name');
   if (nameEl) nameEl.textContent = covRegion;
@@ -3582,17 +3638,21 @@ async function autoFillBasket() {
   // The Predict tab's table is untouched and keeps ranking by Composite_Score.
   const pool = applyStudioImmCutoff(candidates);
   const before = epitopeSet.length;
-  const res = greedyComplete(pool, covGoal, 25, tie, studioImmWeight ? immModulator : null);
+  const res = greedyComplete(pool, covGoal, 25, tie, studioImmWeight ? immModulator : null,
+                             covGoal2, covGoal2 ? DEPTH_W : 0);
   epitopeSet = res.chosen;
   gainCache = null;
   renderBasket();
   renderTableBody(currentFilteredRows);
 
   const n = epitopeSet.length - before;
-  toast(res.goalMet
-    ? `🤖 Added ${n} epitope(s) — ${res.coverage.toFixed(1)}% of ${covRegion} reached (goal ${covGoal}%)`
-    : `🤖 Added ${n} epitope(s) — best achievable from this job is ${res.coverage.toFixed(1)}%, short of the ${covGoal}% goal`,
-    res.goalMet ? 'success' : 'error');
+  const both = res.goalMet && res.goal2Met;
+  const covTxt = `${res.coverage.toFixed(1)}% ≥ 1 · ${res.coverage2.toFixed(1)}% ≥ 2`;
+  const goalTxt = covGoal2 ? `${covGoal}% / ${covGoal2}%` : `${covGoal}%`;
+  toast(both
+    ? `🤖 Added ${n} epitope(s) — ${covTxt} of ${covRegion} (goal ${goalTxt} met)`
+    : `🤖 Added ${n} epitope(s) — ${covTxt}, the best this pool reaches; goal ${goalTxt}`,
+    both ? 'success' : 'error');
 }
 
 function renderBasket() {
@@ -3619,7 +3679,9 @@ function renderBasket() {
   const b1 = document.getElementById('basket-cov1-bar');
   const b2 = document.getElementById('basket-cov2-bar');
   if (b1) { b1.style.width = cov.coverage_pct + '%';  b1.style.background = cov.coverage_pct  >= covGoal ? 'var(--strong)' : 'var(--weak)'; }
-  if (b2) { b2.style.width = cov.coverage2_pct + '%'; b2.style.background = cov.coverage2_pct >= covGoal ? 'var(--strong)' : 'var(--primary)'; }
+  if (b2) { b2.style.width = cov.coverage2_pct + '%'; b2.style.background = (covGoal2 && cov.coverage2_pct >= covGoal2) ? 'var(--strong)' : 'var(--primary)'; }
+  const bMark2 = document.getElementById('basket-goal2-mark');
+  if (bMark2) { bMark2.style.left = covGoal2 + '%'; bMark2.style.display = covGoal2 ? 'block' : 'none'; }
 
   // Sync to Vaccine Studio elements
   const dsgC1 = document.getElementById('dsg-cov1-val');
@@ -3629,7 +3691,9 @@ function renderBasket() {
   const dsgB1 = document.getElementById('dsg-cov1-bar');
   const dsgB2 = document.getElementById('dsg-cov2-bar');
   if (dsgB1) { dsgB1.style.width = cov.coverage_pct + '%'; dsgB1.style.background = cov.coverage_pct >= covGoal ? 'var(--strong)' : 'var(--weak)'; }
-  if (dsgB2) { dsgB2.style.width = cov.coverage2_pct + '%'; dsgB2.style.background = cov.coverage2_pct >= covGoal ? 'var(--strong)' : 'var(--primary)'; }
+  if (dsgB2) { dsgB2.style.width = cov.coverage2_pct + '%'; dsgB2.style.background = (covGoal2 && cov.coverage2_pct >= covGoal2) ? 'var(--strong)' : 'var(--primary)'; }
+  const dsgGoal2Mark = document.getElementById('dsg-goal2-mark');
+  if (dsgGoal2Mark) { dsgGoal2Mark.style.left = covGoal2 + '%'; dsgGoal2Mark.style.display = covGoal2 ? 'block' : 'none'; }
   const dsgGoalMark = document.getElementById('dsg-goal-mark');
   if (dsgGoalMark) dsgGoalMark.style.left = covGoal + '%';
 
@@ -4026,14 +4090,41 @@ function refreshDesigner() {
   }
 
   const cov = setCoverageJS(epitopeSet, covRegion, designTargetAlleles);
+
+  // Per-allele depth. The Hit>=1 / Hit>=2 gap is abstract until it is spelled out
+  // as "these alleles rest on a single epitope" — that list is what tells the user
+  // which peptides to go looking for in Step 2.
+  const depthBox = document.getElementById('dsg-depth');
+  if (depthBox) {
+    const panelN = (designTargetAlleles || []).length;
+    if (!epitopeSet.length || !panelN) {
+      depthBox.innerHTML = '';
+    } else {
+      const chip = (txt, bg, fg) => `<span style="display:inline-block; padding:2px 7px; margin:3px 4px 0 0; border-radius:4px; font-size:.68rem; font-weight:600; background:${bg}; color:${fg};">${txt}</span>`;
+      const deep   = cov.deep.map(u => chip(u.allele + ' · 2+', 'rgba(63,185,80,.16)',  'var(--strong)'));
+      const single = cov.single.map(u => chip(u.allele + ' · 1', 'rgba(210,153,34,.18)', '#d29922'));
+      const none   = (cov.uncovered || []).map(u => chip(u.allele + ' · 0', 'rgba(248,81,73,.15)', '#f85149'));
+      depthBox.innerHTML = `
+        <div style="font-size:.74rem; color:var(--subtext); margin-bottom:3px;">
+          Epitopes per panel allele — Hit ≥ 2 can only rise where an allele reaches depth 2
+          (<b style="color:var(--strong);">${cov.deep.length}</b> deep ·
+           <b style="color:#d29922;">${cov.single.length}</b> single ·
+           <b style="color:#f85149;">${(cov.uncovered || []).length}</b> uncovered)
+        </div>
+        <div>${deep.concat(single, none).join('')}</div>`;
+    }
+  }
+
   const warn = document.getElementById('dsg-coverage-warn');
   if (warn) {
     const bits = [];
     if (epitopeSet.length > 0 && cov.coverage_pct < covGoal) {
       bits.push(`Current epitope set covers <b>${cov.coverage_pct.toFixed(1)}%</b> of ${covRegion}, below target <b>${covGoal}%</b>.`);
     }
-    if (epitopeSet.length > 0 && cov.coverage2_pct < cov.coverage_pct / 2) {
-      bits.push(`Dual protection (≥2 hits) redundancy is low: only <b>${cov.coverage2_pct.toFixed(1)}%</b> of the population presents ≥2 epitopes.`);
+    if (epitopeSet.length > 0 && covGoal2 > 0 && cov.coverage2_pct < covGoal2) {
+      const names = cov.single.slice(0, 6).map(u => u.allele).join(', ');
+      bits.push(`Redundancy below target: <b>${cov.coverage2_pct.toFixed(1)}%</b> presents ≥2 epitopes (goal <b>${covGoal2}%</b>).`
+        + (names ? ` A second epitope is needed for: ${names}${cov.single.length > 6 ? '…' : ''}.` : ''));
     }
     const missed = cov.uncovered.filter(u => u.frequency > 0);
     if (epitopeSet.length > 0 && missed.length) {
@@ -4683,6 +4774,7 @@ function downloadConstruct(kind) {
       `# Generated,${new Date().toISOString()}`,
       `# Target region,${covRegion}`,
       `# Coverage goal,${covGoal}%`,
+      `# Redundancy goal (>=2 epitopes),${covGoal2}%`,
       `# Set coverage >=1 epitope,${cov.coverage_pct}%`,
       `# Set coverage >=2 epitopes,${cov.coverage2_pct}%`,
       `# Linker,${currentConstruct.linker}`,
@@ -4691,6 +4783,10 @@ function downloadConstruct(kind) {
       ``,
       `Order,Peptide,Presented_by,N_alleles`,
       ...epitopeSet.map((p, i) => `${i + 1},${p},"${(binderMap[p] || []).join(' ')}",${(binderMap[p] || []).length}`),
+      ``,
+      `Allele,Epitopes_presenting,Frequency`,
+      ...(designTargetAlleles.length ? designTargetAlleles : selectedAlleles)
+        .map(a => `${a},${cov.depth[normAllele(a)] || 0},${alleleFreq(a, covRegion) ?? ''}`),
       ``,
       `Uncovered_allele,Frequency`,
       ...cov.uncovered.filter(u => u.frequency > 0).map(u => `${u.allele},${u.frequency}`)
@@ -5051,6 +5147,7 @@ async function saveCurrentConstructDesign() {
     properties: currentConstruct.properties || {},
     target_region: covRegion,
     coverage_goal: covGoal,
+    coverage_goal2: covGoal2,
     coverage_pct: cov.coverage_pct,
     coverage2_pct: cov.coverage2_pct,
     target_alleles: [...(designTargetAlleles.length ? designTargetAlleles : selectedAlleles)],
@@ -5101,6 +5198,11 @@ function loadDesignIntoStudio(id) {
     covGoal = d.coverage_goal;
     const goalSel = document.getElementById('dt-goal');
     if (goalSel) goalSel.value = covGoal;
+  }
+  if (d.coverage_goal2 != null) {
+    covGoal2 = d.coverage_goal2;
+    const goal2Sel = document.getElementById('dt-goal2');
+    if (goal2Sel) goal2Sel.value = covGoal2;
   }
 
   const linkerSel = document.getElementById('dsg-linker');

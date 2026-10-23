@@ -768,6 +768,7 @@ def api_save_construct_design():
         "properties": data.get("properties") or {},
         "target_region": data.get("target_region", "East Asia"),
         "coverage_goal": data.get("coverage_goal", 90),
+        "coverage_goal2": data.get("coverage_goal2", 0),
         "coverage_pct": data.get("coverage_pct", 0),
         "coverage2_pct": data.get("coverage2_pct", 0),
         "target_alleles": data.get("target_alleles") or [],

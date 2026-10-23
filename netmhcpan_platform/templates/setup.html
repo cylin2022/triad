@@ -96,8 +96,22 @@
     </p>
   </div>
 
+  <div class="card" style="border-color: var(--primary);">
+    <h2 style="color: var(--primary);">Option A — Upload the package directly (Recommended)</h2>
+    <p>Upload the <code>netMHCpan-4.2.Linux.tar.gz</code> tarball you downloaded from DTU — the platform will automatically extract, verify, self-test, and install it into <code>/opt/netMHCpan-4.2</code>.</p>
+    <form id="setupForm">
+      <input type="file" name="file" id="fileInput" accept=".tar.gz,.tgz" required>
+      <label class="chk">
+        <input type="checkbox" name="agree_license" id="agree">
+        I obtained this package myself from DTU's official website under my own academic license acceptance for netMHCpan-4.2.
+      </label>
+      <button type="submit" class="btn" id="submitBtn">Upload &amp; Install</button>
+      <div id="msg"></div>
+    </form>
+  </div>
+
   <div class="card">
-    <h2>Option A — Docker volume mount (recommended, no upload needed)</h2>
+    <h2>Option B — Docker volume mount</h2>
     <p>After downloading, extract it on the host and mount it into the container at <code>NETMHC_HOME</code>:</p>
     <pre>tar -xzvf netMHCpan-4.2.Linux.tar.gz
 docker run -d --name triad_app -p 5001:5001 \
@@ -113,20 +127,6 @@ docker run -d --name triad_app -p 5001:5001 \
       <img src="/static/docker_desktop_port_setting.png" alt="Docker Desktop Host Port 5001 Setup Screenshot" style="max-width:100%; border-radius:10px; border:1px solid var(--border); box-shadow:0 8px 24px rgba(0,0,0,0.4);">
     </div>
     <p style="margin-top:10px; font-size:.85rem; color:var(--warn);">⚠️ If you leave <strong>Host port</strong> blank, Docker Desktop assigns a random host port and <code>http://localhost:5001</code> will fail to load.</p>
-  </div>
-
-  <div class="card">
-    <h2>Option B — Upload the package directly</h2>
-    <p>If mounting a host volume isn't convenient, upload the tar.gz you just downloaded here — the system will extract, verify, and install it automatically.</p>
-    <form id="setupForm">
-      <input type="file" name="file" id="fileInput" accept=".tar.gz,.tgz" required>
-      <label class="chk">
-        <input type="checkbox" name="agree_license" id="agree">
-        I obtained this package myself from DTU's official website under my own academic license acceptance for netMHCpan-4.2.
-      </label>
-      <button type="submit" class="btn" id="submitBtn">Upload &amp; Install</button>
-      <div id="msg"></div>
-    </form>
   </div>
   {% endif %}
 </div>

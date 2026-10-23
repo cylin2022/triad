@@ -2481,57 +2481,87 @@
             <span class="icon">⚙️</span> NetMHCpan Installation &amp; Academic Licensing Guide
           </div>
           <a href="/setup" class="btn btn-ghost" style="padding:4px 12px; font-size:.76rem; border-color:var(--primary); color:var(--primary);">
-            🚀 Open Setup Wizard (/setup)
+            🚀 Open Standalone Setup Wizard (/setup)
           </a>
         </div>
-        <p style="color:var(--subtext); font-size:.88rem; line-height:1.6;">
+        <p style="color:var(--subtext); font-size:.88rem; line-height:1.6; margin-bottom:12px;">
           <code>netMHCpan-4.2</code> is academic-licensed software copyrighted by DTU Health Tech (Technical University of Denmark). Its academic license explicitly prohibits redistribution of binaries or model weights to third parties. For complete legal compliance, the public Docker image (<code>lsbnb/triad</code>) ships as a clean application shell without pre-bundled DTU files. Each user must obtain their copy directly from DTU.
         </p>
-        
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:14px;">
-          <!-- Option A -->
-          <div style="background:var(--panel2); border:1px solid var(--border); border-radius:8px; padding:16px;">
-            <div style="font-weight:700; color:var(--primary); font-size:.88rem; margin-bottom:6px;">
-              Option A: Docker Volume Mount (Recommended)
+
+        <!-- Live Installation Status Indicator -->
+        <div id="doc-install-status-box" style="margin-bottom:16px;">
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(88,166,255,0.08); border:1px solid rgba(88,166,255,0.25); border-radius:8px; padding:10px 14px; font-size:.84rem;">
+            <span>⏳</span> Detecting netMHCpan-4.2 installation status...
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-top:14px;">
+
+          <!-- Option A: Built-in Web Upload Wizard (Recommended) -->
+          <div style="background:var(--panel2); border:1px solid var(--primary); border-radius:8px; padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+              <div style="font-weight:700; color:var(--primary); font-size:.92rem; display:flex; align-items:center; gap:6px;">
+                <span>⚡</span> Option A: Web Upload &amp; Auto-Install
+              </div>
+              <span style="background:rgba(0,245,196,0.15); color:var(--strong); font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px;">Recommended</span>
             </div>
-            <p style="color:var(--subtext); font-size:.8rem; line-height:1.5; margin-bottom:10px;">
-              Download and unpack the Linux package from DTU, then mount the directory directly to <code>/opt/netMHCpan-4.2</code>:
+            <p style="color:var(--subtext); font-size:.82rem; line-height:1.5; margin-bottom:12px;">
+              Upload the <code>netMHCpan-4.2.Linux.tar.gz</code> package directly via this web page — the system will automatically extract, verify, self-test, and install it into <code>/opt/netMHCpan-4.2</code> without terminal access.
             </p>
-            <pre style="background:var(--bg); border:1px solid var(--border2); border-radius:6px; padding:10px; color:#a5d6ff; font-family:'JetBrains Mono',monospace; font-size:.75rem; overflow-x:auto; line-height:1.4;">tar -xzvf netMHCpan-4.2.Linux.tar.gz
+
+            <div style="background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:12px; margin-bottom:12px;">
+              <div style="font-size:.78rem; font-weight:600; color:var(--text); margin-bottom:6px;">
+                Step 1: Obtain the official DTU academic package
+              </div>
+              <a id="doc-dtu-link" href="https://services.healthtech.dtu.dk/services/NetMHCpan-4.2/" target="_blank" class="btn btn-ghost" style="padding:6px 12px; font-size:.76rem; width:100%; text-align:center; justify-content:center; color:var(--primary); border-color:var(--primary); display:inline-flex;">
+                🔗 Download netMHCpan-4.2.Linux.tar.gz from DTU Portal ↗
+              </a>
+            </div>
+
+            <!-- Embedded Upload Form -->
+            <form id="docSetupForm" onsubmit="event.preventDefault(); submitDocSetupUpload();" style="display:flex; flex-direction:column; gap:10px;">
+              <div style="font-size:.78rem; font-weight:600; color:var(--text);">
+                Step 2: Upload tarball to deploy automatically
+              </div>
+              <input type="file" id="doc-setup-file" accept=".tar.gz,.tgz" style="font-size:.78rem; color:var(--subtext); background:var(--panel); border:1px dashed var(--border); border-radius:6px; padding:10px; width:100%; cursor:pointer;">
+              <label style="display:flex; align-items:flex-start; gap:8px; font-size:.76rem; color:var(--subtext); cursor:pointer;">
+                <input type="checkbox" id="doc-setup-agree" style="margin-top:2px;">
+                <span>I obtained this package myself from DTU's official website under my own academic license acceptance for netMHCpan-4.2.</span>
+              </label>
+              <button type="submit" class="btn btn-primary" id="doc-upload-btn" style="padding:8px 16px; font-size:.82rem; font-weight:700; justify-content:center;">
+                ⚡ Upload, Verify &amp; Install Package
+              </button>
+              <div id="doc-upload-msg" style="font-size:.78rem; margin-top:4px; line-height:1.5;"></div>
+            </form>
+          </div>
+
+          <!-- Option B: Docker Volume Mount -->
+          <div style="background:var(--panel2); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <div style="font-weight:700; color:var(--text); font-size:.92rem; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>📦</span> Option B: Docker Volume Mount
+            </div>
+            <p style="color:var(--subtext); font-size:.82rem; line-height:1.5; margin-bottom:10px;">
+              For Linux server environments or command-line users. Download and unpack the Linux tarball on your host, then mount the directory directly to <code>/opt/netMHCpan-4.2</code>:
+            </p>
+            <pre style="background:var(--bg); border:1px solid var(--border2); border-radius:6px; padding:10px; color:#a5d6ff; font-family:'JetBrains Mono',monospace; font-size:.74rem; overflow-x:auto; line-height:1.4; margin-bottom:12px;">tar -xzvf netMHCpan-4.2.Linux.tar.gz
 docker run -d -p 5001:5001 \
   -v /dev/shm:/dev/shm \
   -v "$(pwd)/netMHCpan-4.2:/opt/netMHCpan-4.2" \
   lsbnb/triad:latest</pre>
+
+            <div style="border-top:1px solid var(--border); padding-top:10px; margin-top:10px;">
+              <div style="font-weight:600; color:var(--primary); font-size:.8rem; margin-bottom:4px;">
+                🖥️ Docker Desktop GUI (Windows / Mac) Users
+              </div>
+              <p style="color:var(--subtext); font-size:.76rem; line-height:1.4; margin-bottom:8px;">
+                Expand <strong>Optional settings</strong> &rarr; <strong>Ports</strong> and set <strong>Host port</strong> to <code>5001</code> (mapping to <code>:5001/tcp</code>):
+              </p>
+              <div style="text-align:center;">
+                <img src="/static/docker_desktop_port_setting.png" alt="Docker Desktop Host Port 5001 Setup Screenshot" style="max-width:100%; border-radius:6px; border:1px solid var(--border); max-height:130px; object-fit:contain;">
+              </div>
+            </div>
           </div>
 
-          <!-- Option B -->
-          <div style="background:var(--panel2); border:1px solid var(--border); border-radius:8px; padding:16px;">
-            <div style="font-weight:700; color:var(--strong); font-size:.88rem; margin-bottom:6px;">
-              Option B: Built-in Web Setup Wizard
-            </div>
-            <p style="color:var(--subtext); font-size:.8rem; line-height:1.5; margin-bottom:10px;">
-              If mounting host volumes is inconvenient, upload the <code>netMHCpan-4.2.Linux.tar.gz</code> tarball directly via the web UI without terminal access:
-            </p>
-            <ol style="color:var(--subtext); font-size:.8rem; line-height:1.6; padding-left:18px; margin:0 0 12px;">
-              <li>Visit the <a href="https://services.healthtech.dtu.dk/services/NetMHCpan-4.2/" target="_blank" style="color:var(--primary);">official DTU Download Portal</a>.</li>
-              <li>Request and download <code>netMHCpan-4.2.Linux.tar.gz</code>.</li>
-              <li>Open <a href="/setup" style="color:var(--primary); font-weight:600;">http://localhost:5001/setup</a> to upload &amp; verify.</li>
-            </ol>
-            <a href="/setup" class="btn btn-primary" style="padding:6px 14px; font-size:.78rem; width:100%;">
-              Go to Web Upload Wizard →
-            </a>
-          <!-- Option C: Docker Desktop GUI Notice -->
-          <div style="background:var(--panel2); border:1px solid rgba(88,166,255,0.4); border-radius:8px; padding:16px;">
-            <div style="font-weight:700; color:var(--primary); font-size:.88rem; margin-bottom:6px;">
-              🖥️ Docker Desktop GUI (Windows / Mac) Users
-            </div>
-            <p style="color:var(--subtext); font-size:.8rem; line-height:1.5; margin-bottom:10px;">
-              When starting via <strong>Docker Desktop GUI</strong>, expand <strong>Optional settings</strong> &rarr; <strong>Ports</strong> and set <strong>Host port</strong> to <code style="color:#a5d6ff;">5001</code> (mapping to <code style="color:#a5d6ff;">:5001/tcp</code>):
-            </p>
-            <div style="text-align:center; margin-top:8px;">
-              <img src="/static/docker_desktop_port_setting.png" alt="Docker Desktop Host Port 5001 Setup Screenshot" style="max-width:100%; border-radius:6px; border:1px solid var(--border);">
-            </div>
-          </div>
         </div>
       </div>
 
@@ -3399,6 +3429,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   renderStudioAlleleChips();
   updateStudioImmSettings();
   loadSavedVaccineDesigns();
+  checkDocInstallStatus();
   setInterval(loadSystemResources, 8000); // Live poll system specs every 8s
 });
 
@@ -3527,6 +3558,90 @@ function switchTab(tab) {
   if (tab === 'designer') {
     renderStudioAlleleChips();
     refreshDesigner();
+  }
+  if (tab === 'about') {
+    checkDocInstallStatus();
+  }
+}
+
+/* ── NetMHCpan Setup & Install in Docs ─────────────── */
+async function checkDocInstallStatus() {
+  const box = document.getElementById('doc-install-status-box');
+  if (!box) return;
+  try {
+    const res = await fetch('/api/install_status');
+    const data = await res.json();
+    if (data.download_url) {
+      const dtuLink = document.getElementById('doc-dtu-link');
+      if (dtuLink) dtuLink.href = data.download_url;
+    }
+    if (data.installed) {
+      box.innerHTML = `
+        <div style="display:flex; align-items:center; gap:10px; background:rgba(63,185,80,0.12); border:1px solid rgba(63,185,80,0.35); border-radius:8px; padding:12px 16px; font-size:.84rem; color:var(--success);">
+          <span style="font-size:1.2rem;">✅</span>
+          <div>
+            <strong>netMHCpan-4.2 is installed and active</strong> &mdash;
+            <code style="background:rgba(0,0,0,0.25); padding:2px 6px; border-radius:4px; color:#7ee787;">\${data.netmhc_home || '/opt/netMHCpan-4.2'}</code> is configured. Ready to run binding predictions.
+          </div>
+        </div>`;
+    } else {
+      box.innerHTML = `
+        <div style="display:flex; align-items:center; gap:10px; background:rgba(248,81,73,0.12); border:1px solid rgba(248,81,73,0.35); border-radius:8px; padding:12px 16px; font-size:.84rem; color:var(--danger);">
+          <span style="font-size:1.2rem;">⚠️</span>
+          <div>
+            <strong>netMHCpan-4.2 is NOT detected</strong> &mdash; Please install via <strong>Option A</strong> (upload the package below) or <strong>Option B</strong> (Docker volume mount).
+          </div>
+        </div>`;
+    }
+  } catch (err) {
+    box.innerHTML = `
+      <div style="display:flex; align-items:center; gap:8px; background:rgba(88,166,255,0.08); border:1px solid rgba(88,166,255,0.25); border-radius:8px; padding:10px 14px; font-size:.84rem; color:var(--subtext);">
+        <span>ℹ️</span> Status check unavailable (\${err})
+      </div>`;
+  }
+}
+
+async function submitDocSetupUpload() {
+  const fileInput = document.getElementById('doc-setup-file');
+  const agree = document.getElementById('doc-setup-agree');
+  const btn = document.getElementById('doc-upload-btn');
+  const msg = document.getElementById('doc-upload-msg');
+
+  if (!msg) return;
+  msg.innerHTML = '';
+
+  if (!agree || !agree.checked) {
+    msg.innerHTML = '<span style="color:var(--danger);">⚠️ Please check the academic license confirmation checkbox first.</span>';
+    return;
+  }
+  if (!fileInput || !fileInput.files || !fileInput.files.length) {
+    msg.innerHTML = '<span style="color:var(--danger);">⚠️ Please select a .tar.gz package file to upload.</span>';
+    return;
+  }
+
+  const fd = new FormData();
+  fd.append('file', fileInput.files[0]);
+  fd.append('agree_license', 'on');
+
+  if (btn) btn.disabled = true;
+  msg.innerHTML = '<span style="color:var(--primary);">⏳ Uploading package — extraction, model validation and self-test in progress, please wait…</span>';
+
+  try {
+    const res = await fetch('/setup/upload', { method: 'POST', body: fd });
+    const data = await res.json();
+    if (!res.ok) {
+      msg.innerHTML = `<span style="color:var(--danger);">❌ Install failed: \${data.error || 'Unknown error'}</span>`;
+      if (btn) btn.disabled = false;
+      return;
+    }
+    msg.innerHTML = `<span style="color:var(--success);">✅ \${data.message || 'Installed successfully!'}</span>`;
+    toast('netMHCpan-4.2 successfully installed!', 'success');
+    if (btn) btn.disabled = false;
+    if (fileInput) fileInput.value = '';
+    await checkDocInstallStatus();
+  } catch (err) {
+    msg.innerHTML = `<span style="color:var(--danger);">❌ Network/upload error: \${err}</span>`;
+    if (btn) btn.disabled = false;
   }
 }
 

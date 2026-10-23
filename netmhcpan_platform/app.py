@@ -775,6 +775,11 @@ def api_save_construct_design():
         "segments": data.get("segments") or [],
         "fasta": data.get("fasta") or "",
         "dna": data.get("dna") or "",
+        # Which alleles each peptide is actually predicted to be presented by, and its
+        # Calis score. Without these a reloaded design has no way to recompute coverage
+        # except by guessing, which is how the old reload path produced fictional numbers.
+        "binder_map": data.get("binder_map") or {},
+        "imm_map": data.get("imm_map") or {},
     }
     with DESIGNS_LOCK:
         DESIGNS[design_id] = design_record

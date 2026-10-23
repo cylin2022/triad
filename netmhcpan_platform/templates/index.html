@@ -2154,6 +2154,7 @@
                      onchange="updateStudioImmSettings()" oninput="updateStudioImmSettings()"
                      style="width:72px; font-size:.74rem; padding:2px 6px;">
             </label>
+            <div class="dt-warn" id="vax-imm-mouse-note" style="display:none; margin-top:8px;"></div>
             <div class="dt-hint" style="margin-top:6px;">
               Presentation stays the gate: immunogenicity only reorders peptides NetMHCpan already
               calls binders. The 0.05 floor keeps the redundancy goal from being met with peptides
@@ -2211,6 +2212,7 @@
           </div>
 
           <div id="dsg-depth" style="margin-bottom:16px;"></div>
+          <div id="dsg-opt-note" style="margin-bottom:4px;"></div>
 
           <div class="prop-grid" id="dsg-coverage-grid"></div>
           <div id="dsg-coverage-warn"></div>
@@ -2902,6 +2904,9 @@ let FREQ = { table: {}, aliases: {}, regions: ['World'], max_locus_sum: 0.99 };
 let covRegion   = 'Taiwan';      // region the design targets
 let covGoal     = 90;            // coverage goal, %
 let covGoal2    = 90;            // vaccine design only: Hit>=2 redundancy goal, % (0 = off)
+/* Mirrors construct.optimize_order: exhaustive to 6 epitopes, then 120 sampled orders. */
+const ORDER_EXACT_MAX = 6;
+const ORDER_MAX_EVAL  = 120;
 const DEPTH_W   = 0.6;           // worth of a point of Hit>=2 against a point of Hit>=1
 let epitopeSet  = [];            // peptides the user has put in the basket
 let binderMap   = {};            // {peptide: [alleles]} for the loaded job
@@ -2924,6 +2929,13 @@ function normAllele(a) { return String(a == null ? '' : a).trim().replace(/\*/g,
    (batch_runner.py): immunogenicity scales a peptide's worth by at most ±50%,
    and never rescues a peptide that is not presented in the first place. Used
    only by the Vaccine Studio; the Predict table keeps its own ranking. */
+/* n! for the small n the order search deals with, grouped for readability. */
+function factorialStr(n) {
+  let f = 1;
+  for (let i = 2; i <= n; i++) f *= i;
+  return f.toLocaleString();
+}
+
 function immModulator(pep) {
   const s = immMap[pep];
   if (s == null || isNaN(s)) return 1.0;
@@ -3022,11 +3034,23 @@ function setCoverageJS(peps, region, panel) {
   };
 }
 
+/* The Calis model is parameterised on human epitopes. The scorer still emits a
+   number for H-2 peptides, and this project's own mouse benchmark found the
+   transfer to murine neoantigens limited — so a Calis gate on a mouse panel
+   discards candidates on a metric that does not apply to them. Judge by the
+   panel the design is actually scored against, not the global species toggle,
+   because the two can disagree. */
+function studioIsMouse() {
+  const panel = designTargetAlleles.length ? designTargetAlleles : selectedAlleles;
+  if (panel.length) return panel.some(a => /^H-?2-/i.test(String(a).trim()));
+  return currentSpecies === 'mouse';
+}
+
 /* Vaccine-design-only gate: drop candidates whose Calis score falls below the
    Studio cutoff. Peptides with no score are kept — absence of a score is not
    evidence of poor immunogenicity. Never returns an empty pool. */
 function applyStudioImmCutoff(candidates) {
-  if (studioImmMin == null) return candidates;
+  if (studioImmMin == null || studioIsMouse()) return candidates;
   const kept = candidates.filter(p => immMap[p] == null || immMap[p] >= studioImmMin);
   const dropped = candidates.length - kept.length;
   if (!kept.length) {
@@ -3043,11 +3067,34 @@ function updateStudioImmSettings() {
   const mEl  = document.getElementById('vax-imm-min');
   studioImmWeight = wEl ? wEl.checked : true;
   const on = fEl ? fEl.checked : false;
-  if (mEl) mEl.disabled = !on;
   const v = mEl ? parseFloat(mEl.value) : NaN;
   studioImmMin = (on && !isNaN(v)) ? v : null;
+  if (mEl) mEl.disabled = !on;
+  renderStudioImmControls();
   gainCache = null;
   renderBasket();
+}
+
+/* Grey the Calis controls out on a mouse panel and say why, so the settings on
+   screen match what the selection actually does. */
+function renderStudioImmControls() {
+  const mouse = studioIsMouse();
+  const wEl = document.getElementById('vax-imm-weight');
+  const fEl = document.getElementById('vax-imm-filter-on');
+  const mEl = document.getElementById('vax-imm-min');
+  if (wEl) wEl.disabled = mouse;
+  if (fEl) fEl.disabled = mouse;
+  if (mEl) mEl.disabled = mouse || !(fEl && fEl.checked);
+  const note = document.getElementById('vax-imm-mouse-note');
+  if (note) {
+    note.innerHTML = mouse
+      ? `\u26a0\ufe0f <b>Mouse panel \u2014 Calis selection is off.</b> The model is parameterised on
+         human epitopes and transfers poorly to murine neoantigens, so neither the weighting nor the
+         floor is applied here. Rank mouse candidates by %Rank_BA instead (\u2264 0.5 strong,
+         \u2264 2.0 weak); Studio scans on a mouse panel request the BA columns automatically.`
+      : '';
+    note.style.display = mouse ? 'block' : 'none';
+  }
 }
 
 /* Percentage points each candidate peptide would add to the current basket. */
@@ -3640,7 +3687,8 @@ async function autoFillBasket() {
   // The Predict tab's table is untouched and keeps ranking by Composite_Score.
   const pool = applyStudioImmCutoff(candidates);
   const before = epitopeSet.length;
-  const res = greedyComplete(pool, covGoal, 25, tie, studioImmWeight ? immModulator : null,
+  const useImm = studioImmWeight && !studioIsMouse();
+  const res = greedyComplete(pool, covGoal, 25, tie, useImm ? immModulator : null,
                              covGoal2, covGoal2 ? DEPTH_W : 0);
   epitopeSet = res.chosen;
   gainCache = null;
@@ -4058,6 +4106,10 @@ function openDesigner() {
 }
 
 function refreshDesigner() {
+  // The panel decides whether the Calis layer applies at all, and the panel can
+  // change under us, so re-evaluate the controls on every refresh.
+  renderStudioImmControls();
+
   // Coverage recap across every region we have data for
   const note = document.getElementById('dsg-region-note');
   if (note) {
@@ -4114,6 +4166,24 @@ function refreshDesigner() {
            <b style="color:#f85149;">${(cov.uncovered || []).length}</b> uncovered)
         </div>
         <div>${deep.concat(single, none).join('')}</div>`;
+    }
+  }
+
+  // Order optimisation is exhaustive only up to 6 epitopes (construct.py); beyond
+  // that it samples 120 permutations, so the button's "optimal" has to be qualified.
+  const optNote = document.getElementById('dsg-opt-note');
+  if (optNote) {
+    const n = epitopeSet.length;
+    if (n < 2) {
+      optNote.innerHTML = '';
+    } else if (n <= ORDER_EXACT_MAX) {
+      optNote.innerHTML = `<div class="dt-hint">🧮 Auto-Optimize Order will evaluate all
+        ${factorialStr(n)} orders of these ${n} epitopes \u2014 an exact search.</div>`;
+    } else {
+      optNote.innerHTML = `<div class="dt-warn">\u26a0\ufe0f Auto-Optimize Order is approximate at
+        ${n} epitopes: ${factorialStr(n)} orders exist and it samples ${ORDER_MAX_EVAL}
+        (pairwise swaps plus random restarts). Drop to ${ORDER_EXACT_MAX} or fewer for an exact
+        search, or treat the result as a good order rather than the best one.</div>`;
     }
   }
 
@@ -4241,12 +4311,16 @@ async function scanAntigenInStudio() {
 
   try {
     const isFasta = raw.startsWith('>') || raw.includes('\n>');
+    const mouse = studioIsMouse();
     const payload = {
       mode: isFasta ? 'fasta' : (raw.includes('\n') && !raw.includes(' ') && raw.split('\n')[0].length <= 14 ? 'peptide' : 'fasta'),
       input: raw,
       alleles,
       lengths,
-      name: `Studio Antigen Scan (${alleles.length} HLA)`
+      // Mouse neoantigen triage ranks on binding affinity, not the human Calis
+      // model, so a mouse panel has to come back with the BA columns.
+      include_ba: mouse,
+      name: `Studio Antigen Scan (${alleles.length} ${mouse ? 'H-2' : 'HLA'})`
     };
 
     const r = await fetch('/api/predict', {
@@ -4732,10 +4806,17 @@ async function optimizeConstructOrder() {
       renderBasket();
       refreshDesigner();
       renderScanResults(d.scan, alleles);
+      // A sampled search must not be reported as optimal.
+      const exact = epitopeSet.length <= ORDER_EXACT_MAX;
       if (d.improved) {
-        toast(`✅ Order auto-optimized! Off-target hits reduced: ${d.initial_hits} ➔ ${d.optimized_hits} (${d.initial_strong} ➔ ${d.optimized_strong} strong binders).`, 'success');
+        toast(`\u2705 Order ${exact ? 'optimized' : 'improved'}: off-target hits `
+            + `${d.initial_hits} \u2192 ${d.optimized_hits} (${d.initial_strong} \u2192 ${d.optimized_strong} strong) `
+            + `over ${d.eval_count} orders${exact ? ' \u2014 all of them' : ' sampled'}.`, 'success');
       } else {
-        toast(`✅ Current order is already optimal (${d.optimized_hits} hits across ${d.eval_count} permutations evaluated).`, 'info');
+        toast(exact
+          ? `\u2705 Current order is optimal \u2014 all ${d.eval_count} orders evaluated, ${d.optimized_hits} off-target hits.`
+          : `\u2139\ufe0f No better order found in ${d.eval_count} sampled orders (${d.optimized_hits} off-target hits). `
+            + `With ${epitopeSet.length} epitopes the search is not exhaustive.`, 'info');
       }
     }
   } catch (err) {

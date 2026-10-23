@@ -38,6 +38,18 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config["MAX_CONTENT_LENGTH"] = 300 * 1024 * 1024  # 300 MB, netMHCpan pkg is ~120MB
 
+
+@app.after_request
+def _no_cache_html(resp):
+    """The whole UI, JavaScript included, lives inside index.html. Served without a
+    validator the browser is free to reuse a cached copy, so an upgraded container
+    can still hand a user yesterday's Studio logic until they hard-refresh. Force a
+    revalidation on HTML and JSON; static assets keep their normal caching."""
+    ctype = (resp.headers.get("Content-Type") or "").split(";")[0].strip()
+    if ctype in ("text/html", "application/json"):
+        resp.headers["Cache-Control"] = "no-cache, must-revalidate"
+    return resp
+
 # In-memory job store (production: use Redis / DB)
 JOBS: dict[str, BatchJob] = {}
 JOBS_LOCK = threading.Lock()
